@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#5b4636">
+  <title>New Beginnings — Keeping</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <main>
+    <h1>Keeping</h1>
+    <p class="lede">
+      A way to remember what this year looked like. Not a scorecard. Narration log,
+      habit tracker, a simple diary, an observation list. Everything stays on your
+      device. Export to JSON any time.
+    </p>
+
+    <div class="card">
+      <h3>Why "keeping" and not "tracking"</h3>
+      <p>
+        Charlotte Mason used the verb <em>keep</em> for journals — a nature journal was
+        a "nature keep," a book of quotations a "commonplace book." The word is right.
+        You are not measuring; you are keeping faith with what happened.
+      </p>
+      <p class="why">
+        The difference matters. Measurement asks: did we hit the target? Keeping asks:
+        what do I want to remember? The first creates anxiety. The second creates an archive.
+      </p>
+    </div>
+
+    <div style="display: flex; gap: 0.5em; flex-wrap: wrap; margin: 1em 0;">
+      <button data-tab="narration" class="tab-btn">Narration log</button>
+      <button data-tab="habit" class="tab-btn secondary">Habit tracker</button>
+      <button data-tab="diary" class="tab-btn secondary">Diary</button>
+      <button data-tab="obs" class="tab-btn secondary">Observations</button>
+      <button data-tab="export" class="tab-btn secondary">Export</button>
+    </div>
+
+    <!-- NARRATION -->
+    <div class="tab" id="tab-narration">
+      <h2>Narration log</h2>
+      <p>
+        After a read-aloud, ask the child: "Tell me what happened." Write down what they say,
+        as near verbatim as you can. One sentence at four is plenty.
+      </p>
+      <p class="why">
+        Narration is the oldest form of active recall. The child who can tell a story back has
+        understood it; the child who cannot has not. Over months you see their narrations grow
+        from single images ("the fox couldn't reach") to whole arcs.
+      </p>
+
+      <div class="card">
+        <label for="n-book">What was read</label>
+        <input type="text" id="n-book" placeholder="e.g. The Hare and the Tortoise">
+        <label for="n-body">What the child said</label>
+        <textarea id="n-body" placeholder="Tell me what happened..."></textarea>
+        <div style="margin-top: 0.8em;">
+          <button id="n-save">Save narration</button>
+        </div>
+      </div>
+
+      <h3>Recent</h3>
+      <div id="n-list"></div>
+    </div>
+
+    <!-- HABIT -->
+    <div class="tab" id="tab-habit" style="display: none;">
+      <h2>Habit tracker</h2>
+      <p>
+        One habit at a time. Four to six weeks. Mason's rule: lay the habit down as a rail so
+        the child's life can run on it without friction.
+      </p>
+      <p class="why">
+        Trying to install five habits at once installs none. The brain needs repetition of one
+        clear thing. Once it's automatic, start the next.
+      </p>
+
+      <div class="card">
+        <label for="h-name">Current habit (one at a time)</label>
+        <input type="text" id="h-name" placeholder="e.g. Coming the first time I call">
+        <div style="margin-top: 0.8em;">
+          <button id="h-save">Set habit</button>
+          <button class="secondary" id="h-new">Start a new habit (archive current)</button>
+        </div>
+      </div>
+
+      <div id="h-current"></div>
+
+      <h3>Archive</h3>
+      <div id="h-archive"></div>
+    </div>
+
+    <!-- DIARY -->
+    <div class="tab" id="tab-diary" style="display: none;">
+      <h2>Diary</h2>
+      <p>
+        A sentence or two, most days. What happened. What the child said. What you noticed.
+        No format required. No photo required — describe in words if you like.
+      </p>
+      <p class="why">
+        A year of one-sentence entries becomes, in retrospect, a book. Waiting for the
+        "important" moments gives you a blank year. Write the small things.
+      </p>
+
+      <div class="card">
+        <label for="d-body">Today</label>
+        <textarea id="d-body" placeholder="Small thing that happened today..."></textarea>
+        <div style="margin-top: 0.8em;">
+          <button id="d-save">Save entry</button>
+        </div>
+      </div>
+
+      <h3>Recent</h3>
+      <div id="d-list"></div>
+    </div>
+
+    <!-- OBSERVATIONS -->
+    <div class="tab" id="tab-obs" style="display: none;">
+      <h2>Observations</h2>
+      <p>
+        "Have I seen this?" — not "can the child pass a test?" Tick things off as you
+        notice them naturally. Don't set up a test. Don't worry about missing ones.
+      </p>
+      <p class="why">
+        This is not a milestone checklist. It is a way of training your own attention toward
+        what a 4-year-old is actually doing. Each item is what it looks like when a 4yo is
+        developing typically; all normal children hit these at different times.
+      </p>
+
+      <div id="obs-root"></div>
+
+      <div class="card">
+        <h3>If something is missing at five</h3>
+        <p>
+          A missed item at age 5 is a cue to introduce the underlying activity, not a cause for worry.
+          If a handful are missing and your gut says something is off, speak to a paediatrician
+          or relevant specialist (GP, SLP, OT). Most things that look delayed at four catch up.
+        </p>
+      </div>
+    </div>
+
+    <!-- EXPORT -->
+    <div class="tab" id="tab-export" style="display: none;">
+      <h2>Export</h2>
+      <p>Download everything as a JSON file. Keep it for records, or to move to another device.</p>
+      <div class="card">
+        <button id="ex-download">Download JSON of all data</button>
+        <div style="margin-top: 1em;">
+          <label for="im-file">Import JSON (overwrites current data)</label>
+          <input type="file" id="im-file" accept="application/json">
+        </div>
+        <div style="margin-top: 2em; border-top: 1px solid var(--rule); padding-top: 1em;">
+          <button class="secondary" id="ex-wipe">Wipe all local data</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="assets/app.js"></script>
+  <script>
+    const { store, save, uid, fmtDate, isoDay } = window.NB;
+
+    // Tab switching
+    const tabs = document.querySelectorAll('.tab-btn');
+    const panels = document.querySelectorAll('.tab');
+    tabs.forEach(b => b.addEventListener('click', () => {
+      tabs.forEach(x => x.classList.add('secondary'));
+      b.classList.remove('secondary');
+      panels.forEach(p => p.style.display = 'none');
+      document.getElementById('tab-' + b.dataset.tab).style.display = '';
+    }));
+
+    // ---------- NARRATION ----------
+    const NAR_KEY = 'nb.narration';
+    function renderNarrations() {
+      const list = store(NAR_KEY, []);
+      document.getElementById('n-list').innerHTML = list.length === 0
+        ? '<p><em>No narrations yet. Start one above.</em></p>'
+        : list.slice().reverse().map(n => `
+          <div class="log-entry">
+            <div class="meta">
+              <span>${fmtDate(n.date)} · ${n.book || 'untitled'}</span>
+              <button class="del" onclick="delNarr('${n.id}')">delete</button>
+            </div>
+            <div>${n.body.replace(/\n/g, '<br>')}</div>
+          </div>
+        `).join('');
+    }
+    window.delNarr = (id) => {
+      const list = store(NAR_KEY, []).filter(n => n.id !== id);
+      save(NAR_KEY, list);
+      renderNarrations();
+    };
+    document.getElementById('n-save').addEventListener('click', () => {
+      const book = document.getElementById('n-book').value.trim();
+      const body = document.getElementById('n-body').value.trim();
+      if (!body) return;
+      const list = store(NAR_KEY, []);
+      list.push({ id: uid(), date: new Date().toISOString(), book, body });
+      save(NAR_KEY, list);
+      document.getElementById('n-body').value = '';
+      document.getElementById('n-book').value = '';
+      renderNarrations();
+    });
+    renderNarrations();
+
+    // ---------- HABITS ----------
+    const HABIT_KEY = 'nb.habit';
+    const HABIT_ARCH_KEY = 'nb.habitArchive';
+
+    function renderHabit() {
+      const current = store(HABIT_KEY, null);
+      const root = document.getElementById('h-current');
+      if (!current) {
+        root.innerHTML = '<p><em>No habit set. Name one above and save.</em></p>';
+      } else {
+        const start = new Date(current.started);
+        const today = new Date();
+        today.setHours(0,0,0,0);
+        const days = Math.floor((today - start) / 86400000) + 1;
+        const n = Math.max(days, 28);
+        const ticks = current.ticks || {};
+        let grid = '';
+        for (let i = 0; i < n; i++) {
+          const d = new Date(start);
+          d.setDate(start.getDate() + i);
+          const key = isoDay(d);
+          const isFuture = d > today;
+          const done = ticks[key];
+          grid += `<div class="habit-day ${done ? 'done' : ''} ${isFuture ? 'future' : ''}"
+            onclick="${isFuture ? '' : `tickHabit('${key}')`}"
+            title="${fmtDate(d)}">${d.getDate()}</div>`;
+        }
+        root.innerHTML = `
+          <div class="card">
+            <h3>${current.name}</h3>
+            <p style="font-family: var(--sans); font-size: 0.85em; color: var(--ink-soft);">
+              Started ${fmtDate(current.started)} · ${Object.values(ticks).filter(Boolean).length} of ${days} days ticked
+            </p>
+            <div class="habit-grid">${grid}</div>
+            <p class="why">Tap a day to mark it done. Aim for 4–6 weeks before declaring the habit "laid."</p>
+          </div>
+        `;
+      }
+      const arch = store(HABIT_ARCH_KEY, []);
+      document.getElementById('h-archive').innerHTML = arch.length === 0
+        ? '<p><em>No archived habits yet.</em></p>'
+        : arch.slice().reverse().map(h => `
+          <div class="log-entry">
+            <div class="meta">
+              <span>${h.name}</span>
+              <span>${fmtDate(h.started)} – ${fmtDate(h.ended)}</span>
+            </div>
+            <div>${Object.values(h.ticks || {}).filter(Boolean).length} days ticked</div>
+          </div>
+        `).join('');
+    }
+
+    window.tickHabit = (dayKey) => {
+      const current = store(HABIT_KEY, null);
+      if (!current) return;
+      current.ticks = current.ticks || {};
+      current.ticks[dayKey] = !current.ticks[dayKey];
+      save(HABIT_KEY, current);
+      renderHabit();
+    };
+
+    document.getElementById('h-save').addEventListener('click', () => {
+      const name = document.getElementById('h-name').value.trim();
+      if (!name) return;
+      const current = store(HABIT_KEY, null);
+      const habit = current && current.name === name
+        ? current
+        : { name, started: new Date().toISOString(), ticks: {} };
+      save(HABIT_KEY, habit);
+      document.getElementById('h-name').value = '';
+      renderHabit();
+    });
+
+    document.getElementById('h-new').addEventListener('click', () => {
+      const current = store(HABIT_KEY, null);
+      if (!current) return;
+      if (!confirm('Archive "' + current.name + '" and start a new habit?')) return;
+      const arch = store(HABIT_ARCH_KEY, []);
+      arch.push({ ...current, ended: new Date().toISOString() });
+      save(HABIT_ARCH_KEY, arch);
+      save(HABIT_KEY, null);
+      renderHabit();
+    });
+    renderHabit();
+
+    // ---------- DIARY ----------
+    const DIARY_KEY = 'nb.diary';
+    function renderDiary() {
+      const list = store(DIARY_KEY, []);
+      document.getElementById('d-list').innerHTML = list.length === 0
+        ? '<p><em>No entries yet.</em></p>'
+        : list.slice().reverse().map(d => `
+          <div class="log-entry">
+            <div class="meta">
+              <span>${fmtDate(d.date)}</span>
+              <button class="del" onclick="delDiary('${d.id}')">delete</button>
+            </div>
+            <div>${d.body.replace(/\n/g, '<br>')}</div>
+          </div>
+        `).join('');
+    }
+    window.delDiary = (id) => {
+      save(DIARY_KEY, store(DIARY_KEY, []).filter(x => x.id !== id));
+      renderDiary();
+    };
+    document.getElementById('d-save').addEventListener('click', () => {
+      const body = document.getElementById('d-body').value.trim();
+      if (!body) return;
+      const list = store(DIARY_KEY, []);
+      list.push({ id: uid(), date: new Date().toISOString(), body });
+      save(DIARY_KEY, list);
+      document.getElementById('d-body').value = '';
+      renderDiary();
+    });
+    renderDiary();
+
+    // ---------- OBSERVATIONS ----------
+    const OBS_KEY = 'nb.observations';
+    const OBS_ITEMS = [
+      // Gross motor
+      { cat: 'Gross motor', text: 'Hops on one foot 2–3 times' },
+      { cat: 'Gross motor', text: 'Walks up stairs alternating feet' },
+      { cat: 'Gross motor', text: 'Catches a large ball most of the time' },
+      { cat: 'Gross motor', text: 'Climbs confidently (tree, frame, stairs)' },
+      { cat: 'Gross motor', text: 'Pedals a tricycle or balance bike' },
+
+      // Fine motor
+      { cat: 'Fine motor', text: 'Holds a crayon with a tripod-ish grip' },
+      { cat: 'Fine motor', text: 'Draws a person with 3+ parts' },
+      { cat: 'Fine motor', text: 'Cuts along a line with child scissors' },
+      { cat: 'Fine motor', text: 'Strings beads / threads laces' },
+      { cat: 'Fine motor', text: 'Pours from a small pitcher with few spills' },
+      { cat: 'Fine motor', text: 'Spreads butter or soft food on bread' },
+
+      // Language
+      { cat: 'Language', text: 'Uses sentences of 4–6 words' },
+      { cat: 'Language', text: 'Intelligible to strangers nearly all the time' },
+      { cat: 'Language', text: 'Tells a simple story with a beginning and end' },
+      { cat: 'Language', text: 'Asks "why" and "how" questions' },
+      { cat: 'Language', text: 'Understands prepositions (under, behind, between)' },
+
+      // Phonological awareness
+      { cat: 'Phonological', text: 'Plays with rhyme (cat / bat / hat)' },
+      { cat: 'Phonological', text: 'Can clap out syllables of a word' },
+      { cat: 'Phonological', text: 'Identifies the first sound of a word' },
+      { cat: 'Phonological', text: 'Knows most letter sounds (not required at 4)' },
+
+      // Numeracy
+      { cat: 'Numeracy', text: 'Counts with one-to-one correspondence to 10' },
+      { cat: 'Numeracy', text: 'Subitises up to 4 without counting' },
+      { cat: 'Numeracy', text: 'Compares more / less / same' },
+      { cat: 'Numeracy', text: 'Sorts objects by one attribute' },
+      { cat: 'Numeracy', text: 'Recognises simple patterns (AB, ABB)' },
+
+      // Social / emotional
+      { cat: 'Social', text: 'Plays cooperatively with other children' },
+      { cat: 'Social', text: 'Takes turns with reminders' },
+      { cat: 'Social', text: 'Names own feelings (happy, sad, angry)' },
+      { cat: 'Social', text: 'Has imaginary play / roleplay' },
+      { cat: 'Social', text: 'Shows empathy when someone is hurt' },
+
+      // Practical life
+      { cat: 'Practical life', text: 'Dresses with minimal help' },
+      { cat: 'Practical life', text: 'Sets a place at the table' },
+      { cat: 'Practical life', text: 'Helps prepare simple food' },
+      { cat: 'Practical life', text: 'Wipes a spill without panic' },
+      { cat: 'Practical life', text: 'Uses real tools with care (knife, broom)' },
+
+      // Concentration
+      { cat: 'Concentration', text: 'Sustains chosen activity 15+ minutes' },
+      { cat: 'Concentration', text: 'Returns to a difficult task after a break' },
+      { cat: 'Concentration', text: 'Listens to a short read-aloud and retells' }
+    ];
+
+    function renderObs() {
+      const data = store(OBS_KEY, {});
+      const cats = [...new Set(OBS_ITEMS.map(i => i.cat))];
+      document.getElementById('obs-root').innerHTML = cats.map(cat => `
+        <div class="card">
+          <h3>${cat}</h3>
+          ${OBS_ITEMS.filter(i => i.cat === cat).map(i => {
+            const key = cat + '|' + i.text;
+            const seen = data[key];
+            return `
+              <div class="obs-item">
+                <label>
+                  <input type="checkbox" ${seen ? 'checked' : ''}
+                    onchange="toggleObs('${key.replace(/'/g, "\\'")}')">
+                  ${i.text}
+                </label>
+                <span class="date">${seen ? 'Seen ' + fmtDate(seen) : ''}</span>
+              </div>
+            `;
+          }).join('')}
+        </div>
+      `).join('');
+    }
+
+    window.toggleObs = (key) => {
+      const data = store(OBS_KEY, {});
+      data[key] = data[key] ? null : new Date().toISOString();
+      save(OBS_KEY, data);
+      renderObs();
+    };
+    renderObs();
+
+    // ---------- EXPORT / IMPORT ----------
+    document.getElementById('ex-download').addEventListener('click', () => {
+      const data = {};
+      for (let i = 0; i < localStorage.length; i++) {
+        const k = localStorage.key(i);
+        if (k && k.startsWith('nb.')) data[k] = localStorage.getItem(k);
+      }
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `new-beginnings-${isoDay()}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+    });
+
+    document.getElementById('im-file').addEventListener('change', (e) => {
+      const f = e.target.files[0];
+      if (!f) return;
+      if (!confirm('Import will overwrite current data. Continue?')) return;
+      const r = new FileReader();
+      r.onload = (ev) => {
+        try {
+          const data = JSON.parse(ev.target.result);
+          Object.keys(data).forEach(k => localStorage.setItem(k, data[k]));
+          alert('Imported. Reloading.');
+          location.reload();
+        } catch (err) { alert('Invalid file.'); }
+      };
+      r.readAsText(f);
+    });
+
+    document.getElementById('ex-wipe').addEventListener('click', () => {
+      if (!confirm('Wipe ALL local data? This cannot be undone.')) return;
+      if (!confirm('Really? All narrations, diary, habits, observations will be deleted.')) return;
+      const keys = [];
+      for (let i = 0; i < localStorage.length; i++) {
+        const k = localStorage.key(i);
+        if (k && k.startsWith('nb.')) keys.push(k);
+      }
+      keys.forEach(k => localStorage.removeItem(k));
+      location.reload();
+    });
+  </script>
+</body>
+</html>

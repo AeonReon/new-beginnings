@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#5b4636">
+  <title>New Beginnings — Feast</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <main>
+    <h1>The Feast</h1>
+    <p class="lede">
+      A 52-week rotation. Each week one poem, one hymn, one composer piece, one
+      painting, one story, one nature prompt, one practical-life activity. You
+      are not expected to do all of it. Open the app, pick what fits today.
+    </p>
+
+    <div class="card">
+      <h3>Start date</h3>
+      <p>The app calculates the current week from the day you first opened the Feast.
+         Change the start date below if you'd like to reset or align it with a real calendar.</p>
+      <label for="start-date">First day of Week 1</label>
+      <input type="date" id="start-date">
+      <div style="margin-top: 0.8em;">
+        <button id="reset-week">Reset to today's week</button>
+        <button class="secondary" id="clear-done">Clear completion marks</button>
+      </div>
+    </div>
+
+    <div class="feast-week-nav">
+      <button id="prev">← Previous week</button>
+      <div><strong id="week-label">Week 1</strong> · <span id="term-label"></span></div>
+      <button id="next">Next week →</button>
+    </div>
+
+    <div id="feast-root"></div>
+
+    <div class="card" style="margin-top: 2em;">
+      <h3>On "completing" a feast</h3>
+      <p>
+        The completion checkboxes are for you, not a scorecard. A week where you only
+        read the poem and went outside is a good week. A week where you checked everything
+        off but felt hurried is not.
+      </p>
+      <p class="why">
+        Checking things serves attention (you notice what you did and did not do) but
+        harms presence if it becomes the point. The rule of thumb: if you're checking to
+        feel better, stop. If you're checking to remember, continue.
+      </p>
+    </div>
+  </main>
+
+  <script src="assets/feast-data.js"></script>
+  <script src="assets/app.js"></script>
+  <script>
+    const START_KEY = 'nb.feastStart';
+    const DONE_KEY = 'nb.feastDone';
+    const { store, save, fmtDate } = window.NB;
+
+    function ensureStart() {
+      let s = store(START_KEY, null);
+      if (!s) {
+        const t = new Date();
+        t.setHours(0,0,0,0);
+        s = t.toISOString();
+        save(START_KEY, s);
+      }
+      return new Date(s);
+    }
+
+    function weekFromStart(startDate) {
+      const now = new Date();
+      now.setHours(0,0,0,0);
+      const diffDays = Math.floor((now - startDate) / (1000 * 60 * 60 * 24));
+      const w = (diffDays >= 0 ? Math.floor(diffDays / 7) : 0) + 1;
+      return ((w - 1) % 52) + 1;
+    }
+
+    let currentWeek = weekFromStart(ensureStart());
+    const dateInput = document.getElementById('start-date');
+    dateInput.value = ensureStart().toISOString().slice(0,10);
+    dateInput.addEventListener('change', e => {
+      const d = new Date(e.target.value);
+      d.setHours(0,0,0,0);
+      save(START_KEY, d.toISOString());
+      currentWeek = weekFromStart(d);
+      render();
+    });
+
+    document.getElementById('reset-week').addEventListener('click', () => {
+      const t = new Date();
+      t.setHours(0,0,0,0);
+      save(START_KEY, t.toISOString());
+      dateInput.value = t.toISOString().slice(0,10);
+      currentWeek = 1;
+      render();
+    });
+
+    document.getElementById('clear-done').addEventListener('click', () => {
+      if (confirm('Clear all completion marks across the year?')) {
+        save(DONE_KEY, {});
+        render();
+      }
+    });
+
+    document.getElementById('prev').addEventListener('click', () => {
+      currentWeek = currentWeek > 1 ? currentWeek - 1 : 52;
+      render();
+    });
+    document.getElementById('next').addEventListener('click', () => {
+      currentWeek = currentWeek < 52 ? currentWeek + 1 : 1;
+      render();
+    });
+
+    function toggle(week, part) {
+      const d = store(DONE_KEY, {});
+      const k = `${week}.${part}`;
+      d[k] = !d[k];
+      save(DONE_KEY, d);
+    }
+
+    function isDone(week, part) {
+      const d = store(DONE_KEY, {});
+      return !!d[`${week}.${part}`];
+    }
+
+    function checkbox(week, part, label) {
+      const id = `chk-${week}-${part}`;
+      const done = isDone(week, part);
+      return `
+        <label for="${id}" style="font-family: var(--sans); font-size: 0.8em; text-transform: uppercase; letter-spacing: 0.06em; color: ${done ? 'var(--ok)' : 'var(--accent)'}; margin-top: 0.3em; display: inline-flex; align-items: center; gap: 0.4em; cursor: pointer;">
+          <input type="checkbox" id="${id}" ${done ? 'checked' : ''} onchange="toggle(${week}, '${part}'); this.parentElement.style.color = this.checked ? 'var(--ok)' : 'var(--accent)';">
+          ${done ? 'Done' : label}
+        </label>
+      `;
+    }
+
+    window.toggle = toggle;
+
+    function section(title, kind, bodyHtml, week, part) {
+      return `
+        <div class="feast-section">
+          <h3>${title} <span class="kind">${kind}</span></h3>
+          ${bodyHtml}
+          ${checkbox(week, part, 'Mark done')}
+        </div>
+      `;
+    }
+
+    function searchLinks(query) {
+      const q = encodeURIComponent(query);
+      return `
+        <div class="links">
+          <a href="https://www.google.com/search?q=${q}" target="_blank" rel="noopener">Google</a>
+          <a href="https://www.youtube.com/results?search_query=${q}" target="_blank" rel="noopener">YouTube</a>
+          <a href="https://www.gutenberg.org/ebooks/search/?query=${q}" target="_blank" rel="noopener">Gutenberg</a>
+          <a href="https://librivox.org/search?q=${q}&search_form=advanced" target="_blank" rel="noopener">LibriVox</a>
+        </div>
+      `;
+    }
+
+    function render() {
+      const w = currentWeek;
+      const f = FEAST[w - 1];
+      if (!f) return;
+
+      const term = TERM_OF_WEEK(w);
+      const composer = COMPOSER_OF_WEEK(w);
+      const artist = ARTIST_OF_WEEK(w);
+      const month = MONTH_OF_WEEK(w);
+      const hymn = HYMNS[month];
+      const virtue = VIRTUES[month];
+
+      document.getElementById('week-label').textContent = `Week ${w} of 52`;
+      document.getElementById('term-label').textContent =
+        term.charAt(0).toUpperCase() + term.slice(1) + ' term';
+
+      const root = document.getElementById('feast-root');
+
+      const poemBody = f.poem.body
+        ? `<div class="poem-body">${f.poem.body}</div>`
+        : `<p><em>Text omitted (copyright or length). Find it in the sources below.</em></p>`;
+
+      root.innerHTML = `
+        <div class="card" style="margin-bottom: 1em; background: var(--paper);">
+          <h3 style="margin: 0;">This month's virtue: ${virtue.name}</h3>
+          <p class="why" style="margin-top: 0.5em;">${virtue.why}</p>
+        </div>
+
+        ${section(
+          f.poem.title,
+          `Poem · ${f.poem.author}`,
+          `${poemBody}
+           <p class="why">${f.poem.why}</p>
+           ${searchLinks(f.poem.title + ' ' + f.poem.author)}`,
+          w, 'poem'
+        )}
+
+        ${section(
+          hymn.title,
+          `Hymn · Month ${month}`,
+          `<p><em>${hymn.origin}</em></p>
+           <p class="why">${hymn.note}</p>
+           ${searchLinks(hymn.title + ' hymn')}`,
+          w, 'hymn'
+        )}
+
+        ${section(
+          f.composer_piece.title,
+          `Composer · ${composer.name}`,
+          `<p>${f.composer_piece.note}</p>
+           <p class="why">${composer.why}</p>
+           ${searchLinks(composer.name + ' ' + f.composer_piece.title)}`,
+          w, 'composer'
+        )}
+
+        ${section(
+          f.artist_work.title,
+          `Artist · ${artist.name}`,
+          `<p>${f.artist_work.note}</p>
+           <p class="why">${artist.why}</p>
+           ${searchLinks(artist.name + ' ' + f.artist_work.title)}`,
+          w, 'artist'
+        )}
+
+        ${section(
+          f.story.title,
+          `Story · ${f.story.kind} · ${f.story.source}`,
+          `<p>${f.story.summary}</p>
+           ${searchLinks(f.story.title + ' ' + f.story.source)}`,
+          w, 'story'
+        )}
+
+        ${section(
+          f.nature.prompt,
+          'Nature study',
+          `<p class="why">${f.nature.why}</p>`,
+          w, 'nature'
+        )}
+
+        ${section(
+          f.practical_life.title,
+          'Practical life',
+          `<p class="why">${f.practical_life.why}</p>`,
+          w, 'practical'
+        )}
+      `;
+    }
+
+    render();
+  </script>
+</body>
+</html>

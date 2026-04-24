@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#5b4636">
+  <title>New Beginnings — Resources</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <main>
+    <h1>Resources</h1>
+    <p class="lede">
+      Curricula, books, apps, communities, public-domain treasure. Seventy-plus
+      resources, vetted against the research. Filter by what matters to you.
+    </p>
+
+    <div class="filters">
+      <div>
+        <label for="f-search">Search</label>
+        <input type="search" id="f-search" placeholder="e.g. nature, math, free, Ambleside">
+      </div>
+      <div>
+        <label for="f-method">Method</label>
+        <select id="f-method"></select>
+      </div>
+      <div>
+        <label for="f-price">Price</label>
+        <select id="f-price">
+          <option value="">All prices</option>
+          <option value="free">Free</option>
+          <option value="paid">Paid</option>
+        </select>
+      </div>
+      <div>
+        <label for="f-effort">Effort</label>
+        <select id="f-effort">
+          <option value="">All effort levels</option>
+          <option value="very low">Very low</option>
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+      </div>
+    </div>
+
+    <p id="count" style="font-family: var(--sans); font-size: 0.85em; color: var(--ink-soft);"></p>
+
+    <div id="list"></div>
+
+    <div class="card" style="margin-top: 2em;">
+      <h3>Reading the flags</h3>
+      <p>
+        <span class="badge free">FREE</span> — no cost, public domain or volunteer-maintained.<br>
+        <span class="badge paid">PAID</span> — subscription or one-off purchase.<br>
+        <span class="badge later">LATER</span> — designed for older than 4; keep in mind for the coming years.<br>
+        <span class="badge avoid">CAVEAT</span> — quality varies, or the approach doesn't fit every family. Read the note.
+      </p>
+      <p class="why">
+        Flags are editorial. They reflect the research dossier's assessment for a 4-year-old
+        with the philosophy this app defends. If the flag and your judgement disagree, trust
+        your judgement — you know your child.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Two honest picks, if you want just one of each</h3>
+      <p>
+        <strong>One free thing to start with:</strong> Ambleside Online Year 0 (booklist + philosophy, no fee).
+        Pair it with the free <em>Handbook of Nature Study</em> (Comstock, on Gutenberg) and the free
+        Pre-K Language Arts PDF from The Good and the Beautiful. That's a year.
+      </p>
+      <p>
+        <strong>One paid thing if you want open-and-go:</strong> The Peaceful Press <em>Preschool Playbook</em>
+        (~$45). Jennifer Pepito has written the gentlest, most literate, most character-led preschool
+        curriculum on the market. Everything is optional; you can do the whole day in 45–60 minutes.
+      </p>
+      <p class="why">
+        You do not need a curriculum at four. But if you want scaffolding — a list of what to read,
+        what to do, what to notice — these two are the best starting points. Anything more is probably
+        too much for this year.
+      </p>
+    </div>
+  </main>
+
+  <script src="assets/resources-data.js"></script>
+  <script src="assets/app.js"></script>
+  <script>
+    const fSearch = document.getElementById('f-search');
+    const fMethod = document.getElementById('f-method');
+    const fPrice = document.getElementById('f-price');
+    const fEffort = document.getElementById('f-effort');
+    const list = document.getElementById('list');
+    const count = document.getElementById('count');
+
+    const methods = [...new Set(RESOURCES.map(r => r.method))].sort();
+    fMethod.innerHTML = '<option value="">All methods</option>' +
+      methods.map(m => `<option value="${m}">${m}</option>`).join('');
+
+    function flagBadge(r) {
+      if (r.price === 'free') return '<span class="badge free">FREE</span>';
+      if (r.flag === 'later' || r.flag === 'younger') return '<span class="badge later">FOR LATER</span>';
+      if (r.flag === 'caveat') return '<span class="badge avoid">CAVEAT</span>';
+      if (r.flag === 'recommended') return '<span class="badge free">RECOMMENDED</span>';
+      return '<span class="badge paid">PAID</span>';
+    }
+
+    function render() {
+      const q = fSearch.value.toLowerCase().trim();
+      const m = fMethod.value;
+      const p = fPrice.value;
+      const e = fEffort.value;
+      const filtered = RESOURCES.filter(r => {
+        if (m && r.method !== m) return false;
+        if (p === 'free' && r.price !== 'free') return false;
+        if (p === 'paid' && r.price === 'free') return false;
+        if (e && !r.effort.toLowerCase().includes(e)) return false;
+        if (q) {
+          const hay = [r.name, r.method, r.note, r.format, r.age].join(' ').toLowerCase();
+          if (!hay.includes(q)) return false;
+        }
+        return true;
+      });
+      count.textContent = `${filtered.length} of ${RESOURCES.length} resources`;
+      list.innerHTML = filtered.map(r => `
+        <div class="card">
+          <h3>
+            ${flagBadge(r)}
+            <a href="${r.url}" target="_blank" rel="noopener">${r.name}</a>
+          </h3>
+          <p style="font-family: var(--sans); font-size: 0.82em; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.5em;">
+            ${r.method} · Age ${r.age} · ${r.price} · ${r.format} · ${r.effort} effort
+          </p>
+          <p style="margin-bottom: 0;">${r.note}</p>
+        </div>
+      `).join('') || '<p><em>No resources match those filters.</em></p>';
+    }
+
+    [fSearch, fMethod, fPrice, fEffort].forEach(el => el.addEventListener('input', render));
+    render();
+  </script>
+</body>
+</html>

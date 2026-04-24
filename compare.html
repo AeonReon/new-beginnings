@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#5b4636">
+  <title>New Beginnings — Compare</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <main>
+    <h1>What others do at four</h1>
+    <p class="lede">
+      Six traditions that thoughtful parents follow. Each is summarised as its
+      practitioners would recognise it. Strengths and limits are listed. At the end:
+      what this app borrows from each, and why.
+    </p>
+
+    <div id="compare-root" class="compare-grid"></div>
+
+    <h2>What this app borrows</h2>
+
+    <div class="card">
+      <h3>From Charlotte Mason (most)</h3>
+      <p>Living books, narration, picture and composer study, nature journals, habit training, short lessons, and the reading list.</p>
+      <p class="why">Mason was already a classical humanist. Her method honours the developmental reality of a 4yo while feeding them the real tradition of the West from the start.</p>
+    </div>
+
+    <div class="card">
+      <h3>From Waldorf (rhythm + aesthetic, not metaphysics)</h3>
+      <p>Predictable daily shape, weekly anchors (baking day, painting day), seasonal nature table, festival life, natural materials, stories told and re-told.</p>
+      <p class="why">A 4yo's nervous system settles under predictable rhythm. Natural materials give richer sensory feedback. The underlying anthroposophy is optional; the practices stand on their own.</p>
+    </div>
+
+    <div class="card">
+      <h3>From Wild + Free (outdoors, slowness)</h3>
+      <p>Hours outside every day, in all weathers. Unhurried mornings. Childhood as protected.</p>
+      <p class="why">The research on outdoor time for attention, mood, sleep, and immunity is strong. Slowness is not a luxury; it is a condition of depth.</p>
+    </div>
+
+    <div class="card">
+      <h3>From Montessori (practical life + early math)</h3>
+      <p>Real work with real tools; child-sized brooms, pitchers, knives. Sandpaper letters and numerals. Number rods, golden beads.</p>
+      <p class="why">Practical life builds competence and concentration. The math materials make abstract ideas touchable, which is exactly what a 4yo needs.</p>
+    </div>
+
+    <div class="card">
+      <h3>From the classical tradition (frame)</h3>
+      <p>Paideia as the goal — the formation of a whole person, oriented toward truth, goodness, beauty. Memory as filling the well. Virtue as habit. Stories as training of moral imagination.</p>
+      <p class="why">Twenty-five centuries of careful thinking about how humans are formed. Much of it is still right. None of it is beyond questioning.</p>
+    </div>
+
+    <div class="card">
+      <h3>What the app does not take</h3>
+      <ul>
+        <li>Montessori's prohibition on fantasy play — fairy tales do real work on moral imagination.</li>
+        <li>Waldorf's insistence on delayed reading when a child is ready earlier.</li>
+        <li>Sayers-style "grammar stage" fact-memorisation — a 4yo is not ready and may learn to hate it.</li>
+        <li>Classical Conversations' co-op academic pressure at four.</li>
+        <li>Any claim that a single method has it all right.</li>
+      </ul>
+    </div>
+  </main>
+
+  <script src="assets/methodologies-data.js"></script>
+  <script src="assets/app.js"></script>
+  <script>
+    const root = document.getElementById('compare-root');
+    root.innerHTML = METHODOLOGIES.map(m => `
+      <div class="card">
+        <h3>${m.name}</h3>
+        <p><em>${m.tagline}</em></p>
+
+        <h4>Daily shape</h4>
+        <ul>${m.daily.map(d => `<li>${d}</li>`).join('')}</ul>
+
+        <h4>What they don't do</h4>
+        <ul>${m.dont.map(d => `<li>${d}</li>`).join('')}</ul>
+
+        <h4>Strengths</h4>
+        <ul>${m.strengths.map(s => `<li>${s}</li>`).join('')}</ul>
+
+        <h4>Limits</h4>
+        <ul>${m.limits.map(l => `<li>${l}</li>`).join('')}</ul>
+
+        <p class="why">${m.why}</p>
+      </div>
+    `).join('');
+  </script>
+</body>
+</html>

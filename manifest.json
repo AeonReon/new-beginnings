@@ -1,0 +1,19 @@
+{
+  "name": "New Beginnings",
+  "short_name": "New Beginnings",
+  "description": "A first-principles guide for home-educating a four-year-old",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f6f2ea",
+  "theme_color": "#5b4636",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

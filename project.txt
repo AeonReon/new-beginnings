@@ -1,0 +1,14 @@
+Project: New Beginnings
+Type: Parent-facing home-education guide PWA
+Target: Parents of a 4-year-old
+Stack: Plain HTML/CSS/JS PWA, localStorage, no build step
+Account: AeonReon (GitHub), aeonreon team (Vercel)
+Created: 2026-04-23
+
+API keys: none required (no third-party services in v1)
+Contact: n/a (internal family use)
+
+Notes:
+- First-principles filter governs all content — always give the real reason
+- No child-facing UI
+- See CONCEPT.md for design, research/ for sources, CLAUDE.md for rules

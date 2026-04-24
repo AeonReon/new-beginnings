@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#5b4636">
+  <title>New Beginnings — Rhythm</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <main>
+    <h1>Daily rhythm</h1>
+    <p class="lede">
+      Six real rhythms from real homeschooling families. They share more than
+      they differ. The anchors are the same — morning ritual, outdoor block,
+      read-aloud, rest, free play, family meal, bedtime. What varies is the
+      style inside each anchor.
+    </p>
+
+    <div class="card">
+      <h3>What a rhythm is (and isn't)</h3>
+      <p>
+        A <strong>rhythm</strong> is a repeating shape — not a schedule. The blocks
+        return in roughly the same order each day, but the clock is approximate.
+        A 4-year-old who has never seen a schedule can still feel the difference
+        between morning basket and outdoor time.
+      </p>
+      <p class="why">
+        A predictable shape reduces the number of decisions a small child has to
+        make and calms their nervous system. It also reduces the number of decisions
+        the parent has to make, which matters more than most parents realise.
+      </p>
+    </div>
+
+    <label for="rhythm-pick">Pick a rhythm to study</label>
+    <select id="rhythm-pick"></select>
+
+    <div id="rhythm-root"></div>
+
+    <h2>How to adapt</h2>
+    <div class="card">
+      <p>Don't copy any rhythm verbatim. Instead:</p>
+      <ol>
+        <li><strong>Keep the anchors.</strong> Morning ritual, outdoor block, read-aloud, rest, free play, family meal, bedtime. If all seven are in the day, the day is doing its job.</li>
+        <li><strong>Adjust the timing.</strong> If the child wakes late, everything slides. Don't fight it.</li>
+        <li><strong>Protect one anchor first.</strong> Pick the one you care most about (usually outdoor time or morning basket) and make it non-negotiable. Let the others flex.</li>
+        <li><strong>Repeat for six weeks before judging.</strong> A rhythm that feels wrong after a week often feels right after a month. Give it time.</li>
+      </ol>
+    </div>
+
+    <h2>What the blocks are for</h2>
+    <div class="card">
+      <h3>Morning basket (or circle time)</h3>
+      <p>One short ritual at the start of the day: a poem, a hymn, a picture book, a story. 15–20 minutes.</p>
+      <p class="why">A predictable opening tells the child the day has begun with purpose. It also puts beauty into the day before the day is tired.</p>
+    </div>
+    <div class="card">
+      <h3>Outdoor block</h3>
+      <p>Two to four hours outside, most days, in most weathers. Not a "nature walk" — just outside.</p>
+      <p class="why">A 4yo's body and mind are still integrating through motion and sensory variety. Indoor-only days run them into the ground.</p>
+    </div>
+    <div class="card">
+      <h3>Read-aloud</h3>
+      <p>A chapter or picture book, read by the parent, often at meals or before rest.</p>
+      <p class="why">Listening comprehension outpaces reading comprehension in young children. A 4yo can take in a chapter of Wind in the Willows they could never yet read.</p>
+    </div>
+    <div class="card">
+      <h3>Rest / quiet time</h3>
+      <p>A nap, an audiobook in a dim room, or independent quiet play for an hour.</p>
+      <p class="why">A 4yo still needs a low-stimulation block midday. Even if the child doesn't nap, a rest keeps the afternoon from collapsing into tears.</p>
+    </div>
+    <div class="card">
+      <h3>Free play</h3>
+      <p>Open-ended time with no adult agenda. Blocks, dolls, mud, dress-up, a cardboard box.</p>
+      <p class="why">This is where imagination, executive function, and self-regulation actually get built. Do not fill it.</p>
+    </div>
+    <div class="card">
+      <h3>Family meal</h3>
+      <p>At least one meal a day where everyone sits down together.</p>
+      <p class="why">Language, manners, belonging — all happen here. A 4yo hearing adult conversation is learning more than any programme can teach.</p>
+    </div>
+    <div class="card">
+      <h3>Bedtime ritual</h3>
+      <p>Bath, story, verse or prayer, lights out. Same order every night.</p>
+      <p class="why">The end of the day is as important as the beginning. A ritualised close makes sleep easier and the day feel complete.</p>
+    </div>
+  </main>
+
+  <script src="assets/rhythms-data.js"></script>
+  <script src="assets/app.js"></script>
+  <script>
+    const sel = document.getElementById('rhythm-pick');
+    const root = document.getElementById('rhythm-root');
+    sel.innerHTML = RHYTHMS.map((r, i) => `<option value="${i}">${r.name}</option>`).join('');
+    function render(i) {
+      const r = RHYTHMS[i];
+      root.innerHTML = `
+        <div class="card">
+          <h3>${r.name}</h3>
+          <p><em>${r.summary}</em></p>
+          <div class="rhythm-timeline">
+            ${r.blocks.map(b => `
+              <div class="block">
+                <div class="time">${b.time}</div>
+                <div><strong>${b.title}</strong></div>
+                <div>${b.body}</div>
+              </div>
+            `).join('')}
+          </div>
+          <p class="why">${r.why}</p>
+        </div>
+      `;
+    }
+    sel.addEventListener('change', e => render(+e.target.value));
+    render(0);
+  </script>
+</body>
+</html>
