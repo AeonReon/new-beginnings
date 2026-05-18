@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#5b4636">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#2563eb">
   <title>New Beginnings — Feast</title>
   <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/svg+xml" href="icon.svg">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -31,9 +32,17 @@
     </div>
 
     <div class="feast-week-nav">
-      <button id="prev">← Previous week</button>
-      <div><strong id="week-label">Week 1</strong> · <span id="term-label"></span></div>
-      <button id="next">Next week →</button>
+      <button class="secondary" id="prev">← Prev</button>
+      <div class="week-label">
+        <span class="week-pill" id="week-label">Week 1 of 52</span>
+        <span class="term-pill" id="term-label"></span>
+      </div>
+      <button class="secondary" id="next">Next →</button>
+    </div>
+
+    <div class="feast-jump">
+      <label for="week-jump">Jump to week</label>
+      <select id="week-jump"></select>
     </div>
 
     <div id="feast-root"></div>
@@ -115,6 +124,16 @@
       render();
     });
 
+    const weekJump = document.getElementById('week-jump');
+    weekJump.innerHTML = Array.from({ length: 52 }, (_, i) => {
+      const w = i + 1;
+      return `<option value="${w}">Week ${w}</option>`;
+    }).join('');
+    weekJump.addEventListener('change', e => {
+      currentWeek = parseInt(e.target.value, 10);
+      render();
+    });
+
     function toggle(week, part) {
       const d = store(DONE_KEY, {});
       const k = `${week}.${part}`;
@@ -131,8 +150,8 @@
       const id = `chk-${week}-${part}`;
       const done = isDone(week, part);
       return `
-        <label for="${id}" style="font-family: var(--sans); font-size: 0.8em; text-transform: uppercase; letter-spacing: 0.06em; color: ${done ? 'var(--ok)' : 'var(--accent)'}; margin-top: 0.3em; display: inline-flex; align-items: center; gap: 0.4em; cursor: pointer;">
-          <input type="checkbox" id="${id}" ${done ? 'checked' : ''} onchange="toggle(${week}, '${part}'); this.parentElement.style.color = this.checked ? 'var(--ok)' : 'var(--accent)';">
+        <label for="${id}" class="done-toggle" data-done="${done}" style="font-family: var(--sans); font-size: 0.78em; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; margin-top: 0.5em; display: inline-flex; align-items: center; gap: 0.5em; cursor: pointer; color: ${done ? 'var(--leaf)' : 'var(--sky-deep)'};">
+          <input type="checkbox" id="${id}" ${done ? 'checked' : ''} style="width: 1.15em; height: 1.15em; accent-color: var(--leaf); cursor: pointer;" onchange="toggle(${week}, '${part}'); this.parentElement.dataset.done = this.checked; this.parentElement.style.color = this.checked ? 'var(--leaf)' : 'var(--sky-deep)'; this.parentElement.lastChild.textContent = this.checked ? ' Done' : ' ${label}';">
           ${done ? 'Done' : label}
         </label>
       `;
@@ -177,6 +196,8 @@
       document.getElementById('week-label').textContent = `Week ${w} of 52`;
       document.getElementById('term-label').textContent =
         term.charAt(0).toUpperCase() + term.slice(1) + ' term';
+      const jump = document.getElementById('week-jump');
+      if (jump) jump.value = String(w);
 
       const root = document.getElementById('feast-root');
 
