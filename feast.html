@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#FAF6EC">
-  <title>New Beginnings — Feast</title>
+  <title>New Beginnings — This Week's Feast</title>
   <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/png" href="icon-192.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -12,161 +12,43 @@
 </head>
 <body>
   <main>
-    <h1>The Feast</h1>
-    <p class="lede">
-      A 52-week rotation. Each week one poem, one hymn, one composer piece, one
-      painting, one story, one nature prompt, one practical-life activity. You
-      are not expected to do all of it. Open the app, pick what fits today.
-    </p>
+    <header class="feast-hero">
+      <div class="feast-hero-eyebrow"><span id="week-pill">Week 1</span></div>
+      <h1>This Week's Feast</h1>
+      <p class="lede">Seven small things to choose from this week — a poem, a hymn, a piece of music, a painting, a story, a nature prompt, a small piece of practical life. Do one. Do all. Do none. Then hit Next when you want a new one.</p>
+    </header>
 
-    <div class="card">
-      <h3>Start date</h3>
-      <p>The app calculates the current week from the day you first opened the Feast.
-         Change the start date below if you'd like to reset or align it with a real calendar.</p>
-      <label for="start-date">First day of Week 1</label>
-      <input type="date" id="start-date">
-      <div style="margin-top: 0.8em;">
-        <button id="reset-week">Reset to today's week</button>
-        <button class="secondary" id="clear-done">Clear completion marks</button>
-      </div>
-    </div>
-
-    <div class="feast-week-nav">
-      <button class="secondary" id="prev">← Prev</button>
-      <div class="week-label">
-        <span class="week-pill" id="week-label">Week 1 of 52</span>
-        <span class="term-pill" id="term-label"></span>
-      </div>
-      <button class="secondary" id="next">Next →</button>
-    </div>
-
-    <div class="feast-jump">
-      <label for="week-jump">Jump to week</label>
-      <select id="week-jump"></select>
-    </div>
+    <button id="read-btn" class="read-btn" style="margin-bottom: 1em;">▶ Read aloud</button>
 
     <div id="feast-root"></div>
 
-    <div class="card" style="margin-top: 2em;">
-      <h3>On "completing" a feast</h3>
-      <p>
-        The completion checkboxes are for you, not a scorecard. A week where you only
-        read the poem and went outside is a good week. A week where you checked everything
-        off but felt hurried is not.
-      </p>
-      <p class="why">
-        Checking things serves attention (you notice what you did and did not do) but
-        harms presence if it becomes the point. The rule of thumb: if you're checking to
-        feel better, stop. If you're checking to remember, continue.
-      </p>
+    <div class="feast-nav">
+      <button class="secondary" id="prev">← Previous week</button>
+      <button id="next">Next week →</button>
     </div>
   </main>
 
   <script src="assets/feast-data.js"></script>
   <script src="assets/app.js"></script>
+  <script src="assets/reader.js"></script>
   <script>
-    const START_KEY = 'nb.feastStart';
-    const DONE_KEY = 'nb.feastDone';
-    const { store, save, fmtDate } = window.NB;
-
-    function ensureStart() {
-      let s = store(START_KEY, null);
-      if (!s) {
-        const t = new Date();
-        t.setHours(0,0,0,0);
-        s = t.toISOString();
-        save(START_KEY, s);
-      }
-      return new Date(s);
-    }
-
-    function weekFromStart(startDate) {
-      const now = new Date();
-      now.setHours(0,0,0,0);
-      const diffDays = Math.floor((now - startDate) / (1000 * 60 * 60 * 24));
-      const w = (diffDays >= 0 ? Math.floor(diffDays / 7) : 0) + 1;
-      return ((w - 1) % 52) + 1;
-    }
-
-    let currentWeek = weekFromStart(ensureStart());
-    const dateInput = document.getElementById('start-date');
-    dateInput.value = ensureStart().toISOString().slice(0,10);
-    dateInput.addEventListener('change', e => {
-      const d = new Date(e.target.value);
-      d.setHours(0,0,0,0);
-      save(START_KEY, d.toISOString());
-      currentWeek = weekFromStart(d);
-      render();
-    });
-
-    document.getElementById('reset-week').addEventListener('click', () => {
-      const t = new Date();
-      t.setHours(0,0,0,0);
-      save(START_KEY, t.toISOString());
-      dateInput.value = t.toISOString().slice(0,10);
-      currentWeek = 1;
-      render();
-    });
-
-    document.getElementById('clear-done').addEventListener('click', () => {
-      if (confirm('Clear all completion marks across the year?')) {
-        save(DONE_KEY, {});
-        render();
-      }
-    });
+    const KEY = 'nb.feastWeek';
+    let currentWeek = parseInt(localStorage.getItem(KEY) || '1', 10);
+    if (currentWeek < 1 || currentWeek > 52) currentWeek = 1;
 
     document.getElementById('prev').addEventListener('click', () => {
       currentWeek = currentWeek > 1 ? currentWeek - 1 : 52;
+      saveWeek();
       render();
     });
     document.getElementById('next').addEventListener('click', () => {
       currentWeek = currentWeek < 52 ? currentWeek + 1 : 1;
+      saveWeek();
       render();
     });
 
-    const weekJump = document.getElementById('week-jump');
-    weekJump.innerHTML = Array.from({ length: 52 }, (_, i) => {
-      const w = i + 1;
-      return `<option value="${w}">Week ${w}</option>`;
-    }).join('');
-    weekJump.addEventListener('change', e => {
-      currentWeek = parseInt(e.target.value, 10);
-      render();
-    });
-
-    function toggle(week, part) {
-      const d = store(DONE_KEY, {});
-      const k = `${week}.${part}`;
-      d[k] = !d[k];
-      save(DONE_KEY, d);
-    }
-
-    function isDone(week, part) {
-      const d = store(DONE_KEY, {});
-      return !!d[`${week}.${part}`];
-    }
-
-    function checkbox(week, part, label) {
-      const id = `chk-${week}-${part}`;
-      const done = isDone(week, part);
-      return `
-        <label for="${id}" class="done-toggle" data-done="${done}" style="font-family: var(--sans); font-size: 0.78em; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; margin-top: 0.5em; display: inline-flex; align-items: center; gap: 0.5em; cursor: pointer; color: ${done ? 'var(--leaf)' : 'var(--sky-deep)'};">
-          <input type="checkbox" id="${id}" ${done ? 'checked' : ''} style="width: 1.15em; height: 1.15em; accent-color: var(--leaf); cursor: pointer;" onchange="toggle(${week}, '${part}'); this.parentElement.dataset.done = this.checked; this.parentElement.style.color = this.checked ? 'var(--leaf)' : 'var(--sky-deep)'; this.parentElement.lastChild.textContent = this.checked ? ' Done' : ' ${label}';">
-          ${done ? 'Done' : label}
-        </label>
-      `;
-    }
-
-    window.toggle = toggle;
-
-    function section(title, kind, bodyHtml, week, part) {
-      return `
-        <div class="feast-section">
-          <h3>${title} <span class="kind">${kind}</span></h3>
-          ${bodyHtml}
-          ${checkbox(week, part, 'Mark done')}
-        </div>
-      `;
+    function saveWeek() {
+      try { localStorage.setItem(KEY, String(currentWeek)); } catch {}
     }
 
     function searchLinks(query) {
@@ -177,6 +59,15 @@
           <a href="https://www.youtube.com/results?search_query=${q}" target="_blank" rel="noopener">YouTube</a>
           <a href="https://www.gutenberg.org/ebooks/search/?query=${q}" target="_blank" rel="noopener">Gutenberg</a>
           <a href="https://librivox.org/search?q=${q}&search_form=advanced" target="_blank" rel="noopener">LibriVox</a>
+        </div>
+      `;
+    }
+
+    function section(title, kind, bodyHtml) {
+      return `
+        <div class="feast-section">
+          <h3>${title} <span class="kind">${kind}</span></h3>
+          ${bodyHtml}
         </div>
       `;
     }
@@ -193,11 +84,8 @@
       const hymn = HYMNS[month];
       const virtue = VIRTUES[month];
 
-      document.getElementById('week-label').textContent = `Week ${w} of 52`;
-      document.getElementById('term-label').textContent =
-        term.charAt(0).toUpperCase() + term.slice(1) + ' term';
-      const jump = document.getElementById('week-jump');
-      if (jump) jump.value = String(w);
+      document.getElementById('week-pill').textContent =
+        `Week ${w} · ${term.charAt(0).toUpperCase() + term.slice(1)} term`;
 
       const root = document.getElementById('feast-root');
 
@@ -206,9 +94,10 @@
         : `<p><em>Text omitted (copyright or length). Find it in the sources below.</em></p>`;
 
       root.innerHTML = `
-        <div class="card" style="margin-bottom: 1em; background: var(--paper);">
-          <h3 style="margin: 0;">This month's virtue: ${virtue.name}</h3>
-          <p class="why" style="margin-top: 0.5em;">${virtue.why}</p>
+        <div class="virtue-card">
+          <div class="virtue-eyebrow">This month's virtue</div>
+          <div class="virtue-name">${virtue.name}</div>
+          <p>${virtue.why}</p>
         </div>
 
         ${section(
@@ -216,17 +105,15 @@
           `Poem · ${f.poem.author}`,
           `${poemBody}
            <p class="why">${f.poem.why}</p>
-           ${searchLinks(f.poem.title + ' ' + f.poem.author)}`,
-          w, 'poem'
+           ${searchLinks(f.poem.title + ' ' + f.poem.author)}`
         )}
 
         ${section(
           hymn.title,
-          `Hymn · Month ${month}`,
+          `Hymn`,
           `<p><em>${hymn.origin}</em></p>
            <p class="why">${hymn.note}</p>
-           ${searchLinks(hymn.title + ' hymn')}`,
-          w, 'hymn'
+           ${searchLinks(hymn.title + ' hymn')}`
         )}
 
         ${section(
@@ -234,44 +121,47 @@
           `Composer · ${composer.name}`,
           `<p>${f.composer_piece.note}</p>
            <p class="why">${composer.why}</p>
-           ${searchLinks(composer.name + ' ' + f.composer_piece.title)}`,
-          w, 'composer'
+           ${searchLinks(composer.name + ' ' + f.composer_piece.title)}`
         )}
 
         ${section(
           f.artist_work.title,
-          `Artist · ${artist.name}`,
+          `Painting · ${artist.name}`,
           `<p>${f.artist_work.note}</p>
            <p class="why">${artist.why}</p>
-           ${searchLinks(artist.name + ' ' + f.artist_work.title)}`,
-          w, 'artist'
+           ${searchLinks(artist.name + ' ' + f.artist_work.title)}`
         )}
 
         ${section(
           f.story.title,
           `Story · ${f.story.kind} · ${f.story.source}`,
           `<p>${f.story.summary}</p>
-           ${searchLinks(f.story.title + ' ' + f.story.source)}`,
-          w, 'story'
+           ${searchLinks(f.story.title + ' ' + f.story.source)}`
         )}
 
         ${section(
           f.nature.prompt,
-          'Nature study',
-          `<p class="why">${f.nature.why}</p>`,
-          w, 'nature'
+          'Nature prompt',
+          `<p class="why">${f.nature.why}</p>`
         )}
 
         ${section(
           f.practical_life.title,
           'Practical life',
-          `<p class="why">${f.practical_life.why}</p>`,
-          w, 'practical'
+          `<p class="why">${f.practical_life.why}</p>`
         )}
       `;
     }
 
     render();
+
+    document.getElementById('read-btn').addEventListener('click', () => {
+      if (window.Reader.speaking) {
+        window.Reader.stop();
+      } else {
+        window.Reader.readElement(document.querySelector('main'));
+      }
+    });
   </script>
 </body>
 </html>

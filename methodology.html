@@ -87,17 +87,6 @@
           <p class="method-blurb">${m.blurb}</p>
         </header>
 
-        <section class="method-borrows">
-          <div class="borrow-card">
-            <h3>What we borrow</h3>
-            <p>${m.borrows}</p>
-          </div>
-          <div class="borrow-card">
-            <h3>What we leave</h3>
-            <p>${m.avoids}</p>
-          </div>
-        </section>
-
         <section class="sub-tile-section">
           <h2>Explore</h2>
           <div class="sub-tile-grid">${subTiles}</div>
@@ -199,15 +188,24 @@
         <header class="sub-hero">
           <div class="sub-hero-eyebrow">${m.name}</div>
           <h1>${titles[key]}</h1>
+          <button class="read-btn" id="sub-read-btn">▶ Read aloud</button>
         </header>
         ${body}
       `;
       window.scrollTo(0, 0);
+      const readBtn = document.getElementById('sub-read-btn');
+      if (readBtn) {
+        readBtn.addEventListener('click', () => {
+          if (window.Reader.speaking) window.Reader.stop();
+          else window.Reader.readElement(document.getElementById('root'));
+        });
+      }
     }
 
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));
     }
   </script>
+  <script src="assets/reader.js"></script>
 </body>
 </html>

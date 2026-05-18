@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#FAF6EC">
+  <title>New Beginnings — A random activity</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="icon-192.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="random-page">
+  <a href="index.html" class="home-link">← Home</a>
+
+  <main class="random-main">
+    <header class="random-hero">
+      <div class="random-eyebrow">Surprise me</div>
+      <h1>A random activity</h1>
+      <p class="lede">One small thing to try with a 4-year-old today, drawn at random from the ten traditions. Press the button for another.</p>
+    </header>
+
+    <div id="card-host"></div>
+
+    <div class="random-actions">
+      <button id="another-btn" class="primary-fill">↻ Another activity</button>
+    </div>
+  </main>
+
+  <script src="assets/methods-data.js"></script>
+  <script src="assets/app.js"></script>
+  <script>
+    function pick() {
+      const withActivities = window.METHODS.filter(m => m.sections && m.sections.activities && m.sections.activities.items && m.sections.activities.items.length);
+      const m = withActivities[Math.floor(Math.random() * withActivities.length)];
+      const items = m.sections.activities.items;
+      const a = items[Math.floor(Math.random() * items.length)];
+      return { m, a };
+    }
+
+    function render() {
+      const { m, a } = pick();
+      document.documentElement.style.setProperty('--m-color', m.color);
+      document.documentElement.style.setProperty('--m-deep', m.colorDeep);
+      document.documentElement.style.setProperty('--m-soft', m.colorSoft);
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', m.color);
+
+      const host = document.getElementById('card-host');
+      host.innerHTML = `
+        <div class="random-card" style="--c:${m.color};--cd:${m.colorDeep};--cs:${m.colorSoft};">
+          <div class="random-card-eyebrow">From the ${m.name} tradition</div>
+          <h2 class="random-card-name">${a.name}</h2>
+          <p class="random-card-body">${a.body}</p>
+          <a class="random-card-link" href="methodology.html?id=${m.id}">Explore ${m.name} →</a>
+        </div>
+      `;
+    }
+
+    document.getElementById('another-btn').addEventListener('click', render);
+    render();
+  </script>
+</body>
+</html>

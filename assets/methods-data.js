@@ -15,8 +15,6 @@ window.METHODS = [
     icon: 'leaf',
     built: true,
     blurb: 'A Victorian schoolmistress who rejected fact-cramming and built a method around living books, the child\'s own narration, hours outdoors, the slow training of habit, and what she called "the inward part of education."',
-    borrows: 'Almost everything. Living books, narration, picture and composer study, nature journals, habit training, short lessons.',
-    avoids: 'Nothing structural — her method is the spine. We only add Montessori\'s math materials, since her own math is thin.',
     sections: {
       'core-idea': {
         title: 'Core idea',
@@ -201,8 +199,6 @@ window.METHODS = [
     icon: 'cube',
     built: true,
     blurb: 'Italian physician Maria Montessori built a method around the prepared environment, beautiful real materials, and trusting the child to choose their own work during a long uninterrupted block. The 3–6 classroom is called the "Primary" or "Children\'s House."',
-    borrows: 'Practical life with real tools, the math materials (number rods, golden beads), the sandpaper letters, the deep respect for the child\'s independence and concentration.',
-    avoids: 'The prohibition on fantasy play and fairy tales — they do real work on moral imagination. The "every child must do every material in order" rigidity in some classrooms.',
     sections: {
       'core-idea': {
         title: 'Core idea',
@@ -335,8 +331,6 @@ window.METHODS = [
     icon: 'flower',
     built: true,
     blurb: 'Rudolf Steiner\'s schools wrap childhood in a strong daily, weekly, and seasonal rhythm. Beeswax modelling, wet-on-wet watercolour, fairy tales told from memory, hours outside in any weather, festival life — and no letters or numbers introduced until the second teeth come in around age 6 or 7.',
-    borrows: 'Predictable rhythm, natural materials, festival life, stories told from memory and re-told for a fortnight, the protected quality of the early years.',
-    avoids: 'Strict delayed-reading dogma when the child is eager. The underlying anthroposophy as a worldview (we take the practices, not the metaphysics). The prohibition on dark hair colour on dolls or "feature-rich" toys can become its own fussiness.',
     sections: {
       'core-idea': {
         title: 'Core idea',
@@ -468,8 +462,6 @@ window.METHODS = [
     icon: 'column',
     built: true,
     blurb: 'The classical tradition holds that education is paideia — the formation of a whole human being, oriented to truth, goodness, and beauty. For a 4-year-old this means filling the well: memorise a poem, sing a hymn, hear a myth, watch a parent do real work. The formal trivium (grammar, logic, rhetoric) begins later — at four, the ground is being prepared.',
-    borrows: 'The whole framing — education aimed at character, not utility. The Western canon as inheritance. Memory work as filling the well. Stories as the training of moral imagination.',
-    avoids: 'Fact-memorisation drill at four (the misapplied Sayers "grammar stage"). The Classical Conversations co-op pressure to do academic work too early. Any tradition cited as authority rather than reasoned through.',
     sections: {
       'core-idea': {
         title: 'Core idea',
@@ -608,8 +600,6 @@ window.METHODS = [
     icon: 'tree',
     built: true,
     blurb: 'Ainsley Arment\'s movement gathers Charlotte Mason, nature study, and a reverent view of childhood into a modern, beautifully-photographed practice. Hours outside, morning baskets, mixed-age siblings, slow mornings, real food, real books. Especially strong in the United States, growing worldwide.',
-    borrows: 'The outdoor primacy. The slowness. The book curation (Wild + Free booklists are excellent). The reframing of motherhood as serious vocational work.',
-    avoids: 'The Instagram performance treadmill where the home becomes a stage. The cult of the photogenic. The pressure to look like a particular kind of family.',
     sections: {
       'core-idea': {
         title: 'Core idea',
@@ -746,8 +736,6 @@ window.METHODS = [
     icon: 'palette',
     built: true,
     blurb: 'Born in the rubble of post-war Italy by educator Loris Malaguzzi and the parents of a few northern Italian villages, the Reggio approach treats the child as a competent researcher with a hundred languages — drawing, building, dancing, speaking, sculpting — for thinking through the world. The classroom is the "third teacher" after the parent and peer.',
-    borrows: 'Documentation (the parent observing and recording the child\'s work over time). Beautifully prepared spaces. Long unhurried projects driven by the child\'s questions. Taking children\'s thinking seriously.',
-    avoids: 'The dependence on a full atelier (art studio) and a trained atelierista — most of it is impractical at home. The risk of every passing interest becoming a documented "project" — sometimes a 4yo just plays.',
     sections: {
       'core-idea': {
         title: 'Core idea',
@@ -881,8 +869,6 @@ window.METHODS = [
     icon: 'pine',
     built: true,
     blurb: 'Forest School emerged from Scandinavian preschools in the 1950s, brought to the UK by Bridgwater College nursery in 1993, and now run worldwide. A weekly half-day or full-day in the woods, in any weather. Real tools, real fire, real dens, real assessed risk, under trained supervision. The woods are the classroom.',
-    borrows: 'The weekly woods commitment. The trust in real tools and assessed risk. The reframing of mud, wet, cold as features not problems. The slow loose unfolding of unstructured woodland time.',
-    avoids: 'Treating Forest School as a complete education — it is one strong anchor in the week, not the whole curriculum. Buying the gear to "look the part" without committing to the weekly practice.',
     sections: {
       'core-idea': {
         title: 'Core idea',
@@ -1016,8 +1002,6 @@ window.METHODS = [
     icon: 'compass',
     built: true,
     blurb: 'John Holt watched what schools did to children\'s natural curiosity and concluded the cure was to stop schooling. Unschooling means following the child\'s interests, surrounding them with rich resources, and trusting that real learning happens in real life. Especially valuable as a corrective to over-scheduled childhood — and worth understanding even if you choose differently.',
-    borrows: 'The trust in the child\'s intrinsic motivation. The warning against premature instruction. The recognition that much of what passes for "preschool" at four is unnecessary or harmful.',
-    avoids: 'The neutrality on content — at four, a parent has both the right and the duty to share what they think is worth knowing. The aggressively anti-curriculum stance in some unschooling communities, which can leave the child without scaffolding when they would welcome it.',
     sections: {
       'core-idea': {
         title: 'Core idea',
@@ -1138,146 +1122,268 @@ window.METHODS = [
     }
   },
   {
-    id: 'great-empires',
-    name: 'Great Empires',
-    short: 'Empires',
-    tagline: 'How great civilisations formed their young',
-    era: 'Athens · Rome · (more to come)',
+    id: 'athens',
+    name: 'Athenian',
+    short: 'Athens',
+    tagline: 'Paideia · the forming of a free citizen',
+    era: 'Athens · 5th–4th century BC',
     color: '#7c3aed',
     colorDeep: '#5b21b6',
     colorSoft: '#ede9fe',
-    icon: 'laurel',
+    icon: 'owl',
     built: true,
-    blurb: 'Athens at her golden age, Rome at her republican height — each had a deliberate vision of how to raise a child into a citizen. What they read aloud, what virtues they trained, what work they expected, what the household looked like. A grown-up library to inherit selectively. Future additions: Tang China, Renaissance Florence, Edo Japan, the Islamic Golden Age.',
-    borrows: 'Plutarch\'s Lives as the textbook of character. Quintilian on the early years. The Roman insistence that the family is the first school. The Greek paideia — the forming of a whole person. The shared belief that what you absorb in childhood becomes you.',
-    avoids: 'The brutalities — slavery, the warrior cult, severity, the patriarchal absolutes. We take the parts of these traditions that have survived the test of reasoning, and leave what has not.',
+    blurb: 'In the Athens of Pericles, Socrates, and Plato, the citizen-class family understood education as paideia — the lifelong shaping of a free human being capable of beauty, reason, and self-government. The 4-year-old in such a household was being prepared, slowly and beautifully, to take their place among the free.',
     sections: {
       'core-idea': {
         title: 'Core idea',
         icon: 'compass',
-        intro: 'The great civilisations at their height shared a striking pattern: they took childhood seriously as the formation of a person who would carry the tradition forward. Not utility. Not happiness. Not preparation for a career. The formation of a free citizen, a thinking soul, a person of virtue. The 4-year-old was being shaped for life, not for the next test.',
+        intro: 'The Athenian noble holds that a child is born with the seed of arete — excellence of soul — and that the work of the family is to cultivate it. Not knowledge as accumulation. Not skill as utility. The making of a person fit to be free, fit to govern themselves, fit to take part in the conversation of the city.',
         principles: [
-          { name: 'Childhood is the planting of a tree', body: 'The Greeks held that what was planted in the first seven years would shape the whole tree. Aristotle wrote that we become just by doing just acts, brave by doing brave acts. Practice at four becomes character at forty.', why: 'A 4yo whose daily life includes small acts of courage, kindness, and truthfulness is learning the muscle of virtue. One who is left to "find their own values" later inherits no scaffolding for the choice.' },
-          { name: 'The family is the first school', body: 'In Rome, the father (paterfamilias) and especially the mother were the first teachers. The home was the school. Quintilian, the Roman rhetorician, said the child\'s early years at home determined the whole later education.', why: 'A 4yo who sees their parent doing real work — speaking carefully, treating guests well, telling the truth in difficult moments — learns by absorption. A childhood farmed out to professionals at four loses this irreplaceable formation.' },
-          { name: 'Heroes and saints as models', body: 'Athenian boys grew up hearing of Achilles, Odysseus, Themistocles. Roman boys grew up hearing of Cincinnatus, Scipio, Cato. The household had a shelf of heroes. The 4yo knew their names before they could read.', why: 'A 4yo who has heard a hundred stories of brave, honest, loyal people develops a mental gallery of what a worthy life looks like. One who has only seen TV characters has a much weaker gallery.' },
-          { name: 'Memory as the soul\'s storehouse', body: 'Greek and Roman children memorised verses, prayers, fables, lists of heroes. The well was filled in the first seven years. The bucket was drawn down for decades.', why: 'A 4yo memorises easily. What goes in stays. The verse memorised at four becomes available at forty as a resource the adult did not have to construct.' },
-          { name: 'Real work, real responsibility', body: 'Greek children helped on the loom and in the kitchen. Roman children carried messages, served at table, learned the trades of the household. They were part of real life, not held in a parallel children\'s world.', why: 'A 4yo who is part of the household economy learns that they matter — their work counts. A 4yo entertained instead of included learns the opposite.' },
-          { name: 'The serious worth of music, poetry, and song', body: 'Plato held that music and poetry shape the soul more than any other input. The wrong music produces a degenerate citizen; the right music, a noble one. He was not joking.', why: 'A 4yo formed on Bach and Mother Goose has a different soul-furniture from one formed on pop jingles and TV themes. The inputs at four shape the aesthetics of the rest of life.' },
-          { name: 'Take from the tradition; do not bow to it', body: 'The great civilisations also had slavery, patriarchy, brutal hierarchies, war as glory. To inherit them whole is to inherit their evils. The right relationship to a tradition is one of reasoned selection — keep the gold, name the dross.', why: 'A 4yo formed in an uncritical worship of a past becomes an adult who cannot distinguish good from bad inside any tradition. One formed in reasoned selection inherits the best and can leave the rest.' }
+          { name: 'Paideia: the forming of a person', body: 'Paideia is the entire process by which a child becomes a fully-realised human being — body, mind, soul, character. Music shapes the soul. Gymnastics shapes the body. Story shapes the imagination. Conversation shapes the reasoning. All of it together makes the man (or woman, in some households) of arete.', why: 'A 4-year-old is not too young for this. The work begins now. The shape the child receives in these early years is the shape they will carry. Begin too late and the soul has set in a lesser form.' },
+          { name: 'Arete: excellence as the goal', body: 'Arete is excellence in the highest sense — being the best version of what one is. For a 4-year-old, it begins as becoming the best small person they can be. Honest in their words. Brave in their small acts. Beautiful in their care for others. Skilled in their hands.', why: 'A child raised to merely fit in becomes adequate. A child raised to arete is given a measure that lifts them. They will not always reach it; the measure itself is the gift.' },
+          { name: 'Music and gymnastic, in balance', body: 'Plato held that the early years require both. Music — meaning the arts of the Muses: poetry, song, story, dance — softens the soul and trains its loves. Gymnastic — the disciplined use of the body — hardens it and trains its courage. Neither alone makes the citizen.', why: 'A 4yo who only sings and reads becomes refined but soft. One who only runs and wrestles becomes capable but unrefined. Both together produce the harmonious person the city needs.' },
+          { name: 'Homer is the textbook', body: 'Every Athenian child grew up on the Iliad and the Odyssey, told and re-told. The names of the heroes — Achilles, Odysseus, Hector, Penelope — entered them with their mother\'s milk. The deeds of the heroes became the inner gallery of what a worthy life looks like.', why: 'A 4yo who has heard Hector say goodbye to Andromache and Astyanax learns what tenderness in a warrior looks like. Heard the hundred deceptions of Odysseus, what cleverness in service of homecoming looks like. The stories are the moral imagination.' },
+          { name: 'The household gods, daily honoured', body: 'The hearth of Hestia. The household shrine. Daily libations of milk or wine. Festivals through the year. A child who lives in a house where the gods are honoured grows up knowing the world is sacred and that they belong to a tradition larger than themselves.', why: 'A 4yo formed in regular ritual develops a different relationship to time, place, and meaning than one formed only in casual secularity. The ritual is the curriculum even when no words are spoken.' },
+          { name: 'The mother is the first teacher; the household the first school', body: 'In the citizen family, the mother (and the trusted household women) raised the small child. She taught the prayers, the songs, the manners, the names of the gods, the family stories. She held the centre of the child\'s world until they were old enough to begin lessons proper.', why: 'A 4yo raised by their own mother (or primary carer) in their own household learns from someone who knows them, loves them, and is forming them as part of a family\'s continuation. No professional service can replace this.' },
+          { name: 'Conversation as the highest education', body: 'The Athenian household at table is conversation about ideas, beauty, the city, what is right. The 4yo sits in. They do not need to follow the argument; they absorb the register, the seriousness, the manners of speech.', why: 'A 4yo whose family discusses ideas at the table grows up thinking ideas are worth discussing. One whose family sits in silence or stares at screens grows up thinking ideas belong somewhere else.' }
         ]
       },
       'day-in-life': {
         title: 'A day in the life',
         icon: 'sun',
-        intro: 'A reconstruction — what an Athenian child of a citizen-class family, or a young Roman of the better sort, might have lived at age four. Some of this we can adapt; some of it we deliberately leave behind.',
+        intro: 'A reconstruction of how a 4-year-old in a citizen-class Athenian household might have lived their day. Some of it we adapt; some of it we deliberately leave.',
         timeline: [
-          { time: 'Dawn', title: 'Wake with the household', body: 'In Athens or Rome, no electric light meant rising with the sun. Wash, dress in the simple clothes of childhood (a tunic), greet the household gods at the small shrine. Morning prayer or invocation.' },
-          { time: 'Early morning', title: 'Family breakfast', body: 'Bread, olives, fruit, watered wine. The child eats with the family. The father may speak briefly about the day, the gods, the household.' },
-          { time: 'Mid-morning', title: 'Time with the mother (and slaves, if present)', body: 'The mother\'s court was where young children spent most of their day. The 4yo would be in and out of weaving, food preparation, the courtyard. Hearing women\'s songs, watching real work. (Note: we drop the slave-economy entirely; the equivalent today is a household where adults are present.)' },
-          { time: 'Late morning', title: 'Lessons from the paedagogus', body: 'In wealthier Roman households, a paedagogus (sometimes a learned slave, sometimes a free tutor) taught the older children. The 4yo would be on the edges — hearing verses, watching letters traced in wax, learning a song. Mostly absorbing.' },
-          { time: 'Midday', title: 'Family lunch and rest', body: 'Olives, cheese, bread, fruit, perhaps fish. After the meal, a rest in the cool of the day.' },
-          { time: 'Afternoon', title: 'Play and outdoors', body: 'A Greek 4yo would play in the courtyard with knucklebones, a wooden horse, hoops, balls. A Roman child likewise. Climbing, running, mock-fighting with sticks. Mixed ages.' },
-          { time: 'Late afternoon', title: 'Real errand or work', body: 'A 4yo might carry a message to a neighbour, help carry small items, water the household garden. Real participation.' },
-          { time: 'Evening', title: 'Family dinner with conversation', body: 'The main meal of the day. In a citizen family, conversation might be about politics, philosophy, the day\'s news. The child listens — they are being formed by the register of the conversation as much as by its content.' },
-          { time: 'Evening', title: 'Storytelling', body: 'Before bed, a story told by a parent, grandparent, or nurse. Often from Homer, Aesop, the heroes of the city, or the household legends.' },
-          { time: 'Bedtime', title: 'Prayer, lights out', body: 'A short prayer to the household gods. Bed by full dark.' }
+          { time: 'Dawn', title: 'Wake with the household', body: 'Rise with the sun. Splash water at the courtyard basin. Dress in a simple chiton. Greet the herm at the doorway and the small statue of the household god at the hearth.' },
+          { time: 'Early morning', title: 'Breakfast and prayer', body: 'Bread, olives, fruit, watered wine for the adults, water with a drop of wine for the child. A short prayer or libation at the hearth.' },
+          { time: 'Mid-morning', title: 'In the women\'s court with the mother', body: 'The 4yo is mostly in the gunaikon (the women\'s quarters) — but this is not the modern picture of confinement. It is the centre of household life. The child hears spinning songs, watches weaving, helps with small tasks, plays with knucklebones in the courtyard.' },
+          { time: 'Late morning', title: 'Lessons begin around the edges', body: 'Older children may have a paidagogos (a tutor) for letters and music. The 4yo is on the edges — hearing a song repeated, watching a stylus on wax, learning by absorption rather than instruction.' },
+          { time: 'Midday', title: 'Family meal and rest', body: 'Bread, cheese, olives, fish, fruit. A short rest in the cool of the day.' },
+          { time: 'Afternoon', title: 'Play in the courtyard', body: 'Knucklebones, hoops, balls, wooden animals, dolls. Mixed-age sibling play. Some climbing, some running. A nurse or older sister supervises.' },
+          { time: 'Late afternoon', title: 'A small errand or task', body: 'Carrying a message to a neighbour, helping carry small items, watering plants at the courtyard. Real participation in the household, scaled to the child.' },
+          { time: 'Early evening', title: 'The mother\'s teaching time', body: 'A short session — telling a story (Hesiod, Aesop, Homer), teaching a song or short prayer, naming the gods. The same stories returned to many times.' },
+          { time: 'Evening', title: 'Family meal', body: 'In the andron (men\'s dining room) for the simpler family meal; the 4yo eats with the adults. Conversation about the day, the city, sometimes a guest or two. The child listens.' },
+          { time: 'Bedtime', title: 'Story, prayer, sleep', body: 'A told story (often the same one for a week). A short prayer to a household god. Sleep by full dark.' }
         ],
-        note: 'What translates: the family-as-school, the hearing of great stories, the absorption of adult conversation, real participation in household work, ritual marking the day. What we leave behind: slavery, severity, the gender restrictions, the harsh discipline.'
+        note: 'What we keep: the central role of the mother and household, ritual marking the day, story-rich evenings, family meals with real conversation, the 4yo as participant rather than spectator. What we leave: the gender segregation in its strict form, the dependence on slave-labour, the limits on what daughters were taught.'
       },
       'activities': {
         title: 'Things you can do this week',
         icon: 'hand',
-        intro: 'Twenty ways to bring the spirit of the great civilisations into a modern home for a 4-year-old. Take what feels alive; leave what doesn\'t.',
+        intro: 'Twenty ways to bring the spirit of the Athenian household into a modern home for a 4-year-old.',
         items: [
-          { name: 'Tell a story from Plutarch, simplified', body: 'The boy Cyrus refused to eat his enemies\' food. The boy Alexander tamed Bucephalus. Young Cato refused to bow to the dictator. One short story a week.' },
-          { name: 'A Greek myth, told from memory', body: 'Persephone and the pomegranate seeds. The labours of Hercules. Theseus and the Minotaur. From D\'Aulaires or your own retelling. Do not over-soften.' },
-          { name: 'A Roman virtue story', body: 'Cincinnatus leaving his plough to save Rome and returning to his plough. Mucius Scaevola putting his hand in the fire. Tell these. They are training for a different kind of life.' },
-          { name: 'Memorise a short Latin or Greek phrase', body: '"Carpe diem." "Veni vidi vici." "Memento mori." The child says it; you say what it means. They will remember it forever.' },
-          { name: 'A small household shrine or "hero shelf"', body: 'A low shelf with a few objects — a photo of a great-grandparent, an icon if your tradition includes it, a small sculpture of a hero, a candle. The child knows it is a sacred spot.' },
-          { name: 'A weekly libation', body: 'A small ritual — every Sunday morning, place fresh water or wine, bread, a flower at the family shrine. The child does it with you. A tradition begins.' },
-          { name: 'Read aloud from a child\'s version of Homer', body: 'Rosemary Sutcliff\'s The Wanderings of Odysseus, or her Black Ships Before Troy. Beautiful retellings for children. A chapter at dinner.' },
-          { name: 'Visit a Greek or Roman site, even a small one', body: 'A museum hall, an old church with Greek mosaics, a Roman road. Name what it is. The 4yo touches the past.' },
-          { name: 'Family Latin grace or song before meals', body: 'A short blessing in Latin (or Hebrew, or Sanskrit — depending on your tradition). The same one, every meal. The child grows up with another language\'s rhythm in their mouth.' },
-          { name: 'A festival from the calendar', body: 'Saturnalia at the winter solstice (Roman). Lighting candles for the longest night. A small feast on the spring equinox. Mark the year as the ancients did.' },
-          { name: 'A heroes\' bedtime story rotation', body: 'Monday — a Greek hero. Tuesday — a Roman hero. Wednesday — a saint or sage from your tradition. Etc. The child meets a different exemplar each night.' },
-          { name: 'A small Latin or Greek vocabulary', body: 'Ten words a year. Pater, mater, frater, soror. Domus, casa. The child sees the bones of the Romance languages early.' },
-          { name: 'Real conversation at the table', body: 'About something serious. A current event, a hard question, a beautiful thing. The 4yo does not have to follow it. They are absorbing the register.' },
-          { name: 'A wax tablet or slate for early writing', body: 'A wax tablet (you can buy them) and a stylus. The Roman child learned to write this way. Slow, deliberate, repeatable.' },
-          { name: 'A child\'s biography of one ancient figure', body: 'A picture book on Pythagoras, Sappho, Marcus Aurelius, Hypatia. The 4yo meets a real historical person, not a Disney character.' },
-          { name: 'Teach a small skill with a tradition', body: 'Olive oil and bread (Mediterranean). Tea steeping (Chinese). Bread-baking (universal). The child learns a craft that has descended through millennia.' },
-          { name: 'Tell about a great grandparent or ancestor', body: 'A real person in the child\'s line. What they did. What they survived. The child\'s own family becomes part of the tradition.' },
-          { name: 'A "what would a hero do?" conversation', body: 'In a small moment of difficulty — sharing a toy, telling the truth — ask, "What would Cincinnatus do? Hercules? Joan of Arc?" The child has a council to consult.' },
-          { name: 'Picture study with a classical work', body: 'A vase painting, a sculpture (the Charioteer of Delphi), a Roman portrait bust. Print and put on the wall. Look together.' },
-          { name: 'Sing a hymn or psalm that has lasted', body: 'Something sung for a thousand years or more. Plainchant, a psalm to a simple tune, a folk hymn. The 4yo joins a long line of voices.' }
+          { name: 'Tell a Homer episode from memory', body: 'The wooden horse. Odysseus and the Cyclops. Hector\'s farewell. Tell it; do not read. A new episode every fortnight.' },
+          { name: 'Memorise a short Greek phrase', body: '"Gnothi seauton" — know yourself. "Meden agan" — nothing in excess. The 4yo says it; you say what it means.' },
+          { name: 'Visit a museum and find a Greek vase', body: 'Find one with a scene. Have the child describe what is happening. Who is the hero? What are they doing?' },
+          { name: 'A small herm or shrine at the front door', body: 'A small statue, a flat stone with a candle, a photograph of a beloved ancestor. Touch it as you come and go.' },
+          { name: 'Family libation on a special day', body: 'A small ritual on Sundays or special meals. Pour a few drops of water, milk, or wine onto the earth (outside) or into a small bowl before drinking. Say a brief blessing or name a thing you are grateful for.' },
+          { name: 'Knucklebones (or jacks)', body: 'The Athenian child\'s favourite game. Buy a set; play. Hand skill, attention.' },
+          { name: 'A weekly hymn', body: 'Pick a piece of music — Greek Orthodox chant, classical Greek-themed piece, or any old hymn. Sing or listen once a week. By the season it is theirs.' },
+          { name: 'Olive oil at every meal', body: 'A simple Mediterranean practice. Good olive oil on bread, on salads. The 4yo grows up with the taste of the Greek table.' },
+          { name: 'Plant an olive (if your climate allows) or a grapevine', body: 'A small symbolic planting. Athena\'s tree. Even a potted bay laurel does the work.' },
+          { name: 'A family dinner conversation about virtue', body: 'Once a week, at dinner, raise one question: What does it mean to be brave? Honest? Kind? The 4yo listens and sometimes joins.' },
+          { name: 'Wrestling, running, balance — the gymnastic side', body: 'Pretend wrestling on the rug, foot races in the garden, balancing on logs. The Athenian child did all of this daily.' },
+          { name: 'A short verse before bed', body: 'A prayer, a line from a poem, a wish for the next day. Same words, every night, for years.' },
+          { name: 'A printed Greek alphabet on the wall', body: 'Alpha, beta, gamma. The 4yo sees the letters. Sing them as a song around 5–6.' },
+          { name: 'Read a picture book about a Greek hero', body: 'D\'Aulaires\' Greek Myths. Sutcliff\'s retellings. One chapter at dinner.' },
+          { name: 'Mark the seasons with the Greek calendar', body: 'The festival of Athena in summer. Demeter\'s mourning in winter. Persephone\'s return in spring. The year has a Greek shape.' },
+          { name: 'Look at one Greek sculpture for a month', body: 'The Charioteer of Delphi. A photo of the Parthenon frieze. Pinned to the wall at child height.' },
+          { name: 'A Greek-style picnic', body: 'Bread, olives, cheese, grapes, figs, fish. Eaten outside, on a blanket, with conversation.' },
+          { name: 'Visit a Greek-style architecture nearby', body: 'A neoclassical building, a Greek revival church, a museum portico. Name what it is, where it came from.' },
+          { name: 'Family conversation about the gods (or virtues, or values)', body: 'For modern families, the Greek gods can be discussed as personifications of human qualities — Athena (wisdom), Apollo (light, music), Artemis (the wild). The 4yo meets the qualities through the figures.' },
+          { name: 'One handcraft each season', body: 'A wreath of laurel for spring. A small clay lamp for winter. The hands learn the tradition.' }
         ]
       },
       'reading-list': {
         title: 'Reading list',
         icon: 'book',
-        intro: 'For the child, story versions of the great tradition. For the parent, the primary sources (selectively) and modern interpreters.',
+        intro: 'For the child, beautiful retellings of Greek myth and history. For the parent, slow reading in the primary sources and the modern interpreters.',
         forChild: {
-          intro: 'The child meets the great traditions through beautiful retellings — myths, heroes, saints, fables. The primary sources come later.',
+          intro: 'The Greek world enters the child through story and image.',
           groups: [
-            { heading: 'Greek myth and Homer for children', books: [
-              'D\'Aulaires\' Book of Greek Myths — the standard, illustrated, perfect at 4–5',
-              'Rosemary Sutcliff — Black Ships Before Troy, The Wanderings of Odysseus (read-aloud at 5)',
-              'Mary Pope Osborne — Tales from the Odyssey (around 6)',
-              'James Riordan — The Twelve Labours of Hercules (illustrated)'
+            { heading: 'Greek myth — the essentials', books: [
+              'D\'Aulaires\' Book of Greek Myths — the standard for a generation, beautifully illustrated',
+              'Rosemary Sutcliff — Black Ships Before Troy, The Wanderings of Odysseus (around 5)',
+              'Geraldine McCaughrean — The Orchard Book of Greek Myths',
+              'Marcia Williams — Greek Myths (comic-strip style, very accessible)'
             ]},
-            { heading: 'Roman stories and heroes', books: [
-              'A Child\'s First Book of Roman Heroes — look for Catholic or classical curriculum editions',
-              'Geraldine McCaughrean — The Orchard Book of Roman Myths',
-              'A children\'s biography of Marcus Aurelius (if you can find one age-appropriate)'
+            { heading: 'Heroes and history', books: [
+              'Diane Stanley — Plato (a child\'s biography)',
+              'James Mayhew — Katie Meets the Impressionists series (one with Greek vases)',
+              'Susan Williams Beckhorn — The Wolf\'s Boy (for older readers, but the spirit transfers)'
             ]},
-            { heading: 'Aesop and fable', books: [
-              'Aesop\'s Fables — Milo Winter illustrated edition (the classic)',
-              'Arnold Lobel — Fables (modern, in the spirit)',
-              'The Panchatantra — Indian fables, similar age-feel'
+            { heading: 'Aesop', books: [
+              'Aesop\'s Fables — Milo Winter\'s illustrated edition (the classic)',
+              'Arnold Lobel — Fables (modern, in the spirit)'
             ]},
-            { heading: 'Saints, sages, and exemplars (from many traditions)', books: [
-              'Tomie dePaola — The Clown of God, Saint Francis, Patrick of Ireland',
-              'Demi — illustrated lives of Buddha, Gandhi, Marco Polo',
-              'A children\'s book of brave people across cultures'
-            ]},
-            { heading: 'Picture books that point to the past', books: [
-              'Roy Burrell — The Greek World, The Roman World (for picture-rich reference)',
-              'Caroline Lawrence — illustrated guides to Roman life',
-              'The Usborne "Time Traveller" series'
+            { heading: 'Beautiful picture books with Greek subjects', books: [
+              'Brian Wildsmith — Professor Noah\'s Spaceship (not Greek, but his style suits the Mediterranean)',
+              'Petra Mathers — Sophie and Lou (whimsical)',
+              'Any beautifully illustrated children\'s book on Greek vase painting'
             ]}
           ]
         },
         forParent: {
-          intro: 'The parent meets the primary sources slowly. A few modern interpreters open the door.',
+          intro: 'Read slowly. The Greeks reward patience.',
           books: [
-            { title: 'Plutarch\'s Lives', author: 'Plutarch, c. 100 AD', note: 'Read in any translation. The textbook of character for two millennia. The lives of Theseus, Solon, Pericles, Alexander, Caesar, Brutus. Read one a month.' },
-            { title: 'Institutio Oratoria, Book I', author: 'Quintilian, c. 95 AD', note: 'On the early education of the orator — practical, warm, full of advice on the first years that still applies.' },
-            { title: 'The Republic, Book II–III', author: 'Plato', note: 'Where Plato lays out the education of the guardians. Music, gymnastics, story. Read selectively.' },
-            { title: 'Nicomachean Ethics, Book II', author: 'Aristotle', note: 'On virtue as habit. The chapter on how habits form character. Essential.' },
-            { title: 'Meditations', author: 'Marcus Aurelius', note: 'The personal notebook of a Roman emperor. Stoic, warm, practical. Read it for the voice of a virtuous life.' },
-            { title: 'Norms and Nobility', author: 'David Hicks', note: 'The deepest modern defence of classical education as the formation of nobility.' },
-            { title: 'The Closing of the American Mind', author: 'Allan Bloom', note: 'Why the modern university lost the inheritance. Long but illuminating.' },
-            { title: 'Climbing Parnassus', author: 'Tracy Lee Simmons', note: 'Why Latin and Greek matter; how to begin.' },
-            { title: 'The Iliad and The Odyssey', author: 'Homer (Fagles or Lattimore translation)', note: 'Read for yourself. The 4yo will hear the children\'s version; you should know the real one.' }
+            { title: 'The Iliad and The Odyssey', author: 'Homer (Fagles, Lattimore, or Wilson translation)', note: 'The foundational poems. Read aloud to yourself; the 4yo hears the children\'s versions but you should know the real.' },
+            { title: 'The Republic, Book II–III', author: 'Plato', note: 'On music, gymnastic, and the education of the guardians. Selectively read.' },
+            { title: 'Protagoras', author: 'Plato', note: 'The shortest of Plato\'s dialogues on virtue and whether it can be taught. Begin here.' },
+            { title: 'Nicomachean Ethics, Book I–II', author: 'Aristotle', note: 'On the good life and on virtue as habit. The most influential ethics book in the West.' },
+            { title: 'Lives of Theseus and Solon', author: 'Plutarch', note: 'Two of his Greek lives. Read for the moral biography.' },
+            { title: 'Paideia: The Ideals of Greek Culture', author: 'Werner Jaeger', note: 'The 20th-century classic on Greek education. Three volumes; the first is the most accessible.' },
+            { title: 'The Greek Way', author: 'Edith Hamilton', note: 'A warm 20th-century introduction to the Greek mind. Easy reading.' }
           ]
         },
-        free: 'Project Gutenberg has the entire Western canon — Plutarch, Homer, Plato, Aristotle, Cicero, Marcus Aurelius. The CiRCE Institute has free articles on the classical tradition. Librivox has free audio of nearly all of these.'
+        free: 'Project Gutenberg has Homer, Plato, Aristotle, Plutarch in older translations. Librivox has free audio. The Perseus Digital Library (perseus.tufts.edu) has the originals plus English alongside.'
       },
       'competency': {
-        title: 'What to expect at four',
+        title: 'What an Athenian noble would expect at four',
         icon: 'sprout',
-        intro: 'A 4-year-old raised with the spirit of the great tradition is steady, articulate, comfortable with seriousness, and has a small but real gallery of heroes in their head.',
+        intro: 'A 4-year-old of the Athenian citizen class is calm, knows the household ritual, has heard the great stories repeatedly, and is being formed in arete.',
         landmarks: [
-          { area: 'Knowledge of heroes', items: ['Names 5–10 heroes from the Greek, Roman, or other traditions', 'Tells (in their own words) at least one story for each', 'Knows what virtues each exemplified', 'Recognises a few in pictures (Hercules with his club, Athena with her owl)'] },
-          { area: 'Virtue (early signs)', items: ['Practises small acts of truth-telling, kindness, courage, restraint', 'Can name the virtue when prompted ("That was brave, wasn\'t it?")', 'Has a "council" of heroes to call on in hard moments'] },
-          { area: 'Language and register', items: ['Comfortable hearing adult conversation', 'Has a richer vocabulary than peers from exposure to retellings of great stories', 'Knows a few words of Latin, Greek, or another classical tongue', 'Has memorised one or two short verses'] },
-          { area: 'Ritual and tradition', items: ['Recognises and participates in family rituals (a candle, a grace, a libation)', 'Knows the household shrine or hero shelf as a sacred spot', 'Marks the year by family festivals (winter solstice, spring equinox, harvest)'] },
-          { area: 'Real participation', items: ['Helps with household work as a matter of course', 'Carries messages and small errands', 'Is part of family conversation at table'] },
-          { area: 'Body', items: ['Walks, climbs, plays vigorously', 'Manages real (small) tools', 'Has a basic skill from a long tradition (knead bread, pour libation, light a candle safely)'] }
+          { area: 'Knowledge of the heroes', items: ['Knows the names of the great Homeric figures (Achilles, Odysseus, Hector, Penelope, Athena)', 'Re-tells at least one episode from Homer', 'Recognises a Greek hero by attribute (Hercules with his club, Athena with her owl)'] },
+          { area: 'Virtue (early signs)', items: ['Practises small acts of truthfulness, courage, honour', 'Knows the word arete and what it means', 'Has a sense of being part of a tradition larger than themselves'] },
+          { area: 'Music and gymnastic', items: ['Sings a few songs from memory', 'Has heard music chosen for its formative power, often', 'Runs, climbs, wrestles, balances — body well-used'] },
+          { area: 'Ritual and household', items: ['Knows the household shrine and how to honour it', 'Recognises the gods (or qualities) of the family', 'Participates in family meals as a real member, not a spectator'] },
+          { area: 'Language', items: ['Knows a few words of Greek (or another classical tongue)', 'Has memorised one or two short verses or prayers', 'Has a richer vocabulary than peers from exposure to retold stories'] },
+          { area: 'Body', items: ['Walks, climbs, wrestles confidently', 'Helps with real household work', 'Manages simple tools'] }
         ],
-        note: 'A 4yo formed in the spirit of the great traditions often seems "old-fashioned" or "serious" to peers raised in screens-and-snacks childhood. This is not a flaw. They have been given a different, larger inheritance.'
+        note: 'The Athenian noble would say: a 4yo who has heard Hector and Achilles, who knows the family\'s shrine, who can sing a hymn and run a race, who eats at the table with adults talking of ideas — this child is on the road to becoming a free citizen.'
       }
     }
-  }
+  },
+  {
+    id: 'rome',
+    name: 'Roman',
+    short: 'Rome',
+    tagline: 'Pietas · gravitas · the citizen of the Republic',
+    era: 'Roman Republic · 500–27 BC (high point)',
+    color: '#9f1239',
+    colorDeep: '#7f1d1d',
+    colorSoft: '#ffe4e6',
+    icon: 'laurel',
+    built: true,
+    blurb: 'In the Roman Republic at its height — the centuries of Cincinnatus, the Scipios, Cato the Elder — the patrician family understood the raising of a child as the most serious work of the household. Pietas (duty to family, gods, and country). Gravitas (weight of character). Virtus (courage and excellence). The 4-year-old in such a household was being formed to one day stand among the magistrates of Rome.',
+    sections: {
+      'core-idea': {
+        title: 'Core idea',
+        icon: 'compass',
+        intro: 'The Roman patrician holds that a child is the future of the family and the Republic. The father (paterfamilias) and mother together carry the responsibility of shaping a citizen — disciplined, dutiful, faithful, brave. Not by sentiment. By the unhurried, daily living of a Roman life.',
+        principles: [
+          { name: 'Pietas: duty in all directions', body: 'Pietas means duty — to the gods of the household, to the ancestors, to one\'s parents, to one\'s family, to the Republic. It is not warmth or sentiment. It is the right ordering of one\'s loves and obligations.', why: 'A 4yo raised in pietas learns there is a structure to life and to belonging. They are part of a family, part of a line, part of a city. This is not restriction; it is the deepest kind of belonging.' },
+          { name: 'Gravitas: the weight of character', body: 'Gravitas is the quality of a person whose words and acts have weight — not lightness, not chatter, not show. A Roman of gravitas is taken seriously because they take themselves seriously. The work of forming this begins in childhood.', why: 'A 4yo whose parents speak with gravitas absorbs that register. One whose home is constant noise, light entertainment, and casual talk grows up unable to bear weight. Gravitas is a learned posture, not a natural one.' },
+          { name: 'The mos maiorum — the way of the ancestors', body: 'The Romans called their inherited tradition the mos maiorum — the customs of the ancestors. Stories of the great Romans of old (Cincinnatus, Horatius, Lucretia, Cornelia) were told and re-told. The child grew up knowing what kind of person their ancestors had been and was held to that.', why: 'A 4yo who knows the family legends and the great deeds of the city has a measure to live up to. The expectation lifts them. Without such examples, the child looks only sideways at peers.' },
+          { name: 'The father as model and authority', body: 'The paterfamilias is not a tyrant but the head of the household — present, weighty, responsible. He sets the moral example, decides the serious matters, and is honoured. The mother holds the daily life. Both are essential.', why: 'A 4yo with a present, weighty father (or father-figure) has a different inner world than one without. The child internalises an authority figure they can later look to or argue with — but who is real.' },
+          { name: 'The mother as the first and most important teacher', body: 'The Roman ideal was the mother who taught her own children. Cornelia, mother of the Gracchi, was praised for refusing to send her boys away and for teaching them herself. The mother formed the child in the years that mattered most.', why: 'A 4yo formed primarily by their own mother (or chief caregiver) develops the deepest attachment, learns the family\'s particular ways, and absorbs the mother\'s register of speech, virtue, and care. No school can replace this.' },
+          { name: 'Real work, real responsibility, from young', body: 'Roman children of the better sort carried messages, ran errands, helped with the household, witnessed real adult business — meetings with clients, religious rituals, family decisions. They were part of the daily life of the Republic from young.', why: 'A 4yo who is part of real adult life learns competence and dignity. One who is held in a parallel children\'s world learns nothing about the world they will one day join.' },
+          { name: 'The household gods, daily honoured', body: 'Every Roman home had its lararium — the household shrine with the lares (guardians of the family), the penates (guardians of the pantry), the genius of the father. Daily offerings, daily prayers, daily memory of the ancestors.', why: 'A 4yo who sees their parents bow at the household shrine learns that the world is sacred and that the family is held by powers larger than itself. The ritual marks the household as belonging to a tradition.' }
+        ]
+      },
+      'day-in-life': {
+        title: 'A day in the life',
+        icon: 'sun',
+        intro: 'A reconstruction of how a 4-year-old of a Roman patrician family might have lived their day, at the height of the Republic.',
+        timeline: [
+          { time: 'Dawn', title: 'Wake with the household', body: 'Rise with the sun. Wash at the courtyard basin. Dress in a simple tunic. The whole household begins the day together.' },
+          { time: 'Early morning', title: 'Salutatio at the lararium', body: 'A short morning prayer at the household shrine. The paterfamilias leads. A small offering of grain, wine, or incense. The child stands and watches.' },
+          { time: 'Mid-morning', title: 'In the atrium with the mother', body: 'The 4yo spends much of the morning with their mother — watching her spin wool (the traditional symbol of the Roman matron), helping with small household tasks, hearing stories of the family\'s past.' },
+          { time: 'Late morning', title: 'Witness the salutatio (formal greeting)', body: 'In a patrician household, clients arrived early to greet the paterfamilias. The 4yo might sit on the edge, watching the formal exchanges. Even at four, they were absorbing the rituals of public life.' },
+          { time: 'Midday', title: 'Family lunch (prandium)', body: 'A simple meal — bread, cheese, olives, fruit. Eaten quickly. The Roman day continued.' },
+          { time: 'Early afternoon', title: 'Rest in the cool of the day', body: 'The Roman siesta. The household quiet. The 4yo naps or plays quietly.' },
+          { time: 'Mid-afternoon', title: 'Play and small responsibilities', body: 'Wooden swords, hoops, dolls, knucklebones. Also small tasks — carrying a message, watering the courtyard plants, helping the older siblings with chores.' },
+          { time: 'Late afternoon', title: 'Stories from the mother', body: 'The mother\'s great work — telling the family stories and the stories of Rome. Cincinnatus and his plough. Horatius at the bridge. Lucretia\'s honour. The 4yo hears the same stories many times.' },
+          { time: 'Evening', title: 'Family meal (cena)', body: 'The main meal of the day. The whole family together. The father may speak about the day in the forum, the family\'s affairs, the news of the Republic. The 4yo listens.' },
+          { time: 'Bedtime', title: 'Evening prayer, family kiss, sleep', body: 'A short prayer to the lares. A goodnight from each parent. The household closes for the night.' }
+        ],
+        note: 'What we keep: the present father, the central mother, the ritual marking of the day, the family stories as moral curriculum, the inclusion of the child in adult life. What we leave: slavery, the harsher elements of patria potestas, the gender restrictions in their absolute form.'
+      },
+      'activities': {
+        title: 'Things you can do this week',
+        icon: 'hand',
+        intro: 'Twenty ways to bring the spirit of the Roman household into a modern home for a 4-year-old.',
+        items: [
+          { name: 'Tell the story of Cincinnatus', body: 'The farmer called from his plough to save Rome, who served as dictator only long enough to win the war, then went home to his plough. Tell it; re-tell it. Pietas in action.' },
+          { name: 'Tell the story of Horatius at the bridge', body: 'The single Roman who held the bridge against the Etruscan army. Courage, sacrifice, loyalty to the Republic.' },
+          { name: 'Tell the story of Cornelia and her jewels', body: 'When asked to show her jewels, Cornelia pointed to her two sons (the Gracchi). The mother\'s honour.' },
+          { name: 'A household shrine (lararium)', body: 'A small shelf with a candle, a photograph of grandparents, an icon if your tradition includes it, a small bowl for grain or salt. The family\'s sacred spot.' },
+          { name: 'Morning blessing at the shrine', body: 'Before breakfast, a brief moment at the shrine. A word of thanks, a remembrance of an ancestor, a wish for the day. The child watches; soon joins.' },
+          { name: 'A weekly family meal with real conversation', body: 'Once a week, a deliberate dinner with adult conversation about ideas, family matters, the city. The 4yo sits in.' },
+          { name: 'Memorise a Latin phrase a season', body: '"Carpe diem." "Memento mori." "Audentes Fortuna iuvat." The child says it; you say what it means.' },
+          { name: 'A Latin grace before meals', body: '"Benedic, Domine, nos et haec tua dona quae de tua largitate sumus sumpturi." A short Latin blessing the family says together.' },
+          { name: 'The child carries the day\'s message', body: 'Send the 4yo with a real message to a neighbour, a relative, the parent. They learn the dignity of being entrusted.' },
+          { name: 'Visit a Roman or neoclassical building', body: 'A bank, a courthouse, an old church. Name the columns, the architraves, the pediments. The Roman world is built into our cities.' },
+          { name: 'Look at a Roman bust or sculpture for a month', body: 'Print one — Marcus Aurelius, Augustus, Cicero. Hang at child height. Look together. The Roman face.' },
+          { name: 'A wooden sword and a small shield', body: 'The Roman boy played at being a soldier. Wooden gladius, simple shield. Pretend battles in the garden. Courage is rehearsed in play.' },
+          { name: 'A weekly family hike or walk', body: 'The Romans built their citizens through real walking and hard travel. A family walk every Sunday. Rain or shine.' },
+          { name: 'Read a picture-book biography of a Roman', body: 'Marcus Aurelius for children. Caesar. Cicero. Augustine (in late antiquity). Real lives, simply told.' },
+          { name: 'Tell the family\'s own stories', body: 'A great-grandparent\'s emigration. A grandfather\'s war. A family victory or hardship. The 4yo learns they belong to a line.' },
+          { name: 'Daily small responsibility', body: 'A specific small task the 4yo owns. Watering a particular plant. Setting their place at the table. Putting the family napkins out. Same task every day.' },
+          { name: 'A weekly visit to an elder', body: 'A grandparent, a great-aunt, an older neighbour. The child learns to honour age and to listen.' },
+          { name: 'A short prayer at bedtime', body: 'A simple invocation to the family\'s gods, ancestors, or to a remembered loved one. Same words, every night.' },
+          { name: 'Mark the family calendar', body: 'Birthdays of living and dead family members. Wedding anniversaries. Days the family remembers. The 4yo grows up knowing what the family marks.' },
+          { name: 'A weekly handcraft or domestic skill', body: 'Bread, mending, polishing, gardening. The 4yo learns one or two real skills by the end of the year, taught by the parent.' }
+        ]
+      },
+      'reading-list': {
+        title: 'Reading list',
+        icon: 'book',
+        intro: 'For the child, the great Roman stories told beautifully. For the parent, the primary sources and the modern interpreters.',
+        forChild: {
+          intro: 'Romans were practical, dutiful, story-loving people. The books should be too.',
+          groups: [
+            { heading: 'Roman heroes for children', books: [
+              'Geraldine McCaughrean — The Orchard Book of Roman Myths',
+              'Caroline Lawrence — The Roman Mysteries series (for older readers; read-aloud earlier)',
+              'A Child\'s Book of Roman Heroes (search Catholic or classical curriculum publishers)',
+              'Diane Stanley — Cleopatra (technically late Ptolemaic Egypt but speaks to the Roman world)'
+            ]},
+            { heading: 'Picture books with Roman settings', books: [
+              'Marcia Williams — Ancient Rome (comic-strip-style retellings)',
+              'Mary Pope Osborne — Vacation Under the Volcano (Magic Tree House #13, Pompeii)',
+              'Stephen Biesty — Cross-Sections: Rome (richly illustrated, slightly older)'
+            ]},
+            { heading: 'Aesop and moral fable (Romans loved these too)', books: [
+              'Aesop\'s Fables — Milo Winter\'s edition',
+              'Arnold Lobel — Fables'
+            ]},
+            { heading: 'Read-aloud chapter books', books: [
+              'Rosemary Sutcliff — Eagle of the Ninth (for older readers, but read-aloud earlier)',
+              'Henry Winterfeld — Detectives in Togas (a classic Latin-flavoured chapter book)',
+              'Caroline Lawrence — The Thieves of Ostia (Roman Mysteries Book 1)'
+            ]}
+          ]
+        },
+        forParent: {
+          intro: 'The Romans wrote much about themselves. Read selectively; they reward patience.',
+          books: [
+            { title: 'Institutio Oratoria, Book I', author: 'Quintilian, c. 95 AD', note: 'A Roman rhetorician on early education. Practical, warm, surprisingly modern. Begin here.' },
+            { title: 'Plutarch\'s Roman Lives (selected)', author: 'Plutarch', note: 'Cincinnatus, Cato the Elder, Cicero, Caesar, Brutus, Marcus Aurelius. Moral biography at its highest.' },
+            { title: 'Meditations', author: 'Marcus Aurelius', note: 'The personal notebook of a Roman emperor and a Stoic. Read for the voice of a Roman of weight.' },
+            { title: 'On Duties (De Officiis)', author: 'Cicero', note: 'Cicero\'s letter to his son on how to live a Roman life. The book on pietas, decorum, virtue.' },
+            { title: 'On Old Age, On Friendship', author: 'Cicero', note: 'Two short dialogues. Easier than On Duties; equally valuable.' },
+            { title: 'Letters from a Stoic', author: 'Seneca', note: 'Seneca\'s practical letters on living a virtuous Roman life.' },
+            { title: 'Roman Lives, Roman Letters', author: 'Various', note: 'Anthologies are easy to find; pick one for a slow daily reading.' },
+            { title: 'How to Be a Roman', author: 'Mary Beard', note: 'A modern historian, accessible and accurate. Good orientation.' }
+          ]
+        },
+        free: 'Gutenberg has all of Cicero, Seneca, Plutarch, Marcus Aurelius. Librivox has free audio. The Loeb Classical Library volumes are paid but the gold standard.'
+      },
+      'competency': {
+        title: 'What a Roman patrician would expect at four',
+        icon: 'sprout',
+        intro: 'A 4-year-old of a Roman patrician family is dignified, knows the household ritual, has heard the great stories of Rome, and is being trained in pietas and gravitas.',
+        landmarks: [
+          { area: 'Knowledge of the Roman heroes', items: ['Knows the names of the great Romans (Cincinnatus, Horatius, Cato, Caesar, Augustus)', 'Re-tells at least one Roman virtue story', 'Recognises a Roman bust, a column, the eagle'] },
+          { area: 'Pietas (early signs)', items: ['Honours parents and elders with the right manners', 'Participates in family ritual at the household shrine', 'Knows the family\'s ancestors by name and one fact each'] },
+          { area: 'Gravitas (early signs)', items: ['Can sit through a serious adult conversation without disrupting', 'Speaks with some weight, not constant chatter', 'Is taken seriously by adults when they speak'] },
+          { area: 'Real responsibility', items: ['Has one daily household task they own', 'Carries messages and runs small errands', 'Is part of family meals as a real participant'] },
+          { area: 'Language and memory', items: ['Knows a few words of Latin', 'Has memorised one or two short blessings or verses', 'Has heard the family stories repeatedly'] },
+          { area: 'Body', items: ['Walks, runs, climbs vigorously', 'Manages a small tool or weapon (a wooden sword) with care', 'Has a beginning of the Roman virtue of endurance (puts up with cold, hunger, tiredness without immediate complaint)'] }
+        ],
+        note: 'The Roman patrician would say: a 4yo who honours the shrine, knows the family stories, sits at the family table, does their daily duty without complaint — this child has begun the long road to becoming a citizen of weight.'
+      }
+    }
+  },
 ];
 
 window.METHOD_BY_ID = (id) => window.METHODS.find(m => m.id === id);
