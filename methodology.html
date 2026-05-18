@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#2563eb">
+  <title>New Beginnings — Tradition</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="method-page">
+  <a href="index.html" class="home-link">← Home</a>
+
+  <main id="root" class="method-main"></main>
+
+  <script src="assets/methods-data.js"></script>
+  <script>
+    const SUB_ICONS = {
+      compass: '<circle cx="32" cy="32" r="22" fill="none" stroke="currentColor" stroke-width="4"/><polygon points="32,16 38,32 32,48 26,32" fill="currentColor"/>',
+      sun: '<circle cx="32" cy="32" r="12" fill="currentColor"/><g stroke="currentColor" stroke-width="3.5" stroke-linecap="round"><line x1="32" y1="8" x2="32" y2="16"/><line x1="32" y1="48" x2="32" y2="56"/><line x1="8" y1="32" x2="16" y2="32"/><line x1="48" y1="32" x2="56" y2="32"/><line x1="14" y1="14" x2="20" y2="20"/><line x1="44" y1="44" x2="50" y2="50"/><line x1="14" y1="50" x2="20" y2="44"/><line x1="44" y1="20" x2="50" y2="14"/></g>',
+      hand: '<path d="M20 36 V22 a3 3 0 0 1 6 0 V32 V18 a3 3 0 0 1 6 0 V32 V20 a3 3 0 0 1 6 0 V34 V24 a3 3 0 0 1 6 0 V42 a14 14 0 0 1 -14 14 H26 a8 8 0 0 1 -8 -8 V40 a4 4 0 0 1 2 -4 Z" fill="currentColor"/>',
+      book: '<rect x="14" y="14" width="36" height="40" rx="2" fill="currentColor"/><rect x="16" y="16" width="32" height="36" rx="1" fill="white"/><line x1="22" y1="24" x2="42" y2="24" stroke="currentColor" stroke-width="2.5"/><line x1="22" y1="32" x2="42" y2="32" stroke="currentColor" stroke-width="2.5"/><line x1="22" y1="40" x2="36" y2="40" stroke="currentColor" stroke-width="2.5"/>',
+      sprout: '<path d="M32 54 V30" stroke="currentColor" stroke-width="4" stroke-linecap="round" fill="none"/><path d="M32 30 C 32 18 18 16 14 24 C 18 30 28 30 32 30 Z" fill="currentColor"/><path d="M32 30 C 32 22 46 18 50 24 C 46 30 36 30 32 30 Z" fill="currentColor" opacity="0.7"/>'
+    };
+
+    const SECTION_ORDER = ['core-idea', 'day-in-life', 'activities', 'reading-list', 'competency'];
+
+    const id = new URLSearchParams(location.search).get('id') || 'charlotte-mason';
+    const m = window.METHOD_BY_ID(id);
+    const root = document.getElementById('root');
+
+    if (!m) {
+      root.innerHTML = '<h1>Tradition not found</h1><p><a href="index.html">← Back to home</a></p>';
+    } else {
+      document.title = 'New Beginnings — ' + m.name;
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', m.color);
+      document.documentElement.style.setProperty('--m-color', m.color);
+      document.documentElement.style.setProperty('--m-deep', m.colorDeep);
+      document.documentElement.style.setProperty('--m-soft', m.colorSoft);
+
+      const subSection = new URLSearchParams(location.search).get('s');
+
+      if (subSection && m.sections && m.sections[subSection]) {
+        renderSubSection(m, subSection);
+      } else {
+        renderMethodLanding(m);
+      }
+    }
+
+    function renderMethodLanding(m) {
+      const subTiles = SECTION_ORDER.map(key => {
+        const s = m.sections && m.sections[key];
+        const built = !!s;
+        const titles = {
+          'core-idea': 'Core idea',
+          'day-in-life': 'A day in the life',
+          'activities': 'Things to do this week',
+          'reading-list': 'Reading list',
+          'competency': 'What to expect at four'
+        };
+        const taglines = {
+          'core-idea': 'The philosophy in plain language, with the why',
+          'day-in-life': 'What a typical day looks like for a 4-year-old',
+          'activities': '20 activities, pick one or two a day',
+          'reading-list': 'Books for the parent + books to read aloud',
+          'competency': 'Landmarks at four — not a test, just orientation'
+        };
+        const iconKey = key === 'core-idea' ? 'compass' : key === 'day-in-life' ? 'sun' : key === 'activities' ? 'hand' : key === 'reading-list' ? 'book' : 'sprout';
+        return `
+          <a class="sub-tile ${built ? '' : 'sub-tile-stub'}" ${built ? `href="methodology.html?id=${m.id}&s=${key}"` : ''}>
+            ${built ? '' : '<span class="tile-badge">Coming soon</span>'}
+            <div class="sub-tile-icon"><svg viewBox="0 0 64 64">${SUB_ICONS[iconKey]}</svg></div>
+            <div class="sub-tile-name">${titles[key]}</div>
+            <div class="sub-tile-tag">${taglines[key]}</div>
+          </a>
+        `;
+      }).join('');
+
+      root.innerHTML = `
+        <header class="method-hero">
+          <div class="method-hero-eyebrow">${m.era}</div>
+          <h1>${m.name}</h1>
+          <p class="method-tagline">${m.tagline}</p>
+          <p class="method-blurb">${m.blurb}</p>
+        </header>
+
+        <section class="method-borrows">
+          <div class="borrow-card">
+            <h3>What we borrow</h3>
+            <p>${m.borrows}</p>
+          </div>
+          <div class="borrow-card">
+            <h3>What we leave</h3>
+            <p>${m.avoids}</p>
+          </div>
+        </section>
+
+        <section class="sub-tile-section">
+          <h2>Explore</h2>
+          <div class="sub-tile-grid">${subTiles}</div>
+        </section>
+      `;
+    }
+
+    function renderSubSection(m, key) {
+      const s = m.sections[key];
+      const back = `<div class="sub-back"><a href="methodology.html?id=${m.id}">← Back to ${m.name}</a></div>`;
+      let body = '';
+
+      if (key === 'core-idea') {
+        body = `
+          <p class="lede">${s.intro}</p>
+          ${s.principles.map((p, i) => `
+            <div class="card principle-card">
+              <div class="principle-num">${i + 1}</div>
+              <h3>${p.name}</h3>
+              <p>${p.body}</p>
+              <p class="why">${p.why}</p>
+            </div>
+          `).join('')}
+        `;
+      } else if (key === 'day-in-life') {
+        body = `
+          <p class="lede">${s.intro}</p>
+          <div class="day-timeline">
+            ${s.timeline.map(b => `
+              <div class="day-block">
+                <div class="day-time">${b.time}</div>
+                <div class="day-content">
+                  <div class="day-title">${b.title}</div>
+                  <div class="day-body">${b.body}</div>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+          ${s.note ? `<p class="why">${s.note}</p>` : ''}
+        `;
+      } else if (key === 'activities') {
+        body = `
+          <p class="lede">${s.intro}</p>
+          <div class="activity-grid">
+            ${s.items.map((a, i) => `
+              <div class="activity-card">
+                <div class="activity-num">${i + 1}</div>
+                <div class="activity-name">${a.name}</div>
+                <div class="activity-body">${a.body}</div>
+              </div>
+            `).join('')}
+          </div>
+        `;
+      } else if (key === 'reading-list') {
+        body = `
+          <p class="lede">${s.intro}</p>
+          <h2>For the child</h2>
+          <p>${s.forChild.intro}</p>
+          ${s.forChild.groups.map(g => `
+            <div class="card">
+              <h3>${g.heading}</h3>
+              <ul>${g.books.map(b => `<li>${b}</li>`).join('')}</ul>
+            </div>
+          `).join('')}
+          <h2>For the parent</h2>
+          <p>${s.forParent.intro}</p>
+          <div class="card">
+            <ul class="book-list">
+              ${s.forParent.books.map(b => `
+                <li><strong>${b.title}</strong> — ${b.author}<br><span class="book-note">${b.note}</span></li>
+              `).join('')}
+            </ul>
+          </div>
+          ${s.free ? `<p class="why">${s.free}</p>` : ''}
+        `;
+      } else if (key === 'competency') {
+        body = `
+          <p class="lede">${s.intro}</p>
+          ${s.landmarks.map(area => `
+            <div class="card">
+              <h3>${area.area}</h3>
+              <ul>${area.items.map(i => `<li>${i}</li>`).join('')}</ul>
+            </div>
+          `).join('')}
+          ${s.note ? `<p class="why">${s.note}</p>` : ''}
+        `;
+      }
+
+      const titles = {
+        'core-idea': 'Core idea',
+        'day-in-life': 'A day in the life',
+        'activities': 'Things to do this week',
+        'reading-list': 'Reading list',
+        'competency': 'What to expect at four'
+      };
+
+      root.innerHTML = `
+        ${back}
+        <header class="sub-hero">
+          <div class="sub-hero-eyebrow">${m.name}</div>
+          <h1>${titles[key]}</h1>
+        </header>
+        ${body}
+      `;
+      window.scrollTo(0, 0);
+    }
+
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));
+    }
+  </script>
+</body>
+</html>

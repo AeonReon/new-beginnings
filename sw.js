@@ -1,7 +1,9 @@
-const CACHE = 'new-beginnings-v2';
+const CACHE = 'new-beginnings-v3';
 const ASSETS = [
   './',
   './index.html',
+  './compass.html',
+  './methodology.html',
   './compare.html',
   './rhythm.html',
   './feast.html',
@@ -9,8 +11,12 @@ const ASSETS = [
   './keeping.html',
   './manifest.json',
   './icon.svg',
+  './apple-touch-icon.png',
+  './icon-192.png',
+  './icon-512.png',
   './assets/style.css',
   './assets/app.js',
+  './assets/methods-data.js',
   './assets/feast-data.js',
   './assets/resources-data.js',
   './assets/methodologies-data.js',

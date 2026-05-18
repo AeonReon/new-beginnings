@@ -1,34 +1,12 @@
-const PAGES = [
-  { href: 'index.html', label: 'Compass' },
-  { href: 'compare.html', label: 'Compare' },
-  { href: 'rhythm.html', label: 'Rhythm' },
-  { href: 'feast.html', label: 'Feast' },
-  { href: 'resources.html', label: 'Resources' },
-  { href: 'keeping.html', label: 'Keeping' }
-];
+// Inserts a "← Home" pill on every page except the launcher (index.html).
+// The launcher renders its own header. Methodology pages add their own home link inline.
 
-function renderHeader() {
-  const here = (location.pathname.split('/').pop() || 'index.html');
-  const nav = PAGES.map(p =>
-    `<a href="${p.href}"${p.href === here ? ' class="active"' : ''}>${p.label}</a>`
-  ).join('');
-  document.body.insertAdjacentHTML('afterbegin', `
-    <header class="site">
-      <div class="wrap">
-        <a href="index.html" class="brand">New Beginnings</a>
-        <nav>${nav}</nav>
-      </div>
-    </header>
-  `);
-}
-
-function renderFooter() {
-  document.body.insertAdjacentHTML('beforeend', `
-    <footer class="site">
-      A first-principles guide for the early years — not a curriculum.
-      Content is an honest synthesis, not an authority. Test it against your child.
-    </footer>
-  `);
+function renderHomeLink() {
+  const here = location.pathname.split('/').pop() || 'index.html';
+  if (here === 'index.html' || here === '' || here === 'methodology.html') return;
+  document.body.insertAdjacentHTML('afterbegin',
+    '<a href="index.html" class="home-link">← Home</a>'
+  );
 }
 
 function registerSW() {
@@ -61,8 +39,7 @@ function isoDay(d) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  renderHeader();
-  renderFooter();
+  renderHomeLink();
   registerSW();
 });
 
