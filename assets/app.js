@@ -1,11 +1,16 @@
-// Inserts a "← Home" pill on every page except the launcher (index.html).
-// The launcher renders its own header. Methodology pages add their own home link inline.
+const APP_VERSION = 'v4';
 
 function renderHomeLink() {
   const here = location.pathname.split('/').pop() || 'index.html';
   if (here === 'index.html' || here === '' || here === 'methodology.html') return;
   document.body.insertAdjacentHTML('afterbegin',
     '<a href="index.html" class="home-link">← Home</a>'
+  );
+}
+
+function renderVersionPill() {
+  document.body.insertAdjacentHTML('beforeend',
+    `<div class="version-pill">${APP_VERSION}</div>`
   );
 }
 
@@ -40,6 +45,7 @@ function isoDay(d) {
 
 document.addEventListener('DOMContentLoaded', () => {
   renderHomeLink();
+  renderVersionPill();
   registerSW();
 });
 
