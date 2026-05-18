@@ -199,10 +199,129 @@ window.METHODS = [
     colorDeep: '#7c2d12',
     colorSoft: '#ffedd5',
     icon: 'cube',
-    built: false,
-    blurb: 'Italian physician Maria Montessori built a method around the prepared environment, beautiful real materials, and trusting the child to choose their own work during a long uninterrupted block.',
-    borrows: 'Practical life with real tools, the math materials (number rods, golden beads), respect for the child\'s independence.',
-    avoids: 'The prohibition on fantasy play — fairy tales do real work on moral imagination.'
+    built: true,
+    blurb: 'Italian physician Maria Montessori built a method around the prepared environment, beautiful real materials, and trusting the child to choose their own work during a long uninterrupted block. The 3–6 classroom is called the "Primary" or "Children\'s House."',
+    borrows: 'Practical life with real tools, the math materials (number rods, golden beads), the sandpaper letters, the deep respect for the child\'s independence and concentration.',
+    avoids: 'The prohibition on fantasy play and fairy tales — they do real work on moral imagination. The "every child must do every material in order" rigidity in some classrooms.',
+    sections: {
+      'core-idea': {
+        title: 'Core idea',
+        icon: 'compass',
+        intro: 'Montessori observed that a young child, given a beautiful prepared environment and the freedom to choose meaningful work, will concentrate deeply, repeat eagerly, and develop themselves. The adult prepares; the child works.',
+        principles: [
+          { name: 'Follow the child', body: 'Watch what the child chooses, what they return to, what they ignore. Their interests are the curriculum — your job is to present rich possibilities and notice which take root.', why: 'A 4-year-old\'s developing brain prioritises certain skills in certain windows. The child knows what they need before any test could detect it. Watching saves you from forcing the wrong work at the wrong time.' },
+          { name: 'The prepared environment', body: 'A low shelf with a handful of carefully chosen materials, each on its own tray, each complete and beautiful. The room is the teacher; the adult mostly observes.', why: 'Choice in a contained, deliberate environment trains both freedom and self-discipline. Too much choice overwhelms; no choice infantilises. Eight beautiful trays beats a hundred plastic toys.' },
+          { name: 'The three-hour work cycle', body: 'A long uninterrupted block (90 minutes to three hours) where the child chooses, works, repeats, finishes. The deepest concentration happens around the 90-minute mark — not before.', why: 'Adults underestimate how long it takes a 4yo to enter true concentration. Constant interruption ("now we do snack, now we do circle") prevents the deepest learning of all — the learning to attend.' },
+          { name: 'Real work over pretend', body: 'A child-sized broom that sweeps real dirt. A small pitcher that pours real water. A butter knife that cuts real banana. Practical life is not a warm-up to "real" school — it is the school.', why: 'Competence comes from work that matters. Toy kitchens teach the child their work is fake. Real kitchens teach them they are a person among persons.' },
+          { name: 'Self-correcting materials', body: 'Materials reveal their own errors — the cylinder block has only one hole each cylinder fits, so the child sees their own mistake. No adult intervention required.', why: 'An adult saying "wrong, try again" undermines confidence. The material saying "this one doesn\'t fit here" builds confidence — the child solves it without losing face.' },
+          { name: 'The absorbent mind', body: 'Under six, children take in everything around them without effort — language, manners, music, atmosphere. After six, learning costs more effort. So fill the environment with what you most want them to absorb.', why: 'What surrounds the 4yo becomes them. The quality of the music, the kindness of the words, the order of the home — all of it sinks in unfiltered. Choose carefully what you put around them.' },
+          { name: 'Grace and courtesy', body: 'Direct teaching of how to interrupt, how to greet, how to pass, how to apologise, how to say no. Modelled, named, practised. Not "be good" — specific, learnable lessons.', why: 'Social grace is a skill, not a personality trait. A 4yo who has been shown "say excuse me, then wait" knows what to do; one who has only been told "don\'t interrupt" doesn\'t. Teach the skill.' }
+        ]
+      },
+      'day-in-life': {
+        title: 'A day in the life',
+        icon: 'sun',
+        intro: 'A Montessori day for a 4-year-old at home centres on a long work cycle in the morning and freedom in the afternoon. The home shelves are the "prepared environment" — kept tidy, rotated weekly.',
+        timeline: [
+          { time: '7:00', title: 'Slow morning', body: 'Wake. Dress (the child dresses themselves — Velcro shoes, easy buttons, hooks at child height). Help lay the table. Breakfast together.' },
+          { time: '8:30', title: 'Tidy and set up', body: 'The child puts their breakfast plate in the sink. Wipes their place. Goes to the work shelf and chooses today\'s first work.' },
+          { time: '9:00', title: 'Work cycle (long)', body: 'A 90-minute to three-hour block. The child chooses their work — pouring rice, sandpaper letters, the pink tower, the number rods. They work, repeat, put away, choose again. The adult observes, only intervenes if needed.' },
+          { time: '11:30', title: 'Snack (prepared by the child)', body: 'The child chops their own banana, spreads butter on toast, pours their own water. Sits at the table to eat.' },
+          { time: '12:00', title: 'Outside', body: 'Garden, park, woods. Real walking, real climbing. The garden is part of practical life — watering, weeding, harvesting whatever is ready.' },
+          { time: '13:00', title: 'Family lunch', body: 'A real meal. The child helps prepare and clear.' },
+          { time: '14:00', title: 'Rest', body: 'A nap, or an hour of quiet on the bed with a picture book. No screens.' },
+          { time: '15:30', title: 'Free play and creative work', body: 'Drawing with real pencils on real paper, modelling with clay, dress-up, blocks. Materials are accessible at child height; child puts them away when finished.' },
+          { time: '17:30', title: 'Help with dinner', body: 'Set the table. Wash lettuce. Stir what is being stirred. The kitchen is part of the schoolroom.' },
+          { time: '18:30', title: 'Dinner, bath, bed', body: 'Family meal. Bath (the child washes themselves). One story. Lights out by 19:30.' }
+        ],
+        note: 'The non-negotiable is the long uninterrupted morning work cycle. Everything else flexes.'
+      },
+      'activities': {
+        title: 'Things you can do this week',
+        icon: 'hand',
+        intro: 'Twenty Montessori-true activities for a 4-year-old at home. Many use what is already in your kitchen. None require expensive materials.',
+        items: [
+          { name: 'Set up a pouring tray', body: 'A small pitcher, two small cups, a sponge, a tray. The child pours water from one cup to the other and back, all morning if they like.' },
+          { name: 'Spoon dried beans', body: 'Two small bowls, a spoon, a tray of dried chickpeas. The child spoons from one bowl to the other. When they finish, they reverse it.' },
+          { name: 'Polish a piece of silver', body: 'A small jar of polish, a soft cloth, a piece of real silver (a spoon, a small dish). The child polishes until it gleams.' },
+          { name: 'Wash a small mirror', body: 'A spray bottle of water, a cloth, a small framed mirror. They learn to spray, wipe, dry.' },
+          { name: 'Sandpaper letters', body: 'Buy a set (Melissa & Doug do an inexpensive one) or make your own. The child traces each letter while you say the sound (not the name).' },
+          { name: 'Number rods or red rods', body: 'A graduated set of rods (long to short). Lay them out, run a finger along each, count as you go. The hand learns what the brain will later understand.' },
+          { name: 'Sort buttons by colour', body: 'A bowl of mixed buttons, several smaller bowls. The child sorts. Simple. Absorbing.' },
+          { name: 'Chop a soft fruit', body: 'A banana, a strawberry, a pear quarter, a butter knife. Real knife eventually. Sit with them but do not chop for them.' },
+          { name: 'Open and close containers', body: 'A basket of jars, boxes, tins with different lids — screw, snap, hinged. The child opens, closes, opens again.' },
+          { name: 'Lace beads on a string', body: 'Wooden beads with a generous hole, a stiff cord. Make patterns or just thread. Builds the pencil grip that will later write.' },
+          { name: 'Wash dishes (a few real ones)', body: 'A low stool at the sink. Warm water, soap, a small towel. They wash their own plate after lunch.' },
+          { name: 'Fold tea towels', body: 'A basket of clean tea towels. Show them how to fold once. Then let them fold the whole basket, however they manage.' },
+          { name: 'Match leaves', body: 'On a walk, pick up two of each kind of leaf. Bring them home, lay them out, find the matching pairs.' },
+          { name: 'Pin pricking', body: 'A printed shape on cardstock, a thumbtack (with cork), a piece of felt underneath. The child pricks along the line. When done, the shape pops out. Hand control.' },
+          { name: 'Make a sandwich, end to end', body: 'Bread, butter, filling, knife, plate. The child does the whole thing. Their lunch.' },
+          { name: 'Watering plants', body: 'A small watering can, the houseplants. The child waters each one in turn — same plant, same can, every morning.' },
+          { name: 'Sort socks', body: 'The clean laundry basket. The child finds matching pairs and folds them.' },
+          { name: 'Practise saying excuse me', body: 'A grace-and-courtesy lesson. Model: tap shoulder, wait, say excuse me. Practise with you, with siblings.' },
+          { name: 'Pin work', body: 'Cork board, push pins, a piece of paper. The child arranges pins in a pattern. Concentration.' },
+          { name: 'Dust the bookshelf', body: 'A small cloth. Show them once. Then they dust every Saturday morning, their job.' }
+        ]
+      },
+      'reading-list': {
+        title: 'Reading list',
+        icon: 'book',
+        intro: 'Montessori herself wrote about education for the parent. For the child, the recommendation is reality-based stories at four — the imaginary creature stories come later. Many Montessori families relax this rule.',
+        forChild: {
+          intro: 'Real-world books, beautifully illustrated. Fairy tales are not forbidden in your home even if the purist classroom omits them.',
+          groups: [
+            { heading: 'Reality-based picture books', books: [
+              'Tana Hoban — Black on White, White on Black, I Read Signs (photographs of the real world)',
+              'Robert McCloskey — Make Way for Ducklings, Blueberries for Sal',
+              'Ezra Jack Keats — The Snowy Day, Whistle for Willie',
+              'Margaret Wise Brown — The Important Book',
+              'Gail Gibbons — anything (clear non-fiction on bees, gardens, weather)'
+            ]},
+            { heading: 'Nature and observation', books: [
+              'Aliki — Digging Up Dinosaurs, A Weed Is a Flower',
+              'Lois Ehlert — Planting a Rainbow, Eating the Alphabet',
+              'Steve Jenkins — Actual Size, What Do You Do With a Tail Like This?'
+            ]},
+            { heading: 'Practical life and family', books: [
+              'Vera B. Williams — A Chair for My Mother',
+              'Mem Fox — Time for Bed, Where Is the Green Sheep?',
+              'Helen Oxenbury — All Fall Down, Tickle Tickle, Clap Hands'
+            ]},
+            { heading: 'Fairy tales (purists disagree; we include them)', books: [
+              'The Brothers Grimm — selected, unsanitised',
+              'Beatrix Potter — the full set',
+              'Aesop\'s Fables — for the moral imagination'
+            ]}
+          ]
+        },
+        forParent: {
+          intro: 'Montessori\'s own books are dense. Start with a modern interpreter, then return to her if you want depth.',
+          books: [
+            { title: 'The Absorbent Mind', author: 'Maria Montessori, 1949', note: 'The most accessible of her major works. Her theory of the under-six mind. Slow reading.' },
+            { title: 'The Discovery of the Child', author: 'Maria Montessori, 1948', note: 'Her clearest account of the method itself. The materials, the prepared environment, the role of the adult.' },
+            { title: 'Montessori from the Start', author: 'Paula Polk Lillard & Lynn Lillard Jessen', note: 'Birth to three but the philosophy applies beyond. Practical, gentle, beautifully done.' },
+            { title: 'How to Raise an Amazing Child the Montessori Way', author: 'Tim Seldin', note: 'Photo-rich, practical, age-graded. The book to flip through in the early weeks.' },
+            { title: 'The Montessori Toddler', author: 'Simone Davies', note: 'The most popular modern Montessori book. Davies also runs The Montessori Notebook online.' },
+            { title: 'Understanding Montessori', author: 'Maren Schmidt', note: 'A short, clear primer if you only read one.' }
+          ]
+        },
+        free: 'AMI (Association Montessori Internationale) hosts free essays at montessori-ami.org. The Montessori Notebook blog by Simone Davies is the best free practical resource.'
+      },
+      'competency': {
+        title: 'What to expect at four',
+        icon: 'sprout',
+        intro: 'A 4-year-old in a Montessori-aware home is independent in self-care, capable of long concentration on a chosen task, and starting to recognise letters and numbers through the hand before the brain.',
+        landmarks: [
+          { area: 'Independence', items: ['Dresses themselves (Velcro or simple buttons)', 'Pours their own water from a small pitcher', 'Prepares a simple snack (banana, toast, cheese on bread)', 'Carries a tray steadily across the room', 'Puts work away before choosing the next'] },
+          { area: 'Concentration', items: ['Sustains a chosen activity 20–45 minutes (longer with the right material)', 'Repeats a satisfying activity many times in a row', 'Returns to unfinished work the next day'] },
+          { area: 'Hand', items: ['Tripod-ish pencil grip', 'Threads beads, laces cards, picks up small objects with thumb-finger pincer', 'Traces sandpaper letters and recognises some by feel'] },
+          { area: 'Early literacy (through the hand)', items: ['Recognises most letter sounds (not necessarily names)', 'Identifies the first sound of a familiar word ("mmm-mum")', 'May begin to build simple words with the movable alphabet (cat, mat, pin)'] },
+          { area: 'Early numeracy (through the materials)', items: ['Counts objects 1-to-10 with one-to-one correspondence', 'Recognises numerals 1–10 by sight', 'Compares "more" and "less" with concrete objects'] },
+          { area: 'Grace and courtesy', items: ['Says excuse me to interrupt', 'Pours water for a guest', 'Greets adults by name', 'Apologises specifically when prompted ("I\'m sorry I spilled your tea")'] }
+        ],
+        note: 'Independence is the most visible marker. A 4-year-old who can dress themselves, prepare a snack, and clean up after themselves has had something done right.'
+      }
+    }
   },
   {
     id: 'waldorf',
@@ -214,25 +333,268 @@ window.METHODS = [
     colorDeep: '#831843',
     colorSoft: '#fce7f3',
     icon: 'flower',
-    built: false,
-    blurb: 'Rudolf Steiner\'s schools wrap childhood in a strong daily and seasonal rhythm — beeswax, watercolour, fairy tales told from memory, hours outside, no letters or numbers before the second teeth.',
-    borrows: 'Predictable rhythm, natural materials, festival life, stories told and re-told.',
-    avoids: 'Strict delayed-reading dogma; the underlying anthroposophy. Practices stand on their own.'
+    built: true,
+    blurb: 'Rudolf Steiner\'s schools wrap childhood in a strong daily, weekly, and seasonal rhythm. Beeswax modelling, wet-on-wet watercolour, fairy tales told from memory, hours outside in any weather, festival life — and no letters or numbers introduced until the second teeth come in around age 6 or 7.',
+    borrows: 'Predictable rhythm, natural materials, festival life, stories told from memory and re-told for a fortnight, the protected quality of the early years.',
+    avoids: 'Strict delayed-reading dogma when the child is eager. The underlying anthroposophy as a worldview (we take the practices, not the metaphysics). The prohibition on dark hair colour on dolls or "feature-rich" toys can become its own fussiness.',
+    sections: {
+      'core-idea': {
+        title: 'Core idea',
+        icon: 'compass',
+        intro: 'Steiner held that the first seven years are about building the physical body and the will, through imitation, rhythm, and warmth. Intellectual work belongs to a later stage. The early years are protected.',
+        principles: [
+          { name: 'Rhythm before schedule', body: 'A day, a week, a year that returns in roughly the same shape. Monday is bread day. Tuesday is painting day. Advent unfolds the same way each year. The shape is the security.', why: 'A 4-year-old has not yet developed the ability to imagine the future. Rhythm gives them the feeling that the world is reliable, which is the foundation of all later confidence.' },
+          { name: 'Imitation, not instruction', body: 'A 4yo does not learn from being told. They learn from watching a parent knead bread, sweep the floor, sing while mending. Live well in their presence; they will absorb it.', why: 'The under-seven brain is wired for imitation. Direct instruction at this age either fails or shifts the child into a precocious-adult mode that costs more than it gives.' },
+          { name: 'Protect the senses', body: 'Natural materials (wood, wool, silk, beeswax). Soft voices. No screens. No commercial characters. Cardboard, sticks, scarves over plastic.', why: 'The 4yo\'s nervous system is still being built and is unusually open to sensory input. Plastic, screens, and over-stimulation jangle a system that should be settling.' },
+          { name: 'Stories told, not read', body: 'A simple fairy tale memorised by the parent, told in your own voice, repeated for a fortnight without variation. The same story, the same words, every night.', why: 'A told story comes from your voice and face and is alive. A read story is one step removed. A repeated story tells the child the world is large enough to come back to.' },
+          { name: 'Festival life', body: 'Mark the seasons in real ways — make lanterns for Martinmas, plant bulbs in autumn, light candles in winter, dance in spring. The year has a shape; the child feels it.', why: 'A 4yo who lives a festival year develops a sense of time that no calendar can teach. Spring is not a fact; it is the feeling of warmth returning after candles.' },
+          { name: 'Outside in any weather', body: 'There is no bad weather, only bad clothes. Wellies, waterproofs, warm wool. Two to four hours outside, every day.', why: 'The body is still building itself through movement, balance, weather, light. The cold day makes the warm home meaningful. Avoidance teaches the child the world is fragile.' },
+          { name: 'No early academics', body: 'No letters before six. No numbers as abstractions. Reading and writing belong to the next stage of development — the brain is not yet ready in a way that protects life-long love of learning.', why: 'Reading taught too early gives a two-year head start that is neutralised by ten in every longitudinal study. The cost is often a child who finds reading a chore for the rest of school.' }
+        ]
+      },
+      'day-in-life': {
+        title: 'A day in the life',
+        icon: 'sun',
+        intro: 'A Waldorf day for a 4-year-old is unhurried, anchored in rhythm, full of warmth, song, and outdoors. The week has anchors: bread day, painting day, soup day.',
+        timeline: [
+          { time: '7:00', title: 'Slow waking', body: 'Wake without alarms if possible. A candle lit at the table. Warm porridge or buttered bread. The parent moves calmly; the child imitates.' },
+          { time: '8:00', title: 'Circle time', body: 'A short verse, a seasonal song, a finger rhyme, a movement game. Same opening every day for the week. Repeated through the term.' },
+          { time: '8:30', title: 'The day\'s anchor work', body: 'Monday — bake bread. Tuesday — wet-on-wet watercolour. Wednesday — beeswax modelling. Thursday — soup-making. Friday — beeswax cleanup and house cleaning. The parent leads; the child joins as they can.' },
+          { time: '10:00', title: 'Free play', body: 'Open-ended toys — silks, blocks, a basket of pinecones, dolls without faces. The parent works nearby (mending, kneading, knitting). The child plays, joins, drifts back.' },
+          { time: '12:00', title: 'Outside, in any weather', body: 'Two hours minimum. The garden, a walk, the woods. Boots, waterproofs. Real climbing, real puddles.' },
+          { time: '13:30', title: 'Family lunch', body: 'A warm meal. Grace before, song after. The same meal returns weekly.' },
+          { time: '14:30', title: 'Rest with a story', body: 'Lie on a bed or under a blanket on the rug. The parent tells a fairy tale from memory — the same one for the week. Quiet afterwards.' },
+          { time: '15:30', title: 'Helping with house', body: 'Sweeping, polishing, watering, folding. Whatever real work is happening, the child is included.' },
+          { time: '17:00', title: 'Family dinner', body: 'Candle lit, hands held briefly, simple grace. Real food, family conversation. The child sets the table; helps clear.' },
+          { time: '18:30', title: 'Bedtime ritual', body: 'Bath. A told story (often the same one as the afternoon, repeated). Verse. Lullaby. Lights out by 19:30.' }
+        ],
+        note: 'The week\'s anchor days are the spine. Monday is bread; Tuesday is painting. A 4yo who has lived two months of this can tell you what day it is by what is in the oven.'
+      },
+      'activities': {
+        title: 'Things you can do this week',
+        icon: 'hand',
+        intro: 'Twenty Waldorf-true activities for a 4-year-old. Most use natural materials you can buy once and use for years.',
+        items: [
+          { name: 'Bake a loaf together, weekly', body: 'A simple recipe, the same one. The child measures, kneads, watches it rise. Eat the warm bread together. Repeat every Monday.' },
+          { name: 'Wet-on-wet watercolour', body: 'Wet the paper, drop in two primary colours, watch them bleed. No "paint a tree." Just colour meeting water.' },
+          { name: 'Beeswax modelling', body: 'A block of natural beeswax warmed in the hand. Shape a snail, a sleeping mouse, a fish. The wax is the material; the child is the artist.' },
+          { name: 'Tell a fairy tale from memory', body: 'Pick one (Sweet Porridge, Goldilocks, Three Billy Goats Gruff). Memorise it. Tell it every night for two weeks. Do not vary it.' },
+          { name: 'Make a lantern for Martinmas (November)', body: 'A glass jar, tissue paper, glue, a tea light. Process the child through the doing. Walk with lanterns at dusk on November 11th, singing a lantern song.' },
+          { name: 'Sing the same song, daily, for a season', body: 'Pick one folk song or seasonal verse. Sing it every morning. By month\'s end the child sings it without prompting.' },
+          { name: 'Finger-knit a snake', body: 'Wool yarn, four fingers. Show how to loop. Hours of meditative work for the child. Use the snake as a doll\'s belt afterwards.' },
+          { name: 'A nature table', body: 'A low table or windowsill with a silk cloth in this season\'s colour. Add pinecones, leaves, a vase of weeds, a tiny gnome. Change with the season.' },
+          { name: 'Plant a spring bulb in autumn', body: 'A daffodil bulb, a pot, soil. Plant in October. Watch through winter. Bloom in spring. The year is real.' },
+          { name: 'Beeswax candle dipping (around Advent)', body: 'A pot of melted beeswax, a length of wick. Dip, dry, dip again. Slow, satisfying, beautiful.' },
+          { name: 'A pentatonic flute or kantele', body: 'A simple five-note instrument. Even random playing sounds musical. No instruction — just availability.' },
+          { name: 'Make soup together from scratch', body: 'A vegetable each day cut for the soup. By Thursday it is a meal. The child has cut every vegetable that is in the pot.' },
+          { name: 'A silk for play', body: 'A 90cm square of dyed silk. Becomes a cape, a baby blanket, a roof, a river. Open-ended for years.' },
+          { name: 'Sweep the floor with a real broom', body: 'A child-sized broom and dustpan. Sweep the same patch each morning. The habit forms over weeks.' },
+          { name: 'Walk in any weather', body: 'Even — especially — when it is raining. A puddle is a destination. Boots and a waterproof are the curriculum.' },
+          { name: 'A verse before meals', body: 'A short blessing or seasonal verse. The same one for the season, then change at the next festival. Spoken or sung together.' },
+          { name: 'Light a candle at dinner', body: 'Every evening meal. The child lights it (with help). The candle is blown out together at the end.' },
+          { name: 'Sing while you work', body: 'Folk songs while sweeping, lullabies while kneading. The child hears that work has a soundtrack and that you choose it.' },
+          { name: 'A puppet from a wool sock', body: 'Wool sock, simple stitched eyes, a story to tell with it. The child can take it over for their own stories.' },
+          { name: 'Mend something visibly', body: 'A small rip in clothes. Sit and stitch in front of the child. Let them try. Real repair, named.' }
+        ]
+      },
+      'reading-list': {
+        title: 'Reading list',
+        icon: 'book',
+        intro: 'For the child, the Waldorf instinct is oral storytelling over books. But picture books from the tradition exist, and chapter books for read-aloud belong in the home.',
+        forChild: {
+          intro: 'Less is more. A handful of beautiful books, returned to often, beats a shelf of novelties.',
+          groups: [
+            { heading: 'Stories to tell from memory (collect the texts)', books: [
+              'Brothers Grimm — start with Sweet Porridge, The Bremen Town Musicians, The Star Money',
+              'Russian fairy tales (Vasilisa, the Firebird)',
+              'Norse and Celtic myths — start gently around 5–6'
+            ]},
+            { heading: 'Beautifully illustrated picture books', books: [
+              'Elsa Beskow — Children of the Forest, Peter in Blueberry Land, Around the Year',
+              'Sibylle von Olfers — The Story of the Root Children, The Story of the Snow Children',
+              'Astrid Lindgren — illustrated editions (The Tomten, Christmas in Noisy Village)',
+              'Jane Ray — The Twelve Dancing Princesses, illustrated Bible stories'
+            ]},
+            { heading: 'Seasonal and festival books', books: [
+              'Susan Cooper — The Shortest Day (poem with illustrations)',
+              'Tasha Tudor — A Time to Keep, The Doll\'s Christmas',
+              'A "Wynstones Press" seasonal songbook'
+            ]},
+            { heading: 'Read-aloud for the parent\'s voice', books: [
+              'A.A. Milne — Winnie-the-Pooh (gentle, perfect at four)',
+              'Beatrix Potter — read aloud, never on screen',
+              'Selma Lagerlöf — The Wonderful Adventures of Nils (around 5–6)'
+            ]}
+          ]
+        },
+        forParent: {
+          intro: 'Steiner himself is difficult and esoteric. Modern Waldorf interpreters are much more accessible.',
+          books: [
+            { title: 'You Are Your Child\'s First Teacher', author: 'Rahima Baldwin Dancy', note: 'The classic Waldorf parenting book for the early years. Practical, warm, deeply rooted.' },
+            { title: 'Heaven on Earth', author: 'Sharifa Oppenheimer', note: 'A handbook of creating a Waldorf-inspired home for ages 3–12. Lush, specific.' },
+            { title: 'Beyond the Rainbow Bridge', author: 'Barbara Patterson & Pamela Bradley', note: 'Nurturing healthy children in the first seven years. Gentle and practical.' },
+            { title: 'Simplicity Parenting', author: 'Kim John Payne', note: 'Not Waldorf-branded but Waldorf in spirit. On reducing, slowing, protecting childhood.' },
+            { title: 'The First Three Years of the Child', author: 'Karl König', note: 'Steiner-inspired but accessible. The developmental view of the under-three years.' },
+            { title: 'Children at Play', author: 'Heidi Britz-Crecelius', note: 'A short book on the seriousness of children\'s play. Worth reading slowly.' }
+          ]
+        },
+        free: 'WaldorfToday.com aggregates free articles and seasonal verses. The Wynstones Press song collections are paid but worth the small cost.'
+      },
+      'competency': {
+        title: 'What to expect at four',
+        icon: 'sprout',
+        intro: 'A 4-year-old in a Waldorf-aware home is calm, capable in the body, alive in imagination, and not yet pushed into letters or numbers. The "delay" is intentional, not neglectful.',
+        landmarks: [
+          { area: 'Imagination', items: ['Engages in long pretend play with simple props', 'Re-enacts stories they have heard repeatedly', 'Gives life to inanimate objects (sticks become horses, scarves become babies)', 'Joins in song and verse without needing to be asked'] },
+          { area: 'Body', items: ['Climbs trees, balances on logs', 'Walks long distances (a 4yo can walk 2–4 km)', 'Manages outdoor risk — picks themselves up, tries again'] },
+          { area: 'Hands', items: ['Models with wax or clay', 'Threads beads, finger-knits, tears paper purposefully', 'Holds a paintbrush with care'] },
+          { area: 'Social', items: ['Imitates the adult\'s tone, words, gestures', 'Plays alongside other children (parallel play deepening to cooperative)', 'Says please and thank you because they hear you saying it'] },
+          { area: 'Rhythm and habit', items: ['Knows the shape of the day without being told', 'Looks forward to Friday\'s ritual', 'Can be redirected with a song rather than a command'] },
+          { area: 'What is NOT expected (and that\'s the point)', items: ['Not reading', 'Not writing letters', 'Not doing arithmetic', 'Not naming all the letters of the alphabet'] }
+        ],
+        note: 'Waldorf parents often face anxiety when they meet "their child should be reading" expectations. The longitudinal data on Waldorf-educated children shows they catch up to and surpass early-readers by age 10–12, with better attitudes to learning. Hold your nerve.'
+      }
+    }
   },
   {
     id: 'classical',
     name: 'Classical',
     short: 'Classical',
     tagline: 'Truth · goodness · beauty · the great tradition',
-    era: 'Greece & Rome · refined by the medieval Christian schools',
+    era: 'Greece & Rome · refined by medieval and modern Christian schools',
     color: '#1d4ed8',
     colorDeep: '#1e3a8a',
     colorSoft: '#dbeafe',
     icon: 'column',
-    built: false,
-    blurb: 'The Trivium — grammar, logic, rhetoric — applied to a 4-year-old means fill the well: memorise a poem, sing a hymn, hear a myth, watch a parent do real work. Formal trivium begins later.',
-    borrows: 'The frame — education as paideia, the formation of a whole person oriented to truth, goodness, beauty. A reading list spanning the Western canon.',
-    avoids: 'Fact-memorisation drill at four; the Classical Conversations co-op pressure.'
+    built: true,
+    blurb: 'The classical tradition holds that education is paideia — the formation of a whole human being, oriented to truth, goodness, and beauty. For a 4-year-old this means filling the well: memorise a poem, sing a hymn, hear a myth, watch a parent do real work. The formal trivium (grammar, logic, rhetoric) begins later — at four, the ground is being prepared.',
+    borrows: 'The whole framing — education aimed at character, not utility. The Western canon as inheritance. Memory work as filling the well. Stories as the training of moral imagination.',
+    avoids: 'Fact-memorisation drill at four (the misapplied Sayers "grammar stage"). The Classical Conversations co-op pressure to do academic work too early. Any tradition cited as authority rather than reasoned through.',
+    sections: {
+      'core-idea': {
+        title: 'Core idea',
+        icon: 'compass',
+        intro: 'The classical tradition is not a method — it is an inheritance. The Greeks asked what makes a human flourish; the Romans asked how to form a citizen; the medieval Christians asked how to form a soul. All three answered: through truth, goodness, beauty, and the company of those who came before. At four, you are giving the child their first taste of that company.',
+        principles: [
+          { name: 'Paideia, not training', body: 'Paideia is the Greek word for forming a whole person — body, mind, soul, character. Not the production of a worker. Not the cramming of facts. The making of a human being.', why: 'A 4yo trained for utility becomes adept at the task and shallow in the soul. A 4yo formed in paideia may not yet read, but will know that the world has Mozart in it, and Homer, and saints, and that they belong to that.' },
+          { name: 'Truth, goodness, beauty are real', body: 'The classical tradition holds that these are not preferences. A 4yo can sense the difference between a true word and a lie, between a kind act and a cruel one, between a beautiful song and a jingle. Teach them to attend.', why: 'A culture that calls everything relative produces a child unable to discern. A 4yo who has heard beautiful music will reject ugly music without being told to. The discernment is built by exposure.' },
+          { name: 'The great books from the start', body: 'Even at four. Read aloud from Homer (a children\'s retelling), from the Bible, from Plutarch (selected stories), from Aesop, from the Bhagavad Gita if your tradition includes it. Not because the child will analyse them — because the rhythm and grandeur will enter.', why: 'A child who hears great language at four develops an ear for it. The "twaddle" books written for early readers leave them with a taste for twaddle. The real books leave them with a taste for the real.' },
+          { name: 'Memory as filling the well', body: 'Memorised poems, verses, prayers, songs are treasures the child will draw from for life. Pick one short piece a month and learn it together by repetition, not by drill.', why: 'A 4yo memorises easily — it is what their brain is built to do. What they memorise now becomes accessible later when they are ready to understand it. The well is filled now; the bucket is drawn down for decades.' },
+          { name: 'Virtue is a habit, not a feeling', body: 'Aristotle: we are what we repeatedly do. Honesty is not a feeling — it is the habit of telling the truth, formed by telling the truth many times. Teach virtues by structuring the daily act of them.', why: 'A 4yo who is told "be kind" but lives in chaos learns to perform kindness when watched. A 4yo whose day includes regular acts of small kindness (greeting a neighbour, sharing a snack) develops the habit, which becomes the disposition.' },
+          { name: 'Stories form the moral imagination', body: 'Fairy tales, myths, saints\' lives, hero stories — unsanitised — are how a 4yo learns what cowardice looks like, what loyalty looks like, what honour looks like. Stripped fairy tales rob the child of the lesson.', why: 'You cannot tell a 4yo what courage is. They learn it by hearing about the youngest brother who set out alone. The moral imagination is built by story long before it can be argued.' },
+          { name: 'The parent as mentor, not entertainer', body: 'In the classical tradition, the adult\'s authority is real — earned by knowing the tradition, lived in the daily example. Not friend, not entertainer, not service provider. Mentor.', why: 'A 4yo who senses their parent is forming them with purpose develops a different relationship to instruction than one who senses the parent is "providing experiences." Authority well-used is freeing, not restrictive.' }
+        ]
+      },
+      'day-in-life': {
+        title: 'A day in the life',
+        icon: 'sun',
+        intro: 'A classical day for a 4-year-old looks much like a Mason day with extra attention to memory work, virtue cultivation, and exposure to the great tradition. Short, deliberate inputs; long unstructured living.',
+        timeline: [
+          { time: '7:00', title: 'Morning prayer or verse', body: 'A short prayer if your tradition includes it; otherwise a verse memorised together. The same one for the week. Spoken at the table before breakfast.' },
+          { time: '7:30', title: 'Family breakfast', body: 'A real meal. Adult conversation. The child hears, absorbs, sometimes joins.' },
+          { time: '8:30', title: 'Memory work + read-aloud', body: 'Fifteen minutes. Repeat this month\'s poem together. Read one section of a story (Aesop\'s fable, a saint\'s life, a Plutarch episode). Ask "Tell me what happened?" — that is the day\'s narration.' },
+          { time: '9:00', title: 'Outdoor block', body: 'Two to three hours outside. Free play and walking. The parent narrates one or two natural things they see.' },
+          { time: '12:00', title: 'Practical life', body: 'Help cook lunch. Set the table. Pour water for the family.' },
+          { time: '12:30', title: 'Family lunch + grace', body: 'A short grace. Conversation. The child listens to the adults.' },
+          { time: '13:30', title: 'Rest with composer or picture', body: 'A piece of music chosen for the term (one composer for 4–6 weeks). Or a print of a painting on the wall to look at for two quiet minutes. Then quiet time in bed.' },
+          { time: '15:00', title: 'Free play', body: 'Open-ended. The child plays alone or with siblings. The parent works nearby.' },
+          { time: '16:30', title: 'Help with real work', body: 'Sweeping, folding, chopping, gardening. Adult tools, adult tasks, child-scaled.' },
+          { time: '17:30', title: 'Family dinner', body: 'Grace. Real meal. Sometimes a short reading at the end (a paragraph from a saint\'s life, a single Psalm, a fable).' },
+          { time: '19:00', title: 'Bedtime ritual', body: 'Bath. A chapter of read-aloud (Beatrix Potter, Wind in the Willows, a Bible story). Evening prayer or verse. Lights out by 19:30.' }
+        ],
+        note: 'The memory work and read-aloud at 8:30 is the "school" part of the day. Fifteen minutes. The rest is paideia in the broader sense — the whole life forming the child.'
+      },
+      'activities': {
+        title: 'Things you can do this week',
+        icon: 'hand',
+        intro: 'Twenty classical activities for a 4-year-old. Most are short, repeatable, and inheritable.',
+        items: [
+          { name: 'Memorise one short verse a month', body: 'Pick a 4–8 line poem. Say it together at breakfast and bedtime. By month\'s end the child has it.' },
+          { name: 'Sing one hymn or folk song daily', body: 'The same one for the season. Sing while you cook, while you walk. The child learns it without effort.' },
+          { name: 'Tell an Aesop fable from memory', body: 'Pick one a week. Tell it; ask the child to tell it back. By month\'s end you have four together.' },
+          { name: 'Look at one painting for a month', body: 'Print it. Put it on the wall at child height. Look together for two minutes a day. Name what you see.' },
+          { name: 'A composer for the term', body: 'Pick one (Bach, Vivaldi, Mozart, Handel). Play one piece daily for 6 weeks. No explanation needed.' },
+          { name: 'Read a saint\'s life or hero story weekly', body: 'Short, narrative, with a virtue at the centre. The story carries the moral; do not preach.' },
+          { name: 'A Plutarch story, simplified', body: 'Plutarch wrote moral biography. Tell one episode (the boy Cyrus, young Alexander, the boy Pythagoras). The child meets the great as children themselves.' },
+          { name: 'Bible story or myth daily', body: 'A short story from your tradition. Genesis stories, Greek myths, Hindu epics — depending on what tradition you are passing on.' },
+          { name: 'Practise one virtue for a fortnight', body: 'Pick one (truthfulness, courage, kindness, attention). Notice it, name it, celebrate when seen, gently address when missed.' },
+          { name: 'Latin or Greek alphabet (gentle exposure)', body: 'Sing the Greek alphabet as a song around 5–6. Not before. Just exposure, not instruction.' },
+          { name: 'Pour libation of milk for the household saint or hero', body: 'A small ritual — every Sunday, place fresh water, milk, or a small flower at the family shrine, ancestor photo, or hero shelf. A tradition the child owns.' },
+          { name: 'Light a candle for the day\'s reading', body: 'When you read a story or do memory work, light a candle. Mark the moment as worth attention. Blow it out together at the end.' },
+          { name: 'Family verse before bed', body: 'A short blessing said over the child by the parent. Same words, every night, for years.' },
+          { name: 'Walk past a noble building', body: 'A church, an old town hall, an old library. Name what it is, who used it. The child meets the inheritance physically.' },
+          { name: 'Beautiful objects at home', body: 'A few — a small icon, a vase of weeds, a hand-bound book, a candle. The child grows up surrounded by considered beauty.' },
+          { name: 'A real conversation at the dinner table', body: 'About something serious — a beautiful thing, a true thing, a hard thing in the world. The 4yo does not need to follow it. They are absorbing the register.' },
+          { name: 'A handcraft each season', body: 'Make a candle, a wreath, a small carving, a bound notebook. Skilled hands; visible workmanship.' },
+          { name: 'Identify three constellations', body: 'On clear nights, find the Plough, Orion, the Pleiades. Name them. The sky is named, not random.' },
+          { name: 'A small library shelf at child height', body: 'Twenty or thirty real, beautiful books they can take down and look at. Replace seasonally.' },
+          { name: 'Visit one place of beauty monthly', body: 'A cathedral, a museum, a stately garden, a great library. Quiet visits. The child sees what care has produced.' }
+        ]
+      },
+      'reading-list': {
+        title: 'Reading list',
+        icon: 'book',
+        intro: 'The classical reading list begins simply at four — picture books that already point to the great tradition — and over years widens into the canon itself.',
+        forChild: {
+          intro: 'Real books pointing toward real things. At four, do not push abstraction. Trust beauty.',
+          groups: [
+            { heading: 'Picture books that carry the tradition', books: [
+              'D\'Aulaires\' Book of Greek Myths — start dipping at 4–5',
+              'D\'Aulaires\' Book of Norse Myths — later, around 5–6',
+              'Tomie dePaola — The Clown of God, Patrick Saint of Ireland, The Lady of Guadalupe',
+              'The Jesus Storybook Bible (Sally Lloyd-Jones) for Christian families',
+              'James Mayhew — Katie series (introducing famous paintings)',
+              'Anna Harwell Celenza — child\'s biographies of composers (Bach, Vivaldi, Mozart, Handel)'
+            ]},
+            { heading: 'Aesop and fables', books: [
+              'Aesop\'s Fables — Milo Winter\'s illustrated edition is the classic',
+              'Arnold Lobel — Fables (modern Aesop-style, original)',
+              'Eric Carle — Aesop\'s Fables (board book introduction)'
+            ]},
+            { heading: 'Mother Goose & poetry', books: [
+              'Mother Goose — Blanche Fisher Wright, Tasha Tudor, or Tomie dePaola edition',
+              'Robert Louis Stevenson — A Child\'s Garden of Verses',
+              'A.A. Milne — When We Were Very Young',
+              'A first book of psalms or hymns (with images)'
+            ]},
+            { heading: 'Read-aloud chapter books', books: [
+              'A.A. Milne — Winnie-the-Pooh',
+              'Kenneth Grahame — The Wind in the Willows (start near 4½)',
+              'E.B. White — Charlotte\'s Web (around 5)',
+              'Hugh Lofting — Doctor Dolittle (selectively, around 5–6)'
+            ]}
+          ]
+        },
+        forParent: {
+          intro: 'The classical home-education literature is rich. Start with one persuasive book and one practical one.',
+          books: [
+            { title: 'The Well-Trained Mind', author: 'Susan Wise Bauer & Jessie Wise', note: 'The canonical American classical homeschooling manual. End-to-end. Use for orientation; selectively for practice.' },
+            { title: 'Beauty for Truth\'s Sake', author: 'Stratford Caldecott', note: 'The classical liberal arts rehabilitated for a modern parent. Short, profound, worth re-reading.' },
+            { title: 'Norms and Nobility', author: 'David Hicks', note: 'The deepest defence of classical education as the formation of nobility of soul. Slow reading.' },
+            { title: 'The Liberal Arts Tradition', author: 'Kevin Clark & Ravi Scott Jain', note: 'A clear modern restatement of the seven liberal arts and their place in raising a person.' },
+            { title: 'Climbing Parnassus', author: 'Tracy Lee Simmons', note: 'Why Latin and Greek matter, written for the parent considering whether to teach them.' },
+            { title: 'Consider This', author: 'Karen Glass', note: 'Charlotte Mason in conversation with the classical tradition. Short and clear.' },
+            { title: 'Tending the Heart of Virtue', author: 'Vigen Guroian', note: 'On why fairy tales, unsanitised, form moral imagination. Essential.' },
+            { title: 'Ten Ways to Destroy the Imagination of Your Child', author: 'Anthony Esolen', note: 'Short, sharp, diagnostic — what modern childhood has lost.' }
+          ]
+        },
+        free: 'Memoria Press, Classical Academic Press, and the CiRCE Institute (circeinstitute.org) all have free articles. Project Gutenberg has the entire Western canon.'
+      },
+      'competency': {
+        title: 'What to expect at four',
+        icon: 'sprout',
+        intro: 'A 4-year-old in a classical home shows the early shoots of paideia — attention to beauty, the beginnings of a memorised repertoire, comfort with the great tradition. Reading and arithmetic are not yet pressed.',
+        landmarks: [
+          { area: 'Memory', items: ['Knows 2–4 short poems by heart', 'Knows 4–6 hymns or folk songs by heart', 'Re-tells familiar fables and myths in their own words', 'Knows 4–5 paintings by sight and one fact about each'] },
+          { area: 'Attention', items: ['Sits quietly through a short read-aloud (5–15 minutes)', 'Looks at a painting for 1–2 minutes without prompting', 'Listens to a piece of music without needing it to be loud or fast'] },
+          { area: 'Virtue (early signs)', items: ['Tells the truth (most of the time, with prompting)', 'Shows kindness without being asked', 'Says please, thank you, excuse me as habits', 'Accepts being told no without prolonged collapse (most days)'] },
+          { area: 'Knowledge of the world', items: ['Recognises a few constellations', 'Names a few historical figures from stories', 'Knows the basic shape of the day, week, year', 'Can describe one beautiful thing they have seen'] },
+          { area: 'Language', items: ['Uses sentences of 5–8 words', 'Has a richer vocabulary than peers (from read-aloud exposure)', 'Imitates the rhythm of formal speech sometimes'] },
+          { area: 'What is NOT pressed', items: ['Reading independently', 'Doing arithmetic on paper', 'Formal phonics drill', 'Writing letters with pencil grip beyond what comes naturally'] }
+        ],
+        note: 'A classical 4yo may seem old-fashioned to peers — they greet adults, listen at the table, know what a saint is, sing a hymn. That is the point. They are being formed for a different life than the screen-saturated default.'
+      }
+    }
   },
   {
     id: 'wild-free',
@@ -244,70 +606,677 @@ window.METHODS = [
     colorDeep: '#064e3b',
     colorSoft: '#d1fae5',
     icon: 'tree',
-    built: false,
-    blurb: 'Ainsley Arment\'s movement gathers Mason, nature-study, and a reverent view of childhood into a modern, photogenic practice. Hours outside, morning baskets, mixed-age siblings, slow mornings.',
-    borrows: 'The outdoor primacy, the slowness, the picture-book curation.',
-    avoids: 'The Instagram performance treadmill; over-romanticised aesthetic that can become its own pressure.'
+    built: true,
+    blurb: 'Ainsley Arment\'s movement gathers Charlotte Mason, nature study, and a reverent view of childhood into a modern, beautifully-photographed practice. Hours outside, morning baskets, mixed-age siblings, slow mornings, real food, real books. Especially strong in the United States, growing worldwide.',
+    borrows: 'The outdoor primacy. The slowness. The book curation (Wild + Free booklists are excellent). The reframing of motherhood as serious vocational work.',
+    avoids: 'The Instagram performance treadmill where the home becomes a stage. The cult of the photogenic. The pressure to look like a particular kind of family.',
+    sections: {
+      'core-idea': {
+        title: 'Core idea',
+        icon: 'compass',
+        intro: 'Wild + Free is a recovery of unhurried, outdoor, book-rich childhood — against the cultural default of screen-saturated, scheduled, school-shaped early years. The method is mostly Charlotte Mason; the spirit is contemporary nature-romantic.',
+        principles: [
+          { name: 'Childhood is sacred', body: 'A 4-year-old is not a small adult, not a future worker, not a problem to be optimised. They are a person at a stage that has its own dignity and its own time.', why: 'A culture that hurries children into productivity ends up with adults who never recovered the part of themselves that should have been allowed to play. Slow at four buys depth at twenty.' },
+          { name: 'Outdoors is the curriculum', body: 'Two to four hours outside, every day. Not a "nature walk" — just outside. Garden, woods, beach, park, rain or shine. The body is doing the work.', why: 'The 4yo nervous system needs movement, sensory variety, real risk, light. Indoor-only childhood is now correlated with anxiety, attention problems, weak immunity, poor sleep. Outdoors is not optional.' },
+          { name: 'Living books over textbooks', body: 'Beautiful picture books, written by people who loved their subject. Read aloud, often. The home is full of beautiful books at child height.', why: 'A child fed on living books develops a taste for real writing. Textbooks and "educational" books teach the child that learning is dry. Living books teach them that knowledge is delicious.' },
+          { name: 'The morning basket', body: 'A short, gathered morning ritual at the breakfast table or on the rug. A poem, a hymn, a picture book, a fairy tale, a Bible story or myth. Fifteen to twenty minutes.', why: 'A gathered, beautiful start to the day signals that the day will be unhurried and meaningful. It is also nearly the only "formal" learning a 4yo needs.' },
+          { name: 'Mixed-age siblings together', body: 'Older siblings teach younger ones. Younger ones stretch older ones. Play happens across ages, not in same-age boxes.', why: 'A 4yo with an older sibling learns by watching what an 8yo does, which is more efficient than any adult instruction. The 8yo learns to teach by teaching. School age-segregation is a recent and questionable convention.' },
+          { name: 'Reframe motherhood as vocation', body: 'Raising a child well is serious skilled work — not babysitting, not a holding pattern. Wild + Free explicitly elevates the work of mothering at home.', why: 'A culture that disdains domestic work produces parents who feel diminished by it. A mother who senses she is doing important work brings her best self to it. The same logic applies to fathers and other primary carers.' },
+          { name: 'Reject the comparison feed', body: 'Every Wild + Free home looks different. Yours will not look like the photographs. That is fine — the photographs are a small slice. Do the daily thing, not the photogenic thing.', why: 'The movement\'s own dark side is performance pressure. The cure is to stop comparing and start living. A messy unphotographed Tuesday is as good as a perfect Sunday post.' }
+        ]
+      },
+      'day-in-life': {
+        title: 'A day in the life',
+        icon: 'sun',
+        intro: 'A Wild + Free day for a 4-year-old centres on the morning basket and the outdoor block, with read-aloud and free play filling the rest. Schedule is light; rhythm is real.',
+        timeline: [
+          { time: '7:30', title: 'Slow morning, real breakfast', body: 'No rush. Oats with berries, eggs with toast. The child helps with what they can. Coffee for you. No screens, no school-prep hustle.' },
+          { time: '8:30', title: 'Morning basket', body: 'On the rug or at the table. Light a candle. Read one poem, sing one hymn or folk song, read one picture book, tell one fairy tale or myth. Fifteen to twenty minutes. Same content for the fortnight.' },
+          { time: '9:00', title: 'Outdoor block', body: 'Two to four hours. Garden, walk, woods, park, beach. Boots and waterproofs in winter. The child leads; you accompany.' },
+          { time: '12:00', title: 'Family lunch at home', body: 'Soup, bread, cheese, fruit. The child helps prepare and clear.' },
+          { time: '13:00', title: 'Quiet hour', body: 'A nap, or independent quiet play in their room with picture books. No screens.' },
+          { time: '14:30', title: 'Free play and creative time', body: 'Open-ended. Drawing, painting, blocks, dress-up, mud kitchen outside if weather allows. The parent is nearby, mostly hands-off.' },
+          { time: '16:00', title: 'Read aloud', body: 'A chapter from the current read-aloud (Pooh, Wind in the Willows, Beatrix Potter). The child curls up on the couch.' },
+          { time: '17:00', title: 'Help with dinner', body: 'Wash vegetables, set the table, stir the pot. The child is part of the daily work, not entertained while it happens.' },
+          { time: '18:00', title: 'Family dinner', body: 'A real meal. Adult conversation. The child listens and joins.' },
+          { time: '19:00', title: 'Bedtime ritual', body: 'Bath, story, lullaby or prayer. Lights out by 19:30.' }
+        ],
+        note: 'No school work. No worksheets. No "preschool prep." The morning basket and the outdoor block are doing the work that matters.'
+      },
+      'activities': {
+        title: 'Things you can do this week',
+        icon: 'hand',
+        intro: 'Twenty Wild + Free activities for a 4-year-old. Most happen outside. All are slow, beautiful, repeatable.',
+        items: [
+          { name: 'A morning basket setup', body: 'A real basket on the table. Inside: this week\'s poem (printed), the current picture book, a fairy tale book, a hymn-and-folk-song book. Ready every morning.' },
+          { name: 'A weekly nature walk to the same place', body: 'Pick one woodland, hedgerow, stretch of river. Visit every week. Note what is changing. Bring something small home.' },
+          { name: 'A nature shelf', body: 'A low shelf with the things brought home — feathers, pinecones, shells, interesting stones. Add monthly; rotate seasonally.' },
+          { name: 'A weekly muffin or bread bake', body: 'The child measures and stirs. Same recipe weekly. By Christmas they can make it nearly alone.' },
+          { name: 'Plant a small vegetable garden', body: 'Beans, peas, lettuce, tomatoes. A 4yo can plant, water, weed, harvest. Real food they grew.' },
+          { name: 'A monthly art print on the wall', body: 'Pick one painting. Print it large. Hang it at child height. Look together for two minutes a day.' },
+          { name: 'Read one Beatrix Potter twice', body: 'Read Monday, read Tuesday, ask Wednesday: "Can you tell me what happened?" By the end of the year the child knows the whole set.' },
+          { name: 'Watch the moon for a month', body: 'On clear nights, step outside and find it. New, crescent, half, full, gibbous. The child sees the cycle.' },
+          { name: 'A jar of found objects', body: 'On every walk, find one small thing. Put it in the jar at home. By the end of summer the jar is a museum.' },
+          { name: 'Make a wildflower posy weekly', body: 'On Sunday walks, gather a few wildflowers (where legal). Put them in a small jar on the kitchen table.' },
+          { name: 'Lie on the grass and look at clouds', body: 'Ten minutes. Name the shapes. No agenda.' },
+          { name: 'Family read-aloud at every meal', body: 'A chapter of a book during dinner. The child listens. The adults take turns reading. Two years of dinners = many books.' },
+          { name: 'A messy mud day', body: 'A wet day, old clothes, the back garden. No clean-up rule. Two hours of mud.' },
+          { name: 'Bird feeder at the window', body: 'Hang it where the child can see. Learn the names of the regulars together.' },
+          { name: 'Pick blackberries (or apples, plums, what is in season)', body: 'A bag, a hedgerow, an afternoon. Eat them; cook them into something.' },
+          { name: 'A monthly meet-up with another family', body: 'Outside. Mixed-age children together. Coffee for the adults. Hours of free play.' },
+          { name: 'Sing a folk song while you do anything', body: 'While walking, while cooking, while folding washing. The child learns the song without it being a "lesson."' },
+          { name: 'Watch a sunset together once a week', body: 'Whatever the weather. Step outside, face west, watch the light go. Talk or do not.' },
+          { name: 'A simple seasonal celebration', body: 'May Day with flowers in the hair. Midsummer with a candle outside at the longest day. Harvest with apples and bread. Mark the year.' },
+          { name: 'Refuse one thing this week', body: 'A class, a screen time, a "must-do" preschool activity. Replace it with an afternoon outside. Notice the difference.' }
+        ]
+      },
+      'reading-list': {
+        title: 'Reading list',
+        icon: 'book',
+        intro: 'Wild + Free has built excellent booklists. The pattern is: beautiful, living, often older, often illustrated.',
+        forChild: {
+          intro: 'The Wild + Free booklists overlap heavily with Charlotte Mason. Quality over quantity.',
+          groups: [
+            { heading: 'The W+F early-years staples', books: [
+              'Beatrix Potter — the complete set',
+              'Robert McCloskey — Make Way for Ducklings, Blueberries for Sal, One Morning in Maine',
+              'Tasha Tudor — A Time to Keep, The Doll\'s Christmas, anything she illustrated',
+              'Elsa Beskow — Children of the Forest, Around the Year',
+              'Virginia Lee Burton — Mike Mulligan and His Steam Shovel, The Little House',
+              'Wanda Gág — Millions of Cats'
+            ]},
+            { heading: 'Nature and seasons', books: [
+              'Anna Comstock — Handbook of Nature Study (parent reference, free on Gutenberg)',
+              'Jim Arnosky — anything (gentle nature illustrations)',
+              'Lois Ehlert — Leaf Man, Red Leaf Yellow Leaf',
+              'Steve Jenkins — paper-cut nature books'
+            ]},
+            { heading: 'Mother Goose & poetry', books: [
+              'Mother Goose — Tasha Tudor or Blanche Fisher Wright edition',
+              'Robert Louis Stevenson — A Child\'s Garden of Verses',
+              'A.A. Milne — When We Were Very Young'
+            ]},
+            { heading: 'Read-aloud chapter books', books: [
+              'A.A. Milne — Winnie-the-Pooh',
+              'Kenneth Grahame — The Wind in the Willows',
+              'E.B. White — Charlotte\'s Web, Stuart Little',
+              'Laura Ingalls Wilder — Little House in the Big Woods (start near 5)'
+            ]}
+          ]
+        },
+        forParent: {
+          intro: 'The Wild + Free literature is mostly modern, accessible, photo-rich. Easy to start with.',
+          books: [
+            { title: 'The Call of the Wild + Free', author: 'Ainsley Arment', note: 'The movement\'s founding book. Warm, persuasive, accessible. Start here.' },
+            { title: 'Wild + Free Handcrafts', author: 'Ainsley Arment (ed.)', note: 'Anthology of crafts and projects by W+F mentors. Practical.' },
+            { title: 'Wild + Free Nature', author: 'Ainsley Arment (ed.)', note: 'Anthology on nature study, foraging, gardening with children.' },
+            { title: 'For the Children\'s Sake', author: 'Susan Schaeffer Macaulay', note: 'The bridge between W+F and Charlotte Mason. Short, warm, essential.' },
+            { title: 'Balanced and Barefoot', author: 'Angela Hanscom', note: 'An OT\'s case for outdoor, messy, physical childhood. The research underneath W+F\'s instincts.' },
+            { title: 'Last Child in the Woods', author: 'Richard Louv', note: 'The book that named "nature-deficit disorder." Foundational reading for any outdoor-first parent.' },
+            { title: 'Simplicity Parenting', author: 'Kim John Payne', note: 'On slowing down and saying no to busyness. Pairs perfectly with W+F.' }
+          ]
+        },
+        free: 'wildandfree.com hosts free articles. Their podcast (The Wild + Free Podcast) is free and excellent. Anna Comstock\'s Handbook of Nature Study is on Gutenberg.'
+      },
+      'competency': {
+        title: 'What to expect at four',
+        icon: 'sprout',
+        intro: 'A 4-year-old in a Wild + Free home is bodily competent outdoors, well-versed in beautiful books, comfortable with slow time, and not yet pressed into formal academics.',
+        landmarks: [
+          { area: 'Outdoor body', items: ['Walks 2–4 km willingly', 'Climbs trees and rocks confidently', 'Wears appropriate clothing for the weather without complaint', 'Knows their local landscape well enough to lead a short walk'] },
+          { area: 'Nature knowledge', items: ['Names common local birds, trees, flowers', 'Recognises the moon phase, can find north at dusk', 'Knows what is in season — what is flowering, what to harvest', 'Has a few small "personal" places — a favourite tree, a favourite rock'] },
+          { area: 'Books and stories', items: ['Has a deep familiarity with a small canon of picture books', 'Re-tells favourite fairy tales', 'Sits through a chapter read-aloud', 'Asks for specific books by name'] },
+          { area: 'Capable hands', items: ['Helps prepare meals (with real knives)', 'Sets the table', 'Folds laundry', 'Gardens a little — plants, waters, harvests'] },
+          { area: 'Calm and presence', items: ['Tolerates boredom; finds their own activity', 'Sits at a meal without screens', 'Goes to sleep without devices or constant stimulation'] },
+          { area: 'What is NOT pressed', items: ['Reading independently', 'Worksheets', 'Pre-school academics', 'Scheduled enrichment activities'] }
+        ],
+        note: 'A Wild + Free 4yo often "looks behind" peers academically and well ahead in physical capacity, self-direction, and book-richness. By age 8 the comparison reverses.'
+      }
+    }
   },
   {
     id: 'reggio',
     name: 'Reggio Emilia',
     short: 'Reggio',
     tagline: 'The hundred languages · child as researcher',
-    era: 'Italy · post-WWII',
+    era: 'Italy · post-WWII (Loris Malaguzzi)',
     color: '#ea580c',
     colorDeep: '#9a3412',
     colorSoft: '#ffedd5',
     icon: 'palette',
-    built: false,
-    blurb: 'Born in the rubble of post-war Italy, the Reggio approach treats the child as a competent researcher, the classroom as a "third teacher," and art as one of a hundred languages a child uses to think.',
-    borrows: 'Documentation (the parent observing and recording), beautiful prepared spaces, taking children\'s questions seriously.',
-    avoids: 'The dependence on a full studio/atelier and a trained atelierista — most of it is impractical at home.'
+    built: true,
+    blurb: 'Born in the rubble of post-war Italy by educator Loris Malaguzzi and the parents of a few northern Italian villages, the Reggio approach treats the child as a competent researcher with a hundred languages — drawing, building, dancing, speaking, sculpting — for thinking through the world. The classroom is the "third teacher" after the parent and peer.',
+    borrows: 'Documentation (the parent observing and recording the child\'s work over time). Beautifully prepared spaces. Long unhurried projects driven by the child\'s questions. Taking children\'s thinking seriously.',
+    avoids: 'The dependence on a full atelier (art studio) and a trained atelierista — most of it is impractical at home. The risk of every passing interest becoming a documented "project" — sometimes a 4yo just plays.',
+    sections: {
+      'core-idea': {
+        title: 'Core idea',
+        icon: 'compass',
+        intro: 'Malaguzzi wrote a poem called "The Hundred Languages" that captures the heart of Reggio. A child has a hundred ways to think — but the world (and most schools) take ninety-nine away. The Reggio approach is the refusal to take any away.',
+        principles: [
+          { name: 'The child is competent', body: 'Not a vessel, not a tabula rasa, not an emergent project — a present, capable researcher. Their questions, observations, theories are taken seriously.', why: 'A 4yo who is treated as competent acts competently. One who is treated as incapable acts incapably. The expectation forms the child.' },
+          { name: 'The hundred languages', body: 'Drawing, painting, sculpting, dancing, building, singing, dramatising, writing, speaking — each is a way the child thinks, not just expresses. Provide many materials; let the child choose how to "think."', why: 'A 4yo who can only think with words is a thinner thinker than one who can also think with clay, paint, body, building. The languages train the brain.' },
+          { name: 'The environment as third teacher', body: 'The first teacher is the parent. The second is other children. The third is the carefully prepared space — light, mirror, beautiful materials, organised access. The room speaks.', why: 'A 4yo in a chaotic room behaves chaotically. In an ordered beautiful space, they behave with care. The environment carries half the lesson.' },
+          { name: 'Long projects driven by the child\'s question', body: 'A 4yo asks "where does the puddle go?" That question, taken seriously, becomes a week of investigation — go to the puddle daily, draw it, predict, observe, theorise. The adult facilitates; does not steer.', why: 'A real question answered through real investigation teaches the child that thinking is powerful. A pre-packaged "lesson on water" teaches them that adults already have the answers. The first builds thinkers; the second builds receivers.' },
+          { name: 'Documentation: the parent as observer', body: 'Photograph what the child does. Write down what they say. Keep their drawings dated. Revisit weekly to see what is unfolding. This is not for show — it is for understanding.', why: 'A parent who documents notices what they would otherwise miss. The 4yo whose work is taken seriously enough to be photographed and saved learns that their work matters.' },
+          { name: 'Provocation, not direction', body: 'Set out interesting materials on a table — a light box, prisms, leaves, magnifying glass — and see what the child does. Do not say "today we are doing colour mixing." Let the encounter unfold.', why: 'A child who is told what to do learns to wait for instructions. A child who is given materials and trusted develops initiative. The provocation invites; it does not prescribe.' },
+          { name: 'Mistakes are theories', body: 'A 4yo who says "the moon follows me" is not wrong — they are theorising about how the world works. Do not correct. Ask, "Does it always?" Investigate together.', why: 'Correction shuts down theorising. Inquiry deepens it. The 4yo who is taken seriously as a thinker becomes a thinker. The one who is corrected learns to stop guessing.' }
+        ]
+      },
+      'day-in-life': {
+        title: 'A day in the life',
+        icon: 'sun',
+        intro: 'A Reggio-inspired day at home for a 4-year-old has rhythm but is loosely structured around the child\'s current investigation. Morning and afternoon are open work blocks; the parent observes and provokes.',
+        timeline: [
+          { time: '7:30', title: 'Slow breakfast, real conversation', body: 'Ask the child what they have been thinking about. Listen. The day might pivot on what they say.' },
+          { time: '8:30', title: 'Visit the current investigation', body: 'If this week\'s project is shadows, step outside and look at them. If it is bugs, check the bug spot in the garden. Five minutes of attention to the ongoing wonder.' },
+          { time: '9:00', title: 'Provocation table', body: 'Set out new materials on the work table — clay, watercolours, a tray of seeds, a magnifying glass, a mirror. Let the child encounter and choose.' },
+          { time: '10:00', title: 'Long work block', body: 'The child works (paints, builds, sculpts) on something connected to their interest. The parent observes and quietly photographs, jots, listens.' },
+          { time: '11:30', title: 'Outdoor block', body: 'Garden, walk, park. Bring back materials or observations to add to the current investigation.' },
+          { time: '12:30', title: 'Family lunch', body: 'Talk about what was noticed. The 4yo names what they saw; the adult listens.' },
+          { time: '13:30', title: 'Rest', body: 'Quiet time with books.' },
+          { time: '14:30', title: 'Free creative time', body: 'Open materials available — paper, paints, scissors, glue, fabric scraps, found objects. The child makes what they want.' },
+          { time: '16:00', title: 'Document the day', body: 'Sit with the child. Pin up today\'s drawing. Write one sentence the child said. The child sees their work valued.' },
+          { time: '17:00', title: 'Help with dinner; family meal', body: 'Real preparation, real meal. Talk continues from the day.' },
+          { time: '19:00', title: 'Bedtime ritual', body: 'Bath, story, lights out.' }
+        ],
+        note: 'A Reggio day looks unstructured but is intensely attentive. The parent\'s work is observation and provocation, not direction.'
+      },
+      'activities': {
+        title: 'Things you can do this week',
+        icon: 'hand',
+        intro: 'Twenty Reggio-inspired activities for a 4-year-old at home. Most involve setting up an environment or provocation, then stepping back.',
+        items: [
+          { name: 'Set up a light table', body: 'A clear plastic bin lit from below with battery LEDs, or even a window with a piece of frosted paper. Place coloured cellophane, glass beads, leaves on top. The child explores.' },
+          { name: 'A mirror on the table', body: 'A safe mirror flat on the table. Place small objects on it. The child sees the object plus its reflection — and starts asking about symmetry.' },
+          { name: 'A clay station', body: 'Real clay (terracotta, air-drying). A small wooden board, a few wire tools. The child sculpts what they have been thinking about — a bird, a snail, themselves.' },
+          { name: 'Take a "shadow walk" at three times of day', body: 'Morning, noon, late afternoon. Stand in the same place. Notice how the shadows change. Draw them when you come home.' },
+          { name: 'A puddle investigation', body: 'After rain, visit the same puddle daily for a week. Mark its edge with a stick. Notice when it shrinks, grows, dries. Theorise together about where the water goes.' },
+          { name: 'A "look closely" magnifying tray', body: 'Magnifying glass, a tray of natural objects (acorn, leaf, feather, seed). The child looks closely. Draw what they see, much bigger.' },
+          { name: 'Mix only two colours', body: 'Provoke with red and yellow paint. Let them discover orange. Next time, blue and yellow. Discovery, not instruction.' },
+          { name: 'Document today\'s work', body: 'Photograph today\'s drawing or building. Print and pin it to a board with the date. By month\'s end you have a record.' },
+          { name: 'Listen to one sound for one minute', body: 'Sit outside. Close eyes. Name what you hear. Birds, wind, traffic, neighbour\'s door. The child trains attention to one sense at a time.' },
+          { name: 'Bring the outside in', body: 'Sticks, stones, leaves, feathers brought home are set on a beautiful tray in the dining room. They become the centrepiece.' },
+          { name: 'A weekly "wonder question"', body: 'Each week, the child names one thing they are wondering about. Together you find one way to investigate it. Document the journey.' },
+          { name: 'Make a "self-portrait" with materials', body: 'Buttons, pipe-cleaners, wool, paper. The child makes themselves. The result reveals more about the child than any drawing.' },
+          { name: 'Big paper, small child', body: 'Roll out a long strip of butcher paper on the floor. Let the child paint the whole strip. The scale invites different work.' },
+          { name: 'Build with loose parts', body: 'Wooden blocks, but also stones, shells, pinecones, fabric scraps. The child constructs, deconstructs, theorises.' },
+          { name: 'Walk and collect "treasures"', body: 'On every walk, the child collects three things. Bring them home, sort them, name them, draw them.' },
+          { name: 'Listen to and draw a piece of music', body: 'Play one piece. The child draws what they hear (no instructions on what it should look like).' },
+          { name: 'A child-led "garden meeting"', body: 'Once a week, sit in the garden together. What is new? What changed? The child notices; you record.' },
+          { name: 'A drawing of a question, not an answer', body: 'Ask "where do birds sleep?" The child draws their theory. Investigate the answer together later.' },
+          { name: 'A weekly "exhibition"', body: 'On Friday, pin up the week\'s drawings and photos on one wall. Walk the whole family through it. The child explains.' },
+          { name: 'A "no plastic" hour', body: 'Once a week, an hour with only natural materials — wood, wool, cloth, clay. Notice the difference in play.' }
+        ]
+      },
+      'reading-list': {
+        title: 'Reading list',
+        icon: 'book',
+        intro: 'Reggio is light on prescribed children\'s books — the philosophy distrusts pre-packaged content. But beautiful books support the inquiry.',
+        forChild: {
+          intro: 'Books that invite wondering. Books that ask questions. Books that take children\'s thinking seriously.',
+          groups: [
+            { heading: 'Books that invite wonder', books: [
+              'Tana Hoban — Look Book, Look Again, Look! Look! Look! (photographs that make you look)',
+              'Steve Jenkins — Actual Size, What Do You Do With a Tail Like This? (questions answered visually)',
+              'Aaron Becker — Journey, Quest, Return (wordless picture books for the child\'s own story)',
+              'Suzy Lee — Wave, Shadow, Mirror (wordless, beautiful, leave room for thought)',
+              'Peter Spier — Noah\'s Ark, People (visual books with no narration)'
+            ]},
+            { heading: 'Real-world picture books', books: [
+              'Robert McCloskey — Time of Wonder, One Morning in Maine',
+              'Margaret Wise Brown — The Important Book, The Quiet Noisy Book',
+              'Vera B. Williams — More More More Said the Baby',
+              'Lois Ehlert — Snowballs, Leaf Man (collage from natural materials)'
+            ]},
+            { heading: 'Books for parents and children to look at together', books: [
+              'Iela Mari — The Apple and the Butterfly, The Egg and the Chicken (wordless cycle books)',
+              'Beatrice Alemagna — anything (Italian Reggio-adjacent illustrator)',
+              'Hervé Tullet — Press Here, Mix It Up! (interactive, invitation to wonder)'
+            ]},
+            { heading: 'Bilingual or Italian books', books: [
+              'Bruno Munari — anything (Italian designer, beautifully experimental for children)',
+              'A few Italian picture books in translation for cultural exposure'
+            ]}
+          ]
+        },
+        forParent: {
+          intro: 'The Reggio literature is dense and academic. A few accessible entry points exist.',
+          books: [
+            { title: 'The Hundred Languages of Children', author: 'Carolyn Edwards, Lella Gandini, George Forman (eds.)', note: 'The canonical English-language Reggio text. Dense; pick the chapters that speak to you.' },
+            { title: 'Bringing Reggio Emilia Home', author: 'Louise Boyd Cadwell', note: 'An American educator\'s adaptation of Reggio principles for a non-Italian setting. Practical and warm.' },
+            { title: 'In the Spirit of the Studio', author: 'Lella Gandini et al.', note: 'On the atelier — the art studio. For parents wanting to set one up at home.' },
+            { title: 'The Power of Documentation', author: 'Carol Anne Wien (ed.)', note: 'On the central Reggio practice of observing and recording children\'s work.' },
+            { title: 'The Wonder of Learning DVD/guide', author: 'Reggio Children', note: 'A travelling exhibit captured as a guide — the work of real Reggio classrooms.' },
+            { title: 'Bringing Learning to Life', author: 'Louise Boyd Cadwell', note: 'A follow-up to Bringing Reggio Emilia Home with more practical case studies.' }
+          ]
+        },
+        free: 'reggiochildren.it (the foundation in Reggio Emilia) has free essays. The North American Reggio Emilia Alliance (reggioalliance.org) hosts articles and podcasts.'
+      },
+      'competency': {
+        title: 'What to expect at four',
+        icon: 'sprout',
+        intro: 'A 4-year-old in a Reggio-inspired home is observant, articulate about their own thinking, comfortable with many materials, and used to being taken seriously.',
+        landmarks: [
+          { area: 'Inquiry and thinking', items: ['Asks rich questions ("Where does the rain go?")', 'Offers theories ("I think the moon follows us")', 'Investigates over multiple days, not just minutes', 'Revisits earlier drawings and adds to them'] },
+          { area: 'The hundred languages', items: ['Draws, paints, sculpts with familiarity', 'Builds elaborate structures with loose parts', 'Uses body to enact ideas (becomes the bird, becomes the wind)', 'Talks fluently about what they made and why'] },
+          { area: 'Observation', items: ['Notices small changes in familiar places', 'Sustains attention to one phenomenon (a shadow, a snail) for many minutes', 'Distinguishes what they see from what they thought they would see'] },
+          { area: 'Collaboration', items: ['Works with siblings or friends on shared projects', 'Listens to another child\'s theory and responds', 'Negotiates use of shared materials'] },
+          { area: 'Self-knowledge', items: ['Can name what they are interested in', 'Can ask for materials they need', 'Knows what kind of work they like best (paint, clay, building)'] },
+          { area: 'Body and hands', items: ['Familiar with paint, clay, scissors, glue', 'Confident with a magnifying glass and small tools', 'Cares for materials and puts them away'] }
+        ],
+        note: 'A Reggio 4yo is often surprisingly articulate and slow to give quick answers. They have learned to think before speaking. This is a gift.'
+      }
+    }
   },
   {
     id: 'forest-school',
     name: 'Forest School',
     short: 'Forest',
     tagline: 'Woods as the classroom · risk as part of learning',
-    era: 'Scandinavia · 1950s, UK · 1990s',
+    era: 'Scandinavia · 1950s · UK from 1993',
     color: '#15803d',
     colorDeep: '#14532d',
     colorSoft: '#dcfce7',
     icon: 'pine',
-    built: false,
-    blurb: 'A weekly half- or full-day in the woods, in any weather. Tools, fire, dens, real risk under supervision. Strong in the UK, Scandinavia, increasingly worldwide.',
-    borrows: 'The weekly woods commitment, the trust in tools and real risk.',
-    avoids: 'Treating it as a complete method — it is one anchor in the week, not the whole education.'
+    built: true,
+    blurb: 'Forest School emerged from Scandinavian preschools in the 1950s, brought to the UK by Bridgwater College nursery in 1993, and now run worldwide. A weekly half-day or full-day in the woods, in any weather. Real tools, real fire, real dens, real assessed risk, under trained supervision. The woods are the classroom.',
+    borrows: 'The weekly woods commitment. The trust in real tools and assessed risk. The reframing of mud, wet, cold as features not problems. The slow loose unfolding of unstructured woodland time.',
+    avoids: 'Treating Forest School as a complete education — it is one strong anchor in the week, not the whole curriculum. Buying the gear to "look the part" without committing to the weekly practice.',
+    sections: {
+      'core-idea': {
+        title: 'Core idea',
+        icon: 'compass',
+        intro: 'Forest School holds that the woodland is the most generative learning environment for a young child. Real terrain, real weather, real tools, real fire — supervised, but not sanitised. The teacher facilitates; the woods teach.',
+        principles: [
+          { name: 'The same woodland, every week, every season', body: 'Forest School is not a series of nature outings. It is the same patch of woods, visited weekly, through the year. The child comes to know it like family.', why: 'A 4yo who visits one wood weekly for a year learns it deeply — knows the badger sett, the wind-fallen oak, the boggy patch in March. Variety would prevent this. Repetition makes the wood theirs.' },
+          { name: 'Risk is assessed, not avoided', body: 'Climbing trees, lighting fires, using a real bow saw, walking on slippery logs — all under trained eye, all with the child\'s genuine agency. The adult assesses the risk; the child takes it.', why: 'A 4yo who has only known padded environments grows into a teenager who cannot judge real risk. One who has met assessed risk steadily becomes capable. Risk-deprivation is its own danger.' },
+          { name: 'No bad weather, only bad clothes', body: 'Rain, snow, frost, wind — all are part of the woods. The right clothes (waterproofs, wool layers, wellies, hats) make it possible. Wet days are often the best days.', why: 'A child who has only known dry sunny outdoors avoids the outdoors most of the year. One who has played in November rain knows that being warm and dry is something you make, not something you find.' },
+          { name: 'Long unstructured time', body: 'A Forest School session is hours, not minutes. The first 45 minutes are often restless; deep play emerges around 90 minutes. Cut it short and you cut off the best of it.', why: 'A 4yo needs time to enter their own play. Adult-scheduled "nature time" of 30 minutes never reaches the depth that an unhurried 3-hour session does. Hold your nerve through the restless phase.' },
+          { name: 'Real tools, real fire (with supervision)', body: 'A 4yo can use a peeler on a stick under supervision. They can carry a small log. They can help feed a fire with adult hands. Tools are not toys.', why: 'Tool use is one of the deepest pleasures of being human. Withholding tools from a competent child is a small theft. Carefully introducing them builds the kind of confidence no toy can.' },
+          { name: 'The child leads; the adult facilitates', body: 'No lesson plan. The adult sets up the space and the safety boundaries, then watches. The child notices the mushroom, follows the bird, builds the den they want.', why: 'A 4yo who is allowed to lead their own woodland play develops curiosity and agency. One who is constantly directed develops compliance. The first is far more valuable.' },
+          { name: 'Reflection and ritual close', body: 'A Forest School session begins with a gathering — a song, a check-in — and ends with one too. The child marks the time as special, not random.', why: 'Ritual makes the experience memorable and frames it as belonging to a tradition larger than today. The child carries the wood home in their head.' }
+        ]
+      },
+      'day-in-life': {
+        title: 'A day in the life',
+        icon: 'sun',
+        intro: 'Forest School is usually one half-day or full day per week, not the whole week. The rest of the week is ordinary home life. This is the rhythm.',
+        timeline: [
+          { time: 'Sunday evening', title: 'Get the kit ready', body: 'Wellies dry, waterproofs hung up, a thermos and snacks ready. The child helps. Tomorrow is woodland day.' },
+          { time: 'Monday 8:30', title: 'Gear up and travel', body: 'Layer up — wool base, fleece, waterproof. The child carries their own water bottle. Travel to the same woodland weekly.' },
+          { time: '9:00', title: 'Arrival ritual', body: 'A gathering circle at the entrance. A short song or call-and-response. Name the day, the weather, what is in the woods.' },
+          { time: '9:15', title: 'Free woodland play', body: 'Two to three hours. The child wanders, climbs, builds, watches, gets muddy. Adults are present but quiet.' },
+          { time: '11:30', title: 'Make a small fire (with adults)', body: 'Tinder, twigs, larger sticks. The child helps gather. The adult lights. Sit by it.' },
+          { time: '12:00', title: 'Outdoor lunch', body: 'Soup from the thermos. Sandwich. A piece of fruit cooked briefly on a stick over the fire. Sit on logs.' },
+          { time: '12:30', title: 'More play, or a project', body: 'A den, a small bow drill, peeling sticks, identifying tree leaves. The afternoon flows.' },
+          { time: '14:00', title: 'Closing circle', body: 'Back to the entrance. Each person says one thing they noticed. A song to close.' },
+          { time: '14:30', title: 'Home: wet kit off, warm bath', body: 'Strip muddy gear at the door. Warm bath. Quiet afternoon. The 4yo may sleep deeply.' },
+          { time: '17:00', title: 'Family dinner', body: 'The child tells what they did. The parent listens.' },
+          { time: '19:00', title: 'Early bed', body: 'A long woodland day exhausts; the 4yo sleeps better than any other night of the week.' }
+        ],
+        note: 'Mid-week, the rest of life resumes. But Sundays now anticipate Monday, and Tuesday rests on Monday. The week has a centre.'
+      },
+      'activities': {
+        title: 'Things you can do this week',
+        icon: 'hand',
+        intro: 'Twenty Forest School activities for a 4-year-old. Most are for the woodland session; some can be done in a garden or park.',
+        items: [
+          { name: 'Find your "sit spot"', body: 'On your first visit, the child picks a tree to be their tree. Visit it every week. Notice the changes.' },
+          { name: 'Build a small den', body: 'Long sticks leaned against a fallen tree make a teepee. Add branches, leaves. The child sits inside.' },
+          { name: 'Whittle a stick (with peeler)', body: 'A potato peeler is safe for a 4yo on a green stick. Show the away-from-body motion. They peel for ages.' },
+          { name: 'Identify three trees', body: 'Pick three that are common in your wood (oak, birch, beech). Learn the leaf, the bark, the seed. The child names them on every visit.' },
+          { name: 'Find five birds by sound', body: 'Sit quietly for ten minutes. Name what you hear. By month\'s end the child knows them.' },
+          { name: 'Light a small fire (with adult)', body: 'Tinder bundle, twigs in a pyramid. The adult lights with a match or steel and flint. The child feeds it small sticks.' },
+          { name: 'Cook a sausage or a marshmallow on a stick', body: 'A peeled stick, a sausage threaded on. Held over the fire. Eaten. Real cooking.' },
+          { name: 'Climb one tree (assessed)', body: 'The adult checks the tree — alive, branches solid, low first branches. The child climbs as high as they can comfortably get down from.' },
+          { name: 'Cross a log over the stream', body: 'A fallen log over a small stream. Hands on a low branch for balance. The child crosses.' },
+          { name: 'Bow saw a small branch (with two hands and adult)', body: 'Adult holds the branch. Child saws. Both hands on the bow saw. The wood is cut by the child.' },
+          { name: 'Make tea from foraged leaves', body: 'Pine needles, mint, blackberry leaves (all edible). Boil over the fire. Cool. Drink.' },
+          { name: 'Mud paints', body: 'Mud, water, a stick. Paint on a tree, on a rock. Wash off in the next rain.' },
+          { name: 'A "fairy door"', body: 'At the base of a tree, arrange sticks, moss, stones into a tiny door. The child invents the story.' },
+          { name: 'A rope swing on a low branch', body: 'A short rope, a knot, a stick to sit on. The adult hangs it. The child swings.' },
+          { name: 'Track an animal', body: 'A mud bank, a snowy day. Find prints. Whose? Follow as far as they go.' },
+          { name: 'Collect natural items for a face on the ground', body: 'A flat patch, sticks, leaves, stones. Make a face. Walk away.' },
+          { name: 'Hammock from a sheet between two trees', body: 'A simple sheet tied at both ends. A heavy 4yo can lie in it.' },
+          { name: 'Bird call call-and-response', body: 'You imitate a bird; the child answers. Quietly. See if a real bird responds.' },
+          { name: 'Make a small bow and arrow (around 5)', body: 'A green springy stick, string. Aim at a soft target only. Real craft.' },
+          { name: 'Close the day with a story by the fire', body: 'No book. Just you. A simple woodland tale. The child remembers it.' }
+        ]
+      },
+      'reading-list': {
+        title: 'Reading list',
+        icon: 'book',
+        intro: 'Forest School is more about doing than reading. But beautiful books support it.',
+        forChild: {
+          intro: 'Books that name what you find in the woods, books that celebrate outdoor childhood.',
+          groups: [
+            { heading: 'Field guides for children', books: [
+              'Usborne — Nature Trail series (UK trees, birds, bugs)',
+              'RSPB Children\'s Guide to Birds, Plants, Bugs',
+              'A small printed wildflower or tree key for the local area'
+            ]},
+            { heading: 'Picture books celebrating outdoor childhood', books: [
+              'Robert McCloskey — One Morning in Maine, Time of Wonder',
+              'Margaret Wise Brown — The Little Island, Wait Till the Moon is Full',
+              'Vera B. Williams — Three Days on a River in a Red Canoe',
+              'Jeanne Birdsall — Flora the Frog (or any similar woodland-set storybook)'
+            ]},
+            { heading: 'Foraging and fire books (for adults to use with children)', books: [
+              'A simple foraging book for your local area (Roger Phillips for the UK)',
+              'A children\'s tracking guide (look for "Animal Tracks" series)'
+            ]},
+            { heading: 'Stories of woodland and adventure', books: [
+              'Beatrix Potter — set in the Lake District woodland',
+              'Kenneth Grahame — The Wind in the Willows',
+              'A.A. Milne — Winnie-the-Pooh (the Hundred Acre Wood)',
+              'Astrid Lindgren — Children of Noisy Village, Ronia the Robber\'s Daughter'
+            ]}
+          ]
+        },
+        forParent: {
+          intro: 'A handful of practical books cover the territory.',
+          books: [
+            { title: 'Forest School and Outdoor Learning in the Early Years', author: 'Sara Knight', note: 'The standard UK introduction. Practical, evidence-based, accessible.' },
+            { title: 'Run Wild!', author: 'Boff Whalley', note: 'A short, persuasive book on why messy outdoor play matters.' },
+            { title: 'Balanced and Barefoot', author: 'Angela Hanscom', note: 'An OT\'s case for outdoor play. The clearest research-backed argument.' },
+            { title: 'Last Child in the Woods', author: 'Richard Louv', note: 'Named "nature-deficit disorder." Foundational.' },
+            { title: 'There\'s No Such Thing as Bad Weather', author: 'Linda Åkeson McGurk', note: 'A Swedish-American mother on outdoor parenting. Practical, warm.' },
+            { title: 'The Wild Network handbook', author: 'The Wild Network', note: 'A UK-based campaign with free downloads and event guides.' },
+            { title: 'Coyote\'s Guide to Connecting with Nature', author: 'Jon Young', note: 'A deeper, mentor-oriented book on cultivating real outdoor knowledge in children.' }
+          ]
+        },
+        free: 'The Forest School Association (forestschoolassociation.org) has free guidance and a UK practitioner directory. Outdoor Classroom Day (outdoorclassroomday.com) hosts free downloads.'
+      },
+      'competency': {
+        title: 'What to expect at four',
+        icon: 'sprout',
+        intro: 'A 4-year-old with regular Forest School experience is bodily confident outdoors, knows their local woodland deeply, and is comfortable with tools, fire, and weather that would alarm a screen-raised peer.',
+        landmarks: [
+          { area: 'Outdoor body', items: ['Walks, climbs, balances confidently on uneven terrain', 'Dresses themselves for the weather (with help on zippers)', 'Tolerates cold, wet, mud without distress', 'Carries their own day pack with water, snack, spare gloves'] },
+          { area: 'Tool use (assessed and supervised)', items: ['Whittles a stick with a potato peeler', 'Helps with a bow saw using two hands', 'Lights a tinder bundle from a glowing ember (with adult)', 'Carries and uses a stick safely (not at others)'] },
+          { area: 'Fire (with adult)', items: ['Helps gather tinder, kindling, fuel', 'Tends a small fire by adding sticks', 'Cooks a marshmallow or sausage on a stick', 'Understands fire safety basics — do not step over, do not run near'] },
+          { area: 'Woodland knowledge', items: ['Names 3–5 common trees by leaf and bark', 'Identifies their "sit spot" tree across seasons', 'Notices small changes in familiar place (new growth, fallen branch)', 'Knows the sound of 3–5 common birds'] },
+          { area: 'Risk', items: ['Climbs trees only as high as they can climb down', 'Crosses streams on logs with hands for balance', 'Stops when an adult names a real risk', 'Returns from where they wandered when called'] },
+          { area: 'Calm and presence', items: ['Sits quietly to watch a bird or insect', 'Tolerates long unstructured time without screens or scheduled stimulation', 'Comes home tired and sleeps well'] }
+        ],
+        note: 'Forest School 4yos sometimes seem "different" from screen-raised peers — calmer, more bodily, more comfortable alone. This is what childhood used to look like and what the data suggests it should still look like.'
+      }
+    }
   },
   {
     id: 'unschooling',
     name: 'Unschooling',
     short: 'Unschooling',
     tagline: 'Child-led · trust-based · no imposed curriculum',
-    era: 'USA · 1970s · John Holt',
+    era: 'USA · 1970s · John Holt and his successors',
     color: '#0284c7',
     colorDeep: '#075985',
     colorSoft: '#e0f2fe',
     icon: 'compass',
-    built: false,
-    blurb: 'John Holt\'s response to compulsory schooling: follow the child\'s interests, surround them with rich resources, learn through living. Useful as a corrective to over-schooling.',
-    borrows: 'The trust in the child\'s intrinsic motivation, the warning against premature instruction.',
-    avoids: 'The neutrality on content — a tradition worth inheriting (Homer, Bach, the virtues) does not transmit itself by accident.'
+    built: true,
+    blurb: 'John Holt watched what schools did to children\'s natural curiosity and concluded the cure was to stop schooling. Unschooling means following the child\'s interests, surrounding them with rich resources, and trusting that real learning happens in real life. Especially valuable as a corrective to over-scheduled childhood — and worth understanding even if you choose differently.',
+    borrows: 'The trust in the child\'s intrinsic motivation. The warning against premature instruction. The recognition that much of what passes for "preschool" at four is unnecessary or harmful.',
+    avoids: 'The neutrality on content — at four, a parent has both the right and the duty to share what they think is worth knowing. The aggressively anti-curriculum stance in some unschooling communities, which can leave the child without scaffolding when they would welcome it.',
+    sections: {
+      'core-idea': {
+        title: 'Core idea',
+        icon: 'compass',
+        intro: 'John Holt began as a school reformer and ended convinced that compulsory schooling could not be reformed — it had to be replaced with something more like a richly resourced life. For a 4-year-old, this means: no preschool, no scheduled academics, no "curriculum." Instead: time, space, materials, attention, conversation, and trust.',
+        principles: [
+          { name: 'Children are natural learners', body: 'A 1-year-old learns to walk and talk without instruction. A 2-year-old learns the names of every animal they meet. A 4-year-old will learn anything they are deeply interested in. The capacity is there from the start.', why: 'The premise of schooling is that children must be made to learn. The premise of unschooling is that they cannot help but learn — unless we make them dislike it. A 4yo who has not been disengaged by force-fed instruction is naturally hungry.' },
+          { name: 'Follow the interest', body: 'When the child becomes obsessed with dinosaurs, feed it — books, fossils at the museum, paintings, films, dinner conversation, the trip to see real fossils. Ride the wave.', why: 'A 4yo who deep-dives one obsession learns more about that topic than a curriculum could give them in a term. And they learn how to learn — which transfers to the next interest.' },
+          { name: 'Strewing', body: 'A core unschooling practice. Leave interesting things in the child\'s path — a new book on the table, a microscope on the desk, a documentary on the TV at dinner. Do not require engagement; just provide.', why: 'A 4yo refuses what is pushed and approaches what is offered. Strewing puts the choice with the child, which preserves curiosity. The right thing at the right moment becomes the next deep dive.' },
+          { name: 'Real life is the curriculum', body: 'Cooking is chemistry. Grocery shopping is math. Conversation is language arts. Walking the neighbourhood is geography. The 4yo is learning constantly — there is no need to interrupt it with "lessons."', why: 'A 4yo who is part of real life learns vocabulary, measurement, navigation, conversation, money, weather, plants. The same content packaged as "lessons" is thinner and less engaging.' },
+          { name: 'The adult as resource, not instructor', body: 'When the child asks, answer. When they want to know, find out together. When they hit something hard, sit with them. But do not pre-empt — let the asking come.', why: 'A 4yo who experiences the adult as a useful resource builds a different relationship to learning than one who experiences the adult as a tester. The first becomes resourceful; the second becomes compliant or rebellious.' },
+          { name: 'Trust the timing', body: 'Some children read at four. Some at eight. Some at ten. In an unschooling home, the variation is welcomed. The child who reads at eight reads as well as the one who read at four by the time they are twelve.', why: 'A 4yo pressed to read before they are ready often develops a lifelong wariness of reading. One who comes to it at their own pace falls in love with it. The early-start head start neutralises by ten; the lifelong love stays.' },
+          { name: 'Honour boredom', body: 'A 4yo who says "I\'m bored" is at the doorway of their own creativity. The unschooling parent resists rescuing them with screens or planned activities. Boredom is the precursor to invention.', why: 'A child who is constantly entertained never develops the inner resourcefulness to invent their own play. Boredom is uncomfortable, then productive. Sit through it with them.' }
+        ]
+      },
+      'day-in-life': {
+        title: 'A day in the life',
+        icon: 'sun',
+        intro: 'Unschooling at four is the absence of an imposed schedule, not the absence of structure. The structure is provided by family life, real work, and the child\'s own rhythm.',
+        timeline: [
+          { time: '7:30–9:00', title: 'Wake when ready, slow start', body: 'No alarm. Breakfast with whoever is up. The child is part of the morning, not herded through it.' },
+          { time: '9:00 onward', title: 'The day unfolds', body: 'The child plays, joins what an adult is doing, asks to go somewhere, gets absorbed in something on the floor. The parent has things to do but is interruptible.' },
+          { time: 'Mid-morning', title: 'Outside', body: 'Garden, park, library, woods, friend\'s house — depending on the day. Not scheduled; chosen.' },
+          { time: 'Lunch', title: 'Real food together', body: 'The child helped make it (or watched). Conversation is whatever is alive in the family today.' },
+          { time: 'Afternoon', title: 'Strewing, side-by-side work, library, errands', body: 'A new book left on the couch. A documentary while folding washing. A walk to the library. A visit to a museum. A grandparent\'s house.' },
+          { time: 'Late afternoon', title: 'Deep play or current obsession', body: 'A long absorption in whatever the child is into this month. Adults nearby, available but not directing.' },
+          { time: 'Evening', title: 'Family dinner, read-aloud', body: 'Real meal. A chapter from a book at the table or after.' },
+          { time: 'Bedtime', title: 'Bath, story, sleep', body: 'A predictable closing ritual — even unschooling has bedtime.' }
+        ],
+        note: 'There is no "school time." There are no "lessons." There is also no chaos — the day has rhythm from family life. The 4yo lives the day with the family, not in a parallel child-track.'
+      },
+      'activities': {
+        title: 'Things you can do this week',
+        icon: 'hand',
+        intro: 'Unschooling doesn\'t prescribe activities — but here are twenty ways to support a 4-year-old\'s self-directed learning.',
+        items: [
+          { name: 'Take them on every errand', body: 'Post office, grocery, bank, hardware shop, the dump. They watch you do real things and ask real questions.' },
+          { name: 'Subscribe to one good magazine', body: 'National Geographic Kids, Storytime, Anorak. A new issue monthly. Leave it on the table.' },
+          { name: 'A weekly library visit', body: 'No agenda. The child chooses. Sometimes 10 picture books. Sometimes one. Always go.' },
+          { name: 'A documentary at dinner', body: 'Once a week, a David Attenborough or similar. The child watches as long as they want.' },
+          { name: 'Set up a "yes" environment', body: 'A home where most things can be touched, tried, opened, climbed. Removes the constant "no" and frees curiosity.' },
+          { name: 'A monthly museum visit', body: 'No itinerary. The child leads. Sometimes the gift shop is the highlight. Sometimes one dinosaur for an hour. Both are good.' },
+          { name: 'Cook a meal end-to-end together', body: 'Pick a meal. The child helps with every step (with help). It is dinner.' },
+          { name: 'A walk to no destination', body: 'Just walking. The child stops to look at things. You stop too.' },
+          { name: 'Strew a new tool or material', body: 'A new musical instrument left on the floor. A new set of pencils. A microscope. A handful of magnets. No instructions.' },
+          { name: 'A visit to someone who does interesting work', body: 'A potter, a baker, a beekeeper, a farmer. The 4yo asks questions; the worker answers.' },
+          { name: 'Plant something the child chose', body: 'They picked the seed. They water it. They notice it.' },
+          { name: 'Build with what is available', body: 'A pile of cushions. A blanket fort. A cardboard box. A roll of masking tape. Hours.' },
+          { name: 'Conversations that take the 4yo seriously', body: 'At meals, in the car, on walks. Listen, ask follow-up questions, do not condescend.' },
+          { name: 'A weekly bath-painting session', body: 'Washable bath paints. The child decorates the tiles. Wash off at end.' },
+          { name: 'Loud music dance party', body: 'Choose a piece (anything from Bach to Beyoncé). Dance. The whole family.' },
+          { name: 'A trip on public transport', body: 'A bus, a train, a tram. The journey is the lesson — tickets, maps, stops, the view.' },
+          { name: 'Real money and a piggy bank', body: 'Coins to sort, a tin to keep them in. A weekly small allowance. They learn what coins are by handling them.' },
+          { name: 'Read whatever they ask for, again', body: 'The seventh time of the same book is the seventh time deeper. Do not skip pages.' },
+          { name: 'Visit a relative for a long afternoon', body: 'Grandparents, uncles, aunts, family friends. Long visits, not quick ones. The child sees how others live.' },
+          { name: 'A boredom afternoon', body: 'One afternoon a week, no screens, no planned activity. Let them complain. Let them invent.' }
+        ]
+      },
+      'reading-list': {
+        title: 'Reading list',
+        icon: 'book',
+        intro: 'Unschooling does not prescribe a child\'s reading list. The principle is: surround them with good books at all levels and let them choose.',
+        forChild: {
+          intro: 'Whatever they pick at the library is fine. But a few staples in the home shelf catch on for most children.',
+          groups: [
+            { heading: 'Read-alouds that have endured', books: [
+              'A.A. Milne — Winnie-the-Pooh',
+              'Beatrix Potter — the full set',
+              'Roald Dahl — start with The Enormous Crocodile, Fantastic Mr. Fox',
+              'Astrid Lindgren — Pippi Longstocking (around 5)',
+              'Kenneth Grahame — The Wind in the Willows'
+            ]},
+            { heading: 'Picture books that delight', books: [
+              'Dr. Seuss — selected (his rhythm is irresistible)',
+              'Maurice Sendak — Where the Wild Things Are',
+              'Eric Carle — The Very Hungry Caterpillar, The Tiny Seed',
+              'Jon Klassen — I Want My Hat Back, This Is Not My Hat'
+            ]},
+            { heading: 'Information books they may obsess over', books: [
+              'Usborne — first big book of (anything they\'re into)',
+              'DK — first encyclopaedia, first picture atlas',
+              'A subscription to Storytime or similar magazine'
+            ]},
+            { heading: 'Books for following an obsession', books: [
+              'Whatever subject grabs them — dinosaurs, trains, princesses, weather — buy or borrow the best books on that. Feed the fire.',
+              'A few books slightly above their level for "stretching"'
+            ]}
+          ]
+        },
+        forParent: {
+          intro: 'Holt himself, and a handful of modern voices, lay out the philosophy clearly.',
+          books: [
+            { title: 'How Children Learn', author: 'John Holt, 1967', note: 'Holt\'s most beloved book — observations of how young children actually learn. Persuasive, warm.' },
+            { title: 'How Children Fail', author: 'John Holt, 1964', note: 'His earlier book — why school makes children stupid. The case for the alternative.' },
+            { title: 'Teach Your Own', author: 'John Holt & Pat Farenga', note: 'Holt\'s practical homeschooling manual. The founding text of US homeschooling.' },
+            { title: 'Free to Learn', author: 'Peter Gray', note: 'A developmental psychologist on why play matters and what schooling has cost. Research-backed.' },
+            { title: 'The Brave Learner', author: 'Julie Bogart', note: 'A modern, warm, practical book on home-based learning. Especially good for parents anxious about not "doing enough."' },
+            { title: 'Unschooled', author: 'Kerry McDonald', note: 'A modern overview of unschooling, with case studies and the research evidence.' },
+            { title: 'Hold On to Your Kids', author: 'Gordon Neufeld & Gabor Maté', note: 'Not specifically unschooling, but the case for parent-child attachment over peer-orientation — the relational ground unschooling stands on.' }
+          ]
+        },
+        free: 'johnholtgws.com hosts free archives. The Self-Directed Education Alliance (sde.alliance.org) hosts free essays. Pat Farenga\'s blog is a continuing resource.'
+      },
+      'competency': {
+        title: 'What to expect at four',
+        icon: 'sprout',
+        intro: 'An unschooled 4-year-old shows wide variation — that is the point. But they generally share a few traits: long attention on chosen interests, strong conversational skills, comfort with adults, and unimpaired curiosity.',
+        landmarks: [
+          { area: 'Curiosity and attention', items: ['Sustains attention to a chosen interest for long periods', 'Asks rich questions without prompting', 'Pursues topics across days and weeks', 'Does not require external rewards to engage'] },
+          { area: 'Conversation', items: ['Holds extended conversations with adults', 'Articulates thoughts and feelings clearly', 'Listens as well as speaks', 'Knows when to be quiet (most of the time)'] },
+          { area: 'Real-life competence', items: ['Helps with cooking, shopping, errands as a matter of course', 'Knows how money works at a basic level', 'Can navigate familiar neighbourhood', 'Manages own basic care (dressing, simple hygiene)'] },
+          { area: 'Variation (and that\'s fine)', items: ['May read fluently, or not yet', 'May count to 100 or to 10', 'May know dozens of countries or none', 'May know everything about one topic and little about the rest'] },
+          { area: 'Family relationships', items: ['Strong attachment to parents and siblings', 'Comfortable with extended family', 'Plays well with mixed-age children', 'Trusts adults as resources, not authorities to fear'] },
+          { area: 'What is NOT expected', items: ['Specific academic milestones', 'Uniform progress with peers', 'Compliance with externally-imposed schedule', 'Skill at sitting still for adult-driven activities'] }
+        ],
+        note: 'The unschooled 4yo can look "advanced" in their obsession and "behind" in standard milestones. The variation is not a problem; it is the design. The trajectory by age 10 generally reaches or surpasses schooled peers — and the love of learning is intact.'
+      }
+    }
   },
   {
     id: 'great-empires',
     name: 'Great Empires',
     short: 'Empires',
     tagline: 'How great civilisations formed their young',
-    era: 'Athens · Rome · (more coming)',
+    era: 'Athens · Rome · (more to come)',
     color: '#7c3aed',
     colorDeep: '#5b21b6',
     colorSoft: '#ede9fe',
     icon: 'laurel',
-    built: false,
-    blurb: 'Athens, Rome, and the later empires at their height each had a deliberate vision of how to raise a child into a citizen. What they read aloud, what virtues they trained, what work they expected. A grown-up library to inherit selectively.',
-    borrows: 'Plutarch\'s Lives as moral biography. Quintilian on the early years. The Roman insistence that the family is the first school. The Greek paideia — the forming of a whole person.',
-    avoids: 'The brutalities — slavery, severity, the warrior cult. We take the parts of the tradition that have stood the test of reasoning.'
+    built: true,
+    blurb: 'Athens at her golden age, Rome at her republican height — each had a deliberate vision of how to raise a child into a citizen. What they read aloud, what virtues they trained, what work they expected, what the household looked like. A grown-up library to inherit selectively. Future additions: Tang China, Renaissance Florence, Edo Japan, the Islamic Golden Age.',
+    borrows: 'Plutarch\'s Lives as the textbook of character. Quintilian on the early years. The Roman insistence that the family is the first school. The Greek paideia — the forming of a whole person. The shared belief that what you absorb in childhood becomes you.',
+    avoids: 'The brutalities — slavery, the warrior cult, severity, the patriarchal absolutes. We take the parts of these traditions that have survived the test of reasoning, and leave what has not.',
+    sections: {
+      'core-idea': {
+        title: 'Core idea',
+        icon: 'compass',
+        intro: 'The great civilisations at their height shared a striking pattern: they took childhood seriously as the formation of a person who would carry the tradition forward. Not utility. Not happiness. Not preparation for a career. The formation of a free citizen, a thinking soul, a person of virtue. The 4-year-old was being shaped for life, not for the next test.',
+        principles: [
+          { name: 'Childhood is the planting of a tree', body: 'The Greeks held that what was planted in the first seven years would shape the whole tree. Aristotle wrote that we become just by doing just acts, brave by doing brave acts. Practice at four becomes character at forty.', why: 'A 4yo whose daily life includes small acts of courage, kindness, and truthfulness is learning the muscle of virtue. One who is left to "find their own values" later inherits no scaffolding for the choice.' },
+          { name: 'The family is the first school', body: 'In Rome, the father (paterfamilias) and especially the mother were the first teachers. The home was the school. Quintilian, the Roman rhetorician, said the child\'s early years at home determined the whole later education.', why: 'A 4yo who sees their parent doing real work — speaking carefully, treating guests well, telling the truth in difficult moments — learns by absorption. A childhood farmed out to professionals at four loses this irreplaceable formation.' },
+          { name: 'Heroes and saints as models', body: 'Athenian boys grew up hearing of Achilles, Odysseus, Themistocles. Roman boys grew up hearing of Cincinnatus, Scipio, Cato. The household had a shelf of heroes. The 4yo knew their names before they could read.', why: 'A 4yo who has heard a hundred stories of brave, honest, loyal people develops a mental gallery of what a worthy life looks like. One who has only seen TV characters has a much weaker gallery.' },
+          { name: 'Memory as the soul\'s storehouse', body: 'Greek and Roman children memorised verses, prayers, fables, lists of heroes. The well was filled in the first seven years. The bucket was drawn down for decades.', why: 'A 4yo memorises easily. What goes in stays. The verse memorised at four becomes available at forty as a resource the adult did not have to construct.' },
+          { name: 'Real work, real responsibility', body: 'Greek children helped on the loom and in the kitchen. Roman children carried messages, served at table, learned the trades of the household. They were part of real life, not held in a parallel children\'s world.', why: 'A 4yo who is part of the household economy learns that they matter — their work counts. A 4yo entertained instead of included learns the opposite.' },
+          { name: 'The serious worth of music, poetry, and song', body: 'Plato held that music and poetry shape the soul more than any other input. The wrong music produces a degenerate citizen; the right music, a noble one. He was not joking.', why: 'A 4yo formed on Bach and Mother Goose has a different soul-furniture from one formed on pop jingles and TV themes. The inputs at four shape the aesthetics of the rest of life.' },
+          { name: 'Take from the tradition; do not bow to it', body: 'The great civilisations also had slavery, patriarchy, brutal hierarchies, war as glory. To inherit them whole is to inherit their evils. The right relationship to a tradition is one of reasoned selection — keep the gold, name the dross.', why: 'A 4yo formed in an uncritical worship of a past becomes an adult who cannot distinguish good from bad inside any tradition. One formed in reasoned selection inherits the best and can leave the rest.' }
+        ]
+      },
+      'day-in-life': {
+        title: 'A day in the life',
+        icon: 'sun',
+        intro: 'A reconstruction — what an Athenian child of a citizen-class family, or a young Roman of the better sort, might have lived at age four. Some of this we can adapt; some of it we deliberately leave behind.',
+        timeline: [
+          { time: 'Dawn', title: 'Wake with the household', body: 'In Athens or Rome, no electric light meant rising with the sun. Wash, dress in the simple clothes of childhood (a tunic), greet the household gods at the small shrine. Morning prayer or invocation.' },
+          { time: 'Early morning', title: 'Family breakfast', body: 'Bread, olives, fruit, watered wine. The child eats with the family. The father may speak briefly about the day, the gods, the household.' },
+          { time: 'Mid-morning', title: 'Time with the mother (and slaves, if present)', body: 'The mother\'s court was where young children spent most of their day. The 4yo would be in and out of weaving, food preparation, the courtyard. Hearing women\'s songs, watching real work. (Note: we drop the slave-economy entirely; the equivalent today is a household where adults are present.)' },
+          { time: 'Late morning', title: 'Lessons from the paedagogus', body: 'In wealthier Roman households, a paedagogus (sometimes a learned slave, sometimes a free tutor) taught the older children. The 4yo would be on the edges — hearing verses, watching letters traced in wax, learning a song. Mostly absorbing.' },
+          { time: 'Midday', title: 'Family lunch and rest', body: 'Olives, cheese, bread, fruit, perhaps fish. After the meal, a rest in the cool of the day.' },
+          { time: 'Afternoon', title: 'Play and outdoors', body: 'A Greek 4yo would play in the courtyard with knucklebones, a wooden horse, hoops, balls. A Roman child likewise. Climbing, running, mock-fighting with sticks. Mixed ages.' },
+          { time: 'Late afternoon', title: 'Real errand or work', body: 'A 4yo might carry a message to a neighbour, help carry small items, water the household garden. Real participation.' },
+          { time: 'Evening', title: 'Family dinner with conversation', body: 'The main meal of the day. In a citizen family, conversation might be about politics, philosophy, the day\'s news. The child listens — they are being formed by the register of the conversation as much as by its content.' },
+          { time: 'Evening', title: 'Storytelling', body: 'Before bed, a story told by a parent, grandparent, or nurse. Often from Homer, Aesop, the heroes of the city, or the household legends.' },
+          { time: 'Bedtime', title: 'Prayer, lights out', body: 'A short prayer to the household gods. Bed by full dark.' }
+        ],
+        note: 'What translates: the family-as-school, the hearing of great stories, the absorption of adult conversation, real participation in household work, ritual marking the day. What we leave behind: slavery, severity, the gender restrictions, the harsh discipline.'
+      },
+      'activities': {
+        title: 'Things you can do this week',
+        icon: 'hand',
+        intro: 'Twenty ways to bring the spirit of the great civilisations into a modern home for a 4-year-old. Take what feels alive; leave what doesn\'t.',
+        items: [
+          { name: 'Tell a story from Plutarch, simplified', body: 'The boy Cyrus refused to eat his enemies\' food. The boy Alexander tamed Bucephalus. Young Cato refused to bow to the dictator. One short story a week.' },
+          { name: 'A Greek myth, told from memory', body: 'Persephone and the pomegranate seeds. The labours of Hercules. Theseus and the Minotaur. From D\'Aulaires or your own retelling. Do not over-soften.' },
+          { name: 'A Roman virtue story', body: 'Cincinnatus leaving his plough to save Rome and returning to his plough. Mucius Scaevola putting his hand in the fire. Tell these. They are training for a different kind of life.' },
+          { name: 'Memorise a short Latin or Greek phrase', body: '"Carpe diem." "Veni vidi vici." "Memento mori." The child says it; you say what it means. They will remember it forever.' },
+          { name: 'A small household shrine or "hero shelf"', body: 'A low shelf with a few objects — a photo of a great-grandparent, an icon if your tradition includes it, a small sculpture of a hero, a candle. The child knows it is a sacred spot.' },
+          { name: 'A weekly libation', body: 'A small ritual — every Sunday morning, place fresh water or wine, bread, a flower at the family shrine. The child does it with you. A tradition begins.' },
+          { name: 'Read aloud from a child\'s version of Homer', body: 'Rosemary Sutcliff\'s The Wanderings of Odysseus, or her Black Ships Before Troy. Beautiful retellings for children. A chapter at dinner.' },
+          { name: 'Visit a Greek or Roman site, even a small one', body: 'A museum hall, an old church with Greek mosaics, a Roman road. Name what it is. The 4yo touches the past.' },
+          { name: 'Family Latin grace or song before meals', body: 'A short blessing in Latin (or Hebrew, or Sanskrit — depending on your tradition). The same one, every meal. The child grows up with another language\'s rhythm in their mouth.' },
+          { name: 'A festival from the calendar', body: 'Saturnalia at the winter solstice (Roman). Lighting candles for the longest night. A small feast on the spring equinox. Mark the year as the ancients did.' },
+          { name: 'A heroes\' bedtime story rotation', body: 'Monday — a Greek hero. Tuesday — a Roman hero. Wednesday — a saint or sage from your tradition. Etc. The child meets a different exemplar each night.' },
+          { name: 'A small Latin or Greek vocabulary', body: 'Ten words a year. Pater, mater, frater, soror. Domus, casa. The child sees the bones of the Romance languages early.' },
+          { name: 'Real conversation at the table', body: 'About something serious. A current event, a hard question, a beautiful thing. The 4yo does not have to follow it. They are absorbing the register.' },
+          { name: 'A wax tablet or slate for early writing', body: 'A wax tablet (you can buy them) and a stylus. The Roman child learned to write this way. Slow, deliberate, repeatable.' },
+          { name: 'A child\'s biography of one ancient figure', body: 'A picture book on Pythagoras, Sappho, Marcus Aurelius, Hypatia. The 4yo meets a real historical person, not a Disney character.' },
+          { name: 'Teach a small skill with a tradition', body: 'Olive oil and bread (Mediterranean). Tea steeping (Chinese). Bread-baking (universal). The child learns a craft that has descended through millennia.' },
+          { name: 'Tell about a great grandparent or ancestor', body: 'A real person in the child\'s line. What they did. What they survived. The child\'s own family becomes part of the tradition.' },
+          { name: 'A "what would a hero do?" conversation', body: 'In a small moment of difficulty — sharing a toy, telling the truth — ask, "What would Cincinnatus do? Hercules? Joan of Arc?" The child has a council to consult.' },
+          { name: 'Picture study with a classical work', body: 'A vase painting, a sculpture (the Charioteer of Delphi), a Roman portrait bust. Print and put on the wall. Look together.' },
+          { name: 'Sing a hymn or psalm that has lasted', body: 'Something sung for a thousand years or more. Plainchant, a psalm to a simple tune, a folk hymn. The 4yo joins a long line of voices.' }
+        ]
+      },
+      'reading-list': {
+        title: 'Reading list',
+        icon: 'book',
+        intro: 'For the child, story versions of the great tradition. For the parent, the primary sources (selectively) and modern interpreters.',
+        forChild: {
+          intro: 'The child meets the great traditions through beautiful retellings — myths, heroes, saints, fables. The primary sources come later.',
+          groups: [
+            { heading: 'Greek myth and Homer for children', books: [
+              'D\'Aulaires\' Book of Greek Myths — the standard, illustrated, perfect at 4–5',
+              'Rosemary Sutcliff — Black Ships Before Troy, The Wanderings of Odysseus (read-aloud at 5)',
+              'Mary Pope Osborne — Tales from the Odyssey (around 6)',
+              'James Riordan — The Twelve Labours of Hercules (illustrated)'
+            ]},
+            { heading: 'Roman stories and heroes', books: [
+              'A Child\'s First Book of Roman Heroes — look for Catholic or classical curriculum editions',
+              'Geraldine McCaughrean — The Orchard Book of Roman Myths',
+              'A children\'s biography of Marcus Aurelius (if you can find one age-appropriate)'
+            ]},
+            { heading: 'Aesop and fable', books: [
+              'Aesop\'s Fables — Milo Winter illustrated edition (the classic)',
+              'Arnold Lobel — Fables (modern, in the spirit)',
+              'The Panchatantra — Indian fables, similar age-feel'
+            ]},
+            { heading: 'Saints, sages, and exemplars (from many traditions)', books: [
+              'Tomie dePaola — The Clown of God, Saint Francis, Patrick of Ireland',
+              'Demi — illustrated lives of Buddha, Gandhi, Marco Polo',
+              'A children\'s book of brave people across cultures'
+            ]},
+            { heading: 'Picture books that point to the past', books: [
+              'Roy Burrell — The Greek World, The Roman World (for picture-rich reference)',
+              'Caroline Lawrence — illustrated guides to Roman life',
+              'The Usborne "Time Traveller" series'
+            ]}
+          ]
+        },
+        forParent: {
+          intro: 'The parent meets the primary sources slowly. A few modern interpreters open the door.',
+          books: [
+            { title: 'Plutarch\'s Lives', author: 'Plutarch, c. 100 AD', note: 'Read in any translation. The textbook of character for two millennia. The lives of Theseus, Solon, Pericles, Alexander, Caesar, Brutus. Read one a month.' },
+            { title: 'Institutio Oratoria, Book I', author: 'Quintilian, c. 95 AD', note: 'On the early education of the orator — practical, warm, full of advice on the first years that still applies.' },
+            { title: 'The Republic, Book II–III', author: 'Plato', note: 'Where Plato lays out the education of the guardians. Music, gymnastics, story. Read selectively.' },
+            { title: 'Nicomachean Ethics, Book II', author: 'Aristotle', note: 'On virtue as habit. The chapter on how habits form character. Essential.' },
+            { title: 'Meditations', author: 'Marcus Aurelius', note: 'The personal notebook of a Roman emperor. Stoic, warm, practical. Read it for the voice of a virtuous life.' },
+            { title: 'Norms and Nobility', author: 'David Hicks', note: 'The deepest modern defence of classical education as the formation of nobility.' },
+            { title: 'The Closing of the American Mind', author: 'Allan Bloom', note: 'Why the modern university lost the inheritance. Long but illuminating.' },
+            { title: 'Climbing Parnassus', author: 'Tracy Lee Simmons', note: 'Why Latin and Greek matter; how to begin.' },
+            { title: 'The Iliad and The Odyssey', author: 'Homer (Fagles or Lattimore translation)', note: 'Read for yourself. The 4yo will hear the children\'s version; you should know the real one.' }
+          ]
+        },
+        free: 'Project Gutenberg has the entire Western canon — Plutarch, Homer, Plato, Aristotle, Cicero, Marcus Aurelius. The CiRCE Institute has free articles on the classical tradition. Librivox has free audio of nearly all of these.'
+      },
+      'competency': {
+        title: 'What to expect at four',
+        icon: 'sprout',
+        intro: 'A 4-year-old raised with the spirit of the great tradition is steady, articulate, comfortable with seriousness, and has a small but real gallery of heroes in their head.',
+        landmarks: [
+          { area: 'Knowledge of heroes', items: ['Names 5–10 heroes from the Greek, Roman, or other traditions', 'Tells (in their own words) at least one story for each', 'Knows what virtues each exemplified', 'Recognises a few in pictures (Hercules with his club, Athena with her owl)'] },
+          { area: 'Virtue (early signs)', items: ['Practises small acts of truth-telling, kindness, courage, restraint', 'Can name the virtue when prompted ("That was brave, wasn\'t it?")', 'Has a "council" of heroes to call on in hard moments'] },
+          { area: 'Language and register', items: ['Comfortable hearing adult conversation', 'Has a richer vocabulary than peers from exposure to retellings of great stories', 'Knows a few words of Latin, Greek, or another classical tongue', 'Has memorised one or two short verses'] },
+          { area: 'Ritual and tradition', items: ['Recognises and participates in family rituals (a candle, a grace, a libation)', 'Knows the household shrine or hero shelf as a sacred spot', 'Marks the year by family festivals (winter solstice, spring equinox, harvest)'] },
+          { area: 'Real participation', items: ['Helps with household work as a matter of course', 'Carries messages and small errands', 'Is part of family conversation at table'] },
+          { area: 'Body', items: ['Walks, climbs, plays vigorously', 'Manages real (small) tools', 'Has a basic skill from a long tradition (knead bread, pour libation, light a candle safely)'] }
+        ],
+        note: 'A 4yo formed in the spirit of the great traditions often seems "old-fashioned" or "serious" to peers raised in screens-and-snacks childhood. This is not a flaw. They have been given a different, larger inheritance.'
+      }
+    }
   }
 ];
 
