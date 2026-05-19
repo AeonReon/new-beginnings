@@ -422,17 +422,19 @@ window.METHODS = [
           ]
         },
         forParent: {
-          intro: 'Steiner himself is difficult and esoteric. Modern Waldorf interpreters are much more accessible.',
+          intro: 'Steiner is the source. His writing and lectures are dense and often esoteric — by design, since he was working out a comprehensive view of the developing human being from his own spiritual framework. Begin where you find traction. The modern interpreters below are also genuine and can serve as the on-ramp if Steiner himself is too steep.',
           books: [
-            { title: 'You Are Your Child\'s First Teacher', author: 'Rahima Baldwin Dancy', note: 'The classic Waldorf parenting book for the early years. Practical, warm, deeply rooted.' },
-            { title: 'Heaven on Earth', author: 'Sharifa Oppenheimer', note: 'A handbook of creating a Waldorf-inspired home for ages 3–12. Lush, specific.' },
+            { title: 'The Education of the Child in the Light of Anthroposophy', author: 'Rudolf Steiner, 1907', note: 'A short essay. The most accessible Steiner on early education. Read this first.' },
+            { title: 'The Kingdom of Childhood', author: 'Rudolf Steiner (Torquay lectures, 1924)', note: 'Eight lectures given to teachers near the end of his life. Practical, warm, often funny — the most usable Steiner for the early years.' },
+            { title: 'Practical Advice to Teachers', author: 'Rudolf Steiner (Stuttgart lectures, 1919)', note: 'The first teacher-training course at the original Waldorf school. Specific and grounded.' },
+            { title: 'The Foundations of Human Experience', author: 'Rudolf Steiner (Stuttgart lectures, 1919)', note: 'The deeper anthroposophical view of the human being given alongside the practical advice. Esoteric. Read once you want to understand the framework, not just the practice.' },
+            { title: 'You Are Your Child\'s First Teacher', author: 'Rahima Baldwin Dancy', note: 'The classic modern entry into Waldorf parenting for the early years. Warm and practical.' },
+            { title: 'Heaven on Earth', author: 'Sharifa Oppenheimer', note: 'A handbook of creating a Waldorf-inspired home for ages 3–12. Lush and specific.' },
             { title: 'Beyond the Rainbow Bridge', author: 'Barbara Patterson & Pamela Bradley', note: 'Nurturing healthy children in the first seven years. Gentle and practical.' },
-            { title: 'Simplicity Parenting', author: 'Kim John Payne', note: 'Not Waldorf-branded but Waldorf in spirit. On reducing, slowing, protecting childhood.' },
-            { title: 'The First Three Years of the Child', author: 'Karl König', note: 'Steiner-inspired but accessible. The developmental view of the under-three years.' },
-            { title: 'Children at Play', author: 'Heidi Britz-Crecelius', note: 'A short book on the seriousness of children\'s play. Worth reading slowly.' }
+            { title: 'Simplicity Parenting', author: 'Kim John Payne', note: 'Not Waldorf-branded but Waldorf in spirit. On reducing, slowing, protecting childhood.' }
           ]
         },
-        free: 'WaldorfToday.com aggregates free articles and seasonal verses. The Wynstones Press song collections are paid but worth the small cost.'
+        free: 'The Rudolf Steiner Archive (rsarchive.org) hosts the complete works of Steiner online in English translation, free. WaldorfToday.com aggregates articles and seasonal verses.'
       },
       'competency': {
         title: 'What to expect at four',
@@ -558,14 +560,19 @@ window.METHODS = [
           ]
         },
         forParent: {
-          intro: 'The classical home-education literature is rich. Start with one persuasive book and one practical one.',
+          intro: 'The classical tradition speaks for itself. The primary sources below are short and accessible (most of them); the modern interpreters help where the ancient prose has aged. Read slowly. The tradition rewards patience.',
           books: [
-            { title: 'The Well-Trained Mind', author: 'Susan Wise Bauer & Jessie Wise', note: 'The canonical American classical homeschooling manual. End-to-end. Use for orientation; selectively for practice.' },
+            { title: 'On the Education of Children (Moralia)', author: 'Plutarch, c. 100 AD', note: 'A short essay by the great Roman biographer specifically on raising young children. Practical, warm, two thousand years old and still useful. Free at Project Gutenberg.' },
+            { title: 'Institutio Oratoria, Book I', author: 'Quintilian, c. 95 AD', note: 'The Roman master of education on the early years. Surprisingly modern in its gentleness. Read just Book I to begin.' },
+            { title: 'Republic, Books II and III', author: 'Plato, c. 380 BC', note: 'Plato\'s account of how a child should be formed by music, gymnastic, and story. The foundational classical text on early education.' },
+            { title: 'Politics, Book VIII', author: 'Aristotle, c. 350 BC', note: 'Aristotle on what a young citizen should be taught and why. Short; dense; permanent.' },
+            { title: 'On Duties (De Officiis)', author: 'Cicero, 44 BC', note: 'Cicero\'s letter to his son on how to live a Roman life. Read aloud over a week.' },
+            { title: 'Meditations', author: 'Marcus Aurelius, c. 170 AD', note: 'The Stoic emperor\'s private notebook. The example of a formed mind. Read with the child in mind as the formation\'s goal.' },
+            { title: 'Norms and Nobility', author: 'David Hicks', note: 'The deepest modern defence of classical education as the formation of nobility of soul. Begin here if you read only one modern book.' },
             { title: 'Beauty for Truth\'s Sake', author: 'Stratford Caldecott', note: 'The classical liberal arts rehabilitated for a modern parent. Short, profound, worth re-reading.' },
-            { title: 'Norms and Nobility', author: 'David Hicks', note: 'The deepest defence of classical education as the formation of nobility of soul. Slow reading.' },
+            { title: 'The Well-Trained Mind', author: 'Susan Wise Bauer & Jessie Wise', note: 'The canonical American classical homeschooling manual. End-to-end. Use for orientation; selectively for practice.' },
             { title: 'The Liberal Arts Tradition', author: 'Kevin Clark & Ravi Scott Jain', note: 'A clear modern restatement of the seven liberal arts and their place in raising a person.' },
             { title: 'Climbing Parnassus', author: 'Tracy Lee Simmons', note: 'Why Latin and Greek matter, written for the parent considering whether to teach them.' },
-            { title: 'Consider This', author: 'Karen Glass', note: 'Charlotte Mason in conversation with the classical tradition. Short and clear.' },
             { title: 'Tending the Heart of Virtue', author: 'Vigen Guroian', note: 'On why fairy tales, unsanitised, form moral imagination. Essential.' },
             { title: 'Ten Ways to Destroy the Imagination of Your Child', author: 'Anthony Esolen', note: 'Short, sharp, diagnostic — what modern childhood has lost.' }
           ]
