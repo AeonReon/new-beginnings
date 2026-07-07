@@ -1,4 +1,4 @@
-const CACHE = 'new-beginnings-v9';
+const CACHE = 'new-beginnings-v10';
 const ASSETS = [
   './',
   './index.html',
@@ -10,6 +10,7 @@ const ASSETS = [
   './feast.html',
   './resources.html',
   './keeping.html',
+  './games.html',
   './manifest.json',
   './icon-192.png',
   './icon-512.png',
@@ -20,6 +21,7 @@ const ASSETS = [
   './assets/methods-data.js',
   './assets/feast-data.js',
   './assets/resources-data.js',
+  './assets/games-data.js',
   './assets/methodologies-data.js',
   './assets/rhythms-data.js'
 ];

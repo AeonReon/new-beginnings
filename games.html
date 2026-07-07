@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#FAF6EC">
+  <title>New Beginnings — Games</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="icon-192.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    /* Situation quick-filter chips */
+    .where-row {
+      display: flex; flex-wrap: wrap; gap: 0.5em;
+      margin: 0 0 1.4em;
+    }
+    .where-chip {
+      font-family: var(--sans); font-size: 0.92rem; font-weight: 700;
+      color: var(--ink-soft); background: var(--paper-card);
+      border: 1.5px solid var(--rule-strong); border-radius: var(--radius-pill);
+      padding: 0.5em 1.05em; cursor: pointer;
+      transition: transform 0.15s cubic-bezier(0.34,1.56,0.64,1), border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+    }
+    .where-chip:hover { transform: translateY(-1px); border-color: var(--sky); }
+    .where-chip.active {
+      color: white; border-color: transparent;
+      background: var(--grad-sky);
+      box-shadow: var(--shadow-sm);
+    }
+
+    #count { font-family: var(--sans); font-size: 0.85em; color: var(--ink-mute); margin: 0.2em 0 1.4em; }
+
+    /* Group section headers */
+    .group-header { margin: 2.2em 0 0.2em; }
+    .group-header:first-of-type { margin-top: 1.4em; }
+    .group-header h2 {
+      display: flex; align-items: center; gap: 0.5em;
+      margin: 0 0 0.15em;
+    }
+    .group-dot { width: 0.7em; height: 0.7em; border-radius: 50%; background: var(--gc); flex: 0 0 auto; box-shadow: 0 0 0 3px var(--gcs); }
+    .group-blurb { font-size: 0.9em; color: var(--ink-mute); margin: 0 0 0.4em 1.2em; }
+
+    /* Game card */
+    .game-card { border-left: 5px solid var(--gc); }
+    .game-head { display: flex; align-items: baseline; justify-content: space-between; gap: 0.6em; flex-wrap: wrap; }
+    .game-head h3 { margin: 0; font-size: 1.16rem; }
+    .game-tag { font-size: 0.62rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gcd); white-space: nowrap; }
+
+    .meta-row { display: flex; flex-wrap: wrap; gap: 0.4em; margin: 0.55em 0 0.85em; }
+    .chip {
+      font-family: var(--sans); font-size: 0.72rem; font-weight: 700;
+      padding: 0.28em 0.72em; border-radius: var(--radius-pill);
+      background: var(--gcs); color: var(--gcd);
+    }
+    .chip.turns { background: var(--sun-soft); color: var(--sun-deep); }
+    .chip.age { background: var(--paper-warm); color: var(--ink-soft); border: 1px solid var(--rule-strong); }
+
+    .game-card p.how { margin: 0 0 0.2em; }
+
+    .tweak { font-size: 0.85em; color: var(--ink-mute); margin: 0.75em 0 0; }
+    .tweak b { color: var(--ink-soft); font-weight: 700; }
+
+    .traits { display: flex; flex-wrap: wrap; gap: 0.35em; margin-top: 0.95em; }
+    .trait {
+      font-family: var(--sans); font-size: 0.68rem; font-weight: 700;
+      padding: 0.22em 0.62em; border-radius: var(--radius-pill);
+      background: var(--paper-surface); color: var(--ink-mute);
+      border: 1px solid var(--rule-strong); cursor: pointer;
+    }
+    .trait:hover { border-color: var(--gc); color: var(--gcd); }
+
+    .empty { color: var(--ink-mute); font-style: italic; margin: 2em 0; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Games</h1>
+    <p class="lede">
+      Little out-loud games to play in the car, the garden, or while you wait —
+      no screen, nothing to buy, nothing to set up. Just you, your child, and the
+      turn going back and forth. Each one says the real thing it's building.
+    </p>
+
+    <div class="card" style="margin-top: 0;">
+      <h3>How to use this</h3>
+      <p style="margin-bottom: 0.7em;">
+        You don't need all of these, and you don't need to do them "right". Pick
+        one that fits where you are — stuck in traffic, walking to the shop, waiting
+        for food — and play until it stops being fun. Most are turn-taking round
+        games: you go, they go, round and round until someone runs out.
+      </p>
+      <p class="why" style="margin-bottom: 0;">
+        Every game carries the actual reason it helps — the specific skill and how
+        the game rehearses it — not "because it's educational". A four-year-old's
+        real work is play and talk; these turn ordinary in-between moments into the
+        richest learning there is, without a single worksheet. Trust your child's
+        appetite over any list: if a game bores them, drop it and try another.
+      </p>
+    </div>
+
+    <div class="where-row" id="where-row"></div>
+
+    <div class="filters">
+      <div>
+        <label for="f-search">Search</label>
+        <input type="search" id="f-search" placeholder="e.g. rhyme, counting, feelings, turns">
+      </div>
+      <div>
+        <label for="f-build">Builds</label>
+        <select id="f-build"></select>
+      </div>
+      <div>
+        <label for="f-age">Ready for</label>
+        <select id="f-age">
+          <option value="">Any age 3–5</option>
+          <option value="3–5">Ready from 3</option>
+          <option value="4–5">Best from 4 (more language)</option>
+        </select>
+      </div>
+    </div>
+
+    <p id="count"></p>
+
+    <div id="list"></div>
+  </main>
+
+  <script src="assets/games-data.js"></script>
+  <script src="assets/app.js"></script>
+  <script>
+    const GROUP_ORDER = ['Words', 'Focus', 'Thinking', 'Heart'];
+    const WHERES = ['Anytime', 'Car', 'Waiting', 'Walk/Garden', 'Mealtime'];
+
+    const fSearch = document.getElementById('f-search');
+    const fBuild = document.getElementById('f-build');
+    const fAge = document.getElementById('f-age');
+    const whereRow = document.getElementById('where-row');
+    const list = document.getElementById('list');
+    const count = document.getElementById('count');
+
+    let activeWhere = '';
+
+    // Builds (trait) dropdown
+    fBuild.innerHTML = '<option value="">Any skill</option>' +
+      window.GAME_TRAITS.map(t => `<option value="${t}">${t}</option>`).join('');
+
+    // Situation chips
+    whereRow.innerHTML = WHERES.map(w =>
+      `<button type="button" class="where-chip" data-where="${w}">${w}</button>`
+    ).join('');
+    whereRow.querySelectorAll('.where-chip').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const w = btn.dataset.where;
+        activeWhere = (activeWhere === w) ? '' : w;
+        whereRow.querySelectorAll('.where-chip').forEach(b =>
+          b.classList.toggle('active', b.dataset.where === activeWhere));
+        render();
+      });
+    });
+
+    function esc(s) {
+      return String(s).replace(/[&<>"]/g, c =>
+        ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+    }
+
+    function cardHTML(g) {
+      const grp = window.GAME_GROUPS[g.group];
+      const meta = [];
+      g.where.forEach(w => meta.push(`<span class="chip">${w}</span>`));
+      meta.push(`<span class="chip age">Age ${g.age}</span>`);
+      if (g.turns) meta.push(`<span class="chip turns">Take turns</span>`);
+      const traits = g.traits.map(t =>
+        `<span class="trait" data-trait="${esc(t)}">${t}</span>`).join('');
+      const tweak = g.tweak
+        ? `<p class="tweak"><b>Tune it:</b> ${esc(g.tweak)}</p>` : '';
+      return `
+        <div class="card game-card" style="--gc:${grp.c};--gcd:${grp.cd};--gcs:${grp.cs};">
+          <div class="game-head">
+            <h3>${esc(g.name)}</h3>
+            <span class="game-tag">${esc(grp.label)}</span>
+          </div>
+          <div class="meta-row">${meta.join('')}</div>
+          <p class="how">${esc(g.how)}</p>
+          <p class="why">${esc(g.why)}</p>
+          ${tweak}
+          <div class="traits">${traits}</div>
+        </div>`;
+    }
+
+    function render() {
+      const q = fSearch.value.toLowerCase().trim();
+      const build = fBuild.value;
+      const age = fAge.value;
+
+      const filtered = window.GAMES.filter(g => {
+        if (activeWhere && !g.where.includes(activeWhere)) return false;
+        if (build && !g.traits.includes(build)) return false;
+        if (age && g.age !== age) return false;
+        if (q) {
+          const hay = [g.name, g.how, g.why, g.tweak || '', g.traits.join(' '), window.GAME_GROUPS[g.group].label]
+            .join(' ').toLowerCase();
+          if (!hay.includes(q)) return false;
+        }
+        return true;
+      });
+
+      count.textContent = `${filtered.length} of ${window.GAMES.length} games`;
+
+      let html = '';
+      GROUP_ORDER.forEach(key => {
+        const grp = window.GAME_GROUPS[key];
+        const inGroup = filtered.filter(g => g.group === key);
+        if (!inGroup.length) return;
+        html += `
+          <div class="group-header" style="--gc:${grp.c};--gcs:${grp.cs};">
+            <h2><span class="group-dot"></span>${grp.label}</h2>
+            <p class="group-blurb">${grp.blurb}</p>
+          </div>`;
+        html += inGroup.map(cardHTML).join('');
+      });
+
+      list.innerHTML = html || '<p class="empty">No games match that yet — try clearing a filter.</p>';
+
+      // tapping a trait chip sets the Builds filter
+      list.querySelectorAll('.trait').forEach(el => {
+        el.addEventListener('click', () => {
+          fBuild.value = el.dataset.trait;
+          render();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      });
+    }
+
+    [fSearch, fBuild, fAge].forEach(el => el.addEventListener('input', render));
+    render();
+  </script>
+</body>
+</html>
