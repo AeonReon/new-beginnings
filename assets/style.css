@@ -1,47 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap');
 :root {
-  --ink: #2A2038;
-  --ink-soft: #5C4B6B;
-  --ink-mute: #7A6D85;
-  --paper: #FAF6EC;
-  --paper-warm: #FFF6D9;
+  /* Clear Sky palette — matched to Conscious Parenting NI site + Days Out */
+  --ink: #1A2233;
+  --ink-soft: #4D5A6E;
+  --ink-mute: #7A8898;
+  --paper: #F6F8FB;
+  --paper-warm: #EAF4FB;
   --paper-card: #FFFFFF;
-  --paper-surface: #FFFBF0;
-  --rule: #F0E5C8;
-  --rule-soft: #F6EED4;
-  --rule-strong: #E6D6A8;
+  --paper-surface: #F6F9FC;
+  --rule: #E1E6EF;
+  --rule-soft: #EDF2F8;
+  --rule-strong: #CBD6E4;
 
-  --sun: #FFD64A;
-  --sun-hot: #FF9F3D;
-  --pink: #FF5E8E;
-  --sky: #4A9ED4;
+  --sun: #FFCE3D;
+  --sun-hot: #F4B82A;
+  --pink: #C73B7A;
+  --sky: #4FA4D2;
   --sky-soft: #6CB4E2;
-  --mint: #4CCB9F;
+  --mint: #1F8F5E;
 
-  --sky-deep: #2D6FA8;
-  --sun-deep: #C97D2A;
-  --leaf: #4CCB9F;
-  --leaf-soft: #D5F4E6;
-  --rose: #FF5E8E;
-  --rose-soft: #FFE0EB;
+  --sky-deep: #2C6F9E;
+  --sun-deep: #D89A0F;
+  --leaf: #1F8F5E;
+  --leaf-soft: #C9E8D8;
+  --rose: #C73B7A;
+  --rose-soft: #F6D9E6;
   --sky-soft-bg: #E0F0FA;
-  --sun-soft: #FFF6D9;
+  --sun-soft: #FFF3D6;
 
-  --grad-warm: linear-gradient(135deg, #FFD64A 0%, #FF9F3D 50%, #FF5E8E 100%);
-  --grad-sun: linear-gradient(135deg, #FFD64A 0%, #FF9F3D 100%);
-  --grad-sky: linear-gradient(135deg, #6CB4E2 0%, #4A9ED4 100%);
-  --grad-fresh: linear-gradient(135deg, #FFD64A 0%, #4CCB9F 100%);
-  --grad-pink: linear-gradient(135deg, #FF9F3D 0%, #FF5E8E 100%);
+  --grad-warm: linear-gradient(135deg, #FFD64A 0%, #F4B82A 100%);
+  --grad-sun: linear-gradient(135deg, #FFD64A 0%, #F4B82A 100%);
+  --grad-sky: linear-gradient(135deg, #6CB4E2 0%, #4FA4D2 100%);
+  --grad-fresh: linear-gradient(135deg, #FFD64A 0%, #1F8F5E 100%);
+  --grad-pink: linear-gradient(135deg, #F4B82A 0%, #C73B7A 100%);
 
-  --serif: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Helvetica, Arial, sans-serif;
-  --sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Helvetica, Arial, sans-serif;
+  --serif: 'Poppins', system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  --sans: 'Inter', system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
 
-  --shadow-sm: 0 1px 2px rgba(40, 30, 20, 0.05), 0 4px 12px rgba(40, 30, 20, 0.06);
-  --shadow-md: 0 2px 4px rgba(40, 30, 20, 0.06), 0 10px 28px rgba(40, 30, 20, 0.10);
-  --shadow-lg: 0 4px 12px rgba(40, 30, 20, 0.10), 0 24px 60px rgba(40, 30, 20, 0.14);
+  --shadow-sm: 0 1px 2px rgba(20, 35, 60, 0.06), 0 4px 12px rgba(20, 35, 60, 0.08);
+  --shadow-md: 0 2px 4px rgba(20, 35, 60, 0.07), 0 10px 28px rgba(20, 35, 60, 0.10);
+  --shadow-lg: 0 4px 12px rgba(20, 35, 60, 0.10), 0 24px 60px rgba(20, 35, 60, 0.14);
 
   --radius-sm: 10px;
   --radius-md: 16px;
-  --radius-lg: 22px;
+  --radius-lg: 20px;
   --radius-pill: 999px;
 }
 
@@ -51,8 +53,8 @@ html, body {
   margin: 0;
   padding: 0;
   background:
-    radial-gradient(900px 500px at -10% -20%, rgba(255, 214, 74, 0.22), transparent 60%),
-    radial-gradient(900px 500px at 110% -10%, rgba(255, 94, 142, 0.16), transparent 60%),
+    radial-gradient(900px 500px at -10% -20%, rgba(79, 164, 210, 0.14), transparent 60%),
+    radial-gradient(900px 500px at 110% -10%, rgba(244, 184, 42, 0.13), transparent 60%),
     var(--paper);
   background-attachment: fixed;
   color: var(--ink);
@@ -67,12 +69,12 @@ html, body {
 body { min-height: 100vh; display: flex; flex-direction: column; }
 
 a {
-  color: var(--sun-hot);
+  color: var(--sky-deep);
   text-decoration: none;
-  border-bottom: 1px solid rgba(255, 159, 61, 0.3);
+  border-bottom: 1px solid rgba(46, 132, 189, 0.3);
   transition: border-color 0.15s ease, color 0.15s ease;
 }
-a:hover { border-bottom-color: var(--sun-hot); color: var(--pink); }
+a:hover { border-bottom-color: var(--sky-deep); color: var(--pink); }
 
 h1, h2, h3, h4 {
   font-family: var(--sans);
@@ -1000,6 +1002,21 @@ body.launcher {
   height: 36px;
   color: white;
 }
+
+/* Tile with photo header (tradition tiles) */
+.tile.has-photo { padding: 0 0 1.35em; gap: 0; overflow: hidden; }
+.tile.has-photo .tile-photo { position: relative; height: 132px; }
+.tile.has-photo .tile-photo > img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.tile.has-photo .tile-photo::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 55%, rgba(20,35,60,0.22) 100%);
+}
+.tile.has-photo .tile-icon-wrap {
+  position: absolute; bottom: -20px; left: 16px; width: 46px; height: 46px;
+  border-radius: 13px; border: 2px solid #fff; box-shadow: 0 3px 10px rgba(20,35,60,0.20); z-index: 3;
+}
+.tile.has-photo .tile-icon { width: 26px; height: 26px; }
+.tile.has-photo .tile-body { padding: 0 1.3em; margin-top: 28px; gap: 0.25em; }
 
 .tile-body { display: flex; flex-direction: column; gap: 0.25em; flex: 1; margin-top: 0.1em; }
 .tile-name {

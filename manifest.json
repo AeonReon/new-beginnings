@@ -1,13 +1,13 @@
 {
-  "name": "New Beginnings",
-  "short_name": "New Beginnings",
-  "description": "A first-principles guide for home-educating a four-year-old",
+  "name": "Conscious Parenting NI",
+  "short_name": "Conscious Parenting NI",
+  "description": "A first-principles guide to raising a child \u2014 the best of every tradition, for Northern Ireland families",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
   "orientation": "any",
-  "background_color": "#FAF6EC",
-  "theme_color": "#FAF6EC",
+  "background_color": "#F6F8FB",
+  "theme_color": "#4FA4D2",
   "icons": [
     {
       "src": "icon-192.png",

@@ -5,6 +5,7 @@
 window.METHODS = [
   {
     id: 'charlotte-mason',
+    image: 'assets/tiles/charlotte-mason.jpg',
     name: 'Charlotte Mason',
     short: 'Mason',
     tagline: 'Living books · narration · nature · habit',
@@ -189,6 +190,7 @@ window.METHODS = [
   },
   {
     id: 'montessori',
+    image: 'assets/tiles/montessori.jpg',
     name: 'Montessori',
     short: 'Montessori',
     tagline: 'Prepared environment · practical life · self-correction',
@@ -321,6 +323,7 @@ window.METHODS = [
   },
   {
     id: 'waldorf',
+    image: 'assets/tiles/waldorf.jpg',
     name: 'Waldorf',
     short: 'Waldorf',
     tagline: 'Rhythm · beauty · imagination · no early academics',
@@ -454,6 +457,7 @@ window.METHODS = [
   },
   {
     id: 'classical',
+    image: 'assets/tiles/classical.jpg',
     name: 'Classical',
     short: 'Classical',
     tagline: 'Truth · goodness · beauty · the great tradition',
@@ -597,6 +601,7 @@ window.METHODS = [
   },
   {
     id: 'wild-free',
+    image: 'assets/tiles/wild-free.jpg',
     name: 'Wild + Free',
     short: 'Wild+Free',
     tagline: 'Outdoors first · slow living · childhood as sacred',
@@ -733,6 +738,7 @@ window.METHODS = [
   },
   {
     id: 'reggio',
+    image: 'assets/tiles/reggio.jpg',
     name: 'Reggio Emilia',
     short: 'Reggio',
     tagline: 'The hundred languages · child as researcher',
@@ -866,6 +872,7 @@ window.METHODS = [
   },
   {
     id: 'forest-school',
+    image: 'assets/tiles/forest-school.jpg',
     name: 'Forest School',
     short: 'Forest',
     tagline: 'Woods as the classroom · risk as part of learning',
@@ -999,6 +1006,7 @@ window.METHODS = [
   },
   {
     id: 'unschooling',
+    image: 'assets/tiles/unschooling.jpg',
     name: 'Unschooling',
     short: 'Unschooling',
     tagline: 'Child-led · trust-based · no imposed curriculum',
@@ -1130,6 +1138,7 @@ window.METHODS = [
   },
   {
     id: 'athens',
+    image: 'assets/tiles/athens.jpg',
     name: 'Athenian',
     short: 'Athens',
     tagline: 'Paideia · the forming of a free citizen',
@@ -1261,6 +1270,7 @@ window.METHODS = [
   },
   {
     id: 'rome',
+    image: 'assets/tiles/rome.jpg',
     name: 'Roman',
     short: 'Rome',
     tagline: 'Pietas · gravitas · the citizen of the Republic',
