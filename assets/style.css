@@ -1003,6 +1003,25 @@ body.launcher {
   color: white;
 }
 
+/* Intro card (launcher) */
+.intro-card {
+  background: var(--paper-card); border: 1px solid var(--rule);
+  border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);
+  padding: 1.4em 1.5em; margin-bottom: 1.7em;
+}
+.intro-lead { font-size: 1.02em; color: var(--ink-soft); margin: 0 0 1.15em; line-height: 1.5; }
+.intro-lead strong { color: var(--ink); font-weight: 700; }
+.how-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1em; }
+.how-step { display: flex; gap: 0.65em; align-items: flex-start; }
+.how-n {
+  flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%;
+  background: var(--grad-sky); color: #fff; font-weight: 800;
+  display: grid; place-items: center; font-size: 0.95em; box-shadow: var(--shadow-sm);
+}
+.how-step b { display: block; color: var(--ink); font-size: 0.95em; font-weight: 700; }
+.how-step div span { color: var(--ink-mute); font-size: 0.82em; line-height: 1.35; }
+@media (max-width: 640px) { .how-steps { grid-template-columns: 1fr; gap: 0.7em; } }
+
 /* Tile with photo header (tradition tiles) */
 .tile.has-photo { padding: 0 0 1.35em; gap: 0; overflow: hidden; }
 .tile.has-photo .tile-photo { position: relative; height: 132px; }
