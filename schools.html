@@ -139,6 +139,7 @@
           <div class="sc-body">
             <div class="school-name">${s.name}</div>
             <div class="school-meta"><span class="ic">📍</span><span>${s.address || s.town}</span></div>
+            ${s.phone ? `<div class="school-meta"><span class="ic">📞</span><span>${s.phone}</span></div>` : ''}
             ${s.url ? `<div class="school-meta"><span class="ic">🔗</span><span>${s.url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')}</span></div>` : ''}
             <div class="school-note">${s.note || ''}</div>
             ${s.url ? `<a class="school-link" href="${s.url}" target="_blank" rel="noopener">Visit website →</a>` : ''}
@@ -174,6 +175,7 @@
                  <div class="pop-cat" style="color:${c.color}">${c.label}</div>
                  <div class="pop-name">${s.name}</div>
                  <div class="pop-meta">📍 ${s.address || s.town}</div>
+                 ${s.phone ? `<div class="pop-meta">📞 ${s.phone}</div>` : ''}
                  <div class="pop-detail">${s.note || ''}</div>
                  ${s.url ? `<a class="pop-link" href="${s.url}" target="_blank" rel="noopener">Visit website →</a>` : ''}
                </div>`))
