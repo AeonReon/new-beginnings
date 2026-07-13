@@ -1,9 +1,10 @@
-const CACHE = 'new-beginnings-v15';
+const CACHE = 'new-beginnings-v16';
 const ASSETS = [
   './',
   './index.html',
   './schools.html',
   './assets/schools-data.js',
+  './assets/map-style.json',
   './compass.html',
   './methodology.html',
   './random.html',

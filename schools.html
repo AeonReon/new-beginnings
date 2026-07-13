@@ -35,22 +35,32 @@
     .view-toggle button.on { background: var(--grad-sky); color: #fff; box-shadow: var(--shadow-sm); }
 
     #map { width: 100%; height: 460px; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--rule); }
-    .maplibregl-popup-content { font-family: var(--sans); border-radius: 12px; padding: 12px 14px; }
-    .pop-name { font-weight: 800; color: var(--ink); font-size: 1.02em; margin-bottom: 2px; }
-    .pop-cat { font-size: 0.78em; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; }
-    .pop-town { color: var(--ink-mute); font-size: 0.85em; margin: 3px 0 6px; }
-    .pop-link { font-weight: 700; font-size: 0.85em; }
+    .maplibregl-popup-content { font-family: var(--sans); border-radius: 14px; padding: 0; overflow: hidden; width: 238px; box-shadow: var(--shadow-lg); }
+    .pop-img { width: 100%; height: 92px; object-fit: cover; display: block; }
+    .pop-inner { padding: 10px 13px 13px; }
+    .pop-cat { font-size: 0.72em; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; }
+    .pop-name { font-weight: 800; color: var(--ink); font-size: 1.0em; margin: 2px 0 5px; line-height: 1.2; }
+    .pop-meta { color: var(--ink-mute); font-size: 0.8em; margin: 2px 0; line-height: 1.35; }
+    .pop-detail { color: var(--ink-soft); font-size: 0.82em; line-height: 1.4; margin: 6px 0 8px; }
+    .pop-link { font-weight: 700; font-size: 0.84em; }
+    .maplibregl-popup-close-button { z-index: 3; font-size: 20px; color: #fff; padding: 0 6px; text-shadow: 0 1px 4px rgba(0,0,0,.6); }
 
-    .school-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1em; }
+    .school-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.1em; }
     .school-card {
-      position: relative; background: #fff; border: 1px solid var(--rule); border-left: 5px solid var(--cc, var(--sky));
-      border-radius: var(--radius-md); padding: 1.1em 1.2em; box-shadow: var(--shadow-sm);
+      position: relative; background: #fff; border: 1px solid var(--rule);
+      border-radius: var(--radius-md); box-shadow: var(--shadow-sm); overflow: hidden;
+      display: flex; flex-direction: column; transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
-    .school-cat { font-size: 0.72em; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; color: var(--cc, var(--sky)); }
-    .school-name { font-weight: 800; font-size: 1.1em; color: var(--ink); margin: 0.15em 0 0.1em; line-height: 1.2; }
-    .school-town { color: var(--ink-mute); font-size: 0.85em; margin-bottom: 0.5em; display: flex; align-items: center; gap: 0.35em; }
-    .school-note { color: var(--ink-soft); font-size: 0.9em; line-height: 1.45; margin-bottom: 0.7em; }
-    .school-link { font-weight: 700; font-size: 0.88em; }
+    .school-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+    .sc-photo { position: relative; height: 118px; }
+    .sc-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .sc-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 45%, rgba(20,35,60,0.30) 100%); }
+    .sc-catbadge { position: absolute; left: 10px; bottom: 9px; z-index: 2; color: #fff; font-size: 0.66em; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; background: var(--cc, var(--sky)); padding: 3px 9px; border-radius: 999px; box-shadow: 0 2px 6px rgba(20,35,60,.25); }
+    .sc-body { padding: 0.85em 1.05em 1.1em; border-top: 3px solid var(--cc, var(--sky)); flex: 1; }
+    .school-name { font-weight: 800; font-size: 1.06em; color: var(--ink); margin: 0 0 0.4em; line-height: 1.2; }
+    .school-meta { color: var(--ink-mute); font-size: 0.82em; margin-bottom: 0.2em; display: flex; align-items: flex-start; gap: 0.4em; line-height: 1.35; }
+    .school-note { color: var(--ink-soft); font-size: 0.87em; line-height: 1.45; margin: 0.55em 0 0.7em; }
+    .school-link { font-weight: 700; font-size: 0.86em; }
     .count { color: var(--ink-mute); font-size: 0.85em; margin: 0 0 0.9em; }
 
     .gap-card {
@@ -93,6 +103,7 @@
 
   <script src="assets/schools-data.js"></script>
   <script src="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.js"></script>
+  <script src="https://unpkg.com/pmtiles@3.2.0/dist/pmtiles.js"></script>
   <script>
     const CATS = window.SCHOOL_CATS;
     const SCHOOLS = window.SCHOOLS;
@@ -124,26 +135,31 @@
       grid.innerHTML = list.map(s => {
         const c = CATS[s.cat];
         return `<div class="school-card" style="--cc:${c.color};">
-          <div class="school-cat">${c.label}</div>
-          <div class="school-name">${s.name}</div>
-          <div class="school-town">📍 ${s.town}</div>
-          <div class="school-note">${s.note || ''}</div>
-          ${s.url ? `<a class="school-link" href="${s.url}" target="_blank" rel="noopener">Visit website →</a>` : ''}
+          <div class="sc-photo"><img src="${c.img}" alt="${c.label}" loading="lazy"><span class="sc-catbadge">${c.label}</span></div>
+          <div class="sc-body">
+            <div class="school-name">${s.name}</div>
+            <div class="school-meta"><span class="ic">📍</span><span>${s.address || s.town}</span></div>
+            ${s.url ? `<div class="school-meta"><span class="ic">🔗</span><span>${s.url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')}</span></div>` : ''}
+            <div class="school-note">${s.note || ''}</div>
+            ${s.url ? `<a class="school-link" href="${s.url}" target="_blank" rel="noopener">Visit website →</a>` : ''}
+          </div>
         </div>`;
       }).join('') + `<div class="gap-card">No democratic / Sudbury school exists in NI yet — the nearest are across the border in the Republic. <b>Maybe you'll be the one to start one.</b> Know a setting we've missed? It belongs here.</div>`;
       markers.forEach(m => { m.el.style.display = visible(m.s) ? '' : 'none'; });
     }
 
     // Map (lazy init on first open)
+    let pmRegistered = false;
     function initMap() {
       if (map) return;
+      if (!pmRegistered && typeof pmtiles !== 'undefined') {
+        const protocol = new pmtiles.Protocol();
+        maplibregl.addProtocol('pmtiles', protocol.tile);
+        pmRegistered = true;
+      }
       map = new maplibregl.Map({
         container: 'map',
-        style: {
-          version: 8,
-          sources: { osm: { type: 'raster', tiles: ['https://tile.openstreetmap.org/{z}/{x}/{y}.png'], tileSize: 256, attribution: '© OpenStreetMap contributors' } },
-          layers: [{ id: 'osm', type: 'raster', source: 'osm' }]
-        },
+        style: 'assets/map-style.json',
         center: [-6.5, 54.62], zoom: 7.1
       });
       map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right');
@@ -153,10 +169,14 @@
           const m = new maplibregl.Marker({ color: c.color })
             .setLngLat([s.lon, s.lat])
             .setPopup(new maplibregl.Popup({ offset: 24 }).setHTML(
-              `<div class="pop-name">${s.name}</div>
-               <div class="pop-cat" style="color:${c.color}">${c.label}</div>
-               <div class="pop-town">${s.town}</div>
-               ${s.url ? `<a class="pop-link" href="${s.url}" target="_blank" rel="noopener">Visit website →</a>` : ''}`))
+              `<img class="pop-img" src="${c.img}" alt="${c.label}">
+               <div class="pop-inner">
+                 <div class="pop-cat" style="color:${c.color}">${c.label}</div>
+                 <div class="pop-name">${s.name}</div>
+                 <div class="pop-meta">📍 ${s.address || s.town}</div>
+                 <div class="pop-detail">${s.note || ''}</div>
+                 ${s.url ? `<a class="pop-link" href="${s.url}" target="_blank" rel="noopener">Visit website →</a>` : ''}
+               </div>`))
             .addTo(map);
           markers.push({ s, el: m.getElement(), marker: m });
         });
