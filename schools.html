@@ -56,6 +56,9 @@
     .map-card-body .pop-inner { padding: 14px 16px 16px; }
     .map-card-close { position: absolute; top: 8px; right: 8px; z-index: 5; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 999px; background: rgba(0,0,0,0.5); color: #fff; border: 1px solid rgba(255,255,255,0.3); font-size: 16px; line-height: 1; cursor: pointer; font-family: inherit; }
     .map-card-close:hover { filter: brightness(1.2); }
+    /* Custom clickable map pins (own element = reliable click) */
+    .sch-pin { width: 18px; height: 18px; background: var(--pc, #4FA4D2); border: 3px solid #fff; border-radius: 50%; box-shadow: 0 1px 5px rgba(20,35,60,.55); cursor: pointer; transition: transform .12s ease; }
+    .sch-pin:hover { transform: scale(1.28); }
 
     .school-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.1em; }
     .school-card {
@@ -186,11 +189,14 @@
       map.on('load', () => {
         SCHOOLS.filter(s => s.lat != null && s.lon != null).forEach(s => {
           const c = CATS[s.cat];
-          const m = new maplibregl.Marker({ color: c.color }).setLngLat([s.lon, s.lat]).addTo(map);
-          const el = m.getElement();
-          el.style.cursor = 'pointer';
-          el.addEventListener('click', (ev) => { ev.stopPropagation(); showMapCard(cardHtml(s)); });
-          markers.push({ s, el, marker: m });
+          const pin = document.createElement('div');
+          pin.className = 'sch-pin';
+          pin.style.setProperty('--pc', c.color);
+          pin.setAttribute('role', 'button');
+          pin.setAttribute('aria-label', s.name);
+          pin.addEventListener('click', (ev) => { ev.stopPropagation(); showMapCard(cardHtml(s)); });
+          const m = new maplibregl.Marker({ element: pin }).setLngLat([s.lon, s.lat]).addTo(map);
+          markers.push({ s, el: pin, marker: m });
         });
         markers.forEach(m => { m.el.style.display = visible(m.s) ? '' : 'none'; });
       });
