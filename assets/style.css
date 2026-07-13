@@ -1003,13 +1003,30 @@ body.launcher {
   color: white;
 }
 
+/* Schools banner (launcher) */
+.schools-banner {
+  display: flex; align-items: center; gap: 1em;
+  background: var(--grad-sky); color: #fff; text-decoration: none; border-bottom: none;
+  border-radius: var(--radius-lg); padding: 1.15em 1.35em; margin-bottom: 1.7em;
+  box-shadow: 0 2px 4px rgba(20,35,60,.10), 0 12px 30px rgba(46,132,189,.24);
+  transition: transform 0.16s ease, box-shadow 0.16s ease;
+}
+.schools-banner:hover { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(20,35,60,.12), 0 18px 40px rgba(46,132,189,.30); border-bottom: none; color: #fff; }
+.schools-banner .sb-icon { font-size: 2em; flex-shrink: 0; filter: drop-shadow(0 2px 3px rgba(0,0,0,0.2)); }
+.schools-banner .sb-body { flex: 1; }
+.schools-banner .sb-title { font-family: var(--serif); font-weight: 800; font-size: 1.2em; letter-spacing: -0.02em; }
+.schools-banner .sb-sub { font-size: 0.9em; opacity: 0.94; line-height: 1.4; margin-top: 0.15em; }
+.schools-banner .sb-go { font-size: 1.5em; font-weight: 800; opacity: 0.9; flex-shrink: 0; }
+
 /* Intro card (launcher) */
 .intro-card {
   background: var(--paper-card); border: 1px solid var(--rule);
   border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);
   padding: 1.4em 1.5em; margin-bottom: 1.7em;
 }
-.intro-lead { font-size: 1.02em; color: var(--ink-soft); margin: 0 0 1.15em; line-height: 1.5; }
+.intro-welcome { font-size: 1.16em; color: var(--ink); margin: 0 0 0.55em; line-height: 1.4; font-weight: 700; letter-spacing: -0.01em; }
+.intro-welcome strong { color: var(--sky-deep); }
+.intro-lead { font-size: 1.0em; color: var(--ink-soft); margin: 0 0 1.15em; line-height: 1.5; }
 .intro-lead strong { color: var(--ink); font-weight: 700; }
 .how-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1em; }
 .how-step { display: flex; gap: 0.65em; align-items: flex-start; }

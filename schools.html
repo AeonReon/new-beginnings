@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#4FA4D2">
+  <title>Conscious Parenting NI — Schools & Settings</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="icon-192.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.css">
+  <style>
+    .schools-main { max-width: 1080px; margin: 0 auto; padding: 1.4em 1.1em 3em; }
+    .schools-head h1 { margin: 0 0 0.15em; }
+    .schools-head .lede { color: var(--ink-soft); font-size: 1.05em; margin: 0 0 0.4em; max-width: 640px; }
+    .schools-note { color: var(--ink-mute); font-size: 0.88em; margin: 0 0 1.2em; max-width: 640px; }
+
+    .schools-bar { display: flex; flex-wrap: wrap; gap: 0.7em; align-items: center; margin-bottom: 1.2em; }
+    .cat-chips { display: flex; flex-wrap: wrap; gap: 0.45em; flex: 1; }
+    .cat-chip {
+      border: 1.5px solid var(--rule); background: #fff; color: var(--ink-soft);
+      font-weight: 700; font-size: 0.85em; padding: 0.45em 0.9em; border-radius: 999px;
+      cursor: pointer; display: inline-flex; align-items: center; gap: 0.4em; transition: all 0.14s ease;
+    }
+    .cat-chip .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--cc, var(--sky)); }
+    .cat-chip.on { color: #fff; border-color: transparent; background: var(--cc, var(--sky)); }
+    .cat-chip.on .dot { background: rgba(255,255,255,0.9); }
+
+    .view-toggle { display: inline-flex; background: var(--paper-surface); border: 1.5px solid var(--rule); border-radius: 999px; padding: 3px; }
+    .view-toggle button {
+      border: 0; background: none; font-family: var(--sans); font-weight: 800; font-size: 0.85em;
+      color: var(--ink-soft); padding: 0.4em 1em; border-radius: 999px; cursor: pointer;
+    }
+    .view-toggle button.on { background: var(--grad-sky); color: #fff; box-shadow: var(--shadow-sm); }
+
+    #map { width: 100%; height: 460px; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--rule); }
+    .maplibregl-popup-content { font-family: var(--sans); border-radius: 12px; padding: 12px 14px; }
+    .pop-name { font-weight: 800; color: var(--ink); font-size: 1.02em; margin-bottom: 2px; }
+    .pop-cat { font-size: 0.78em; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; }
+    .pop-town { color: var(--ink-mute); font-size: 0.85em; margin: 3px 0 6px; }
+    .pop-link { font-weight: 700; font-size: 0.85em; }
+
+    .school-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1em; }
+    .school-card {
+      position: relative; background: #fff; border: 1px solid var(--rule); border-left: 5px solid var(--cc, var(--sky));
+      border-radius: var(--radius-md); padding: 1.1em 1.2em; box-shadow: var(--shadow-sm);
+    }
+    .school-cat { font-size: 0.72em; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; color: var(--cc, var(--sky)); }
+    .school-name { font-weight: 800; font-size: 1.1em; color: var(--ink); margin: 0.15em 0 0.1em; line-height: 1.2; }
+    .school-town { color: var(--ink-mute); font-size: 0.85em; margin-bottom: 0.5em; display: flex; align-items: center; gap: 0.35em; }
+    .school-note { color: var(--ink-soft); font-size: 0.9em; line-height: 1.45; margin-bottom: 0.7em; }
+    .school-link { font-weight: 700; font-size: 0.88em; }
+    .count { color: var(--ink-mute); font-size: 0.85em; margin: 0 0 0.9em; }
+
+    .gap-card {
+      grid-column: 1 / -1; background: var(--sun-soft); border: 1px dashed var(--sun-deep);
+      border-radius: var(--radius-md); padding: 1em 1.2em; color: var(--ink-soft); font-size: 0.92em;
+    }
+    .gap-card b { color: var(--ink); }
+    .hidden { display: none !important; }
+    @media (max-width: 560px) { #map { height: 380px; } }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="home-link">← Home</a>
+
+  <main class="schools-main">
+    <div class="schools-head">
+      <h1>Schools &amp; Settings across NI</h1>
+      <p class="lede">The alternative and conscious education settings of Northern Ireland — Montessori, Steiner-Waldorf, forest schools and more, on a map and in a list.</p>
+      <p class="schools-note">Whether your child attends one full-time, drops in part-time, or you just visit for ideas — everyone who wants a better way is welcome. A growing directory: tell us what we've missed.</p>
+    </div>
+
+    <div class="schools-bar">
+      <div class="cat-chips" id="cat-chips"></div>
+      <div class="view-toggle">
+        <button id="btn-list" class="on">List</button>
+        <button id="btn-map">Map</button>
+      </div>
+    </div>
+
+    <p class="count" id="count"></p>
+
+    <section id="list-view">
+      <div class="school-grid" id="school-grid"></div>
+    </section>
+
+    <section id="map-view" class="hidden">
+      <div id="map"></div>
+    </section>
+  </main>
+
+  <script src="assets/schools-data.js"></script>
+  <script src="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.js"></script>
+  <script>
+    const CATS = window.SCHOOL_CATS;
+    const SCHOOLS = window.SCHOOLS;
+    let activeCat = 'all';
+    let map = null;
+    const markers = [];
+
+    // Category chips
+    const chipWrap = document.getElementById('cat-chips');
+    const chipDefs = [['all', 'All', '#4D5A6E']].concat(Object.entries(CATS).map(([k, v]) => [k, v.label, v.color]));
+    chipWrap.innerHTML = chipDefs.map(([k, label, color]) =>
+      `<button class="cat-chip${k === 'all' ? ' on' : ''}" data-cat="${k}" style="--cc:${color};"><span class="dot"></span>${label}</button>`
+    ).join('');
+    chipWrap.addEventListener('click', (e) => {
+      const b = e.target.closest('.cat-chip'); if (!b) return;
+      activeCat = b.dataset.cat;
+      chipWrap.querySelectorAll('.cat-chip').forEach(c => c.classList.toggle('on', c === b));
+      render();
+    });
+
+    function visible(s) { return activeCat === 'all' || s.cat === activeCat; }
+
+    // List
+    const grid = document.getElementById('school-grid');
+    const countEl = document.getElementById('count');
+    function render() {
+      const list = SCHOOLS.filter(visible);
+      countEl.textContent = list.length + (list.length === 1 ? ' setting' : ' settings') + (activeCat === 'all' ? ' — a starting point, growing over time' : '');
+      grid.innerHTML = list.map(s => {
+        const c = CATS[s.cat];
+        return `<div class="school-card" style="--cc:${c.color};">
+          <div class="school-cat">${c.label}</div>
+          <div class="school-name">${s.name}</div>
+          <div class="school-town">📍 ${s.town}</div>
+          <div class="school-note">${s.note || ''}</div>
+          ${s.url ? `<a class="school-link" href="${s.url}" target="_blank" rel="noopener">Visit website →</a>` : ''}
+        </div>`;
+      }).join('') + `<div class="gap-card">No democratic / Sudbury school exists in NI yet — the nearest are across the border in the Republic. <b>Maybe you'll be the one to start one.</b> Know a setting we've missed? It belongs here.</div>`;
+      markers.forEach(m => { m.el.style.display = visible(m.s) ? '' : 'none'; });
+    }
+
+    // Map (lazy init on first open)
+    function initMap() {
+      if (map) return;
+      map = new maplibregl.Map({
+        container: 'map',
+        style: {
+          version: 8,
+          sources: { osm: { type: 'raster', tiles: ['https://tile.openstreetmap.org/{z}/{x}/{y}.png'], tileSize: 256, attribution: '© OpenStreetMap contributors' } },
+          layers: [{ id: 'osm', type: 'raster', source: 'osm' }]
+        },
+        center: [-6.5, 54.62], zoom: 7.1
+      });
+      map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right');
+      map.on('load', () => {
+        SCHOOLS.filter(s => s.lat != null && s.lon != null).forEach(s => {
+          const c = CATS[s.cat];
+          const m = new maplibregl.Marker({ color: c.color })
+            .setLngLat([s.lon, s.lat])
+            .setPopup(new maplibregl.Popup({ offset: 24 }).setHTML(
+              `<div class="pop-name">${s.name}</div>
+               <div class="pop-cat" style="color:${c.color}">${c.label}</div>
+               <div class="pop-town">${s.town}</div>
+               ${s.url ? `<a class="pop-link" href="${s.url}" target="_blank" rel="noopener">Visit website →</a>` : ''}`))
+            .addTo(map);
+          markers.push({ s, el: m.getElement(), marker: m });
+        });
+        markers.forEach(m => { m.el.style.display = visible(m.s) ? '' : 'none'; });
+      });
+    }
+
+    // Toggle
+    const listView = document.getElementById('list-view');
+    const mapView = document.getElementById('map-view');
+    const btnList = document.getElementById('btn-list');
+    const btnMap = document.getElementById('btn-map');
+    btnList.addEventListener('click', () => {
+      btnList.classList.add('on'); btnMap.classList.remove('on');
+      listView.classList.remove('hidden'); mapView.classList.add('hidden');
+    });
+    btnMap.addEventListener('click', () => {
+      btnMap.classList.add('on'); btnList.classList.remove('on');
+      mapView.classList.remove('hidden'); listView.classList.add('hidden');
+      initMap();
+      setTimeout(() => { if (map) map.resize(); }, 60);
+    });
+
+    render();
+
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));
+    }
+  </script>
+</body>
+</html>

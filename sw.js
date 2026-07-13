@@ -1,7 +1,9 @@
-const CACHE = 'new-beginnings-v14';
+const CACHE = 'new-beginnings-v15';
 const ASSETS = [
   './',
   './index.html',
+  './schools.html',
+  './assets/schools-data.js',
   './compass.html',
   './methodology.html',
   './random.html',
