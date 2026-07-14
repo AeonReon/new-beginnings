@@ -11,7 +11,8 @@
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body class="method-page">
-  <a href="index.html" class="home-link">← Home</a>
+  <a href="index.html" class="home-link" id="topback">← Home</a>
+  <a href="index.html" class="home-corner" id="tophome" hidden aria-label="Home" title="Home">🏠</a>
 
   <main id="root" class="method-main"></main>
 
@@ -44,6 +45,13 @@
       const subSection = new URLSearchParams(location.search).get('s');
 
       if (subSection && m.sections && m.sections[subSection]) {
+        // In a sub-section: top-left becomes "← [Tradition]" (back one level),
+        // and Home moves to the top-right so it's not where "back" is expected.
+        const tb = document.getElementById('topback');
+        tb.textContent = '← ' + m.name;
+        tb.setAttribute('href', 'methodology.html?id=' + m.id);
+        const th = document.getElementById('tophome');
+        if (th) th.hidden = false;
         renderSubSection(m, subSection);
       } else {
         renderMethodLanding(m);

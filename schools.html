@@ -85,6 +85,24 @@
     .gap-card b { color: var(--ink); }
     .hidden { display: none !important; }
     @media (max-width: 560px) { #map { height: 380px; } }
+
+    /* Get-listed / partner form */
+    .submit-block { max-width: 680px; margin: 2.6em auto 0; padding: 1.6em 1.5em; background: var(--paper-card); border: 1px solid var(--rule); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); }
+    .submit-block h2 { margin: 0 0 0.3em; font-size: 1.4em; }
+    .submit-block > p { color: var(--ink-soft); margin: 0 0 1.2em; font-size: 0.95em; line-height: 1.5; }
+    .submit-form { display: grid; gap: 0.7em; position: relative; }
+    .sf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7em; }
+    .submit-form input, .submit-form textarea { font-family: var(--sans); font-size: 0.95em; padding: 0.7em 0.85em; border: 1.5px solid var(--rule); border-radius: var(--radius-sm); background: #fff; color: var(--ink); width: 100%; }
+    .submit-form input:focus, .submit-form textarea:focus { outline: none; border-color: var(--sky); box-shadow: 0 0 0 3px rgba(79,164,210,.18); }
+    .submit-form textarea { min-height: 92px; resize: vertical; }
+    .sf-hp { position: absolute !important; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+    .sf-btn { background: var(--grad-sky); color: #fff; font-weight: 800; font-size: 1em; padding: 0.8em 1.5em; border: 0; border-radius: 999px; box-shadow: var(--shadow-sm); cursor: pointer; justify-self: start; font-family: var(--sans); }
+    .sf-btn:hover { filter: brightness(1.06); }
+    .sf-btn:disabled { opacity: 0.6; cursor: default; }
+    .sf-status { margin: 0.2em 0 0; font-weight: 700; font-size: 0.92em; }
+    .sf-status.ok { color: var(--mint); }
+    .sf-status.err { color: #C8583F; }
+    @media (max-width: 520px) { .sf-row { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -113,6 +131,26 @@
 
     <section id="map-view" class="hidden">
       <div id="map"></div>
+    </section>
+
+    <section class="submit-block">
+      <h2>Run a group? Let's connect.</h2>
+      <p>Missing from the map? Running summer sessions, a co-op, a nature club, a home-ed group? We'd love to add you — and to connect. When these groups come together, magic tends to happen.</p>
+      <form id="submitForm" class="submit-form" novalidate>
+        <div class="sf-row">
+          <input name="name" placeholder="Your name *" required>
+          <input name="group" placeholder="Group / setting name">
+        </div>
+        <div class="sf-row">
+          <input name="email" type="email" placeholder="Email (so we can reply)">
+          <input name="town" placeholder="Town / area">
+        </div>
+        <input name="website" placeholder="Website or Facebook (optional)">
+        <textarea name="message" placeholder="Tell us about it — what you do, when, who it's for… *" required></textarea>
+        <input class="sf-hp" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button type="submit" class="sf-btn">Send it to us →</button>
+        <p class="sf-status" id="sfStatus" hidden></p>
+      </form>
     </section>
   </main>
 
@@ -240,6 +278,27 @@
     document.getElementById('mapCardClose').addEventListener('click', closeMapCard);
     mapCardEl.addEventListener('click', (e) => { if (e.target === mapCardEl) closeMapCard(); });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMapCard(); });
+
+    // Get-listed / partner form
+    const sf = document.getElementById('submitForm');
+    if (sf) {
+      const sfStatus = document.getElementById('sfStatus');
+      const showStatus = (msg, ok) => { sfStatus.textContent = msg; sfStatus.className = 'sf-status ' + (ok ? 'ok' : 'err'); sfStatus.hidden = false; };
+      sf.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const btn = sf.querySelector('.sf-btn');
+        const data = Object.fromEntries(new FormData(sf).entries());
+        if (!data.name || !data.message) { showStatus('Please add your name and a short message.', false); return; }
+        const label = btn.textContent; btn.disabled = true; btn.textContent = 'Sending…';
+        try {
+          const r = await fetch('/api/submit', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
+          const j = await r.json().catch(() => ({}));
+          if (r.ok) { showStatus(j.message || "Thanks — that's landed with us!", true); sf.reset(); }
+          else { showStatus(j.error || 'Something went wrong — please try again.', false); }
+        } catch { showStatus("Couldn't send — check your connection and try again.", false); }
+        btn.disabled = false; btn.textContent = label;
+      });
+    }
 
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));

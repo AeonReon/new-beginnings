@@ -1185,6 +1185,29 @@ body.launcher {
   box-shadow: var(--shadow-md);
 }
 
+/* Home button, top-right — appears in sub-sections so the top-left slot is "back" */
+.home-corner {
+  position: fixed;
+  top: calc(0.8em + env(safe-area-inset-top, 0px));
+  right: 0.8em;
+  z-index: 9999;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border: 1.5px solid var(--rule);
+  border-radius: 999px;
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+  font-size: 1.1em;
+  line-height: 1;
+  transition: all 0.15s ease;
+}
+.home-corner[hidden] { display: none; }
+.home-corner:hover { border-color: var(--m-color, var(--sky)); box-shadow: var(--shadow-md); }
+
 body.method-page {
   background:
     radial-gradient(ellipse 1200px 500px at 50% -100px, var(--m-soft, var(--sky-soft)) 0%, transparent 65%),
