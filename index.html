@@ -26,6 +26,16 @@
 
   <main class="launcher-main">
 
+    <section class="today-card" id="todayCard" hidden>
+      <div class="today-kicker">☀️ Today's one small thing</div>
+      <div class="today-name" id="todayName"></div>
+      <div class="today-text" id="todayText"></div>
+      <div class="today-foot">
+        <a class="today-src" id="todaySrc" href="#"></a>
+        <button class="today-more" id="todayMore" type="button">Another idea ↻</button>
+      </div>
+    </section>
+
     <section class="intro-card">
       <p class="intro-welcome">For everyone who wants a better way — <strong>whether your children are in school or learning at home.</strong></p>
       <p class="intro-lead">This is conscious parenting, not just home-ed. Bring the best of every tradition — <strong>Montessori, Waldorf, forest school, classical and more</strong> — into your family's evenings, weekends, holidays, or every day. No dogma, no pressure. Take what fits, and leave the rest.</p>
@@ -246,6 +256,34 @@
           <polygon points="32,22 34,30 42,30 36,35 38,43 32,38" fill="rgba(255,255,255,0.25)"/>
         </g>`
     };
+
+    // Today's one small thing — a fresh do-it-now activity each day, drawn from
+    // every tradition's activity list. Deterministic by date (same all day),
+    // with "Another idea" to cycle. This is the daily reason to open the app.
+    (function () {
+      const pool = [];
+      (window.METHODS || []).forEach(m => {
+        const acts = m.sections && m.sections.activities && m.sections.activities.items;
+        if (acts) acts.forEach(it => pool.push({ name: it.name, body: it.body, method: m.name, id: m.id, color: m.color }));
+      });
+      if (!pool.length) return;
+      const dayNum = Math.floor(Date.now() / 86400000);
+      let offset = 0;
+      const nameEl = document.getElementById('todayName');
+      const textEl = document.getElementById('todayText');
+      const srcEl = document.getElementById('todaySrc');
+      function show() {
+        const a = pool[(((dayNum + offset) % pool.length) + pool.length) % pool.length];
+        nameEl.textContent = a.name;
+        textEl.textContent = a.body;
+        srcEl.textContent = 'From ' + a.method + ' →';
+        srcEl.href = 'methodology.html?id=' + a.id + '&s=activities';
+        srcEl.style.color = a.color;
+      }
+      show();
+      document.getElementById('todayCard').hidden = false;
+      document.getElementById('todayMore').addEventListener('click', () => { offset++; show(); });
+    })();
 
     const grid = document.getElementById('tradition-grid');
     grid.innerHTML = window.METHODS.map(m => `

@@ -1003,6 +1003,27 @@ body.launcher {
   color: white;
 }
 
+/* Today's one small thing (launcher daily hook) */
+.today-card {
+  position: relative; background: linear-gradient(135deg, #FFF9E8 0%, #FFFFFF 62%);
+  border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);
+  padding: 1.3em 1.5em 1.35em; margin-bottom: 1.5em; overflow: hidden;
+}
+.today-card[hidden] { display: none; }
+.today-card::before {
+  content: ''; position: absolute; inset: 0; border-radius: var(--radius-lg); padding: 2px;
+  background: linear-gradient(135deg, var(--sun) 0%, var(--sun-hot) 100%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; opacity: 0.9;
+}
+.today-kicker { font-size: 0.8em; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--sun-deep); margin-bottom: 0.5em; }
+.today-name { font-family: var(--serif); font-weight: 800; font-size: 1.32em; color: var(--ink); letter-spacing: -0.02em; margin-bottom: 0.35em; line-height: 1.2; }
+.today-text { color: var(--ink-soft); font-size: 0.98em; line-height: 1.5; margin-bottom: 0.95em; }
+.today-foot { display: flex; align-items: center; justify-content: space-between; gap: 0.8em; flex-wrap: wrap; }
+.today-src { font-weight: 700; font-size: 0.85em; border-bottom: none; }
+.today-more { background: var(--paper-surface); border: 1.5px solid var(--rule); color: var(--ink); font-weight: 700; font-size: 0.85em; padding: 0.5em 1.05em; border-radius: 999px; cursor: pointer; font-family: var(--sans); transition: border-color 0.15s ease; }
+.today-more:hover { border-color: var(--sun-hot); }
+
 /* Schools banner (launcher) */
 .schools-banner {
   display: flex; align-items: center; gap: 1em;
