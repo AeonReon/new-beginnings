@@ -1003,26 +1003,36 @@ body.launcher {
   color: white;
 }
 
-/* Today's one small thing (launcher daily hook) */
-.today-card {
-  position: relative; background: linear-gradient(135deg, #FFF9E8 0%, #FFFFFF 62%);
+/* "For today" — daily feed of do-it-now cards (launcher hook) */
+.daily-feed { margin-bottom: 1.5em; }
+.daily-feed[hidden] { display: none; }
+.daily-lead {
+  font-family: var(--serif); font-weight: 800; font-size: 1.06em; color: var(--ink);
+  letter-spacing: -0.01em; margin: 0 0 0.7em 0.15em;
+}
+.daily-card {
+  position: relative; background: var(--paper-card);
   border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);
-  padding: 1.3em 1.5em 1.35em; margin-bottom: 1.5em; overflow: hidden;
+  padding: 1.0em 1.2em 1.05em 1.3em; margin-bottom: 0.85em; overflow: hidden;
+  border: 1px solid var(--rule); border-left: 4px solid var(--dc, var(--sky));
 }
-.today-card[hidden] { display: none; }
-.today-card::before {
-  content: ''; position: absolute; inset: 0; border-radius: var(--radius-lg); padding: 2px;
-  background: linear-gradient(135deg, var(--sun) 0%, var(--sun-hot) 100%);
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; opacity: 0.9;
+.daily-card[hidden] { display: none; }
+.daily-head { display: flex; align-items: center; justify-content: space-between; gap: 0.6em; margin-bottom: 0.4em; }
+.daily-kicker { font-size: 0.76em; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: var(--dc, var(--sky-deep)); }
+.daily-more {
+  flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%;
+  background: var(--paper-surface); border: 1.5px solid var(--rule); color: var(--ink-soft);
+  font-size: 1.05em; line-height: 1; cursor: pointer; font-family: var(--sans);
+  display: grid; place-items: center;
+  transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1), border-color 0.15s ease, color 0.15s ease;
 }
-.today-kicker { font-size: 0.8em; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--sun-deep); margin-bottom: 0.5em; }
-.today-name { font-family: var(--serif); font-weight: 800; font-size: 1.32em; color: var(--ink); letter-spacing: -0.02em; margin-bottom: 0.35em; line-height: 1.2; }
-.today-text { color: var(--ink-soft); font-size: 0.98em; line-height: 1.5; margin-bottom: 0.95em; }
-.today-foot { display: flex; align-items: center; justify-content: space-between; gap: 0.8em; flex-wrap: wrap; }
-.today-src { font-weight: 700; font-size: 0.85em; border-bottom: none; }
-.today-more { background: var(--paper-surface); border: 1.5px solid var(--rule); color: var(--ink); font-weight: 700; font-size: 0.85em; padding: 0.5em 1.05em; border-radius: 999px; cursor: pointer; font-family: var(--sans); transition: border-color 0.15s ease; }
-.today-more:hover { border-color: var(--sun-hot); }
+.daily-more:hover { border-color: var(--dc, var(--sun-hot)); color: var(--dc, var(--ink)); }
+.daily-more:active { transform: rotate(180deg); }
+.daily-title { font-family: var(--serif); font-weight: 800; font-size: 1.18em; color: var(--ink); letter-spacing: -0.02em; margin-bottom: 0.28em; line-height: 1.22; }
+.daily-body { color: var(--ink-soft); font-size: 0.96em; line-height: 1.5; margin-bottom: 0.7em; }
+.daily-card.ponder .daily-body { font-size: 0.98em; line-height: 1.58; color: var(--ink); margin-bottom: 0.55em; }
+.daily-src { display: inline-block; font-weight: 700; font-size: 0.82em; color: var(--dc, var(--sky-deep)); border-bottom: none; }
+.daily-src.no-link { pointer-events: none; color: var(--ink-mute); font-weight: 600; font-style: italic; }
 
 /* Schools banner (launcher) */
 .schools-banner {
@@ -1039,7 +1049,24 @@ body.launcher {
 .schools-banner .sb-sub { font-size: 0.9em; opacity: 0.94; line-height: 1.4; margin-top: 0.15em; }
 .schools-banner .sb-go { font-size: 1.5em; font-weight: 800; opacity: 0.9; flex-shrink: 0; }
 
-/* Intro card (launcher) */
+/* Intro — collapsible so the home stays uncluttered for returning users */
+.intro-collapse {
+  background: var(--paper-card); border: 1px solid var(--rule);
+  border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);
+  margin-bottom: 1.7em; overflow: hidden;
+}
+.intro-collapse > summary {
+  list-style: none; cursor: pointer; padding: 0.9em 1.4em;
+  font-weight: 700; color: var(--ink-soft); font-size: 0.95em;
+  display: flex; align-items: center; gap: 0.5em;
+}
+.intro-collapse > summary::-webkit-details-marker { display: none; }
+.intro-collapse .ic-q { color: var(--sky-deep); font-weight: 800; }
+.intro-collapse .ic-chev { margin-left: auto; transition: transform 0.2s ease; color: var(--ink-mute); }
+.intro-collapse[open] .ic-chev { transform: rotate(180deg); }
+.intro-collapse-body { padding: 0.1em 1.5em 1.4em; }
+
+/* Intro card (legacy) */
 .intro-card {
   background: var(--paper-card); border: 1px solid var(--rule);
   border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);

@@ -26,25 +26,51 @@
 
   <main class="launcher-main">
 
-    <section class="today-card" id="todayCard" hidden>
-      <div class="today-kicker">☀️ Today's one small thing</div>
-      <div class="today-name" id="todayName"></div>
-      <div class="today-text" id="todayText"></div>
-      <div class="today-foot">
-        <a class="today-src" id="todaySrc" href="#"></a>
-        <button class="today-more" id="todayMore" type="button">Another idea ↻</button>
-      </div>
+    <section class="daily-feed" id="dailyFeed" aria-label="For today" hidden>
+      <div class="daily-lead">For today</div>
+
+      <article class="daily-card" id="playCard" style="--dc:#4FA4D2;">
+        <div class="daily-head">
+          <span class="daily-kicker">🎲 A game to play now</span>
+          <button class="daily-more" data-more="play" type="button" aria-label="Another game">↻</button>
+        </div>
+        <div class="daily-title" id="playTitle"></div>
+        <div class="daily-body" id="playBody"></div>
+        <a class="daily-src" href="games.html">More games — no kit, no screen →</a>
+      </article>
+
+      <article class="daily-card" id="doCard" style="--dc:#F4B82A;">
+        <div class="daily-head">
+          <span class="daily-kicker">☀️ One small thing to do</span>
+          <button class="daily-more" data-more="do" type="button" aria-label="Another idea">↻</button>
+        </div>
+        <div class="daily-title" id="doTitle"></div>
+        <div class="daily-body" id="doBody"></div>
+        <a class="daily-src" id="doSrc" href="#"></a>
+      </article>
+
+      <article class="daily-card ponder" id="ponderCard" style="--dc:#1F8F5E;">
+        <div class="daily-head">
+          <span class="daily-kicker">💭 Something to ponder</span>
+          <button class="daily-more" data-more="ponder" type="button" aria-label="Another thought">↻</button>
+        </div>
+        <div class="daily-body" id="ponderBody"></div>
+        <a class="daily-src" id="ponderSrc" href="#"></a>
+      </article>
     </section>
 
-    <section class="intro-card">
-      <p class="intro-welcome">For everyone who wants a better way — <strong>whether your children are in school or learning at home.</strong></p>
-      <p class="intro-lead">This is conscious parenting, not just home-ed. Bring the best of every tradition — <strong>Montessori, Waldorf, forest school, classical and more</strong> — into your family's evenings, weekends, holidays, or every day. No dogma, no pressure. Take what fits, and leave the rest.</p>
-      <div class="how-steps">
-        <div class="how-step"><span class="how-n">1</span><div><b>Explore a tradition</b><span>See how it raises a child, day to day.</span></div></div>
-        <div class="how-step"><span class="how-n">2</span><div><b>Open a weekly tool</b><span>This week's poem, rhythm and activities.</span></div></div>
-        <div class="how-step"><span class="how-n">3</span><div><b>Try one small thing</b><span>That's the whole method.</span></div></div>
+    <details class="intro-collapse">
+      <summary><span class="ic-q">New here?</span> What Conscious Parenting NI is <span class="ic-chev">▾</span></summary>
+      <div class="intro-collapse-body">
+        <p class="intro-welcome">For everyone who wants a better way — <strong>whether your children are in school or learning at home.</strong></p>
+        <p class="intro-lead">This is conscious parenting, not just home-ed. Bring the best of every tradition — <strong>Montessori, Waldorf, forest school, classical and more</strong> — into your family's evenings, weekends, holidays, or every day. No dogma, no pressure. Take what fits, and leave the rest.</p>
+        <div class="how-steps">
+          <div class="how-step"><span class="how-n">1</span><div><b>Explore a tradition</b><span>See how it raises a child, day to day.</span></div></div>
+          <div class="how-step"><span class="how-n">2</span><div><b>Open a weekly tool</b><span>This week's poem, rhythm and activities.</span></div></div>
+          <div class="how-step"><span class="how-n">3</span><div><b>Try one small thing</b><span>That's the whole method.</span></div></div>
+        </div>
       </div>
-    </section>
+    </details>
 
     <a href="schools.html" class="schools-banner">
       <div class="sb-icon">🗺️</div>
@@ -125,6 +151,8 @@
   </footer>
 
   <script src="assets/methods-data.js"></script>
+  <script src="assets/games-data.js"></script>
+  <script src="assets/philosophy-data.js"></script>
   <script src="assets/app.js"></script>
   <script>
     const ICONS = {
@@ -257,32 +285,69 @@
         </g>`
     };
 
-    // Today's one small thing — a fresh do-it-now activity each day, drawn from
-    // every tradition's activity list. Deterministic by date (same all day),
-    // with "Another idea" to cycle. This is the daily reason to open the app.
+    // "For today" — three fresh, do-it-now cards each day: a no-kit game to
+    // play right now, one small thing to do from a tradition, and a paragraph
+    // of philosophy to ponder. Deterministic by date (same all day), each with
+    // ↻ to cycle. This is the daily reason to open the app.
     (function () {
-      const pool = [];
-      (window.METHODS || []).forEach(m => {
-        const acts = m.sections && m.sections.activities && m.sections.activities.items;
-        if (acts) acts.forEach(it => pool.push({ name: it.name, body: it.body, method: m.name, id: m.id, color: m.color }));
-      });
-      if (!pool.length) return;
       const dayNum = Math.floor(Date.now() / 86400000);
-      let offset = 0;
-      const nameEl = document.getElementById('todayName');
-      const textEl = document.getElementById('todayText');
-      const srcEl = document.getElementById('todaySrc');
-      function show() {
-        const a = pool[(((dayNum + offset) % pool.length) + pool.length) % pool.length];
-        nameEl.textContent = a.name;
-        textEl.textContent = a.body;
-        srcEl.textContent = 'From ' + a.method + ' →';
-        srcEl.href = 'methodology.html?id=' + a.id + '&s=activities';
-        srcEl.style.color = a.color;
+      const pick = (arr, off) => arr[(((dayNum + off) % arr.length) + arr.length) % arr.length];
+      const el = id => document.getElementById(id);
+
+      // PLAY — no-kit out-loud games
+      const games = window.GAMES || [];
+      const groups = window.GAME_GROUPS || {};
+      // DO — one activity from every tradition
+      const acts = [];
+      (window.METHODS || []).forEach(m => {
+        const items = m.sections && m.sections.activities && m.sections.activities.items;
+        if (items) items.forEach(it => acts.push({ name: it.name, body: it.body, method: m.name, id: m.id, color: m.color }));
+      });
+      // PONDER — bite-sized philosophy
+      const ponders = window.PONDERINGS || [];
+      const methodById = {};
+      (window.METHODS || []).forEach(m => { methodById[m.id] = m; });
+
+      let playOff = 0, doOff = 0, ponderOff = 0;
+
+      function showPlay() {
+        if (!games.length) { el('playCard').hidden = true; return; }
+        const g = pick(games, playOff), gc = groups[g.group] || {};
+        el('playCard').style.setProperty('--dc', gc.c || '#4FA4D2');
+        el('playTitle').textContent = g.name;
+        el('playBody').textContent = g.how;
       }
-      show();
-      document.getElementById('todayCard').hidden = false;
-      document.getElementById('todayMore').addEventListener('click', () => { offset++; show(); });
+      function showDo() {
+        if (!acts.length) { el('doCard').hidden = true; return; }
+        const a = pick(acts, doOff);
+        el('doCard').style.setProperty('--dc', a.color);
+        el('doTitle').textContent = a.name;
+        el('doBody').textContent = a.body;
+        const s = el('doSrc');
+        s.textContent = 'From ' + a.method + ' →';
+        s.href = 'methodology.html?id=' + a.id + '&s=activities';
+      }
+      function showPonder() {
+        if (!ponders.length) { el('ponderCard').hidden = true; return; }
+        const p = pick(ponders, ponderOff), m = methodById[p.trad];
+        el('ponderCard').style.setProperty('--dc', (m && m.color) || '#1F8F5E');
+        el('ponderBody').textContent = p.text;
+        const s = el('ponderSrc');
+        s.textContent = '— ' + p.source + (m ? ' · ' + m.name + ' →' : '');
+        if (m) s.href = 'methodology.html?id=' + p.trad + '&s=core-idea';
+        else { s.removeAttribute('href'); s.classList.add('no-link'); }
+      }
+
+      showPlay(); showDo(); showPonder();
+      el('dailyFeed').hidden = false;
+      document.querySelectorAll('.daily-more').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const t = btn.dataset.more;
+          if (t === 'play') { playOff++; showPlay(); }
+          else if (t === 'do') { doOff++; showDo(); }
+          else { ponderOff++; showPonder(); }
+        });
+      });
     })();
 
     const grid = document.getElementById('tradition-grid');
