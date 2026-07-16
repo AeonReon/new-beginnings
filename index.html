@@ -8,7 +8,7 @@
   <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/png" href="icon-192.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="stylesheet" href="assets/style.css?v11">
+  <link rel="stylesheet" href="assets/style.css?v12">
 </head>
 <body class="launcher">
   <header class="launcher-hero">
@@ -40,6 +40,12 @@
     </details>
 
     <section class="daily-feed" id="dailyFeed" aria-label="For today" hidden>
+      <a class="week-banner" id="weekBanner" href="#">
+        <span class="week-kicker">This week</span>
+        <span class="week-title" id="weekTitle"></span>
+        <span class="week-invite" id="weekInvite"></span>
+        <span class="week-go" aria-hidden="true">Step inside this world →</span>
+      </a>
       <div class="daily-lead">For today</div>
 
       <article class="daily-card" id="playCard" style="--dc:#4FA4D2;">
@@ -308,6 +314,39 @@
       // PONDER — bite-sized philosophy
       const ponders = window.PONDERINGS || [];
 
+      // THIS WEEK — a gentle arc. One tradition is "in focus" each week; the
+      // day's deed + thought lean into it so the week hangs together and you
+      // sink into one world at a time. Nothing is forced — "Another" still
+      // reaches every tradition, and every world stays one tap away.
+      const WEEK_FOCUS = {
+        montessori:        { label: 'a Montessori family',      invite: 'Follow the child — and let them do it themselves.' },
+        waldorf:           { label: 'a Waldorf family',         invite: 'Slow down, keep a gentle rhythm, and feed the imagination.' },
+        'forest-school':   { label: 'a forest-school family',   invite: 'Get outside, let them set the pace, and let them risk a little.' },
+        'charlotte-mason': { label: 'a Charlotte Mason family', invite: 'Living books, short lessons, and long afternoons outdoors.' },
+        reggio:            { label: 'a Reggio family',          invite: "Listen for your child's hundred languages." },
+        classical:         { label: 'a classical family',       invite: 'Wonder out loud, and learn the good by loving it.' },
+        'wild-free':       { label: 'a Wild and Free family',   invite: 'More nature, more stories, more unhurried play.' },
+        unschooling:       { label: 'an unschooling family',    invite: 'Trust their curiosity and follow where it leads.' },
+        athens:            { label: 'an Athenian family',       invite: 'Ask good questions, and teach through play.' },
+        rome:              { label: 'a Roman family',           invite: 'Be the example, and lead by encouragement.' },
+      };
+      const weekOrder = Object.keys(WEEK_FOCUS).filter(id => methodById[id]);
+      const weekNum = Math.floor(Date.now() / (7 * 86400000));
+      const weekTrad = weekOrder.length ? weekOrder[((weekNum % weekOrder.length) + weekOrder.length) % weekOrder.length] : null;
+      const weekDeeds = weekTrad ? deeds.filter(d => d.id === weekTrad) : [];
+      const weekPonders = weekTrad ? ponders.filter(p => p.trad === weekTrad) : [];
+      const wrap = (arr, n) => arr[(((n) % arr.length) + arr.length) % arr.length];
+
+      if (weekTrad && WEEK_FOCUS[weekTrad]) {
+        const m = methodById[weekTrad], f = WEEK_FOCUS[weekTrad], b = el('weekBanner');
+        b.style.setProperty('--wc', m.color || '#4FA4D2');
+        b.style.setProperty('--wcd', m.colorDeep || m.color || '#2D6FA8');
+        b.style.setProperty('--wcs', m.colorSoft || '#EAF4FB');
+        el('weekTitle').textContent = 'Living a little like ' + f.label;
+        el('weekInvite').textContent = f.invite;
+        b.href = 'methodology.html?id=' + weekTrad;
+      } else { el('weekBanner').hidden = true; }
+
       let playOff = 0, doOff = 0, ponderOff = 0;
 
       function showPlay() {
@@ -319,7 +358,7 @@
       }
       function showDo() {
         if (!deeds.length) { el('doCard').hidden = true; return; }
-        const a = pick(deeds, doOff);
+        const a = (doOff === 0 && weekDeeds.length) ? wrap(weekDeeds, dayNum) : pick(deeds, doOff);
         el('doCard').style.setProperty('--dc', a.color);
         el('doTitle').textContent = a.name;
         el('doBody').textContent = a.body;
@@ -329,12 +368,13 @@
       }
       function showPonder() {
         if (!ponders.length) { el('ponderCard').hidden = true; return; }
-        const p = pick(ponders, ponderOff), m = methodById[p.trad];
+        const p = (ponderOff === 0 && weekPonders.length) ? wrap(weekPonders, dayNum) : pick(ponders, ponderOff);
+        const m = methodById[p.trad];
         el('ponderCard').style.setProperty('--dc', (m && m.color) || '#1F8F5E');
         el('ponderBody').textContent = p.text;
         const s = el('ponderSrc');
         s.textContent = '— ' + p.source + (m ? ' · ' + m.name + ' →' : '');
-        if (m) s.href = 'methodology.html?id=' + p.trad + '&s=core-idea';
+        if (m) { s.href = 'methodology.html?id=' + p.trad + '&s=core-idea'; s.classList.remove('no-link'); }
         else { s.removeAttribute('href'); s.classList.add('no-link'); }
       }
 

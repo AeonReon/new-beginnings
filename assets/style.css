@@ -1010,6 +1010,21 @@ body.launcher {
   font-family: var(--serif); font-weight: 800; font-size: 1.06em; color: var(--ink);
   letter-spacing: -0.01em; margin: 0 0 0.7em 0.15em;
 }
+/* "This week" — the gentle arc through the traditions, one world at a time */
+.week-banner {
+  display: block; text-decoration: none; border-bottom: none;
+  background: var(--wcs, #EAF4FB); border: 1px solid var(--rule);
+  border-left: 4px solid var(--wc, var(--sky));
+  border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);
+  padding: 0.95em 1.3em 1.05em; margin-bottom: 1.1em;
+  transition: transform 0.16s ease, box-shadow 0.16s ease;
+}
+.week-banner:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); border-bottom: none; }
+.week-banner[hidden] { display: none; }
+.week-kicker { display: block; font-size: 0.72em; font-weight: 800; text-transform: uppercase; letter-spacing: 0.09em; color: var(--wc, var(--sky-deep)); margin-bottom: 0.18em; }
+.week-title { display: block; font-family: var(--serif); font-weight: 800; font-size: 1.24em; letter-spacing: -0.02em; color: var(--wcd, var(--ink)); line-height: 1.2; }
+.week-invite { display: block; color: var(--ink-soft); font-size: 0.94em; line-height: 1.45; margin-top: 0.3em; }
+.week-go { display: inline-block; margin-top: 0.6em; font-size: 0.8em; font-weight: 700; color: var(--wc, var(--sky-deep)); }
 .daily-card {
   position: relative; background: var(--paper-card);
   border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);
