@@ -1029,6 +1029,7 @@ body.launcher {
   font-family: var(--sans); font-size: 0.78em; font-weight: 700; color: var(--ink-mute);
   display: inline-flex; align-items: center; gap: 0.35em; transition: color 0.15s ease;
 }
+.daily-more::before { display: none; } /* kill the global gradient-outline pill */
 .daily-more span { display: inline-block; font-size: 1.15em; transition: transform 0.5s cubic-bezier(0.34,1.56,0.64,1); }
 .daily-more:hover { color: var(--dc, var(--ink)); }
 .daily-more:hover span { transform: rotate(180deg); }
