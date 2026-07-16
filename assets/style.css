@@ -1017,22 +1017,21 @@ body.launcher {
   border: 1px solid var(--rule); border-left: 4px solid var(--dc, var(--sky));
 }
 .daily-card[hidden] { display: none; }
-.daily-head { display: flex; align-items: center; justify-content: space-between; gap: 0.6em; margin-bottom: 0.4em; }
-.daily-kicker { font-size: 0.76em; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: var(--dc, var(--sky-deep)); }
-.daily-more {
-  flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%;
-  background: var(--paper-surface); border: 1.5px solid var(--rule); color: var(--ink-soft);
-  font-size: 1.05em; line-height: 1; cursor: pointer; font-family: var(--sans);
-  display: grid; place-items: center;
-  transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1), border-color 0.15s ease, color 0.15s ease;
-}
-.daily-more:hover { border-color: var(--dc, var(--sun-hot)); color: var(--dc, var(--ink)); }
-.daily-more:active { transform: rotate(180deg); }
+.daily-kicker { font-size: 0.76em; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: var(--dc, var(--sky-deep)); margin-bottom: 0.4em; }
 .daily-title { font-family: var(--serif); font-weight: 800; font-size: 1.18em; color: var(--ink); letter-spacing: -0.02em; margin-bottom: 0.28em; line-height: 1.22; }
 .daily-body { color: var(--ink-soft); font-size: 0.96em; line-height: 1.5; margin-bottom: 0.7em; }
-.daily-card.ponder .daily-body { font-size: 0.98em; line-height: 1.58; color: var(--ink); margin-bottom: 0.55em; }
-.daily-src { display: inline-block; font-weight: 700; font-size: 0.82em; color: var(--dc, var(--sky-deep)); border-bottom: none; }
+.daily-card.ponder .daily-body { font-size: 0.98em; line-height: 1.58; color: var(--ink); margin-bottom: 0.6em; }
+.daily-foot { display: flex; align-items: baseline; justify-content: space-between; gap: 0.9em; }
+.daily-src { font-weight: 700; font-size: 0.82em; color: var(--dc, var(--sky-deep)); border-bottom: none; }
 .daily-src.no-link { pointer-events: none; color: var(--ink-mute); font-weight: 600; font-style: italic; }
+.daily-more {
+  flex-shrink: 0; background: none; border: none; padding: 0; cursor: pointer;
+  font-family: var(--sans); font-size: 0.78em; font-weight: 700; color: var(--ink-mute);
+  display: inline-flex; align-items: center; gap: 0.35em; transition: color 0.15s ease;
+}
+.daily-more span { display: inline-block; font-size: 1.15em; transition: transform 0.5s cubic-bezier(0.34,1.56,0.64,1); }
+.daily-more:hover { color: var(--dc, var(--ink)); }
+.daily-more:hover span { transform: rotate(180deg); }
 
 /* Schools banner (launcher) */
 .schools-banner {

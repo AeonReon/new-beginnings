@@ -8,7 +8,7 @@
   <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/png" href="icon-192.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="stylesheet" href="assets/style.css?v9">
+  <link rel="stylesheet" href="assets/style.css?v10">
 </head>
 <body class="launcher">
   <header class="launcher-hero">
@@ -26,39 +26,6 @@
 
   <main class="launcher-main">
 
-    <section class="daily-feed" id="dailyFeed" aria-label="For today" hidden>
-      <div class="daily-lead">For today</div>
-
-      <article class="daily-card" id="playCard" style="--dc:#4FA4D2;">
-        <div class="daily-head">
-          <span class="daily-kicker">🎲 A game to play now</span>
-          <button class="daily-more" data-more="play" type="button" aria-label="Another game">↻</button>
-        </div>
-        <div class="daily-title" id="playTitle"></div>
-        <div class="daily-body" id="playBody"></div>
-        <a class="daily-src" href="games.html">More games — no kit, no screen →</a>
-      </article>
-
-      <article class="daily-card" id="doCard" style="--dc:#F4B82A;">
-        <div class="daily-head">
-          <span class="daily-kicker">☀️ One small thing to do</span>
-          <button class="daily-more" data-more="do" type="button" aria-label="Another idea">↻</button>
-        </div>
-        <div class="daily-title" id="doTitle"></div>
-        <div class="daily-body" id="doBody"></div>
-        <a class="daily-src" id="doSrc" href="#"></a>
-      </article>
-
-      <article class="daily-card ponder" id="ponderCard" style="--dc:#1F8F5E;">
-        <div class="daily-head">
-          <span class="daily-kicker">💭 Something to ponder</span>
-          <button class="daily-more" data-more="ponder" type="button" aria-label="Another thought">↻</button>
-        </div>
-        <div class="daily-body" id="ponderBody"></div>
-        <a class="daily-src" id="ponderSrc" href="#"></a>
-      </article>
-    </section>
-
     <details class="intro-collapse">
       <summary><span class="ic-q">New here?</span> What Conscious Parenting NI is <span class="ic-chev">▾</span></summary>
       <div class="intro-collapse-body">
@@ -71,6 +38,39 @@
         </div>
       </div>
     </details>
+
+    <section class="daily-feed" id="dailyFeed" aria-label="For today" hidden>
+      <div class="daily-lead">For today</div>
+
+      <article class="daily-card" id="playCard" style="--dc:#4FA4D2;">
+        <div class="daily-kicker">🎲 A game to play now</div>
+        <div class="daily-title" id="playTitle"></div>
+        <div class="daily-body" id="playBody"></div>
+        <div class="daily-foot">
+          <a class="daily-src" href="games.html">More games — no kit, no screen →</a>
+          <button class="daily-more" data-more="play" type="button">Another <span aria-hidden="true">↻</span></button>
+        </div>
+      </article>
+
+      <article class="daily-card" id="doCard" style="--dc:#F4B82A;">
+        <div class="daily-kicker">☀️ One small thing to do</div>
+        <div class="daily-title" id="doTitle"></div>
+        <div class="daily-body" id="doBody"></div>
+        <div class="daily-foot">
+          <a class="daily-src" id="doSrc" href="#"></a>
+          <button class="daily-more" data-more="do" type="button">Another <span aria-hidden="true">↻</span></button>
+        </div>
+      </article>
+
+      <article class="daily-card ponder" id="ponderCard" style="--dc:#1F8F5E;">
+        <div class="daily-kicker">💭 Something to ponder</div>
+        <div class="daily-body" id="ponderBody"></div>
+        <div class="daily-foot">
+          <a class="daily-src" id="ponderSrc" href="#"></a>
+          <button class="daily-more" data-more="ponder" type="button">Another <span aria-hidden="true">↻</span></button>
+        </div>
+      </article>
+    </section>
 
     <a href="schools.html" class="schools-banner">
       <div class="sb-icon">🗺️</div>
@@ -152,6 +152,7 @@
 
   <script src="assets/methods-data.js"></script>
   <script src="assets/games-data.js"></script>
+  <script src="assets/deeds-data.js"></script>
   <script src="assets/philosophy-data.js"></script>
   <script src="assets/app.js"></script>
   <script>
@@ -297,16 +298,15 @@
       // PLAY — no-kit out-loud games
       const games = window.GAMES || [];
       const groups = window.GAME_GROUPS || {};
-      // DO — one activity from every tradition
-      const acts = [];
-      (window.METHODS || []).forEach(m => {
-        const items = m.sections && m.sections.activities && m.sections.activities.items;
-        if (items) items.forEach(it => acts.push({ name: it.name, body: it.body, method: m.name, id: m.id, color: m.color }));
+      // DO — no-equipment, do-it-now deeds, each true to a tradition
+      const methodById = {};
+      (window.METHODS || []).forEach(m => { methodById[m.id] = m; });
+      const deeds = (window.DEEDS || []).map(d => {
+        const m = methodById[d.trad] || {};
+        return { name: d.name, body: d.body, method: m.name || '', id: d.trad, color: m.color || '#F4B82A' };
       });
       // PONDER — bite-sized philosophy
       const ponders = window.PONDERINGS || [];
-      const methodById = {};
-      (window.METHODS || []).forEach(m => { methodById[m.id] = m; });
 
       let playOff = 0, doOff = 0, ponderOff = 0;
 
@@ -318,14 +318,14 @@
         el('playBody').textContent = g.how;
       }
       function showDo() {
-        if (!acts.length) { el('doCard').hidden = true; return; }
-        const a = pick(acts, doOff);
+        if (!deeds.length) { el('doCard').hidden = true; return; }
+        const a = pick(deeds, doOff);
         el('doCard').style.setProperty('--dc', a.color);
         el('doTitle').textContent = a.name;
         el('doBody').textContent = a.body;
         const s = el('doSrc');
-        s.textContent = 'From ' + a.method + ' →';
-        s.href = 'methodology.html?id=' + a.id + '&s=activities';
+        s.textContent = a.method ? 'From ' + a.method + ' →' : '';
+        s.href = 'methodology.html?id=' + a.id;
       }
       function showPonder() {
         if (!ponders.length) { el('ponderCard').hidden = true; return; }

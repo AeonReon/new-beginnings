@@ -279,22 +279,40 @@
     mapCardEl.addEventListener('click', (e) => { if (e.target === mapCardEl) closeMapCard(); });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMapCard(); });
 
-    // Get-listed / partner form
+    // Get-listed / partner form — posts straight to Web3Forms, which emails the
+    // submission to consciousparenting@daysoutni.com. Self-contained: no server,
+    // no secrets in the page (the access key is a public routing token, not a
+    // credential). Create the key free at web3forms.com for that address.
+    const WEB3FORMS_KEY = 'REPLACE_WITH_WEB3FORMS_KEY';
     const sf = document.getElementById('submitForm');
     if (sf) {
       const sfStatus = document.getElementById('sfStatus');
       const showStatus = (msg, ok) => { sfStatus.textContent = msg; sfStatus.className = 'sf-status ' + (ok ? 'ok' : 'err'); sfStatus.hidden = false; };
+      const done = () => { showStatus("Thanks — that's landed with us! We'll be in touch.", true); sf.reset(); };
       sf.addEventListener('submit', async (e) => {
         e.preventDefault();
         const btn = sf.querySelector('.sf-btn');
         const data = Object.fromEntries(new FormData(sf).entries());
         if (!data.name || !data.message) { showStatus('Please add your name and a short message.', false); return; }
+        if (data.company) { done(); return; } // honeypot — pretend success, send nothing
         const label = btn.textContent; btn.disabled = true; btn.textContent = 'Sending…';
         try {
-          const r = await fetch('/api/submit', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
+          const payload = {
+            access_key: WEB3FORMS_KEY,
+            subject: 'Conscious Parenting NI — new listing / partner',
+            from_name: 'Conscious Parenting NI',
+            botcheck: '',
+            name: data.name, group: data.group, email: data.email,
+            town: data.town, website: data.website, message: data.message
+          };
+          const r = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify(payload)
+          });
           const j = await r.json().catch(() => ({}));
-          if (r.ok) { showStatus(j.message || "Thanks — that's landed with us!", true); sf.reset(); }
-          else { showStatus(j.error || 'Something went wrong — please try again.', false); }
+          if (r.ok && j.success) { done(); }
+          else { showStatus(j.message || 'Something went wrong — please email us directly.', false); }
         } catch { showStatus("Couldn't send — check your connection and try again.", false); }
         btn.disabled = false; btn.textContent = label;
       });
