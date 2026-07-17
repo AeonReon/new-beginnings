@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#4FA4D2">
+  <title>Conscious Parenting NI — Days Out &amp; Things to Do</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="icon-192.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    .daysout-cta {
+      display: block; text-decoration: none; border: none;
+      border-radius: 20px; padding: 1.5em 1.4em; margin: 0 0 1.4em;
+      color: #fff; background: linear-gradient(135deg, #2FA96B, #1B7A4A);
+      box-shadow: 0 4px 8px rgba(20,60,40,.14), 0 18px 40px rgba(47,169,107,.28);
+      transition: transform 0.18s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.18s ease;
+    }
+    .daysout-cta:hover { transform: translateY(-2px); color: #fff; }
+    .daysout-cta .dc-kicker { font-family: var(--sans); font-size: 0.68rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.9; }
+    .daysout-cta .dc-title { font-family: var(--serif); font-weight: 800; font-size: 1.5em; letter-spacing: -0.02em; margin: 0.15em 0 0.2em; }
+    .daysout-cta .dc-sub { font-size: 0.96em; opacity: 0.95; line-height: 1.45; }
+    .daysout-cta .dc-go { display: inline-block; margin-top: 0.9em; font-weight: 800; font-size: 1.02em; }
+    .soon-list { list-style: none; padding: 0; margin: 0.6em 0 0; }
+    .soon-list li { display: flex; gap: 0.6em; align-items: flex-start; padding: 0.5em 0; border-top: 1px solid var(--rule); font-size: 0.97em; }
+    .soon-list li:first-child { border-top: none; }
+    .soon-list .st { font-weight: 700; color: var(--ink); }
+    .soon-pill { display: inline-block; font-family: var(--sans); font-size: 0.62rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #1B7A4A; background: #DCF3E7; padding: 0.25em 0.7em; border-radius: var(--radius-pill); margin-left: 0.5em; vertical-align: middle; }
+  </style>
+</head>
+<body class="launcher">
+  <main class="launcher-main">
+    <header style="margin: 0.5em 0 1.4em;">
+      <h1 style="margin-bottom: 0.2em;">Days Out &amp; Things to Do</h1>
+      <p class="lede" style="margin: 0;">Getting out and into the real world is half of childhood. Northern Ireland is full of it — the coast, the forests, the wee attractions and the free ones. Here's where to find them.</p>
+    </header>
+
+    <a href="https://daysoutni.com" class="daysout-cta" target="_blank" rel="noopener">
+      <div class="dc-kicker">🗺️ Our sister app · daysoutni.com</div>
+      <div class="dc-title">Days Out NI</div>
+      <div class="dc-sub">Over 2,000 places to visit across Northern Ireland on one map — parks, beaches, forests, farms, castles, soft plays and family attractions. Filter by where you are and what the day's like.</div>
+      <span class="dc-go">Open the map →</span>
+    </a>
+
+    <div class="card">
+      <h3>Why getting out matters</h3>
+      <p style="margin-bottom: 0.3em;">A child built by motion, weather, space and new places is a different child from one built indoors. Days out aren't a treat on top of the real work of childhood — at this age they <em>are</em> the work: the widening world, the shared adventure, the memory made together.</p>
+      <p class="why" style="margin-bottom: 0;">Novelty and nature both lay down more than a nice afternoon. New places stretch a child's sense of the world; green space and movement settle the nervous system and feed sleep, appetite and mood. You rarely regret the day you got out.</p>
+    </div>
+
+    <div class="card">
+      <h3>Coming into your daily cards <span class="soon-pill">Next</span></h3>
+      <p style="margin-bottom: 0.3em;">The plan is to weave Days Out right into "For today", so a place to go turns up alongside the recipe and the game:</p>
+      <ul class="soon-list">
+        <li><span aria-hidden="true">📍</span><div><span class="st">A place of the day</span> — one good spot near you, fresh each day, straight into the home feed.</div></li>
+        <li><span aria-hidden="true">🌦️</span><div><span class="st">Weather-led picks</span> — indoors when it's pouring, out when it's bright.</div></li>
+        <li><span aria-hidden="true">🆓</span><div><span class="st">Free &amp; close-to-home</span> — the wee local ideas that cost nothing: the beach, the forest trail, the duck pond.</div></li>
+      </ul>
+    </div>
+  </main>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
