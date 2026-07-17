@@ -1,4 +1,4 @@
-const CACHE = 'new-beginnings-v31';
+const CACHE = 'new-beginnings-v32';
 const ASSETS = [
   './',
   './index.html',
@@ -7,6 +7,14 @@ const ASSETS = [
   './things-to-do.html',
   './health.html',
   './emotions.html',
+  './books.html',
+  './learning-apps.html',
+  './assets/pillars/education.jpg',
+  './assets/pillars/books.jpg',
+  './assets/pillars/food.jpg',
+  './assets/pillars/health.jpg',
+  './assets/pillars/daysout.jpg',
+  './assets/pillars/emotions.jpg',
   './schools.html',
   './assets/schools-data.js',
   './assets/map-style.json',
