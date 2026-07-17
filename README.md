@@ -1,4 +1,6 @@
-# New Beginnings
+# Conscious Parenting NI
+
+_(formerly "New Beginnings" — renamed 2026-07-17. Folder + repo stay `new-beginnings` to avoid breaking deploy paths.)_
 
 A first-principles guide for home-educating a four-year-old. Parent-facing, offline-capable PWA.
 

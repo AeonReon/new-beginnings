@@ -1,4 +1,4 @@
-Project: New Beginnings
+Project: Conscious Parenting NI (formerly New Beginnings; folder/repo stay new-beginnings)
 Type: Parent-facing home-education guide PWA
 Target: Parents of a 4-year-old
 Stack: Plain HTML/CSS/JS PWA, localStorage, no build step

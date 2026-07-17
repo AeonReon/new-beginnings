@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#4FA4D2">
+  <title>Conscious Parenting NI — Recipes</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="icon-192.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    /* Kind quick-filter chips */
+    .kind-row { display: flex; flex-wrap: wrap; gap: 0.5em; margin: 0 0 0.4em; }
+    .kind-chip {
+      font-family: var(--sans); font-size: 0.92rem; font-weight: 700;
+      color: var(--ink-soft); background: var(--paper-card);
+      border: 1.5px solid var(--rule-strong); border-radius: var(--radius-pill);
+      padding: 0.5em 1.05em; cursor: pointer;
+      transition: transform 0.15s cubic-bezier(0.34,1.56,0.64,1), border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+    }
+    .kind-chip:hover { transform: translateY(-1px); border-color: var(--rc, var(--sky)); }
+    .kind-chip.active { color: white; border-color: transparent; box-shadow: var(--shadow-sm); background: var(--rc, var(--sky)); }
+
+    #count { font-family: var(--sans); font-size: 0.85em; color: var(--ink-mute); margin: 0.2em 0 1.4em; }
+
+    /* Recipe card */
+    .recipe-card { border-left: 5px solid var(--rc); }
+    .recipe-head { display: flex; align-items: baseline; justify-content: space-between; gap: 0.6em; flex-wrap: wrap; }
+    .recipe-head h3 { margin: 0; font-size: 1.18rem; display: flex; align-items: baseline; gap: 0.4em; }
+    .recipe-emoji { font-size: 1.2em; }
+    .recipe-tag { font-size: 0.62rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--rcd); white-space: nowrap; }
+    .recipe-card > p.blurb { margin: 0.4em 0 0.85em; color: var(--ink-soft); font-style: italic; }
+
+    .meta-row { display: flex; flex-wrap: wrap; gap: 0.4em; margin: 0 0 1em; }
+    .chip {
+      font-family: var(--sans); font-size: 0.72rem; font-weight: 700;
+      padding: 0.28em 0.72em; border-radius: var(--radius-pill);
+      background: var(--rcs); color: var(--rcd);
+    }
+
+    .rc-cols { display: grid; grid-template-columns: 1fr; gap: 1.1em; }
+    @media (min-width: 560px) { .rc-cols { grid-template-columns: 0.85fr 1.15fr; } }
+
+    .rc-h { font-family: var(--sans); font-size: 0.68rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rcd); margin: 0 0 0.5em; }
+    .rc-ingredients ul { margin: 0; padding-left: 1.1em; }
+    .rc-ingredients li { margin-bottom: 0.3em; font-size: 0.96em; }
+    .rc-steps ol { margin: 0; padding-left: 1.3em; }
+    .rc-steps li { margin-bottom: 0.5em; font-size: 0.97em; }
+
+    .rc-hands {
+      display: flex; gap: 0.55em; align-items: flex-start;
+      background: var(--rcs); border-radius: var(--radius-md, 14px);
+      padding: 0.75em 0.95em; margin: 1.1em 0 0; font-size: 0.95em; color: var(--ink-soft);
+    }
+    .rc-hands b { color: var(--rcd); }
+    .rc-instead { font-size: 0.85em; color: var(--ink-mute); margin: 0.9em 0 0; }
+    .rc-instead b { color: var(--ink-soft); font-weight: 700; }
+
+    .empty { color: var(--ink-mute); font-style: italic; margin: 2em 0; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Recipes</h1>
+    <p class="lede">
+      Nice things to make <em>with</em> your child — snacks, dinners and puddings
+      built from real food, with none of the sugar-loads, E-numbers and additives
+      the shop versions carry. All low-skill, all quick. The child who helps make
+      it is the child who eats it.
+    </p>
+
+    <button class="read-btn" id="read-btn">▶ Read aloud</button>
+
+    <div class="card" style="margin-top: 1.2em;">
+      <h3>Why cook it together</h3>
+      <p style="margin-bottom: 0.7em;">
+        Most food aimed at children is engineered to sell, not to nourish — sugar to
+        make it moreish, cheap oils and fillers to make it cheap, colours and
+        preservatives to make it last. A child raised on it grows a taste for it.
+      </p>
+      <p class="why" style="margin-bottom: 0;">
+        The fix isn't a lecture, it's a countertop. When a child mashes the banana,
+        rolls the ball, or arranges their own toppings, three things happen at once:
+        they eat what they made, they learn where food comes from, and their taste
+        quietly trains toward the real thing. Every recipe here says the actual
+        reason it beats the shop version — no "because it's healthy", the real swap.
+      </p>
+    </div>
+
+    <div class="kind-row" id="kind-row"></div>
+    <p id="count"></p>
+
+    <div id="list"></div>
+  </main>
+
+  <script src="assets/recipes-data.js"></script>
+  <script src="assets/reader.js"></script>
+  <script src="assets/app.js"></script>
+  <script>
+    const KIND_ORDER = ['snack', 'main', 'dessert'];
+    const list = document.getElementById('list');
+    const count = document.getElementById('count');
+    const kindRow = document.getElementById('kind-row');
+    let activeKind = '';
+
+    function esc(s) {
+      return String(s).replace(/[&<>"]/g, c =>
+        ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+    }
+
+    // Kind filter chips
+    kindRow.innerHTML =
+      `<button type="button" class="kind-chip active" data-kind="" style="--rc:var(--sky);">All</button>` +
+      KIND_ORDER.map(k => {
+        const kd = window.RECIPE_KINDS[k];
+        return `<button type="button" class="kind-chip" data-kind="${k}" style="--rc:${kd.c};">${kd.label}s</button>`;
+      }).join('');
+    kindRow.querySelectorAll('.kind-chip').forEach(btn => {
+      btn.addEventListener('click', () => {
+        activeKind = btn.dataset.kind;
+        kindRow.querySelectorAll('.kind-chip').forEach(b => b.classList.toggle('active', b.dataset.kind === activeKind));
+        render();
+      });
+    });
+
+    function cardHTML(r) {
+      const kd = window.RECIPE_KINDS[r.kind];
+      const ingredients = r.ingredients.map(i => `<li>${esc(i)}</li>`).join('');
+      const steps = r.steps.map(s => `<li>${esc(s)}</li>`).join('');
+      return `
+        <div class="card recipe-card" style="--rc:${kd.c};--rcd:${kd.cd};--rcs:${kd.cs};">
+          <div class="recipe-head">
+            <h3><span class="recipe-emoji">${r.emoji}</span>${esc(r.name)}</h3>
+            <span class="recipe-tag">${esc(kd.label)}</span>
+          </div>
+          <p class="blurb">${esc(r.blurb)}</p>
+          <div class="meta-row">
+            <span class="chip">⏱ ${esc(r.time)}</span>
+            <span class="chip">Makes ${esc(r.makes)}</span>
+          </div>
+          <div class="rc-cols">
+            <div class="rc-ingredients">
+              <p class="rc-h">You need</p>
+              <ul>${ingredients}</ul>
+            </div>
+            <div class="rc-steps">
+              <p class="rc-h">Make it</p>
+              <ol>${steps}</ol>
+            </div>
+          </div>
+          <div class="rc-hands"><span aria-hidden="true">🙌</span><div><b>Little hands:</b> ${esc(r.hands)}</div></div>
+          <p class="why" style="margin-top:1.1em;">${esc(r.why)}</p>
+          <p class="rc-instead"><b>Instead of the shop version —</b> ${esc(r.instead)}</p>
+        </div>`;
+    }
+
+    function render() {
+      const shown = window.RECIPES.filter(r => !activeKind || r.kind === activeKind);
+      count.textContent = `${shown.length} of ${window.RECIPES.length} recipes`;
+      let html = '';
+      KIND_ORDER.forEach(k => {
+        const inKind = shown.filter(r => r.kind === k);
+        if (!inKind.length) return;
+        html += inKind.map(cardHTML).join('');
+      });
+      list.innerHTML = html || '<p class="empty">Nothing here yet — try another filter.</p>';
+    }
+
+    document.getElementById('read-btn').addEventListener('click', () => {
+      if (window.Reader.speaking) window.Reader.stop();
+      else window.Reader.readElement(document.querySelector('main'));
+    });
+
+    render();
+  </script>
+</body>
+</html>

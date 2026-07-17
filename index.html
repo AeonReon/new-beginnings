@@ -48,6 +48,16 @@
       </a>
       <div class="daily-lead">For today</div>
 
+      <article class="daily-card" id="cookCard" style="--dc:#E4568A;">
+        <div class="daily-kicker">🍳 Something nice to make together</div>
+        <div class="daily-title" id="cookTitle"></div>
+        <div class="daily-body" id="cookBody"></div>
+        <div class="daily-foot">
+          <a class="daily-src" href="recipes.html">More real-food recipes — no poison →</a>
+          <button class="daily-more" data-more="cook" type="button">Another <span aria-hidden="true">↻</span></button>
+        </div>
+      </article>
+
       <article class="daily-card" id="playCard" style="--dc:#4FA4D2;">
         <div class="daily-kicker">🎲 A game to play now</div>
         <div class="daily-title" id="playTitle"></div>
@@ -102,6 +112,13 @@
           <div class="tile-body">
             <div class="tile-name">This Week's Feast</div>
             <div class="tile-tagline">Poem · hymn · painting · story · nature · practical</div>
+          </div>
+        </a>
+        <a href="recipes.html" class="tile" style="--c:#E4568A;--cd:#A21D57;--cs:#FCE7F3;">
+          <div class="tile-icon-wrap"><svg viewBox="0 0 64 64" class="tile-icon"><path d="M20 6 v14 M26 6 v14 M23 6 v20 M23 20 c0 3 3 4 3 8 v20 h-6 V28 c0-4 3-5 3-8" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M42 6 c-5 0 -8 6 -8 16 c0 5 3 7 6 7 v25 h4 V6 z" fill="currentColor"/><ellipse cx="32" cy="52" rx="20" ry="3" fill="currentColor" opacity="0.18"/></svg></div>
+          <div class="tile-body">
+            <div class="tile-name">Recipes</div>
+            <div class="tile-tagline">Real-food snacks, mains &amp; puddings to make with little hands. No poison.</div>
           </div>
         </a>
         <a href="rhythm.html" class="tile has-photo" style="--c:#2563eb;--cd:#1e40af;--cs:#dbeafe;">
@@ -160,6 +177,7 @@
   <script src="assets/games-data.js"></script>
   <script src="assets/deeds-data.js"></script>
   <script src="assets/philosophy-data.js"></script>
+  <script src="assets/recipes-data.js"></script>
   <script src="assets/app.js"></script>
   <script>
     const ICONS = {
@@ -313,6 +331,8 @@
       });
       // PONDER — bite-sized philosophy
       const ponders = window.PONDERINGS || [];
+      // COOK — a nice, real-food thing to make together today
+      const recipes = window.RECIPES || [];
 
       // THIS WEEK — a gentle arc. One tradition is "in focus" each week; the
       // day's deed + thought lean into it so the week hangs together and you
@@ -347,8 +367,15 @@
         b.href = 'methodology.html?id=' + weekTrad;
       } else { el('weekBanner').hidden = true; }
 
-      let playOff = 0, doOff = 0, ponderOff = 0;
+      let playOff = 0, doOff = 0, ponderOff = 0, cookOff = 0;
 
+      function showCook() {
+        if (!recipes.length) { el('cookCard').hidden = true; return; }
+        const r = pick(recipes, cookOff), kd = (window.RECIPE_KINDS || {})[r.kind] || {};
+        el('cookCard').style.setProperty('--dc', kd.c || '#E4568A');
+        el('cookTitle').textContent = (r.emoji ? r.emoji + '  ' : '') + r.name;
+        el('cookBody').textContent = r.blurb;
+      }
       function showPlay() {
         if (!games.length) { el('playCard').hidden = true; return; }
         const g = pick(games, playOff), gc = groups[g.group] || {};
@@ -378,12 +405,13 @@
         else { s.removeAttribute('href'); s.classList.add('no-link'); }
       }
 
-      showPlay(); showDo(); showPonder();
+      showCook(); showPlay(); showDo(); showPonder();
       el('dailyFeed').hidden = false;
       document.querySelectorAll('.daily-more').forEach(btn => {
         btn.addEventListener('click', () => {
           const t = btn.dataset.more;
-          if (t === 'play') { playOff++; showPlay(); }
+          if (t === 'cook') { cookOff++; showCook(); }
+          else if (t === 'play') { playOff++; showPlay(); }
           else if (t === 'do') { doOff++; showDo(); }
           else { ponderOff++; showPonder(); }
         });

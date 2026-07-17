@@ -1,4 +1,6 @@
-# New Beginnings — Project Rules
+# Conscious Parenting NI — Project Rules
+
+_(formerly "New Beginnings" — renamed 2026-07-17. Folder stays `new-beginnings/` to avoid breaking the repo/deploy paths.)_
 
 Parent-facing home-education guide PWA for a 4-year-old. Standalone project.
 

@@ -1,4 +1,4 @@
-# New Beginnings — App Concept
+# Conscious Parenting NI — App Concept
 
 A parent-facing home-education guide PWA for a child who has just turned four. Standalone project. Not integrated with Aha! or any other app.
 
@@ -35,7 +35,7 @@ This is the distinctive voice the app must maintain. It's what makes the app use
 
 ## Scope answers (2026-04-23)
 
-1. **Name**: New Beginnings
+1. **Name**: Conscious Parenting NI (originally "New Beginnings", renamed 2026-07-17)
 2. **Religious framing**: Christian sources welcome as a rich tradition, but first-principles is the filter — no dogma, religious or secular
 3. **Multi-child**: One 4-year-old, now
 4. **Web vs native**: PWA
