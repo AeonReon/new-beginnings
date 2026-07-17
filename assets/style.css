@@ -1117,6 +1117,60 @@ body.launcher {
 .tile.has-photo .tile-icon { width: 26px; height: 26px; }
 .tile.has-photo .tile-body { padding: 0 1.3em; margin-top: 28px; gap: 0.25em; }
 
+/* Row-card list (Days Out style) — squarish image left, copy right.
+   Used for the traditions list; scans like an editorial feed on a phone. */
+.tile-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.85em;
+}
+@media (min-width: 760px) { .tile-list { grid-template-columns: 1fr 1fr; } }
+
+.tile-list .tile {
+  flex-direction: row;
+  align-items: stretch;
+  gap: 0;
+  padding: 0;
+  min-height: 118px;
+  overflow: hidden;
+}
+/* photo row: image on the left */
+.tile-list .tile.has-photo { padding: 0; }
+.tile-list .tile.has-photo .tile-photo {
+  width: 40%;
+  min-width: 118px;
+  max-width: 210px;
+  height: auto;
+  align-self: stretch;
+  flex-shrink: 0;
+}
+.tile-list .tile.has-photo .tile-photo > img { height: 100%; }
+.tile-list .tile.has-photo .tile-photo::after {
+  background: linear-gradient(90deg, transparent 60%, rgba(20,35,60,0.12) 100%);
+}
+.tile-list .tile.has-photo .tile-icon-wrap {
+  top: auto; bottom: 8px; left: 8px; width: 34px; height: 34px; border-radius: 10px; border-width: 2px;
+}
+.tile-list .tile.has-photo .tile-icon { width: 20px; height: 20px; }
+.tile-list .tile.has-photo .tile-body {
+  padding: 0.85em 1.05em;
+  margin-top: 0;
+  justify-content: center;
+  gap: 0.28em;
+}
+/* icon-only row (e.g. a tradition with no photo): chip on the left */
+.tile-list .tile:not(.has-photo) {
+  padding: 0.9em 1.05em;
+  gap: 0.95em;
+  align-items: center;
+}
+.tile-list .tile:not(.has-photo) .tile-icon-wrap { width: 50px; height: 50px; flex-shrink: 0; }
+.tile-list .tile:not(.has-photo) .tile-body { justify-content: center; }
+.tile-list .tile-name { font-size: 1.1em; }
+.tile-list .tile-tagline { font-size: 0.85em; }
+.tile-list .tile-era { margin-top: 0.35em; }
+.tile-list .tile-badge { top: 0.6em; right: 0.6em; }
+
 .tile-body { display: flex; flex-direction: column; gap: 0.25em; flex: 1; margin-top: 0.1em; }
 .tile-name {
   font-weight: 800;
@@ -1316,6 +1370,53 @@ body.method-page {
   line-height: 1.7;
   max-width: 640px;
   margin: 0 auto;
+}
+
+/* Editorial cover hero (Days Out article style) — image with the title and
+   tagline sitting on it, then the blurb below. Pulls you into the page. */
+.method-hero.editorial { text-align: left; margin-bottom: 2.2em; }
+.method-cover {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  min-height: 210px;
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 1.35em;
+  background: linear-gradient(135deg, var(--m-color, var(--sky)), var(--m-deep, var(--sky-deep)));
+  box-shadow: 0 2px 6px rgba(20,35,60,0.10), 0 18px 44px rgba(20,35,60,0.16);
+}
+.method-cover > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.method-cover-veil {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(15,25,45,0.04) 0%, rgba(15,25,45,0.14) 42%, rgba(15,25,45,0.74) 100%);
+}
+.method-cover.no-img .method-cover-veil { background: linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,0.16)); }
+.method-cover-text { position: relative; z-index: 2; padding: 1.6em 1.4em 1.35em; width: 100%; }
+.method-cover-text .method-hero-eyebrow {
+  color: rgba(255,255,255,0.92);
+  margin-bottom: 0.45em;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.35);
+}
+.method-cover-text h1 {
+  color: #fff;
+  margin: 0 0 0.28em;
+  font-size: clamp(1.9rem, 6vw, 2.8rem);
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+}
+.method-cover-text .method-tagline {
+  color: rgba(255,255,255,0.96);
+  margin: 0;
+  font-weight: 600;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.4);
+}
+.method-hero.editorial .method-blurb {
+  margin: 0;
+  max-width: 700px;
+  font-size: 1.09em;
+  color: var(--ink-soft);
 }
 
 .method-borrows {

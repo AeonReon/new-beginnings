@@ -88,10 +88,16 @@
       }).join('');
 
       root.innerHTML = `
-        <header class="method-hero">
-          <div class="method-hero-eyebrow">${m.era}</div>
-          <h1>${m.name}</h1>
-          <p class="method-tagline">${m.tagline}</p>
+        <header class="method-hero editorial">
+          <div class="method-cover${m.image ? '' : ' no-img'}">
+            ${m.image ? `<img src="${m.image}" alt="">` : ''}
+            <div class="method-cover-veil"></div>
+            <div class="method-cover-text">
+              <div class="method-hero-eyebrow">${m.era}</div>
+              <h1>${m.name}</h1>
+              <p class="method-tagline">${m.tagline}</p>
+            </div>
+          </div>
           <p class="method-blurb">${m.blurb}</p>
         </header>
 
