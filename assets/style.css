@@ -841,7 +841,7 @@ body.launcher {
 }
 
 .launcher-hero {
-  padding: 1.8em 1.2em 0.6em;
+  padding: 1.1em 1.2em 0;
   max-width: 1100px;
   margin: 0 auto;
   width: 100%;
@@ -852,18 +852,33 @@ body.launcher {
   justify-content: space-between;
   gap: 1em;
   flex-wrap: wrap;
+  background: linear-gradient(135deg, #EAF4FB 0%, #FCF3E2 52%, #FCE9D4 100%);
+  border-radius: var(--radius-lg);
+  padding: 1.2em 1.4em;
+  box-shadow: 0 1px 2px rgba(40,30,20,0.05), 0 12px 34px rgba(210,150,70,0.14);
+  position: relative;
+  overflow: hidden;
+}
+.launcher-hero .hero-wrap::before {
+  content: "";
+  position: absolute; inset: 0;
+  padding: 1.5px; border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--sky) 0%, #F4B82A 100%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+  pointer-events: none; opacity: 0.5;
 }
 .hero-brand {
   display: flex;
   align-items: center;
-  gap: 0.85em;
+  gap: 0.9em;
   margin-bottom: 0;
 }
 .hero-brand .brand-icon {
-  width: 56px;
-  height: 56px;
-  border-radius: 14px;
-  box-shadow: 0 2px 8px rgba(40, 30, 20, 0.12);
+  width: 62px;
+  height: 62px;
+  border-radius: 15px;
+  box-shadow: 0 3px 12px rgba(40, 30, 20, 0.18);
   flex-shrink: 0;
 }
 .hero-brand h1 {
@@ -1158,18 +1173,56 @@ body.launcher {
   justify-content: center;
   gap: 0.28em;
 }
-/* icon-only row (e.g. a tradition with no photo): chip on the left */
-.tile-list .tile:not(.has-photo) {
-  padding: 0.9em 1.05em;
-  gap: 0.95em;
-  align-items: center;
+/* icon-only row (no photo): a full-height gradient panel on the left with the
+   icon, so it lines up with the photo rows and the list stays uniform */
+.tile-list .tile:not(.has-photo) { padding: 0; gap: 0; align-items: stretch; }
+.tile-list .tile:not(.has-photo) .tile-icon-wrap {
+  width: 40%; min-width: 118px; max-width: 210px; height: auto;
+  align-self: stretch; border-radius: 0; box-shadow: none; flex-shrink: 0;
 }
-.tile-list .tile:not(.has-photo) .tile-icon-wrap { width: 50px; height: 50px; flex-shrink: 0; }
-.tile-list .tile:not(.has-photo) .tile-body { justify-content: center; }
+.tile-list .tile:not(.has-photo) .tile-icon { width: 42px; height: 42px; }
+.tile-list .tile:not(.has-photo) .tile-body {
+  padding: 0.85em 1.05em; margin-top: 0; justify-content: center; gap: 0.28em;
+}
 .tile-list .tile-name { font-size: 1.1em; }
 .tile-list .tile-tagline { font-size: 0.85em; }
 .tile-list .tile-era { margin-top: 0.35em; }
 .tile-list .tile-badge { top: 0.6em; right: 0.6em; }
+
+/* Reusable editorial page cover-hero (Days Out article style) — a banner image
+   with the title + tagline on it, then the page's intro below. Set --hc/--hcd
+   per page for the gradient (used as a fallback when there's no image). */
+.page-hero { margin: 0.2em 0 1.5em; }
+.page-cover {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  min-height: 188px;
+  display: flex;
+  align-items: flex-end;
+  background: linear-gradient(135deg, var(--hc, var(--sky)), var(--hcd, var(--sky-deep)));
+  box-shadow: 0 2px 6px rgba(20,35,60,0.10), 0 18px 44px rgba(20,35,60,0.16);
+}
+.page-cover > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.page-cover-veil {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(15,25,45,0.05) 0%, rgba(15,25,45,0.16) 42%, rgba(15,25,45,0.74) 100%);
+}
+.page-cover.no-img .page-cover-veil { background: linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,0.16)); }
+.page-cover-text { position: relative; z-index: 2; padding: 1.5em 1.35em 1.3em; width: 100%; color: #fff; }
+.page-eyebrow {
+  font-family: var(--sans); font-size: 0.7em; letter-spacing: 0.13em; text-transform: uppercase;
+  font-weight: 800; color: rgba(255,255,255,0.9); margin-bottom: 0.45em; text-shadow: 0 1px 4px rgba(0,0,0,0.35);
+}
+.page-cover-text h1 {
+  color: #fff; margin: 0 0 0.28em; font-size: clamp(1.8rem, 5.6vw, 2.5rem);
+  letter-spacing: -0.03em; line-height: 1.07; text-shadow: 0 2px 12px rgba(0,0,0,0.42);
+}
+.page-tagline {
+  color: rgba(255,255,255,0.96); margin: 0; font-weight: 600; font-size: 1.02em;
+  line-height: 1.4; text-shadow: 0 1px 8px rgba(0,0,0,0.42);
+}
+.page-intro { font-size: 1.06em; color: var(--ink-soft); line-height: 1.6; margin: 0 0 1.5em; }
 
 .tile-body { display: flex; flex-direction: column; gap: 0.25em; flex: 1; margin-top: 0.1em; }
 .tile-name {
