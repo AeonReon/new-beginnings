@@ -54,4 +54,8 @@ window.DEEDS = [
   // ── Roman ──
   { trad: 'rome', name: 'You are the lesson', body: "For the next hour, be the person you want them to become — patient, honest, kind. Beneath all the words, a child copies who you are." },
   { trad: 'rome', name: 'Praise the effort', body: "Catch them trying hard at something and name it warmly. Encouragement builds far more than correction ever will." },
+
+  // ── Future of Education ──
+  { trad: 'future-of-education', name: 'Short, sharp, then stop', body: "Pick one thing to practise — a few letters, counting to ten — go all-in for ten minutes, and stop while it's still fun. Short and focused beats long and weary." },
+  { trad: 'future-of-education', name: 'Name the growth', body: "Point out one thing they can do now that they couldn't last week. A child becomes the story you tell them about themselves — so tell a growing one." },
 ];
