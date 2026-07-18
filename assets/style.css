@@ -1244,16 +1244,43 @@ body.launcher {
 /* ── Article mode ──────────────────────────────────────────────────────────
    Narrow single column + flowing, flatter sections so a category page reads
    like one complete Days-Out-style article, not a stack of floating cards. */
-.launcher-main.article { max-width: 768px; }
-.article .page-hero { margin-bottom: 1.4em; }
+.launcher-main.article { max-width: 720px; }
+.article .page-hero { margin-bottom: 1.5em; }
 .article .page-cover { min-height: 340px; }
 .article .page-intro {
-  font-size: 1.2em; line-height: 1.62; color: var(--ink); font-weight: 500;
-  margin-bottom: 1.6em;
+  font-size: 1.24em; line-height: 1.6; color: var(--ink); font-weight: 500;
+  margin-bottom: 1.5em;
 }
-.article .card { box-shadow: none; border-radius: var(--radius-md); margin: 1.1em 0; }
-.article .card:hover { box-shadow: none; }
-.article h2.tile-section-title { margin: 1.7em 0 0.3em; }
+
+/* De-card: content blocks become flowing article sections (Days Out style) —
+   plain headings + text on the page, not a stack of bordered boxes. */
+.article .card {
+  background: transparent; border: none; box-shadow: none;
+  border-radius: 0; padding: 0; margin: 0 0 1.6em;
+}
+.article .card:hover { box-shadow: none; transform: none; }
+.article .card h3 {
+  font-family: var(--serif); font-size: 1.34em; font-weight: 800;
+  letter-spacing: -0.02em; color: var(--ink); margin: 0 0 0.4em; line-height: 1.2;
+}
+.article .card > p { color: var(--ink-soft); }
+/* strip the page-specific left-border card variants so they flow too */
+.article .p-card, .article .country-card, .article .topic-card,
+.article .app-card, .article .book-card, .article .show-card {
+  border-left: none; padding-left: 0;
+}
+.article h2.tile-section-title { margin: 1.9em 0 0.5em; font-size: 1.5em; }
+
+/* The one highlight that carries the point — a clean green left-accent callout,
+   the Days Out ".access" convention. Replaces the boxed look in article flow. */
+.article .why {
+  background: var(--paper-surface);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  border-left: 4px solid var(--mint);
+  padding: 0.85em 1.1em; margin-top: 0.7em;
+  color: var(--ink-soft);
+}
+.article .why::after { display: none; }
 
 /* Pull-quote — the highlighted copywriting that carries the point */
 .pullquote {
