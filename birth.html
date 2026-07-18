@@ -10,22 +10,47 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="stylesheet" href="assets/style.css">
   <style>
-    .draft-note { background: #F6E3EC; border-radius: 16px; padding: 0.9em 1.1em; margin: 0 0 1.4em; color: #7A3355; font-size: 0.92em; }
+    /* Birth article — a mix of elements so the page has rhythm: text, images,
+       pull-quotes, a stat, scannable lists and info boxes. */
+    .meta-pills { display: flex; flex-wrap: wrap; gap: 0.5em; margin: -0.4em 0 1.3em; }
+    .meta-pills span { background: var(--paper-card); border: 1px solid var(--rule); border-radius: 999px; padding: 0.35em 0.9em; font-size: 0.78em; font-weight: 700; color: var(--ink-soft); }
+
+    .callout { background: #EAF4FB; border-left: 4px solid var(--sky); border-radius: 0 var(--radius-md) var(--radius-md) 0; padding: 0.95em 1.15em; margin: 1.4em 0; color: #2A5878; font-size: 0.95em; }
+    .callout b { color: #1E4D6B; }
+
+    .principles { list-style: none; padding: 0; margin: 1.1em 0 0; }
+    .principles li { display: flex; gap: 0.85em; padding: 0.95em 0; border-top: 1px solid var(--rule); }
+    .principles li:first-child { border-top: none; padding-top: 0.2em; }
+    .principles .pi { font-size: 1.7em; line-height: 1; flex-shrink: 0; width: 1.3em; text-align: center; }
+    .principles .pt { font-family: var(--serif); font-weight: 800; color: var(--ink); display: block; margin-bottom: 0.15em; }
+    .principles .pb { color: var(--ink-soft); font-size: 0.96em; line-height: 1.5; }
+
+    .stat { text-align: center; margin: 1.9em 0; padding: 1.4em 1.2em; background: linear-gradient(135deg, #F6E3EC, #FDF4F8); border: 1px solid #EED2DF; border-radius: var(--radius-lg); }
+    .stat .num { font-family: var(--serif); font-weight: 800; font-size: 3.2em; color: #97456A; line-height: 1; letter-spacing: -0.03em; }
+    .stat .cap { color: var(--ink-soft); margin: 0.5em auto 0; font-size: 0.98em; max-width: 26em; line-height: 1.5; }
+
+    .worlds { margin: 1.1em 0 0; }
+    .world { display: flex; gap: 0.85em; padding: 0.95em 0; border-top: 1px solid var(--rule); }
+    .world:first-child { border-top: none; padding-top: 0.2em; }
+    .world .fl { font-size: 1.7em; line-height: 1; flex-shrink: 0; }
+    .world .wn { font-family: var(--serif); font-weight: 800; color: var(--ink); }
+    .world .wb { color: var(--ink-soft); font-size: 0.96em; margin-top: 0.15em; line-height: 1.5; }
+
+    .factbox { background: var(--paper-card); border: 1px solid var(--rule); border-radius: var(--radius-md); padding: 1.05em 1.25em; margin: 1.3em 0; box-shadow: var(--shadow-sm); }
+    .factbox h3 { margin: 0 0 0.4em; font-family: var(--serif); font-size: 1.08em; font-weight: 800; }
+    .factbox ul { list-style: none; padding: 0; margin: 0; }
+    .factbox li { padding: 0.6em 0; border-top: 1px solid var(--rule-soft); font-size: 0.95em; line-height: 1.5; }
+    .factbox li:first-child { border-top: none; }
+    .factbox .cn { font-weight: 700; color: var(--ink); }
+    .factbox a { font-weight: 600; }
+
+    .readlist { list-style: none; padding: 0; margin: 0.7em 0 0; }
+    .readlist li { padding: 0.7em 0; border-top: 1px solid var(--rule); font-size: 0.96em; line-height: 1.5; }
+    .readlist li:first-child { border-top: none; }
+    .readlist .cn { font-weight: 700; color: var(--ink); }
+
+    .draft-note { background: #F6E3EC; border-radius: 14px; padding: 0.8em 1.05em; margin: 1.6em 0 0; color: #7A3355; font-size: 0.88em; }
     .draft-note b { color: #97456A; }
-    .safe-note { background: #EAF4FB; border: 1px solid #cfe6f4; border-radius: 16px; padding: 0.95em 1.15em; margin: 0 0 1.5em; color: #2A5878; font-size: 0.94em; }
-    .safe-note b { color: #1E4D6B; }
-    .p-card { border-left: 5px solid #C4708C; }
-    .p-card h3 { margin: 0 0 0.3em; display:flex; align-items:baseline; gap:0.45em; }
-    .p-card .te { font-size: 1.05em; }
-    .country-card { border-left: 5px solid #C4708C; }
-    .country-card h3 { margin: 0 0 0.15em; font-size: 1.08rem; }
-    .country-card .flag { font-size: 1.05em; margin-right: 0.35em; }
-    .contact-list { list-style: none; padding: 0; margin: 0.6em 0 0; }
-    .contact-list li { padding: 0.6em 0; border-top: 1px solid var(--rule); font-size: 0.97em; }
-    .contact-list li:first-child { border-top: none; }
-    .contact-list .cn { font-weight: 700; color: var(--ink); }
-    .contact-list a { font-weight: 600; }
-    .soon-pill { display:inline-block; font-family:var(--sans); font-size:0.62rem; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:#97456A; background:#F6E3EC; padding:0.25em 0.7em; border-radius:var(--radius-pill); margin-left:0.5em; vertical-align:middle; }
   </style>
 </head>
 <body class="launcher">
@@ -41,116 +66,101 @@
         </div>
       </div>
     </header>
-    <p class="page-intro">The first thing that happens to a child, and one of the biggest things that happens to a mother — and for most families the default is the opposite of what the body is asking for. It doesn't have to be. This is the case for a gentler way, the places that already do it, and what exists here.</p>
 
-    <div class="safe-note">
-      <b>First, the honest bit.</b> This is about environment, options and a straightforward birth — not medical advice, and not anti-doctor. Obstetric medicine and hospitals save lives when a birth needs help, which is exactly why the calm ideal still keeps skilled help close by. Every pregnancy is different; the right choices are yours to make with your own midwives and doctors. Safety comes first, always.
+    <div class="meta-pills">
+      <span>Northern Ireland</span>
+      <span>The very beginning</span>
+      <span>First-principles, not fear</span>
     </div>
 
-    <div class="draft-note">
-      <b>First draft — let's shape this together.</b> A starting map of the philosophy, how other places do it, and what's in Northern Ireland. Some of it needs checking and updating (services here change often). React to it and we'll build it properly.
+    <p class="page-intro">The first thing that happens to a child, and one of the biggest things that happens to a mother — and for most families the default is the opposite of what the body is asking for. It doesn't have to be.</p>
+
+    <div class="callout">
+      <b>First, the honest bit.</b> This is about environment, options and a straightforward birth — not medical advice, and not anti-doctor. Hospitals and obstetric medicine save lives when a birth needs help, which is exactly why the calm ideal still keeps skilled help close by. Every pregnancy is different; the choices are yours, with your own midwives and doctors. Safety first, always.
     </div>
 
-    <div class="card">
-      <h3>The default — and why it fights the body</h3>
-      <p style="margin-bottom: 0.7em;">The standard picture: a room full of strangers, bright overhead lights, a clock running, a bed you're expected to lie back on. For most women it arrives wrapped in fear, and a frightening, rushed, watched birth is exactly the kind the body handles worst.</p>
-      <p class="why" style="margin-bottom: 0;">This isn't a small preference. Birth runs on hormones — oxytocin, endorphins — that flow when a woman feels private, warm, safe and unobserved, and stall when she feels watched, cold, rushed or afraid. Lying on your back closes the pelvis and works against gravity. So the default environment, like the default classroom, is very nearly the opposite of what is natural, intuitive, and actually useful.</p>
-    </div>
+    <h2>The default — and why it fights the body</h2>
+    <p>The standard picture: a room full of strangers, bright overhead lights, a clock running, a bed you're expected to lie back on. For most women it arrives wrapped in fear — and a frightening, rushed, watched birth is exactly the kind the body handles worst.</p>
+    <p>This isn't a small preference. Birth runs on hormones that flow when a woman feels private, warm, safe and unobserved, and stall when she feels watched, cold or afraid. So the default, like the default classroom, is very nearly the opposite of what is natural, intuitive and actually useful.</p>
 
     <blockquote class="pullquote" style="--hc:#C4708C;--hcd:#97456A;">A frightening, watched, rushed birth is the one the body handles <span>worst</span> — and it's the one we've made standard.</blockquote>
 
-    <h2 class="tile-section-title" style="margin-bottom:0.6em;">What the body is actually doing</h2>
+    <figure class="article-figure">
+      <img src="assets/pillars/birth-home.jpg" alt="A woman labouring in a home birth pool, supported by her partner" loading="lazy">
+      <figcaption>A calm home birth: warm water, low light, a partner close, and no clock.</figcaption>
+    </figure>
 
-    <div class="card p-card">
-      <h3><span class="te">⬇️</span> Let gravity help</h3>
-      <p>Upright, leaning, kneeling, squatting, on all fours — the positions every other mammal finds instinctively — open the pelvis and let the baby's weight work with you, not against you.</p>
-      <p class="why" style="margin-bottom:0;">Flat on the back is the one position that narrows the outlet and compresses the mother's own blood vessels. Upright and mobile birth is linked to shorter labours and fewer interventions — the reason the WHO now recommends freedom of movement and position as standard.</p>
+    <h2>What the body is actually doing</h2>
+    <p>Given the right conditions, a straightforward birth mostly runs itself. Those conditions are simple, and every one of them is the opposite of the default room.</p>
+
+    <ul class="principles">
+      <li><span class="pi">⬇️</span><div><span class="pt">Let gravity help</span><span class="pb">Upright, kneeling, leaning, on all fours — the positions every other mammal finds instinctively open the pelvis and let the baby's weight work <em>with</em> the mother. Flat on the back is the one position that fights it.</span></div></li>
+      <li><span class="pi">💧</span><div><span class="pt">Warm water</span><span class="pb">A deep, warm pool eases pain and lowers stress — many women call it the single thing that changed the experience. Calm made physical: a relaxed body opens.</span></div></li>
+      <li><span class="pi">🕯️</span><div><span class="pt">Don't disturb it</span><span class="pb">Oxytocin, the hormone that drives labour, is shy. Bright light, strangers and fear switch it off. Dim, warm and private isn't indulgence — it's the physiology.</span></div></li>
+      <li><span class="pi">🤝</span><div><span class="pt">Known faces, not strangers</span><span class="pb">Midwives and a doula she already trusts, from pregnancy through to the birth — with a doctor on standby, not in charge. Trust lowers fear, and lower fear is a smoother birth.</span></div></li>
+      <li><span class="pi">🌙</span><div><span class="pt">No rush</span><span class="pb">A room she could stay in for hours or days — soft, warm, unhurried. Much of the "cascade of intervention" starts with a clock, not a problem. It should feel closer to a retreat than an emergency.</span></div></li>
+    </ul>
+
+    <figure class="article-figure">
+      <img src="assets/pillars/birth-support.jpg" alt="A doula holding and supporting a woman in labour" loading="lazy">
+      <figcaption>Continuous support from someone she trusts is one of the best-evidenced things in all of maternity care.</figcaption>
+    </figure>
+
+    <div class="stat">
+      <div class="num">≈1 in 3</div>
+      <p class="cap">Dutch babies are born at home or in a midwife-led setting — because the whole system treats a healthy birth as normal, not a medical event.</p>
     </div>
 
-    <div class="card p-card">
-      <h3><span class="te">💧</span> Warm water</h3>
-      <p>A deep, warm birthing pool — buoyant, private, soothing. Many women describe it as the single thing that changed the experience.</p>
-      <p class="why" style="margin-bottom:0;">Warm-water immersion in labour eases pain, lowers stress, and is associated with less need for pain medication and intervention. It is calm made physical — the body relaxes, and a relaxed body opens.</p>
+    <h2>It's normal somewhere else</h2>
+    <p>If this sounds fringe, it's only fringe <em>here</em>. Whole countries are built around birth as a normal, physiological event — proof the default isn't the only sane option.</p>
+
+    <div class="worlds">
+      <div class="world"><span class="fl">🇳🇱</span><div><span class="wn">The Netherlands</span><div class="wb">The developed world's home of home birth. Healthy pregnancies are led by midwives; doctors are called only if needed.</div></div></div>
+      <div class="world"><span class="fl">🇩🇪</span><div><span class="wn">Germany — the birth houses</span><div class="wb"><em>Geburtshäuser</em>: freestanding, midwife-run birth houses with pools and home-like rooms, hospital nearby if required.</div></div></div>
+      <div class="world"><span class="fl">🇳🇿</span><div><span class="wn">New Zealand</span><div class="wb">A woman chooses one Lead Maternity Carer — usually a midwife — who is with her through pregnancy, birth and after. The known-face model, as policy.</div></div></div>
+      <div class="world"><span class="fl">🇩🇰</span><div><span class="wn">Scandinavia</span><div class="wb">Midwife-led as the norm for healthy births, strong birth-centre traditions — and some of the best maternal outcomes in the world.</div></div></div>
     </div>
 
-    <div class="card p-card">
-      <h3><span class="te">🕯️</span> Don't disturb it</h3>
-      <p>Low light, quiet, warmth, privacy, no clipboard hovering. The obstetrician Michel Odent spent a career on one idea: the labouring woman should be protected from being watched, questioned and startled.</p>
-      <p class="why" style="margin-bottom:0;">Oxytocin — the hormone that drives labour and bonding — is shy. Bright light, strangers and adrenaline (the fear hormone) switch it off and stall the birth. Dim, warm and undisturbed is not indulgence; it is the physiology.</p>
-    </div>
+    <h2>In Northern Ireland — honestly</h2>
+    <p>It's thin, and getting thinner. The freestanding midwife-led units at the Downe, Lagan Valley and the Mater have all closed in recent years — the alternatives squeezed out, exactly like the summer schools that spring up and vanish. But it isn't nothing, and knowing what's here is how something better gets asked for.</p>
 
-    <div class="card p-card">
-      <h3><span class="te">🤝</span> Known faces, not strangers</h3>
-      <p>The ideal: midwives and a doula the mother already knows and trusts, continuity from pregnancy through to the birth — with a doctor on standby, not in charge.</p>
-      <p class="why" style="margin-bottom:0;">Continuous support from someone she knows is one of the best-evidenced things in all of maternity care — women cared for this way need fewer interventions, feel safer, and look back on the birth far more positively. Trust lowers fear, and lower fear is a smoother birth.</p>
-    </div>
-
-    <div class="card p-card">
-      <h3><span class="te">🌙</span> No rush</h3>
-      <p>A room you could stay in for hours or days if that's what it takes — soft materials, warm light, comfortable, unhurried. Birth on its own clock, not the ward's.</p>
-      <p class="why" style="margin-bottom:0;">Much of the "cascade of intervention" starts with a clock and a target rather than a problem. Given time, warmth and calm, most straightforward births simply unfold. It should feel closer to a retreat than an emergency.</p>
-    </div>
-
-    <div class="card">
-      <h3>It's normal somewhere else</h3>
-      <p style="margin-bottom: 0.7em;">If this sounds fringe, it's only fringe <em>here</em>. Whole countries are built around birth as a normal, physiological event — proof that the default isn't the only sane option.</p>
-    </div>
-
-    <div class="card country-card">
-      <h3><span class="flag">🇳🇱</span> The Netherlands</h3>
-      <p>The developed world's home of home birth — historically about a third of babies born at home, still far higher than anywhere else — because the whole system treats a healthy pregnancy as a job for midwives, with doctors called only if needed.</p>
-    </div>
-
-    <div class="card country-card">
-      <h3><span class="flag">🇩🇪</span> Germany &amp; the birth houses</h3>
-      <p><em>Geburtshäuser</em> — freestanding, midwife-run "birth houses": home-like rooms, pools, no hospital feel, hospital nearby if required. A calm middle path between home and ward that barely exists here.</p>
-    </div>
-
-    <div class="card country-card">
-      <h3><span class="flag">🇳🇿</span> New Zealand</h3>
-      <p>Built around continuity of carer: a woman chooses a Lead Maternity Carer — usually one midwife — who is with her through pregnancy, birth and after. The known-face model, as national policy.</p>
-    </div>
-
-    <div class="card country-card">
-      <h3><span class="flag">🇩🇰</span> Scandinavia</h3>
-      <p>Midwife-led as the norm for healthy births, strong home-birth and birth-centre traditions, and some of the best maternal outcomes in the world. Calm and safe are not a trade-off.</p>
-    </div>
-
-    <div class="card">
-      <h3>In Northern Ireland — honestly</h3>
-      <p style="margin-bottom: 0.7em;">It's thin, and getting thinner: the freestanding midwife-led units at the Downe, Lagan Valley and the Mater have all closed in recent years — the alternatives squeezed out, exactly like the summer schools that spring up and vanish. But it is not nothing, and knowing what's here is how something better gets asked for.</p>
-      <p class="why" style="margin-bottom:0;">What still exists — worth asking your own trust about, as availability changes:</p>
-      <ul class="contact-list">
+    <div class="factbox">
+      <h3>What still exists here</h3>
+      <ul>
         <li><span class="cn">Home birth</span> — supported by the NHS trusts for straightforward pregnancies, with community midwives. Ask your trust's community midwifery team early.</li>
         <li><span class="cn">The Active Birth Centre, Royal Jubilee Maternity (Belfast)</span> — midwife-led birthing rooms with en-suites and a fixed birthing pool.</li>
-        <li><span class="cn">Midwife-led care &amp; water birth</span> — available within several NI maternity units (alongside the labour ward), though pool availability is limited — ask specifically.</li>
-        <li><span class="cn">Where-to-have-your-baby guide (NI)</span> — a genuinely useful independent overview: <a href="https://allaboutbirth.co.uk" target="_blank" rel="noopener">allaboutbirth.co.uk</a></li>
+        <li><span class="cn">Midwife-led care &amp; water birth</span> — within several NI units, though pool availability is limited — ask specifically.</li>
+        <li><span class="cn">Where-to-have-your-baby guide (NI)</span> — a useful independent overview: <a href="https://allaboutbirth.co.uk" target="_blank" rel="noopener">allaboutbirth.co.uk</a></li>
       </ul>
     </div>
 
-    <div class="card">
-      <h3>Doulas &amp; support here <span class="soon-pill">Verify</span></h3>
-      <p style="margin-bottom:0.4em;">The known-face part you <em>can</em> arrange privately. A first-draft list to check:</p>
-      <ul class="contact-list">
+    <div class="factbox">
+      <h3>Doulas &amp; support — a first-draft list to verify</h3>
+      <ul>
         <li><span class="cn">Doulas NI</span> — collective of Doula UK members. <a href="https://www.doulasni.co.uk" target="_blank" rel="noopener">doulasni.co.uk</a></li>
-        <li><span class="cn">Mother Doula</span> — birth &amp; postnatal doula services, NI. <a href="https://motherdoula.com" target="_blank" rel="noopener">motherdoula.com</a></li>
+        <li><span class="cn">Mother Doula</span> — birth &amp; postnatal, NI. <a href="https://motherdoula.com" target="_blank" rel="noopener">motherdoula.com</a></li>
         <li><span class="cn">Doula of Belfast</span> — birth doula, Belfast &amp; around. <a href="https://www.doulaofbelfast.co.uk" target="_blank" rel="noopener">doulaofbelfast.co.uk</a></li>
-        <li><span class="cn">Irish Doula Directory — Ulster</span> — doulas across the north. <a href="http://irishdouladirectory.com/doulas-in-ulster/" target="_blank" rel="noopener">irishdouladirectory.com</a></li>
-        <li><span class="cn">Hypnobirthing</span> — calm-birth preparation is widely taught across NI (several of the doulas above teach it).</li>
+        <li><span class="cn">Irish Doula Directory — Ulster</span> — <a href="http://irishdouladirectory.com/doulas-in-ulster/" target="_blank" rel="noopener">irishdouladirectory.com</a></li>
+        <li><span class="cn">Hypnobirthing</span> — calm-birth preparation, widely taught here (several of the doulas above teach it).</li>
       </ul>
-      <p class="why" style="margin-top:0.9em; margin-bottom:0;">A proper map with vetted contacts is the next step — and if the honest answer is "there isn't much," that's the beginning of the case for building it.</p>
     </div>
 
-    <div class="card">
-      <h3>To read</h3>
-      <p style="margin-bottom:0.5em;">Start with the people who made this case first, then the evidence underneath:</p>
-      <ul class="contact-list">
-        <li><span class="cn">Ina May's Guide to Childbirth</span> — Ina May Gaskin. The classic. Birth as a normal, physiological, even joyful event — plus real birth stories that change how it feels.</li>
-        <li><span class="cn">Birth Reborn / The Scientification of Love</span> — Michel Odent. The obstetrician on undisturbed birth, water, and the hormones the modern room disrupts.</li>
-        <li><span class="cn">The Positive Birth Book</span> — Milli Hill. The most practical modern on-ramp: how to plan for the calm, empowered version wherever you give birth.</li>
-        <li><span class="cn">Birth &amp; Rebirth of Childbirth</span> — Sheila Kitzinger. The anthropologist who showed how differently, and how much more humanely, other cultures do this.</li>
-        <li><span class="cn">WHO: Intrapartum care for a positive childbirth experience (2018)</span> — the official guidance itself recommends companionship, movement, and against routine intervention. Free online.</li>
-      </ul>
+    <figure class="article-figure">
+      <img src="assets/pillars/birth-skin.jpg" alt="A mother resting skin-to-skin with her newborn baby" loading="lazy">
+      <figcaption>The goal isn't only a safe birth — it's a calm, empowering, human one.</figcaption>
+    </figure>
+
+    <h2>To read</h2>
+    <p>Start with the people who made this case first, then the evidence underneath:</p>
+    <ul class="readlist">
+      <li><span class="cn">Ina May's Guide to Childbirth</span> — Ina May Gaskin. The classic: birth as a normal, physiological, even joyful event, with real stories that change how it feels.</li>
+      <li><span class="cn">Birth Reborn</span> — Michel Odent. The obstetrician on undisturbed birth, water, and the hormones the modern room disrupts.</li>
+      <li><span class="cn">The Positive Birth Book</span> — Milli Hill. The most practical modern on-ramp: planning the calm, empowered version wherever you give birth.</li>
+      <li><span class="cn">WHO — Intrapartum care for a positive childbirth experience (2018)</span> — the official guidance itself recommends companionship, movement, and against routine intervention. Free online.</li>
+    </ul>
+
+    <div class="draft-note">
+      <b>First draft — let's shape this together.</b> Especially the Northern Ireland services, which change often and need checking. React to it and we'll build it properly, with a vetted map of local contacts.
     </div>
 
     <section class="why-banner">
