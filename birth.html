@@ -52,7 +52,7 @@
     .eyebrow-loc { display:inline-flex; align-items:center; gap:8px; font:700 12.5px/1 Inter; letter-spacing:.12em; text-transform:uppercase; color:#fde9b8; margin-bottom:12px; }
     .eyebrow-loc .cat { color:#fff; background:rgba(255,255,255,.22); padding:5px 10px; border-radius:6px; }
     .hero h1 { font-family:var(--display); font-weight:800; font-size:clamp(34px,7vw,58px); line-height:1; color:#fff; margin:0; text-shadow:0 3px 26px rgba(0,0,0,.55); }
-    .hero .what { margin:.5em 0 0; font-size:clamp(16px,2.5vw,20px); color:#f1f6fa; max-width:36ch; text-shadow:0 1px 8px rgba(0,0,0,.55); }
+    .hero .what { margin:.5em 0 0; font-size:clamp(16px,2.5vw,20px); color:#f1f6fa; max-width:34ch; text-shadow:0 1px 8px rgba(0,0,0,.55); }
     .hero .photocount { position:absolute; right:18px; bottom:20px; z-index:3; display:inline-flex; align-items:center; gap:7px; background:rgba(8,16,24,.55); backdrop-filter:blur(6px); color:#fff; font:700 12.5px/1 Inter; padding:9px 13px; border-radius:999px; }
     .hero .photocount svg { width:15px; height:15px; }
 
@@ -85,8 +85,8 @@
     @media(max-width:640px){ .fact{ flex-basis:calc(33.333% - 7px); } } @media(max-width:380px){ .fact{ flex-basis:calc(50% - 5px); } }
 
     .hook { font-size:19px; line-height:1.6; color:#1c2a38; }
-    .punch { font-family:var(--display); font-weight:700; font-size:clamp(20px,3vw,25px); line-height:1.3; color:#16212d; margin:0 0 16px; }
-    .punch .hl, .keys .hl, .hook .hl { background:linear-gradient(180deg,transparent 62%,rgba(244,184,42,.5) 0); padding:0 3px; border-radius:2px; }
+    .punch { font-family:var(--display); font-weight:700; font-size:clamp(20px,3vw,25px); line-height:1.32; color:#16212d; margin:0 0 16px; }
+    .hl { background:linear-gradient(180deg,transparent 62%,rgba(244,184,42,.5) 0); padding:0 3px; border-radius:2px; }
     .keys { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:12px; }
     .keys li { position:relative; padding-left:34px; font-size:16px; line-height:1.5; color:#2b3a49; }
     .keys li::before { content:""; position:absolute; left:0; top:1px; width:21px; height:21px; border-radius:7px; background:var(--grad-accent); box-shadow:var(--shadow-soft); }
@@ -97,14 +97,21 @@
 
     .divider { height:1px; max-width:780px; margin:26px auto; background:linear-gradient(90deg,transparent,var(--border) 20%,var(--border) 80%,transparent); }
 
-    /* article body below the fold */
-    .body h2 { font-family:var(--display); font-weight:800; font-size:1.55em; letter-spacing:-.01em; color:var(--text); margin:1.5em 0 .4em; }
-    .body p { color:#2b3a49; line-height:1.62; margin:0 0 1em; }
-    .body p .hl { background:linear-gradient(180deg,transparent 62%,rgba(244,184,42,.5) 0); padding:0 3px; border-radius:2px; }
+    .body h2 { font-family:var(--display); font-weight:800; font-size:1.55em; letter-spacing:-.01em; color:var(--text); margin:1.6em 0 .1em; }
+    .body .kick { font:800 12px/1 Inter; letter-spacing:.12em; text-transform:uppercase; color:var(--accent-deep); margin:0 0 2px; }
+    .body p { color:#2b3a49; line-height:1.62; margin:.5em 0 1em; font-size:16.5px; }
 
     .afig { margin:1.5em 0; }
     .afig img { width:100%; border-radius:var(--r-lg); display:block; box-shadow:var(--shadow-card); }
     .afig figcaption { font-size:13px; color:var(--muted-dim); margin-top:.5em; text-align:center; }
+
+    /* ideal-vs-default contrast */
+    .compare { display:grid; grid-template-columns:1fr 1fr; gap:11px; margin:1.4em 0; }
+    .compare figure { margin:0; }
+    .compare img { width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:var(--r); display:block; box-shadow:var(--shadow-soft); }
+    .compare figcaption { font:800 12px/1.3 Inter; margin-top:.5em; text-align:center; }
+    .compare .good figcaption { color:var(--green); }
+    .compare .bad figcaption { color:#B0293C; }
 
     .stat-big { text-align:center; margin:1.7em 0; padding:1.4em 1.2em; background:linear-gradient(135deg,#FFF4D6,#FDF8EC); border:1px solid #F1E1B4; border-radius:var(--r-lg); }
     .stat-big .num { font-family:var(--display); font-weight:800; font-size:3.2em; color:var(--accent-deep); line-height:1; letter-spacing:-.03em; }
@@ -123,6 +130,11 @@
     .factbox li { padding:.6em 0; border-top:1px solid var(--panel-3); font-size:14.5px; line-height:1.5; color:#3b4757; }
     .factbox li:first-child { border-top:none; }
     .factbox .cn { font-weight:700; color:var(--text); }
+
+    .cta { background:linear-gradient(135deg,#5FB0DD,#2E84BD); color:#fff; border-radius:var(--r-lg); padding:1.5em 1.4em; margin:1.6em 0; box-shadow:var(--shadow-card); }
+    .cta h3 { font-family:var(--display); font-weight:800; font-size:1.3em; margin:0 0 .4em; color:#fff; }
+    .cta p { color:#eaf4fb; margin:0; font-size:15.5px; line-height:1.55; }
+    .cta .hl { background:linear-gradient(180deg,transparent 62%,rgba(244,184,42,.6) 0); color:#fff; }
 
     .readlist { list-style:none; padding:0; margin:.7em 0 0; }
     .readlist li { padding:.7em 0; border-top:1px solid var(--border); font-size:15px; line-height:1.5; color:#3b4757; }
@@ -149,20 +161,20 @@
     </div>
   </div>
 
-  <header class="hero" style="background-image:url('assets/pillars/birth.jpg')">
+  <header class="hero" style="background-image:url('assets/pillars/birth-ideal.jpg')">
     <div class="hero-in">
       <span class="eyebrow-loc"><span class="cat">Birth</span> Northern Ireland</span>
       <h1>Birth, As It Could Be</h1>
-      <p class="what">Calm, unhurried, and on the body's own terms.</p>
+      <p class="what">The day you meet your baby should be the most beautiful of your life — not the most frightening.</p>
     </div>
-    <span class="photocount"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="18" height="14" rx="2"/><circle cx="12" cy="13" r="3.2"/><path d="M8 6l1.5-2h5L16 6"/></svg>4 photos</span>
+    <span class="photocount"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="18" height="14" rx="2"/><circle cx="12" cy="13" r="3.2"/><path d="M8 6l1.5-2h5L16 6"/></svg>5 photos</span>
   </header>
 
   <div class="statusbar">
     <div class="wrap in">
       <div class="stats">
+        <div class="stat"><span class="ic y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z"/></svg></span><span><b>Sell the ideal</b><span>then reach for it</span></span></div>
         <div class="stat"><span class="ic g"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-6.3 7-11a7 7 0 0 0-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span><b>The very beginning</b><span>of a whole life</span></span></div>
-        <div class="stat"><span class="ic y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg></span><span><b>First-principles</b><span>not fear</span></span></div>
         <div class="stat"><span class="ic b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-6.3 7-11a7 7 0 0 0-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span><b>Northern Ireland</b><span>options &amp; philosophy</span></span></div>
       </div>
       <div class="pbtns">
@@ -174,8 +186,9 @@
 
   <section class="gallery">
     <div class="filmstrip">
-      <div class="shot"><img src="assets/pillars/birth.jpg" loading="lazy" alt="A woman resting in a warm home birthing pool, fairy lights and affirmation cards on the wall"></div>
-      <div class="shot"><img src="assets/pillars/birth-home.jpg" loading="lazy" alt="A woman labouring in a home birth pool, supported by her partner"></div>
+      <div class="shot"><img src="assets/pillars/birth-ideal.jpg" loading="lazy" alt="A warm, luxurious postnatal suite with a bassinet, soft lamps and flowers"></div>
+      <div class="shot"><img src="assets/pillars/birth-spa.jpg" loading="lazy" alt="A candlelit spa bathroom with a warm tub and soft lighting"></div>
+      <div class="shot"><img src="assets/pillars/birth.jpg" loading="lazy" alt="A warm home birthing pool with fairy lights and affirmation cards"></div>
       <div class="shot"><img src="assets/pillars/birth-support.jpg" loading="lazy" alt="A doula holding and supporting a woman in labour"></div>
       <div class="shot"><img src="assets/pillars/birth-skin.jpg" loading="lazy" alt="A mother resting skin-to-skin with her newborn baby"></div>
     </div>
@@ -183,60 +196,108 @@
 
   <div class="wrap">
     <main>
-      <section class="facts">
+      <section class="hook">
+        <p class="punch">Picture it done right: warm water, soft light, quiet music, and people you love — no clock, no strangers, no rush. A calm room you could stay in for days, every meal brought to you, nothing to do but meet your baby and be looked after. <span class="hl">That isn't a fantasy.</span> Somewhere in the world, it's simply how it's done.</p>
+        <p style="font-size:16.5px;line-height:1.6;color:#2b3a49;margin:0;">This page sells you that ideal on purpose — because you can't reach for something you can't picture. Then it shows you how close you can actually get, right here, today.</p>
+      </section>
+
+      <section class="facts" style="margin-top:22px;">
         <div class="fact"><span class="fe">⬇️</span><b>Upright</b><span>Not on your back</span></div>
         <div class="fact"><span class="fe">💧</span><b>Warm water</b><span>A birthing pool</span></div>
         <div class="fact"><span class="fe">🤝</span><b>Known faces</b><span>Continuity</span></div>
         <div class="fact"><span class="fe">🕯️</span><b>Undisturbed</b><span>Dim &amp; calm</span></div>
         <div class="fact"><span class="fe">🌙</span><b>No rush</b><span>Your own clock</span></div>
       </section>
-
-      <section class="hook">
-        <p class="punch">Birth doesn't have to mean a bright room full of strangers with a clock ticking. It can be warm water, low light, and people you trust — with a baby born calm. <span class="hl">The body already knows how</span>; the default just gets in its way.</p>
-        <ul class="keys">
-          <li><b>Let gravity do the work</b> — upright, kneeling, leaning, on all fours, the way every other mammal does it. Flat on your back is the <span class="hl">one position that fights you</span>.</li>
-          <li><b>Get in the water</b> — a deep, warm pool eases the pain and lowers the fear. <span class="hl">Many women call it the single thing</span> that changed the whole experience.</li>
-          <li><b>Keep it undisturbed</b> — oxytocin, the hormone that runs labour, is shy. Bright light, strangers and fear switch it off. <span class="hl">Dim, warm and private is the physiology</span>, not a luxury.</li>
-          <li><b>Known faces, not strangers</b> — a midwife and doula she already trusts, with a doctor on standby. Continuous support from someone known is <span class="hl">one of the best-evidenced things</span> in all of maternity care.</li>
-          <li><b>No rush</b> — much of the "cascade of intervention" starts with a clock, not a problem. Given time and calm, <span class="hl">a straightforward birth mostly runs itself</span>. It should feel closer to a retreat than an emergency.</li>
-          <li class="k-warn"><b>Safety comes first, always.</b> This is about environment and options — not medical advice, and not anti-doctor. Hospitals and obstetricians save lives when a birth needs help, which is exactly why the calm ideal keeps skilled help close by.</li>
-        </ul>
-      </section>
     </main>
   </div>
 
-  <div class="divider"></div>
-
   <div class="wrap body">
-    <div class="stat-big">
-      <div class="num">≈1 in 3</div>
-      <p class="cap">Dutch babies are born at home or in a midwife-led setting — because the whole system treats a healthy birth as normal, not a medical event.</p>
+    <p class="kick">The dream</p>
+    <h2>The birth you're not offered</h2>
+    <p>If money were no object, what would you build? Not a ward. A <b>retreat</b>. Deep warm water and candlelight. A midwife and a doula who've known you for months. Nourishing meals appearing at the door. Days, not hours — and afterwards, <span class="hl">weeks of being cared for</span>, so all you do is heal and hold your baby.</p>
+    <p>It already exists for those who can pay. In New York, <b>Boram</b> — a postnatal retreat modelled on Korean tradition, meals delivered, a staffed nursery, round-the-clock care. In California, boutique birth suites with <span class="hl">deep spa tubs and dimmable chandeliers</span>. Across Asia, whole centres built for exactly this. The ideal is real. It's just not offered to most of us — yet.</p>
+
+    <figure class="afig">
+      <img src="assets/pillars/birth-spa.jpg" loading="lazy" alt="A warm, candlelit spa suite with a deep tub">
+      <figcaption>Warm water, candlelight, no clock — the atmosphere a body actually births well in.</figcaption>
+    </figure>
+
+    <p class="kick">The betrayal</p>
+    <h2>And here's what most are given instead</h2>
+    <p>A metal bed under fluorescent light, in a room that looks designed to make you tense. One of the most sacred moments of a human life, handed the atmosphere of a procedure. <span class="hl">It wasn't an accident — it was designed this way</span>: for the system's convenience, not the mother's body.</p>
+
+    <div class="compare">
+      <figure class="good"><img src="assets/pillars/birth-spa.jpg" loading="lazy" alt="Warm candlelit birth spa"><figcaption>✓ What it could be</figcaption></figure>
+      <figure class="bad"><img src="assets/pillars/birth-grim.jpg" loading="lazy" alt="Clinical hospital delivery room"><figcaption>✕ What it usually is</figcaption></figure>
     </div>
 
-    <h2>It's normal somewhere else</h2>
-    <p>If this sounds fringe, it's only fringe <em>here</em>. Whole countries are built around birth as a normal, physiological event — proof the default isn't the only sane option.</p>
+    <div class="divider"></div>
+
+    <p class="kick">The science on your side</p>
+    <h2>Why the beautiful way is also the smart way</h2>
+    <p>Here's the part that makes it more than a nice idea: the calm, warm, unhurried birth isn't just <em>pleasant</em> — it's what the body is actually built for. The default room fights the physiology; the retreat works with it.</p>
+    <ul class="keys">
+      <li><b>Let gravity do the work</b> — upright, kneeling, leaning, the way every mammal does it. Flat on your back is the <span class="hl">one position that fights you</span>.</li>
+      <li><b>Get in the water</b> — a deep, warm pool eases pain and lowers fear. <span class="hl">Many women call it the single thing</span> that changed the whole experience.</li>
+      <li><b>Keep it undisturbed</b> — oxytocin, the hormone that runs labour, is shy. Bright light, strangers and fear switch it off. <span class="hl">Dim, warm and private is the physiology</span>, not a luxury.</li>
+      <li><b>Known faces, not strangers</b> — continuous support from someone she trusts is <span class="hl">one of the best-evidenced things</span> in all of maternity care.</li>
+      <li><b>No rush</b> — much of the "cascade of intervention" starts with a clock, not a problem. Given time and calm, <span class="hl">a straightforward birth mostly runs itself</span>.</li>
+      <li class="k-warn"><b>Safety comes first, always.</b> This is about environment and options — not medical advice, and not anti-doctor. Hospitals and obstetricians save lives when a birth needs help, which is exactly why the calm ideal keeps skilled help close by.</li>
+    </ul>
+
+    <div class="stat-big">
+      <div class="num">≈1 in 3</div>
+      <p class="cap">Dutch babies are born at home or in a midwife-led setting — because a whole country decided a healthy birth is normal, not a medical event.</p>
+    </div>
+
+    <p class="kick">Proof it's real</p>
+    <h2>It's already normal elsewhere</h2>
+    <p>If this sounds fringe, it's only fringe <em>here</em>. Whole countries are built around birth as a normal, physiological event.</p>
     <div class="worlds">
-      <div class="world"><span class="fl">🇳🇱</span><div><span class="wn">The Netherlands</span><div class="wb">The developed world's home of home birth. Healthy pregnancies are led by midwives; doctors are called only if needed.</div></div></div>
+      <div class="world"><span class="fl">🇳🇱</span><div><span class="wn">The Netherlands</span><div class="wb">The developed world's home of home birth — midwife-led for healthy pregnancies, doctors called only if needed.</div></div></div>
       <div class="world"><span class="fl">🇩🇪</span><div><span class="wn">Germany — the birth houses</span><div class="wb"><em>Geburtshäuser</em>: freestanding, midwife-run birth houses with pools and home-like rooms, hospital nearby if required.</div></div></div>
-      <div class="world"><span class="fl">🇳🇿</span><div><span class="wn">New Zealand</span><div class="wb">A woman chooses one Lead Maternity Carer — usually a midwife — who is with her through pregnancy, birth and after.</div></div></div>
-      <div class="world"><span class="fl">🇩🇰</span><div><span class="wn">Scandinavia</span><div class="wb">Midwife-led as the norm for healthy births, and some of the best maternal outcomes in the world. Calm and safe aren't a trade-off.</div></div></div>
+      <div class="world"><span class="fl">🇳🇿</span><div><span class="wn">New Zealand</span><div class="wb">One Lead Maternity Carer — usually a midwife — with the mother through pregnancy, birth and after. The known-face model, as policy.</div></div></div>
+    </div>
+
+    <p class="kick">Mothering the mother</p>
+    <h2>The world doesn't send you home the next day</h2>
+    <p>The birth is only half of it. Across the world there's an ancient answer to the exhausted new mother sent home alone: <span class="hl">weeks of being cared for</span>, so she can heal and bond while others cook, clean and hold the baby.</p>
+    <div class="worlds">
+      <div class="world"><span class="fl">🇨🇳</span><div><span class="wn">China — <em>zuo yuezi</em></span><div class="wb">"Sitting the month": 30–40 days of rest, warmth and nourishing food, family caring for mother and baby.</div></div></div>
+      <div class="world"><span class="fl">🇰🇷</span><div><span class="wn">Korea — <em>sanhujoriwon</em></span><div class="wb">Whole postpartum-care centres where a new mother stays for weeks, fed and rested while staff mind the baby.</div></div></div>
+      <div class="world"><span class="fl">🌎</span><div><span class="wn">Latin America — <em>la cuarentena</em></span><div class="wb">"The forty days": the mother rests, is fed and supported by the women around her, and simply recovers.</div></div></div>
+      <div class="world"><span class="fl">🇺🇸</span><div><span class="wn">The modern version — Boram, NYC</span><div class="wb">The old wisdom, reborn as a luxury retreat: a hotel floor, meals, a staffed nursery, 24/7 support. Proof the demand is there.</div></div></div>
+    </div>
+
+    <p class="kick">The soul of it</p>
+    <h2>A new life should be sung in</h2>
+    <p>A birth isn't paperwork — it's the arrival of a person. Around the world it's met with <b>ritual, blessing and music</b>, a whole community turning to welcome the child. Not the toxic, commercial baby-shower version — the real, wholesome one.</p>
+    <div class="worlds">
+      <div class="world"><span class="fl">🌸</span><div><span class="wn">The Blessingway</span><div class="wb">In the last weeks, the mother's closest women gather — brushing her hair, washing her feet, each giving a blessing. A baby shower for the soul.</div></div></div>
+      <div class="world"><span class="fl">🇬🇷</span><div><span class="wn">Greece — the 40-day blessing</span><div class="wb">On the fortieth day, mother and baby are welcomed and blessed, and the child is introduced to the community.</div></div></div>
+      <div class="world"><span class="fl">🇳🇿</span><div><span class="wn">Māori — <em>whenua ki te whenua</em></span><div class="wb">The placenta is returned to the ancestral land, binding the new child to place, people and belonging.</div></div></div>
+      <div class="world"><span class="fl">🎶</span><div><span class="wn">Sung in</span><div class="wb">In many cultures the baby is welcomed with singing and music — a first sound of being wanted, and celebrated.</div></div></div>
     </div>
 
     <figure class="afig">
-      <img src="assets/pillars/birth-support.jpg" loading="lazy" alt="A doula supporting a woman in labour">
-      <figcaption>Continuous support from someone she trusts is one of the best-evidenced things in all of maternity care.</figcaption>
+      <img src="assets/pillars/birth-ritual.jpg" loading="lazy" alt="A blessingway ceremony laid out with flowers, candles and gifts">
+      <figcaption>A blessingway: the wholesome, meaningful version of welcoming a new life.</figcaption>
     </figure>
 
+    <div class="divider"></div>
+
+    <p class="kick">Getting there from here</p>
     <h2>In Northern Ireland — honestly</h2>
-    <p>It's thin, and getting thinner. The freestanding midwife-led units at the Downe, Lagan Valley and the Mater have all <span class="hl">closed in recent years</span> — the alternatives squeezed out, exactly like the summer schools that spring up and vanish. But it isn't nothing, and knowing what's here is how something better gets asked for.</p>
+    <p>It's thin, and getting thinner. The freestanding midwife-led units at the Downe, Lagan Valley and the Mater have all <span class="hl">closed in recent years</span> — the alternatives squeezed out. You can't book the full ideal here yet. But you can move toward it, piece by piece — and knowing what's possible is how the first proper birth retreat on this island eventually gets built.</p>
 
     <div class="factbox">
-      <h3>What still exists here</h3>
+      <h3>What you can reach for now</h3>
       <ul>
-        <li><span class="cn">Home birth</span> — supported by the NHS trusts for straightforward pregnancies, with community midwives. Ask your trust's community midwifery team early.</li>
-        <li><span class="cn">The Active Birth Centre, Royal Jubilee Maternity (Belfast)</span> — midwife-led birthing rooms with en-suites and a fixed birthing pool.</li>
-        <li><span class="cn">Midwife-led care &amp; water birth</span> — within several NI units, though pool availability is limited — ask specifically.</li>
-        <li><span class="cn">Where-to-have-your-baby guide (NI)</span> — a useful independent overview: <a href="https://allaboutbirth.co.uk" target="_blank" rel="noopener">allaboutbirth.co.uk</a></li>
+        <li><span class="cn">A doula</span> — the known face, the continuity, the calm. The single most reachable piece of the ideal. (See the buttons at the top.)</li>
+        <li><span class="cn">Home birth</span> — supported by the NHS trusts for straightforward pregnancies. Warm water, your own space, no ward. Ask your community midwifery team early.</li>
+        <li><span class="cn">The Active Birth Centre, Royal Jubilee Maternity (Belfast)</span> — midwife-led rooms with a birthing pool.</li>
+        <li><span class="cn">Hire a birth pool &amp; hypnobirthing</span> — the water, the calm and the preparation are yours to arrange, wherever you give birth.</li>
+        <li><span class="cn">Your own blessingway</span> — the ritual and the welcome cost nothing but intention. Gather your people.</li>
       </ul>
     </div>
 
@@ -247,24 +308,25 @@
         <li><span class="cn">Mother Doula</span> — birth &amp; postnatal, NI. <a href="https://motherdoula.com" target="_blank" rel="noopener">motherdoula.com</a></li>
         <li><span class="cn">Doula of Belfast</span> — <a href="https://www.doulaofbelfast.co.uk" target="_blank" rel="noopener">doulaofbelfast.co.uk</a></li>
         <li><span class="cn">Irish Doula Directory — Ulster</span> — <a href="http://irishdouladirectory.com/doulas-in-ulster/" target="_blank" rel="noopener">irishdouladirectory.com</a></li>
-        <li><span class="cn">Hypnobirthing</span> — calm-birth preparation, widely taught here.</li>
+        <li><span class="cn">Where to have your baby (NI)</span> — <a href="https://allaboutbirth.co.uk" target="_blank" rel="noopener">allaboutbirth.co.uk</a></li>
       </ul>
     </div>
 
-    <figure class="afig">
-      <img src="assets/pillars/birth-skin.jpg" loading="lazy" alt="A mother resting skin-to-skin with her newborn">
-      <figcaption>The goal isn't only a safe birth — it's a calm, empowering, human one.</figcaption>
-    </figure>
+    <div class="cta">
+      <h3>Once you can see it, you can build it</h3>
+      <p>The default only wins while no one can picture anything else. <span class="hl">Now you can.</span> Reach for the pieces you can — a doula, a pool, a blessingway — and help make the case that Northern Ireland deserves a beautiful place to be born. That's how the first one gets built.</p>
+    </div>
 
     <h2>To read</h2>
     <ul class="readlist">
-      <li><span class="cn">Ina May's Guide to Childbirth</span> — Ina May Gaskin. The classic: birth as a normal, physiological, even joyful event.</li>
+      <li><span class="cn">Ina May's Guide to Childbirth</span> — Ina May Gaskin. Birth as a normal, physiological, even joyful event.</li>
       <li><span class="cn">Birth Reborn</span> — Michel Odent. The obstetrician on undisturbed birth, water, and the hormones the modern room disrupts.</li>
       <li><span class="cn">The Positive Birth Book</span> — Milli Hill. The practical modern on-ramp to a calm, empowered birth anywhere.</li>
-      <li><span class="cn">WHO — Intrapartum care (2018)</span> — the official guidance itself recommends companionship, movement, and against routine intervention.</li>
+      <li><span class="cn">The First Forty Days</span> — Heng Ou. The lost art of mothering the mother after birth, with the traditions behind it.</li>
+      <li><span class="cn">WHO — Intrapartum care (2018)</span> — the official guidance recommends companionship, movement, and against routine intervention.</li>
     </ul>
 
-    <div class="draft-note"><b>First draft — let's shape this together.</b> Especially the Northern Ireland services, which change often and need checking. We'll build it properly, with a vetted map of local contacts.</div>
+    <div class="draft-note"><b>First draft — let's shape this together.</b> The vision, the copy and especially the Northern Ireland resources are all evolving. The luxury-suite images are stand-ins for now — you mentioned generating a bespoke ideal hero, and this slot is ready for it. React to any of it and we'll keep refining.</div>
     <div class="foot-space"></div>
   </div>
 
