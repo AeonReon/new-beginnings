@@ -3,27 +3,79 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#4FA4D2">
+  <meta name="theme-color" content="#2E84BD">
   <title>Conscious Parenting NI</title>
   <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/png" href="icon-192.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="stylesheet" href="assets/style.css?v12">
+  <link rel="stylesheet" href="assets/style.css?v13">
+  <style>
+    /* Home: Days Out chrome — app bar, full-bleed hero, tabbed daily cards */
+    body{
+      --accent:#F4B82A; --accent-deep:#D89A0F; --green:#1F8F5E; --blue:#2E84BD; --magenta:#C73B7A;
+      --panel:#fff; --border:#E1E6EF; --text:#1A2233; --muted-dim:#7A8898;
+      --display:'Poppins',system-ui,sans-serif;
+      --grad-header:linear-gradient(135deg,#5FB0DD,#2E84BD);
+      --shadow-card:0 2px 4px rgba(20,35,60,.07),0 10px 28px rgba(20,35,60,.10);
+    }
+    .appbar{ background:var(--grad-header); box-shadow:0 2px 10px rgba(31,90,140,.18); position:sticky; top:0; z-index:40; }
+    .appbar .row{ display:grid; grid-template-columns:1fr auto 1fr; align-items:center; height:56px; max-width:1100px; margin:0 auto; padding:0 14px; }
+    .appbar .abico{ width:34px; height:34px; border-radius:9px; justify-self:start; box-shadow:0 2px 6px rgba(0,0,0,.22); }
+    .appbar .brand{ justify-self:center; font-family:var(--display); font-weight:800; font-size:17px; color:#fff; }
+    .appbar .brand .ni{ color:var(--accent); }
+    .appbar .hbtn{ justify-self:end; display:inline-flex; align-items:center; gap:6px; color:#fff; background:rgba(255,255,255,.16); border:0; cursor:pointer; font:700 12.5px/1 Inter; padding:9px 13px; border-radius:999px; }
+    .appbar .hbtn svg{ width:15px; height:15px; }
+    @media(max-width:440px){ .appbar .hbtn span{ display:none; } }
+
+    .home-hero{ position:relative; min-height:50vh; display:flex; align-items:flex-end; background:#2c3a45 center/cover no-repeat; }
+    .home-hero::after{ content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(8,16,24,0) 4%,rgba(8,16,24,.28) 48%,rgba(8,16,24,.9)); }
+    .home-hero .hin{ position:relative; z-index:2; width:100%; max-width:1100px; margin:0 auto; padding:30px 20px 26px; color:#fff; }
+    .home-hero .heye{ display:inline-block; font:800 12px/1 Inter; letter-spacing:.14em; text-transform:uppercase; color:#fde9b8; margin-bottom:11px; }
+    .home-hero h1{ font-family:var(--display); font-weight:800; font-size:clamp(30px,7vw,48px); line-height:1.03; color:#fff; margin:0; text-shadow:0 3px 26px rgba(0,0,0,.55); }
+    .home-hero .hsub{ margin:.55em 0 0; font-size:clamp(15px,2.4vw,18px); color:#f1f6fa; max-width:30ch; text-shadow:0 1px 8px rgba(0,0,0,.55); }
+    .home-hero .agepill{ position:absolute; right:16px; top:14px; z-index:3; background:rgba(255,255,255,.92); color:var(--text); font:700 12px/1 Inter; padding:.55em .95em; border-radius:999px; box-shadow:0 2px 8px rgba(0,0,0,.22); }
+
+    .launcher-main{ padding-top:18px; }
+    .daily-lead{ font-family:var(--display); font-weight:800; font-size:1.18em; color:var(--text); margin:4px 0 11px 2px; }
+
+    .week-banner{ display:block!important; text-decoration:none; border:0!important; border-radius:16px; padding:16px 18px; margin-bottom:15px; color:#fff!important; background:linear-gradient(135deg,#5FB0DD,#2E84BD)!important; box-shadow:0 3px 8px rgba(20,60,90,.14),0 14px 32px rgba(46,132,189,.22); }
+    .week-banner .week-kicker{ display:block; font:800 11px/1 Inter; letter-spacing:.12em; text-transform:uppercase; color:#fde9b8!important; margin-bottom:5px; }
+    .week-banner .week-title{ display:block; font-family:var(--display); font-weight:800; font-size:1.22em; line-height:1.2; color:#fff!important; }
+    .week-banner .week-invite{ display:block; font-size:.92em; opacity:.95; margin-top:.3em; line-height:1.4; color:#eaf4fb!important; }
+    .week-banner .week-go{ display:inline-block; margin-top:.6em; font-weight:800; font-size:.8em; color:#fff!important; }
+
+    .daily-card{ display:flex!important; align-items:stretch; gap:0; background:#fff; border:1px solid var(--border)!important; border-radius:16px; box-shadow:var(--shadow-card); overflow:hidden; margin-bottom:12px; padding:0!important; }
+    .daily-card::before{ display:none!important; }
+    .dc-tab{ flex:none; width:66px; background:var(--dc); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; color:#fff; text-align:center; }
+    .dc-ic{ font-size:23px; line-height:1; filter:drop-shadow(0 1px 2px rgba(0,0,0,.28)); }
+    .dc-tag{ font:800 10px/1 Inter; letter-spacing:.09em; text-transform:uppercase; }
+    .dc-main{ flex:1; min-width:0; padding:14px 16px 13px; }
+    .daily-card .daily-title{ font-family:var(--display); font-weight:800; font-size:1.13em; color:var(--text); letter-spacing:-.01em; margin:0 0 .25em; line-height:1.2; }
+    .daily-card .daily-body{ color:#4d5a6e; font-size:.95em; line-height:1.5; margin:0 0 .7em; }
+    .daily-card .daily-foot{ display:flex; align-items:baseline; justify-content:space-between; gap:.8em; }
+    .daily-card .daily-src{ font-weight:700; font-size:.82em; color:var(--dc); border-bottom:none; }
+    .daily-card .daily-more{ flex-shrink:0; background:none; border:0; padding:0; cursor:pointer; font:700 .78em Inter; color:var(--muted-dim); display:inline-flex; align-items:center; gap:.35em; }
+    .daily-card .daily-more::before{ display:none!important; }
+  </style>
 </head>
 <body class="launcher">
-  <header class="launcher-hero">
-    <div class="page-cover home-cover" style="--hc:#4FA4D2;--hcd:#2D6FA8;">
-      <img src="assets/pillars/home.jpg" alt="">
-      <div class="page-cover-veil"></div>
-      <div class="age-pill" title="Other ages coming soon">For a 4-year-old</div>
-      <div class="page-cover-text">
-        <div class="home-brand-row">
-          <img src="icon-192.png" alt="" class="home-brand-icon">
-          <span class="page-eyebrow">Northern Ireland</span>
-        </div>
-        <h1>Conscious Parenting NI</h1>
-        <p class="page-tagline">The best of every tradition for raising a bright, happy child.</p>
-      </div>
+  <div class="appbar">
+    <div class="row">
+      <img src="icon-192.png" alt="" class="abico">
+      <span class="brand">Conscious Parenting <span class="ni">NI</span></span>
+      <button class="hbtn" onclick="shareIt()" title="Share">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>
+        <span>Share</span>
+      </button>
+    </div>
+  </div>
+
+  <header class="home-hero" style="background-image:url('assets/pillars/home-hero.jpg')">
+    <span class="agepill" title="Other ages coming soon">For a 4-year-old</span>
+    <div class="hin">
+      <span class="heye">Northern Ireland</span>
+      <h1>Conscious Parenting NI</h1>
+      <p class="hsub">The best of every tradition for raising a bright, happy child.</p>
     </div>
   </header>
 
@@ -51,42 +103,50 @@
       </a>
       <div class="daily-lead">For today</div>
 
-      <article class="daily-card" id="playCard" style="--dc:#4FA4D2;">
-        <div class="daily-kicker">🎲 A game to play now</div>
-        <div class="daily-title" id="playTitle"></div>
-        <div class="daily-body" id="playBody"></div>
-        <div class="daily-foot">
-          <a class="daily-src" href="games.html">More games — no kit, no screen →</a>
-          <button class="daily-more" data-more="play" type="button">Another <span aria-hidden="true">↻</span></button>
+      <article class="daily-card" id="playCard" style="--dc:#2E84BD;">
+        <div class="dc-tab"><span class="dc-ic">🎲</span><span class="dc-tag">Play</span></div>
+        <div class="dc-main">
+          <div class="daily-title" id="playTitle"></div>
+          <div class="daily-body" id="playBody"></div>
+          <div class="daily-foot">
+            <a class="daily-src" href="games.html">More games →</a>
+            <button class="daily-more" data-more="play" type="button">Another <span aria-hidden="true">↻</span></button>
+          </div>
         </div>
       </article>
 
-      <article class="daily-card" id="doCard" style="--dc:#F4B82A;">
-        <div class="daily-kicker">☀️ One small thing to do</div>
-        <div class="daily-title" id="doTitle"></div>
-        <div class="daily-body" id="doBody"></div>
-        <div class="daily-foot">
-          <a class="daily-src" id="doSrc" href="#"></a>
-          <button class="daily-more" data-more="do" type="button">Another <span aria-hidden="true">↻</span></button>
+      <article class="daily-card" id="doCard" style="--dc:#E0951A;">
+        <div class="dc-tab"><span class="dc-ic">☀️</span><span class="dc-tag">Do</span></div>
+        <div class="dc-main">
+          <div class="daily-title" id="doTitle"></div>
+          <div class="daily-body" id="doBody"></div>
+          <div class="daily-foot">
+            <a class="daily-src" id="doSrc" href="#"></a>
+            <button class="daily-more" data-more="do" type="button">Another <span aria-hidden="true">↻</span></button>
+          </div>
         </div>
       </article>
 
       <article class="daily-card ponder" id="ponderCard" style="--dc:#1F8F5E;">
-        <div class="daily-kicker">💭 Something to ponder</div>
-        <div class="daily-body" id="ponderBody"></div>
-        <div class="daily-foot">
-          <a class="daily-src" id="ponderSrc" href="#"></a>
-          <button class="daily-more" data-more="ponder" type="button">Another <span aria-hidden="true">↻</span></button>
+        <div class="dc-tab"><span class="dc-ic">💭</span><span class="dc-tag">Think</span></div>
+        <div class="dc-main">
+          <div class="daily-body" id="ponderBody"></div>
+          <div class="daily-foot">
+            <a class="daily-src" id="ponderSrc" href="#"></a>
+            <button class="daily-more" data-more="ponder" type="button">Another <span aria-hidden="true">↻</span></button>
+          </div>
         </div>
       </article>
 
-      <article class="daily-card" id="cookCard" style="--dc:#E4568A;">
-        <div class="daily-kicker">🍳 Something nice to make together</div>
-        <div class="daily-title" id="cookTitle"></div>
-        <div class="daily-body" id="cookBody"></div>
-        <div class="daily-foot">
-          <a class="daily-src" href="recipes.html">More real-food recipes — no poison →</a>
-          <button class="daily-more" data-more="cook" type="button">Another <span aria-hidden="true">↻</span></button>
+      <article class="daily-card" id="cookCard" style="--dc:#C73B7A;">
+        <div class="dc-tab"><span class="dc-ic">🍳</span><span class="dc-tag">Cook</span></div>
+        <div class="dc-main">
+          <div class="daily-title" id="cookTitle"></div>
+          <div class="daily-body" id="cookBody"></div>
+          <div class="daily-foot">
+            <a class="daily-src" href="recipes.html">More recipes →</a>
+            <button class="daily-more" data-more="cook" type="button">Another <span aria-hidden="true">↻</span></button>
+          </div>
         </div>
       </article>
     </section>
@@ -258,21 +318,18 @@
       function showCook() {
         if (!recipes.length) { el('cookCard').hidden = true; return; }
         const r = pick(recipes, cookOff), kd = (window.RECIPE_KINDS || {})[r.kind] || {};
-        el('cookCard').style.setProperty('--dc', kd.c || '#E4568A');
         el('cookTitle').textContent = (r.emoji ? r.emoji + '  ' : '') + r.name;
         el('cookBody').textContent = r.blurb;
       }
       function showPlay() {
         if (!games.length) { el('playCard').hidden = true; return; }
         const g = pick(games, playOff), gc = groups[g.group] || {};
-        el('playCard').style.setProperty('--dc', gc.c || '#4FA4D2');
         el('playTitle').textContent = g.name;
         el('playBody').textContent = g.how;
       }
       function showDo() {
         if (!deeds.length) { el('doCard').hidden = true; return; }
         const a = (doOff === 0 && weekDeeds.length) ? wrap(weekDeeds, dayNum) : pick(deeds, doOff);
-        el('doCard').style.setProperty('--dc', a.color);
         el('doTitle').textContent = a.name;
         el('doBody').textContent = a.body;
         const s = el('doSrc');
@@ -283,7 +340,6 @@
         if (!ponders.length) { el('ponderCard').hidden = true; return; }
         const p = (ponderOff === 0 && weekPonders.length) ? wrap(weekPonders, dayNum) : pick(ponders, ponderOff);
         const m = methodById[p.trad];
-        el('ponderCard').style.setProperty('--dc', (m && m.color) || '#1F8F5E');
         el('ponderBody').textContent = p.text;
         const s = el('ponderSrc');
         s.textContent = '— ' + p.source + (m ? ' · ' + m.name + ' →' : '');
@@ -306,6 +362,11 @@
 
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));
+    }
+    function shareIt(){
+      const d={title:'Conscious Parenting NI',url:location.origin+location.pathname};
+      if(navigator.share){navigator.share(d).catch(()=>{});}
+      else if(navigator.clipboard){navigator.clipboard.writeText(d.url);}
     }
   </script>
 </body>
