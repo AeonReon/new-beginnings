@@ -80,9 +80,9 @@
     <div class="row">
       <img src="icon-192.png" alt="" class="abico">
       <span class="brand">Conscious Parenting <span class="ni">NI</span></span>
-      <button class="hbtn" onclick="shareIt()" title="Share">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>
-        <span>Share</span>
+      <button class="hbtn" onclick="openInstall()" title="Add to Home Screen">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M12 3l-4 4M12 3l4 4"/><path d="M4 13v6a2 2 0 002 2h12a2 2 0 002-2v-6"/></svg>
+        <span>Get app</span>
       </button>
     </div>
   </div>
@@ -378,9 +378,30 @@
       window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));
     }
     function shareIt(){
-      const d={title:'Conscious Parenting NI',url:location.origin+location.pathname};
+      const d={title:'Conscious Parenting NI',text:'A calm, first-principles guide to raising a bright, happy child.',url:location.origin+location.pathname};
       if(navigator.share){navigator.share(d).catch(()=>{});}
       else if(navigator.clipboard){navigator.clipboard.writeText(d.url);}
+    }
+    function openInstall(){
+      if(!window.RecipeModal){shareIt();return;}
+      const isIOS=/iphone|ipad|ipod/i.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+      const ios='<p class="rcm-h">On iPhone &amp; iPad</p><ol class="rcm-steps">'
+        +'<li>Tap the <b>Share</b> icon at the bottom of Safari.</li>'
+        +'<li>Scroll down and choose <b>Add to Home Screen</b>.</li>'
+        +'<li>Tap <b>Add</b> — the icon lands on your home screen.</li></ol>';
+      const android='<p class="rcm-h">On Android</p><ol class="rcm-steps">'
+        +'<li>Tap the <b>⋮</b> menu in Chrome (top right).</li>'
+        +'<li>Choose <b>Add to Home screen</b>.</li>'
+        +'<li>Tap <b>Add</b>.</li></ol>';
+      window.RecipeModal.openContent({
+        compact:true,
+        accent:{c:'#4FA4D2',cd:'#2D6FA8',cs:'#EAF4FB'},
+        emoji:'📲', kicker:'Free · works offline', title:'Add to Home Screen',
+        blurb:'Pop it on your home screen and it opens full-screen like a normal app — no app store, no sign-in.',
+        bodyHTML:(isIOS?ios+android:android+ios)
+          +'<button class="read-btn rcm-read" id="installShareBtn" type="button">🔗 Share this app</button>',
+        onReady:function(b){var s=b.querySelector('#installShareBtn'); if(s) s.addEventListener('click',shareIt);}
+      });
     }
   </script>
 </body>

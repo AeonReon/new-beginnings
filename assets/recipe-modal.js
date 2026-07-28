@@ -23,6 +23,7 @@
     display:flex;flex-direction:column;min-height:0;overflow:hidden;
     animation:rcmRise .28s cubic-bezier(0.34,1.56,0.64,1);}
   @keyframes rcmRise{from{transform:translateY(24px) scale(.98);opacity:.4;}}
+  .rcm-modal.rcm-compact{height:auto;}
   .rcm-hero{margin:-1.6em -1.5em 1.4em;height:210px;background:var(--rcs,#FCE7F3);position:relative;}
   .rcm-hero img{width:100%;height:100%;object-fit:cover;display:block;}
   .rcm-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 62%,rgba(0,0,0,.22));}
@@ -121,9 +122,10 @@
   }
 
   // Core renderer used by both open() and openContent().
-  function show({ accent, image, imageAlt, head, bodyHTML, onReady }) {
+  function show({ accent, image, imageAlt, head, bodyHTML, onReady, compact }) {
     ensureDom();
     const a = accent || {};
+    panel.classList.toggle('rcm-compact', !!compact);
     panel.style.cssText = `--rc:${a.c || '#C73B7A'};--rcd:${a.cd || '#A21D57'};--rcs:${a.cs || '#FCE7F3'};`;
     const hero = image
       ? `<div class="rcm-hero"><img src="${esc(image)}" alt="${esc(imageAlt || '')}" onerror="this.parentNode.style.display='none'"></div>`
@@ -184,6 +186,7 @@
       head: headHTML({ kicker: o.kicker, emoji: o.emoji, title: o.title, blurb: o.blurb }),
       bodyHTML: o.bodyHTML || '',
       onReady: o.onReady,
+      compact: o.compact,
     });
   }
 
