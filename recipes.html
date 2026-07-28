@@ -12,77 +12,97 @@
   <style>
     [hidden] { display: none !important; }
 
-    /* Kind quick-filter chips */
-    .kind-row { display: flex; flex-wrap: wrap; gap: 0.5em; margin: 0 0 0.4em; }
+    /* Filter chips — same family as the app's tiles */
+    .kind-row { display: flex; flex-wrap: wrap; gap: 0.5em; margin: 1.6em 0 0.5em; }
     .kind-chip {
-      font-family: var(--sans); font-size: 0.92rem; font-weight: 700;
+      font-family: var(--sans); font-size: 0.9rem; font-weight: 700;
       color: var(--ink-soft); background: var(--paper-card);
       border: 1.5px solid var(--rule-strong); border-radius: var(--radius-pill);
       padding: 0.5em 1.05em; cursor: pointer;
       transition: transform 0.15s cubic-bezier(0.34,1.56,0.64,1), border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
     }
     .kind-chip:hover { transform: translateY(-1px); border-color: var(--rc, var(--sky)); }
-    .kind-chip.active { color: white; border-color: transparent; box-shadow: var(--shadow-sm); background: var(--rc, var(--sky)); }
+    .kind-chip.active { color: #fff; border-color: transparent; box-shadow: var(--shadow-sm); background: var(--rc, var(--sky)); }
+    #count { font-family: var(--sans); font-size: 0.85em; color: var(--ink-mute); margin: 0.1em 0 1.3em 0.15em; }
 
-    #count { font-family: var(--sans); font-size: 0.85em; color: var(--ink-mute); margin: 0.2em 0 1.4em; }
-
-    /* ─── Summary tile grid ─── */
-    .recipe-grid { display: grid; grid-template-columns: 1fr; gap: 1.05em; }
-    @media (min-width: 560px) { .recipe-grid { grid-template-columns: 1fr 1fr; } }
+    /* Photo tiles — mirror .tile.has-photo from the app */
+    .recipe-grid { display: grid; grid-template-columns: 1fr; gap: 1.15em; }
+    @media (min-width: 620px) { .recipe-grid { grid-template-columns: 1fr 1fr; } }
 
     .recipe-tile {
-      position: relative; text-align: left; cursor: pointer;
-      background: var(--paper-card); border: none; border-radius: 20px;
-      padding: 1.15em 1.2em 1.25em; color: inherit; font: inherit;
-      box-shadow: var(--shadow-sm);
+      position: relative; text-align: left; cursor: pointer; color: inherit; font: inherit;
+      background: var(--paper-card); border: none; border-radius: var(--radius-lg);
+      padding: 0 0 1.15em; overflow: hidden; box-shadow: var(--shadow-sm);
       transition: transform 0.18s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.18s ease;
-      overflow: hidden;
     }
-    /* masked gradient outline, per-tile accent */
     .recipe-tile::before {
-      content: ""; position: absolute; inset: 0; border-radius: 20px; padding: 2px;
+      content: ""; position: absolute; inset: 0; border-radius: var(--radius-lg); padding: 1.5px;
       background: linear-gradient(135deg, var(--rc), var(--rcd));
       -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-      -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none;
+      -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; opacity: 0.55;
+      transition: opacity 0.18s ease;
     }
-    .recipe-tile:hover, .recipe-tile:focus-visible { transform: translateY(-3px); box-shadow: var(--shadow-md, 0 10px 26px rgba(0,0,0,0.12)); outline: none; }
-    .recipe-tile:active { transform: scale(0.98); }
+    .recipe-tile:hover, .recipe-tile:focus-visible { transform: translateY(-3px); box-shadow: var(--shadow-md, 0 12px 30px rgba(0,0,0,0.13)); outline: none; }
+    .recipe-tile:hover::before { opacity: 1; }
+    .recipe-tile:active { transform: scale(0.985); }
 
-    .tile-top { display: flex; align-items: center; gap: 0.6em; margin-bottom: 0.55em; }
-    .tile-emoji {
-      font-size: 1.55rem; line-height: 1; width: 2.1em; height: 2.1em; flex: none;
-      display: grid; place-items: center; border-radius: 15px; background: var(--rcs);
+    .rt-photo { position: relative; height: 158px; background: var(--rcs); }
+    .rt-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .rt-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.28)); }
+    .rt-emoji {
+      position: absolute; left: 12px; bottom: -18px; z-index: 2;
+      width: 46px; height: 46px; border-radius: 14px; background: #fff;
+      display: grid; place-items: center; font-size: 1.5rem;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.18); border: 2px solid var(--rc);
     }
-    .tile-heads { min-width: 0; }
-    .tile-heads h3 { margin: 0; font-size: 1.1rem; line-height: 1.15; }
-    .tile-tag { font-size: 0.6rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--rcd); }
-    .tile-blurb { margin: 0 0 0.85em; color: var(--ink-soft); font-size: 0.96em; }
-    .tile-foot { display: flex; align-items: center; justify-content: space-between; gap: 0.5em; flex-wrap: wrap; }
-    .tile-meta { display: flex; gap: 0.4em; flex-wrap: wrap; }
+    .rt-tag {
+      position: absolute; right: 11px; top: 11px; z-index: 2;
+      font-family: var(--sans); font-size: 0.6rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
+      color: #fff; background: var(--rc); padding: 0.34em 0.7em; border-radius: var(--radius-pill);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.22);
+    }
+    .rt-body { padding: 0 1.15em; margin-top: 26px; }
+    .rt-body h3 { font-family: var(--serif); font-weight: 800; font-size: 1.12rem; color: var(--ink); margin: 0 0 0.25em; line-height: 1.18; }
+    .rt-blurb { color: var(--ink-soft); font-size: 0.95em; line-height: 1.4; margin: 0 0 0.85em; }
+    .rt-foot { display: flex; align-items: center; justify-content: space-between; gap: 0.5em; flex-wrap: wrap; }
+    .rt-meta { display: flex; gap: 0.38em; flex-wrap: wrap; }
     .chip {
-      font-family: var(--sans); font-size: 0.7rem; font-weight: 700;
-      padding: 0.28em 0.7em; border-radius: var(--radius-pill);
+      font-family: var(--sans); font-size: 0.68rem; font-weight: 700;
+      padding: 0.28em 0.68em; border-radius: var(--radius-pill);
       background: var(--rcs); color: var(--rcd);
     }
-    .tile-open { font-family: var(--sans); font-size: 0.78rem; font-weight: 800; color: var(--rcd); white-space: nowrap; }
+    .rt-open { font-family: var(--sans); font-size: 0.76rem; font-weight: 800; color: var(--rcd); white-space: nowrap; }
 
+    .credits-card p { margin: 0 0 0.5em; }
+    .credits-card p:last-child { margin-bottom: 0; }
+    .credits-card a { color: var(--rcd, #A21D57); font-weight: 700; }
     .empty { color: var(--ink-mute); font-style: italic; margin: 2em 0; }
   </style>
 </head>
-<body>
-  <main>
-    <h1>Recipes</h1>
-    <p class="lede">
-      Fun little things to make <em>with</em> your child — snacks, savoury dinners,
-      naturally-sweet puddings and playful builds, all from real food with none of
-      the sugar-loads, E-numbers and additives the shop versions carry. All
-      low-skill, all quick, all a few simple steps.
-      <strong>Tap any recipe to open it and cook together.</strong>
+<body class="launcher">
+  <main class="launcher-main article">
+    <header class="page-hero" style="--hc:#E4568A;--hcd:#A21D57;">
+      <div class="page-cover">
+        <img src="assets/pillars/food.jpg" alt="">
+        <div class="page-cover-veil"></div>
+        <div class="page-cover-text">
+          <div class="page-eyebrow">Conscious Parenting NI</div>
+          <h1>Recipes</h1>
+          <p class="page-tagline">Fun food to make with little hands.</p>
+        </div>
+      </div>
+    </header>
+
+    <p class="page-intro">
+      Snacks, savoury dinners, naturally-sweet puddings and playful builds — all
+      from real food, with none of the sugar-loads, E-numbers and additives the
+      shop versions carry. Every one is low-skill, quick, and gives your child a
+      job of their own. <strong>Tap any recipe to open it and cook together.</strong>
     </p>
 
     <button class="read-btn" id="read-btn">▶ Read aloud</button>
 
-    <div class="card" style="margin-top: 1.2em;">
+    <div class="card">
       <h3>Why cook it together</h3>
       <p class="why" style="margin-bottom: 0;">
         The fix for fussy eating isn't a lecture, it's a countertop. When a child
@@ -96,11 +116,20 @@
 
     <div class="kind-row" id="kind-row"></div>
     <p id="count"></p>
-
     <div class="recipe-grid" id="list"></div>
+
+    <div class="card credits-card" style="margin-top: 1.8em;">
+      <h3>About the photos</h3>
+      <p>The recipe photos are gathered from around the web to show what each dish
+      can look like. This is a free, non-commercial app made to help families.</p>
+      <p>If one of the photos is yours and you'd rather it wasn't here, just email
+      <a href="mailto:images@aeonreon.com">images@aeonreon.com</a> and it'll be
+      taken down straight away.</p>
+    </div>
   </main>
 
   <script src="assets/recipes-data.js"></script>
+  <script src="assets/recipe-credits.js"></script>
   <script src="assets/reader.js"></script>
   <script src="assets/recipe-modal.js"></script>
   <script src="assets/app.js"></script>
@@ -116,7 +145,6 @@
         ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
     }
 
-    // Kind filter chips
     kindRow.innerHTML =
       `<button type="button" class="kind-chip active" data-kind="" style="--rc:var(--sky);">All</button>` +
       KIND_ORDER.map(k => {
@@ -136,20 +164,22 @@
       return `
         <button type="button" class="recipe-tile" data-id="${r.id}"
                 style="--rc:${kd.c};--rcd:${kd.cd};--rcs:${kd.cs};">
-          <div class="tile-top">
-            <span class="tile-emoji">${r.emoji}</span>
-            <div class="tile-heads">
-              <span class="tile-tag">${esc(kd.label)}</span>
-              <h3>${esc(r.name)}</h3>
-            </div>
+          <div class="rt-photo">
+            <img src="assets/recipes/${r.id}.jpg" alt="${esc(r.name)}" loading="lazy"
+                 onerror="this.style.display='none'">
+            <span class="rt-tag">${esc(kd.label)}</span>
+            <span class="rt-emoji">${r.emoji}</span>
           </div>
-          <p class="tile-blurb">${esc(r.blurb)}</p>
-          <div class="tile-foot">
-            <div class="tile-meta">
-              <span class="chip">⏱ ${esc(r.time)}</span>
-              <span class="chip">Makes ${esc(r.makes)}</span>
+          <div class="rt-body">
+            <h3>${esc(r.name)}</h3>
+            <p class="rt-blurb">${esc(r.blurb)}</p>
+            <div class="rt-foot">
+              <div class="rt-meta">
+                <span class="chip">⏱ ${esc(r.time)}</span>
+                <span class="chip">Makes ${esc(r.makes)}</span>
+              </div>
+              <span class="rt-open">Cook together →</span>
             </div>
-            <span class="tile-open">Cook together →</span>
           </div>
         </button>`;
     }

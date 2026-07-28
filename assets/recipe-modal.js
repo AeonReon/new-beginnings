@@ -15,8 +15,13 @@
   @keyframes rcmFade{from{opacity:0;}}
   .rcm-modal{position:relative;background:var(--paper,#fffdf8);width:100%;max-width:560px;
     max-height:92vh;border-radius:24px 24px 0 0;box-shadow:0 -8px 40px rgba(0,0,0,.25);
-    display:flex;flex-direction:column;min-height:0;border-top:6px solid var(--rc,#C73B7A);
+    display:flex;flex-direction:column;min-height:0;overflow:hidden;border-top:6px solid var(--rc,#C73B7A);
     animation:rcmRise .28s cubic-bezier(0.34,1.56,0.64,1);}
+  .rcm-hero{margin:-1.6em -1.5em 1.4em;height:210px;background:var(--rcs,#FCE7F3);position:relative;}
+  .rcm-hero img{width:100%;height:100%;object-fit:cover;display:block;}
+  .rcm-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 62%,rgba(0,0,0,.22));}
+  .rcm-credit{margin:1.5em 0 0;font-size:.72em;color:var(--ink-mute,#8a97a3);}
+  .rcm-credit a{color:inherit;text-decoration:underline;}
   @media(min-width:560px){.rcm-modal{border-radius:22px;border-top:none;box-shadow:0 20px 60px rgba(0,0,0,.3);}}
   @keyframes rcmRise{from{transform:translateY(24px);opacity:.4;}}
   .rcm-close{position:absolute;top:12px;right:12px;z-index:3;width:40px;height:40px;
@@ -96,7 +101,10 @@
   function html(r, kd) {
     const ingredients = r.ingredients.map(i => `<li>${esc(i)}</li>`).join('');
     const steps = r.steps.map(s => `<li>${esc(s)}</li>`).join('');
+    const cred = (window.RECIPE_CREDITS || {})[r.id];
     return `
+      <div class="rcm-hero"><img src="assets/recipes/${r.id}.jpg" alt="${esc(r.name)}"
+        onerror="this.parentNode.style.display='none'"></div>
       <div class="rcm-head">
         <span class="rcm-tag">${esc(kd.label || '')}</span>
         <h2><span class="rcm-emoji">${r.emoji || ''}</span>${esc(r.name)}</h2>
@@ -114,7 +122,8 @@
       <ol class="rcm-steps">${steps}</ol>
       ${r.why ? `<p class="rcm-why">${esc(r.why)}</p>` : ''}
       ${r.instead ? `<p class="rcm-instead"><b>Instead of the shop version —</b> ${esc(r.instead)}</p>` : ''}
-      <button class="read-btn rcm-read" type="button">▶ Read this recipe aloud</button>`;
+      <button class="read-btn rcm-read" type="button">▶ Read this recipe aloud</button>
+      ${cred && cred.source ? `<p class="rcm-credit">Photo via the web — <a href="${esc(cred.source)}" target="_blank" rel="noopener">source</a>. Yours? <a href="mailto:images@aeonreon.com">tell us</a> and it comes down.</p>` : ''}`;
   }
 
   function open(id) {
