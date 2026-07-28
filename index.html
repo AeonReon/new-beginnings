@@ -60,16 +60,19 @@
     .today-head{ display:flex; align-items:center; justify-content:space-between; margin:0 0 11px; }
     .today-shuffle{ background:none; border:0; cursor:pointer; font:800 .82em Inter; color:var(--muted-dim); display:inline-flex; gap:.4em; align-items:center; padding:.3em .1em; }
     .today-shuffle:active{ transform:scale(.95); }
-    .today-grid{ display:grid; grid-template-columns:1fr 1fr; gap:.8em; }
-    @media(min-width:720px){ .today-grid{ grid-template-columns:repeat(4,1fr); } }
-    .today-card{ position:relative; aspect-ratio:1/1; border:none; padding:0; cursor:pointer; border-radius:18px; overflow:hidden; text-align:left; background:linear-gradient(150deg,var(--tc),var(--tcd)); box-shadow:var(--shadow-card); transition:transform .18s cubic-bezier(0.34,1.56,0.64,1), box-shadow .18s ease; }
-    .today-card:hover{ transform:translateY(-3px); }
-    .today-card:active{ transform:scale(.97); }
-    .today-card .tc-glyph{ position:absolute; inset:0; display:grid; place-items:center; font-size:3.2rem; opacity:.92; filter:drop-shadow(0 2px 4px rgba(0,0,0,.25)); }
-    .today-card img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:1; }
-    .today-card .tc-veil{ position:absolute; inset:0; z-index:2; background:linear-gradient(180deg,rgba(0,0,0,.02) 30%,rgba(0,0,0,.66)); }
-    .today-card .tc-cat{ position:absolute; top:9px; left:9px; z-index:3; font:800 10px/1 Inter; letter-spacing:.07em; text-transform:uppercase; color:#fff; background:var(--tc); padding:.44em .68em; border-radius:999px; box-shadow:0 2px 6px rgba(0,0,0,.28); display:inline-flex; gap:.35em; align-items:center; }
-    .today-card .tc-title{ position:absolute; left:11px; right:11px; bottom:10px; z-index:3; color:#fff; font-family:var(--display); font-weight:800; font-size:1.02em; line-height:1.16; text-shadow:0 2px 8px rgba(0,0,0,.55); display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+    /* four equal horizontal bars: text on the left, square image on the right */
+    .today-list{ display:flex; flex-direction:column; gap:.7em; }
+    .today-bar{ position:relative; display:flex; align-items:stretch; width:100%; border:none; padding:0; cursor:pointer; text-align:left; background:var(--panel,#fff); border-radius:16px; overflow:hidden; box-shadow:var(--shadow-card); transition:transform .15s cubic-bezier(0.34,1.56,0.64,1), box-shadow .15s ease; }
+    .today-bar::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:5px; z-index:3; background:linear-gradient(180deg,var(--tc),var(--tcd)); }
+    .today-bar:hover{ transform:translateY(-2px); box-shadow:0 6px 16px rgba(20,35,60,.13); }
+    .today-bar:active{ transform:scale(.99); }
+    .today-bar .tb-text{ flex:1; min-width:0; padding:.85em 1em .85em 1.2em; display:flex; flex-direction:column; justify-content:center; gap:.16em; }
+    .today-bar .tb-kicker{ font:800 .64rem/1 Inter; letter-spacing:.09em; text-transform:uppercase; color:var(--tcd); display:inline-flex; gap:.4em; align-items:center; }
+    .today-bar .tb-title{ font-family:var(--display); font-weight:800; font-size:1.04em; color:var(--text); line-height:1.18; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+    .today-bar .tb-teaser{ font-size:.87em; color:var(--muted-dim); line-height:1.34; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+    .today-bar .tb-photo{ flex:none; width:104px; align-self:stretch; position:relative; overflow:hidden; background:linear-gradient(150deg,var(--tc),var(--tcd)); }
+    .today-bar .tb-glyph{ position:absolute; inset:0; display:grid; place-items:center; font-size:2.3rem; filter:drop-shadow(0 2px 3px rgba(0,0,0,.22)); }
+    .today-bar .tb-photo img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:1; }
   </style>
 </head>
 <body class="launcher">
@@ -119,7 +122,7 @@
         <div class="daily-lead">For today</div>
         <button class="today-shuffle" id="todayShuffle" type="button">Shuffle <span aria-hidden="true">↻</span></button>
       </div>
-      <div class="today-grid" id="todayGrid"></div>
+      <div class="today-list" id="todayGrid"></div>
     </section>
 
     <section class="tile-section">
@@ -305,13 +308,17 @@
         return { r, g, a, p };
       }
 
-      function cardFace(type, emoji, cat, title, image, acc) {
-        return `<button class="today-card" data-c="${type}" style="--tc:${acc.c};--tcd:${acc.cd};">
-            <span class="tc-glyph">${emoji}</span>
-            ${image ? `<img src="${image}" alt="" loading="lazy" onerror="this.remove()">` : ''}
-            <span class="tc-veil"></span>
-            <span class="tc-cat">${emoji} ${cat}</span>
-            <span class="tc-title">${esc(title)}</span>
+      function barFace(type, emoji, kicker, title, teaser, image, acc) {
+        return `<button class="today-bar" data-c="${type}" style="--tc:${acc.c};--tcd:${acc.cd};">
+            <span class="tb-text">
+              <span class="tb-kicker">${emoji} ${kicker}</span>
+              <span class="tb-title">${esc(title)}</span>
+              <span class="tb-teaser">${esc(teaser)}</span>
+            </span>
+            <span class="tb-photo">
+              <span class="tb-glyph">${emoji}</span>
+              ${image ? `<img src="${image}" alt="" loading="lazy" onerror="this.remove()">` : ''}
+            </span>
           </button>`;
       }
 
@@ -328,7 +335,7 @@
       function openDo(a) {
         const m = methodById[a.id] || {};
         window.RecipeModal.openContent({
-          accent: ACC.do, image: m.image, kicker: 'One small thing today', emoji: '☀️', title: a.name,
+          accent: ACC.do, image: 'assets/daily/do.jpg', kicker: 'One small thing today', emoji: '☀️', title: a.name,
           bodyHTML:
             `<div class="rcm-prose"><p>${esc(a.body)}</p></div>` +
             (a.method ? `<a class="rcm-morelink" href="methodology.html?id=${a.id}">From ${esc(a.method)} →</a>` : ''),
@@ -337,7 +344,7 @@
       function openThink(p) {
         const m = methodById[p.trad] || {};
         window.RecipeModal.openContent({
-          accent: ACC.think, image: m.image, kicker: 'A thought for today', emoji: '💭', title: p.source,
+          accent: ACC.think, image: 'assets/daily/think.jpg', kicker: 'A thought for today', emoji: '💭', title: p.source,
           bodyHTML:
             `<p class="rcm-quote">${esc(p.text)}</p>` +
             `<p class="rcm-source">— ${esc(p.source)}${m.name ? ' · ' + esc(m.name) : ''}</p>` +
@@ -348,12 +355,12 @@
       function render() {
         const { r, g, a, p } = today();
         const grid = el('todayGrid');
-        const cards = [];
-        if (g) cards.push(cardFace('play', '🎲', 'Play', g.name, 'assets/daily/play.jpg', ACC.play));
-        if (a) cards.push(cardFace('do', '☀️', 'Do', a.name, (methodById[a.id] || {}).image, ACC.do));
-        if (p) cards.push(cardFace('think', '💭', 'Think', p.source, (methodById[p.trad] || {}).image, ACC.think));
-        if (r) cards.push(cardFace('cook', '🍳', 'Cook', r.name, 'assets/recipes/' + r.id + '.jpg', ACC.cook));
-        grid.innerHTML = cards.join('');
+        const bars = [];
+        if (g) bars.push(barFace('play', '🎲', "Today's game", g.name, g.how, 'assets/daily/play.jpg', ACC.play));
+        if (a) bars.push(barFace('do', '☀️', 'One little thing', a.name, a.body, 'assets/daily/do.jpg', ACC.do));
+        if (p) bars.push(barFace('think', '💭', 'A thought', p.source, p.text, 'assets/daily/think.jpg', ACC.think));
+        if (r) bars.push(barFace('cook', '🍳', 'Cook together', r.name, r.blurb, 'assets/recipes/' + r.id + '.jpg', ACC.cook));
+        grid.innerHTML = bars.join('');
         const wire = (sel, fn) => { const b = grid.querySelector(sel); if (b) b.addEventListener('click', fn); };
         if (g) wire('[data-c="play"]', () => openPlay(g));
         if (a) wire('[data-c="do"]', () => openDo(a));

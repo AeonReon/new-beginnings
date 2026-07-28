@@ -11,17 +11,18 @@
 
   const CSS = `
   .rcm-backdrop{position:fixed;inset:0;z-index:1000;background:rgba(20,28,36,.55);
-    display:flex;align-items:flex-end;justify-content:center;padding:0;
+    display:flex;align-items:center;justify-content:center;box-sizing:border-box;
+    padding:max(6vh,env(safe-area-inset-top)) 16px max(6vh,env(safe-area-inset-bottom));
     -webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);animation:rcmFade .2s ease;}
   .rcm-backdrop[hidden]{display:none!important;}
-  @media(min-width:560px){.rcm-backdrop{align-items:center;padding:4vh 4vw;}}
+  @media(min-width:560px){.rcm-backdrop{padding:6vh 4vw;}}
   @keyframes rcmFade{from{opacity:0;}}
+  /* one uniform floating card, same size regardless of content, space all around */
   .rcm-modal{position:relative;background:var(--paper,#fffdf8);width:100%;max-width:560px;
-    max-height:92vh;border-radius:24px 24px 0 0;box-shadow:0 -8px 40px rgba(0,0,0,.25);
-    display:flex;flex-direction:column;min-height:0;overflow:hidden;border-top:6px solid var(--rc,#C73B7A);
+    height:100%;max-height:760px;border-radius:22px;box-shadow:0 18px 60px rgba(0,0,0,.34);
+    display:flex;flex-direction:column;min-height:0;overflow:hidden;
     animation:rcmRise .28s cubic-bezier(0.34,1.56,0.64,1);}
-  @media(min-width:560px){.rcm-modal{border-radius:22px;border-top:none;box-shadow:0 20px 60px rgba(0,0,0,.3);}}
-  @keyframes rcmRise{from{transform:translateY(24px);opacity:.4;}}
+  @keyframes rcmRise{from{transform:translateY(24px) scale(.98);opacity:.4;}}
   .rcm-hero{margin:-1.6em -1.5em 1.4em;height:210px;background:var(--rcs,#FCE7F3);position:relative;}
   .rcm-hero img{width:100%;height:100%;object-fit:cover;display:block;}
   .rcm-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 62%,rgba(0,0,0,.22));}
