@@ -7,3 +7,4 @@ node_modules
 engine-images.mjs
 fetch-recipe-images.mjs
 engine-extra.mjs
+engine-localcand.mjs
