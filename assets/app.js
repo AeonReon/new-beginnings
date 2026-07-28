@@ -1,4 +1,4 @@
-const APP_VERSION = 'v36';
+const APP_VERSION = 'v37';
 
 function renderHomeLink() {
   const here = location.pathname.split('/').pop() || 'index.html';
@@ -6,6 +6,18 @@ function renderHomeLink() {
   document.body.insertAdjacentHTML('afterbegin',
     '<a href="index.html" class="home-link">← Home</a>'
   );
+  // If we arrived here from the homepage, "Home" goes BACK so the browser
+  // restores exactly where you were scrolled to — you don't lose your place.
+  const link = document.querySelector('.home-link');
+  if (link) link.addEventListener('click', (e) => {
+    let fromHome = false;
+    try {
+      const r = new URL(document.referrer);
+      const path = r.pathname.split('/').pop();
+      fromHome = r.origin === location.origin && (path === '' || path === 'index.html');
+    } catch {}
+    if (fromHome && history.length > 1) { e.preventDefault(); history.back(); }
+  });
 }
 
 function renderVersionPill() {
