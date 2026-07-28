@@ -66,96 +66,18 @@
     }
     .tile-open { font-family: var(--sans); font-size: 0.78rem; font-weight: 800; color: var(--rcd); white-space: nowrap; }
 
-    /* ─── Modal ─── */
-    .rc-backdrop {
-      position: fixed; inset: 0; z-index: 1000; background: rgba(20,28,36,0.55);
-      display: flex; align-items: flex-end; justify-content: center; padding: 0;
-      -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px);
-    }
-    @media (min-width: 560px) { .rc-backdrop { align-items: center; padding: 4vh 4vw; } }
-    .rc-backdrop { animation: rcFade 0.2s ease; }
-    @keyframes rcFade { from { opacity: 0; } }
-
-    .rc-modal {
-      position: relative; background: var(--paper, #fffdf8);
-      width: 100%; max-width: 560px; max-height: 92vh;
-      border-radius: 24px 24px 0 0; box-shadow: 0 -8px 40px rgba(0,0,0,0.25);
-      display: flex; flex-direction: column; min-height: 0;
-      border-top: 6px solid var(--rc);
-      animation: rcRise 0.28s cubic-bezier(0.34,1.56,0.64,1);
-    }
-    @media (min-width: 560px) { .rc-modal { border-radius: 22px; border-top: none; box-shadow: 0 20px 60px rgba(0,0,0,0.3); } }
-    @keyframes rcRise { from { transform: translateY(24px); opacity: 0.4; } }
-
-    .rc-close {
-      position: absolute; top: 12px; right: 12px; z-index: 3;
-      width: 40px; height: 40px; border-radius: 50%; border: none; cursor: pointer;
-      background: var(--paper-card); color: var(--ink-soft); font-size: 1.4rem; line-height: 1;
-      box-shadow: var(--shadow-sm); display: grid; place-items: center;
-    }
-    .rc-close:active { transform: scale(0.92); }
-
-    .rc-body { overflow-y: auto; min-height: 0; padding: 1.6em 1.5em 2em; }
-
-    .rc-head h2 { margin: 0.1em 2rem 0.1em 0; font-size: 1.5rem; display: flex; align-items: center; gap: 0.4em; }
-    .rc-head .rc-emoji { font-size: 1.3em; }
-    .rc-head .rc-tag { font-size: 0.64rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--rcd); }
-    .rc-head p.blurb { margin: 0.45em 0 0; color: var(--ink-soft); font-style: italic; }
-
-    .rc-meta { display: flex; flex-wrap: wrap; gap: 0.45em; margin: 1em 0 1.3em; }
-
-    /* Child's job — the together moment, made the hero of the card */
-    .rc-job {
-      display: flex; gap: 0.7em; align-items: flex-start;
-      background: linear-gradient(135deg, var(--rcs), var(--paper-card));
-      border: 2px solid var(--rc); border-radius: 18px;
-      padding: 1em 1.15em; margin: 0 0 1.5em;
-    }
-    .rc-job .rc-job-ico { font-size: 1.7rem; line-height: 1; flex: none; }
-    .rc-job b { display: block; font-family: var(--sans); font-size: 0.66rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rcd); margin-bottom: 0.25em; }
-    .rc-job p { margin: 0; color: var(--ink); font-size: 1.02em; }
-
-    .rc-h { font-family: var(--sans); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rcd); margin: 1.5em 0 0.6em; }
-    .rc-ingredients ul { margin: 0; padding-left: 1.15em; }
-    .rc-ingredients li { margin-bottom: 0.32em; font-size: 0.98em; }
-
-    .rc-steps { list-style: none; margin: 0; padding: 0; counter-reset: step; }
-    .rc-steps li {
-      position: relative; counter-increment: step;
-      padding: 0.15em 0 0.9em 2.6em; font-size: 1em; line-height: 1.45;
-    }
-    .rc-steps li::before {
-      content: counter(step); position: absolute; left: 0; top: 0;
-      width: 1.9em; height: 1.9em; border-radius: 50%;
-      background: var(--rc); color: #fff; font-family: var(--sans); font-weight: 800; font-size: 0.85em;
-      display: grid; place-items: center;
-    }
-    .rc-steps li:not(:last-child)::after {
-      content: ""; position: absolute; left: 0.95em; top: 1.9em; bottom: 0.35em;
-      width: 2px; background: var(--rcs); transform: translateX(-1px);
-    }
-
-    .rc-why { margin: 1.6em 0 0; }
-    .rc-instead {
-      font-size: 0.9em; color: var(--ink-soft); margin: 1em 0 0;
-      background: var(--paper-card); border-radius: 14px; padding: 0.8em 1em;
-    }
-    .rc-instead b { color: var(--rcd); font-weight: 800; }
-
-    .rc-read { margin: 1.5em 0 0; }
-
     .empty { color: var(--ink-mute); font-style: italic; margin: 2em 0; }
-    body.rc-locked { overflow: hidden; }
   </style>
 </head>
 <body>
   <main>
     <h1>Recipes</h1>
     <p class="lede">
-      Nice little things to make <em>with</em> your child — snacks, dinners and
-      puddings built from real food, with none of the sugar-loads, E-numbers and
-      additives the shop versions carry. All low-skill, all quick, all a few simple
-      steps. <strong>Tap any recipe to open it and cook together.</strong>
+      Fun little things to make <em>with</em> your child — snacks, savoury dinners,
+      naturally-sweet puddings and playful builds, all from real food with none of
+      the sugar-loads, E-numbers and additives the shop versions carry. All
+      low-skill, all quick, all a few simple steps.
+      <strong>Tap any recipe to open it and cook together.</strong>
     </p>
 
     <button class="read-btn" id="read-btn">▶ Read aloud</button>
@@ -178,24 +100,15 @@
     <div class="recipe-grid" id="list"></div>
   </main>
 
-  <!-- Recipe modal -->
-  <div class="rc-backdrop" id="modal" hidden>
-    <div class="rc-modal" id="modal-panel" role="dialog" aria-modal="true" aria-labelledby="rc-title">
-      <button class="rc-close" id="modal-close" aria-label="Close">×</button>
-      <div class="rc-body" id="modal-body"></div>
-    </div>
-  </div>
-
   <script src="assets/recipes-data.js"></script>
   <script src="assets/reader.js"></script>
+  <script src="assets/recipe-modal.js"></script>
   <script src="assets/app.js"></script>
   <script>
-    const KIND_ORDER = ['snack', 'main', 'dessert'];
+    const KIND_ORDER = ['snack', 'main', 'dessert', 'fun'];
     const list = document.getElementById('list');
     const count = document.getElementById('count');
     const kindRow = document.getElementById('kind-row');
-    const modal = document.getElementById('modal');
-    const modalBody = document.getElementById('modal-body');
     let activeKind = '';
 
     function esc(s) {
@@ -218,7 +131,6 @@
       });
     });
 
-    // ─── Summary tile ───
     function tileHTML(r) {
       const kd = window.RECIPE_KINDS[r.kind];
       return `
@@ -242,61 +154,6 @@
         </button>`;
     }
 
-    // ─── Modal detail ───
-    function modalHTML(r) {
-      const kd = window.RECIPE_KINDS[r.kind];
-      const ingredients = r.ingredients.map(i => `<li>${esc(i)}</li>`).join('');
-      const steps = r.steps.map(s => `<li>${esc(s)}</li>`).join('');
-      return `
-        <div class="rc-head">
-          <span class="rc-tag">${esc(kd.label)}</span>
-          <h2><span class="rc-emoji">${r.emoji}</span>${esc(r.name)}</h2>
-          <p class="blurb">${esc(r.blurb)}</p>
-        </div>
-        <div class="rc-meta">
-          <span class="chip">⏱ ${esc(r.time)}</span>
-          <span class="chip">Makes ${esc(r.makes)}</span>
-        </div>
-        <div class="rc-job">
-          <span class="rc-job-ico" aria-hidden="true">🧒</span>
-          <div><b>Your little one's job</b><p>${esc(r.hands)}</p></div>
-        </div>
-        <p class="rc-h">What you need</p>
-        <div class="rc-ingredients"><ul>${ingredients}</ul></div>
-        <p class="rc-h">Make it together</p>
-        <ol class="rc-steps">${steps}</ol>
-        <p class="rc-why why">${esc(r.why)}</p>
-        <p class="rc-instead"><b>Instead of the shop version —</b> ${esc(r.instead)}</p>
-        <button class="read-btn rc-read" id="rc-read-btn">▶ Read this recipe aloud</button>`;
-    }
-
-    function openRecipe(id) {
-      const r = window.RECIPES.find(x => x.id === id);
-      if (!r) return;
-      const kd = window.RECIPE_KINDS[r.kind];
-      document.getElementById('modal-panel').style.cssText =
-        `--rc:${kd.c};--rcd:${kd.cd};--rcs:${kd.cs};`;
-      modalBody.innerHTML = modalHTML(r);
-      modalBody.scrollTop = 0;
-      modal.hidden = false;
-      document.body.classList.add('rc-locked');
-      document.getElementById('modal-close').focus();
-      document.getElementById('rc-read-btn').addEventListener('click', () => {
-        if (window.Reader.speaking) window.Reader.stop();
-        else window.Reader.readElement(modalBody);
-      });
-    }
-
-    function closeRecipe() {
-      if (window.Reader.speaking) window.Reader.stop();
-      modal.hidden = true;
-      document.body.classList.remove('rc-locked');
-    }
-
-    document.getElementById('modal-close').addEventListener('click', closeRecipe);
-    modal.addEventListener('click', e => { if (e.target === modal) closeRecipe(); });
-    document.addEventListener('keydown', e => { if (e.key === 'Escape' && !modal.hidden) closeRecipe(); });
-
     function render() {
       const shown = window.RECIPES.filter(r => !activeKind || r.kind === activeKind);
       count.textContent = `${shown.length} of ${window.RECIPES.length} recipes`;
@@ -308,7 +165,7 @@
       });
       list.innerHTML = html || '<p class="empty">Nothing here yet — try another filter.</p>';
       list.querySelectorAll('.recipe-tile').forEach(t =>
-        t.addEventListener('click', () => openRecipe(t.dataset.id)));
+        t.addEventListener('click', () => window.RecipeModal.open(t.dataset.id)));
     }
 
     document.getElementById('read-btn').addEventListener('click', () => {

@@ -56,6 +56,11 @@
     .daily-card .daily-src{ font-weight:700; font-size:.82em; color:var(--dc); border-bottom:none; }
     .daily-card .daily-more{ flex-shrink:0; background:none; border:0; padding:0; cursor:pointer; font:700 .78em Inter; color:var(--muted-dim); display:inline-flex; align-items:center; gap:.35em; }
     .daily-card .daily-more::before{ display:none!important; }
+    .daily-card.tappable .dc-main{ cursor:pointer; }
+    .daily-card.tappable{ transition:transform .15s cubic-bezier(0.34,1.56,0.64,1), box-shadow .15s ease; }
+    .daily-card.tappable:hover{ transform:translateY(-2px); box-shadow:0 4px 10px rgba(20,35,60,.10),0 16px 36px rgba(20,35,60,.14); }
+    .daily-card.tappable:active{ transform:scale(.996); }
+    .cook-open{ display:inline-block; margin:0 0 .7em; font:800 .8em Inter; color:var(--magenta); }
   </style>
 </head>
 <body class="launcher">
@@ -138,11 +143,12 @@
         </div>
       </article>
 
-      <article class="daily-card" id="cookCard" style="--dc:#C73B7A;">
+      <article class="daily-card tappable" id="cookCard" style="--dc:#C73B7A;">
         <div class="dc-tab"><span class="dc-ic">🍳</span><span class="dc-tag">Cook</span></div>
         <div class="dc-main">
           <div class="daily-title" id="cookTitle"></div>
           <div class="daily-body" id="cookBody"></div>
+          <div class="cook-open">Tap for the steps →</div>
           <div class="daily-foot">
             <a class="daily-src" href="recipes.html">More recipes →</a>
             <button class="daily-more" data-more="cook" type="button">Another <span aria-hidden="true">↻</span></button>
@@ -252,6 +258,8 @@
   <script src="assets/deeds-data.js"></script>
   <script src="assets/philosophy-data.js"></script>
   <script src="assets/recipes-data.js"></script>
+  <script src="assets/reader.js"></script>
+  <script src="assets/recipe-modal.js"></script>
   <script src="assets/app.js"></script>
   <script>
 
@@ -313,11 +321,12 @@
         b.href = 'methodology.html?id=' + weekTrad;
       } else { el('weekBanner').hidden = true; }
 
-      let playOff = 0, doOff = 0, ponderOff = 0, cookOff = 0;
+      let playOff = 0, doOff = 0, ponderOff = 0, cookOff = 0, currentCookId = null;
 
       function showCook() {
         if (!recipes.length) { el('cookCard').hidden = true; return; }
         const r = pick(recipes, cookOff), kd = (window.RECIPE_KINDS || {})[r.kind] || {};
+        currentCookId = r.id;
         el('cookTitle').textContent = (r.emoji ? r.emoji + '  ' : '') + r.name;
         el('cookBody').textContent = r.blurb;
       }
@@ -357,6 +366,13 @@
           else if (t === 'do') { doOff++; showDo(); }
           else { ponderOff++; showPonder(); }
         });
+      });
+
+      // Tap the Cook card (anywhere but its links/buttons) to open the full recipe.
+      const cookCard = el('cookCard');
+      if (cookCard) cookCard.addEventListener('click', (e) => {
+        if (e.target.closest('a, button')) return;
+        if (currentCookId && window.RecipeModal) window.RecipeModal.open(currentCookId);
       });
     })();
 

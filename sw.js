@@ -1,4 +1,4 @@
-const CACHE = 'new-beginnings-v44';
+const CACHE = 'new-beginnings-v45';
 const ASSETS = [
   './',
   './index.html',
@@ -43,6 +43,7 @@ const ASSETS = [
   './games.html',
   './recipes.html',
   './assets/recipes-data.js',
+  './assets/recipe-modal.js',
   './manifest.json',
   './icon-192.png',
   './icon-512.png',
