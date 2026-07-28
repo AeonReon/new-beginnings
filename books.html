@@ -9,40 +9,6 @@
   <link rel="icon" type="image/png" href="icon-192.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="stylesheet" href="assets/style.css">
-  <style>
-    /* ─── Reusable category-page building blocks (piloting here on Books) ─── */
-
-    /* Collapsible "why" — the gist lives in .page-intro; the fuller reasoning
-       tucks away here so returning visitors go straight to the shelf. */
-    .explain { background: var(--paper-card); border: 1px solid var(--rule); border-left: 4px solid var(--hc); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); margin: 0 0 1.7em; overflow: hidden; }
-    .explain > summary { list-style: none; cursor: pointer; padding: .95em 1.2em; display: flex; align-items: center; gap: .55em; font-family: var(--sans); font-weight: 800; color: var(--ink); font-size: .98em; }
-    .explain > summary::-webkit-details-marker { display: none; }
-    .explain .ex-ic { font-size: 1.1em; }
-    .explain .ex-chev { margin-left: auto; color: var(--hcd); transition: transform .2s ease; font-size: .85em; }
-    .explain[open] .ex-chev { transform: rotate(180deg); }
-    .explain-body { padding: .1em 1.3em 1.25em; }
-    .explain-body p { margin: 0 0 .8em; color: var(--ink-soft); line-height: 1.62; }
-    .explain-body p:last-child { margin: 0; }
-    .explain-body strong { color: var(--ink); }
-
-    /* Section headers for the resource groups */
-    .res-head { display: flex; align-items: baseline; gap: .55em; margin: 1.8em 0 .3em; }
-    .res-head h2 { font-family: var(--serif); font-weight: 800; font-size: 1.18rem; color: var(--ink); margin: 0; letter-spacing: -.01em; }
-    .res-head .res-count { font-family: var(--sans); font-size: .72rem; font-weight: 800; color: var(--hcd); background: var(--hcs); padding: .28em .62em; border-radius: var(--radius-pill); }
-    .res-note { font-size: .9em; color: var(--ink-mute); font-style: italic; margin: .2em 0 1em .1em; }
-
-    /* The shelf — one clean, scannable, app-styled row per resource */
-    .shelf { display: flex; flex-direction: column; gap: .6em; }
-    .shelf-item { position: relative; display: flex; align-items: stretch; background: var(--paper-card); border: 1px solid var(--rule); border-radius: 14px; overflow: hidden; box-shadow: var(--shadow-sm); transition: transform .15s cubic-bezier(0.34,1.56,0.64,1), box-shadow .15s ease; }
-    .shelf-item:hover { transform: translateY(-2px); box-shadow: var(--shadow-md, 0 8px 20px rgba(20,35,60,.12)); }
-    .shelf-item::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: linear-gradient(180deg, var(--hc), var(--hcd)); z-index: 1; }
-    .shelf-ic { flex: none; width: 58px; display: grid; place-items: center; background: var(--hcs); font-size: 1.55rem; }
-    .shelf-body { flex: 1; min-width: 0; padding: .78em .95em .82em; }
-    .shelf-body h3 { font-family: var(--serif); font-weight: 800; font-size: 1.04rem; color: var(--ink); margin: 0; line-height: 1.22; }
-    .shelf-by { font-family: var(--sans); font-size: .8em; color: var(--ink-mute); margin: .12em 0 .4em; }
-    .shelf-desc { font-size: .91em; color: var(--ink-soft); line-height: 1.42; margin: 0; }
-    .shelf-tag { display: inline-block; font-family: var(--sans); font-size: .55rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--hcd); background: var(--hcs); padding: .26em .55em; border-radius: var(--radius-pill); margin-left: .4em; vertical-align: middle; }
-  </style>
 </head>
 <body class="launcher">
   <main class="launcher-main article" style="--hc:#4C63B6;--hcd:#33468C;--hcs:#E7EAF8;">

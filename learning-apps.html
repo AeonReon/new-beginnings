@@ -9,22 +9,10 @@
   <link rel="icon" type="image/png" href="icon-192.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="stylesheet" href="assets/style.css">
-  <style>
-    .draft-note { background: #CCFBF1; border-radius: 16px; padding: 0.9em 1.1em; margin: 0 0 1.4em; color: #0F766E; font-size: 0.92em; }
-    .draft-note b { color: #0B5A54; }
-    .app-card { border-left: 5px solid #0EA5A4; }
-    .app-card h3 { margin: 0 0 0.15em; font-size: 1.12rem; display:flex; align-items:baseline; gap:0.4em; flex-wrap:wrap; }
-    .app-card .tag { font-size: 0.6rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #0F766E; background:#CCFBF1; padding:0.22em 0.6em; border-radius: var(--radius-pill); }
-    .app-card .tag.free { color:#1B7A4A; background:#DCF3E7; }
-    .app-card p { margin: 0.3em 0 0; }
-    .rule-row { display:flex; gap:0.6em; align-items:flex-start; padding:0.5em 0; border-top:1px solid var(--rule); font-size:0.96em; }
-    .rule-row:first-of-type { border-top:none; }
-    .rule-row .st { font-weight:700; color:var(--ink); }
-  </style>
 </head>
 <body class="launcher">
-  <main class="launcher-main article">
-    <header class="page-hero" style="--hc:#0EA5A4;--hcd:#0F766E;">
+  <main class="launcher-main article" style="--hc:#0EA5A4;--hcd:#0F766E;--hcs:#CCFBF1;">
+    <header class="page-hero">
       <div class="page-cover">
         <img src="assets/pillars/learning-apps.jpg" alt="">
         <div class="page-cover-veil"></div>
@@ -35,41 +23,79 @@
         </div>
       </div>
     </header>
+
     <p class="page-intro">Most screens are built to hook a child. A few tools genuinely teach. The whole game is telling them apart — and changing <em>how</em> the screen is used, not just what's on it.</p>
 
-    <div class="card">
-      <h3>The honest position</h3>
-      <p style="margin-bottom: 0.7em;">Most of what a young child needs comes from play, talk, movement and the real world — not a screen. Bright, fast, rewarding apps and videos train a child to want exactly that: more bright, more fast, more reward. That's the overstimulation problem, and it's real.</p>
-      <p style="margin-bottom: 0.7em;">But there's a narrow, honest exception. A little calm, focused academic practice — letters, numbers, phonics — can genuinely help, <em>if</em> the tool is well-made and the device isn't feeding the dopamine hit.</p>
-      <p class="why" style="margin-bottom: 0;">That's why the recommendation here is an <strong>E-ink tablet</strong>. The screen is matte, slow and paper-like — no glare, no glow, none of the pull of a glossy backlit tablet. The child gets the academic training without the overstimulation. Same app, very different effect on a small nervous system.</p>
+    <details class="explain">
+      <summary><span class="ex-ic">🔎</span> The honest position on screens <span class="ex-chev">▾</span></summary>
+      <div class="explain-body">
+        <p>Most of what a young child needs comes from play, talk, movement and the real world — not a screen. Bright, fast, rewarding apps and videos train a child to want exactly that: more bright, more fast, more reward. That's the overstimulation problem, and it's real.</p>
+        <p>But there's a narrow, honest exception. A little calm, focused academic practice — letters, numbers, phonics — can genuinely help, <strong>if</strong> the tool is well-made and the device isn't feeding the dopamine hit.</p>
+        <p>That's why the recommendation here is an <strong>E-ink tablet</strong>. The screen is matte, slow and paper-like — no glare, no glow, none of the pull of a glossy backlit tablet. The child gets the academic training without the overstimulation. Same app, very different effect on a small nervous system.</p>
+        <p>Programmes like Alpha School (and the wider "future of education" world) show the model worth stealing: a short daily block of focused, adaptive academic work — often well under two hours — that frees the rest of the day for real life, projects and play. The lesson isn't "more screen"; it's that a small, sharp dose of the right tool does the academic job quickly, so the screen serves the childhood instead of eating it.</p>
+      </div>
+    </details>
+
+    <div class="res-head"><h2>Good tools</h2><span class="res-count">2</span></div>
+    <p class="res-note">A couple of solid starting picks — more to add and test on your own children.</p>
+    <div class="shelf">
+
+      <div class="shelf-item">
+        <span class="shelf-ic" aria-hidden="true">🎓</span>
+        <div class="shelf-body">
+          <h3>Khan Academy Kids <span class="shelf-tag alt">Free · No ads</span></h3>
+          <p class="shelf-by">All ages up to 6 · iOS, Android</p>
+          <p class="shelf-desc">Genuinely excellent and completely free — no ads, no upsells, no manipulation. Letters, numbers, phonics, early reading and drawing, all gently paced and adaptive. The strongest single starting point.</p>
+        </div>
+      </div>
+
+      <div class="shelf-item">
+        <span class="shelf-ic" aria-hidden="true">🔢</span>
+        <div class="shelf-body">
+          <h3>Our own number games <span class="shelf-tag">Homegrown</span></h3>
+          <p class="shelf-by">Made in-house · web</p>
+          <p class="shelf-desc">We've built simple number-learning games ourselves. Honest verdict: children play for a little while and pick a few things up, but they're not the most <em>fun</em> yet — a useful supplement, not the main event. We'll keep improving them and link them here.</p>
+        </div>
+      </div>
+
     </div>
 
-    <div class="card">
-      <h3>The model worth stealing</h3>
-      <p style="margin-bottom:0.5em;">Programmes like Alpha School (and the wider "future of education" world worth following) show what's possible: a short daily block of focused, adaptive academic work — often well under two hours — that frees the rest of the day for real life, projects and play.</p>
-      <p class="why" style="margin-bottom:0;">The lesson isn't "more screen". It's that a small, sharp, focused dose of the right tool can do the academic job quickly — so the screen serves the childhood, instead of eating it.</p>
-    </div>
+    <div class="res-head"><h2>How to use it well</h2></div>
+    <p class="res-note">The device and the habits matter more than the app. Four rules keep a screen on the right side of the line.</p>
+    <div class="shelf">
 
-    <div class="draft-note">
-      <b>First draft — we'll build this out together.</b> A couple of solid starting picks below. There's more to add (and to test on your own children), so treat this as an opening list to react to, not the finished shelf.
-    </div>
+      <div class="shelf-item">
+        <span class="shelf-ic" aria-hidden="true">📵</span>
+        <div class="shelf-body">
+          <h3>E-ink over glossy</h3>
+          <p class="shelf-desc">Matte and paper-like beats bright and backlit for a young child, every time. It's the single biggest lever.</p>
+        </div>
+      </div>
 
-    <div class="card app-card">
-      <h3>Khan Academy Kids <span class="tag free">Free · No ads</span></h3>
-      <p>Genuinely excellent and completely free — no ads, no upsells, no manipulation. Letters, numbers, phonics, early reading and drawing, all gently paced and adaptive. The strongest single starting point.</p>
-    </div>
+      <div class="shelf-item">
+        <span class="shelf-ic" aria-hidden="true">⏳</span>
+        <div class="shelf-body">
+          <h3>Short and time-boxed</h3>
+          <p class="shelf-desc">A small daily block with a clear start and stop — not open-ended, not "just one more".</p>
+        </div>
+      </div>
 
-    <div class="card app-card">
-      <h3>Our own number games <span class="tag">Homegrown</span></h3>
-      <p>We've built simple number-learning games ourselves. Honest verdict: children play for a little while and pick a few things up, but they're not the most <em>fun</em> — so they're a useful supplement, not the main event. We'll keep improving them and link them here.</p>
-    </div>
+      <div class="shelf-item">
+        <span class="shelf-ic" aria-hidden="true">🧑‍🍼</span>
+        <div class="shelf-body">
+          <h3>An adult nearby</h3>
+          <p class="shelf-desc">It's a tool you use together, not a babysitter you hand over.</p>
+        </div>
+      </div>
 
-    <div class="card">
-      <h3>The rules that make it safe</h3>
-      <div class="rule-row"><span aria-hidden="true">📵</span><div><span class="st">E-ink over glossy</span> — matte and paper-like beats bright and backlit for a young child, every time.</div></div>
-      <div class="rule-row"><span aria-hidden="true">⏳</span><div><span class="st">Short and time-boxed</span> — a small daily block, with a clear start and stop, not open-ended.</div></div>
-      <div class="rule-row"><span aria-hidden="true">🧑‍🍼</span><div><span class="st">An adult nearby</span> — it's a tool you use together, not a babysitter you hand over.</div></div>
-      <div class="rule-row"><span aria-hidden="true">🌳</span><div><span class="st">Screen serves the day</span> — the goal is a quick academic win so there's more time for the real world, not less.</div></div>
+      <div class="shelf-item">
+        <span class="shelf-ic" aria-hidden="true">🌳</span>
+        <div class="shelf-body">
+          <h3>Screen serves the day</h3>
+          <p class="shelf-desc">The goal is a quick academic win so there's <em>more</em> time for the real world, not less.</p>
+        </div>
+      </div>
+
     </div>
 
     <section class="why-banner">
