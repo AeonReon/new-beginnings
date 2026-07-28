@@ -1403,6 +1403,7 @@ window.METHODS = [
   },
   {
     id: 'future-of-education',
+    image: 'assets/tiles/future-of-education.jpg',
     name: 'Future of Education',
     short: 'Future',
     tagline: 'Mastery · AI tutoring · 2-hour academics · limitless',

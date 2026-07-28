@@ -6,3 +6,4 @@ node_modules
 # local image-sourcing tools (read engine PIN at runtime)
 engine-images.mjs
 fetch-recipe-images.mjs
+engine-extra.mjs

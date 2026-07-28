@@ -56,11 +56,20 @@
     .daily-card .daily-src{ font-weight:700; font-size:.82em; color:var(--dc); border-bottom:none; }
     .daily-card .daily-more{ flex-shrink:0; background:none; border:0; padding:0; cursor:pointer; font:700 .78em Inter; color:var(--muted-dim); display:inline-flex; align-items:center; gap:.35em; }
     .daily-card .daily-more::before{ display:none!important; }
-    .daily-card.tappable .dc-main{ cursor:pointer; }
-    .daily-card.tappable{ transition:transform .15s cubic-bezier(0.34,1.56,0.64,1), box-shadow .15s ease; }
-    .daily-card.tappable:hover{ transform:translateY(-2px); box-shadow:0 4px 10px rgba(20,35,60,.10),0 16px 36px rgba(20,35,60,.14); }
-    .daily-card.tappable:active{ transform:scale(.996); }
-    .cook-open{ display:inline-block; margin:0 0 .7em; font:800 .8em Inter; color:var(--magenta); }
+    /* "For today" — four equal image cards, tap to open a card on top */
+    .today-head{ display:flex; align-items:center; justify-content:space-between; margin:0 0 11px; }
+    .today-shuffle{ background:none; border:0; cursor:pointer; font:800 .82em Inter; color:var(--muted-dim); display:inline-flex; gap:.4em; align-items:center; padding:.3em .1em; }
+    .today-shuffle:active{ transform:scale(.95); }
+    .today-grid{ display:grid; grid-template-columns:1fr 1fr; gap:.8em; }
+    @media(min-width:720px){ .today-grid{ grid-template-columns:repeat(4,1fr); } }
+    .today-card{ position:relative; aspect-ratio:1/1; border:none; padding:0; cursor:pointer; border-radius:18px; overflow:hidden; text-align:left; background:linear-gradient(150deg,var(--tc),var(--tcd)); box-shadow:var(--shadow-card); transition:transform .18s cubic-bezier(0.34,1.56,0.64,1), box-shadow .18s ease; }
+    .today-card:hover{ transform:translateY(-3px); }
+    .today-card:active{ transform:scale(.97); }
+    .today-card .tc-glyph{ position:absolute; inset:0; display:grid; place-items:center; font-size:3.2rem; opacity:.92; filter:drop-shadow(0 2px 4px rgba(0,0,0,.25)); }
+    .today-card img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:1; }
+    .today-card .tc-veil{ position:absolute; inset:0; z-index:2; background:linear-gradient(180deg,rgba(0,0,0,.02) 30%,rgba(0,0,0,.66)); }
+    .today-card .tc-cat{ position:absolute; top:9px; left:9px; z-index:3; font:800 10px/1 Inter; letter-spacing:.07em; text-transform:uppercase; color:#fff; background:var(--tc); padding:.44em .68em; border-radius:999px; box-shadow:0 2px 6px rgba(0,0,0,.28); display:inline-flex; gap:.35em; align-items:center; }
+    .today-card .tc-title{ position:absolute; left:11px; right:11px; bottom:10px; z-index:3; color:#fff; font-family:var(--display); font-weight:800; font-size:1.02em; line-height:1.16; text-shadow:0 2px 8px rgba(0,0,0,.55); display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
   </style>
 </head>
 <body class="launcher">
@@ -106,55 +115,11 @@
         <span class="week-invite" id="weekInvite"></span>
         <span class="week-go" aria-hidden="true">Step inside this world →</span>
       </a>
-      <div class="daily-lead">For today</div>
-
-      <article class="daily-card" id="playCard" style="--dc:#2E84BD;">
-        <div class="dc-tab"><span class="dc-ic">🎲</span><span class="dc-tag">Play</span></div>
-        <div class="dc-main">
-          <div class="daily-title" id="playTitle"></div>
-          <div class="daily-body" id="playBody"></div>
-          <div class="daily-foot">
-            <a class="daily-src" href="games.html">More games →</a>
-            <button class="daily-more" data-more="play" type="button">Another <span aria-hidden="true">↻</span></button>
-          </div>
-        </div>
-      </article>
-
-      <article class="daily-card" id="doCard" style="--dc:#E0951A;">
-        <div class="dc-tab"><span class="dc-ic">☀️</span><span class="dc-tag">Do</span></div>
-        <div class="dc-main">
-          <div class="daily-title" id="doTitle"></div>
-          <div class="daily-body" id="doBody"></div>
-          <div class="daily-foot">
-            <a class="daily-src" id="doSrc" href="#"></a>
-            <button class="daily-more" data-more="do" type="button">Another <span aria-hidden="true">↻</span></button>
-          </div>
-        </div>
-      </article>
-
-      <article class="daily-card ponder" id="ponderCard" style="--dc:#1F8F5E;">
-        <div class="dc-tab"><span class="dc-ic">💭</span><span class="dc-tag">Think</span></div>
-        <div class="dc-main">
-          <div class="daily-body" id="ponderBody"></div>
-          <div class="daily-foot">
-            <a class="daily-src" id="ponderSrc" href="#"></a>
-            <button class="daily-more" data-more="ponder" type="button">Another <span aria-hidden="true">↻</span></button>
-          </div>
-        </div>
-      </article>
-
-      <article class="daily-card tappable" id="cookCard" style="--dc:#C73B7A;">
-        <div class="dc-tab"><span class="dc-ic">🍳</span><span class="dc-tag">Cook</span></div>
-        <div class="dc-main">
-          <div class="daily-title" id="cookTitle"></div>
-          <div class="daily-body" id="cookBody"></div>
-          <div class="cook-open">Tap for the steps →</div>
-          <div class="daily-foot">
-            <a class="daily-src" href="recipes.html">More recipes →</a>
-            <button class="daily-more" data-more="cook" type="button">Another <span aria-hidden="true">↻</span></button>
-          </div>
-        </div>
-      </article>
+      <div class="today-head">
+        <div class="daily-lead">For today</div>
+        <button class="today-shuffle" id="todayShuffle" type="button">Shuffle <span aria-hidden="true">↻</span></button>
+      </div>
+      <div class="today-grid" id="todayGrid"></div>
     </section>
 
     <section class="tile-section">
@@ -322,59 +287,84 @@
         b.href = 'methodology.html?id=' + weekTrad;
       } else { el('weekBanner').hidden = true; }
 
-      let playOff = 0, doOff = 0, ponderOff = 0, cookOff = 0, currentCookId = null;
+      const esc = (window.RecipeModal && window.RecipeModal.esc) || (s => String(s));
+      const ACC = {
+        play:  { c: '#2E84BD', cd: '#1E5F8A', cs: '#E4F0F8' },
+        do:    { c: '#E0951A', cd: '#B4770F', cs: '#FBEFD3' },
+        think: { c: '#1F8F5E', cd: '#166B46', cs: '#DCF3E7' },
+        cook:  { c: '#C73B7A', cd: '#9E2A5F', cs: '#F9E2EE' },
+      };
+      let off = 0;
 
-      function showCook() {
-        if (!recipes.length) { el('cookCard').hidden = true; return; }
-        const r = pick(recipes, cookOff), kd = (window.RECIPE_KINDS || {})[r.kind] || {};
-        currentCookId = r.id;
-        el('cookTitle').textContent = (r.emoji ? r.emoji + '  ' : '') + r.name;
-        el('cookBody').textContent = r.blurb;
-      }
-      function showPlay() {
-        if (!games.length) { el('playCard').hidden = true; return; }
-        const g = pick(games, playOff), gc = groups[g.group] || {};
-        el('playTitle').textContent = g.name;
-        el('playBody').textContent = g.how;
-      }
-      function showDo() {
-        if (!deeds.length) { el('doCard').hidden = true; return; }
-        const a = (doOff === 0 && weekDeeds.length) ? wrap(weekDeeds, dayNum) : pick(deeds, doOff);
-        el('doTitle').textContent = a.name;
-        el('doBody').textContent = a.body;
-        const s = el('doSrc');
-        s.textContent = a.method ? 'From ' + a.method + ' →' : '';
-        s.href = 'methodology.html?id=' + a.id;
-      }
-      function showPonder() {
-        if (!ponders.length) { el('ponderCard').hidden = true; return; }
-        const p = (ponderOff === 0 && weekPonders.length) ? wrap(weekPonders, dayNum) : pick(ponders, ponderOff);
-        const m = methodById[p.trad];
-        el('ponderBody').textContent = p.text;
-        const s = el('ponderSrc');
-        s.textContent = '— ' + p.source + (m ? ' · ' + m.name + ' →' : '');
-        if (m) { s.href = 'methodology.html?id=' + p.trad + '&s=core-idea'; s.classList.remove('no-link'); }
-        else { s.removeAttribute('href'); s.classList.add('no-link'); }
+      // Same item all day; Shuffle advances all four together.
+      function today() {
+        const r = recipes.length ? pick(recipes, off) : null;
+        const g = games.length ? pick(games, off) : null;
+        const a = deeds.length ? ((off === 0 && weekDeeds.length) ? wrap(weekDeeds, dayNum) : pick(deeds, off)) : null;
+        const p = ponders.length ? ((off === 0 && weekPonders.length) ? wrap(weekPonders, dayNum) : pick(ponders, off)) : null;
+        return { r, g, a, p };
       }
 
-      showCook(); showPlay(); showDo(); showPonder();
-      el('dailyFeed').hidden = false;
-      document.querySelectorAll('.daily-more').forEach(btn => {
-        btn.addEventListener('click', () => {
-          const t = btn.dataset.more;
-          if (t === 'cook') { cookOff++; showCook(); }
-          else if (t === 'play') { playOff++; showPlay(); }
-          else if (t === 'do') { doOff++; showDo(); }
-          else { ponderOff++; showPonder(); }
+      function cardFace(type, emoji, cat, title, image, acc) {
+        return `<button class="today-card" data-c="${type}" style="--tc:${acc.c};--tcd:${acc.cd};">
+            <span class="tc-glyph">${emoji}</span>
+            ${image ? `<img src="${image}" alt="" loading="lazy" onerror="this.remove()">` : ''}
+            <span class="tc-veil"></span>
+            <span class="tc-cat">${emoji} ${cat}</span>
+            <span class="tc-title">${esc(title)}</span>
+          </button>`;
+      }
+
+      function openPlay(g) {
+        window.RecipeModal.openContent({
+          accent: ACC.play, image: 'assets/daily/play.jpg', kicker: 'Play together', emoji: '🎲', title: g.name,
+          bodyHTML:
+            `<div class="rcm-prose"><p>${esc(g.how)}</p></div>` +
+            `<p class="rcm-h">Why it helps</p><div class="rcm-prose"><p>${esc(g.why)}</p></div>` +
+            (g.traits && g.traits.length ? `<div class="rcm-tags">${g.traits.map(t => `<span class="rcm-tag-pill">${esc(t)}</span>`).join('')}</div>` : '') +
+            `<a class="rcm-morelink" href="games.html">More games →</a>`,
         });
-      });
+      }
+      function openDo(a) {
+        const m = methodById[a.id] || {};
+        window.RecipeModal.openContent({
+          accent: ACC.do, image: m.image, kicker: 'One small thing today', emoji: '☀️', title: a.name,
+          bodyHTML:
+            `<div class="rcm-prose"><p>${esc(a.body)}</p></div>` +
+            (a.method ? `<a class="rcm-morelink" href="methodology.html?id=${a.id}">From ${esc(a.method)} →</a>` : ''),
+        });
+      }
+      function openThink(p) {
+        const m = methodById[p.trad] || {};
+        window.RecipeModal.openContent({
+          accent: ACC.think, image: m.image, kicker: 'A thought for today', emoji: '💭', title: p.source,
+          bodyHTML:
+            `<p class="rcm-quote">${esc(p.text)}</p>` +
+            `<p class="rcm-source">— ${esc(p.source)}${m.name ? ' · ' + esc(m.name) : ''}</p>` +
+            (m.name ? `<a class="rcm-morelink" href="methodology.html?id=${p.trad}&s=core-idea">More from ${esc(m.name)} →</a>` : ''),
+        });
+      }
 
-      // Tap the Cook card (anywhere but its links/buttons) to open the full recipe.
-      const cookCard = el('cookCard');
-      if (cookCard) cookCard.addEventListener('click', (e) => {
-        if (e.target.closest('a, button')) return;
-        if (currentCookId && window.RecipeModal) window.RecipeModal.open(currentCookId);
-      });
+      function render() {
+        const { r, g, a, p } = today();
+        const grid = el('todayGrid');
+        const cards = [];
+        if (g) cards.push(cardFace('play', '🎲', 'Play', g.name, 'assets/daily/play.jpg', ACC.play));
+        if (a) cards.push(cardFace('do', '☀️', 'Do', a.name, (methodById[a.id] || {}).image, ACC.do));
+        if (p) cards.push(cardFace('think', '💭', 'Think', p.source, (methodById[p.trad] || {}).image, ACC.think));
+        if (r) cards.push(cardFace('cook', '🍳', 'Cook', r.name, 'assets/recipes/' + r.id + '.jpg', ACC.cook));
+        grid.innerHTML = cards.join('');
+        const wire = (sel, fn) => { const b = grid.querySelector(sel); if (b) b.addEventListener('click', fn); };
+        if (g) wire('[data-c="play"]', () => openPlay(g));
+        if (a) wire('[data-c="do"]', () => openDo(a));
+        if (p) wire('[data-c="think"]', () => openThink(p));
+        if (r) wire('[data-c="cook"]', () => window.RecipeModal.open(r.id));
+      }
+
+      render();
+      el('dailyFeed').hidden = false;
+      const shuf = el('todayShuffle');
+      if (shuf) shuf.addEventListener('click', () => { off++; render(); });
     })();
 
     if ('serviceWorker' in navigator) {

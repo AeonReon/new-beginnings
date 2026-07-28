@@ -1,9 +1,11 @@
-// RecipeModal — one shared pop-up card for a full recipe, used by the homepage
-// "Cook" card and the Recipes page. Tap a recipe anywhere → this opens with the
-// bigger description, the child's job, what you need, and the simple steps.
-// Depends on window.RECIPES + window.RECIPE_KINDS (recipes-data.js) and, if
-// present, window.Reader (reader.js) for read-aloud. Self-injects its own
-// styles and DOM once; call window.RecipeModal.open(id).
+// A shared pop-up card that sits on top of the page (it does NOT navigate away)
+// — used by the homepage "For today" cards and the Recipes page. Opens as a
+// card over most of the screen, scrolls within itself, and closes on the ×, on
+// Escape, or on a tap outside. Self-injects its styles + DOM once.
+//   window.RecipeModal.open(recipeId)      → a full recipe
+//   window.RecipeModal.openContent({...})  → any card (play / do / think / …)
+// Depends on window.RECIPES + window.RECIPE_KINDS for open(); window.Reader
+// (optional) powers read-aloud.
 (function () {
   if (window.RecipeModal) return;
 
@@ -11,19 +13,20 @@
   .rcm-backdrop{position:fixed;inset:0;z-index:1000;background:rgba(20,28,36,.55);
     display:flex;align-items:flex-end;justify-content:center;padding:0;
     -webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);animation:rcmFade .2s ease;}
+  .rcm-backdrop[hidden]{display:none!important;}
   @media(min-width:560px){.rcm-backdrop{align-items:center;padding:4vh 4vw;}}
   @keyframes rcmFade{from{opacity:0;}}
   .rcm-modal{position:relative;background:var(--paper,#fffdf8);width:100%;max-width:560px;
     max-height:92vh;border-radius:24px 24px 0 0;box-shadow:0 -8px 40px rgba(0,0,0,.25);
     display:flex;flex-direction:column;min-height:0;overflow:hidden;border-top:6px solid var(--rc,#C73B7A);
     animation:rcmRise .28s cubic-bezier(0.34,1.56,0.64,1);}
+  @media(min-width:560px){.rcm-modal{border-radius:22px;border-top:none;box-shadow:0 20px 60px rgba(0,0,0,.3);}}
+  @keyframes rcmRise{from{transform:translateY(24px);opacity:.4;}}
   .rcm-hero{margin:-1.6em -1.5em 1.4em;height:210px;background:var(--rcs,#FCE7F3);position:relative;}
   .rcm-hero img{width:100%;height:100%;object-fit:cover;display:block;}
   .rcm-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 62%,rgba(0,0,0,.22));}
   .rcm-credit{margin:1.5em 0 0;font-size:.72em;color:var(--ink-mute,#8a97a3);}
   .rcm-credit a{color:inherit;text-decoration:underline;}
-  @media(min-width:560px){.rcm-modal{border-radius:22px;border-top:none;box-shadow:0 20px 60px rgba(0,0,0,.3);}}
-  @keyframes rcmRise{from{transform:translateY(24px);opacity:.4;}}
   .rcm-close{position:absolute;top:12px;right:12px;z-index:3;width:40px;height:40px;
     border-radius:50%;border:none;cursor:pointer;background:var(--paper-card,#fff);
     color:var(--ink-soft,#555);font-size:1.4rem;line-height:1;box-shadow:var(--shadow-sm,0 2px 8px rgba(0,0,0,.15));
@@ -64,6 +67,16 @@
     background:var(--paper-card,#fff);border-radius:14px;padding:.8em 1em;}
   .rcm-instead b{color:var(--rcd,#A21D57);font-weight:800;}
   .rcm-read{margin:1.5em 0 0;}
+  /* generic content helpers (play / do / think) */
+  .rcm-prose p{margin:0 0 .9em;line-height:1.6;}
+  .rcm-prose p:last-child{margin:0;}
+  .rcm-quote{font-size:1.14em;line-height:1.6;color:var(--ink,#26313a);margin:0 0 .7em;}
+  .rcm-source{font-family:var(--sans,system-ui);font-size:.85em;font-weight:700;color:var(--rcd,#A21D57);margin:0;}
+  .rcm-tags{display:flex;flex-wrap:wrap;gap:.4em;margin:1.2em 0 0;}
+  .rcm-tag-pill{font-family:var(--sans,system-ui);font-size:.72rem;font-weight:700;
+    padding:.32em .78em;border-radius:999px;background:var(--rcs,#FCE7F3);color:var(--rcd,#A21D57);}
+  .rcm-morelink{display:inline-block;margin:1.6em 0 0;font-family:var(--sans,system-ui);
+    font-weight:800;color:var(--rcd,#A21D57);text-decoration:none;}
   body.rcm-locked{overflow:hidden;}
   `;
 
@@ -84,7 +97,7 @@
     backdrop.className = 'rcm-backdrop';
     backdrop.hidden = true;
     backdrop.innerHTML =
-      '<div class="rcm-modal" role="dialog" aria-modal="true" aria-label="Recipe">' +
+      '<div class="rcm-modal" role="dialog" aria-modal="true" aria-label="Card">' +
         '<button class="rcm-close" aria-label="Close">×</button>' +
         '<div class="rcm-body"></div>' +
       '</div>';
@@ -98,18 +111,39 @@
     wired = true;
   }
 
-  function html(r, kd) {
+  function headHTML({ kicker, emoji, title, blurb }) {
+    return `<div class="rcm-head">
+        ${kicker ? `<span class="rcm-tag">${esc(kicker)}</span>` : ''}
+        <h2>${emoji ? `<span class="rcm-emoji">${emoji}</span>` : ''}${esc(title || '')}</h2>
+        ${blurb ? `<p class="rcm-blurb">${esc(blurb)}</p>` : ''}
+      </div>`;
+  }
+
+  // Core renderer used by both open() and openContent().
+  function show({ accent, image, imageAlt, head, bodyHTML, onReady }) {
+    ensureDom();
+    const a = accent || {};
+    panel.style.cssText = `--rc:${a.c || '#C73B7A'};--rcd:${a.cd || '#A21D57'};--rcs:${a.cs || '#FCE7F3'};`;
+    const hero = image
+      ? `<div class="rcm-hero"><img src="${esc(image)}" alt="${esc(imageAlt || '')}" onerror="this.parentNode.style.display='none'"></div>`
+      : '';
+    body.innerHTML = hero + (head || '') + (bodyHTML || '');
+    body.scrollTop = 0;
+    backdrop.hidden = false;
+    document.body.classList.add('rcm-locked');
+    backdrop.querySelector('.rcm-close').focus();
+    if (onReady) onReady(body);
+  }
+
+  // ---- a full recipe ----
+  function open(id) {
+    const r = (window.RECIPES || []).find(x => x.id === id);
+    if (!r) return;
+    const kd = (window.RECIPE_KINDS || {})[r.kind] || {};
+    const cred = (window.RECIPE_CREDITS || {})[r.id];
     const ingredients = r.ingredients.map(i => `<li>${esc(i)}</li>`).join('');
     const steps = r.steps.map(s => `<li>${esc(s)}</li>`).join('');
-    const cred = (window.RECIPE_CREDITS || {})[r.id];
-    return `
-      <div class="rcm-hero"><img src="assets/recipes/${r.id}.jpg" alt="${esc(r.name)}"
-        onerror="this.parentNode.style.display='none'"></div>
-      <div class="rcm-head">
-        <span class="rcm-tag">${esc(kd.label || '')}</span>
-        <h2><span class="rcm-emoji">${r.emoji || ''}</span>${esc(r.name)}</h2>
-        <p class="rcm-blurb">${esc(r.blurb || '')}</p>
-      </div>
+    const bodyHTML = `
       <div class="rcm-meta">
         ${r.time ? `<span class="rcm-chip">⏱ ${esc(r.time)}</span>` : ''}
         ${r.makes ? `<span class="rcm-chip">Makes ${esc(r.makes)}</span>` : ''}
@@ -124,29 +158,32 @@
       ${r.instead ? `<p class="rcm-instead"><b>Instead of the shop version —</b> ${esc(r.instead)}</p>` : ''}
       <button class="read-btn rcm-read" type="button">▶ Read this recipe aloud</button>
       ${cred && cred.source ? `<p class="rcm-credit">Photo via the web — <a href="${esc(cred.source)}" target="_blank" rel="noopener">source</a>. Yours? <a href="mailto:images@aeonreon.com">tell us</a> and it comes down.</p>` : ''}`;
+    show({
+      accent: { c: kd.c, cd: kd.cd, cs: kd.cs },
+      image: `assets/recipes/${r.id}.jpg`, imageAlt: r.name,
+      head: headHTML({ kicker: kd.label, emoji: r.emoji, title: r.name, blurb: r.blurb }),
+      bodyHTML,
+      onReady(b) {
+        const readBtn = b.querySelector('.rcm-read');
+        if (readBtn && window.Reader) {
+          readBtn.addEventListener('click', () => {
+            if (window.Reader.speaking) window.Reader.stop();
+            else window.Reader.readElement(b);
+          });
+        } else if (readBtn) { readBtn.remove(); }
+      },
+    });
   }
 
-  function open(id) {
-    const recipes = window.RECIPES || [];
-    const r = recipes.find(x => x.id === id);
-    if (!r) return;
-    ensureDom();
-    const kd = (window.RECIPE_KINDS || {})[r.kind] || {};
-    panel.style.cssText = `--rc:${kd.c || '#C73B7A'};--rcd:${kd.cd || '#A21D57'};--rcs:${kd.cs || '#FCE7F3'};`;
-    body.innerHTML = html(r, kd);
-    body.scrollTop = 0;
-    backdrop.hidden = false;
-    document.body.classList.add('rcm-locked');
-    backdrop.querySelector('.rcm-close').focus();
-    const readBtn = body.querySelector('.rcm-read');
-    if (readBtn && window.Reader) {
-      readBtn.addEventListener('click', () => {
-        if (window.Reader.speaking) window.Reader.stop();
-        else window.Reader.readElement(body);
-      });
-    } else if (readBtn) {
-      readBtn.remove();
-    }
+  // ---- any card (play / do / think / …) ----
+  function openContent(opts) {
+    const o = opts || {};
+    show({
+      accent: o.accent, image: o.image, imageAlt: o.imageAlt || o.title,
+      head: headHTML({ kicker: o.kicker, emoji: o.emoji, title: o.title, blurb: o.blurb }),
+      bodyHTML: o.bodyHTML || '',
+      onReady: o.onReady,
+    });
   }
 
   function close() {
@@ -156,5 +193,5 @@
     document.body.classList.remove('rcm-locked');
   }
 
-  window.RecipeModal = { open, close };
+  window.RecipeModal = { open, openContent, close, esc };
 })();
