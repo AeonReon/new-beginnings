@@ -330,9 +330,10 @@
        one long list into four short chapters. The anchor moment is a hero.
        ════════════════════════════════════════════════════════════ */
     #root .day-timeline { position: relative; margin: 1.6em 0 0; }
-    /* the rail */
-    #root .day-rail { position: relative; padding-left: 3.4em; }
-    #root .day-rail::before { content: ""; position: absolute; left: 1.42em; top: 0.2em; bottom: 0.2em; width: 3px; border-radius: 3px; background: linear-gradient(180deg, var(--dp), var(--dpd)); opacity: 0.28; }
+    /* Cards sit flush with the day-part banner — no left gutter. The emoji
+       lives INSIDE the card next to the time, so it can never cover it and
+       the reading column keeps its full width on a phone. */
+    #root .day-rail { position: relative; padding-left: 0; }
 
     /* day-part banner — the section break */
     #root .daypart { display: flex; align-items: center; gap: 0.7em; margin: 1.9em 0 0.9em; padding: 0.72em 1.05em; border-radius: 14px; background: linear-gradient(135deg, var(--dp), var(--dpd)); box-shadow: 0 4px 14px color-mix(in srgb, var(--dp) 32%, transparent); }
@@ -342,20 +343,20 @@
     #root .daypart-span { margin-left: auto; font-family: var(--sans); font-weight: 700; font-size: 0.72rem; color: rgba(255,255,255,0.9); }
 
     /* one moment */
-    #root .day-block { position: relative; margin: 0 0 0.75em; background: #fff; border-radius: 16px; padding: 0.9em 1.05em 0.95em; box-shadow: var(--shadow-sm); }
+    #root .day-block { position: relative; margin: 0 0 0.7em; background: #fff; border-radius: 16px; padding: 0.85em 1em 0.95em; box-shadow: var(--shadow-sm); }
     #root .day-block::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.5px; background: linear-gradient(135deg, var(--dp), var(--dpd)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; opacity: 0.34; }
-    /* emoji badge sitting on the rail */
-    #root .day-badge { position: absolute; left: -2.72em; top: 0.85em; width: 2.6em; height: 2.6em; border-radius: 999px; background: #fff; border: 2.5px solid var(--dp); display: grid; place-items: center; font-size: 1.15rem; line-height: 1; box-shadow: 0 3px 9px rgba(20,35,60,0.14); z-index: 2; }
-    #root .day-head { display: flex; align-items: baseline; gap: 0.6em; flex-wrap: wrap; margin: 0 0 0.25em; }
-    #root .day-time { background: var(--dp); color: #fff; font-family: var(--sans); font-weight: 800; border-radius: 999px; padding: 0.3em 0.7em; font-size: 0.72rem; letter-spacing: 0.02em; display: inline-block; }
-    #root .day-title { font-family: var(--display); font-weight: 700; font-size: 1.08rem; color: var(--ink); letter-spacing: -0.01em; }
+    /* head row: emoji, then the time pill, then (rarely) the hero tag */
+    #root .day-head { display: flex; align-items: center; gap: 0.5em; flex-wrap: wrap; margin: 0 0 0.4em; }
+    #root .day-badge { flex: 0 0 auto; width: 1.9em; height: 1.9em; border-radius: 999px; background: color-mix(in srgb, var(--dp) 14%, #fff); display: grid; place-items: center; font-size: 1.02rem; line-height: 1; }
+    #root .day-time { background: var(--dp); color: #fff; font-family: var(--sans); font-weight: 800; border-radius: 999px; padding: 0.34em 0.72em; font-size: 0.72rem; letter-spacing: 0.02em; display: inline-block; }
+    #root .day-title { font-family: var(--display); font-weight: 700; font-size: 1.1rem; line-height: 1.2; color: var(--ink); letter-spacing: -0.01em; margin: 0 0 0.2em; }
     #root .day-body { color: var(--ink-soft); line-height: 1.6; font-size: 1rem; }
 
     /* the anchor moment — the one block that must not be missed */
     #root .day-block.is-hero { padding: 1.15em 1.2em 1.25em; box-shadow: 0 3px 8px rgba(20,60,90,0.12), 0 16px 34px color-mix(in srgb, var(--dp) 26%, transparent); }
     #root .day-block.is-hero::before { opacity: 0.9; padding: 2.2px; }
-    #root .day-block.is-hero .day-title { font-size: 1.2rem; }
-    #root .day-hero-tag { display: inline-block; font-family: var(--sans); font-weight: 800; font-size: 0.58rem; letter-spacing: 0.13em; text-transform: uppercase; color: #fff; background: linear-gradient(135deg, var(--dp), var(--dpd)); border-radius: 999px; padding: 0.3em 0.68em; margin-bottom: 0.5em; }
+    #root .day-block.is-hero .day-title { font-size: 1.24rem; }
+    #root .day-hero-tag { flex: 0 0 auto; font-family: var(--sans); font-weight: 800; font-size: 0.58rem; letter-spacing: 0.13em; text-transform: uppercase; color: #fff; background: linear-gradient(135deg, var(--dp), var(--dpd)); border-radius: 999px; padding: 0.34em 0.68em; }
 
     /* ════════════════════════════════════════════════════════════
        ACTIVITIES v2 — each themed group gets a proper coloured chapter
@@ -643,12 +644,12 @@
             cur = idx; open = true;
           }
           out += `<div class="day-block${b.highlight ? ' is-hero' : ''}">
-                    <div class="day-badge" aria-hidden="true">${emoFor(b)}</div>
-                    ${b.highlight ? '<span class="day-hero-tag">The heart of the day</span>' : ''}
                     <div class="day-head">
+                      <span class="day-badge" aria-hidden="true">${emoFor(b)}</span>
                       <span class="day-time">${b.time}</span>
-                      <span class="day-title">${b.title}</span>
+                      ${b.highlight ? '<span class="day-hero-tag">The heart of the day</span>' : ''}
                     </div>
+                    <div class="day-title">${b.title}</div>
                     <div class="day-body">${hl(b.body)}</div>
                   </div>`;
         });
