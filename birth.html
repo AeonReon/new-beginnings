@@ -3,307 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#2E84BD">
+  <meta name="theme-color" content="#C4708C">
   <title>Conscious Parenting NI — Birth</title>
   <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/png" href="icon-192.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="stylesheet" href="assets/style.css">
   <style>
-    /* ── Days Out article template, ported for Conscious Parenting ─────────── */
-    body {
-      --accent:#F4B82A; --accent-soft:#FFE8A3; --accent-deep:#D89A0F;
-      --green:#1F8F5E; --green-soft:#C9E8D8;
-      --blue:#2E84BD; --blue-soft:#D3E7F5;
-      --panel:#fff; --panel-3:#EDF2F8; --border:#E1E6EF;
-      --text:#1A2233; --muted-dim:#7A8898;
-      --display:'Poppins',system-ui,sans-serif;
-      --spring:cubic-bezier(.34,1.56,.64,1);
-      --grad-accent:linear-gradient(135deg,#FFD64A,#F4B82A);
-      --grad-header:linear-gradient(135deg,#5FB0DD,#2E84BD);
-      --grad-ring:linear-gradient(135deg,#6CB4E2,#F4B82A);
-      --shadow-soft:0 1px 2px rgba(20,35,60,.06),0 4px 12px rgba(20,35,60,.08);
-      --shadow-card:0 2px 4px rgba(20,35,60,.07),0 10px 28px rgba(20,35,60,.10);
-      --shadow-btn:0 6px 18px rgba(244,184,42,.4);
-      --r:14px; --r-lg:20px;
-      background:#F6F8FB;
-    }
-    .home-link, .version-pill { display:none !important; }
-    body.launcher { display:block; }
-    .wrap { max-width:780px; margin:0 auto; padding:0 18px; width:100%; }
-
-    .gborder { position:relative; }
-    .gborder::before { content:""; position:absolute; inset:0; border-radius:inherit; padding:2px; background:var(--grad-ring); -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0); -webkit-mask-composite:xor; mask-composite:exclude; pointer-events:none; }
-
-    .appbar { background:var(--grad-header); box-shadow:0 2px 10px rgba(31,90,140,.18); position:sticky; top:0; z-index:40; }
-    .appbar .row { display:grid; grid-template-columns:1fr auto 1fr; align-items:center; height:56px; }
-    .appbar .brand { justify-self:center; font-family:var(--display); font-weight:800; font-size:17px; color:#fff; }
-    .appbar .brand .ni { color:var(--accent); }
-    .hbtn { display:inline-flex; align-items:center; gap:7px; color:#fff; background:rgba(255,255,255,.16); border:0; cursor:pointer; font:700 13px/1 Inter; padding:9px 14px; border-radius:999px; text-decoration:none; transition:transform .25s var(--spring),background .2s; }
-    .hbtn:hover { background:rgba(255,255,255,.3); }
-    .hbtn svg { width:16px; height:16px; }
-    .hbtn.left { justify-self:start; } .hbtn.right { justify-self:end; }
-    .hbtn.gborder::before { background:var(--grad-accent); }
-    @media(max-width:440px){ .hbtn span{ display:none; } .hbtn{ padding:10px; } }
-
-    .hero { position:relative; min-height:56vh; display:flex; align-items:flex-end; background:#2c3a45 center/cover no-repeat; }
-    .hero::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(8,16,24,0) 6%,rgba(8,16,24,.2) 44%,rgba(8,16,24,.9)); }
-    .hero-in { position:relative; z-index:2; width:100%; max-width:780px; margin:0 auto; padding:30px 18px 24px; color:#fff; }
-    .eyebrow-loc { display:inline-flex; align-items:center; gap:8px; font:700 12.5px/1 Inter; letter-spacing:.12em; text-transform:uppercase; color:#fde9b8; margin-bottom:12px; }
-    .eyebrow-loc .cat { color:#fff; background:rgba(255,255,255,.22); padding:5px 10px; border-radius:6px; }
-    .hero h1 { font-family:var(--display); font-weight:800; font-size:clamp(34px,7vw,58px); line-height:1; color:#fff; margin:0; text-shadow:0 3px 26px rgba(0,0,0,.55); }
-    .hero .what { margin:.5em 0 0; font-size:clamp(16px,2.5vw,20px); color:#f1f6fa; max-width:34ch; text-shadow:0 1px 8px rgba(0,0,0,.55); }
-    .hero .photocount { position:absolute; right:18px; bottom:20px; z-index:3; display:inline-flex; align-items:center; gap:7px; background:rgba(8,16,24,.55); backdrop-filter:blur(6px); color:#fff; font:700 12.5px/1 Inter; padding:9px 13px; border-radius:999px; }
-    .hero .photocount svg { width:15px; height:15px; }
-
-    .statusbar { background:var(--panel); border-bottom:1px solid var(--border); box-shadow:var(--shadow-soft); }
-    .statusbar .in { display:flex; flex-direction:column; align-items:center; padding:11px 0 13px; }
-    .statusbar .stats { display:flex; flex-wrap:wrap; justify-content:center; align-items:center; }
-    .stat { display:flex; align-items:center; gap:10px; padding:3px 18px; border-right:1px solid var(--border); white-space:nowrap; }
-    .stat:last-child { border-right:0; }
-    .stat .ic { width:30px; height:30px; border-radius:9px; display:flex; align-items:center; justify-content:center; flex:none; }
-    .stat .ic.g { background:var(--green-soft); } .stat .ic.y { background:var(--accent-soft); } .stat .ic.b { background:var(--blue-soft); }
-    .stat .ic svg { width:16px; height:16px; } .stat .ic.g svg { color:var(--green); } .stat .ic.y svg { color:var(--accent-deep); } .stat .ic.b svg { color:var(--blue); }
-    .stat b { display:block; font:700 13.5px/1.2 Inter; color:var(--text); } .stat span { display:block; font:500 11.5px/1.2 Inter; color:var(--muted-dim); margin-top:2px; }
-    .pbtns { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin:13px 0 0; }
-    .pbtn { display:inline-flex; align-items:center; justify-content:center; gap:8px; background:var(--grad-accent); color:#3a2b00; font:800 14px/1 Inter; padding:12px 20px; border-radius:999px; box-shadow:var(--shadow-btn); text-decoration:none; transition:transform .25s var(--spring),filter .2s; white-space:nowrap; flex:1 1 0; min-width:150px; max-width:230px; }
-    .pbtn:hover { transform:translateY(-2px); filter:brightness(1.05); } .pbtn svg { width:16px; height:16px; }
-    @media(max-width:560px){ .stat{ border-right:0; padding:3px 12px; } }
-
-    .filmstrip { display:flex; gap:12px; overflow-x:auto; padding:14px 18px 6px; scroll-snap-type:x mandatory; scrollbar-width:none; }
-    .filmstrip::-webkit-scrollbar { display:none; }
-    .shot { flex:none; width:300px; aspect-ratio:4/3; border:0; padding:0; background:none; border-radius:var(--r-lg); overflow:hidden; scroll-snap-align:start; box-shadow:var(--shadow-card); }
-    .shot img { width:100%; height:100%; object-fit:cover; display:block; border-radius:var(--r-lg); }
-    @media(max-width:560px){ .shot{ width:78vw; } }
-
-    main { padding:22px 0 10px; }
-    .facts { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin:0 0 22px; }
-    .fact { flex:0 1 calc(20% - 8px); background:var(--panel); border:1px solid var(--border); border-radius:var(--r); padding:15px 10px 13px; text-align:center; box-shadow:var(--shadow-soft); }
-    .fact .fe { font-size:20px; display:block; margin-bottom:4px; }
-    .fact b { display:block; font-family:var(--display); font-weight:700; font-size:14px; }
-    .fact span { font-size:10px; color:var(--muted-dim); text-transform:uppercase; letter-spacing:.05em; }
-    @media(max-width:640px){ .fact{ flex-basis:calc(33.333% - 7px); } } @media(max-width:380px){ .fact{ flex-basis:calc(50% - 5px); } }
-
-    .hook { font-size:19px; line-height:1.6; color:#1c2a38; }
-    .punch { font-family:var(--display); font-weight:700; font-size:clamp(20px,3vw,25px); line-height:1.32; color:#16212d; margin:0 0 16px; }
-    .hl { background:linear-gradient(180deg,transparent 62%,rgba(244,184,42,.5) 0); padding:0 3px; border-radius:2px; }
-    .keys { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:12px; }
-    .keys li { position:relative; padding-left:34px; font-size:16px; line-height:1.5; color:#2b3a49; }
-    .keys li::before { content:""; position:absolute; left:0; top:1px; width:21px; height:21px; border-radius:7px; background:var(--grad-accent); box-shadow:var(--shadow-soft); }
-    .keys li::after { content:""; position:absolute; left:7px; top:5px; width:6px; height:11px; border:solid #4a3600; border-width:0 2.4px 2.4px 0; transform:rotate(45deg); }
-    .keys li b { color:var(--text); font-weight:700; }
-    .keys li.k-warn::before { content:"!"; background:linear-gradient(135deg,#F4B82A,#E8643C); color:#fff; font:800 14px/21px Inter; text-align:center; }
-    .keys li.k-warn::after { display:none; }
-
-    .divider { height:1px; max-width:780px; margin:26px auto; background:linear-gradient(90deg,transparent,var(--border) 20%,var(--border) 80%,transparent); }
-
-    .body h2 { font-family:var(--display); font-weight:800; font-size:1.55em; letter-spacing:-.01em; color:var(--text); margin:1.6em 0 .1em; }
-    .body .kick { font:800 12px/1 Inter; letter-spacing:.12em; text-transform:uppercase; color:var(--accent-deep); margin:0 0 2px; }
-    .body p { color:#2b3a49; line-height:1.62; margin:.5em 0 1em; font-size:16.5px; }
-
-    .afig { margin:1.5em 0; }
-    .afig img { width:100%; border-radius:var(--r-lg); display:block; box-shadow:var(--shadow-card); }
-    .afig figcaption { font-size:13px; color:var(--muted-dim); margin-top:.5em; text-align:center; }
-
-    /* ideal-vs-default contrast */
-    .compare { display:grid; grid-template-columns:1fr 1fr; gap:11px; margin:1.4em 0; }
-    .compare figure { margin:0; }
-    .compare img { width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:var(--r); display:block; box-shadow:var(--shadow-soft); }
-    .compare figcaption { font:800 12px/1.3 Inter; margin-top:.5em; text-align:center; }
-    .compare .good figcaption { color:var(--green); }
-    .compare .bad figcaption { color:#B0293C; }
-
-    .stat-big { text-align:center; margin:1.7em 0; padding:1.4em 1.2em; background:linear-gradient(135deg,#FFF4D6,#FDF8EC); border:1px solid #F1E1B4; border-radius:var(--r-lg); }
-    .stat-big .num { font-family:var(--display); font-weight:800; font-size:3.2em; color:var(--accent-deep); line-height:1; letter-spacing:-.03em; }
-    .stat-big .cap { color:#5b5342; margin:.5em auto 0; font-size:15px; max-width:26em; line-height:1.5; }
-
-    .worlds { margin:1em 0 0; }
-    .world { display:flex; gap:.85em; padding:.95em 0; border-top:1px solid var(--border); }
-    .world:first-child { border-top:none; padding-top:.2em; }
-    .world .fl { font-size:1.7em; line-height:1; flex-shrink:0; }
-    .world .wn { font-family:var(--display); font-weight:800; color:var(--text); }
-    .world .wb { color:#4d5a6e; font-size:15px; margin-top:.15em; line-height:1.5; }
-
-    .factbox { background:var(--panel); border:1px solid var(--border); border-radius:var(--r); padding:1.05em 1.25em; margin:1.2em 0; box-shadow:var(--shadow-soft); }
-    .factbox h3 { margin:0 0 .4em; font-family:var(--display); font-size:1.05em; font-weight:800; }
-    .factbox ul { list-style:none; padding:0; margin:0; }
-    .factbox li { padding:.6em 0; border-top:1px solid var(--panel-3); font-size:14.5px; line-height:1.5; color:#3b4757; }
-    .factbox li:first-child { border-top:none; }
-    .factbox .cn { font-weight:700; color:var(--text); }
-
-    .cta { background:linear-gradient(135deg,#5FB0DD,#2E84BD); color:#fff; border-radius:var(--r-lg); padding:1.5em 1.4em; margin:1.6em 0; box-shadow:var(--shadow-card); }
-    .cta h3 { font-family:var(--display); font-weight:800; font-size:1.3em; margin:0 0 .4em; color:#fff; }
-    .cta p { color:#eaf4fb; margin:0; font-size:15.5px; line-height:1.55; }
-    .cta .hl { background:linear-gradient(180deg,transparent 62%,rgba(244,184,42,.6) 0); color:#fff; }
-
-    .readlist { list-style:none; padding:0; margin:.7em 0 0; }
-    .readlist li { padding:.7em 0; border-top:1px solid var(--border); font-size:15px; line-height:1.5; color:#3b4757; }
-    .readlist li:first-child { border-top:none; }
-    .readlist .cn { font-weight:700; color:var(--text); }
-
-    .draft-note { background:#FFF4D6; border:1px solid #F1E1B4; border-radius:12px; padding:.85em 1.1em; margin:1.6em 0 0; color:#6b5a2a; font-size:13.5px; line-height:1.5; }
-    .draft-note b { color:#5b4a1a; }
-    .foot-space { height:40px; }
+    .topic-card { border-left: 5px solid #C4708C; }
+    .topic-card h3 { margin: 0 0 0.3em; }
+    .reach-list { list-style: none; margin: 0.4em 0 0; padding: 0; }
+    .reach-list li { padding: 0.55em 0; border-top: 1px solid var(--rule); font-size: 0.97em; line-height: 1.5; }
+    .reach-list li:first-child { border-top: none; }
+    .reach-list .cn { font-weight: 700; color: var(--ink); }
+    .world-line { padding: 0.5em 0; border-top: 1px solid var(--rule); font-size: 0.95em; line-height: 1.45; }
+    .world-line:first-of-type { border-top: none; }
+    .world-line b { color: var(--ink); }
+    .draft-note { background: #F6E3EC; border-radius: 16px; padding: 0.9em 1.1em; margin: 1.4em 0 0; color: #7A3355; font-size: 0.92em; }
+    .draft-note b { color: #5E2542; }
   </style>
 </head>
 <body class="launcher">
-
-  <div class="appbar">
-    <div class="wrap row">
-      <a class="hbtn left gborder" href="index.html" title="Home" aria-label="Home" onclick="if(history.length>1){history.back();return false}">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
-      </a>
-      <span class="brand">Conscious Parenting <span class="ni">NI</span></span>
-      <button class="hbtn right gborder" onclick="shareIt()" title="Share">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>
-        <span>Share</span>
-      </button>
-    </div>
-  </div>
-
-  <header class="hero" style="background-image:url('assets/pillars/birth-ideal.jpg')">
-    <div class="hero-in">
-      <span class="eyebrow-loc"><span class="cat">Birth</span> Northern Ireland</span>
-      <h1>Birth, As It Could Be</h1>
-      <p class="what">The day you meet your baby should be the most beautiful of your life — not the most frightening.</p>
-    </div>
-    <span class="photocount"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="18" height="14" rx="2"/><circle cx="12" cy="13" r="3.2"/><path d="M8 6l1.5-2h5L16 6"/></svg>5 photos</span>
-  </header>
-
-  <div class="statusbar">
-    <div class="wrap in">
-      <div class="stats">
-        <div class="stat"><span class="ic y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z"/></svg></span><span><b>Sell the ideal</b><span>then reach for it</span></span></div>
-        <div class="stat"><span class="ic g"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-6.3 7-11a7 7 0 0 0-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span><b>The very beginning</b><span>of a whole life</span></span></div>
-        <div class="stat"><span class="ic b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-6.3 7-11a7 7 0 0 0-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span><b>Northern Ireland</b><span>options &amp; philosophy</span></span></div>
+  <main class="launcher-main article">
+    <header class="page-hero" style="--hc:#C4708C;--hcd:#97456A;">
+      <div class="page-cover">
+        <img src="assets/pillars/birth-ideal.jpg" alt="">
+        <div class="page-cover-veil"></div>
+        <div class="page-cover-text">
+          <div class="page-eyebrow">Conscious Parenting NI</div>
+          <h1>Birth</h1>
+          <p class="page-tagline">Calm, warm, unhurried — as it could be.</p>
+        </div>
       </div>
-      <div class="pbtns">
-        <a class="pbtn" href="https://www.doulasni.co.uk" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21a8 8 0 0 0-16 0"/><circle cx="12" cy="7" r="4"/></svg>Find a doula</a>
-        <a class="pbtn" href="https://allaboutbirth.co.uk" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-6.3 7-11a7 7 0 0 0-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Where to give birth</a>
+    </header>
+    <p class="page-intro">The day you meet your baby should be one of the most beautiful of your life. A calm, warm, unhurried birth isn't a fantasy — it's simply how it's done in much of the world, and it's what a body is actually built for. Here's the ideal to picture, and the pieces of it you can reach for right here in NI.</p>
+
+    <div class="card topic-card">
+      <h3>The birth worth picturing</h3>
+      <p style="margin-bottom:0.7em;">Warm water, soft light, quiet, and people you love — no clock, no strangers, no rush. Upright and free to move, undisturbed, with a known face beside you the whole way. Then, afterwards, weeks of being genuinely cared for while you heal and hold your baby.</p>
+      <p class="why" style="margin-bottom:0;">You can't reach for something you can't picture. The calm, warm, unhurried birth isn't just <em>nicer</em> — it works <em>with</em> the body's physiology instead of against it. Naming the ideal is the first step to getting close to it.</p>
+    </div>
+
+    <details class="explain">
+      <summary><span class="ex-ic">🌍</span> The fuller picture — why it works, and how the world does it <span class="ex-chev">▾</span></summary>
+      <div class="explain-body">
+        <p><b>Why the calm way is also the smart way.</b> Gravity helps when you're upright, not flat on your back. Warm water eases pain and fear. Oxytocin — the hormone that runs labour — is shy: dim, warm and private is the physiology, not a luxury. Continuous support from a trusted person is one of the best-evidenced things in all of maternity care. And much of the "cascade of intervention" starts with a clock, not a problem. <em>Safety always comes first — this is about environment and options, not medical advice, and skilled help stays close by.</em></p>
+        <p><b>It's already normal elsewhere.</b> The Netherlands is the developed world's home of home birth, midwife-led for healthy pregnancies. Germany has freestanding, midwife-run birth houses (<em>Geburtshäuser</em>) with pools. New Zealand gives each mother one Lead Maternity Carer through pregnancy, birth and after — the known-face model, as policy.</p>
+        <p><b>Mothering the mother.</b> Much of the world answers the exhausted new mother with weeks of care, not a next-day discharge: China's <em>zuo yuezi</em> ("sitting the month"), Korea's postpartum-care centres (<em>sanhujoriwon</em>), Latin America's <em>la cuarentena</em> ("the forty days"). In New York, Boram reborn it as a luxury retreat — proof the demand is there.</p>
+        <p><b>A new life sung in.</b> A birth is the arrival of a person, and around the world it's met with blessing and music — the Blessingway, where a mother's closest women gather to bless her; Greece's fortieth-day welcome; the wholesome version of celebration, not the commercial one.</p>
       </div>
-    </div>
-  </div>
+    </details>
 
-  <section class="gallery">
-    <div class="filmstrip">
-      <div class="shot"><img src="assets/pillars/birth-ideal.jpg" loading="lazy" alt="A warm, luxurious postnatal suite with a bassinet, soft lamps and flowers"></div>
-      <div class="shot"><img src="assets/pillars/birth-spa.jpg" loading="lazy" alt="A candlelit spa bathroom with a warm tub and soft lighting"></div>
-      <div class="shot"><img src="assets/pillars/birth.jpg" loading="lazy" alt="A warm home birthing pool with fairy lights and affirmation cards"></div>
-      <div class="shot"><img src="assets/pillars/birth-support.jpg" loading="lazy" alt="A doula holding and supporting a woman in labour"></div>
-      <div class="shot"><img src="assets/pillars/birth-skin.jpg" loading="lazy" alt="A mother resting skin-to-skin with her newborn baby"></div>
-    </div>
-  </section>
-
-  <div class="wrap">
-    <main>
-      <section class="hook">
-        <p class="punch">Picture it done right: warm water, soft light, quiet music, and people you love — no clock, no strangers, no rush. A calm room you could stay in for days, every meal brought to you, nothing to do but meet your baby and be looked after. <span class="hl">That isn't a fantasy.</span> Somewhere in the world, it's simply how it's done.</p>
-        <p style="font-size:16.5px;line-height:1.6;color:#2b3a49;margin:0;">This page sells you that ideal on purpose — because you can't reach for something you can't picture. Then it shows you how close you can actually get, right here, today.</p>
-      </section>
-
-      <section class="facts" style="margin-top:22px;">
-        <div class="fact"><span class="fe">⬇️</span><b>Upright</b><span>Not on your back</span></div>
-        <div class="fact"><span class="fe">💧</span><b>Warm water</b><span>A birthing pool</span></div>
-        <div class="fact"><span class="fe">🤝</span><b>Known faces</b><span>Continuity</span></div>
-        <div class="fact"><span class="fe">🕯️</span><b>Undisturbed</b><span>Dim &amp; calm</span></div>
-        <div class="fact"><span class="fe">🌙</span><b>No rush</b><span>Your own clock</span></div>
-      </section>
-    </main>
-  </div>
-
-  <div class="wrap body">
-    <p class="kick">The dream</p>
-    <h2>The birth you're not offered</h2>
-    <p>If money were no object, what would you build? Not a ward. A <b>retreat</b>. Deep warm water and candlelight. A midwife and a doula who've known you for months. Nourishing meals appearing at the door. Days, not hours — and afterwards, <span class="hl">weeks of being cared for</span>, so all you do is heal and hold your baby.</p>
-    <p>It already exists for those who can pay. In New York, <b>Boram</b> — a postnatal retreat modelled on Korean tradition, meals delivered, a staffed nursery, round-the-clock care. In California, boutique birth suites with <span class="hl">deep spa tubs and dimmable chandeliers</span>. Across Asia, whole centres built for exactly this. The ideal is real. It's just not offered to most of us — yet.</p>
-
-    <figure class="afig">
-      <img src="assets/pillars/birth-spa.jpg" loading="lazy" alt="A warm, candlelit spa suite with a deep tub">
-      <figcaption>Warm water, candlelight, no clock — the atmosphere a body actually births well in.</figcaption>
-    </figure>
-
-    <p class="kick">The betrayal</p>
-    <h2>And here's what most are given instead</h2>
-    <p>A metal bed under fluorescent light, in a room that looks designed to make you tense. One of the most sacred moments of a human life, handed the atmosphere of a procedure. <span class="hl">It wasn't an accident — it was designed this way</span>: for the system's convenience, not the mother's body.</p>
-
-    <div class="compare">
-      <figure class="good"><img src="assets/pillars/birth-spa.jpg" loading="lazy" alt="Warm candlelit birth spa"><figcaption>✓ What it could be</figcaption></figure>
-      <figure class="bad"><img src="assets/pillars/birth-grim.jpg" loading="lazy" alt="Clinical hospital delivery room"><figcaption>✕ What it usually is</figcaption></figure>
-    </div>
-
-    <div class="divider"></div>
-
-    <p class="kick">The science on your side</p>
-    <h2>Why the beautiful way is also the smart way</h2>
-    <p>Here's the part that makes it more than a nice idea: the calm, warm, unhurried birth isn't just <em>pleasant</em> — it's what the body is actually built for. The default room fights the physiology; the retreat works with it.</p>
-    <ul class="keys">
-      <li><b>Let gravity do the work</b> — upright, kneeling, leaning, the way every mammal does it. Flat on your back is the <span class="hl">one position that fights you</span>.</li>
-      <li><b>Get in the water</b> — a deep, warm pool eases pain and lowers fear. <span class="hl">Many women call it the single thing</span> that changed the whole experience.</li>
-      <li><b>Keep it undisturbed</b> — oxytocin, the hormone that runs labour, is shy. Bright light, strangers and fear switch it off. <span class="hl">Dim, warm and private is the physiology</span>, not a luxury.</li>
-      <li><b>Known faces, not strangers</b> — continuous support from someone she trusts is <span class="hl">one of the best-evidenced things</span> in all of maternity care.</li>
-      <li><b>No rush</b> — much of the "cascade of intervention" starts with a clock, not a problem. Given time and calm, <span class="hl">a straightforward birth mostly runs itself</span>.</li>
-      <li class="k-warn"><b>Safety comes first, always.</b> This is about environment and options — not medical advice, and not anti-doctor. Hospitals and obstetricians save lives when a birth needs help, which is exactly why the calm ideal keeps skilled help close by.</li>
-    </ul>
-
-    <div class="stat-big">
-      <div class="num">≈1 in 3</div>
-      <p class="cap">Dutch babies are born at home or in a midwife-led setting — because a whole country decided a healthy birth is normal, not a medical event.</p>
-    </div>
-
-    <p class="kick">Proof it's real</p>
-    <h2>It's already normal elsewhere</h2>
-    <p>If this sounds fringe, it's only fringe <em>here</em>. Whole countries are built around birth as a normal, physiological event.</p>
-    <div class="worlds">
-      <div class="world"><span class="fl">🇳🇱</span><div><span class="wn">The Netherlands</span><div class="wb">The developed world's home of home birth — midwife-led for healthy pregnancies, doctors called only if needed.</div></div></div>
-      <div class="world"><span class="fl">🇩🇪</span><div><span class="wn">Germany — the birth houses</span><div class="wb"><em>Geburtshäuser</em>: freestanding, midwife-run birth houses with pools and home-like rooms, hospital nearby if required.</div></div></div>
-      <div class="world"><span class="fl">🇳🇿</span><div><span class="wn">New Zealand</span><div class="wb">One Lead Maternity Carer — usually a midwife — with the mother through pregnancy, birth and after. The known-face model, as policy.</div></div></div>
-    </div>
-
-    <p class="kick">Mothering the mother</p>
-    <h2>The world doesn't send you home the next day</h2>
-    <p>The birth is only half of it. Across the world there's an ancient answer to the exhausted new mother sent home alone: <span class="hl">weeks of being cared for</span>, so she can heal and bond while others cook, clean and hold the baby.</p>
-    <div class="worlds">
-      <div class="world"><span class="fl">🇨🇳</span><div><span class="wn">China — <em>zuo yuezi</em></span><div class="wb">"Sitting the month": 30–40 days of rest, warmth and nourishing food, family caring for mother and baby.</div></div></div>
-      <div class="world"><span class="fl">🇰🇷</span><div><span class="wn">Korea — <em>sanhujoriwon</em></span><div class="wb">Whole postpartum-care centres where a new mother stays for weeks, fed and rested while staff mind the baby.</div></div></div>
-      <div class="world"><span class="fl">🌎</span><div><span class="wn">Latin America — <em>la cuarentena</em></span><div class="wb">"The forty days": the mother rests, is fed and supported by the women around her, and simply recovers.</div></div></div>
-      <div class="world"><span class="fl">🇺🇸</span><div><span class="wn">The modern version — Boram, NYC</span><div class="wb">The old wisdom, reborn as a luxury retreat: a hotel floor, meals, a staffed nursery, 24/7 support. Proof the demand is there.</div></div></div>
-    </div>
-
-    <p class="kick">The soul of it</p>
-    <h2>A new life should be sung in</h2>
-    <p>A birth isn't paperwork — it's the arrival of a person. Around the world it's met with <b>ritual, blessing and music</b>, a whole community turning to welcome the child. Not the toxic, commercial baby-shower version — the real, wholesome one.</p>
-    <div class="worlds">
-      <div class="world"><span class="fl">🌸</span><div><span class="wn">The Blessingway</span><div class="wb">In the last weeks, the mother's closest women gather — brushing her hair, washing her feet, each giving a blessing. A baby shower for the soul.</div></div></div>
-      <div class="world"><span class="fl">🇬🇷</span><div><span class="wn">Greece — the 40-day blessing</span><div class="wb">On the fortieth day, mother and baby are welcomed and blessed, and the child is introduced to the community.</div></div></div>
-      <div class="world"><span class="fl">🇳🇿</span><div><span class="wn">Māori — <em>whenua ki te whenua</em></span><div class="wb">The placenta is returned to the ancestral land, binding the new child to place, people and belonging.</div></div></div>
-      <div class="world"><span class="fl">🎶</span><div><span class="wn">Sung in</span><div class="wb">In many cultures the baby is welcomed with singing and music — a first sound of being wanted, and celebrated.</div></div></div>
-    </div>
-
-    <figure class="afig">
-      <img src="assets/pillars/birth-ritual.jpg" loading="lazy" alt="A blessingway ceremony laid out with flowers, candles and gifts">
-      <figcaption>A blessingway: the wholesome, meaningful version of welcoming a new life.</figcaption>
-    </figure>
-
-    <div class="divider"></div>
-
-    <p class="kick">Getting there from here</p>
-    <h2>In Northern Ireland — honestly</h2>
-    <p>It's thin, and getting thinner. The freestanding midwife-led units at the Downe, Lagan Valley and the Mater have all <span class="hl">closed in recent years</span> — the alternatives squeezed out. You can't book the full ideal here yet. But you can move toward it, piece by piece — and knowing what's possible is how the first proper birth retreat on this island eventually gets built.</p>
-
-    <div class="factbox">
-      <h3>What you can reach for now</h3>
-      <ul>
-        <li><span class="cn">A doula</span> — the known face, the continuity, the calm. The single most reachable piece of the ideal. (See the buttons at the top.)</li>
-        <li><span class="cn">Home birth</span> — supported by the NHS trusts for straightforward pregnancies. Warm water, your own space, no ward. Ask your community midwifery team early.</li>
-        <li><span class="cn">The Active Birth Centre, Royal Jubilee Maternity (Belfast)</span> — midwife-led rooms with a birthing pool.</li>
-        <li><span class="cn">Hire a birth pool &amp; hypnobirthing</span> — the water, the calm and the preparation are yours to arrange, wherever you give birth.</li>
+    <div class="card topic-card">
+      <h3>In Northern Ireland — honestly</h3>
+      <p style="margin-bottom:0.5em;">The full ideal isn't bookable here yet — the freestanding midwife-led units at the Downe, Lagan Valley and the Mater have closed in recent years. But you can move toward it, piece by piece.</p>
+      <ul class="reach-list">
+        <li><span class="cn">A doula</span> — the known face, the continuity, the calm. The single most reachable piece of the ideal.</li>
+        <li><span class="cn">Home birth</span> — supported by the NHS trusts for straightforward pregnancies. Ask your community midwifery team early.</li>
+        <li><span class="cn">Active Birth Centre, Royal Jubilee Maternity (Belfast)</span> — midwife-led rooms with a birthing pool.</li>
+        <li><span class="cn">Hire a birth pool &amp; learn hypnobirthing</span> — the water, the calm and the preparation are yours to arrange, wherever you give birth.</li>
         <li><span class="cn">Your own blessingway</span> — the ritual and the welcome cost nothing but intention. Gather your people.</li>
       </ul>
     </div>
 
-    <div class="factbox">
-      <h3>Doulas &amp; support — a first-draft list to verify</h3>
-      <ul>
+    <div class="card">
+      <h3>Doulas &amp; support in NI</h3>
+      <p class="res-note" style="margin:0 0 0.3em;">A first-draft list to verify and grow.</p>
+      <ul class="reach-list">
         <li><span class="cn">Doulas NI</span> — <a href="https://www.doulasni.co.uk" target="_blank" rel="noopener">doulasni.co.uk</a></li>
         <li><span class="cn">Mother Doula</span> — birth &amp; postnatal, NI. <a href="https://motherdoula.com" target="_blank" rel="noopener">motherdoula.com</a></li>
         <li><span class="cn">Doula of Belfast</span> — <a href="https://www.doulaofbelfast.co.uk" target="_blank" rel="noopener">doulaofbelfast.co.uk</a></li>
@@ -312,31 +78,28 @@
       </ul>
     </div>
 
-    <div class="cta">
-      <h3>Once you can see it, you can build it</h3>
-      <p>The default only wins while no one can picture anything else. <span class="hl">Now you can.</span> Reach for the pieces you can — a doula, a pool, a blessingway — and help make the case that Northern Ireland deserves a beautiful place to be born. That's how the first one gets built.</p>
+    <div class="card">
+      <h3>To read</h3>
+      <ul class="reach-list">
+        <li><span class="cn">Ina May's Guide to Childbirth</span> — Ina May Gaskin. Birth as a normal, physiological, even joyful event.</li>
+        <li><span class="cn">Birth Reborn</span> — Michel Odent. The obstetrician on undisturbed birth, water, and the hormones the modern room disrupts.</li>
+        <li><span class="cn">The Positive Birth Book</span> — Milli Hill. The practical modern on-ramp to a calm, empowered birth anywhere.</li>
+        <li><span class="cn">The First Forty Days</span> — Heng Ou. The lost art of mothering the mother after birth.</li>
+        <li><span class="cn">WHO — Intrapartum care (2018)</span> — the official guidance: companionship, movement, and against routine intervention.</li>
+      </ul>
     </div>
 
-    <h2>To read</h2>
-    <ul class="readlist">
-      <li><span class="cn">Ina May's Guide to Childbirth</span> — Ina May Gaskin. Birth as a normal, physiological, even joyful event.</li>
-      <li><span class="cn">Birth Reborn</span> — Michel Odent. The obstetrician on undisturbed birth, water, and the hormones the modern room disrupts.</li>
-      <li><span class="cn">The Positive Birth Book</span> — Milli Hill. The practical modern on-ramp to a calm, empowered birth anywhere.</li>
-      <li><span class="cn">The First Forty Days</span> — Heng Ou. The lost art of mothering the mother after birth, with the traditions behind it.</li>
-      <li><span class="cn">WHO — Intrapartum care (2018)</span> — the official guidance recommends companionship, movement, and against routine intervention.</li>
-    </ul>
+    <div class="draft-note"><b>First draft — let's shape this together.</b> The Northern Ireland resources especially are still evolving. React to any of it and we'll keep refining.</div>
 
-    <div class="draft-note"><b>First draft — let's shape this together.</b> The vision, the copy and especially the Northern Ireland resources are all evolving. The luxury-suite images are stand-ins for now — you mentioned generating a bespoke ideal hero, and this slot is ready for it. React to any of it and we'll keep refining.</div>
-    <div class="foot-space"></div>
-  </div>
+    <section class="why-banner">
+      <a href="compass.html" class="why-link">
+        <span class="why-mark">Why?</span>
+        <span class="why-text">First-principles, not dogma — the one rule behind everything in this app.</span>
+        <span class="why-arrow">→</span>
+      </a>
+    </section>
+  </main>
 
   <script src="assets/app.js"></script>
-  <script>
-    function shareIt(){
-      const d={title:'Birth, As It Could Be — Conscious Parenting NI',url:location.href};
-      if(navigator.share){navigator.share(d).catch(()=>{});}
-      else if(navigator.clipboard){navigator.clipboard.writeText(location.href);}
-    }
-  </script>
 </body>
 </html>

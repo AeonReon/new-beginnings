@@ -1,8 +1,10 @@
-const CACHE = 'new-beginnings-v53';
+const CACHE = 'new-beginnings-v54';
 const ASSETS = [
   './',
   './index.html',
   './education.html',
+  './run-the-week.html',
+  './screens.html',
   './food.html',
   './things-to-do.html',
   './health.html',
