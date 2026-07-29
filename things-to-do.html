@@ -88,11 +88,23 @@
     </header>
     <p class="page-intro">Getting out into the real world is half of childhood — and we built a whole app just for it. <strong>Days Out NI</strong> maps over 2,000 family places across the country. Here's a taste; tap anything to open the real thing.</p>
 
-    <div class="sec-lead">Where you could go</div>
-    <p class="sec-sub">Real places, real photos — swipe, then tap to open it in Days Out NI.</p>
-    <div class="feat-scroll" id="featScroll">
+    <div class="sec-lead">Must-see attractions</div>
+    <p class="sec-sub">The big ones — worth the trip. Swipe, then tap to open in Days Out NI.</p>
+    <div class="feat-scroll" id="car-mustsee">
       <a class="feat-card" style="pointer-events:none"><div class="fc-veil"></div><div class="fc-txt"><div class="fc-name">Loading places…</div></div></a>
     </div>
+
+    <div class="sec-lead">Soft play</div>
+    <p class="sec-sub">Indoor runaround for when the weather turns.</p>
+    <div class="feat-scroll" id="car-softplay"></div>
+
+    <div class="sec-lead">Open farms</div>
+    <p class="sec-sub">Feed a lamb, meet the animals, get happily muddy.</p>
+    <div class="feat-scroll" id="car-farms"></div>
+
+    <div class="sec-lead">Big family fun</div>
+    <p class="sec-sub">Trampolines, waterparks, ice rinks and adventure.</p>
+    <div class="feat-scroll" id="car-fun"></div>
 
     <div class="sec-lead">The whole map</div>
     <p class="sec-sub">Over 2,000 family places, all across Northern Ireland. Tap to explore them in Days Out NI.</p>
@@ -138,12 +150,19 @@
 
     // Showstoppers first (if present), then fill with a category-diverse spread so
     // the strip feels like the best of NI, not ten beaches in a row.
+    // Marquee for the top carousel; the rest fill by category, deduped.
     const HERO_IDS = [
       'giants-causeway', 'carrick-a-rede', 'the-gobbins-cliff-path', 'mount-stewart',
       'castle-ward', 'tollymore-forest-park', 'portstewart-strand', 'glenariff-forest',
-      'streamvale-farm-belfast', 'w5-at-odyssey', 'pickie-funpark',
-      'marble-arch-caves-visitor-centre-florencecourt', 'castlewellan-forest-park',
-      'ulster-museum', 'watertop-farm-ballycastle'
+      'w5-at-odyssey', 'pickie-funpark', 'marble-arch-caves-visitor-centre-florencecourt',
+      'castlewellan-forest-park', 'ulster-museum'
+    ];
+
+    const SECTIONS = [
+      { el: 'car-mustsee', heroIds: HERO_IDS, cats: ['Heritage sites', 'Castles & Estates', 'Beaches', 'Forest & woodland', 'Parks & gardens'], n: 14 },
+      { el: 'car-softplay', cats: ['Soft play'], n: 12 },
+      { el: 'car-farms', cats: ['Animals & farms'], n: 12 },
+      { el: 'car-fun', heroIds: ['lets-go-hydro', 'tropicana-newcastle', 'dundonald-international-ice-bowl'], cats: ['Activity centres'], n: 12 }
     ];
 
     function esc(s) {
@@ -156,38 +175,8 @@
       return `${IMG_BASE}/${img.replace(/^\/+/, '')}`;
     }
 
-    (async function buildFeatured() {
-      const scroll = document.getElementById('featScroll');
-      let places;
-      try {
-        const res = await fetch(`${DO_ORIGIN}/places.json`, { mode: 'cors' });
-        places = (await res.json()).places || [];
-      } catch (e) {
-        scroll.innerHTML = '';
-        return; // the map peek + CTA still carry the page
-      }
-      const withImg = places.filter(p => p.image && p.name);
-      const byId = Object.fromEntries(withImg.map(p => [p.id, p]));
-
-      const picked = [];
-      const seenCat = {};
-      const take = p => { if (p && !picked.includes(p)) picked.push(p); };
-
-      HERO_IDS.forEach(id => take(byId[id]));
-      // fill to ~14 with variety: max 2 per category, prefer the marquee categories
-      const order = ['Castles & Estates', 'Beaches', 'Forest & woodland', 'Animals & farms',
-        'Heritage sites', 'Parks & gardens', 'Adventure & trails', 'Museums', 'Wildlife watching'];
-      const pool = withImg.slice().sort((a, b) =>
-        order.indexOf(a.category) - order.indexOf(b.category));
-      for (const p of pool) {
-        if (picked.length >= 14) break;
-        const c = p.category || '?';
-        seenCat[c] = seenCat[c] || 0;
-        if (picked.includes(p) || seenCat[c] >= 2) continue;
-        seenCat[c]++; take(p);
-      }
-
-      scroll.innerHTML = picked.map(p => `
+    function card(p) {
+      return `
         <a class="feat-card" href="${dl(p.name)}" target="_blank" rel="noopener">
           <img src="${imgUrl(p)}" alt="${esc(p.name)}" loading="lazy" onerror="this.closest('.feat-card').style.display='none'">
           <div class="fc-veil"></div>
@@ -197,7 +186,36 @@
             <div class="fc-meta">${esc([p.town, p.category].filter(Boolean).join(' · '))}</div>
             <span class="fc-go">Open in Days Out NI →</span>
           </div>
-        </a>`).join('') || '';
+        </a>`;
+    }
+
+    (async function buildCarousels() {
+      let places;
+      try {
+        const res = await fetch(`${DO_ORIGIN}/places.json`, { mode: 'cors' });
+        places = (await res.json()).places || [];
+      } catch (e) {
+        SECTIONS.forEach(s => { const c = document.getElementById(s.el); if (c) c.innerHTML = ''; });
+        return; // the map peek + CTA still carry the page
+      }
+      const withImg = places.filter(p => p.image && p.name);
+      const byId = Object.fromEntries(withImg.map(p => [p.id, p]));
+      const used = new Set(); // no place appears in two carousels
+
+      SECTIONS.forEach(sec => {
+        const cont = document.getElementById(sec.el);
+        if (!cont) return;
+        const picks = [];
+        const add = p => { if (p && p.image && p.name && !used.has(p.id) && !picks.includes(p)) picks.push(p); };
+        (sec.heroIds || []).forEach(id => add(byId[id]));
+        for (const p of withImg) {
+          if (picks.length >= sec.n) break;
+          if ((sec.cats || []).includes(p.category)) add(p);
+        }
+        const final = picks.slice(0, sec.n);
+        final.forEach(p => used.add(p.id));
+        cont.innerHTML = final.map(card).join('');
+      });
     })();
   </script>
 </body>
