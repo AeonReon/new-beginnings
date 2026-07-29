@@ -15,9 +15,10 @@
     #root .method-blurb { font-size: 1.05rem; line-height: 1.62; }
 
     /* Intro / lede — a strong opening block, not just a paragraph */
-    #root .lede { font-family: var(--sans); font-style: normal; font-size: 1.1rem; line-height: 1.5; color: var(--ink); background: var(--m-soft, #eef4fb); border-radius: 14px; padding: 0.95em 1.15em; margin: 0 0 1.5em; position: relative; }
-    #root .lede::before { content: ""; position: absolute; left: 0; top: 0.9em; bottom: 0.9em; width: 4px; border-radius: 4px; background: linear-gradient(180deg, var(--m-color), var(--m-deep)); }
-    #root .lede { padding-left: 1.35em; }
+    /* Standfirst — a punchy magazine deck, with room to breathe */
+    #root .lede { font-family: var(--sans); font-weight: 600; font-style: normal; font-size: 1.26rem; line-height: 1.48; color: var(--ink); background: none; border: none; border-left: 4px solid var(--m-color); border-radius: 0; padding: 0.15em 0 0.15em 1.05em; margin: 0.3em 0 2em; letter-spacing: -0.01em; }
+    #root .lede::before { display: none; }
+    #root .lead { color: var(--ink); font-weight: 800; }
 
     /* Sub-tiles → inviting horizontal cards with a gradient icon badge */
     #root .sub-tile-grid { display: grid; grid-template-columns: 1fr; gap: 0.75em; }
@@ -34,15 +35,16 @@
     #root .sub-tile-stub { opacity: 0.72; }
 
     /* Principle cards — number badge, gradient outline, WHY callout */
-    #root .principle-card { position: relative; background: #fff; border: none; border-radius: 16px; padding: 1.1em 1.15em 1.2em; margin: 0 0 0.9em; box-shadow: var(--shadow-sm); }
-    #root .principle-card::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 2px; background: linear-gradient(135deg, var(--m-color), var(--m-deep)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; opacity: 0.85; }
-    #root .principle-num { position: static; width: 30px; height: 30px; border-radius: 9px; background: linear-gradient(150deg, var(--m-color), var(--m-deep)); color: #fff; font-weight: 800; font-size: 0.95rem; display: grid; place-items: center; margin: 0 0 0.5em; box-shadow: 0 3px 8px rgba(20,35,60,0.16); }
-    #root .principle-card h3 { margin: 0 0 0.4em; font-size: 1.16rem; color: var(--ink); letter-spacing: -0.01em; }
-    #root .principle-card > p { margin: 0; line-height: 1.56; color: var(--ink-soft); }
+    /* Principle "points" — big faint number, bold hook, room to breathe */
+    #root .principle-card { position: relative; overflow: hidden; background: #fff; border: none; border-radius: 18px; padding: 1.5em 1.4em 1.6em; margin: 0 0 1.4em; box-shadow: 0 2px 4px rgba(20,35,60,0.05), 0 16px 36px rgba(20,35,60,0.09); }
+    #root .principle-card::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 2px; background: linear-gradient(135deg, var(--m-color), var(--m-deep)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; opacity: 0.7; }
+    #root .principle-num { position: absolute; top: -0.16em; right: 0.1em; width: auto; height: auto; background: none; box-shadow: none; color: var(--m-color); opacity: 0.13; font: 900 4.6rem/1 var(--sans); letter-spacing: -0.05em; z-index: 0; }
+    #root .principle-card h3 { position: relative; z-index: 1; margin: 0 0 0.55em; font-size: 1.32rem; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; line-height: 1.14; max-width: 86%; }
+    #root .principle-card > p { position: relative; z-index: 1; margin: 0; line-height: 1.66; color: var(--ink-soft); font-size: 1.02rem; }
 
-    /* WHY callout — a marked box, not a stray line */
-    #root .why { position: relative; background: var(--m-soft, #eef4fb); border: none; border-left: 4px solid var(--m-color); border-radius: 12px; padding: 0.8em 0.95em; margin: 0.85em 0 0; font-size: 0.95em; line-height: 1.55; color: var(--ink-soft); }
-    #root .why::before { content: "Why it works"; display: inline-block; font-size: 0.57rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #fff; background: linear-gradient(135deg, var(--m-color), var(--m-deep)); padding: 0.28em 0.62em; border-radius: 999px; margin-bottom: 0.5em; position: static; }
+    /* WHY — a serif pull-quote, a change of pace from the body text */
+    #root .why { position: relative; z-index: 1; background: none; border: none; border-left: 3px solid var(--m-color); border-radius: 0; padding: 0.1em 0 0.1em 1.05em; margin: 1.2em 0 0; font-family: var(--serif); font-style: italic; font-size: 1.1rem; line-height: 1.5; color: var(--m-deep); }
+    #root .why::before { content: "Why it works"; display: block; font-family: var(--sans); font-style: normal; font-weight: 800; font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--m-color); margin-bottom: 0.35em; padding: 0; background: none; border-radius: 0; }
     #root .why::after { display: none; }
 
     /* Soft note box (day / competency notes, reading free line) */
@@ -72,6 +74,20 @@
     #root .card > ul.book-list > li::before { display: none; }
     #root .book-note { color: var(--ink-mute); font-size: 0.9em; }
     #root .card h3 { color: var(--m-deep); }
+
+    /* Room to rest, and magazine-style section subheads */
+    #root > h2 { margin: 2.1em 0 0.5em; font-size: 1.3rem; letter-spacing: -0.02em; color: var(--ink); }
+    #root > h2::after { content: ""; display: block; width: 44px; height: 3px; border-radius: 3px; margin-top: 0.45em; background: linear-gradient(90deg, var(--m-color), var(--m-deep)); }
+    #root > p { line-height: 1.62; margin: 0 0 0.6em; }
+    #root .card { margin-bottom: 1.2em; padding: 1.2em 1.3em; }
+    #root .card p { line-height: 1.6; }
+    #root .day-block { margin-bottom: 1.2em; }
+    #root .day-body { margin-top: 0.25em; }
+    #root .activity-grid { gap: 1em; }
+    #root .activity-card { padding: 1.05em 1.1em 1.1em; }
+    #root .activity-body { line-height: 1.56; }
+    #root .sub-tile-section { margin-top: 2.2em; }
+    #root .method-blurb { margin-bottom: 0.4em; }
   </style>
 </head>
 <body class="method-page">
@@ -95,6 +111,13 @@
     const HL_TERMS = ['mastery-based', 'one-to-one', 'love of learning', 'growth mindset', 'the whole child', 'the prepared environment', 'living books', 'short lessons', 'follow the child', 'phonological awareness', 'working memory', 'fine motor', 'pincer grip', 'hand strength', 'self-control', 'problem-solving', 'out of doors', 'free play', 'two hours a day', 'top 1–2%', 'narration', 'mastery', 'independence', 'resilience', 'curiosity', 'wonder', 'limitless', 'imagination'].sort((a, b) => b.length - a.length);
     const HL_RE = new RegExp('(' + HL_TERMS.map(t => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|') + ')', 'gi');
     const hl = (str) => String(str == null ? '' : str).replace(HL_RE, '<mark class="hl">$1</mark>');
+    // Bold the opening sentence — the hook — then run the highlighter on both parts.
+    const leadHtml = (text) => {
+      const s = String(text == null ? '' : text);
+      const m = s.match(/^(.+?[.!?])(\s+)([\s\S]*)$/);
+      if (!m) return hl(s);
+      return '<span class="lead">' + hl(m[1]) + '</span>' + m[2] + hl(m[3]);
+    };
 
     const id = new URLSearchParams(location.search).get('id') || 'charlotte-mason';
     const m = window.METHOD_BY_ID(id);
@@ -186,7 +209,7 @@
             <div class="card principle-card">
               <div class="principle-num">${i + 1}</div>
               <h3>${p.name}</h3>
-              <p>${hl(p.body)}</p>
+              <p>${leadHtml(p.body)}</p>
               <p class="why">${hl(p.why)}</p>
             </div>
           `).join('')}
@@ -215,7 +238,7 @@
               <div class="activity-card">
                 <div class="activity-num">${i + 1}</div>
                 <div class="activity-name">${a.name}</div>
-                <div class="activity-body">${hl(a.body)}</div>
+                <div class="activity-body">${leadHtml(a.body)}</div>
               </div>
             `).join('')}
           </div>
