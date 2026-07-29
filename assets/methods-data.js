@@ -1505,3 +1505,5 @@ window.METHODS = [
     }
   },
 ];
+
+window.METHOD_BY_ID = (id) => window.METHODS.find(m => m.id === id);
