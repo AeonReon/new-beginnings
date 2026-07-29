@@ -3,52 +3,116 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#4FA4D2">
-  <title>Conscious Parenting NI — Days Out &amp; Things to Do</title>
+  <meta name="theme-color" content="#5FB1DD">
+  <title>Conscious Parenting NI — Days Out</title>
   <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/png" href="icon-192.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
   <style>
+    /* ── Days Out NI brand palette ── */
+    .dobrand {
+      --sky: #5FB1DD; --sky-deep: #1F5E8A; --sun: #FFCE3D; --sun-deep: #E0A800;
+      --grad-do: linear-gradient(135deg, #6FC0E8, #2E84BD);
+    }
+
+    /* Live map — a real window into Days Out NI */
+    .map-wrap {
+      position: relative; border-radius: 20px; overflow: hidden;
+      box-shadow: 0 4px 10px rgba(20,60,90,.14), 0 18px 40px rgba(46,132,189,.20);
+      border: 2px solid #cfe6f4; margin: 0 0 0.7em;
+    }
+    #map { height: 400px; width: 100%; background: #dbeafd; }
+    .map-legend {
+      display: flex; flex-wrap: wrap; align-items: center; gap: 0.5em 1.1em;
+      font-family: var(--sans); font-size: 0.86rem; color: var(--ink-soft);
+      margin: 0 0.2em 1.5em; font-weight: 600;
+    }
+    .map-legend .lg { display: inline-flex; align-items: center; gap: 0.4em; }
+    .map-legend .dot { width: 0.85em; height: 0.85em; border-radius: 50%; box-shadow: 0 0 0 2px #fff, 0 1px 3px rgba(0,0,0,.25); }
+    .map-legend .dot.free { background: #FFCE3D; }
+    .map-legend .dot.paid { background: #2E84BD; }
+    .map-legend .big { color: var(--sky-deep); font-weight: 800; }
+    .map-hint { font-family: var(--sans); font-size: 0.8rem; color: var(--ink-mute); }
+
+    .map-loading, .map-error {
+      position: absolute; inset: 0; z-index: 500; display: grid; place-items: center;
+      background: #eaf4fb; color: var(--sky-deep); font-family: var(--sans); font-weight: 700; text-align: center; padding: 1.4em;
+    }
+    .map-error { background: #fff4f4; color: #b0293c; }
+
+    /* Leaflet popup — themed like the app */
+    .leaflet-popup-content-wrapper { border-radius: 16px; box-shadow: 0 8px 26px rgba(20,60,90,.25); }
+    .leaflet-popup-content { margin: 0; width: 220px !important; }
+    .mp { font-family: var(--sans); padding: 0.85em 0.95em 0.9em; }
+    .mp .mp-name { font-weight: 800; font-size: 1.02rem; color: var(--ink); line-height: 1.2; }
+    .mp .mp-meta { font-size: 0.78rem; color: var(--ink-mute); margin: 0.2em 0 0.55em; }
+    .mp .mp-chips { display: flex; flex-wrap: wrap; gap: 0.3em; margin-bottom: 0.7em; }
+    .mp .mp-chip { font-size: 0.64rem; font-weight: 800; letter-spacing: 0.04em; padding: 0.22em 0.55em; border-radius: 999px; }
+    .mp .mp-chip.free { background: #FFF2CC; color: #9a7200; }
+    .mp .mp-chip.in { background: #E4F1FA; color: #1F5E8A; }
+    .mp .mp-chip.out { background: #DCF3E7; color: #1B7A4A; }
+    .mp a.mp-go {
+      display: block; text-align: center; text-decoration: none;
+      background: linear-gradient(135deg, #6FC0E8, #2E84BD); color: #fff !important;
+      font-weight: 800; font-size: 0.86rem; padding: 0.6em; border-radius: 11px;
+    }
+
+    /* Big open-the-app CTA in Days Out colours */
     .daysout-cta {
       display: block; text-decoration: none; border: none;
-      border-radius: 20px; padding: 1.5em 1.4em; margin: 0 0 1.4em;
-      color: #fff; background: linear-gradient(135deg, #2FA96B, #1B7A4A);
-      box-shadow: 0 4px 8px rgba(20,60,40,.14), 0 18px 40px rgba(47,169,107,.28);
-      transition: transform 0.18s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.18s ease;
+      border-radius: 20px; padding: 1.35em 1.4em; margin: 0 0 1.5em;
+      color: #fff; background: linear-gradient(135deg, #6FC0E8, #2E84BD);
+      box-shadow: 0 4px 8px rgba(20,60,90,.16), 0 18px 40px rgba(46,132,189,.26);
+      transition: transform 0.18s cubic-bezier(0.34,1.56,0.64,1);
     }
     .daysout-cta:hover { transform: translateY(-2px); color: #fff; }
-    .daysout-cta .dc-kicker { font-family: var(--sans); font-size: 0.68rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.9; }
-    .daysout-cta .dc-title { font-family: var(--serif); font-weight: 800; font-size: 1.5em; letter-spacing: -0.02em; margin: 0.15em 0 0.2em; }
-    .daysout-cta .dc-sub { font-size: 0.96em; opacity: 0.95; line-height: 1.45; }
-    .daysout-cta .dc-go { display: inline-block; margin-top: 0.9em; font-weight: 800; font-size: 1.02em; }
+    .daysout-cta .dc-kicker { font-family: var(--sans); font-size: 0.68rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #FFE9A3; }
+    .daysout-cta .dc-title { font-family: var(--serif); font-weight: 800; font-size: 1.4em; letter-spacing: -0.02em; margin: 0.15em 0 0.2em; }
+    .daysout-cta .dc-sub { font-size: 0.95em; opacity: 0.96; line-height: 1.45; }
+    .daysout-cta .dc-go { display: inline-block; margin-top: 0.85em; font-weight: 800; font-size: 1.02em; }
+    .daysout-cta .dc-go .arw { color: #FFCE3D; }
+
     .soon-list { list-style: none; padding: 0; margin: 0.6em 0 0; }
     .soon-list li { display: flex; gap: 0.6em; align-items: flex-start; padding: 0.5em 0; border-top: 1px solid var(--rule); font-size: 0.97em; }
     .soon-list li:first-child { border-top: none; }
     .soon-list .st { font-weight: 700; color: var(--ink); }
-    .soon-pill { display: inline-block; font-family: var(--sans); font-size: 0.62rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #1B7A4A; background: #DCF3E7; padding: 0.25em 0.7em; border-radius: var(--radius-pill); margin-left: 0.5em; vertical-align: middle; }
+    .soon-pill { display: inline-block; font-family: var(--sans); font-size: 0.62rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #1F5E8A; background: #E4F1FA; padding: 0.25em 0.7em; border-radius: var(--radius-pill); margin-left: 0.5em; vertical-align: middle; }
   </style>
 </head>
-<body class="launcher">
+<body class="launcher dobrand">
   <main class="launcher-main article">
-    <header class="page-hero" style="--hc:#2FA96B;--hcd:#1B7A4A;">
+    <header class="page-hero" style="--hc:#5FB1DD;--hcd:#1F5E8A;">
       <div class="page-cover">
         <img src="assets/pillars/daysout.jpg" alt="">
         <div class="page-cover-veil"></div>
         <div class="page-cover-text">
           <div class="page-eyebrow">Conscious Parenting NI</div>
-          <h1>Days Out &amp; Things to Do</h1>
-          <p class="page-tagline">Get out and explore Northern Ireland.</p>
+          <h1>Days Out</h1>
+          <p class="page-tagline">Every family place in Northern Ireland, on one map.</p>
         </div>
       </div>
     </header>
-    <p class="page-intro">Getting out and into the real world is half of childhood. Northern Ireland is full of it — the coast, the forests, the wee attractions and the free ones. Here's where to find them.</p>
+    <p class="page-intro">Getting out into the real world is half of childhood — and Northern Ireland is packed with it. This is our sister app, <strong>Days Out NI</strong>, living right here: pan the map, tap any spot, and it opens in the full app with directions, photos and what's on.</p>
 
-    <a href="https://daysoutni.com" class="daysout-cta" target="_blank" rel="noopener">
-      <div class="dc-kicker">🗺️ Our sister app · daysoutni.com</div>
-      <div class="dc-title">Days Out NI</div>
-      <div class="dc-sub">Over 2,000 places to visit across Northern Ireland on one map — parks, beaches, forests, farms, castles, soft plays and family attractions. Filter by where you are and what the day's like.</div>
-      <span class="dc-go">Open the map →</span>
+    <div class="map-wrap">
+      <div id="map"></div>
+      <div class="map-loading" id="mapLoading">Loading the map of Northern Ireland…</div>
+    </div>
+    <div class="map-legend" id="mapLegend">
+      <span class="lg"><span class="dot free"></span> Free</span>
+      <span class="lg"><span class="dot paid"></span> Paid</span>
+      <span class="map-hint">Tap any pin to open it in Days Out NI.</span>
+    </div>
+
+    <a href="https://daysoutni.com/?mode=places" class="daysout-cta" target="_blank" rel="noopener">
+      <div class="dc-kicker">🗺️ Sister app · daysoutni.com · free</div>
+      <div class="dc-title">Open the full Days Out NI</div>
+      <div class="dc-sub">Filter by where you are, the weather and the age — free places, rainy-day picks, castles, beaches, farms and soft plays, each with photos, directions and opening times.</div>
+      <span class="dc-go">Explore the whole map <span class="arw">→</span></span>
     </a>
 
     <div class="card">
@@ -69,5 +133,111 @@
   </main>
 
   <script src="assets/app.js"></script>
+  <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script defer src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+  <script>
+    // A live window into Days Out NI: pull the sister app's public places feed,
+    // plot every place on a real map, and let a tap open that exact spot in the
+    // full app. Free places are sun-gold, paid are sky-blue — the two brand hues.
+    const DO_ORIGIN = 'https://daysoutni.com';
+    const dl = name => `${DO_ORIGIN}/?mode=places&q=${encodeURIComponent(name)}`;
+
+    function esc(s) {
+      return String(s == null ? '' : s).replace(/[&<>"]/g, c =>
+        ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+    }
+
+    function whenReady(cb) {
+      if (window.L && window.L.markerClusterGroup) return cb();
+      setTimeout(() => whenReady(cb), 60);
+    }
+
+    async function initMap() {
+      const loading = document.getElementById('mapLoading');
+      let data;
+      try {
+        const res = await fetch(`${DO_ORIGIN}/places.json`, { mode: 'cors' });
+        data = await res.json();
+      } catch (e) {
+        loading.className = 'map-error';
+        loading.innerHTML = "Couldn't reach the map just now.<br>Tap “Open the full Days Out NI” below.";
+        return;
+      }
+      const places = (data.places || data || []).filter(p => p && p.lat && p.lon);
+
+      const map = L.map('map', {
+        minZoom: 7, maxZoom: 16, scrollWheelZoom: false, tap: true,
+        zoomControl: true, attributionControl: true
+      }).setView([54.62, -6.68], 7.4);
+      map.setMaxBounds([[53.8, -8.9], [55.5, -5.0]]);
+
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        subdomains: 'abcd', maxZoom: 19
+      }).addTo(map);
+
+      // re-enable wheel zoom only once the user clicks into the map
+      map.scrollWheelZoom.disable();
+      map.on('click', () => map.scrollWheelZoom.enable());
+
+      const cluster = L.markerClusterGroup({
+        maxClusterRadius: 55, showCoverageOnHover: false,
+        spiderfyOnMaxZoom: true, chunkedLoading: true,
+        iconCreateFunction: c => {
+          const n = c.getChildCount();
+          const size = n < 20 ? 34 : n < 100 ? 42 : 52;
+          return L.divIcon({
+            html: `<div style="width:${size}px;height:${size}px;display:grid;place-items:center;
+              border-radius:50%;background:radial-gradient(circle at 35% 30%,#7CC3EA,#2E84BD);
+              color:#fff;font:800 ${n < 100 ? 13 : 12}px/1 -apple-system,system-ui,sans-serif;
+              border:2.5px solid #fff;box-shadow:0 3px 9px rgba(20,60,90,.35)">${n}</div>`,
+            className: '', iconSize: [size, size]
+          });
+        }
+      });
+
+      const dotIcon = free => L.divIcon({
+        className: '', iconSize: [16, 16], iconAnchor: [8, 8], popupAnchor: [0, -8],
+        html: `<span style="display:block;width:14px;height:14px;border-radius:50%;
+          background:${free ? '#FFCE3D' : '#2E84BD'};border:2px solid #fff;
+          box-shadow:0 1px 3px rgba(0,0,0,.35)"></span>`
+      });
+
+      let freeCount = 0;
+      const markers = places.map(p => {
+        const free = !!p.isFree; if (free) freeCount++;
+        const m = L.marker([p.lat, p.lon], { icon: dotIcon(free) });
+        const tags = [];
+        if (free) tags.push('<span class="mp-chip free">Free</span>');
+        if (p.indoor) tags.push('<span class="mp-chip in">Indoor</span>');
+        else if (p.outdoor) tags.push('<span class="mp-chip out">Outdoor</span>');
+        const metaBits = [p.town, p.category].filter(Boolean).map(esc).join(' · ');
+        m.bindPopup(
+          `<div class="mp">
+            <div class="mp-name">${esc(p.name)}</div>
+            <div class="mp-meta">${metaBits}${p.duration ? ' · ' + esc(p.duration) : ''}</div>
+            <div class="mp-chips">${tags.join('')}</div>
+            <a class="mp-go" href="${dl(p.name)}" target="_blank" rel="noopener">Open in Days Out NI →</a>
+          </div>`,
+          { closeButton: true, autoPanPadding: [24, 24] }
+        );
+        return m;
+      });
+      cluster.addLayers(markers);
+      map.addLayer(cluster);
+
+      loading.remove();
+
+      // Fill in the real numbers now we know them
+      const total = places.length;
+      document.getElementById('mapLegend').innerHTML =
+        `<span class="lg big">${total.toLocaleString()} family places</span>` +
+        `<span class="lg"><span class="dot free"></span> ${freeCount.toLocaleString()} free</span>` +
+        `<span class="lg"><span class="dot paid"></span> paid</span>` +
+        `<span class="map-hint">Tap any pin to open it in Days Out NI.</span>`;
+    }
+
+    whenReady(initMap);
+  </script>
 </body>
 </html>
