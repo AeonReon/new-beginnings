@@ -243,6 +243,13 @@
     };
 
     const SECTION_ORDER = ['core-idea', 'day-in-life', 'activities', 'reading-list', 'competency'];
+    const SECTION_META = {
+      'core-idea':   { n: '01', title: 'Core idea',            tag: 'The philosophy in plain language, with the why' },
+      'day-in-life': { n: '02', title: 'A day in the life',    tag: 'What a typical day looks like for a four-year-old' },
+      'activities':  { n: '03', title: 'Things to do this week', tag: 'Twenty activities — pick one or two a day' },
+      'reading-list':{ n: '04', title: 'Reading list',         tag: 'Books for you, and books to read aloud' },
+      'competency':  { n: '05', title: 'What to expect at four', tag: 'Landmarks at four — orientation, not a test' }
+    };
 
     // Copywriter's marker — highlight the key idea in each block so the eye lands
     // on what matters instead of wading through a wall of text.
@@ -299,14 +306,6 @@
       }
     }
 
-    const SECTION_META = {
-      'core-idea':   { n: '01', title: 'Core idea',            tag: 'The philosophy in plain language, with the why' },
-      'day-in-life': { n: '02', title: 'A day in the life',    tag: 'What a typical day looks like for a four-year-old' },
-      'activities':  { n: '03', title: 'Things to do this week', tag: 'Twenty activities — pick one or two a day' },
-      'reading-list':{ n: '04', title: 'Reading list',         tag: 'Books for you, and books to read aloud' },
-      'competency':  { n: '05', title: 'What to expect at four', tag: 'Landmarks at four — orientation, not a test' }
-    };
-
     function renderMethodLanding(m) {
       const toc = SECTION_ORDER.map(key => {
         const built = !!(m.sections && m.sections[key]);
@@ -343,7 +342,6 @@
 
     function renderSubSection(m, key) {
       const s = m.sections[key];
-      const back = `<div class="sub-back"><a href="methodology.html?id=${m.id}">← Back to ${m.name}</a></div>`;
       let body = '';
 
       if (key === 'core-idea') {
@@ -452,7 +450,6 @@
 
       root.innerHTML = `
         <div class="ed-article">
-          ${back}
           <header class="ed-sub-hero">
             <div class="ed-eyebrow">${m.name} · ${m.era}</div>
             <h1 class="ed-title">${titles[key]}</h1>
