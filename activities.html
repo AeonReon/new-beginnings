@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#E8894A">
+  <title>Conscious Parenting NI — Activities</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="icon-192.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    .where-row { display: flex; flex-wrap: wrap; gap: 0.5em; margin: 0 0 1.4em; }
+    .where-chip {
+      font-family: var(--sans); font-size: 0.92rem; font-weight: 700;
+      color: var(--ink-soft); background: var(--paper-card);
+      border: 1.5px solid var(--rule-strong); border-radius: var(--radius-pill);
+      padding: 0.5em 1.05em; cursor: pointer;
+      transition: transform 0.15s cubic-bezier(0.34,1.56,0.64,1), border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+    }
+    .where-chip:hover { transform: translateY(-1px); border-color: var(--sky); }
+    .where-chip.active { color: white; border-color: transparent; background: var(--grad-sky); box-shadow: var(--shadow-sm); }
+
+    #count { font-family: var(--sans); font-size: 0.85em; color: var(--ink-mute); margin: 0.2em 0 1.4em; }
+
+    .group-header {
+      margin: 2.6em 0 1.1em; padding: 0.85em 1.1em; border-radius: 16px;
+      background: var(--gcs); position: relative; overflow: hidden;
+    }
+    .group-header::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 7px; background: linear-gradient(180deg, var(--gc), var(--gcd)); }
+    .group-header:first-of-type { margin-top: 1.4em; }
+    .group-header h2 { display: flex; align-items: center; gap: 0.5em; margin: 0 0 0.1em; font-size: 1.32rem; color: var(--gcd); letter-spacing: -0.02em; }
+    .group-emoji { font-size: 1.15em; }
+    .group-blurb { font-size: 0.92em; color: var(--ink-soft); margin: 0; }
+
+    .act-card {
+      position: relative; border: none; border-radius: var(--radius-lg, 20px);
+      background: var(--paper-card, #fff); overflow: hidden;
+      box-shadow: var(--shadow-sm); margin: 0 0 1.05em; padding: 0;
+      transition: transform 0.18s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.18s ease;
+    }
+    .act-card::before {
+      content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 2px;
+      background: linear-gradient(135deg, var(--gc), var(--gcd));
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; z-index: 2;
+    }
+    .act-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md, 0 12px 30px rgba(20,35,60,0.12)); }
+
+    .act-head { display: flex; align-items: center; gap: 0.8em; padding: 0.9em 1.1em; background: var(--gcs); border-bottom: 2px solid var(--gc); }
+    .act-badge {
+      flex: 0 0 auto; width: 50px; height: 50px; border-radius: 15px; display: grid; place-items: center;
+      font-size: 27px; line-height: 1; background: linear-gradient(150deg, var(--gc), var(--gcd));
+      box-shadow: 0 5px 13px color-mix(in srgb, var(--gc) 45%, transparent), inset 0 1.5px 0 rgba(255,255,255,0.45);
+    }
+    .act-head-text { min-width: 0; flex: 1; }
+    .act-head-text h3 { margin: 0 0 0.28em; font-size: 1.22rem; font-weight: 800; line-height: 1.12; color: var(--ink); letter-spacing: -0.015em; }
+    .act-tag { display: inline-block; font-size: 0.58rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gcd); background: rgba(255,255,255,0.75); padding: 0.3em 0.7em; border-radius: var(--radius-pill); }
+
+    .act-body { padding: 0.95em 1.1em 1.15em; }
+    .meta-row { display: flex; flex-wrap: wrap; gap: 0.4em; margin: 0 0 0.85em; }
+    .chip { font-family: var(--sans); font-size: 0.72rem; font-weight: 700; padding: 0.28em 0.72em; border-radius: var(--radius-pill); background: #fff; color: var(--gcd); border: 1.5px solid var(--gc); }
+    .chip.age { background: var(--paper-warm); color: var(--ink-soft); border: 1px solid var(--rule-strong); }
+    .chip.mess-tidy { background: #DCF3E7; color: #1B7A4A; border-color: transparent; }
+    .chip.mess-some { background: #FBEFD3; color: #B4770F; border-color: transparent; }
+    .chip.mess-messy { background: #FCE4E8; color: #B0293C; border-color: transparent; }
+
+    .act-card p.how { margin: 0; color: var(--ink-soft); line-height: 1.55; }
+
+    .why-box { margin: 0.9em 0 0; padding: 0.8em 0.95em; background: #fff; border: 1px solid var(--rule); border-left: 4px solid var(--gc); border-radius: 12px; }
+    .why-pill { display: inline-block; font-size: 0.6rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #fff; background: linear-gradient(135deg, var(--gc), var(--gcd)); padding: 0.25em 0.7em; border-radius: var(--radius-pill); margin-bottom: 0.5em; }
+    .why-box p { margin: 0; font-size: 0.94em; line-height: 1.58; color: var(--ink-soft); }
+    mark.hl { background: linear-gradient(180deg, rgba(255,206,61,0) 58%, rgba(255,201,45,0.85) 58%); color: inherit; font-weight: 700; padding: 0 0.06em; border-radius: 2px; }
+
+    /* Make-it-yourself recipe */
+    .recipe-box { margin: 0.85em 0 0; padding: 0.8em 0.95em; background: var(--gcs); border-radius: 12px; border: 1px dashed var(--gc); }
+    .recipe-pill { display: inline-block; font-size: 0.6rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gcd); margin-bottom: 0.4em; }
+    .recipe-box p { margin: 0; font-size: 0.9em; line-height: 1.5; color: var(--ink-soft); }
+
+    .tweak { font-size: 0.85em; color: var(--ink-mute); margin: 0.8em 0 0; }
+    .tweak b { color: var(--ink-soft); font-weight: 700; }
+
+    .traits { display: flex; flex-wrap: wrap; gap: 0.35em; margin-top: 0.95em; }
+    .trait { font-family: var(--sans); font-size: 0.68rem; font-weight: 700; padding: 0.22em 0.62em; border-radius: var(--radius-pill); background: var(--paper-surface); color: var(--ink-mute); border: 1px solid var(--rule-strong); cursor: pointer; }
+    .trait:hover { border-color: var(--gc); color: var(--gcd); }
+
+    .empty { color: var(--ink-mute); font-style: italic; margin: 2em 0; }
+  </style>
+</head>
+<body class="launcher">
+  <main class="launcher-main article">
+    <header class="page-hero" style="--hc:#E8894A;--hcd:#B45309;">
+      <div class="page-cover">
+        <img src="assets/tools/activities.jpg" alt="">
+        <div class="page-cover-veil"></div>
+        <div class="page-cover-text">
+          <div class="page-eyebrow">Conscious Parenting NI</div>
+          <h1>Activities</h1>
+          <p class="page-tagline">Hands-on things to do — mostly from the cupboard.</p>
+        </div>
+      </div>
+    </header>
+
+    <p class="page-intro">
+      Real, hands-on things to do together at home — making, painting, messy play,
+      pretend, little jobs and rainy-day moving about. Most need next to nothing.
+      Each one says the actual thing it builds, and where a material can be made at
+      home cheaply and non-toxically, the recipe's right there.
+    </p>
+
+    <div class="card" style="margin-top: 0;">
+      <h3>How to use this</h3>
+      <p style="margin-bottom: 0.7em;">
+        You don't need special kit or a "craft table". Pick one that fits the day —
+        what you've got in, how much mess you can face — set it up, and let them lead.
+        The doing matters more than the result; a wonky, half-finished thing they
+        made themselves beats a perfect one you did for them.
+      </p>
+      <p class="why" style="margin-bottom: 0;">
+        These aren't time-fillers. At three and four a child's real work is play and
+        making — it's how the hands get strong, the mind learns to plan, and the whole
+        body gets ready for the sitting and writing that come later. Every activity
+        carries the specific reason it helps, so you can trust it, not just do it.
+      </p>
+    </div>
+
+    <div class="where-row" id="where-row"></div>
+
+    <div class="filters">
+      <div>
+        <label for="f-search">Search</label>
+        <input type="search" id="f-search" placeholder="e.g. paint, threading, water, calm">
+      </div>
+      <div>
+        <label for="f-build">Builds</label>
+        <select id="f-build"></select>
+      </div>
+      <div>
+        <label for="f-mess">Mess</label>
+        <select id="f-mess">
+          <option value="">Any mess</option>
+          <option value="Tidy">Tidy</option>
+          <option value="Some mess">Some mess</option>
+          <option value="Messy">Messy</option>
+        </select>
+      </div>
+      <div>
+        <label for="f-age">Ready for</label>
+        <select id="f-age">
+          <option value="">Any age 3–5</option>
+          <option value="3–5">Ready from 3</option>
+          <option value="4–5">Best from 4</option>
+        </select>
+      </div>
+    </div>
+
+    <p id="count"></p>
+    <div id="list"></div>
+  </main>
+
+  <script src="assets/activities-data.js"></script>
+  <script src="assets/app.js"></script>
+  <script>
+    const GROUP_ORDER = ['Make', 'Mark', 'Sensory', 'Pretend', 'Practical', 'Move'];
+    const KITS = ['No kit', 'Household', 'A few bits'];
+    const GROUP_EMOJI = { Make: '🧱', Mark: '🎨', Sensory: '💧', Pretend: '🎭', Practical: '🫗', Move: '🤸' };
+
+    const PALETTE = [
+      { c: '#4A9ED4', cd: '#2D6FA8', cs: '#E4F1FA' },
+      { c: '#F5B21E', cd: '#B4790A', cs: '#FFF3CE' },
+      { c: '#FF5E8E', cd: '#C93E6A', cs: '#FFE2EC' },
+      { c: '#3FBF97', cd: '#2F9E77', cs: '#D8F3E9' },
+      { c: '#8B6FD1', cd: '#5B3FA8', cs: '#EDE8FA' },
+      { c: '#E8894A', cd: '#B45309', cs: '#FEEBD6' }
+    ];
+
+    // Highlight the key skill each activity builds — the copywriter's marker.
+    const HL_TERMS = [
+      'hand-eye coordination', 'the pincer grip', 'pincer grip', 'hand strength', 'hand-strengthening',
+      'core strength', 'fine motor', 'gross motor', 'self-control', 'body-awareness', 'heavy-work',
+      'concentration', 'coordination', 'sequencing', 'problem-solving', 'classify', 'early number',
+      'independence', 'imagination', 'balance', 'pressure-free', 'volume', 'pattern-making', 'comprehension'
+    ].sort((a, b) => b.length - a.length);
+    const HL_RE = new RegExp('(' + HL_TERMS.map(t => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|') + ')', 'gi');
+
+    const fSearch = document.getElementById('f-search');
+    const fBuild = document.getElementById('f-build');
+    const fMess = document.getElementById('f-mess');
+    const fAge = document.getElementById('f-age');
+    const whereRow = document.getElementById('where-row');
+    const list = document.getElementById('list');
+    const count = document.getElementById('count');
+    let activeKit = '';
+
+    fBuild.innerHTML = '<option value="">Any skill</option>' +
+      window.ACTIVITY_TRAITS.map(t => `<option value="${t}">${t}</option>`).join('');
+
+    whereRow.innerHTML = KITS.map(w => `<button type="button" class="where-chip" data-kit="${w}">${w}</button>`).join('');
+    whereRow.querySelectorAll('.where-chip').forEach(btn => {
+      btn.addEventListener('click', () => {
+        activeKit = (activeKit === btn.dataset.kit) ? '' : btn.dataset.kit;
+        whereRow.querySelectorAll('.where-chip').forEach(b => b.classList.toggle('active', b.dataset.kit === activeKit));
+        render();
+      });
+    });
+
+    function esc(s) {
+      return String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+    }
+    function highlightWhy(s) { return esc(s).replace(HL_RE, '<mark class="hl">$1</mark>'); }
+    function messClass(m) { return m === 'Tidy' ? 'mess-tidy' : m === 'Messy' ? 'mess-messy' : 'mess-some'; }
+
+    function cardHTML(a, i, groupIdx) {
+      const grp = window.ACTIVITY_GROUPS[a.group];
+      const pal = PALETTE[(i + groupIdx) % PALETTE.length];
+      const meta = [
+        `<span class="chip">${esc(a.kit)}</span>`,
+        `<span class="chip ${messClass(a.mess)}">${esc(a.mess)}</span>`,
+        `<span class="chip age">Age ${esc(a.age)}</span>`
+      ].join('');
+      const traits = a.traits.map(t => `<span class="trait" data-trait="${esc(t)}">${t}</span>`).join('');
+      const recipe = a.recipe ? `<div class="recipe-box"><span class="recipe-pill">🧪 Make it yourself</span><p>${esc(a.recipe)}</p></div>` : '';
+      const tweak = a.tweak ? `<p class="tweak"><b>Tune it:</b> ${esc(a.tweak)}</p>` : '';
+      return `
+        <div class="card act-card" style="--gc:${pal.c};--gcd:${pal.cd};--gcs:${pal.cs};">
+          <div class="act-head">
+            <span class="act-badge">${a.emoji || '✨'}</span>
+            <div class="act-head-text">
+              <h3>${esc(a.name)}</h3>
+              <span class="act-tag">${esc(grp.label)}</span>
+            </div>
+          </div>
+          <div class="act-body">
+            <div class="meta-row">${meta}</div>
+            <p class="how">${esc(a.how)}</p>
+            <div class="why-box"><span class="why-pill">Why</span><p>${highlightWhy(a.why)}</p></div>
+            ${recipe}
+            ${tweak}
+            <div class="traits">${traits}</div>
+          </div>
+        </div>`;
+    }
+
+    function render() {
+      const q = fSearch.value.toLowerCase().trim();
+      const build = fBuild.value, mess = fMess.value, age = fAge.value;
+      const filtered = window.ACTIVITIES.filter(a => {
+        if (activeKit && a.kit !== activeKit) return false;
+        if (build && !a.traits.includes(build)) return false;
+        if (mess && a.mess !== mess) return false;
+        if (age && a.age !== age) return false;
+        if (q) {
+          const hay = [a.name, a.how, a.why, a.recipe || '', a.tweak || '', a.traits.join(' '), window.ACTIVITY_GROUPS[a.group].label].join(' ').toLowerCase();
+          if (!hay.includes(q)) return false;
+        }
+        return true;
+      });
+      count.textContent = `${filtered.length} of ${window.ACTIVITIES.length} activities`;
+
+      let html = '';
+      GROUP_ORDER.forEach((key, groupIdx) => {
+        const grp = window.ACTIVITY_GROUPS[key];
+        const inGroup = filtered.filter(a => a.group === key);
+        if (!inGroup.length) return;
+        html += `
+          <div class="group-header" style="--gc:${grp.c};--gcd:${grp.cd};--gcs:${grp.cs};">
+            <h2><span class="group-emoji">${GROUP_EMOJI[key] || ''}</span>${grp.label}</h2>
+            <p class="group-blurb">${grp.blurb}</p>
+          </div>`;
+        html += inGroup.map((a, i) => cardHTML(a, i, groupIdx)).join('');
+      });
+      list.innerHTML = html || '<p class="empty">Nothing matches that yet — try clearing a filter.</p>';
+
+      list.querySelectorAll('.trait').forEach(el => el.addEventListener('click', () => {
+        fBuild.value = el.dataset.trait; render(); window.scrollTo({ top: 0, behavior: 'smooth' });
+      }));
+    }
+
+    [fSearch, fBuild, fMess, fAge].forEach(el => el.addEventListener('input', render));
+    render();
+  </script>
+</body>
+</html>
