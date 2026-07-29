@@ -9,16 +9,13 @@
   <link rel="icon" type="image/png" href="icon-192.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="stylesheet" href="assets/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&display=swap" rel="stylesheet">
   <style>
     /* ════════════════════════════════════════════════════════════
        EDITORIAL v2 — one cohesive theme, magazine reading experience.
        Cream-cool paper, navy ink, ONE blue accent, Fraunces display serif.
        Imagery + pull-quotes + whitespace do the work, not colour blocks.
        ════════════════════════════════════════════════════════════ */
-    #root { --acc: #2D6FA8; --acc-bright: #4FA4D2; --acc-soft: #EAF3FB; --warm: #C77A22; --display: 'Fraunces', Georgia, 'Times New Roman', serif; }
+    #root { --acc: #2D6FA8; --acc-bright: #4FA4D2; --acc-soft: #EAF3FB; --warm: #C77A22; --display: var(--serif); }
 
     /* Reading column — single, calm, ~680px */
     #root .ed-article { max-width: 680px; margin: 0 auto; padding-bottom: 2em; }
@@ -93,6 +90,20 @@
     #root .recap li { counter-increment: r; position: relative; padding: 0.65em 0 0.65em 2.1em; border-top: 1px solid var(--rule-soft); font-size: 1.03rem; line-height: 1.5; color: var(--ink); }
     #root .recap li:first-child { border-top: none; }
     #root .recap li::before { content: counter(r); position: absolute; left: 0; top: 0.62em; font-family: var(--display); font-weight: 600; font-size: 1.05rem; color: var(--acc); }
+
+    /* ── Activities — grouped editorial list, number in its own gutter ── */
+    #root .act-group { margin: 1.8em 0 0; }
+    #root .act-group-head { display: flex; align-items: baseline; gap: 0.6em; font-family: var(--display); font-weight: 600; font-size: 1.32rem; letter-spacing: -0.015em; color: var(--ink); margin: 0 0 0.15em; padding-top: 1.4em; border-top: 1px solid var(--rule); }
+    #root .act-group:first-of-type .act-group-head { border-top: none; padding-top: 0; }
+    #root .act-group-kicker { font-family: var(--sans); font-weight: 800; font-size: 0.7rem; letter-spacing: 0.1em; color: var(--acc); flex: 0 0 auto; }
+    #root .act-group-intro { font-size: 1rem; line-height: 1.55; color: var(--ink-mute); margin: 0.15em 0 0.9em; }
+    #root .act-list { }
+    #root .act-item { display: flex; gap: 0.9em; padding: 0.85em 0; border-top: 1px solid var(--rule-soft); }
+    #root .act-item:first-child { border-top: none; }
+    #root .act-no { flex: 0 0 1.9em; width: 1.9em; height: 1.9em; border-radius: 999px; background: var(--acc-soft); color: var(--acc); font-family: var(--display); font-weight: 600; font-size: 0.98rem; display: grid; place-items: center; }
+    #root .act-text { flex: 1; min-width: 0; }
+    #root .act-name { font-family: var(--sans); font-weight: 800; font-size: 1.06rem; color: var(--ink); line-height: 1.25; margin: 0.15em 0 0.2em; }
+    #root .act-body { font-size: 1rem; line-height: 1.6; color: var(--ink-soft); }
 
     /* ── legacy tradition-page styles (older sub-sections still use these) ── */
     #root mark.hl { background: linear-gradient(180deg, rgba(255,206,61,0) 58%, rgba(255,201,45,0.82) 58%); color: inherit; font-weight: 700; padding: 0 0.05em; border-radius: 2px; }
@@ -346,12 +357,18 @@
 
       if (key === 'core-idea') {
         const two = (n) => String(n).padStart(2, '0');
-        // One featured pull-quote breaks the middle of the piece.
-        const quoteAt = s.banner ? Math.ceil(s.principles.length / 2) : -1;
+        // Spread the pull-quotes evenly through the piece so the eye gets a rest
+        // between every couple of points, not one lump in the middle.
+        const quotes = s.quotes || (s.banner ? [s.banner] : []);
+        const n = s.principles.length;
+        const quoteBefore = {};
+        quotes.forEach((q, qi) => {
+          const pos = Math.round((n * (qi + 1)) / (quotes.length + 1));
+          quoteBefore[Math.min(Math.max(pos, 1), n - 1)] = q;
+        });
+        const pullquote = (q) => `<blockquote class="pullquote"><p>${q.text}</p>${q.cite ? `<cite>${q.cite}</cite>` : ''}</blockquote>`;
         const tenets = s.principles.map((p, i) => {
-          const quote = (i === quoteAt)
-            ? `<blockquote class="pullquote"><p>${s.banner.text}</p>${s.banner.cite ? `<cite>${s.banner.cite}</cite>` : ''}</blockquote>`
-            : '';
+          const quote = quoteBefore[i] ? pullquote(quoteBefore[i]) : '';
           const head = p.hook
             ? `<div class="tenet-kicker">${p.name}</div><h3 class="tenet-head">${p.hook}</h3>`
             : `<h3 class="tenet-head">${p.name}</h3>`;
@@ -393,17 +410,31 @@
           ${s.note ? `<p class="note-box">${hl(s.note)}</p>` : ''}
         `;
       } else if (key === 'activities') {
+        // Grouped into themed clusters with subheads so a long list reads as a
+        // handful of short chapters, not one endless column. Falls back to a
+        // single flat group for traditions that haven't been grouped yet.
+        const groups = s.groups || [{ items: s.items }];
+        const item = (a, n) => `
+          <div class="act-item">
+            <div class="act-no">${n}</div>
+            <div class="act-text">
+              <div class="act-name">${a.name}</div>
+              <div class="act-body">${hl(a.body)}</div>
+            </div>
+          </div>`;
+        let n = 0;
+        const midQuote = s.quote && groups.length > 2 ? Math.floor(groups.length / 2) : -1;
+        const blocks = groups.map((g, gi) => {
+          const head = g.heading
+            ? `<div class="act-group-head"><span class="act-group-kicker">${String(gi + 1).padStart(2, '0')}</span>${g.heading}</div>${g.intro ? `<p class="act-group-intro">${hl(g.intro)}</p>` : ''}`
+            : '';
+          const rows = g.items.map(a => item(a, ++n)).join('');
+          const brk = gi === midQuote ? `<blockquote class="pullquote"><p>${s.quote.text}</p>${s.quote.cite ? `<cite>${s.quote.cite}</cite>` : ''}</blockquote>` : '';
+          return `<div class="act-group">${head}<div class="act-list">${rows}</div></div>${brk}`;
+        }).join('');
         body = `
-          <div class="lede">${multiPara(s.intro, 2)}</div>
-          <div class="activity-grid">
-            ${s.items.map((a, i) => `
-              <div class="activity-card">
-                <div class="activity-num">${i + 1}</div>
-                <div class="activity-name">${a.name}</div>
-                <div class="activity-body">${leadHtml(a.body)}</div>
-              </div>
-            `).join('')}
-          </div>
+          <div class="ed-lead ed-lead-intro">${multiPara(s.intro, 2)}</div>
+          ${blocks}
         `;
       } else if (key === 'reading-list') {
         body = `

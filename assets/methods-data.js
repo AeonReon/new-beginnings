@@ -212,7 +212,10 @@ window.METHODS = [
         title: 'Core idea',
         icon: 'compass',
         intro: 'Montessori observed that a young child, given a beautiful prepared environment and the freedom to choose meaningful work, will concentrate deeply, repeat eagerly, and develop themselves. The adult prepares; the child works.',
-        banner: { text: 'Never help a child with a task at which he feels he can succeed.', cite: 'Maria Montessori' },
+        quotes: [
+          { text: 'Never help a child with a task at which he feels he can succeed.', cite: 'Maria Montessori' },
+          { text: 'The greatest sign of success for a teacher is to be able to say, "The children are now working as if I did not exist."', cite: 'Maria Montessori' }
+        ],
         recap: [
           'Prepare the space, then step back — the room teaches, you observe.',
           'Give real work over toys: pouring, sweeping, chopping, tidying.',
@@ -251,28 +254,37 @@ window.METHODS = [
       'activities': {
         title: 'Things you can do this week',
         icon: 'hand',
-        intro: 'Twenty Montessori-true activities for a 4-year-old at home. Many use what is already in your kitchen. None require expensive materials.',
-        items: [
-          { name: 'Set up a pouring tray', body: 'A small pitcher, two small cups, a sponge, a tray. The child pours water from one cup to the other and back, all morning if they like.' },
-          { name: 'Spoon dried beans', body: 'Two small bowls, a spoon, a tray of dried chickpeas. The child spoons from one bowl to the other. When they finish, they reverse it.' },
-          { name: 'Polish a piece of silver', body: 'A small jar of polish, a soft cloth, a piece of real silver (a spoon, a small dish). The child polishes until it gleams.' },
-          { name: 'Wash a small mirror', body: 'A spray bottle of water, a cloth, a small framed mirror. They learn to spray, wipe, dry.' },
-          { name: 'Sandpaper letters', body: 'Buy a set (Melissa & Doug do an inexpensive one) or make your own. The child traces each letter while you say the sound (not the name).' },
-          { name: 'Number rods or red rods', body: 'A graduated set of rods (long to short). Lay them out, run a finger along each, count as you go. The hand learns what the brain will later understand.' },
-          { name: 'Sort buttons by colour', body: 'A bowl of mixed buttons, several smaller bowls. The child sorts. Simple. Absorbing.' },
-          { name: 'Chop a soft fruit', body: 'A banana, a strawberry, a pear quarter, a butter knife. Real knife eventually. Sit with them but do not chop for them.' },
-          { name: 'Open and close containers', body: 'A basket of jars, boxes, tins with different lids — screw, snap, hinged. The child opens, closes, opens again.' },
-          { name: 'Lace beads on a string', body: 'Wooden beads with a generous hole, a stiff cord. Make patterns or just thread. Builds the pencil grip that will later write.' },
-          { name: 'Wash dishes (a few real ones)', body: 'A low stool at the sink. Warm water, soap, a small towel. They wash their own plate after lunch.' },
-          { name: 'Fold tea towels', body: 'A basket of clean tea towels. Show them how to fold once. Then let them fold the whole basket, however they manage.' },
-          { name: 'Match leaves', body: 'On a walk, pick up two of each kind of leaf. Bring them home, lay them out, find the matching pairs.' },
-          { name: 'Pin pricking', body: 'A printed shape on cardstock, a thumbtack (with cork), a piece of felt underneath. The child pricks along the line. When done, the shape pops out. Hand control.' },
-          { name: 'Make a sandwich, end to end', body: 'Bread, butter, filling, knife, plate. The child does the whole thing. Their lunch.' },
-          { name: 'Watering plants', body: 'A small watering can, the houseplants. The child waters each one in turn — same plant, same can, every morning.' },
-          { name: 'Sort socks', body: 'The clean laundry basket. The child finds matching pairs and folds them.' },
-          { name: 'Practise saying excuse me', body: 'A grace-and-courtesy lesson. Model: tap shoulder, wait, say excuse me. Practise with you, with siblings.' },
-          { name: 'Pin work', body: 'Cork board, push pins, a piece of paper. The child arranges pins in a pattern. Concentration.' },
-          { name: 'Dust the bookshelf', body: 'A small cloth. Show them once. Then they dust every Saturday morning, their job.' }
+        intro: 'Twenty Montessori-true activities for a 4-year-old at home. Many use what is already in your kitchen. None require expensive materials. Set out a couple at a time — pick what suits the week.',
+        quote: { text: 'The hands are the instruments of man\'s intelligence.', cite: 'Maria Montessori' },
+        groups: [
+          { heading: 'Practical life & the home', intro: 'Real jobs, done for real. This is the heart of Montessori — start here.', items: [
+            { name: 'Set up a pouring tray', body: 'A small pitcher, two small cups, a sponge, a tray. The child pours water from one cup to the other and back, all morning if they like.' },
+            { name: 'Spoon dried beans', body: 'Two small bowls, a spoon, a tray of dried chickpeas. The child spoons from one bowl to the other. When they finish, they reverse it.' },
+            { name: 'Open and close containers', body: 'A basket of jars, boxes, tins with different lids — screw, snap, hinged. The child opens, closes, opens again.' },
+            { name: 'Wash dishes (a few real ones)', body: 'A low stool at the sink. Warm water, soap, a small towel. They wash their own plate after lunch.' },
+            { name: 'Fold tea towels', body: 'A basket of clean tea towels. Show them how to fold once. Then let them fold the whole basket, however they manage.' }
+          ]},
+          { heading: 'Care & shine around the house', intro: 'Small acts of looking after a space — slow, absorbing, satisfying.', items: [
+            { name: 'Polish a piece of silver', body: 'A small jar of polish, a soft cloth, a piece of real silver (a spoon, a small dish). The child polishes until it gleams.' },
+            { name: 'Wash a small mirror', body: 'A spray bottle of water, a cloth, a small framed mirror. They learn to spray, wipe, dry.' },
+            { name: 'Watering plants', body: 'A small watering can, the houseplants. The child waters each one in turn — same plant, same can, every morning.' },
+            { name: 'Sort socks', body: 'The clean laundry basket. The child finds matching pairs and folds them.' },
+            { name: 'Dust the bookshelf', body: 'A small cloth. Show them once. Then they dust every Saturday morning, their job.' }
+          ]},
+          { heading: 'The hand & early literacy', intro: 'The hand leads the brain at four. These build the grip and control that writing needs later.', items: [
+            { name: 'Sandpaper letters', body: 'Buy a set (Melissa & Doug do an inexpensive one) or make your own. The child traces each letter while you say the sound (not the name).' },
+            { name: 'Number rods or red rods', body: 'A graduated set of rods (long to short). Lay them out, run a finger along each, count as you go. The hand learns what the brain will later understand.' },
+            { name: 'Lace beads on a string', body: 'Wooden beads with a generous hole, a stiff cord. Make patterns or just thread. Builds the pencil grip that will later write.' },
+            { name: 'Pin pricking', body: 'A printed shape on cardstock, a thumbtack (with cork), a piece of felt underneath. The child pricks along the line. When done, the shape pops out. Hand control.' },
+            { name: 'Pin work', body: 'Cork board, push pins, a piece of paper. The child arranges pins in a pattern. Concentration.' }
+          ]},
+          { heading: 'Food, nature & courtesy', intro: 'Out of the workroom and into real life — the kitchen, the garden, and each other.', items: [
+            { name: 'Chop a soft fruit', body: 'A banana, a strawberry, a pear quarter, a butter knife. Real knife eventually. Sit with them but do not chop for them.' },
+            { name: 'Make a sandwich, end to end', body: 'Bread, butter, filling, knife, plate. The child does the whole thing. Their lunch.' },
+            { name: 'Sort buttons by colour', body: 'A bowl of mixed buttons, several smaller bowls. The child sorts. Simple. Absorbing.' },
+            { name: 'Match leaves', body: 'On a walk, pick up two of each kind of leaf. Bring them home, lay them out, find the matching pairs.' },
+            { name: 'Practise saying excuse me', body: 'A grace-and-courtesy lesson. Model: tap shoulder, wait, say excuse me. Practise with you, with siblings.' }
+          ]}
         ]
       },
       'reading-list': {
