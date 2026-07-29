@@ -323,6 +323,64 @@
     #root .chap-body .whybox-label { color: var(--acc); }
     #root .chap-body .tenet-try { border-left-color: var(--warm); }
     #root .chap-body .tenet-try .tt-tag { background: var(--warm); }
+
+    /* ════════════════════════════════════════════════════════════
+       DAY IN THE LIFE v2 — a real timeline, no photos needed.
+       Coloured rail + emoji badge per moment + day-part banners that break
+       one long list into four short chapters. The anchor moment is a hero.
+       ════════════════════════════════════════════════════════════ */
+    #root .day-timeline { position: relative; margin: 1.6em 0 0; }
+    /* the rail */
+    #root .day-rail { position: relative; padding-left: 3.4em; }
+    #root .day-rail::before { content: ""; position: absolute; left: 1.42em; top: 0.2em; bottom: 0.2em; width: 3px; border-radius: 3px; background: linear-gradient(180deg, var(--dp), var(--dpd)); opacity: 0.28; }
+
+    /* day-part banner — the section break */
+    #root .daypart { display: flex; align-items: center; gap: 0.7em; margin: 1.9em 0 0.9em; padding: 0.72em 1.05em; border-radius: 14px; background: linear-gradient(135deg, var(--dp), var(--dpd)); box-shadow: 0 4px 14px color-mix(in srgb, var(--dp) 32%, transparent); }
+    #root .daypart:first-child { margin-top: 0.4em; }
+    #root .daypart-emo { font-size: 1.3rem; line-height: 1; filter: drop-shadow(0 1px 2px rgba(0,0,0,0.28)); }
+    #root .daypart-name { font-family: var(--sans); font-weight: 800; font-size: 0.76rem; letter-spacing: 0.14em; text-transform: uppercase; color: #fff; }
+    #root .daypart-span { margin-left: auto; font-family: var(--sans); font-weight: 700; font-size: 0.72rem; color: rgba(255,255,255,0.9); }
+
+    /* one moment */
+    #root .day-block { position: relative; margin: 0 0 0.75em; background: #fff; border-radius: 16px; padding: 0.9em 1.05em 0.95em; box-shadow: var(--shadow-sm); }
+    #root .day-block::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.5px; background: linear-gradient(135deg, var(--dp), var(--dpd)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; opacity: 0.34; }
+    /* emoji badge sitting on the rail */
+    #root .day-badge { position: absolute; left: -2.72em; top: 0.85em; width: 2.6em; height: 2.6em; border-radius: 999px; background: #fff; border: 2.5px solid var(--dp); display: grid; place-items: center; font-size: 1.15rem; line-height: 1; box-shadow: 0 3px 9px rgba(20,35,60,0.14); z-index: 2; }
+    #root .day-head { display: flex; align-items: baseline; gap: 0.6em; flex-wrap: wrap; margin: 0 0 0.25em; }
+    #root .day-time { background: var(--dp); color: #fff; font-family: var(--sans); font-weight: 800; border-radius: 999px; padding: 0.3em 0.7em; font-size: 0.72rem; letter-spacing: 0.02em; display: inline-block; }
+    #root .day-title { font-family: var(--display); font-weight: 700; font-size: 1.08rem; color: var(--ink); letter-spacing: -0.01em; }
+    #root .day-body { color: var(--ink-soft); line-height: 1.6; font-size: 1rem; }
+
+    /* the anchor moment — the one block that must not be missed */
+    #root .day-block.is-hero { padding: 1.15em 1.2em 1.25em; box-shadow: 0 3px 8px rgba(20,60,90,0.12), 0 16px 34px color-mix(in srgb, var(--dp) 26%, transparent); }
+    #root .day-block.is-hero::before { opacity: 0.9; padding: 2.2px; }
+    #root .day-block.is-hero .day-title { font-size: 1.2rem; }
+    #root .day-hero-tag { display: inline-block; font-family: var(--sans); font-weight: 800; font-size: 0.58rem; letter-spacing: 0.13em; text-transform: uppercase; color: #fff; background: linear-gradient(135deg, var(--dp), var(--dpd)); border-radius: 999px; padding: 0.3em 0.68em; margin-bottom: 0.5em; }
+
+    /* ════════════════════════════════════════════════════════════
+       ACTIVITIES v2 — each themed group gets a proper coloured chapter
+       banner with emoji + count, so a 20-item list reads as four short lists.
+       ════════════════════════════════════════════════════════════ */
+    #root .act-group { margin: 2.1em 0 0; }
+    #root .act-group:first-of-type { margin-top: 1.2em; }
+    #root .act-banner { display: flex; align-items: center; gap: 0.85em; padding: 0.9em 1.1em; border-radius: 16px; background: linear-gradient(135deg, var(--gc), var(--gcd)); box-shadow: 0 4px 14px color-mix(in srgb, var(--gc) 30%, transparent); }
+    #root .act-banner-emo { font-size: 1.55rem; line-height: 1; filter: drop-shadow(0 1px 3px rgba(0,0,0,0.3)); }
+    #root .act-banner-txt { flex: 1; min-width: 0; }
+    #root .act-banner-kicker { font-family: var(--sans); font-weight: 800; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.85); }
+    #root .act-banner-name { font-family: var(--display); font-weight: 800; font-size: 1.16rem; line-height: 1.15; color: #fff; letter-spacing: -0.01em; }
+    #root .act-count { flex: 0 0 auto; font-family: var(--sans); font-weight: 800; font-size: 0.68rem; color: #fff; background: rgba(255,255,255,0.22); border: 1.5px solid rgba(255,255,255,0.4); border-radius: 999px; padding: 0.38em 0.72em; }
+    #root .act-group-intro { font-size: 1rem; line-height: 1.55; color: var(--ink-mute); margin: 0.85em 0.2em 0.5em; }
+    /* items — numbered in the group's own colour */
+    #root .act-list { background: #fff; border-radius: 16px; padding: 0.35em 1.05em; box-shadow: var(--shadow-sm); }
+    #root .act-item { display: flex; gap: 0.85em; padding: 0.85em 0; border-top: 1px solid var(--rule-soft); }
+    #root .act-item:first-child { border-top: none; }
+    #root .act-no { flex: 0 0 1.95em; width: 1.95em; height: 1.95em; border-radius: 999px; background: linear-gradient(150deg, var(--gc), var(--gcd)); color: #fff; font-family: var(--sans); font-weight: 800; font-size: 0.86rem; display: grid; place-items: center; box-shadow: 0 2px 6px color-mix(in srgb, var(--gc) 34%, transparent); }
+    #root .act-name { font-family: var(--sans); font-weight: 800; font-size: 1.05rem; color: var(--ink); line-height: 1.25; margin: 0.1em 0 0.2em; }
+    #root .act-body { font-size: 1rem; line-height: 1.6; color: var(--ink-soft); }
+    /* a gentle nudge at the top so 20 items don't feel like homework */
+    #root .act-nudge { display: flex; align-items: center; gap: 0.7em; background: #FFF6E2; border: 1.5px solid #F1DFAE; border-radius: 14px; padding: 0.85em 1.05em; margin: 0.2em 0 0.4em; font-size: 0.99rem; line-height: 1.5; color: #7A5A12; }
+    #root .act-nudge b { color: #5E440C; }
+    #root .act-nudge-emo { font-size: 1.25rem; line-height: 1; flex: 0 0 auto; }
   </style>
 </head>
 <body class="method-page">
@@ -550,19 +608,55 @@
           ${recap}
         `;
       } else if (key === 'day-in-life') {
+        // A real timeline: a coloured rail, an emoji badge per moment, and
+        // day-part banners that break one long list into four short chapters.
+        const PARTS = [
+          { name: 'Morning',   emo: '🌅', span: 'Wake to midday',   until: 12 * 60,      c: '#B45309', cd: '#8A4008' },
+          { name: 'Midday',    emo: '🍽️', span: 'Lunch and outside', until: 14 * 60,     c: '#4D7C0F', cd: '#3F6212' },
+          { name: 'Afternoon', emo: '🎨', span: 'Rest and play',    until: 17 * 60 + 30, c: '#0E7490', cd: '#0B5563' },
+          { name: 'Evening',   emo: '🌙', span: 'Dinner to bed',    until: 99 * 60,      c: '#5B4A9E', cd: '#42357A' }
+        ];
+        // Read the first H:MM out of the time label ("7:00", "Monday 8:30").
+        const minsOf = (t) => { const m = String(t || '').match(/(\d{1,2}):(\d{2})/); return m ? (+m[1]) * 60 + (+m[2]) : null; };
+        // Emoji fallback so traditions without per-block icons still get one.
+        const GUESS = [[/wake|morning|rise/i, '🌅'], [/tidy|clean|chore/i, '🧺'], [/work|lesson|study|cycle/i, '🧩'],
+          [/snack/i, '🍎'], [/outside|garden|walk|wood|park/i, '🌳'], [/lunch|meal|dinner|supper|table/i, '🍽️'],
+          [/rest|nap|quiet|sleep/i, '😴'], [/play|creative|craft|art/i, '🎨'], [/story|read|book/i, '📖'],
+          [/bath|bed|night/i, '🛁'], [/circle|song|sing|verse/i, '🎵'], [/bake|bread|cook|kitchen/i, '🍞']];
+        const emoFor = (b) => b.icon || (GUESS.find(([re]) => re.test(b.title + ' ' + b.body)) || [null, '⭐'])[1];
+
+        let cur = -1, out = '', open = false;
+        s.timeline.forEach((b) => {
+          const mins = minsOf(b.time);
+          // only advance to a new part when we can actually read a clock time
+          let idx = cur < 0 ? 0 : cur;
+          if (mins != null) { idx = PARTS.findIndex(p => mins < p.until); if (idx < 0) idx = PARTS.length - 1; }
+          if (idx !== cur) {
+            if (open) out += `</div>`;
+            const p = PARTS[idx];
+            out += `<div class="daypart" style="--dp:${p.c};--dpd:${p.cd}">
+                      <span class="daypart-emo" aria-hidden="true">${p.emo}</span>
+                      <span class="daypart-name">${p.name}</span>
+                      <span class="daypart-span">${p.span}</span>
+                    </div>
+                    <div class="day-rail" style="--dp:${p.c};--dpd:${p.cd}">`;
+            cur = idx; open = true;
+          }
+          out += `<div class="day-block${b.highlight ? ' is-hero' : ''}">
+                    <div class="day-badge" aria-hidden="true">${emoFor(b)}</div>
+                    ${b.highlight ? '<span class="day-hero-tag">The heart of the day</span>' : ''}
+                    <div class="day-head">
+                      <span class="day-time">${b.time}</span>
+                      <span class="day-title">${b.title}</span>
+                    </div>
+                    <div class="day-body">${hl(b.body)}</div>
+                  </div>`;
+        });
+        if (open) out += `</div>`;
+
         body = `
-          <div class="lede">${multiPara(s.intro, 2)}</div>
-          <div class="day-timeline">
-            ${s.timeline.map(b => `
-              <div class="day-block">
-                <div class="day-time">${b.time}</div>
-                <div class="day-content">
-                  <div class="day-title">${b.title}</div>
-                  <div class="day-body">${hl(b.body)}</div>
-                </div>
-              </div>
-            `).join('')}
-          </div>
+          <div class="ed-lead ed-lead-intro">${multiPara(s.intro, 2)}</div>
+          <div class="day-timeline">${out}</div>
           ${s.note ? `<p class="note-box">${hl(s.note)}</p>` : ''}
         `;
       } else if (key === 'activities') {
@@ -578,18 +672,37 @@
               <div class="act-body">${hl(a.body)}</div>
             </div>
           </div>`;
+        // Each themed group gets its own colour + emoji chapter banner, so a
+        // twenty-item list reads as four short lists instead of one long one.
+        const GA = [
+          { c: '#C2410C', cd: '#9A3412' }, { c: '#0E7490', cd: '#0B5563' },
+          { c: '#7C4D9A', cd: '#5E3A78' }, { c: '#4D7C0F', cd: '#3F6212' },
+          { c: '#B83A6E', cd: '#8E2A54' }, { c: '#2563A8', cd: '#1B4C82' }
+        ];
+        const GEMO = ['🏠', '✨', '✍️', '🍎', '🎨', '🌳'];
         let n = 0;
         const midQuote = s.quote && groups.length > 2 ? Math.floor(groups.length / 2) : -1;
         const blocks = groups.map((g, gi) => {
+          const a = GA[gi % GA.length];
           const head = g.heading
-            ? `<div class="act-group-head"><span class="act-group-kicker">${String(gi + 1).padStart(2, '0')}</span>${g.heading}</div>${g.intro ? `<p class="act-group-intro">${hl(g.intro)}</p>` : ''}`
+            ? `<div class="act-banner" style="--gc:${a.c};--gcd:${a.cd}">
+                 <span class="act-banner-emo" aria-hidden="true">${g.icon || GEMO[gi % GEMO.length]}</span>
+                 <span class="act-banner-txt">
+                   <span class="act-banner-kicker">Part ${String(gi + 1).padStart(2, '0')}</span>
+                   <span class="act-banner-name">${g.heading}</span>
+                 </span>
+                 <span class="act-count">${g.items.length} to try</span>
+               </div>${g.intro ? `<p class="act-group-intro">${hl(g.intro)}</p>` : ''}`
             : '';
-          const rows = g.items.map(a => item(a, ++n)).join('');
+          const rows = g.items.map(x => item(x, ++n)).join('');
           const brk = gi === midQuote ? `<blockquote class="pullquote"><p>${s.quote.text}</p>${s.quote.cite ? `<cite>${s.quote.cite}</cite>` : ''}</blockquote>` : '';
-          return `<div class="act-group">${head}<div class="act-list">${rows}</div></div>${brk}`;
+          return `<div class="act-group" style="--gc:${a.c};--gcd:${a.cd}">${head}<div class="act-list">${rows}</div></div>${brk}`;
         }).join('');
+        const total = groups.reduce((t, g) => t + g.items.length, 0);
         body = `
           <div class="ed-lead ed-lead-intro">${multiPara(s.intro, 2)}</div>
+          <p class="act-nudge"><span class="act-nudge-emo" aria-hidden="true">💡</span>
+            <span><b>You are not meant to do all ${total}.</b> Pick one or two that catch your eye — that is the whole method.</span></p>
           ${blocks}
         `;
       } else if (key === 'reading-list') {

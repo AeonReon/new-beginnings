@@ -239,16 +239,16 @@ window.METHODS = [
         icon: 'sun',
         intro: 'A Montessori day for a 4-year-old at home centres on a long work cycle in the morning and freedom in the afternoon. The home shelves are the "prepared environment" — kept tidy, rotated weekly.',
         timeline: [
-          { time: '7:00', title: 'Slow morning', body: 'Wake. Dress (the child dresses themselves — Velcro shoes, easy buttons, hooks at child height). Help lay the table. Breakfast together.' },
-          { time: '8:30', title: 'Tidy and set up', body: 'The child puts their breakfast plate in the sink. Wipes their place. Goes to the work shelf and chooses today\'s first work.' },
-          { time: '9:00', title: 'Work cycle (long)', body: 'A 90-minute to three-hour block. The child chooses their work — pouring rice, sandpaper letters, the pink tower, the number rods. They work, repeat, put away, choose again. The adult observes, only intervenes if needed.' },
-          { time: '11:30', title: 'Snack (prepared by the child)', body: 'The child chops their own banana, spreads butter on toast, pours their own water. Sits at the table to eat.' },
-          { time: '12:00', title: 'Outside', body: 'Garden, park, woods. Real walking, real climbing. The garden is part of practical life — watering, weeding, harvesting whatever is ready.' },
-          { time: '13:00', title: 'Family lunch', body: 'A real meal. The child helps prepare and clear.' },
-          { time: '14:00', title: 'Rest', body: 'A nap, or an hour of quiet on the bed with a picture book. No screens.' },
-          { time: '15:30', title: 'Free play and creative work', body: 'Drawing with real pencils on real paper, modelling with clay, dress-up, blocks. Materials are accessible at child height; child puts them away when finished.' },
-          { time: '17:30', title: 'Help with dinner', body: 'Set the table. Wash lettuce. Stir what is being stirred. The kitchen is part of the schoolroom.' },
-          { time: '18:30', title: 'Dinner, bath, bed', body: 'Family meal. Bath (the child washes themselves). One story. Lights out by 19:30.' }
+          { time: '7:00', title: 'Slow morning', icon: '🌅', body: 'Wake. Dress (the child dresses themselves — Velcro shoes, easy buttons, hooks at child height). Help lay the table. Breakfast together.' },
+          { time: '8:30', title: 'Tidy and set up', icon: '🧺', body: 'The child puts their breakfast plate in the sink. Wipes their place. Goes to the work shelf and chooses today\'s first work.' },
+          { time: '9:00', title: 'Work cycle (long)', icon: '🧩', highlight: true, body: 'A 90-minute to three-hour block. The child chooses their work — pouring rice, sandpaper letters, the pink tower, the number rods. They work, repeat, put away, choose again. The adult observes, only intervenes if needed.' },
+          { time: '11:30', title: 'Snack (prepared by the child)', icon: '🍎', body: 'The child chops their own banana, spreads butter on toast, pours their own water. Sits at the table to eat.' },
+          { time: '12:00', title: 'Outside', icon: '🌳', body: 'Garden, park, woods. Real walking, real climbing. The garden is part of practical life — watering, weeding, harvesting whatever is ready.' },
+          { time: '13:00', title: 'Family lunch', icon: '🍽️', body: 'A real meal. The child helps prepare and clear.' },
+          { time: '14:00', title: 'Rest', icon: '😴', body: 'A nap, or an hour of quiet on the bed with a picture book. No screens.' },
+          { time: '15:30', title: 'Free play and creative work', icon: '🎨', body: 'Drawing with real pencils on real paper, modelling with clay, dress-up, blocks. Materials are accessible at child height; child puts them away when finished.' },
+          { time: '17:30', title: 'Help with dinner', icon: '🥕', body: 'Set the table. Wash lettuce. Stir what is being stirred. The kitchen is part of the schoolroom.' },
+          { time: '18:30', title: 'Dinner, bath, bed', icon: '🛁', body: 'Family meal. Bath (the child washes themselves). One story. Lights out by 19:30.' }
         ],
         note: 'The non-negotiable is the long uninterrupted morning work cycle. Everything else flexes.'
       },
@@ -258,28 +258,28 @@ window.METHODS = [
         intro: 'Twenty Montessori-true activities for a 4-year-old at home. Many use what is already in your kitchen. None require expensive materials. Set out a couple at a time — pick what suits the week.',
         quote: { text: 'The hands are the instruments of man\'s intelligence.', cite: 'Maria Montessori' },
         groups: [
-          { heading: 'Practical life & the home', intro: 'Real jobs, done for real. This is the heart of Montessori — start here.', items: [
+          { heading: 'Practical life & the home', icon: '🏠', intro: 'Real jobs, done for real. This is the heart of Montessori — start here.', items: [
             { name: 'Set up a pouring tray', body: 'A small pitcher, two small cups, a sponge, a tray. The child pours water from one cup to the other and back, all morning if they like.' },
             { name: 'Spoon dried beans', body: 'Two small bowls, a spoon, a tray of dried chickpeas. The child spoons from one bowl to the other. When they finish, they reverse it.' },
             { name: 'Open and close containers', body: 'A basket of jars, boxes, tins with different lids — screw, snap, hinged. The child opens, closes, opens again.' },
             { name: 'Wash dishes (a few real ones)', body: 'A low stool at the sink. Warm water, soap, a small towel. They wash their own plate after lunch.' },
             { name: 'Fold tea towels', body: 'A basket of clean tea towels. Show them how to fold once. Then let them fold the whole basket, however they manage.' }
           ]},
-          { heading: 'Care & shine around the house', intro: 'Small acts of looking after a space — slow, absorbing, satisfying.', items: [
+          { heading: 'Care & shine around the house', icon: '✨', intro: 'Small acts of looking after a space — slow, absorbing, satisfying.', items: [
             { name: 'Polish a piece of silver', body: 'A small jar of polish, a soft cloth, a piece of real silver (a spoon, a small dish). The child polishes until it gleams.' },
             { name: 'Wash a small mirror', body: 'A spray bottle of water, a cloth, a small framed mirror. They learn to spray, wipe, dry.' },
             { name: 'Watering plants', body: 'A small watering can, the houseplants. The child waters each one in turn — same plant, same can, every morning.' },
             { name: 'Sort socks', body: 'The clean laundry basket. The child finds matching pairs and folds them.' },
             { name: 'Dust the bookshelf', body: 'A small cloth. Show them once. Then they dust every Saturday morning, their job.' }
           ]},
-          { heading: 'The hand & early literacy', intro: 'The hand leads the brain at four. These build the grip and control that writing needs later.', items: [
+          { heading: 'The hand & early literacy', icon: '✍️', intro: 'The hand leads the brain at four. These build the grip and control that writing needs later.', items: [
             { name: 'Sandpaper letters', body: 'Buy a set (Melissa & Doug do an inexpensive one) or make your own. The child traces each letter while you say the sound (not the name).' },
             { name: 'Number rods or red rods', body: 'A graduated set of rods (long to short). Lay them out, run a finger along each, count as you go. The hand learns what the brain will later understand.' },
             { name: 'Lace beads on a string', body: 'Wooden beads with a generous hole, a stiff cord. Make patterns or just thread. Builds the pencil grip that will later write.' },
             { name: 'Pin pricking', body: 'A printed shape on cardstock, a thumbtack (with cork), a piece of felt underneath. The child pricks along the line. When done, the shape pops out. Hand control.' },
             { name: 'Pin work', body: 'Cork board, push pins, a piece of paper. The child arranges pins in a pattern. Concentration.' }
           ]},
-          { heading: 'Food, nature & courtesy', intro: 'Out of the workroom and into real life — the kitchen, the garden, and each other.', items: [
+          { heading: 'Food, nature & courtesy', icon: '🍎', intro: 'Out of the workroom and into real life — the kitchen, the garden, and each other.', items: [
             { name: 'Chop a soft fruit', body: 'A banana, a strawberry, a pear quarter, a butter knife. Real knife eventually. Sit with them but do not chop for them.' },
             { name: 'Make a sandwich, end to end', body: 'Bread, butter, filling, knife, plate. The child does the whole thing. Their lunch.' },
             { name: 'Sort buttons by colour', body: 'A bowl of mixed buttons, several smaller bowls. The child sorts. Simple. Absorbing.' },
