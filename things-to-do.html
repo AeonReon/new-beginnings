@@ -37,6 +37,12 @@
     .feat-card .fc-name { font-family: var(--serif); font-weight: 800; font-size: 1.12rem; line-height: 1.12; text-shadow: 0 1px 6px rgba(0,0,0,.5); }
     .feat-card .fc-meta { font: 700 0.74rem/1.2 var(--sans); opacity: 0.95; margin-top: 0.2em; }
     .feat-card .fc-go { display: inline-block; margin-top: 0.4em; font: 800 0.76rem/1 var(--sans); color: #FFE9A3; }
+    /* Event cards: calendar date chip + tier badge */
+    .feat-card .fc-date { position: absolute; top: 0.6em; left: 0.6em; z-index: 2; background: rgba(255,255,255,.94); color: #1F5E8A; border-radius: 11px; padding: 0.35em 0.55em; text-align: center; line-height: 1.1; font: 800 0.6rem/1.1 var(--sans); text-transform: uppercase; box-shadow: 0 2px 6px rgba(0,0,0,.22); }
+    .feat-card .fc-date b { display: block; font-size: 1.16rem; color: #2E84BD; }
+    .feat-card .fc-tier { position: absolute; top: 0.6em; right: 0.6em; z-index: 2; font: 800 0.56rem/1 var(--sans); letter-spacing: 0.05em; text-transform: uppercase; padding: 0.38em 0.62em; border-radius: 999px; }
+    .feat-card .fc-tier.major { background: #FFCE3D; color: #7a5a00; }
+    .feat-card .fc-tier.big { background: rgba(255,255,255,.92); color: #1F5E8A; }
 
     /* ── Live peek at the real map — the actual app, tap to open ── */
     .map-peek {
@@ -102,6 +108,10 @@
       <span class="mp-fade"></span>
       <span class="mp-open">Open the full map ↗</span>
     </a>
+
+    <div class="sec-lead">What's on</div>
+    <p class="sec-sub">It tracks family events too — festivals, shows and seasonal days out. Tap to see one in Days Out NI.</p>
+    <div class="feat-scroll" id="car-events"></div>
 
     <div class="sec-lead">Soft play</div>
     <p class="sec-sub">Indoor runaround for when the weather turns.</p>
@@ -210,6 +220,63 @@
         final.forEach(p => used.add(p.id));
         cont.innerHTML = final.map(card).join('');
       });
+    })();
+
+    // "What's on" — live upcoming events, biggest first. Dates stay correct
+    // because it reads the feed each visit. Event photos are daysoutni-hosted.
+    function eventImg(e) {
+      const img = e.image || '';
+      return /^https?:\/\//.test(img) ? img : `${DO_ORIGIN}${img.startsWith('/') ? img : '/' + img}`;
+    }
+    (async function buildEvents() {
+      const cont = document.getElementById('car-events');
+      if (!cont) return;
+      let events;
+      try {
+        const res = await fetch(`${DO_ORIGIN}/events.json`, { mode: 'cors' });
+        events = (await res.json()).events || [];
+      } catch (e) { cont.innerHTML = ''; return; }
+
+      const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      const today = new Date(); today.setHours(0, 0, 0, 0);
+      const parse = d => { const t = Date.parse(d); return isNaN(t) ? null : new Date(t); };
+
+      const upcoming = events.filter(e => {
+        if (!e.title || e.adultOnly) return false;
+        if (!/^\/event-images\//.test(e.image || '') && !/^https?:/.test(e.image || '')) return false;
+        const end = parse(e.endDate || e.startDate); if (!end) return false;
+        end.setHours(23, 59, 59, 999);
+        return end >= today;
+      });
+      const rank = e => ({ major: 0, big: 1 }[e.tier] ?? 2);
+      upcoming.sort((a, b) => rank(a) - rank(b) ||
+        (Date.parse(a.startDate || a.endDate) - Date.parse(b.startDate || b.endDate)));
+
+      const seen = new Set(); const picks = [];
+      for (const e of upcoming) {
+        const k = (e.title || '').toLowerCase();
+        if (seen.has(k)) continue;
+        seen.add(k); picks.push(e);
+        if (picks.length >= 12) break;
+      }
+
+      cont.innerHTML = picks.map(e => {
+        const d = parse(e.startDate || e.endDate);
+        const dateChip = d ? `<span class="fc-date"><b>${d.getDate()}</b>${MONTHS[d.getMonth()]}</span>` : '';
+        const tier = e.tier === 'major' ? '<span class="fc-tier major">★ Major</span>'
+          : e.tier === 'big' ? '<span class="fc-tier big">Big event</span>' : '';
+        return `
+          <a class="feat-card" href="${DO_ORIGIN}/?mode=events&q=${encodeURIComponent(e.title)}" target="_blank" rel="noopener">
+            <img src="${eventImg(e)}" alt="${esc(e.title)}" loading="lazy" onerror="this.closest('.feat-card').style.display='none'">
+            <div class="fc-veil"></div>
+            ${dateChip}${tier}
+            <div class="fc-txt">
+              <div class="fc-name">${esc(e.title)}</div>
+              <div class="fc-meta">${esc([e.venue, e.town].filter(Boolean).join(' · '))}</div>
+              <span class="fc-go">See it in Days Out NI →</span>
+            </div>
+          </a>`;
+      }).join('');
     })();
   </script>
 </body>
