@@ -88,17 +88,19 @@
     .wl-play:disabled{ opacity:.55; cursor:default; box-shadow:none; }
     .wl-play .wl-play-ic{ font-size:11px; }
 
-    /* Approaches feature — the core, promoted big */
-    .approaches-feature{ position:relative; display:block; text-decoration:none; overflow:hidden; border-radius:22px; min-height:222px; margin:2px 0 22px; background:#2d6fa8; box-shadow:0 4px 10px rgba(20,60,90,.16),0 20px 46px rgba(46,132,189,.26); }
+    /* Approaches feature — the core: image banner + legible solid body + name chips */
+    .approaches-feature{ position:relative; display:block; text-decoration:none; overflow:hidden; border-radius:22px; margin:2px 0 22px; background:#fff; box-shadow:0 4px 10px rgba(20,60,90,.14),0 18px 44px rgba(46,132,189,.22); }
     .approaches-feature::before{ content:""; position:absolute; inset:0; border-radius:inherit; padding:2px; background:linear-gradient(135deg,#6CB4E2,#F4B82A); -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0); -webkit-mask-composite:xor; mask-composite:exclude; pointer-events:none; z-index:3; }
-    .approaches-feature>img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
-    .approaches-feature .af-veil{ position:absolute; inset:0; background:linear-gradient(180deg,rgba(12,40,64,.12) 0%,rgba(12,40,64,.34) 42%,rgba(9,32,54,.88) 100%); }
-    .approaches-feature .af-text{ position:relative; z-index:2; display:block; padding:20px 20px 22px; color:#fff; }
-    .af-eyebrow{ display:inline-block; font:800 11px/1 Inter; letter-spacing:.12em; text-transform:uppercase; color:#FFCE3D; margin-bottom:9px; }
-    .af-title{ display:block; font-family:var(--display); font-weight:800; font-size:clamp(27px,7vw,37px); line-height:1.03; text-shadow:0 2px 18px rgba(0,0,0,.5); }
-    .af-sub{ display:block; margin:.55em 0 0; font-size:15px; line-height:1.5; color:#eef6fc; max-width:40ch; text-shadow:0 1px 8px rgba(0,0,0,.5); }
-    .af-go{ display:inline-block; margin-top:1em; font:800 14.5px Inter; color:#fff; background:rgba(255,255,255,.18); backdrop-filter:blur(3px); padding:.62em 1.15em; border-radius:999px; }
-    .approaches-feature:active{ transform:scale(.994); }
+    .af-banner{ display:block; height:118px; overflow:hidden; }
+    .af-banner img{ width:100%; height:100%; object-fit:cover; display:block; }
+    .af-body{ display:block; padding:16px 18px 20px; }
+    .af-eyebrow{ display:inline-block; font:800 11px/1 Inter; letter-spacing:.1em; text-transform:uppercase; color:#2E84BD; margin-bottom:7px; }
+    .af-title{ display:block; font-family:var(--display); font-weight:800; font-size:clamp(26px,6.8vw,34px); line-height:1.02; color:var(--text); letter-spacing:-.01em; }
+    .af-sub{ display:block; margin:.5em 0 0; font-size:15px; line-height:1.5; color:#4d5a6e; max-width:44ch; }
+    .af-chips{ display:flex; flex-wrap:wrap; gap:7px; margin:14px 0 2px; }
+    .af-chips span{ font:800 12.5px/1 Inter; color:#1F5E8A; background:#E4F1FA; border:1.5px solid #BFE0F2; padding:.5em .8em; border-radius:999px; }
+    .af-go{ display:inline-block; margin-top:15px; font:800 14.5px Inter; color:#fff; background:var(--grad-header); padding:.62em 1.2em; border-radius:999px; box-shadow:0 4px 13px rgba(46,132,189,.32); }
+    .approaches-feature:active{ transform:scale(.995); }
   </style>
 </head>
 <body class="launcher">
@@ -137,12 +139,6 @@
     </details>
 
     <section class="daily-feed" id="dailyFeed" aria-label="For today" hidden>
-      <a class="week-banner" id="weekBanner" href="#">
-        <span class="week-kicker">This week</span>
-        <span class="week-title" id="weekTitle"></span>
-        <span class="week-invite" id="weekInvite"></span>
-        <span class="week-go" aria-hidden="true">Step inside this world →</span>
-      </a>
       <div class="today-head">
         <div class="daily-lead">For today</div>
         <button class="today-shuffle" id="todayShuffle" type="button">Shuffle <span aria-hidden="true">↻</span></button>
@@ -151,13 +147,15 @@
     </section>
 
     <a href="education.html" class="approaches-feature">
-      <img src="assets/pillars/education.jpg" alt="" loading="lazy">
-      <span class="af-veil"></span>
-      <span class="af-text">
-        <span class="af-eyebrow">★ The heart of it</span>
-        <span class="af-title">Ways to Raise a Child</span>
-        <span class="af-sub">Montessori, Waldorf, Charlotte Mason, forest school and more — the great traditions everything here grows from. See how each raises a child, and take what fits.</span>
-        <span class="af-go">Explore the approaches →</span>
+      <span class="af-banner"><img src="assets/pillars/education.jpg" alt="" loading="lazy"></span>
+      <span class="af-body">
+        <span class="af-eyebrow">Start here · the heart of it</span>
+        <span class="af-title">The Great Traditions</span>
+        <span class="af-sub">Whole ways of raising and teaching a child — each with its own good reasons. Take what fits yours.</span>
+        <span class="af-chips">
+          <span>Montessori</span><span>Waldorf</span><span>Charlotte Mason</span><span>Reggio Emilia</span><span>Forest School</span><span>Classical</span><span>Wild + Free</span><span>Unschooling</span>
+        </span>
+        <span class="af-go">Explore them all →</span>
       </span>
     </a>
 
@@ -306,15 +304,6 @@
       const weekPonders = weekTrad ? ponders.filter(p => p.trad === weekTrad) : [];
       const wrap = (arr, n) => arr[(((n) % arr.length) + arr.length) % arr.length];
 
-      if (weekTrad && WEEK_FOCUS[weekTrad]) {
-        const m = methodById[weekTrad], f = WEEK_FOCUS[weekTrad], b = el('weekBanner');
-        b.style.setProperty('--wc', m.color || '#4FA4D2');
-        b.style.setProperty('--wcd', m.colorDeep || m.color || '#2D6FA8');
-        b.style.setProperty('--wcs', m.colorSoft || '#EAF4FB');
-        el('weekTitle').textContent = 'Living a little like ' + f.label;
-        el('weekInvite').textContent = f.invite;
-        b.href = 'methodology.html?id=' + weekTrad;
-      } else { el('weekBanner').hidden = true; }
 
       const esc = (window.RecipeModal && window.RecipeModal.esc) || (s => String(s));
       const ACC = {
