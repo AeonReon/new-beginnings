@@ -42,7 +42,23 @@
     #root .principle-card.alt { background: var(--m-soft); }
     #root .principle-card::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 2px; background: linear-gradient(135deg, var(--m-color), var(--m-deep)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; opacity: 0.7; }
     #root .principle-num { position: absolute; top: -0.16em; right: 0.1em; width: auto; height: auto; background: none; box-shadow: none; color: var(--m-color); opacity: 0.13; font: 900 4.6rem/1 var(--sans); letter-spacing: -0.05em; z-index: 0; }
-    #root .principle-card h3 { position: relative; z-index: 1; margin: 0 0 0.55em; font-size: 1.32rem; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; line-height: 1.14; max-width: 86%; }
+    /* Kicker — the plain principle name, small, above the hooky headline */
+    #root .principle-kicker { position: relative; z-index: 1; font-family: var(--sans); font-weight: 800; font-size: 0.66rem; letter-spacing: 0.13em; text-transform: uppercase; color: var(--m-color); margin: 0 0 0.5em; max-width: 84%; }
+    #root .principle-card h3 { position: relative; z-index: 1; margin: 0 0 0.4em; font-size: 1.32rem; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; line-height: 1.14; max-width: 88%; }
+    /* Takeaway — the payoff line, stated before the body */
+    #root .principle-take { position: relative; z-index: 1; margin: 0 0 0.7em; font-size: 1.06rem; font-weight: 800; line-height: 1.4; color: var(--m-deep); letter-spacing: -0.01em; }
+    /* Try it — one scannable, concrete action */
+    #root .in-practice { position: relative; z-index: 1; display: flex; align-items: baseline; gap: 0.6em; background: var(--m-soft); border-radius: 12px; padding: 0.7em 0.9em; margin: 1em 0 0; font-size: 0.96rem; line-height: 1.5; color: var(--ink-soft); }
+    #root .in-practice .ip-label { flex: 0 0 auto; font-weight: 800; font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: #fff; background: linear-gradient(150deg, var(--m-color), var(--m-deep)); border-radius: 999px; padding: 0.32em 0.62em; transform: translateY(-1px); }
+
+    /* Landing promise — the whole tradition in one breath + what's different */
+    #root .method-promise { margin: 1.4em 0 0; padding: 1.15em 1.25em 1.2em; background: var(--m-soft); border-radius: 16px; position: relative; overflow: hidden; }
+    #root .method-promise::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 2px; background: linear-gradient(135deg, var(--m-color), var(--m-deep)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; opacity: 0.55; }
+    #root .method-promise .mp-eyebrow { font-weight: 800; font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--m-color); margin-bottom: 0.4em; }
+    #root .method-promise .mp-line { margin: 0; font-size: 1.14rem; font-weight: 800; line-height: 1.34; letter-spacing: -0.015em; color: var(--ink); }
+    #root .essence-list { list-style: none; padding: 0; margin: 0.9em 0 0; display: grid; gap: 0.5em; }
+    #root .essence-list li { position: relative; padding-left: 1.6em; font-size: 0.98rem; line-height: 1.45; color: var(--ink-soft); font-weight: 600; }
+    #root .essence-list li::before { content: "✓"; position: absolute; left: 0; top: -0.02em; width: 1.15em; height: 1.15em; display: grid; place-items: center; font-size: 0.66em; font-weight: 900; color: #fff; background: linear-gradient(150deg, var(--m-color), var(--m-deep)); border-radius: 999px; }
     #root .pbody { position: relative; z-index: 1; }
     #root .pbody p { margin: 0 0 0.7em; line-height: 1.66; color: var(--ink-soft); font-size: 1.02rem; }
     #root .pbody p:last-child { margin-bottom: 0; }
@@ -214,6 +230,12 @@
             </div>
           </div>
           <div class="method-blurb">${multiPara(m.blurb, 2)}</div>
+          ${m.promise ? `
+          <div class="method-promise">
+            <div class="mp-eyebrow">In one breath</div>
+            <p class="mp-line">${m.promise}</p>
+            ${m.essence ? `<ul class="essence-list">${m.essence.map(e => `<li>${e}</li>`).join('')}</ul>` : ''}
+          </div>` : ''}
         </header>
 
         <section class="sub-tile-section">
@@ -234,8 +256,11 @@
           ${s.principles.map((p, i) => `
             <div class="card principle-card${i % 2 ? ' alt' : ''}">
               <div class="principle-num">${i + 1}</div>
-              <h3>${p.name}</h3>
+              ${p.hook ? `<div class="principle-kicker">${p.name}</div>` : ''}
+              <h3>${p.hook || p.name}</h3>
+              ${p.takeaway ? `<p class="principle-take">${hl(p.takeaway)}</p>` : ''}
               <div class="pbody">${multiPara(p.body, 1)}</div>
+              ${p.inPractice ? `<div class="in-practice"><span class="ip-label">Try it</span><span>${hl(p.inPractice)}</span></div>` : ''}
               <p class="why">${hl(p.why)}</p>
             </div>
           `).join('')}
