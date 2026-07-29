@@ -3,18 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#4FA4D2">
-  <title>Conscious Parenting NI — Games</title>
+  <meta name="theme-color" content="#0EA5A4">
+  <title>Conscious Parenting NI — Thinking Games</title>
   <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/png" href="icon-192.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="stylesheet" href="assets/style.css">
   <style>
     /* Situation quick-filter chips */
-    .where-row {
-      display: flex; flex-wrap: wrap; gap: 0.5em;
-      margin: 0 0 1.4em;
-    }
+    .where-row { display: flex; flex-wrap: wrap; gap: 0.5em; margin: 0 0 1.4em; }
     .where-chip {
       font-family: var(--sans); font-size: 0.92rem; font-weight: 700;
       color: var(--ink-soft); background: var(--paper-card);
@@ -23,42 +20,82 @@
       transition: transform 0.15s cubic-bezier(0.34,1.56,0.64,1), border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
     }
     .where-chip:hover { transform: translateY(-1px); border-color: var(--sky); }
-    .where-chip.active {
-      color: white; border-color: transparent;
-      background: var(--grad-sky);
-      box-shadow: var(--shadow-sm);
-    }
+    .where-chip.active { color: white; border-color: transparent; background: var(--grad-sky); box-shadow: var(--shadow-sm); }
 
     #count { font-family: var(--sans); font-size: 0.85em; color: var(--ink-mute); margin: 0.2em 0 1.4em; }
 
-    /* Group section headers */
-    .group-header { margin: 2.2em 0 0.2em; }
+    /* ── Group section banners — the blue→orange→green→pink rhythm ── */
+    .group-header {
+      margin: 2.6em 0 1.1em; padding: 0.85em 1.1em;
+      border-radius: 16px; background: var(--gcs);
+      position: relative; overflow: hidden;
+    }
+    .group-header::before {
+      content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 7px;
+      background: linear-gradient(180deg, var(--gc), var(--gcd));
+    }
     .group-header:first-of-type { margin-top: 1.4em; }
     .group-header h2 {
-      display: flex; align-items: center; gap: 0.5em;
-      margin: 0 0 0.15em;
+      display: flex; align-items: center; gap: 0.5em; margin: 0 0 0.1em;
+      font-size: 1.32rem; color: var(--gcd); letter-spacing: -0.02em;
     }
-    .group-dot { width: 0.7em; height: 0.7em; border-radius: 50%; background: var(--gc); flex: 0 0 auto; box-shadow: 0 0 0 3px var(--gcs); }
-    .group-blurb { font-size: 0.9em; color: var(--ink-mute); margin: 0 0 0.4em 1.2em; }
+    .group-emoji { font-size: 1.15em; }
+    .group-blurb { font-size: 0.92em; color: var(--ink-soft); margin: 0; }
 
-    /* Game card */
-    .game-card { border-left: 5px solid var(--gc); }
-    .game-head { display: flex; align-items: baseline; justify-content: space-between; gap: 0.6em; flex-wrap: wrap; }
-    .game-head h3 { margin: 0; font-size: 1.16rem; }
-    .game-tag { font-size: 0.62rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gcd); white-space: nowrap; }
+    /* ── Game card — gradient-outline, own colour, emoji badge ── */
+    .game-card {
+      position: relative; border: none; border-radius: var(--radius-lg, 20px);
+      background: var(--paper-card, #fff); padding: 1.15em 1.2em 1.25em;
+      box-shadow: var(--shadow-sm); margin: 0 0 1.05em;
+      transition: transform 0.18s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.18s ease;
+    }
+    .game-card.tint { background: var(--gcs); }
+    .game-card::before {
+      content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 2px;
+      background: linear-gradient(135deg, var(--gc), var(--gcd));
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; opacity: 0.9;
+    }
+    .game-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md, 0 12px 30px rgba(20,35,60,0.12)); }
 
-    .meta-row { display: flex; flex-wrap: wrap; gap: 0.4em; margin: 0.55em 0 0.85em; }
+    .game-head { display: flex; align-items: center; gap: 0.75em; }
+    .game-badge {
+      flex: 0 0 auto; width: 48px; height: 48px; border-radius: 14px;
+      display: grid; place-items: center; font-size: 26px; line-height: 1;
+      background: linear-gradient(150deg, var(--gc), var(--gcd));
+      box-shadow: 0 4px 11px rgba(20,35,60,0.16), inset 0 1px 0 rgba(255,255,255,0.4);
+    }
+    .game-head-text { min-width: 0; flex: 1; }
+    .game-head-text h3 { margin: 0; font-size: 1.18rem; line-height: 1.15; color: var(--ink); letter-spacing: -0.01em; }
+    .game-tag { font-size: 0.62rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gcd); }
+
+    .meta-row { display: flex; flex-wrap: wrap; gap: 0.4em; margin: 0.85em 0 0.85em; }
     .chip {
       font-family: var(--sans); font-size: 0.72rem; font-weight: 700;
       padding: 0.28em 0.72em; border-radius: var(--radius-pill);
-      background: var(--gcs); color: var(--gcd);
+      background: #fff; color: var(--gcd); border: 1.5px solid var(--gc);
     }
-    .chip.turns { background: var(--sun-soft); color: var(--sun-deep); }
+    .game-card.tint .chip { background: rgba(255,255,255,0.65); }
+    .chip.turns { background: var(--sun-soft); color: var(--sun-deep); border-color: transparent; }
     .chip.age { background: var(--paper-warm); color: var(--ink-soft); border: 1px solid var(--rule-strong); }
 
-    .game-card p.how { margin: 0 0 0.2em; }
+    .game-card p.how { margin: 0; color: var(--ink-soft); line-height: 1.55; }
 
-    .tweak { font-size: 0.85em; color: var(--ink-mute); margin: 0.75em 0 0; }
+    /* WHY callout — the reason, made to read */
+    .why-box {
+      position: relative; margin: 0.9em 0 0; padding: 0.85em 1em 0.85em 1em;
+      background: rgba(255,255,255,0.7); border-radius: 14px;
+      border: 1px solid var(--gc);
+    }
+    .game-card:not(.tint) .why-box { background: var(--gcs); border-color: transparent; }
+    .why-pill {
+      display: inline-block; font-size: 0.6rem; font-weight: 800; letter-spacing: 0.14em;
+      text-transform: uppercase; color: #fff; background: linear-gradient(135deg, var(--gc), var(--gcd));
+      padding: 0.25em 0.7em; border-radius: var(--radius-pill); margin-bottom: 0.5em;
+    }
+    .why-box p { margin: 0; font-size: 0.94em; line-height: 1.55; color: var(--ink-soft); }
+
+    .tweak { font-size: 0.85em; color: var(--ink-mute); margin: 0.8em 0 0; }
     .tweak b { color: var(--ink-soft); font-weight: 700; }
 
     .traits { display: flex; flex-wrap: wrap; gap: 0.35em; margin-top: 0.95em; }
@@ -68,6 +105,7 @@
       background: var(--paper-surface); color: var(--ink-mute);
       border: 1px solid var(--rule-strong); cursor: pointer;
     }
+    .game-card.tint .trait { background: rgba(255,255,255,0.6); }
     .trait:hover { border-color: var(--gc); color: var(--gcd); }
 
     .empty { color: var(--ink-mute); font-style: italic; margin: 2em 0; }
@@ -75,7 +113,7 @@
 </head>
 <body>
   <main>
-    <h1>Games</h1>
+    <h1>Thinking Games</h1>
     <p class="lede">
       Little out-loud games to play in the car, the garden, or while you wait —
       no screen, nothing to buy, nothing to set up. Just you, your child, and the
@@ -131,6 +169,35 @@
     const GROUP_ORDER = ['Words', 'Focus', 'Thinking', 'Heart'];
     const WHERES = ['Anytime', 'Car', 'Waiting', 'Walk/Garden', 'Mealtime'];
 
+    // A distinct face for each game — instant identity, and the eye has something
+    // to land on. Falls back to a per-group glyph if a game isn't listed.
+    const GAME_ICONS = {
+      // Words & Reading
+      'I Spy': '🔍', 'Name All The…': '📋', 'I Went To The Shop': '🛒', 'Rhyme Time': '🎵',
+      'What Starts With…?': '🔤', 'Sound Detective': '🕵️', 'Clap The Beats': '👏', 'Word Chain': '🔗',
+      'Last-Sound Chain': '⛓️', 'Silly Sentence Build': '🤪', 'Story, One Line Each': '📖',
+      'Opposites Ping-Pong': '🏓', 'Guess My Thing': '🎁', 'Finish My Sentence': '✏️',
+      'Tell Me Everything': '💬', 'Copycat Sounds': '🦜',
+      // Memory & Self-Control
+      'Simon Says': '🙋', 'Do The Opposite': '🔄', 'Freeze Dance': '🕺', 'Red Light, Green Light': '🚦',
+      "What's Missing?": '🔦', 'Copy My Clap': '🥁', 'Keep A Straight Face': '😐', 'Clap For Animals': '🐘',
+      'Head, Toes, Knees, Shoulders': '🧍', 'Spot Five': '🖐️', 'Whisper Or Shout': '📣',
+      'My Turn, Your Turn Beat': '🪘', 'The Talking Ball': '⚽',
+      // Thinking, Maths & Space
+      'Twenty Questions': '❓', "I'm Thinking Of An Animal That…": '🐾', 'Odd One Out': '🚫',
+      'Count The Red Cars': '🚗', 'Guess How Many': '🔢', 'Bigger Or Smaller': '⚖️',
+      'How Many Do You See?': '👀', 'What Comes Next?': '➡️', 'Guide Me There': '🧭', 'Where Is It?': '📍',
+      'Build It In Your Head': '🏗️', 'How Many Ways?': '🔀', 'Count The Steps': '🪜',
+      'Riddle Me This': '🧩', 'One More, One Less': '➕',
+      // Imagination & Heart
+      'What If…?': '💭', 'A Hundred Uses': '💡', "What's It Thinking?": '🤔', 'If You Were An Animal…': '🦁',
+      'Make A Face': '😀', 'Name The Feeling': '🎭', 'Three Good Things': '🌟', 'Cloud Shapes': '☁️',
+      'Listen And Name': '👂', 'Three New Things': '🆕', 'Would You Rather': '🤷',
+      'Would You Rather Help…?': '🤝', 'How Do They Feel?': '💗', 'I Wonder…': '✨'
+    };
+    const GROUP_FALLBACK = { Words: '💬', Focus: '🎯', Thinking: '🧠', Heart: '💗' };
+    const GROUP_EMOJI = { Words: '🗣️', Focus: '🎯', Thinking: '🧠', Heart: '💖' };
+
     const fSearch = document.getElementById('f-search');
     const fBuild = document.getElementById('f-build');
     const fAge = document.getElementById('f-age');
@@ -140,11 +207,9 @@
 
     let activeWhere = '';
 
-    // Builds (trait) dropdown
     fBuild.innerHTML = '<option value="">Any skill</option>' +
       window.GAME_TRAITS.map(t => `<option value="${t}">${t}</option>`).join('');
 
-    // Situation chips
     whereRow.innerHTML = WHERES.map(w =>
       `<button type="button" class="where-chip" data-where="${w}">${w}</button>`
     ).join('');
@@ -163,8 +228,9 @@
         ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
     }
 
-    function cardHTML(g) {
+    function cardHTML(g, idx) {
       const grp = window.GAME_GROUPS[g.group];
+      const icon = GAME_ICONS[g.name] || GROUP_FALLBACK[g.group] || '🎲';
       const meta = [];
       g.where.forEach(w => meta.push(`<span class="chip">${w}</span>`));
       meta.push(`<span class="chip age">Age ${g.age}</span>`);
@@ -174,14 +240,17 @@
       const tweak = g.tweak
         ? `<p class="tweak"><b>Tune it:</b> ${esc(g.tweak)}</p>` : '';
       return `
-        <div class="card game-card" style="--gc:${grp.c};--gcd:${grp.cd};--gcs:${grp.cs};">
+        <div class="card game-card${idx % 2 ? ' tint' : ''}" style="--gc:${grp.c};--gcd:${grp.cd};--gcs:${grp.cs};">
           <div class="game-head">
-            <h3>${esc(g.name)}</h3>
-            <span class="game-tag">${esc(grp.label)}</span>
+            <span class="game-badge">${icon}</span>
+            <div class="game-head-text">
+              <h3>${esc(g.name)}</h3>
+              <span class="game-tag">${esc(grp.label)}</span>
+            </div>
           </div>
           <div class="meta-row">${meta.join('')}</div>
           <p class="how">${esc(g.how)}</p>
-          <p class="why">${esc(g.why)}</p>
+          <div class="why-box"><span class="why-pill">Why</span><p>${esc(g.why)}</p></div>
           ${tweak}
           <div class="traits">${traits}</div>
         </div>`;
@@ -212,16 +281,15 @@
         const inGroup = filtered.filter(g => g.group === key);
         if (!inGroup.length) return;
         html += `
-          <div class="group-header" style="--gc:${grp.c};--gcs:${grp.cs};">
-            <h2><span class="group-dot"></span>${grp.label}</h2>
+          <div class="group-header" style="--gc:${grp.c};--gcd:${grp.cd};--gcs:${grp.cs};">
+            <h2><span class="group-emoji">${GROUP_EMOJI[key] || ''}</span>${grp.label}</h2>
             <p class="group-blurb">${grp.blurb}</p>
           </div>`;
-        html += inGroup.map(cardHTML).join('');
+        html += inGroup.map((g, i) => cardHTML(g, i)).join('');
       });
 
       list.innerHTML = html || '<p class="empty">No games match that yet — try clearing a filter.</p>';
 
-      // tapping a trait chip sets the Builds filter
       list.querySelectorAll('.trait').forEach(el => {
         el.addEventListener('click', () => {
           fBuild.value = el.dataset.trait;
