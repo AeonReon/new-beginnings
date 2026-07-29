@@ -242,6 +242,60 @@
     #root .method-blurb p:first-child::first-letter { font-size: 3em; font-weight: 800; float: left; line-height: 0.78; margin: 0.06em 0.12em 0 0; color: var(--m-deep); }
     #root .method-blurb .lead { color: var(--ink); font-weight: 800; }
     #root .sub-tile-section h2 { font-size: 1.32rem; letter-spacing: -0.02em; }
+
+    /* ════════════════════════════════════════════════════════════
+       HOMEPAGE-JOY v3 — the reading pages inherit the launcher's four "joy"
+       mechanics: a photo hero on every section, a gradient icon badge + its
+       own accent per point, card shapes with variety, short scannable copy.
+       Light cards + photos + small multi-colour accents (per-point --tc/--tcd
+       /--tcs) — NOT one blue blob, NOT loud colour slabs. Overrides above.
+       ════════════════════════════════════════════════════════════ */
+
+    /* Photo hero band — every sub-section opens on a confident image, like home */
+    #root .ed-shero { position: relative; margin: 0 0 1.5em; border-radius: 22px; overflow: hidden; min-height: 200px; display: flex; align-items: flex-end; box-shadow: var(--shadow-md); background: #2c3a45; }
+    #root .ed-shero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    #root .ed-shero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8,16,24,0) 6%, rgba(8,16,24,0.3) 46%, rgba(8,16,24,0.9)); }
+    #root .ed-shero .shero-in { position: relative; z-index: 2; padding: 1.6em 1.4em 1.35em; width: 100%; }
+    #root .ed-shero .shero-eyebrow { display: inline-block; font-family: var(--sans); font-weight: 800; font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: #FDE9B8; margin-bottom: 0.5em; }
+    #root .ed-shero .shero-title { font-family: var(--display); font-weight: 700; font-size: clamp(1.9rem, 8vw, 2.6rem); line-height: 1.04; letter-spacing: -0.02em; color: #fff; margin: 0; text-shadow: 0 2px 18px rgba(0,0,0,0.5); }
+    #root .ed-shero .ed-read { margin-top: 1.05em; background: rgba(255,255,255,0.94); color: var(--ink); border: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.25); }
+
+    /* Landing "Read on" list — gradient icon badge + per-row accent, like tiles */
+    #root .ed-toc .toc-no { display: none; }
+    #root .ed-toc .toc-badge { flex: 0 0 auto; width: 46px; height: 46px; border-radius: 14px; background: linear-gradient(150deg, var(--tc), var(--tcd)); display: grid; place-items: center; box-shadow: 0 4px 11px color-mix(in srgb, var(--tc) 34%, transparent), inset 0 1.5px 0 rgba(255,255,255,0.4); }
+    #root .ed-toc .toc-badge svg { width: 24px; height: 24px; color: #fff; }
+    #root .ed-toc .toc-row:hover { background: var(--tcs); }
+    #root .ed-toc .toc-arrow { color: var(--tc); }
+
+    /* ── Tenets as homepage-style cards, each with its OWN accent + icon badge ── */
+    #root .tenet { position: relative; overflow: hidden; background: #fff; border: none !important; border-radius: 20px; padding: 1.3em 1.35em 1.55em !important; margin: 0 0 1.05em; box-shadow: var(--shadow-sm); }
+    #root .tenet:first-of-type { padding-top: 1.3em !important; }
+    /* gradient-outline in the point's accent — the signature workspace treatment */
+    #root .tenet::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.6px; background: linear-gradient(135deg, var(--tc), var(--tcd)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; opacity: 0.5; }
+    /* big faint number — a landmark in the corner of every card */
+    #root .tenet .tenet-bignum { position: absolute; top: -0.14em; right: 0.12em; font: 900 4.2rem/1 var(--sans); letter-spacing: -0.05em; color: var(--tc); opacity: 0.1; z-index: 0; pointer-events: none; }
+    /* header row: gradient icon badge + kicker/hook */
+    #root .tenet-headrow { position: relative; z-index: 1; display: flex; align-items: center; gap: 0.85em; margin: 0 0 0.7em; }
+    #root .tenet-badge { flex: 0 0 auto; width: 52px; height: 52px; border-radius: 15px; background: linear-gradient(150deg, var(--tc), var(--tcd)); display: grid; place-items: center; box-shadow: 0 5px 13px color-mix(in srgb, var(--tc) 38%, transparent), inset 0 1.5px 0 rgba(255,255,255,0.4); }
+    #root .tenet-badge svg { width: 28px; height: 28px; color: #fff; }
+    #root .tenet-headtext { flex: 1; min-width: 0; }
+    #root .tenet-kicker { font-family: var(--sans); font-weight: 800; font-size: 0.64rem; letter-spacing: 0.13em; text-transform: uppercase; color: var(--tc); margin: 0 0 0.15em; }
+    #root .tenet-head { position: relative; z-index: 1; font-family: var(--display); font-weight: 700; font-size: clamp(1.32rem, 5.2vw, 1.56rem); line-height: 1.13; letter-spacing: -0.015em; color: var(--ink); margin: 0; }
+    /* takeaway payoff line, in the accent */
+    #root .tenet-take { position: relative; z-index: 1; font-size: 1.1rem; font-weight: 800; line-height: 1.4; color: var(--tcd); margin: 0 0 0.7em; letter-spacing: -0.01em; }
+    #root .tenet-body p { font-size: 1.05rem; line-height: 1.7; color: var(--ink-soft); margin: 0 0 0.85em; }
+    #root .tenet-body p:last-child { margin-bottom: 0; }
+    #root .tenet-body .lead { color: var(--ink); font-weight: 700; }
+    /* glance ("What it looks like") — bullets in the accent */
+    #root .glance { margin: 1.15em 0 0; }
+    #root .glance-label { color: var(--tc); }
+    #root .glance li::before { border-left-color: var(--tc); border-bottom-color: var(--tc); }
+    /* why box — soft tint of the point's own accent */
+    #root .whybox { background: var(--tcs); }
+    #root .whybox-label { color: var(--tcd); }
+    /* try-it — the one concrete action, in the accent */
+    #root .tenet-try { border-left-color: var(--tc); }
+    #root .tenet-try .tt-tag { background: var(--tc); }
   </style>
 </head>
 <body class="method-page">
@@ -269,6 +323,22 @@
       wave: '<path d="M8 28 Q 20 16 32 28 T 56 28" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><path d="M8 40 Q 20 28 32 40 T 56 40" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" opacity="0.6"/>',
       heart: '<path d="M32 52 C 12 38 10 24 20 18 C 27 14 32 20 32 24 C 32 20 37 14 44 18 C 54 24 52 38 32 52 Z" fill="currentColor"/>'
     };
+
+    // A curated per-point accent palette — the homepage's "joy" mechanic. Each
+    // point gets its OWN colour (warm, earthy, harmonious — not a rainbow, not
+    // one blue blob) so the eye keeps catching something new as it scrolls. This
+    // is what makes the launcher fun; we bring it to the reading pages.
+    const PRINCIPLE_ACCENTS = [
+      { c: '#C2410C', cd: '#9A3412', cs: '#FBE9DF' }, // terracotta
+      { c: '#B45309', cd: '#8A4008', cs: '#FAEEDB' }, // amber / ochre
+      { c: '#0E7490', cd: '#0B5563', cs: '#DEF0F3' }, // teal
+      { c: '#4D7C0F', cd: '#3F6212', cs: '#EAF2D9' }, // olive
+      { c: '#7C4D9A', cd: '#5E3A78', cs: '#F0E8F6' }, // grape
+      { c: '#2563A8', cd: '#1B4C82', cs: '#E3ECF7' }, // blue
+      { c: '#B83A6E', cd: '#8E2A54', cs: '#F8E5ED' }  // rose
+    ];
+    // Which glyph fronts each section on the landing "Read on" list.
+    const SECTION_ICON = { 'core-idea': 'compass', 'day-in-life': 'sun', 'activities': 'hand', 'reading-list': 'book', 'competency': 'sprout' };
 
     const SECTION_ORDER = ['core-idea', 'day-in-life', 'activities', 'reading-list', 'competency'];
     const SECTION_META = {
@@ -335,12 +405,14 @@
     }
 
     function renderMethodLanding(m) {
-      const toc = SECTION_ORDER.map(key => {
+      const toc = SECTION_ORDER.map((key, idx) => {
         const built = !!(m.sections && m.sections[key]);
         const meta = SECTION_META[key];
+        const a = PRINCIPLE_ACCENTS[idx % PRINCIPLE_ACCENTS.length];
+        const glyph = SUB_ICONS[SECTION_ICON[key]] || '';
         return `
-          <a class="toc-row${built ? '' : ' toc-stub'}" ${built ? `href="methodology.html?id=${m.id}&s=${key}"` : ''}>
-            <span class="toc-no">${meta.n}</span>
+          <a class="toc-row${built ? '' : ' toc-stub'}" style="--tc:${a.c};--tcd:${a.cd};--tcs:${a.cs}" ${built ? `href="methodology.html?id=${m.id}&s=${key}"` : ''}>
+            <span class="toc-badge"><svg viewBox="0 0 64 64" aria-hidden="true">${glyph}</svg></span>
             <span class="toc-text">
               <span class="toc-name">${meta.title}</span>
               <span class="toc-tag">${meta.tag}</span>
@@ -391,9 +463,14 @@
         const tenets = s.principles.map((p, i) => {
           const quote = quoteBefore[i] ? pullquote(quoteBefore[i]) : '';
           const img = (i === imgAt) ? figure : '';
-          const head = p.hook
-            ? `<div class="tenet-kicker">${p.name}</div><h3 class="tenet-head">${p.hook}</h3>`
-            : `<h3 class="tenet-head">${p.name}</h3>`;
+          const a = PRINCIPLE_ACCENTS[i % PRINCIPLE_ACCENTS.length];
+          // Gradient icon badge — a distinct glyph per point, the homepage's
+          // "every card has its own landmark" trick.
+          const badge = (p.icon && PRINCIPLE_ICONS[p.icon])
+            ? `<div class="tenet-badge"><svg viewBox="0 0 64 64" aria-hidden="true">${PRINCIPLE_ICONS[p.icon]}</svg></div>`
+            : '';
+          const kicker = p.hook ? `<div class="tenet-kicker">${p.name}</div>` : '';
+          const head = `<div class="tenet-headrow">${badge}<div class="tenet-headtext">${kicker}<h3 class="tenet-head">${p.hook || p.name}</h3></div></div>`;
           const glance = p.looksLike
             ? `<div class="glance"><div class="glance-label">What it looks like</div><ul>${p.looksLike.map(b => `<li>${hl(b)}</li>`).join('')}</ul></div>`
             : '';
@@ -401,8 +478,8 @@
             ? `<aside class="whybox"><span class="whybox-label">Why it works</span><p>${hl(p.why)}</p></aside>`
             : '';
           return `${quote}${img}
-            <section class="tenet">
-              <div class="tenet-no">${two(i + 1)}</div>
+            <section class="tenet" style="--tc:${a.c};--tcd:${a.cd};--tcs:${a.cs}">
+              <div class="tenet-bignum" aria-hidden="true">${two(i + 1)}</div>
               ${head}
               ${p.takeaway ? `<p class="tenet-take">${hl(p.takeaway)}</p>` : ''}
               <div class="tenet-body">${multiPara(p.body, 2)}</div>
@@ -508,13 +585,25 @@
         'competency': 'What to expect at four'
       };
 
+      // Open on a confident photo, like the homepage hero — not a dry title.
+      const header = m.image
+        ? `<div class="ed-shero">
+             <img src="${m.image}" alt="">
+             <div class="shero-in">
+               <span class="shero-eyebrow">${m.name} · ${m.era}</span>
+               <h1 class="shero-title">${titles[key]}</h1>
+               <button class="read-btn ed-read" id="sub-read-btn">▶ Read aloud</button>
+             </div>
+           </div>`
+        : `<header class="ed-sub-hero">
+             <div class="ed-eyebrow">${m.name} · ${m.era}</div>
+             <h1 class="ed-title">${titles[key]}</h1>
+             <button class="read-btn ed-read" id="sub-read-btn">▶ Read aloud</button>
+           </header>`;
+
       root.innerHTML = `
         <div class="ed-article">
-          <header class="ed-sub-hero">
-            <div class="ed-eyebrow">${m.name} · ${m.era}</div>
-            <h1 class="ed-title">${titles[key]}</h1>
-            <button class="read-btn ed-read" id="sub-read-btn">▶ Read aloud</button>
-          </header>
+          ${header}
           ${body}
         </div>
       `;
