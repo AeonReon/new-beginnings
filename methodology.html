@@ -15,8 +15,10 @@
     #root .method-blurb { font-size: 1.05rem; line-height: 1.62; }
 
     /* Intro / lede — a strong opening block, not just a paragraph */
-    /* Standfirst — a punchy magazine deck, with room to breathe */
-    #root .lede { font-family: var(--sans); font-weight: 600; font-style: normal; font-size: 1.26rem; line-height: 1.48; color: var(--ink); background: none; border: none; border-left: 4px solid var(--m-color); border-radius: 0; padding: 0.15em 0 0.15em 1.05em; margin: 0.3em 0 2em; letter-spacing: -0.01em; }
+    /* Standfirst — a punchy magazine deck, in short lines with room to breathe */
+    #root .lede { border-left: 4px solid var(--m-color); padding: 0.1em 0 0.1em 1.05em; margin: 0.3em 0 2em; }
+    #root .lede p { font-family: var(--sans); font-weight: 600; font-size: 1.22rem; line-height: 1.5; color: var(--ink); letter-spacing: -0.01em; margin: 0 0 0.6em; }
+    #root .lede p:last-child { margin-bottom: 0; }
     #root .lede::before { display: none; }
     #root .lead { color: var(--ink); font-weight: 800; }
 
@@ -36,11 +38,15 @@
 
     /* Principle cards — number badge, gradient outline, WHY callout */
     /* Principle "points" — big faint number, bold hook, room to breathe */
-    #root .principle-card { position: relative; overflow: hidden; background: #fff; border: none; border-radius: 18px; padding: 1.5em 1.4em 1.6em; margin: 0 0 1.4em; box-shadow: 0 2px 4px rgba(20,35,60,0.05), 0 16px 36px rgba(20,35,60,0.09); }
+    #root .principle-card { position: relative; overflow: hidden; background: #fff; border: none; border-radius: 18px; padding: 1.5em 1.4em 1.6em; margin: 0 0 1.6em; box-shadow: 0 2px 4px rgba(20,35,60,0.05), 0 16px 36px rgba(20,35,60,0.09); }
+    #root .principle-card.alt { background: var(--m-soft); }
     #root .principle-card::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 2px; background: linear-gradient(135deg, var(--m-color), var(--m-deep)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; opacity: 0.7; }
     #root .principle-num { position: absolute; top: -0.16em; right: 0.1em; width: auto; height: auto; background: none; box-shadow: none; color: var(--m-color); opacity: 0.13; font: 900 4.6rem/1 var(--sans); letter-spacing: -0.05em; z-index: 0; }
     #root .principle-card h3 { position: relative; z-index: 1; margin: 0 0 0.55em; font-size: 1.32rem; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; line-height: 1.14; max-width: 86%; }
-    #root .principle-card > p { position: relative; z-index: 1; margin: 0; line-height: 1.66; color: var(--ink-soft); font-size: 1.02rem; }
+    #root .pbody { position: relative; z-index: 1; }
+    #root .pbody p { margin: 0 0 0.7em; line-height: 1.66; color: var(--ink-soft); font-size: 1.02rem; }
+    #root .pbody p:last-child { margin-bottom: 0; }
+    #root .pbody .lead { color: var(--ink); font-weight: 800; }
 
     /* WHY — a serif pull-quote, a change of pace from the body text */
     #root .why { position: relative; z-index: 1; background: none; border: none; border-left: 3px solid var(--m-color); border-radius: 0; padding: 0.1em 0 0.1em 1.05em; margin: 1.2em 0 0; font-family: var(--serif); font-style: italic; font-size: 1.1rem; line-height: 1.5; color: var(--m-deep); }
@@ -87,8 +93,12 @@
     #root .activity-card { padding: 1.05em 1.1em 1.1em; }
     #root .activity-body { line-height: 1.56; }
     #root .sub-tile-section { margin-top: 2.4em; }
-    /* Landing blurb — bold hook first sentence, then roomy body */
-    #root .method-blurb { font-size: 1.08rem; line-height: 1.68; color: var(--ink-soft); margin: 0 0 0.4em; }
+    /* Landing blurb — short paragraphs, a drop cap, bold hook */
+    #root .method-blurb { margin: 0.2em 0 0.4em; }
+    #root .method-blurb p { font-size: 1.05rem; line-height: 1.66; color: var(--ink-soft); margin: 0 0 0.85em; }
+    #root .method-blurb p:last-child { margin-bottom: 0; }
+    #root .method-blurb p:first-child { color: var(--ink); }
+    #root .method-blurb p:first-child::first-letter { font-size: 3em; font-weight: 800; float: left; line-height: 0.78; margin: 0.06em 0.12em 0 0; color: var(--m-deep); }
     #root .method-blurb .lead { color: var(--ink); font-weight: 800; }
     #root .sub-tile-section h2 { font-size: 1.32rem; letter-spacing: -0.02em; }
   </style>
@@ -114,12 +124,25 @@
     const HL_TERMS = ['mastery-based', 'one-to-one', 'love of learning', 'growth mindset', 'the whole child', 'the prepared environment', 'living books', 'short lessons', 'follow the child', 'phonological awareness', 'working memory', 'fine motor', 'pincer grip', 'hand strength', 'self-control', 'problem-solving', 'out of doors', 'free play', 'two hours a day', 'top 1–2%', 'narration', 'mastery', 'independence', 'resilience', 'curiosity', 'wonder', 'limitless', 'imagination'].sort((a, b) => b.length - a.length);
     const HL_RE = new RegExp('(' + HL_TERMS.map(t => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|') + ')', 'gi');
     const hl = (str) => String(str == null ? '' : str).replace(HL_RE, '<mark class="hl">$1</mark>');
-    // Bold the opening sentence — the hook — then run the highlighter on both parts.
+    // Bold a short opening HOOK — up to the first em-dash or sentence end.
     const leadHtml = (text) => {
-      const s = String(text == null ? '' : text);
-      const m = s.match(/^(.+?[.!?])(\s+)([\s\S]*)$/);
+      const s = String(text == null ? '' : text).trim();
+      const m = s.match(/^([\s\S]{12,82}?)(\s—\s|[.!?]\s+)([\s\S]+)$/);
       if (!m) return hl(s);
-      return '<span class="lead">' + hl(m[1]) + '</span>' + m[2] + hl(m[3]);
+      const dash = m[2].indexOf('—') !== -1;
+      const leadText = dash ? m[1] : (m[1] + m[2].trim());
+      const sep = dash ? m[2] : ' ';
+      return '<span class="lead">' + hl(leadText) + '</span>' + sep + hl(m[3]);
+    };
+    // Break long text into short, breathing paragraphs (1–2 sentences each),
+    // bolding the hook of the first one. This is what kills the "gray blob".
+    const multiPara = (text, per) => {
+      const s = String(text == null ? '' : text).trim();
+      const sents = s.match(/[^.!?]+[.!?]+(?:["'”’)\]]*)(?:\s+|$)/g) || [s];
+      per = per || 2;
+      const groups = [];
+      for (let i = 0; i < sents.length; i += per) groups.push(sents.slice(i, i + per).join('').trim());
+      return groups.map((g, i) => i === 0 ? '<p>' + leadHtml(g) + '</p>' : '<p>' + hl(g) + '</p>').join('');
     };
 
     const id = new URLSearchParams(location.search).get('id') || 'charlotte-mason';
@@ -190,7 +213,7 @@
               <p class="method-tagline">${m.tagline}</p>
             </div>
           </div>
-          <p class="method-blurb">${leadHtml(m.blurb)}</p>
+          <div class="method-blurb">${multiPara(m.blurb, 2)}</div>
         </header>
 
         <section class="sub-tile-section">
@@ -207,19 +230,19 @@
 
       if (key === 'core-idea') {
         body = `
-          <p class="lede">${hl(s.intro)}</p>
+          <div class="lede">${multiPara(s.intro, 2)}</div>
           ${s.principles.map((p, i) => `
-            <div class="card principle-card">
+            <div class="card principle-card${i % 2 ? ' alt' : ''}">
               <div class="principle-num">${i + 1}</div>
               <h3>${p.name}</h3>
-              <p>${leadHtml(p.body)}</p>
+              <div class="pbody">${multiPara(p.body, 1)}</div>
               <p class="why">${hl(p.why)}</p>
             </div>
           `).join('')}
         `;
       } else if (key === 'day-in-life') {
         body = `
-          <p class="lede">${hl(s.intro)}</p>
+          <div class="lede">${multiPara(s.intro, 2)}</div>
           <div class="day-timeline">
             ${s.timeline.map(b => `
               <div class="day-block">
@@ -235,7 +258,7 @@
         `;
       } else if (key === 'activities') {
         body = `
-          <p class="lede">${hl(s.intro)}</p>
+          <div class="lede">${multiPara(s.intro, 2)}</div>
           <div class="activity-grid">
             ${s.items.map((a, i) => `
               <div class="activity-card">
@@ -248,7 +271,7 @@
         `;
       } else if (key === 'reading-list') {
         body = `
-          <p class="lede">${hl(s.intro)}</p>
+          <div class="lede">${multiPara(s.intro, 2)}</div>
           <h2>For the child</h2>
           <p>${hl(s.forChild.intro)}</p>
           ${s.forChild.groups.map(g => `
@@ -270,7 +293,7 @@
         `;
       } else if (key === 'competency') {
         body = `
-          <p class="lede">${hl(s.intro)}</p>
+          <div class="lede">${multiPara(s.intro, 2)}</div>
           ${s.landmarks.map(area => `
             <div class="card">
               <h3>${area.area}</h3>
