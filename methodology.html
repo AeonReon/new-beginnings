@@ -296,6 +296,33 @@
     /* try-it — the one concrete action, in the accent */
     #root .tenet-try { border-left-color: var(--tc); }
     #root .tenet-try .tt-tag { background: var(--tc); }
+
+    /* ════════════════════════════════════════════════════════════
+       PHOTO-STORY v4 — when a principle has its own photo, it becomes a
+       CHAPTER: a full-width photo banner with the hook written on the image
+       (exactly the homepage-hero treatment), then a short scannable body.
+       The photos carry the joy; the text stays light underneath them.
+       ════════════════════════════════════════════════════════════ */
+    #root .chap { margin: 2.1em 0 0; }
+    #root .chap-banner { position: relative; border-radius: 22px; overflow: hidden; box-shadow: 0 4px 10px rgba(20,60,90,0.14), 0 18px 44px rgba(20,35,60,0.18); aspect-ratio: 16 / 10; background: #2c3a45; }
+    @media (min-width: 640px) { #root .chap-banner { aspect-ratio: 16 / 9; } }
+    #root .chap-banner img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    #root .chap-banner::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8,16,24,0) 26%, rgba(8,16,24,0.24) 52%, rgba(8,16,24,0.88)); }
+    #root .chap-ban-in { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: 1.5em 1.25em 1.2em; }
+    #root .chap-kicker { display: inline-flex; align-items: center; gap: 0.55em; font-family: var(--sans); font-weight: 800; font-size: 0.7rem; letter-spacing: 0.13em; text-transform: uppercase; color: #FDE9B8; margin-bottom: 0.5em; }
+    #root .chap-kicker .ck-no { display: inline-grid; place-items: center; min-width: 1.9em; height: 1.9em; border-radius: 999px; background: rgba(255,255,255,0.18); border: 1.5px solid rgba(255,255,255,0.45); color: #fff; font-size: 0.78rem; letter-spacing: 0; }
+    #root .chap-hook { font-family: var(--display); font-weight: 800; font-size: clamp(1.45rem, 6.2vw, 2rem); line-height: 1.1; letter-spacing: -0.015em; color: #fff; margin: 0; text-shadow: 0 2px 18px rgba(0,0,0,0.55); max-width: 17em; }
+    /* body under the banner — light, breathing, no card chrome */
+    #root .chap-body { padding: 1.05em 0.15em 0; }
+    #root .chap-take { font-size: 1.13rem; font-weight: 800; line-height: 1.42; color: var(--ink); letter-spacing: -0.01em; margin: 0 0 0.65em; }
+    #root .chap-body .tenet-body p { font-size: 1.05rem; line-height: 1.7; color: var(--ink-soft); margin: 0 0 0.85em; }
+    #root .chap-body .glance { margin-top: 1em; }
+    #root .chap-body .glance-label { color: var(--acc); }
+    #root .chap-body .glance li::before { border-left-color: var(--acc-bright); border-bottom-color: var(--acc-bright); }
+    #root .chap-body .whybox { background: var(--acc-soft); }
+    #root .chap-body .whybox-label { color: var(--acc); }
+    #root .chap-body .tenet-try { border-left-color: var(--warm); }
+    #root .chap-body .tenet-try .tt-tag { background: var(--warm); }
   </style>
 </head>
 <body class="method-page">
@@ -462,21 +489,44 @@
         const figure = `<figure class="ed-figure"><img src="${m.image}" alt=""><figcaption>${s.imageCaption || (m.name + ' in practice')}</figcaption></figure>`;
         const tenets = s.principles.map((p, i) => {
           const quote = quoteBefore[i] ? pullquote(quoteBefore[i]) : '';
-          const img = (i === imgAt) ? figure : '';
-          const a = PRINCIPLE_ACCENTS[i % PRINCIPLE_ACCENTS.length];
-          // Gradient icon badge — a distinct glyph per point, the homepage's
-          // "every card has its own landmark" trick.
-          const badge = (p.icon && PRINCIPLE_ICONS[p.icon])
-            ? `<div class="tenet-badge"><svg viewBox="0 0 64 64" aria-hidden="true">${PRINCIPLE_ICONS[p.icon]}</svg></div>`
-            : '';
-          const kicker = p.hook ? `<div class="tenet-kicker">${p.name}</div>` : '';
-          const head = `<div class="tenet-headrow">${badge}<div class="tenet-headtext">${kicker}<h3 class="tenet-head">${p.hook || p.name}</h3></div></div>`;
           const glance = p.looksLike
             ? `<div class="glance"><div class="glance-label">What it looks like</div><ul>${p.looksLike.map(b => `<li>${hl(b)}</li>`).join('')}</ul></div>`
             : '';
           const why = p.why
             ? `<aside class="whybox"><span class="whybox-label">Why it works</span><p>${hl(p.why)}</p></aside>`
             : '';
+
+          // PHOTO-STORY chapter — the principle's own photo IS the banner and
+          // the hook is written on it, homepage-hero style. Image-led, not
+          // text-led: this is what makes the page a scrolling story.
+          if (p.photo) {
+            return `${quote}
+              <section class="chap">
+                <div class="chap-banner">
+                  <img src="${p.photo}" alt="" loading="lazy">
+                  <div class="chap-ban-in">
+                    <div class="chap-kicker"><span class="ck-no">${i + 1}</span>${p.name}</div>
+                    <h3 class="chap-hook">${p.hook || p.name}</h3>
+                  </div>
+                </div>
+                <div class="chap-body">
+                  ${p.takeaway ? `<p class="chap-take">${hl(p.takeaway)}</p>` : ''}
+                  <div class="tenet-body">${multiPara(p.body, 2)}</div>
+                  ${glance}
+                  ${why}
+                  ${p.inPractice ? `<p class="tenet-try"><span class="tt-tag">Try it</span> ${hl(p.inPractice)}</p>` : ''}
+                </div>
+              </section>`;
+          }
+
+          // Fallback for traditions without per-principle photos (unchanged).
+          const img = (i === imgAt) ? figure : '';
+          const a = PRINCIPLE_ACCENTS[i % PRINCIPLE_ACCENTS.length];
+          const badge = (p.icon && PRINCIPLE_ICONS[p.icon])
+            ? `<div class="tenet-badge"><svg viewBox="0 0 64 64" aria-hidden="true">${PRINCIPLE_ICONS[p.icon]}</svg></div>`
+            : '';
+          const kicker = p.hook ? `<div class="tenet-kicker">${p.name}</div>` : '';
+          const head = `<div class="tenet-headrow">${badge}<div class="tenet-headtext">${kicker}<h3 class="tenet-head">${p.hook || p.name}</h3></div></div>`;
           return `${quote}${img}
             <section class="tenet" style="--tc:${a.c};--tcd:${a.cd};--tcs:${a.cs}">
               <div class="tenet-bignum" aria-hidden="true">${two(i + 1)}</div>
