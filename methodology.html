@@ -9,6 +9,70 @@
   <link rel="icon" type="image/png" href="icon-192.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="stylesheet" href="assets/style.css">
+  <style>
+    /* ── Tradition pages: richer, more readable layout ── */
+    #root mark.hl { background: linear-gradient(180deg, rgba(255,206,61,0) 58%, rgba(255,201,45,0.82) 58%); color: inherit; font-weight: 700; padding: 0 0.05em; border-radius: 2px; }
+    #root .method-blurb { font-size: 1.05rem; line-height: 1.62; }
+
+    /* Intro / lede — a strong opening block, not just a paragraph */
+    #root .lede { font-family: var(--sans); font-style: normal; font-size: 1.1rem; line-height: 1.5; color: var(--ink); background: var(--m-soft, #eef4fb); border-radius: 14px; padding: 0.95em 1.15em; margin: 0 0 1.5em; position: relative; }
+    #root .lede::before { content: ""; position: absolute; left: 0; top: 0.9em; bottom: 0.9em; width: 4px; border-radius: 4px; background: linear-gradient(180deg, var(--m-color), var(--m-deep)); }
+    #root .lede { padding-left: 1.35em; }
+
+    /* Sub-tiles → inviting horizontal cards with a gradient icon badge */
+    #root .sub-tile-grid { display: grid; grid-template-columns: 1fr; gap: 0.75em; }
+    @media (min-width: 700px) { #root .sub-tile-grid { grid-template-columns: 1fr 1fr; } }
+    #root .sub-tile { flex-direction: row; align-items: center; gap: 0.95em; text-align: left; background: #fff; border-radius: 18px; padding: 0.9em 1.05em; min-height: 0; position: relative; overflow: hidden; box-shadow: var(--shadow-sm); }
+    #root .sub-tile::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 2px; background: linear-gradient(135deg, var(--m-color), var(--m-deep)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; opacity: 0.85; }
+    #root .sub-tile:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    #root .sub-tile-icon { flex: 0 0 auto; width: 54px; height: 54px; border-radius: 15px; margin: 0; background: linear-gradient(150deg, var(--m-color), var(--m-deep)); display: grid; place-items: center; box-shadow: 0 4px 11px rgba(20,35,60,0.16), inset 0 1.5px 0 rgba(255,255,255,0.4); }
+    #root .sub-tile-icon svg { width: 26px; height: 26px; color: #fff; }
+    #root .sub-tile-text { flex: 1; min-width: 0; }
+    #root .sub-tile-name { font-size: 1.06rem; font-weight: 800; color: var(--ink); margin: 0; }
+    #root .sub-tile-tag { font-size: 0.84rem; color: var(--ink-mute); margin: 0.15em 0 0; }
+    #root .sub-tile-arrow { flex: 0 0 auto; color: var(--m-color); font-weight: 800; font-size: 1.25rem; }
+    #root .sub-tile-stub { opacity: 0.72; }
+
+    /* Principle cards — number badge, gradient outline, WHY callout */
+    #root .principle-card { position: relative; background: #fff; border: none; border-radius: 16px; padding: 1.1em 1.15em 1.2em; margin: 0 0 0.9em; box-shadow: var(--shadow-sm); }
+    #root .principle-card::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 2px; background: linear-gradient(135deg, var(--m-color), var(--m-deep)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; opacity: 0.85; }
+    #root .principle-num { position: static; width: 30px; height: 30px; border-radius: 9px; background: linear-gradient(150deg, var(--m-color), var(--m-deep)); color: #fff; font-weight: 800; font-size: 0.95rem; display: grid; place-items: center; margin: 0 0 0.5em; box-shadow: 0 3px 8px rgba(20,35,60,0.16); }
+    #root .principle-card h3 { margin: 0 0 0.4em; font-size: 1.16rem; color: var(--ink); letter-spacing: -0.01em; }
+    #root .principle-card > p { margin: 0; line-height: 1.56; color: var(--ink-soft); }
+
+    /* WHY callout — a marked box, not a stray line */
+    #root .why { position: relative; background: var(--m-soft, #eef4fb); border: none; border-left: 4px solid var(--m-color); border-radius: 12px; padding: 0.8em 0.95em; margin: 0.85em 0 0; font-size: 0.95em; line-height: 1.55; color: var(--ink-soft); }
+    #root .why::before { content: "Why it works"; display: inline-block; font-size: 0.57rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #fff; background: linear-gradient(135deg, var(--m-color), var(--m-deep)); padding: 0.28em 0.62em; border-radius: 999px; margin-bottom: 0.5em; position: static; }
+    #root .why::after { display: none; }
+
+    /* Soft note box (day / competency notes, reading free line) */
+    #root .note-box { background: var(--paper-warm, #fbf6ec); border: 1px solid var(--rule); border-radius: 12px; padding: 0.85em 1em; margin: 1.3em 0 0; font-size: 0.95em; line-height: 1.55; color: var(--ink-soft); }
+    #root .note-box::before { content: "💡 "; }
+
+    /* Day timeline — coloured time chips */
+    #root .day-time { background: linear-gradient(150deg, var(--m-color), var(--m-deep)); color: #fff; font-weight: 800; border-radius: 999px; padding: 0.32em 0.72em; font-size: 0.78rem; display: inline-block; }
+    #root .day-title { font-weight: 800; color: var(--ink); }
+    #root .day-body { color: var(--ink-soft); line-height: 1.5; }
+
+    /* Activity cards — badge + gradient outline, two-up on wider screens */
+    #root .activity-grid { display: grid; grid-template-columns: 1fr; gap: 0.8em; }
+    @media (min-width: 620px) { #root .activity-grid { grid-template-columns: 1fr 1fr; } }
+    #root .activity-card { position: relative; background: #fff; border-radius: 14px; padding: 0.95em 1em 1em; box-shadow: var(--shadow-sm); }
+    #root .activity-card::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.5px; background: linear-gradient(135deg, var(--m-color), var(--m-deep)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; opacity: 0.7; }
+    #root .activity-num { width: 26px; height: 26px; border-radius: 8px; background: linear-gradient(150deg, var(--m-color), var(--m-deep)); color: #fff; font-weight: 800; font-size: 0.82rem; display: grid; place-items: center; margin: 0 0 0.4em; }
+    #root .activity-name { font-weight: 800; color: var(--ink); margin: 0 0 0.25em; line-height: 1.2; }
+    #root .activity-body { color: var(--ink-soft); line-height: 1.5; font-size: 0.93em; }
+
+    /* Reading / competency lists — dot bullets in the tradition colour */
+    #root .card > ul { list-style: none; padding: 0; margin: 0.5em 0 0; }
+    #root .card > ul > li { position: relative; padding: 0.42em 0 0.42em 1.4em; border-top: 1px solid var(--rule); line-height: 1.5; color: var(--ink-soft); }
+    #root .card > ul > li:first-child { border-top: none; }
+    #root .card > ul > li::before { content: ""; position: absolute; left: 0.25em; top: 1em; width: 7px; height: 7px; border-radius: 50%; background: var(--m-color); }
+    #root .card > ul.book-list > li { padding-left: 0; }
+    #root .card > ul.book-list > li::before { display: none; }
+    #root .book-note { color: var(--ink-mute); font-size: 0.9em; }
+    #root .card h3 { color: var(--m-deep); }
+  </style>
 </head>
 <body class="method-page">
   <main id="root" class="method-main"></main>
@@ -25,6 +89,12 @@
     };
 
     const SECTION_ORDER = ['core-idea', 'day-in-life', 'activities', 'reading-list', 'competency'];
+
+    // Copywriter's marker — highlight the key idea in each block so the eye lands
+    // on what matters instead of wading through a wall of text.
+    const HL_TERMS = ['mastery-based', 'one-to-one', 'love of learning', 'growth mindset', 'the whole child', 'the prepared environment', 'living books', 'short lessons', 'follow the child', 'phonological awareness', 'working memory', 'fine motor', 'pincer grip', 'hand strength', 'self-control', 'problem-solving', 'out of doors', 'free play', 'two hours a day', 'top 1–2%', 'narration', 'mastery', 'independence', 'resilience', 'curiosity', 'wonder', 'limitless', 'imagination'].sort((a, b) => b.length - a.length);
+    const HL_RE = new RegExp('(' + HL_TERMS.map(t => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|') + ')', 'gi');
+    const hl = (str) => String(str == null ? '' : str).replace(HL_RE, '<mark class="hl">$1</mark>');
 
     const id = new URLSearchParams(location.search).get('id') || 'charlotte-mason';
     const m = window.METHOD_BY_ID(id);
@@ -74,8 +144,11 @@
           <a class="sub-tile ${built ? '' : 'sub-tile-stub'}" ${built ? `href="methodology.html?id=${m.id}&s=${key}"` : ''}>
             ${built ? '' : '<span class="tile-badge">Coming soon</span>'}
             <div class="sub-tile-icon"><svg viewBox="0 0 64 64">${SUB_ICONS[iconKey]}</svg></div>
-            <div class="sub-tile-name">${titles[key]}</div>
-            <div class="sub-tile-tag">${taglines[key]}</div>
+            <div class="sub-tile-text">
+              <div class="sub-tile-name">${titles[key]}</div>
+              <div class="sub-tile-tag">${taglines[key]}</div>
+            </div>
+            ${built ? '<span class="sub-tile-arrow" aria-hidden="true">→</span>' : ''}
           </a>
         `;
       }).join('');
@@ -91,7 +164,7 @@
               <p class="method-tagline">${m.tagline}</p>
             </div>
           </div>
-          <p class="method-blurb">${m.blurb}</p>
+          <p class="method-blurb">${hl(m.blurb)}</p>
         </header>
 
         <section class="sub-tile-section">
@@ -108,77 +181,77 @@
 
       if (key === 'core-idea') {
         body = `
-          <p class="lede">${s.intro}</p>
+          <p class="lede">${hl(s.intro)}</p>
           ${s.principles.map((p, i) => `
             <div class="card principle-card">
               <div class="principle-num">${i + 1}</div>
               <h3>${p.name}</h3>
-              <p>${p.body}</p>
-              <p class="why">${p.why}</p>
+              <p>${hl(p.body)}</p>
+              <p class="why">${hl(p.why)}</p>
             </div>
           `).join('')}
         `;
       } else if (key === 'day-in-life') {
         body = `
-          <p class="lede">${s.intro}</p>
+          <p class="lede">${hl(s.intro)}</p>
           <div class="day-timeline">
             ${s.timeline.map(b => `
               <div class="day-block">
                 <div class="day-time">${b.time}</div>
                 <div class="day-content">
                   <div class="day-title">${b.title}</div>
-                  <div class="day-body">${b.body}</div>
+                  <div class="day-body">${hl(b.body)}</div>
                 </div>
               </div>
             `).join('')}
           </div>
-          ${s.note ? `<p class="why">${s.note}</p>` : ''}
+          ${s.note ? `<p class="note-box">${hl(s.note)}</p>` : ''}
         `;
       } else if (key === 'activities') {
         body = `
-          <p class="lede">${s.intro}</p>
+          <p class="lede">${hl(s.intro)}</p>
           <div class="activity-grid">
             ${s.items.map((a, i) => `
               <div class="activity-card">
                 <div class="activity-num">${i + 1}</div>
                 <div class="activity-name">${a.name}</div>
-                <div class="activity-body">${a.body}</div>
+                <div class="activity-body">${hl(a.body)}</div>
               </div>
             `).join('')}
           </div>
         `;
       } else if (key === 'reading-list') {
         body = `
-          <p class="lede">${s.intro}</p>
+          <p class="lede">${hl(s.intro)}</p>
           <h2>For the child</h2>
-          <p>${s.forChild.intro}</p>
+          <p>${hl(s.forChild.intro)}</p>
           ${s.forChild.groups.map(g => `
             <div class="card">
               <h3>${g.heading}</h3>
-              <ul>${g.books.map(b => `<li>${b}</li>`).join('')}</ul>
+              <ul>${g.books.map(b => `<li>${hl(b)}</li>`).join('')}</ul>
             </div>
           `).join('')}
           <h2>For the parent</h2>
-          <p>${s.forParent.intro}</p>
+          <p>${hl(s.forParent.intro)}</p>
           <div class="card">
             <ul class="book-list">
               ${s.forParent.books.map(b => `
-                <li><strong>${b.title}</strong> — ${b.author}<br><span class="book-note">${b.note}</span></li>
+                <li><strong>${b.title}</strong> — ${b.author}<br><span class="book-note">${hl(b.note)}</span></li>
               `).join('')}
             </ul>
           </div>
-          ${s.free ? `<p class="why">${s.free}</p>` : ''}
+          ${s.free ? `<p class="note-box">${hl(s.free)}</p>` : ''}
         `;
       } else if (key === 'competency') {
         body = `
-          <p class="lede">${s.intro}</p>
+          <p class="lede">${hl(s.intro)}</p>
           ${s.landmarks.map(area => `
             <div class="card">
               <h3>${area.area}</h3>
-              <ul>${area.items.map(i => `<li>${i}</li>`).join('')}</ul>
+              <ul>${area.items.map(i => `<li>${hl(i)}</li>`).join('')}</ul>
             </div>
           `).join('')}
-          ${s.note ? `<p class="why">${s.note}</p>` : ''}
+          ${s.note ? `<p class="note-box">${hl(s.note)}</p>` : ''}
         `;
       }
 
