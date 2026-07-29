@@ -94,6 +94,15 @@
       <a class="feat-card" style="pointer-events:none"><div class="fc-veil"></div><div class="fc-txt"><div class="fc-name">Loading places…</div></div></a>
     </div>
 
+    <div class="sec-lead">The whole map</div>
+    <p class="sec-sub">Over 2,000 family places, all across Northern Ireland. Tap to explore them in Days Out NI.</p>
+    <a class="map-peek" href="https://daysoutni.com/?mode=places&view=map" target="_blank" rel="noopener">
+      <img src="assets/pillars/daysout-map.jpg" alt="Map of Northern Ireland covered in Days Out NI place clusters" loading="lazy">
+      <span class="mp-badge">🗺️ 2,000+ places</span>
+      <span class="mp-fade"></span>
+      <span class="mp-open">Open the full map ↗</span>
+    </a>
+
     <div class="sec-lead">Soft play</div>
     <p class="sec-sub">Indoor runaround for when the weather turns.</p>
     <div class="feat-scroll" id="car-softplay"></div>
@@ -105,15 +114,6 @@
     <div class="sec-lead">Big family fun</div>
     <p class="sec-sub">Trampolines, waterparks, ice rinks and adventure.</p>
     <div class="feat-scroll" id="car-fun"></div>
-
-    <div class="sec-lead">The whole map</div>
-    <p class="sec-sub">Over 2,000 family places, all across Northern Ireland. Tap to explore them in Days Out NI.</p>
-    <a class="map-peek" href="https://daysoutni.com/?mode=places&view=map" target="_blank" rel="noopener">
-      <img src="assets/pillars/daysout-map.jpg" alt="Map of Northern Ireland covered in Days Out NI place clusters" loading="lazy">
-      <span class="mp-badge">🗺️ 2,000+ places</span>
-      <span class="mp-fade"></span>
-      <span class="mp-open">Open the full map ↗</span>
-    </a>
 
     <a href="https://daysoutni.com/?mode=places" class="daysout-cta" target="_blank" rel="noopener">
       <div class="dc-kicker">🗺️ Sister app · daysoutni.com · free</div>
@@ -158,12 +158,15 @@
       'castlewellan-forest-park', 'ulster-museum'
     ];
 
+    // Must-see is curated only (no category fill), so nothing minor sneaks in.
     const SECTIONS = [
-      { el: 'car-mustsee', heroIds: HERO_IDS, cats: ['Heritage sites', 'Castles & Estates', 'Beaches', 'Forest & woodland', 'Parks & gardens'], n: 14 },
+      { el: 'car-mustsee', heroIds: HERO_IDS, n: HERO_IDS.length },
       { el: 'car-softplay', cats: ['Soft play'], n: 12 },
       { el: 'car-farms', cats: ['Animals & farms'], n: 12 },
       { el: 'car-fun', heroIds: ['lets-go-hydro', 'tropicana-newcastle', 'dundonald-international-ice-bowl'], cats: ['Activity centres'], n: 12 }
     ];
+    // Places that should never surface here regardless of category.
+    const EXCLUDE = new Set(['riverside-park-ballymoney']);
 
     function esc(s) {
       return String(s == null ? '' : s).replace(/[&<>"]/g, c =>
@@ -206,7 +209,7 @@
         const cont = document.getElementById(sec.el);
         if (!cont) return;
         const picks = [];
-        const add = p => { if (p && p.image && p.name && !used.has(p.id) && !picks.includes(p)) picks.push(p); };
+        const add = p => { if (p && p.image && p.name && !EXCLUDE.has(p.id) && !used.has(p.id) && !picks.includes(p)) picks.push(p); };
         (sec.heroIds || []).forEach(id => add(byId[id]));
         for (const p of withImg) {
           if (picks.length >= sec.n) break;
