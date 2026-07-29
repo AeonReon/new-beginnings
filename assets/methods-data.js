@@ -213,6 +213,13 @@ window.METHODS = [
         icon: 'compass',
         intro: 'Montessori observed that a young child, given a beautiful prepared environment and the freedom to choose meaningful work, will concentrate deeply, repeat eagerly, and develop themselves. The adult prepares; the child works.',
         banner: { text: 'Never help a child with a task at which he feels he can succeed.', cite: 'Maria Montessori' },
+        recap: [
+          'Prepare the space, then step back — the room teaches, you observe.',
+          'Give real work over toys: pouring, sweeping, chopping, tidying.',
+          'Protect one long, unbroken work block for deep concentration.',
+          'Let materials correct themselves — build confidence, not correction.',
+          'What surrounds a four-year-old becomes them, so choose it with care.'
+        ],
         principles: [
           { name: 'Follow the child', icon: 'eye', hook: 'The child is already telling you what to teach next', takeaway: 'Your job isn\'t to plan the curriculum — it\'s to notice the one they\'re quietly writing themselves.', inPractice: 'For one week, just watch. Note what they come back to twice. That\'s your next material.', body: 'Watch what the child chooses, what they return to, what they ignore. Their interests are the curriculum — your job is to present rich possibilities and notice which take root.', why: 'A 4-year-old\'s developing brain prioritises certain skills in certain windows. The child knows what they need before any test could detect it. Watching saves you from forcing the wrong work at the wrong time.' },
           { name: 'The prepared environment', icon: 'shelf', hook: 'The room does the teaching, not you', takeaway: 'Eight beautiful trays on a low shelf will out-teach a hundred plastic toys.', inPractice: 'Clear one shelf to the child\'s height. Put out six things — each complete, each on its own tray.', body: 'A low shelf with a handful of carefully chosen materials, each on its own tray, each complete and beautiful. The room is the teacher; the adult mostly observes.', why: 'Choice in a contained, deliberate environment trains both freedom and self-discipline. Too much choice overwhelms; no choice infantilises. Eight beautiful trays beats a hundred plastic toys.' },

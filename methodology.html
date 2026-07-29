@@ -9,8 +9,92 @@
   <link rel="icon" type="image/png" href="icon-192.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="stylesheet" href="assets/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&display=swap" rel="stylesheet">
   <style>
-    /* ── Tradition pages: richer, more readable layout ── */
+    /* ════════════════════════════════════════════════════════════
+       EDITORIAL v2 — one cohesive theme, magazine reading experience.
+       Cream-cool paper, navy ink, ONE blue accent, Fraunces display serif.
+       Imagery + pull-quotes + whitespace do the work, not colour blocks.
+       ════════════════════════════════════════════════════════════ */
+    #root { --acc: #2D6FA8; --acc-bright: #4FA4D2; --acc-soft: #EAF3FB; --warm: #C77A22; --display: 'Fraunces', Georgia, 'Times New Roman', serif; }
+
+    /* Reading column — single, calm, ~680px */
+    #root .ed-article { max-width: 680px; margin: 0 auto; padding-bottom: 2em; }
+
+    /* Article furniture */
+    #root .ed-eyebrow { font-family: var(--sans); font-weight: 700; font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--acc); }
+    #root .ed-title { font-family: var(--display); font-weight: 600; font-size: clamp(2.1rem, 8.5vw, 3rem); line-height: 1.03; letter-spacing: -0.02em; color: var(--ink); margin: 0.28em 0 0.24em; }
+    #root .ed-deck { font-family: var(--sans); font-size: 1.2rem; line-height: 1.5; color: var(--ink-soft); font-weight: 500; margin: 0 0 1.3em; }
+
+    /* Hero photo — large, confident, generous margin */
+    #root .ed-hero { margin: 0.4em 0 0.7em; border-radius: 18px; overflow: hidden; box-shadow: var(--shadow-md); }
+    #root .ed-hero img { width: 100%; display: block; aspect-ratio: 16 / 10; object-fit: cover; }
+
+    /* Lead paragraph — drop cap, larger, inked */
+    #root .ed-lead p { font-size: 1.15rem; line-height: 1.72; color: var(--ink); margin: 0 0 0.95em; }
+    #root .ed-lead p:first-of-type::first-letter { font-family: var(--display); font-weight: 600; float: left; font-size: 3.5em; line-height: 0.7; margin: 0.07em 0.11em 0 0; color: var(--acc); }
+    #root .ed-lead .lead { font-weight: 700; color: var(--ink); }
+    #root .ed-lead-intro { margin-top: 0.4em; }
+
+    /* Promise aside — a quiet framed panel, not a colour slab */
+    #root .ed-promise { margin: 1.5em 0 0.5em; padding: 1.25em 1.4em; background: var(--acc-soft); border-radius: 16px; }
+    #root .ed-promise-label { font-family: var(--sans); font-weight: 800; font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--acc); margin-bottom: 0.45em; }
+    #root .ed-promise-line { font-family: var(--display); font-weight: 600; font-size: 1.28rem; line-height: 1.3; color: var(--ink); margin: 0; }
+    #root .ed-essence { list-style: none; padding: 0; margin: 0.95em 0 0; display: grid; gap: 0.55em; }
+    #root .ed-essence li { position: relative; padding-left: 1.7em; font-size: 1rem; line-height: 1.45; color: var(--ink-soft); font-weight: 500; }
+    #root .ed-essence li::before { content: ""; position: absolute; left: 0.15em; top: 0.5em; width: 0.7em; height: 0.4em; border-left: 2.5px solid var(--acc); border-bottom: 2.5px solid var(--acc); transform: rotate(-45deg); }
+
+    /* Contents list ("Read on") — a magazine index, not chunky tiles */
+    #root .ed-toc-head { font-family: var(--sans); font-weight: 800; font-size: 0.66rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-mute); margin: 2.2em 0 0.2em; }
+    #root .ed-toc { border-top: 1px solid var(--rule); }
+    #root .ed-toc .toc-row { display: flex; align-items: center; gap: 1em; padding: 1.05em 0.3em; border-bottom: 1px solid var(--rule); text-decoration: none; color: inherit; transition: padding-left 0.16s ease, background 0.16s ease; }
+    #root .ed-toc .toc-row:hover { background: var(--acc-soft); padding-left: 0.7em; border-radius: 10px; }
+    #root .ed-toc .toc-no { font-family: var(--display); font-weight: 600; font-size: 1.15rem; color: var(--acc); flex: 0 0 auto; width: 1.7em; }
+    #root .ed-toc .toc-text { flex: 1; min-width: 0; }
+    #root .ed-toc .toc-name { display: block; font-family: var(--display); font-weight: 600; font-size: 1.24rem; line-height: 1.15; color: var(--ink); }
+    #root .ed-toc .toc-tag { display: block; font-size: 0.92rem; color: var(--ink-mute); margin-top: 0.15em; line-height: 1.35; }
+    #root .ed-toc .toc-arrow { flex: 0 0 auto; color: var(--acc); font-weight: 700; font-size: 1.2rem; }
+    #root .ed-toc .toc-soon { flex: 0 0 auto; font-size: 0.66rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-mute); background: var(--rule-soft); border-radius: 999px; padding: 0.3em 0.7em; }
+    #root .ed-toc .toc-stub { opacity: 0.6; pointer-events: none; }
+
+    /* Sub-section header */
+    #root .ed-sub-hero { margin: 0.2em 0 1.2em; }
+    #root .ed-sub-hero .ed-title { margin-top: 0.15em; }
+    #root .read-btn.ed-read { margin-top: 1em; }
+
+    /* ── Tenets — the points, as flowing article sections (NO boxes) ── */
+    #root .tenet { padding: 1.9em 0 0.4em; border-top: 1px solid var(--rule); }
+    #root .tenet:first-of-type { border-top: none; padding-top: 0.6em; }
+    #root .tenet-no { font-family: var(--display); font-weight: 600; font-size: 1rem; color: var(--acc); letter-spacing: 0.04em; margin-bottom: 0.15em; }
+    #root .tenet-kicker { font-family: var(--sans); font-weight: 700; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-mute); margin-bottom: 0.35em; }
+    #root .tenet-head { font-family: var(--display); font-weight: 600; font-size: clamp(1.5rem, 6vw, 1.82rem); line-height: 1.12; letter-spacing: -0.015em; color: var(--ink); margin: 0 0 0.5em; }
+    #root .tenet-take { font-size: 1.14rem; font-weight: 700; line-height: 1.42; color: var(--ink); margin: 0 0 0.75em; }
+    #root .tenet-body p { font-size: 1.08rem; line-height: 1.74; color: var(--ink-soft); margin: 0 0 0.95em; }
+    #root .tenet-body .lead { color: var(--ink); font-weight: 700; }
+    /* "Why" — light, elegant, inline. Never a heavy coloured block. */
+    #root .tenet-why { font-size: 0.99rem; line-height: 1.62; color: var(--ink-mute); margin: 0.2em 0 0; }
+    #root .tenet-why span { font-family: var(--sans); font-weight: 800; font-size: 0.64rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--acc); }
+    /* "Try it" — one warm human accent, a hairline rule not a filled box */
+    #root .tenet-try { font-size: 1.04rem; line-height: 1.55; color: var(--ink); border-left: 3px solid var(--warm); padding: 0.15em 0 0.15em 0.95em; margin: 1em 0 0.3em; }
+    #root .tenet-try .tt-tag { font-family: var(--sans); font-weight: 800; font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: #fff; background: var(--warm); border-radius: 999px; padding: 0.28em 0.6em; margin-right: 0.5em; vertical-align: 0.08em; }
+
+    /* Feature pull-quote — the "something to look at" break between points */
+    #root .pullquote { text-align: center; margin: 2.3em auto; padding: 0.4em 0; max-width: 15em; }
+    #root .pullquote::before { content: "\201C"; display: block; font-family: var(--display); font-weight: 600; font-size: 4.5rem; line-height: 0.55; color: var(--acc); opacity: 0.28; margin-bottom: 0.12em; }
+    #root .pullquote p { font-family: var(--display); font-weight: 500; font-style: italic; font-size: clamp(1.6rem, 6.5vw, 2rem); line-height: 1.26; color: var(--ink); margin: 0; letter-spacing: -0.01em; }
+    #root .pullquote cite { display: block; margin-top: 0.8em; font-family: var(--sans); font-style: normal; font-weight: 800; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--acc); }
+
+    /* Closing recap — the one tasteful summary block */
+    #root .recap { margin: 2.4em 0 0; padding: 1.4em 1.5em 1.5em; background: #fff; border: 1px solid var(--rule); border-radius: 16px; box-shadow: var(--shadow-sm); }
+    #root .recap-label { font-family: var(--sans); font-weight: 800; font-size: 0.64rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--acc); margin-bottom: 0.6em; }
+    #root .recap ol { list-style: none; padding: 0; margin: 0; counter-reset: r; }
+    #root .recap li { counter-increment: r; position: relative; padding: 0.65em 0 0.65em 2.1em; border-top: 1px solid var(--rule-soft); font-size: 1.03rem; line-height: 1.5; color: var(--ink); }
+    #root .recap li:first-child { border-top: none; }
+    #root .recap li::before { content: counter(r); position: absolute; left: 0; top: 0.62em; font-family: var(--display); font-weight: 600; font-size: 1.05rem; color: var(--acc); }
+
+    /* ── legacy tradition-page styles (older sub-sections still use these) ── */
     #root mark.hl { background: linear-gradient(180deg, rgba(255,206,61,0) 58%, rgba(255,201,45,0.82) 58%); color: inherit; font-weight: 700; padding: 0 0.05em; border-radius: 2px; }
     #root .method-blurb { font-size: 1.05rem; line-height: 1.62; }
 
@@ -193,11 +277,15 @@
     if (!m) {
       root.innerHTML = '<h1>Tradition not found</h1><p><a href="index.html">← Back to home</a></p>';
     } else {
+      // ONE cohesive theme across every tradition — the site's own clean blue,
+      // not a different loud colour per school. Identity comes from the words and
+      // the photo, not from drowning the page in a hue.
+      const SITE = { accent: '#2D6FA8', accentBright: '#4FA4D2', accentSoft: '#EAF3FB', warm: '#E0912B' };
       document.title = 'Conscious Parenting NI — ' + m.name;
-      document.querySelector('meta[name="theme-color"]').setAttribute('content', m.color);
-      document.documentElement.style.setProperty('--m-color', m.color);
-      document.documentElement.style.setProperty('--m-deep', m.colorDeep);
-      document.documentElement.style.setProperty('--m-soft', m.colorSoft);
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', SITE.accent);
+      document.documentElement.style.setProperty('--m-color', SITE.accent);
+      document.documentElement.style.setProperty('--m-deep', SITE.accent);
+      document.documentElement.style.setProperty('--m-soft', SITE.accentSoft);
 
       const subSection = new URLSearchParams(location.search).get('s');
 
@@ -211,62 +299,45 @@
       }
     }
 
+    const SECTION_META = {
+      'core-idea':   { n: '01', title: 'Core idea',            tag: 'The philosophy in plain language, with the why' },
+      'day-in-life': { n: '02', title: 'A day in the life',    tag: 'What a typical day looks like for a four-year-old' },
+      'activities':  { n: '03', title: 'Things to do this week', tag: 'Twenty activities — pick one or two a day' },
+      'reading-list':{ n: '04', title: 'Reading list',         tag: 'Books for you, and books to read aloud' },
+      'competency':  { n: '05', title: 'What to expect at four', tag: 'Landmarks at four — orientation, not a test' }
+    };
+
     function renderMethodLanding(m) {
-      const subTiles = SECTION_ORDER.map(key => {
-        const s = m.sections && m.sections[key];
-        const built = !!s;
-        const titles = {
-          'core-idea': 'Core idea',
-          'day-in-life': 'A day in the life',
-          'activities': 'Things to do this week',
-          'reading-list': 'Reading list',
-          'competency': 'What to expect at four'
-        };
-        const taglines = {
-          'core-idea': 'The philosophy in plain language, with the why',
-          'day-in-life': 'What a typical day looks like for a 4-year-old',
-          'activities': '20 activities, pick one or two a day',
-          'reading-list': 'Books for the parent + books to read aloud',
-          'competency': 'Landmarks at four — not a test, just orientation'
-        };
-        const iconKey = key === 'core-idea' ? 'compass' : key === 'day-in-life' ? 'sun' : key === 'activities' ? 'hand' : key === 'reading-list' ? 'book' : 'sprout';
+      const toc = SECTION_ORDER.map(key => {
+        const built = !!(m.sections && m.sections[key]);
+        const meta = SECTION_META[key];
         return `
-          <a class="sub-tile ${built ? '' : 'sub-tile-stub'}" ${built ? `href="methodology.html?id=${m.id}&s=${key}"` : ''}>
-            ${built ? '' : '<span class="tile-badge">Coming soon</span>'}
-            <div class="sub-tile-icon"><svg viewBox="0 0 64 64">${SUB_ICONS[iconKey]}</svg></div>
-            <div class="sub-tile-text">
-              <div class="sub-tile-name">${titles[key]}</div>
-              <div class="sub-tile-tag">${taglines[key]}</div>
-            </div>
-            ${built ? '<span class="sub-tile-arrow" aria-hidden="true">→</span>' : ''}
-          </a>
-        `;
+          <a class="toc-row${built ? '' : ' toc-stub'}" ${built ? `href="methodology.html?id=${m.id}&s=${key}"` : ''}>
+            <span class="toc-no">${meta.n}</span>
+            <span class="toc-text">
+              <span class="toc-name">${meta.title}</span>
+              <span class="toc-tag">${meta.tag}</span>
+            </span>
+            ${built ? '<span class="toc-arrow" aria-hidden="true">→</span>' : '<span class="toc-soon">Soon</span>'}
+          </a>`;
       }).join('');
 
       root.innerHTML = `
-        <header class="method-hero editorial">
-          <div class="method-cover${m.image ? '' : ' no-img'}">
-            ${m.image ? `<img src="${m.image}" alt="">` : ''}
-            <div class="method-cover-veil"></div>
-            <div class="method-cover-text">
-              <div class="method-hero-eyebrow">${m.era}</div>
-              <h1>${m.name}</h1>
-              <p class="method-tagline">${m.tagline}</p>
-            </div>
-          </div>
-          <div class="method-blurb">${multiPara(m.blurb, 2)}</div>
+        <article class="ed-article">
+          <div class="ed-eyebrow">${m.era}</div>
+          <h1 class="ed-title">${m.name}</h1>
+          <p class="ed-deck">${m.tagline}</p>
+          ${m.image ? `<figure class="ed-hero"><img src="${m.image}" alt="${m.name}"></figure>` : ''}
+          <div class="ed-lead">${multiPara(m.blurb, 2)}</div>
           ${m.promise ? `
-          <div class="method-promise">
-            <div class="mp-eyebrow">In one breath</div>
-            <p class="mp-line">${m.promise}</p>
-            ${m.essence ? `<ul class="essence-list">${m.essence.map(e => `<li>${e}</li>`).join('')}</ul>` : ''}
-          </div>` : ''}
-        </header>
-
-        <section class="sub-tile-section">
-          <h2>Explore</h2>
-          <div class="sub-tile-grid">${subTiles}</div>
-        </section>
+          <aside class="ed-promise">
+            <div class="ed-promise-label">In one breath</div>
+            <p class="ed-promise-line">${m.promise}</p>
+            ${m.essence ? `<ul class="ed-essence">${m.essence.map(e => `<li>${e}</li>`).join('')}</ul>` : ''}
+          </aside>` : ''}
+          <div class="ed-toc-head">Read on</div>
+          <nav class="ed-toc">${toc}</nav>
+        </article>
       `;
     }
 
@@ -276,38 +347,36 @@
       let body = '';
 
       if (key === 'core-idea') {
-        // Drop one saturated quote-banner into the middle of the list to break
-        // the scroll and give the eye a moment to land.
-        const bannerAt = s.banner ? Math.ceil(s.principles.length / 2) : -1;
-        const cards = s.principles.map((p, i) => {
-          const iconSvg = p.icon && PRINCIPLE_ICONS[p.icon]
-            ? PRINCIPLE_ICONS[p.icon]
-            : SUB_ICONS.compass;
-          const head = p.hook
-            ? `<div class="pc-head">
-                 <div class="pc-icon"><svg viewBox="0 0 64 64">${iconSvg}</svg></div>
-                 <div class="pc-head-text">
-                   <div class="principle-kicker">${p.name}</div>
-                   <h3>${p.hook}</h3>
-                 </div>
-               </div>`
-            : `<h3>${p.name}</h3>`;
-          const banner = (i === bannerAt)
-            ? `<div class="belief-banner"><div class="bb-mark">&ldquo;</div><p>${s.banner.text}</p>${s.banner.cite ? `<div class="bb-cite">${s.banner.cite}</div>` : ''}</div>`
+        const two = (n) => String(n).padStart(2, '0');
+        // One featured pull-quote breaks the middle of the piece.
+        const quoteAt = s.banner ? Math.ceil(s.principles.length / 2) : -1;
+        const tenets = s.principles.map((p, i) => {
+          const quote = (i === quoteAt)
+            ? `<blockquote class="pullquote"><p>${s.banner.text}</p>${s.banner.cite ? `<cite>${s.banner.cite}</cite>` : ''}</blockquote>`
             : '';
-          return `${banner}
-            <div class="card principle-card${i % 2 ? ' alt' : ''}">
-              <div class="principle-num">${i + 1}</div>
+          const head = p.hook
+            ? `<div class="tenet-kicker">${p.name}</div><h3 class="tenet-head">${p.hook}</h3>`
+            : `<h3 class="tenet-head">${p.name}</h3>`;
+          return `${quote}
+            <section class="tenet">
+              <div class="tenet-no">${two(i + 1)}</div>
               ${head}
-              ${p.takeaway ? `<p class="principle-take">${hl(p.takeaway)}</p>` : ''}
-              <div class="pbody">${multiPara(p.body, 1)}</div>
-              ${p.inPractice ? `<div class="in-practice"><span class="ip-label">Try it</span><span>${hl(p.inPractice)}</span></div>` : ''}
-              <p class="why">${hl(p.why)}</p>
-            </div>`;
+              ${p.takeaway ? `<p class="tenet-take">${hl(p.takeaway)}</p>` : ''}
+              <div class="tenet-body">${multiPara(p.body, 2)}</div>
+              ${p.why ? `<p class="tenet-why"><span>Why it works —</span> ${hl(p.why)}</p>` : ''}
+              ${p.inPractice ? `<p class="tenet-try"><span class="tt-tag">Try it</span> ${hl(p.inPractice)}</p>` : ''}
+            </section>`;
         }).join('');
+        const recap = s.recap
+          ? `<aside class="recap">
+               <div class="recap-label">In short</div>
+               <ol>${s.recap.map(r => `<li>${r}</li>`).join('')}</ol>
+             </aside>`
+          : '';
         body = `
-          <div class="lede">${multiPara(s.intro, 2)}</div>
-          ${cards}
+          <div class="ed-lead ed-lead-intro">${multiPara(s.intro, 2)}</div>
+          ${tenets}
+          ${recap}
         `;
       } else if (key === 'day-in-life') {
         body = `
@@ -382,13 +451,15 @@
       };
 
       root.innerHTML = `
-        ${back}
-        <header class="sub-hero">
-          <div class="sub-hero-eyebrow">${m.name}</div>
-          <h1>${titles[key]}</h1>
-          <button class="read-btn" id="sub-read-btn">▶ Read aloud</button>
-        </header>
-        ${body}
+        <div class="ed-article">
+          ${back}
+          <header class="ed-sub-hero">
+            <div class="ed-eyebrow">${m.name} · ${m.era}</div>
+            <h1 class="ed-title">${titles[key]}</h1>
+            <button class="read-btn ed-read" id="sub-read-btn">▶ Read aloud</button>
+          </header>
+          ${body}
+        </div>
       `;
       window.scrollTo(0, 0);
       const readBtn = document.getElementById('sub-read-btn');
