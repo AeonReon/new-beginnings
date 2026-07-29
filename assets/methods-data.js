@@ -1404,8 +1404,8 @@ window.METHODS = [
   {
     id: 'future-of-education',
     image: 'assets/tiles/future-of-education.jpg',
-    name: 'Future of Education',
-    short: 'Future',
+    name: 'Alpha School',
+    short: 'Alpha',
     tagline: 'Mastery · AI tutoring · 2-hour academics · limitless',
     era: 'USA · 2014–present',
     color: '#6D5AE0',
