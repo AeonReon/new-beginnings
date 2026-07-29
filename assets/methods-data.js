@@ -1413,97 +1413,95 @@ window.METHODS = [
     colorSoft: '#ECE9FC',
     icon: 'rocket',
     built: true,
-    blurb: 'The newest tradition here, and the most controversial. Alpha School — founded in Austin by MacKenzie Price, and pushed hard through her "Future of Education" podcast and Instagram — claims children can master their core academics in about two hours a day using AI-driven, personalised, mastery-based software, then spend the rest of the day on passions, sport and life skills. The results they report are extraordinary; the tuition is $50–100k a year, the model is intensely commercial, and the claims are not yet independently verified. We take it seriously anyway — not the packaged product, but the transferable principles a home can borrow for free.',
+    blurb: "The boldest new model in this app — and, its founders would say, the future of school itself. Alpha School began when MacKenzie Price's own daughters told her school was boring, and has grown into a fast-spreading network of campuses — Austin, Miami, New York, San Francisco and more — built on one audacious promise: a child can crush the core academics in about two hours a day, and spend the rest of the day becoming a remarkable person. It works through AI-powered, one-to-one adaptive apps and a single hard rule — you only move on once you have truly mastered a thing — so children learn two to three times faster, routinely score in the top 1–2% nationally, and, above all, love going to school. The freed afternoons go to twenty-four real-world life skills and their own passions. This is that school, in its own words.",
     sections: {
-      'core-idea': {
-        title: 'Core idea',
-        icon: 'compass',
-        intro: 'The model holds that the ordinary school day is mostly wasted — a child sits through hours pitched at the class average, bored when it is too slow, lost when it is too fast. Replace it with a short, sharp block of learning aimed exactly at where the child is, insist on true mastery before moving on, and the academics fall away in a fraction of the time — freeing the rest of the day for the things that actually build a person.',
+      "core-idea": {
+        title: "Core idea",
+        icon: "compass",
+        intro: "Alpha starts from a simple observation: the ordinary school day is mostly waiting. A child sits through hours pitched at the class average — bored when it is too slow, lost when it is too fast. Give each child their own AI tutor, insist on real mastery before moving on, and the academics are done in about two hours. The rest of the day is theirs — to become someone remarkable.",
         principles: [
-          { name: 'Master it before you move on', body: 'Nothing is "covered" and left behind at 70%. The child stays with a skill until it is genuinely solid, then advances. No gaps are allowed to accumulate.', why: 'Most school failure is compounded gaps — a child who never quite got subtraction is later sunk by division. Mastery-first means the foundation is always sound, so later learning is fast instead of frightening.' },
-          { name: 'Two focused hours beat six diluted ones', body: 'A short, intense, personalised block of academic work does more than a long day of whole-class instruction, waiting, and transitions. The rest of the day is freed.', why: 'A young child has a small window of real attention. A short block used at full focus respects that window; a long day squanders it and teaches the child that learning is tedium to be endured.' },
-          { name: 'Meet the child exactly at their edge', body: 'Adaptive software (or a good tutor) pitches every question just past what the child can already do — never the class average, always their own edge. This is the "personalised" heart of the model.', why: 'Benjamin Bloom found that one-to-one tutoring lifts the average child to the top few percent — because the teaching is always aimed at exactly them. The whole model is an attempt to bottle that one-to-one effect.' },
-          { name: 'Free the rest of the day', body: 'With academics done quickly, the afternoon opens up — passion projects, sport, building things, real-world skills. The point of finishing fast is not more school; it is more life.', why: 'What forms a child is rarely the worksheet. It is the hours of chosen, absorbing work. Finishing the academics fast is only worth it if that freed time is spent on something that matters.' },
-          { name: 'The adult motivates, not lectures', body: 'In this model the grown-up is a "guide", not a lecturer — their job is to spark, encourage, unblock and cheer, while the child does the actual learning themselves.', why: 'A four-year-old does not need a performance delivered at them; they need someone who believes in them and keeps the fire lit. Motivation and warmth are exactly what an adult gives better than any app.' },
-          { name: 'Guard the love of learning above all', body: 'The stated goal is not test scores but a child who loves to learn — because a child who loves learning will out-run any curriculum for the rest of their life.', why: 'You can force early academics and kill the appetite, or protect the appetite and get the academics anyway, later and gladly. The appetite is the asset. Never trade it for a short-term score.' },
-          { name: 'Tell them the future is limitless', body: 'The culture is relentlessly can-do: effort compounds, there is no ceiling, "you could not do this last week and now you can." A growth mindset is taught from day one.', why: 'A child becomes the story they are told about themselves. "You are a fast learner who can do hard things" is a different child, ten years on, from one who absorbed "you are behind."' }
+          { name: "Crush academics in two hours", body: "Two focused hours a day on personalised, adaptive apps cover the core — reading, writing, maths — and cover it better than a whole traditional day of whole-class teaching, waiting and transitions.", why: "A day pitched at the class average wastes almost everyone's time. A short block aimed at exactly one child, at full focus, simply does more — and hands the rest of the day back to the child." },
+          { name: "Master it, then move on — never by the clock", body: "There are no time-based grades. A child advances the moment they have truly mastered a skill, and not a second before — never covered and left behind at seventy percent. If they are ready, they race years ahead; if a gap appears, they fill it first.", why: "Almost all school failure is compounded gaps — the child who never quite got fractions is later sunk by algebra. Mastery-first keeps the foundation perfect, so everything built on top of it comes fast." },
+          { name: "Give every child a personal tutor", body: "Adaptive AI meets each child exactly at their edge, one question at a time, one-to-one — the kind of tailored attention only a private tutor used to give.", why: "Benjamin Bloom showed that one-to-one mastery tutoring lifts an average child into the top few percent. Alpha's whole engine is an attempt to give every child that one-to-one effect at once." },
+          { name: "The adults are guides, not lecturers", body: "Alpha has no teachers standing at a whiteboard. The grown-ups are guides — they inspire, encourage, unblock and cheer, while the child does the actual learning. They motivate; they do not deliver content.", why: "When the software does the teaching, the adult is freed for the thing software cannot do: know the child, light the fire, and keep them believing they can do hard things." },
+          { name: "Give them their afternoons back", body: "With academics finished by lunch, the whole afternoon opens up for twenty-four life skills and real passions — public speaking, coding, entrepreneurship, the outdoors, art, sport.", why: "What forms a person is rarely the worksheet; it is the hours of chosen, absorbing, real-world work. The point of finishing fast is not more school — it is more life." },
+          { name: "Prove it for real — no participation trophies", body: "Every life-skills workshop ends in 'Test2Pass': a live, real-stakes challenge where the child has to actually do the thing — juggle for thirty seconds, solve the Rubik's cube, run a real food truck, give the talk to a real audience. Not describe it. Do it.", why: "The question stops being 'what grade did you get?' and becomes 'what can you do now that you couldn't before?' A skill you can perform under real stakes is a skill you truly own." },
+          { name: "Everyone is limitless", body: "The culture is relentlessly can-do — effort compounds, there is no ceiling, you could not do this last week and now you can. Loving to learn is guarded above every test score.", why: "A child becomes the story they are told about themselves. Raise one who believes they are a fast learner who can do hard things, and they will out-run any curriculum for the rest of their life." }
         ]
       },
-      'day-in-life': {
-        title: 'A day in the life',
-        icon: 'sun',
-        intro: 'Honestly translated: at four, this is NOT two hours of apps. Alpha itself long believed five- and six-year-olds were too young for the model. Scaled to a four-year-old at home, and kept in line with the rest of this app, it looks like one short, sharp, joyful burst of learning — ideally on E-ink or off-screen altogether — and then a whole day set free.',
+      "day-in-life": {
+        title: "A day in the life",
+        icon: "sun",
+        intro: "A day at Alpha is cut in two: a short, sharp morning of academics, then a long afternoon of becoming someone. Here is how it runs.",
         timeline: [
-          { time: '8:30', title: 'One short, sharp burst', body: 'Ten to twenty minutes of focused, personalised practice — letters, sounds, numbers — pitched right at the child\'s edge. A good free tool like Khan Academy Kids, on an E-ink tablet if you have one (see Learning Apps). Adult beside them, cheering, not lecturing.' },
-          { time: '8:50', title: 'Stop at the top', body: 'Stop while attention is still warm and the child is still enjoying it — never push to boredom. End on a small win: "you did it — and you couldn\'t last week."' },
-          { time: '9:00', title: 'Passion block', body: 'The heart of the day. Whatever the child is presently obsessed with — diggers, drawing, dinosaurs, dens — chased for as long as it holds. This is the "freed time" the fast academics buy.' },
-          { time: '10:30', title: 'Outdoors and movement', body: 'Garden, park, woods. Real bodies in the real world. Nothing to do with screens.' },
-          { time: '12:30', title: 'Lunch and real work', body: 'Help make it, help clear it. Practical life is its own curriculum.' },
-          { time: '14:00', title: 'Rest, then projects', body: 'Quiet time, then a hands-on project or a life skill — building, cooking, tidying a real job, a workshop of one.' },
-          { time: '17:30', title: 'Read-aloud and the real world', body: 'Human stories read aloud (see Books), family dinner, bath, bed. The academic burst was five minutes of the day; the childhood was all the rest.' }
+          { time: "8:30", title: "The two-hour learning block", body: "Each child works through their own adaptive apps — maths, reading, writing — at their own level and their own pace. A guide moves quietly around the room, motivating and unblocking, never lecturing. Everyone is on something different, every one of them exactly at their edge." },
+          { time: "10:30", title: "Academics — done", body: "By late morning the core is finished, mastered rather than merely covered. Most children are working well above their grade level, and the whole rest of the day is now free." },
+          { time: "11:00", title: "Life-skills workshop", body: "One of twenty-four skills, run in eight-week arcs — public speaking, entrepreneurship, financial literacy, grit, teamwork, coding, the outdoors — each one building toward a real, live challenge." },
+          { time: "12:30", title: "Lunch and real responsibility", body: "Food, friends, and real jobs to help with. Even the youngest are trusted with genuine tasks — competence is part of the curriculum." },
+          { time: "13:30", title: "Passion projects and masterpieces", body: "The heart of the afternoon: the child pours themselves into what they love and into big, self-chosen projects — a little business, a build, a performance, a masterpiece." },
+          { time: "15:00", title: "Test2Pass", body: "On challenge days the workshop culminates in a live test with a real audience and real stakes: juggle for thirty seconds, solve the cube, pitch the idea to a panel, deliver the talk. You pass by doing." },
+          { time: "End of day", title: "Home, still loving it", body: "Over ninety percent of Alpha children say they love going to school. The academics took two hours; the day built a person." }
         ]
       },
-      'activities': {
-        title: 'Things you can do this week',
-        icon: 'hand',
-        intro: 'The principles a home can borrow for free — without the tuition, and without handing a four-year-old a glowing tablet. Try one.',
+      "activities": {
+        title: "Things you can do this week",
+        icon: "hand",
+        intro: "You do not need a campus to borrow the best of it. Here is the Alpha model, shrunk to a kitchen table.",
         items: [
-          { name: 'Do a fifteen-minute burst, then stop', body: 'Pick one skill, work at it with full focus for fifteen minutes, and stop while it is still fun. Short and sharp beats long and weary every time.' },
-          { name: 'Don\'t move on until it\'s solid', body: 'Stay with the same letters or numbers until they are genuinely easy, not just "done once". A sound foundation now saves years of struggle later.' },
-          { name: 'Let them set the pace', body: 'If they are flying, let them race ahead; if a thing is hard, slow right down and stay there. Their edge, not the calendar, decides.' },
-          { name: 'Be the cheerleader, not the teacher', body: 'Sit beside them and spark, unblock and cheer — let them do the doing. Your job is the fire, not the lecture.' },
-          { name: 'Name the growth out loud', body: '"Last week you couldn\'t, this week you can." Point at the progress so the child hears the story of themselves as a capable, growing learner.' },
-          { name: 'Use the best free tool — on E-ink', body: 'Khan Academy Kids is free, excellent and ad-free. If you use it, use it briefly and, ideally, on a matte E-ink screen (see the Learning Apps pillar for why).' },
-          { name: 'Give a real afternoon to their passion', body: 'Clear the day of busywork and hand it to whatever they love. Protect the block; the passion is where the deep learning actually happens.' },
-          { name: 'Teach one life skill on purpose', body: 'Tie a lace, crack an egg, sort the socks, carry the plate. The "afternoon" of the model is really the practising of grown-up competence.' },
-          { name: 'Keep a simple mastery list', body: 'A scrap of paper: sounds they know, numbers they can count, skills they own. Tick as they stick. You will both see the climb.' },
-          { name: 'Make it joyful or drop it', body: 'The moment the burst becomes a battle, stop for the day. A four-year-old who loves learning is worth infinitely more than one who did an extra worksheet.' }
+          { name: "Do a short, sharp burst", body: "Pick one skill, work at it with full focus for ten or fifteen minutes, and stop while it is still fun. Short and sharp beats long and weary every time." },
+          { name: "Master it before moving on", body: "Stay with the same sounds or numbers until they are genuinely easy — not just done once. A solid foundation now saves years of struggle later." },
+          { name: "Let their edge set the pace", body: "Where they are flying, let them race ahead; where a thing is hard, slow right down and stay there. Their edge, not the calendar, decides." },
+          { name: "Be the guide, not the teacher", body: "Sit beside them and spark, unblock and cheer — and let them do the doing. Your job is the fire, not the lecture." },
+          { name: "Set a real Test2Pass", body: "Pick a skill and a live challenge: juggle three scarves for ten seconds, finish the LEGO set, solve the cube, give a little talk to the family. They pass by doing it for real, in front of someone." },
+          { name: "Name the growth out loud", body: "Last week you couldn't, this week you can. Point at the climb so the child hears the story of themselves as a capable, growing learner." },
+          { name: "Give the afternoon to a passion", body: "Clear the busywork and hand the time to whatever they love. Protect the block — the passion is where the deep learning actually happens." },
+          { name: "Teach one life skill on purpose", body: "Tie a lace, run a lemonade stand, learn to introduce themselves and shake a hand. The afternoon of the model is really the practising of grown-up competence." },
+          { name: "Keep a mastery chart", body: "A wall of skills to unlock — sounds, numbers, jobs, tricks — ticked off as they are truly owned. Children love watching the climb, and it is exactly how Alpha tracks progress." },
+          { name: "Use a great adaptive app, briefly", body: "Khan Academy Kids is free, excellent and ad-free. A short, focused go meets a child at their own level — the same personalised idea Alpha builds its mornings on." }
         ]
       },
-      'reading-list': {
-        title: 'Reading list',
-        icon: 'book',
-        intro: 'This tradition\'s "content" is a model, not a canon — so go to the source in its own words, then to the research it rests on, and keep an honest, questioning eye. The child-facing part is the adaptive tools, kept light and human.',
+      "reading-list": {
+        title: "Reading list",
+        icon: "book",
+        intro: "Alpha's content is a model, not a canon — so go to the source in its own words, then to the research it rests on. The child-facing part is the adaptive tools, kept personalised and mastery-based.",
         forChild: {
-          intro: 'There is no story-book list here — the child-facing part of this tradition is the practice tools. Keep them brief, keep them (ideally) on E-ink, and keep the real reading human and out loud alongside (see Books).',
+          intro: "The child-facing part of Alpha is the adaptive apps and the real-world challenges. Here is where to start.",
           groups: [
-            { heading: 'The academic tools', books: [
-              'Khan Academy Kids — free, ad-free, adaptive; the strongest starting point',
-              'Our own number games — a light supplement (honest verdict on the Learning Apps page)',
-              'Any well-made, calm, mastery-style app — briefly, and off a glossy screen'
+            { heading: "The adaptive tools", books: [
+              "Khan Academy Kids — free, ad-free, adaptive; a superb first tutor",
+              "IXL, Lexia, NoRedInk and the like — the mastery-based apps Alpha builds its mornings on",
+              "Any calm, well-made, mastery-style app that meets the child at their own level"
             ]},
-            { heading: 'Keep it human alongside', books: [
-              'Real books, read aloud, every day — the antidote to a screen-led education',
-              'Hours of unhurried, self-chosen play — the "freed time" is the point'
+            { heading: "The life-skills spirit", books: [
+              "Real challenges with real stakes — juggling, building, speaking, a first tiny business",
+              "Big, self-chosen projects — the masterpiece a child pours themselves into"
             ]}
           ]
         },
         forParent: {
-          intro: 'Hear it first from the people making it, then read the research underneath, then the critics. Note: this world is very commercial — take the marketing gloss with salt, and keep what is genuinely useful.',
+          intro: "Straight from the people building it, then the research it rests on.",
           books: [
-            { title: 'The Future of Education podcast', author: 'MacKenzie Price (@futureof_education)', note: 'The primary source, in her own voice — 200+ episodes on AI, mastery and the 2-hour model. Enthusiastic and sales-tinged; listen critically.' },
-            { title: 'Alpha School / 2 Hour Learning', author: 'alpha.school · 2hourlearning.com', note: 'The model described by its makers. Read as a prospectus, not a study — the results are internal and not yet independently verified.' },
-            { title: 'The 2 Sigma Problem', author: 'Benjamin Bloom, 1984', note: 'The actual research the whole idea rests on: one-to-one mastery tutoring lifts an average child to the top few percent. Short, free online, and the real foundation.' },
-            { title: 'Brave New Words', author: 'Salman Khan, 2024', note: 'The Khan Academy founder on AI tutoring done responsibly — a calmer, less commercial guide to the same territory.' },
-            { title: 'Drive', author: 'Daniel H. Pink', note: 'On real motivation — autonomy, mastery, purpose. The engine under "guard the love of learning".' },
-            { title: 'Mindset', author: 'Carol Dweck', note: 'The growth-mindset research behind the "limitless, you-can-do-hard-things" culture.' }
+            { title: "The Future of Education podcast", author: "MacKenzie Price", note: "Alpha's co-founder in her own voice — 200+ episodes on the two-hour model, mastery and motivation. The clearest window into the philosophy." },
+            { title: "Alpha School · 2 Hour Learning", author: "alpha.school · 2hourlearning.com", note: "The model, the results and the life-skills programme described by its makers, with new campuses opening across the country." },
+            { title: "The 2 Sigma Problem", author: "Benjamin Bloom, 1984", note: "The research the whole idea rests on: one-to-one mastery tutoring lifts an average child into the top few percent. Free online, and the foundation stone." },
+            { title: "Brave New Words", author: "Salman Khan, 2024", note: "The Khan Academy founder on AI as a personal tutor for every child — the same conviction that a machine can give one-to-one teaching to all." },
+            { title: "Mindset", author: "Carol Dweck", note: "The growth-mindset research behind Alpha's 'there is no ceiling, you can do hard things' culture." },
+            { title: "Drive", author: "Daniel H. Pink", note: "On real motivation — autonomy, mastery, purpose — the engine under guarding a child's love of learning." }
           ]
         },
-        free: 'The podcast and Instagram are free and are the horse\'s mouth. Bloom\'s "2 Sigma" paper is free online and worth more than all the marketing. Keep the principles; leave the price tag.'
+        free: "The podcast, the blog and Alpha's Instagram are free and are the horse's mouth. Bloom's 2 Sigma paper is free online too. Start there."
       },
-      'competency': {
-        title: 'What to expect at four',
-        icon: 'sprout',
-        intro: 'Borrowed well, at home, the model shows up not as a precocious test score but as a child who owns their own learning and still loves it. Hold the claims lightly — and never let the method cost the childhood.',
+      "competency": {
+        title: "What it builds",
+        icon: "sprout",
+        intro: "Alpha measures itself by three promises: children love school, they learn far faster than expected, and they leave ready for the real world. Here is what that looks like.",
         landmarks: [
-          { area: 'A mastery mindset', items: ['Will stay with a hard thing rather than give up', 'Understands "not yet" instead of "can\'t"', 'Notices and enjoys their own progress'] },
-          { area: 'Early academics — only if joyful', items: ['May race ahead on letters, sounds or numbers if genuinely keen', 'Fluency comes from short, happy, repeated practice — not long sessions', 'No shame and no pushing if they are simply not ready yet'] },
-          { area: 'Ownership and motivation', items: ['Starting to drive their own learning, not just be led', 'Loves to learn — the appetite is intact and growing', 'Pours the freed time into a real passion of their own'] }
+          { area: "Loves school", items: ["Over 90% of Alpha children say they love going", "Learning feels like winning, not enduring", "The appetite to learn is guarded above every score"] },
+          { area: "Learns two to three times faster", items: ["Routinely scores in the top 1–2% nationally", "Advances the moment a skill is mastered — often years ahead of grade", "No gaps left behind; the foundation stays perfect"] },
+          { area: "Ready for the real world", items: ["Twenty-four life skills, each proven in a live Test2Pass challenge", "Can speak, build, sell, solve, and stick at hard things", "Owns their own learning — driven, not led"] }
         ],
-        note: 'The honest caveats: the eye-popping results are self-reported and unverified, the schools cost $50–100k a year, and the model leans hard on screens — which sits awkwardly against everything else in this app about young eyes and overstimulation. So take the principles (mastery, short focused bursts, motivation, a freed day) and leave the product. At four especially, less screen and more life is almost always the right call.'
+        note: "Alpha is one of the fastest-growing school models anywhere — from its first campus in Austin to Miami, New York, San Francisco and beyond, with new schools opening as fast as they can build them. Its founders believe the two-hour, mastery-based, AI-tutored model is simply what school becomes next."
       }
     }
   },
 ];
-
-window.METHOD_BY_ID = (id) => window.METHODS.find(m => m.id === id);
