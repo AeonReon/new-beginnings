@@ -77,6 +77,23 @@
     #root .tenet-try { font-size: 1.04rem; line-height: 1.55; color: var(--ink); border-left: 3px solid var(--warm); padding: 0.15em 0 0.15em 0.95em; margin: 1em 0 0.3em; }
     #root .tenet-try .tt-tag { font-family: var(--sans); font-weight: 800; font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: #fff; background: var(--warm); border-radius: 999px; padding: 0.28em 0.6em; margin-right: 0.5em; vertical-align: 0.08em; }
 
+    /* "What it looks like" — a scannable bullet list breaks the grey paragraphs */
+    #root .glance { margin: 1.1em 0 0; }
+    #root .glance-label { font-family: var(--sans); font-weight: 800; font-size: 0.64rem; letter-spacing: 0.13em; text-transform: uppercase; color: var(--ink-mute); margin-bottom: 0.5em; }
+    #root .glance ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.5em; }
+    #root .glance li { position: relative; padding-left: 1.7em; font-size: 1.02rem; line-height: 1.5; color: var(--ink); }
+    #root .glance li::before { content: ""; position: absolute; left: 0.1em; top: 0.5em; width: 0.72em; height: 0.4em; border-left: 2.5px solid var(--acc-bright); border-bottom: 2.5px solid var(--acc-bright); transform: rotate(-45deg); }
+
+    /* "Why it works" — a soft callout box, visual weight, not more grey text */
+    #root .whybox { background: var(--acc-soft); border-radius: 13px; padding: 0.95em 1.15em 1.05em; margin: 1.15em 0 0; }
+    #root .whybox-label { display: block; font-family: var(--sans); font-weight: 800; font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--acc); margin-bottom: 0.35em; }
+    #root .whybox p { margin: 0; font-size: 1.01rem; line-height: 1.62; color: var(--ink-soft); }
+
+    /* Inline article photo — a real "something to look at" mid-scroll */
+    #root .ed-figure { margin: 2.2em 0; }
+    #root .ed-figure img { width: 100%; display: block; border-radius: 16px; aspect-ratio: 16 / 10; object-fit: cover; box-shadow: var(--shadow-md); }
+    #root .ed-figure figcaption { margin-top: 0.7em; font-size: 0.85rem; color: var(--ink-mute); font-style: italic; text-align: center; }
+
     /* Feature pull-quote — the "something to look at" break between points */
     #root .pullquote { text-align: center; margin: 2.3em auto; padding: 0.4em 0; max-width: 15em; }
     #root .pullquote::before { content: "\201C"; display: block; font-family: var(--display); font-weight: 600; font-size: 4.5rem; line-height: 0.55; color: var(--acc); opacity: 0.28; margin-bottom: 0.12em; }
@@ -367,18 +384,30 @@
           quoteBefore[Math.min(Math.max(pos, 1), n - 1)] = q;
         });
         const pullquote = (q) => `<blockquote class="pullquote"><p>${q.text}</p>${q.cite ? `<cite>${q.cite}</cite>` : ''}</blockquote>`;
+        // One real photo, placed where it won't clash with a pull-quote.
+        let imgAt = -1;
+        if (m.image) { for (let k = Math.floor(n / 2); k < n; k++) { if (!quoteBefore[k]) { imgAt = k; break; } } }
+        const figure = `<figure class="ed-figure"><img src="${m.image}" alt=""><figcaption>${s.imageCaption || (m.name + ' in practice')}</figcaption></figure>`;
         const tenets = s.principles.map((p, i) => {
           const quote = quoteBefore[i] ? pullquote(quoteBefore[i]) : '';
+          const img = (i === imgAt) ? figure : '';
           const head = p.hook
             ? `<div class="tenet-kicker">${p.name}</div><h3 class="tenet-head">${p.hook}</h3>`
             : `<h3 class="tenet-head">${p.name}</h3>`;
-          return `${quote}
+          const glance = p.looksLike
+            ? `<div class="glance"><div class="glance-label">What it looks like</div><ul>${p.looksLike.map(b => `<li>${hl(b)}</li>`).join('')}</ul></div>`
+            : '';
+          const why = p.why
+            ? `<aside class="whybox"><span class="whybox-label">Why it works</span><p>${hl(p.why)}</p></aside>`
+            : '';
+          return `${quote}${img}
             <section class="tenet">
               <div class="tenet-no">${two(i + 1)}</div>
               ${head}
               ${p.takeaway ? `<p class="tenet-take">${hl(p.takeaway)}</p>` : ''}
               <div class="tenet-body">${multiPara(p.body, 2)}</div>
-              ${p.why ? `<p class="tenet-why"><span>Why it works —</span> ${hl(p.why)}</p>` : ''}
+              ${glance}
+              ${why}
               ${p.inPractice ? `<p class="tenet-try"><span class="tt-tag">Try it</span> ${hl(p.inPractice)}</p>` : ''}
             </section>`;
         }).join('');
