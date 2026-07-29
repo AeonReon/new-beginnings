@@ -160,7 +160,7 @@
       ${r.why ? `<p class="rcm-why">${esc(r.why)}</p>` : ''}
       ${r.instead ? `<p class="rcm-instead"><b>Instead of the shop version —</b> ${esc(r.instead)}</p>` : ''}
       <button class="read-btn rcm-read" type="button">▶ Read this recipe aloud</button>
-      ${cred && cred.source ? `<p class="rcm-credit">Photo via the web — <a href="${esc(cred.source)}" target="_blank" rel="noopener">source</a>. Yours? <a href="mailto:images@aeonreon.com">tell us</a> and it comes down.</p>` : ''}`;
+      ${cred && cred.source ? `<p class="rcm-credit">Photo via the web — <a href="${esc(cred.source)}" target="_blank" rel="noopener">source</a>.</p>` : ''}`;
     show({
       accent: { c: kd.c, cd: kd.cd, cs: kd.cs },
       image: `assets/recipes/${r.id}.jpg`, imageAlt: r.name,

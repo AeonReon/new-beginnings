@@ -10,10 +10,6 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="stylesheet" href="assets/style.css">
   <style>
-    /* Clear the fixed Home button so the headline isn't tucked under it */
-    main { padding-top: calc(3.9em + env(safe-area-inset-top, 0px)); }
-    h1 { margin-top: 0; }
-
     /* Situation quick-filter chips */
     .where-row { display: flex; flex-wrap: wrap; gap: 0.5em; margin: 0 0 1.4em; }
     .where-chip {
@@ -126,10 +122,20 @@
     .empty { color: var(--ink-mute); font-style: italic; margin: 2em 0; }
   </style>
 </head>
-<body>
-  <main>
-    <h1>Thinking Games</h1>
-    <p class="lede">
+<body class="launcher">
+  <main class="launcher-main article">
+    <header class="page-hero" style="--hc:#0EA5A4;--hcd:#0F766E;">
+      <div class="page-cover">
+        <img src="assets/tools/games.jpg" alt="">
+        <div class="page-cover-veil"></div>
+        <div class="page-cover-text">
+          <div class="page-eyebrow">Conscious Parenting NI</div>
+          <h1>Thinking Games</h1>
+          <p class="page-tagline">No-kit games that quietly build a mind.</p>
+        </div>
+      </div>
+    </header>
+    <p class="page-intro">
       Little out-loud games to play in the car, the garden, or while you wait —
       no screen, nothing to buy, nothing to set up. Just you, your child, and the
       turn going back and forth. Each one says the real thing it's building.
