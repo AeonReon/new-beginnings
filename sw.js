@@ -1,4 +1,4 @@
-const CACHE = 'new-beginnings-v59';
+const CACHE = 'new-beginnings-v60';
 const ASSETS = [
   './',
   './index.html',
@@ -28,6 +28,7 @@ const ASSETS = [
   './assets/pillars/food.jpg',
   './assets/pillars/health.jpg',
   './assets/pillars/daysout.jpg',
+  './assets/pillars/daysout-map.jpg',
   './assets/pillars/emotions.jpg',
   './assets/pillars/learning-apps.jpg',
   './assets/pillars/watching.jpg',
