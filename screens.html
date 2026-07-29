@@ -41,10 +41,23 @@
     .rec-meta { font-size: 0.8rem; color: var(--ink-mute); font-weight: 600; margin: 0 0 0.4em; }
     .rec-desc { margin: 0; font-size: 0.94em; line-height: 1.5; color: var(--ink-soft); }
 
-    /* Projector highlight card */
-    .wall-card { position: relative; background: linear-gradient(135deg, #FFF7E0, #FDF1D0); border-radius: 18px; padding: 1.1em 1.2em; margin: 0 0 1em; }
-    .wall-card::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 2px; background: linear-gradient(135deg, #FFCE3D, #E0A800); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; }
-    .wall-card h3 { display: flex; align-items: center; gap: 0.4em; color: #8A6410; margin: 0 0 0.5em; }
+    /* Device explainer card — image on top, paragraph below */
+    .device-card { position: relative; background: var(--paper-card, #fff); border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-sm); margin: 0 0 1.1em; }
+    .device-card::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 2px; background: linear-gradient(135deg, var(--c), var(--cd)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; z-index: 2; }
+    .device-card .dv-img { display: block; width: 100%; height: 190px; object-fit: cover; }
+    .device-card .dv-body { padding: 1em 1.2em 1.15em; }
+    .device-card h3 { display: flex; align-items: center; gap: 0.45em; margin: 0 0 0.45em; color: var(--cd); }
+    .device-card p { margin: 0; line-height: 1.55; color: var(--ink-soft); }
+
+    /* Show card — real image on the left, text on the right */
+    .show-rec { position: relative; display: flex; gap: 0; background: var(--paper-card, #fff); border-radius: 18px; overflow: hidden; box-shadow: var(--shadow-sm); margin: 0 0 0.9em; transition: transform 0.18s cubic-bezier(0.34,1.56,0.64,1); }
+    .show-rec::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 2px; background: linear-gradient(135deg, var(--c), var(--cd)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; z-index: 2; opacity: 0.9; }
+    .show-rec:hover { transform: translateY(-2px); }
+    .show-rec .sr-img { flex: 0 0 104px; align-self: stretch; width: 104px; object-fit: cover; background: var(--cs); }
+    .show-rec .sr-body { flex: 1; min-width: 0; padding: 0.9em 1em; }
+    .show-rec .sr-head { display: flex; align-items: baseline; gap: 0.5em; flex-wrap: wrap; margin-bottom: 0.2em; }
+    .show-rec .sr-head h3 { margin: 0; font-size: 1.06rem; font-weight: 800; color: var(--ink); line-height: 1.15; }
+    .show-rec p { margin: 0; font-size: 0.92em; line-height: 1.5; color: var(--ink-soft); }
 
     /* Rule lists */
     .rules-card h3 { margin: 0 0 0.4em; }
@@ -82,6 +95,15 @@
     <!-- ────────────── LEARNING TOOLS ────────────── -->
     <div class="section-lead"><span class="sl-emoji">📱</span> Tools that genuinely teach</div>
     <p class="section-sub">A short, growing list of the few that earn their screen time — more added as we test them.</p>
+
+    <div class="device-card" style="--c:#4A9ED4;--cd:#2D6FA8;">
+      <img class="dv-img" src="assets/pillars/learning-apps.jpg" alt="A matte E-ink tablet">
+      <div class="dv-body">
+        <h3><span aria-hidden="true">📵</span> Use an E-ink tablet, not a glossy one</h3>
+        <p>A little calm academic practice can genuinely help — but the device matters more than the app. A matte, paper-like <strong>E-ink tablet</strong> has no glow, no glare and none of the pull of a bright backlit screen, so a child gets the letters-and-numbers practice without the overstimulation. Same app, a very different effect on a small nervous system — and the single biggest lever for keeping screen time on the right side of the line.</p>
+      </div>
+    </div>
+
     <div id="appsGrid"></div>
 
     <div class="card rules-card">
@@ -96,11 +118,12 @@
     <div class="section-lead"><span class="sl-emoji">📺</span> If they're going to watch</div>
     <p class="section-sub">Less is better and none is fine — but if they do watch, what and how matter most.</p>
 
-    <div class="wall-card">
-      <h3><span aria-hidden="true">📽️</span> Put it on the wall, not in their hands</h3>
-      <p style="margin-bottom: 0.7em;">If they're watching, use a <strong>projector on the wall</strong> — not a tablet, not a phone, not up close to a screen. This one change removes most of what's actually harmful about watching.</p>
-      <p style="margin-bottom: 0.7em;">A child staring down at a tablet holds their eyes <em>locked</em> at one short distance for a long time, in a small pool of bright, close light. That fixed near-focus is tied to the rise in short-sightedness — a real reason so many children end up in glasses — and the closeness and glare wind them up and agitate them.</p>
-      <p class="why" style="margin-bottom: 0;">On a big wall it's the opposite. Their eyes range and refocus across a large, distant image the way eyes are meant to. They can stand back, move around, even play while it's on — bodies free, not hunched. And a wall is <strong>social</strong>: everyone watches together, facing the same way, instead of each child buried in a private glowing rectangle. Same show, a completely different thing for a small body.</p>
+    <div class="device-card" style="--c:#F5B21E;--cd:#B4790A;">
+      <img class="dv-img" src="assets/pillars/watching.jpg" alt="A child watching a projector on the wall">
+      <div class="dv-body">
+        <h3><span aria-hidden="true">📽️</span> Put it on the wall, not in their hands</h3>
+        <p>If they're watching, use a <strong>projector on a wall</strong> — not a tablet in their hands. Up close on a glossy screen a child's eyes stay <em>locked</em> at one short distance in a pool of bright light — the fixed near-focus tied to short-sightedness, and the glare winds them up. On a big, distant wall their eyes range and refocus the way eyes are meant to; they can stand back, move, even play while it's on; and everyone watches <strong>together</strong>, facing the same way. Same show, a completely different thing for a small body.</p>
+      </div>
     </div>
 
     <p class="section-sub" style="margin-top:1.4em;">Gentle picks to start — slow, kind, not toxic.</p>
@@ -134,15 +157,15 @@
         desc: 'Simple number-learning games we built ourselves. Honest verdict: children pick a few things up, but they\'re not the most fun yet — a useful supplement, not the main event.' }
     ];
     const SHOWS = [
-      { icon: '🐻', name: 'The Berenstain Bears', tag: 'Younger',
+      { name: 'The Berenstain Bears', tag: 'Younger', img: 'assets/screens/show-berenstain.jpg',
         desc: 'Kind, slow, everyday family lessons — sharing, telling the truth, trying again. Calm pacing, nothing frightening.' },
-      { icon: '🐢', name: 'Franklin', tag: 'Younger',
+      { name: 'Franklin', tag: 'Younger', img: 'assets/screens/show-franklin.jpg',
         desc: 'Small, warm stories about friendship, worries and getting along. Gentle voice, unhurried, quietly reassuring.' },
-      { icon: '🐻‍❄️', name: 'Little Bear', tag: 'Younger',
+      { name: 'Little Bear', tag: 'Younger', img: 'assets/screens/show-littlebear.jpg',
         desc: 'Soft, imaginative and slow — a little bear, his family and his friends. About as calm as watching gets.' },
-      { icon: '🧣', name: 'Rupert Bear', tag: 'A little later',
+      { name: 'Rupert Bear', tag: 'A little later', img: 'assets/screens/show-rupert.jpg',
         desc: 'A step up in pace and adventure — more happening, more interesting for a slightly older child — but still wholesome and not toxic.' },
-      { icon: '🎬', name: 'A few films — edited', tag: 'With care',
+      { name: 'A few films — edited', tag: 'With care', img: 'assets/screens/show-films.jpg',
         desc: 'Some classics are lovely with the scary parts skipped — Sleeping Beauty, for instance, is gentle and beautiful without the frightening scenes. A short list to come, with the bits worth skipping flagged.' }
     ];
 
@@ -172,8 +195,20 @@
           </div>
         </div>`;
     }
+    function showCard(x, i) {
+      const p = PALETTE[i % PALETTE.length];
+      const tag = x.tag ? `<span class="rec-tag">${esc(x.tag)}</span>` : '';
+      return `
+        <div class="show-rec" style="--c:${p.c};--cd:${p.cd};--cs:${p.cs};">
+          ${x.img ? `<img class="sr-img" src="${x.img}" alt="${esc(x.name)}" loading="lazy" onerror="this.style.display='none'">` : ''}
+          <div class="sr-body">
+            <div class="sr-head"><h3>${esc(x.name)}</h3>${tag}</div>
+            <p>${esc(x.desc)}</p>
+          </div>
+        </div>`;
+    }
     document.getElementById('appsGrid').innerHTML = APPS.map((x, i) => recCard(x, i)).join('');
-    document.getElementById('showsGrid').innerHTML = SHOWS.map((x, i) => recCard(x, i + APPS.length)).join('');
+    document.getElementById('showsGrid').innerHTML = SHOWS.map((x, i) => showCard(x, i + APPS.length)).join('');
   </script>
 </body>
 </html>
