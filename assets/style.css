@@ -1457,7 +1457,9 @@ body.launcher {
   transition: all 0.15s ease;
 }
 .home-corner[hidden] { display: none; }
-.home-corner:hover { border-color: var(--m-color, var(--sky)); box-shadow: var(--shadow-md); }
+.home-corner { color: var(--ink); }
+.home-corner svg { width: 19px; height: 19px; }
+.home-corner:hover { border-color: var(--m-color, var(--sky)); color: var(--m-deep, var(--sky-deep)); box-shadow: var(--shadow-md); }
 
 body.method-page {
   background:

@@ -106,7 +106,8 @@
   </style>
 </head>
 <body>
-  <a href="index.html" class="home-link">← Home</a>
+  <a href="index.html" class="home-link" onclick="if(history.length>1){history.back();return false}">← Back</a>
+  <a href="index.html" class="home-corner" aria-label="Home" title="Home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10.4V19a1 1 0 0 0 1 1H10v-5h4v5h3.5a1 1 0 0 0 1-1v-8.6"/></svg></a>
 
   <main class="schools-main">
     <div class="schools-head">

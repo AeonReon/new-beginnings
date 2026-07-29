@@ -2,21 +2,20 @@ const APP_VERSION = 'v37';
 
 function renderHomeLink() {
   const here = location.pathname.split('/').pop() || 'index.html';
-  if (here === 'index.html' || here === '' || here === 'methodology.html') return;
+  if (here === 'index.html' || here === '') return;
+  // Top-left "Back" goes to the exact previous point (browser history — restores
+  // scroll too); top-right Home icon jumps straight to the homepage.
   document.body.insertAdjacentHTML('afterbegin',
-    '<a href="index.html" class="home-link">← Home</a>'
+    '<a href="index.html" class="home-link" id="navBack">← Back</a>' +
+    '<a href="index.html" class="home-corner" id="navHome" aria-label="Home" title="Home">' +
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10.4V19a1 1 0 0 0 1 1H10v-5h4v5h3.5a1 1 0 0 0 1-1v-8.6"/></svg>' +
+    '</a>'
   );
-  // If we arrived here from the homepage, "Home" goes BACK so the browser
-  // restores exactly where you were scrolled to — you don't lose your place.
-  const link = document.querySelector('.home-link');
-  if (link) link.addEventListener('click', (e) => {
-    let fromHome = false;
-    try {
-      const r = new URL(document.referrer);
-      const path = r.pathname.split('/').pop();
-      fromHome = r.origin === location.origin && (path === '' || path === 'index.html');
-    } catch {}
-    if (fromHome && history.length > 1) { e.preventDefault(); history.back(); }
+  const back = document.getElementById('navBack');
+  if (back) back.addEventListener('click', (e) => {
+    // Real back to where you came from; fall through to Home only if there's
+    // no history (e.g. the page was opened directly).
+    if (history.length > 1) { e.preventDefault(); history.back(); }
   });
 }
 
