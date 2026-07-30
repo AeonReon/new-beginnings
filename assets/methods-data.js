@@ -1442,35 +1442,47 @@ window.METHODS = [
     built: true,
     blurb: "The boldest new model in this app — and, its founders would say, the future of school itself. Alpha School began when MacKenzie Price's own daughters told her school was boring, and has grown into a fast-spreading network of campuses — Austin, Miami, New York, San Francisco and more — built on one audacious promise: a child can crush the core academics in about two hours a day, and spend the rest of the day becoming a remarkable person. It works through AI-powered, one-to-one adaptive apps and a single hard rule — you only move on once you have truly mastered a thing — so children learn two to three times faster, routinely score in the top 1–2% nationally, and, above all, love going to school. The freed afternoons go to twenty-four real-world life skills and their own passions. This is that school, in its own words.",
     grab: {
-      hook: 'What if the whole school day took two hours?',
-      promise: 'Finish the core academics before lunch — then spend the rest of the day becoming a remarkable person.',
+      hook: 'What if school only took two hours a day?',
+      lead: [
+        'That’s the whole idea behind Alpha.',
+        'Your child gets the real academics — reading, writing and maths — done in about two hours each morning. Properly. To mastery.',
+        'Then they’re finished for the day.',
+        'And the rest of it is theirs.'
+      ],
+      proofLead: 'I know exactly how that sounds. So here are the numbers:',
       stats: [
         { n: '2', unit: 'hrs', l: 'of academics a day' },
         { n: 'Top 1–2%', l: 'where its kids score nationally' },
         { n: '90%+', l: 'say they love school' }
       ],
-      openCross: 'The ordinary school day is mostly waiting',
-      openBody: 'A child sits through hours pitched at the class average — bored when it is too slow, lost when it is too fast. Alpha throws that out and starts again from one question: what does THIS child need next?',
+      howCross: 'So how is that even possible?',
+      how: [
+        'Picture a normal classroom. One teacher, thirty kids, everyone forced to move at the same speed.',
+        'Too fast, and your child is lost. Too slow, and they’re bored stiff.',
+        'Alpha throws that out.',
+        'Every child gets their own AI tutor that meets them exactly where they are — and won’t let them move on until they’ve genuinely got it.'
+      ],
       contrast: {
-        cross: 'Two very different days',
-        old: { label: 'A normal school day', items: ['Six hours pitched at the class average', 'Move on when the calendar says so — ready or not', 'One teacher talking to thirty children', 'Graded on what you can describe'] },
-        alpha: { label: 'A day at Alpha', items: ['Two focused hours, aimed at exactly one child', 'Move on only once you have truly mastered it', 'A personal AI tutor, one question at a time', 'Proven by what you can actually do'] }
+        cross: 'Same six hours, spent completely differently',
+        old: { label: 'A normal day', items: ['Aimed at the class average', 'Move on when the calendar says', 'One teacher, thirty kids', 'Graded on what you can describe'] },
+        alpha: { label: 'An Alpha day', items: ['Aimed at exactly your child', 'Move on only once it’s mastered', 'A tutor for every single child', 'Proven by what you can actually do'] }
       },
-      bigQuote: { text: 'You only move on once you have truly mastered a thing.', cite: 'The one hard rule' },
-      pointsCross: 'What those two hours buy',
+      bigQuote: { text: 'You only move on once you’ve truly mastered it.', cite: 'Alpha’s one hard rule' },
+      pointsCross: 'Here’s what those two hours buy your child',
       points: [
-        { lead: 'Academics done by lunch.', rest: 'Two focused hours cover reading, writing and maths better than a whole traditional day of teaching, waiting and transitions.' },
-        { lead: 'No child left at seventy percent.', rest: 'They advance the moment a skill is mastered — so no half-learned gap is left to sink them three years later.' },
-        { lead: 'A personal tutor for everyone.', rest: 'Adaptive AI meets each child exactly at their edge — the tailored attention only a private tutor used to give.' },
-        { lead: 'No one lecturing at a whiteboard.', rest: 'The adults are guides: they inspire, unblock and cheer, while the child does the actual learning.' },
-        { lead: 'The afternoon is the real school.', rest: 'The freed hours go to twenty-four life skills and the child’s own passions — speaking, coding, enterprise, the outdoors, art, sport.' }
+        { lead: 'Short, sharp mornings.', rest: 'Two focused hours beat a whole day of whole-class teaching, waiting around and shuffling between lessons.' },
+        { lead: 'Nobody gets left behind at 70%.', rest: 'Your child moves on the moment they’ve mastered something — so no shaky gap comes back to sink them years later.' },
+        { lead: 'A tutor all to themselves.', rest: 'The AI meets them one question at a time, right at their edge — the kind of attention only a private tutor used to give.' },
+        { lead: 'Nobody droning at a whiteboard.', rest: 'The grown-ups are coaches. They spark, unblock and cheer — while your child does the actual learning.' },
+        { lead: 'The afternoon is the real magic.', rest: 'With the core done by lunch, the whole afternoon goes to real skills and whatever your child loves — speaking, coding, building, sport, art.' }
       ],
       mark: 'The question stops being “what grade did you get?” and becomes “what can you do now that you couldn’t before?”',
+      featureLead: 'Oh — and here’s the bit they brag about at dinner.',
       feature: {
-        tag: 'The part the kids talk about',
+        tag: 'Real stakes, no participation trophies',
         title: 'Test2Pass',
-        body: 'Every workshop ends in a live challenge with real stakes. Not a worksheet about the skill — the skill itself, done in front of people.',
-        examples: ['Juggle for 30 seconds', 'Solve the Rubik’s cube', 'Run a real food truck', 'Give the talk to a real audience']
+        body: 'Every workshop ends in a live challenge. Not a worksheet about the skill — the skill itself, done for real, in front of people.',
+        examples: ['Juggle for 30 seconds', 'Solve the Rubik’s cube', 'Run a real food truck', 'Give the talk to a real crowd']
       }
     },
     sections: {
