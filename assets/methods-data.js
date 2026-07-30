@@ -411,7 +411,7 @@ window.METHODS = [
                             {
                                   "time": "8:30",
                                   "title": "A big story to open the mind",
-                                  "body": "You tell one of the great impressionistic stories, or return to one, told with drama and wonder rather than facts to memorise. The coming of the universe, the coming of life, how numbers or writing began. The point is to light a fire: everything is connected, and the small thing they study today hangs on a huge frame."
+                                  "body": "You open the day with one of the big questions humans have always asked — how everything began, how life arose, how numbers or writing came to be — told with drama and wonder, not as facts to memorise. For the great unknowns you share more than one story: what scientists say, what different faiths and peoples believe, and what your child thinks. The point is to light a fire of wonder, so the small thing they study today hangs on a huge frame."
                             },
                             {
                                   "time": "9:00",
@@ -467,12 +467,12 @@ window.METHODS = [
                                   "icon": "🌌",
                                   "items": [
                                         {
-                                              "name": "Tell the story of the universe",
-                                              "body": "Sit together and tell how everything began, from nothing, to stars, to our own planet cooling down. Tell it like a wonder tale, not a lecture. Then just ask: what do you want to know more about? Follow that thread all week."
+                                              "name": "How did everything begin?",
+                                              "body": "No one knows for certain how the universe began, so treat this as a doorway to wonder, not a fact to teach. Share a few of the stories people tell — what many scientists say, and what different faiths and cultures believe — then ask your child what they think. The aim is awe and honest questions, not one settled answer, and their curiosity leads the week."
                                         },
                                         {
-                                              "name": "The coming of life",
-                                              "body": "Tell how the first tiny life appeared in the sea, and how over a very long time it grew into fish, then land animals, then us. Draw a long strip together showing the order things arrived. Let their questions decide what you look up next."
+                                              "name": "Where did living things come from?",
+                                              "body": "Here too, no one was there to see it, so hold it as a great question. The scientific account says life began tiny in the sea and changed over a very long time; different faiths and peoples tell it in their own ways. Share more than one, and let your child wonder and choose what to look into next, rather than memorise a single answer."
                                         },
                                         {
                                               "name": "A 'big question' jar",
