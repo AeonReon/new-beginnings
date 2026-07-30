@@ -1441,6 +1441,25 @@ window.METHODS = [
     icon: 'rocket',
     built: true,
     blurb: "The boldest new model in this app — and, its founders would say, the future of school itself. Alpha School began when MacKenzie Price's own daughters told her school was boring, and has grown into a fast-spreading network of campuses — Austin, Miami, New York, San Francisco and more — built on one audacious promise: a child can crush the core academics in about two hours a day, and spend the rest of the day becoming a remarkable person. It works through AI-powered, one-to-one adaptive apps and a single hard rule — you only move on once you have truly mastered a thing — so children learn two to three times faster, routinely score in the top 1–2% nationally, and, above all, love going to school. The freed afternoons go to twenty-four real-world life skills and their own passions. This is that school, in its own words.",
+    grab: {
+      hook: 'What if the whole school day took two hours?',
+      promise: 'Finish the core academics before lunch — then spend the rest of the day becoming a remarkable person.',
+      stats: [
+        { n: '2 hrs', l: 'of academics a day' },
+        { n: 'Top 1\u20132%', l: 'where its children score nationally' },
+        { n: '90%+', l: 'say they love going to school' }
+      ],
+      points: [
+        { lead: 'Academics are finished by lunch.', rest: 'Two focused hours on adaptive apps cover reading, writing and maths — and cover them better than a whole traditional day of whole-class teaching, waiting and transitions.' },
+        { lead: 'Nobody moves on at seventy percent.', rest: 'A child advances the moment they have truly mastered a skill and not a second before — so no half-learned gap is left to sink them three years later.' },
+        { lead: 'Every child gets a personal tutor.', rest: 'Adaptive AI meets them exactly at their edge, one question at a time — the tailored attention only a private tutor used to be able to give.' },
+        { lead: 'Nobody stands at a whiteboard lecturing.', rest: 'Alpha has no teachers in the ordinary sense. The adults are guides: they inspire, unblock and cheer, while the child does the actual learning.' },
+        { lead: 'The afternoon is the real school.', rest: 'With the core done by midday, the whole afternoon goes to twenty-four life skills and the child\u2019s own passions — speaking, coding, enterprise, the outdoors, art, sport.' },
+        { lead: 'You pass by doing, not describing.', rest: 'Every workshop ends in a live Test2Pass with real stakes: juggle for thirty seconds, solve the cube, run a real food truck, give the talk to a real audience.' },
+        { lead: 'Loving to learn outranks every score.', rest: 'The culture is relentlessly can-do — effort compounds, there is no ceiling, and you could not do this last week yet here you are doing it now.' }
+      ],
+      quote: { text: 'The question stops being \u201cwhat grade did you get?\u201d and becomes \u201cwhat can you do now that you couldn\u2019t before?\u201d', cite: 'The Alpha idea' }
+    },
     sections: {
       "core-idea": {
         title: "Core idea",

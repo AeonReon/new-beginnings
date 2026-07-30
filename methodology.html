@@ -382,6 +382,51 @@
     #root .act-nudge { display: flex; align-items: center; gap: 0.7em; background: #FFF6E2; border: 1.5px solid #F1DFAE; border-radius: 14px; padding: 0.85em 1.05em; margin: 0.2em 0 0.4em; font-size: 0.99rem; line-height: 1.5; color: #7A5A12; }
     #root .act-nudge b { color: #5E440C; }
     #root .act-nudge-emo { font-size: 1.25rem; line-height: 1; flex: 0 0 auto; }
+
+    /* ════════════════════════════════════════════════════════════
+       THE GRABBER v5 — the landing page opens in SCAN mode, not read mode.
+       Hook headline → three big proof numbers → bulleted claims with bold
+       lead-ins → their own words. The narrative moves BELOW the options and
+       becomes opt-in, because nobody reads a story before they're sold.
+       Newspaper/direct-response order: promise, proof, detail, then story.
+       ════════════════════════════════════════════════════════════ */
+    #root .grab { margin: 0.35em 0 0; }
+    #root .grab-hook { font-family: var(--display); font-weight: 800; font-size: clamp(1.72rem, 7.3vw, 2.45rem); line-height: 1.05; letter-spacing: -0.028em; color: var(--ink); margin: 0.15em 0 0.42em; }
+    #root .grab-promise { font-size: 1.15rem; line-height: 1.5; font-weight: 600; color: var(--ink-soft); margin: 0 0 1.3em; }
+
+    /* three big numbers — the fastest possible proof for a scanning eye */
+    #root .grab-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.55em; margin: 0 0 1.7em; }
+    #root .gstat { position: relative; overflow: hidden; background: #fff; border-radius: 15px; padding: 0.95em 0.45em 0.85em; text-align: center; box-shadow: var(--shadow-sm); }
+    #root .gstat::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.6px; background: linear-gradient(135deg, var(--acc-bright), var(--acc)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; opacity: 0.55; }
+    #root .gs-n { display: block; font-family: var(--display); font-weight: 800; font-size: clamp(1.02rem, 4.5vw, 1.38rem); line-height: 1.05; letter-spacing: -0.02em; color: var(--acc); }
+    #root .gs-l { display: block; margin-top: 0.5em; font-size: 0.73rem; line-height: 1.32; font-weight: 600; color: var(--ink-mute); }
+
+    /* the claims — bold lead-in, then the payoff. A scanning eye reads only
+       the bold and still gets the whole method. */
+    #root .grab-label { font-family: var(--sans); font-weight: 800; font-size: 0.66rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--acc); margin: 0 0 0.15em; }
+    #root .grab-points { list-style: none; padding: 0; margin: 0.5em 0 0; }
+    #root .grab-points li { position: relative; padding: 0.92em 0 0.92em 2.15em; border-top: 1px solid var(--rule); font-size: 1.04rem; line-height: 1.62; color: var(--ink-soft); }
+    #root .grab-points li:first-child { border-top: none; }
+    #root .grab-points li::before { content: "✓"; position: absolute; left: 0; top: 1.08em; width: 1.42em; height: 1.42em; border-radius: 999px; background: linear-gradient(150deg, var(--acc-bright), var(--acc)); color: #fff; font-size: 0.72em; font-weight: 900; display: grid; place-items: center; box-shadow: 0 2px 6px color-mix(in srgb, var(--acc) 34%, transparent); }
+    #root .grab-points b { color: var(--ink); font-weight: 800; }
+    #root .grab .pullquote { margin: 1.9em auto 0.4em; }
+
+    /* ── The story, moved below the options and made opt-in ── */
+    #root .story { margin: 2.5em 0 0; background: #fff; border: 1px solid var(--rule); border-radius: 18px; box-shadow: var(--shadow-sm); overflow: hidden; }
+    #root .story > summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 0.8em; padding: 1.05em 1.15em; }
+    #root .story > summary::-webkit-details-marker { display: none; }
+    #root .story[open] > summary { border-bottom: 1px solid var(--rule); }
+    #root .story-emo { flex: 0 0 auto; font-size: 1.3rem; line-height: 1; }
+    #root .story-txt { flex: 1; min-width: 0; }
+    #root .story-name { display: block; font-family: var(--display); font-weight: 800; font-size: 1.08rem; color: var(--ink); line-height: 1.2; }
+    #root .story-sub { display: block; font-size: 0.87rem; color: var(--ink-mute); margin-top: 0.15em; line-height: 1.35; }
+    #root .story-chev { flex: 0 0 auto; color: var(--acc); font-weight: 800; transition: transform 0.2s ease; }
+    #root .story[open] .story-chev { transform: rotate(180deg); }
+    #root .story-body { padding: 1.15em 1.15em 1.3em; }
+    #root .story-body p { font-size: 1.06rem; line-height: 1.75; color: var(--ink-soft); margin: 0 0 0.95em; }
+    #root .story-body p:last-child { margin-bottom: 0; }
+    #root .story-body p:first-of-type::first-letter { font-family: var(--display); font-weight: 800; float: left; font-size: 3.2em; line-height: 0.72; margin: 0.06em 0.11em 0 0; color: var(--acc); }
+    #root .story-body .lead { color: var(--ink); font-weight: 700; }
   </style>
 </head>
 <body class="method-page">
@@ -507,21 +552,52 @@
           </a>`;
       }).join('');
 
+      // SCAN-MODE landing: when a tradition has a `grab` block we lead with the
+      // hook, the proof numbers and the bulleted claims — then the options —
+      // and only then the narrative, folded away for whoever wants it.
+      // Traditions without `grab` keep the original story-first layout.
+      const g = m.grab;
+      const grabber = g ? `
+        <section class="grab">
+          <h2 class="grab-hook">${g.hook}</h2>
+          ${g.promise ? `<p class="grab-promise">${g.promise}</p>` : ''}
+          ${g.stats ? `<div class="grab-stats">${g.stats.map(s => `
+            <div class="gstat"><span class="gs-n">${s.n}</span><span class="gs-l">${s.l}</span></div>`).join('')}</div>` : ''}
+          ${g.points ? `
+            <div class="grab-label">The whole idea, at a glance</div>
+            <ul class="grab-points">${g.points.map(p => `<li><b>${p.lead}</b> ${hl(p.rest)}</li>`).join('')}</ul>` : ''}
+          ${g.quote ? `<blockquote class="pullquote"><p>${g.quote.text}</p>${g.quote.cite ? `<cite>${g.quote.cite}</cite>` : ''}</blockquote>` : ''}
+        </section>` : '';
+
+      const storyBlock = g ? `
+        <details class="story">
+          <summary>
+            <span class="story-emo" aria-hidden="true">📖</span>
+            <span class="story-txt">
+              <span class="story-name">The full story</span>
+              <span class="story-sub">Where ${m.name} came from, and how it actually works</span>
+            </span>
+            <span class="story-chev" aria-hidden="true">▾</span>
+          </summary>
+          <div class="story-body">${multiPara(m.blurb, 2)}</div>
+        </details>` : '';
+
       root.innerHTML = `
         <article class="ed-article">
           <div class="ed-eyebrow">${m.era}</div>
           <h1 class="ed-title">${m.name}</h1>
           <p class="ed-deck">${m.tagline}</p>
           ${m.image ? `<figure class="ed-hero"><img src="${m.image}" alt="${m.name}"></figure>` : ''}
-          <div class="ed-lead">${multiPara(m.blurb, 2)}</div>
+          ${g ? grabber : `<div class="ed-lead">${multiPara(m.blurb, 2)}</div>`}
           ${m.promise ? `
           <aside class="ed-promise">
             <div class="ed-promise-label">In one breath</div>
             <p class="ed-promise-line">${m.promise}</p>
             ${m.essence ? `<ul class="ed-essence">${m.essence.map(e => `<li>${e}</li>`).join('')}</ul>` : ''}
           </aside>` : ''}
-          <div class="ed-toc-head">Read on</div>
+          <div class="ed-toc-head">${g ? 'Explore it' : 'Read on'}</div>
           <nav class="ed-toc">${toc}</nav>
+          ${storyBlock}
         </article>
       `;
     }
