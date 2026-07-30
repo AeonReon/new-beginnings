@@ -85,6 +85,39 @@
     .trait:hover { border-color: var(--gc); color: var(--gcd); }
 
     .empty { color: var(--ink-mute); font-style: italic; margin: 2em 0; }
+
+    /* ══ ACTIVITIES v2 — topic squares + homepage-style photo bars that drop down ══ */
+    /* topic squares — one per group, tap to filter to that topic */
+    .topic-nav { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.55em; margin: 0 0 1.4em; }
+    @media (min-width: 560px) { .topic-nav { grid-template-columns: repeat(6, 1fr); } }
+    .topic-sq { position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; gap: 0.4em; cursor: pointer; background: var(--paper-card, #fff); border: none; border-radius: 15px; padding: 0.8em 0.4em 0.75em; box-shadow: var(--shadow-sm); transition: transform 0.14s cubic-bezier(0.34,1.56,0.64,1); }
+    .topic-sq::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.6px; background: linear-gradient(135deg, var(--gc), var(--gcd)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; opacity: 0.45; }
+    .topic-sq:active { transform: scale(0.95); }
+    .topic-sq-emo { width: 2.2em; height: 2.2em; border-radius: 13px; background: linear-gradient(150deg, var(--gc), var(--gcd)); display: grid; place-items: center; font-size: 1.15rem; line-height: 1; box-shadow: 0 4px 10px color-mix(in srgb, var(--gc) 34%, transparent), inset 0 1.5px 0 rgba(255,255,255,0.45); }
+    .topic-sq-lbl { font-family: var(--sans); font-weight: 800; font-size: 0.7rem; color: var(--ink); line-height: 1.1; text-align: center; }
+    .topic-sq.active { box-shadow: 0 6px 16px color-mix(in srgb, var(--gc) 30%, transparent); }
+    .topic-sq.active::before { opacity: 1; padding: 2.2px; }
+    .topic-sq.active .topic-sq-lbl { color: var(--gcd); }
+
+    /* activity BAR — photo/emoji left, title + meta right, drop-down */
+    .act-bar-wrap { position: relative; overflow: hidden; background: var(--paper-card, #fff); border-radius: 18px; box-shadow: var(--shadow-sm); margin: 0 0 0.7em; }
+    .act-bar-wrap::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.6px; background: linear-gradient(135deg, var(--gc), var(--gcd)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; z-index: 3; opacity: 0.5; }
+    .act-bar { list-style: none; cursor: pointer; display: flex; align-items: stretch; gap: 0; }
+    .act-bar::-webkit-details-marker { display: none; }
+    .act-bar-photo { flex: 0 0 auto; width: 88px; align-self: stretch; position: relative; overflow: hidden; background: linear-gradient(150deg, var(--gc), var(--gcd)); background-size: cover; background-position: center; display: grid; place-items: center; }
+    .act-bar-emo { font-size: 2rem; line-height: 1; filter: drop-shadow(0 2px 3px rgba(0,0,0,0.22)); }
+    .act-bar-text { flex: 1; min-width: 0; padding: 0.8em 0.5em 0.8em 1em; display: flex; flex-direction: column; justify-content: center; gap: 0.4em; }
+    .act-bar-name { font-family: var(--display, 'Poppins'); font-weight: 800; font-size: clamp(1.05rem, 4.4vw, 1.2rem); line-height: 1.16; letter-spacing: -0.015em; color: var(--ink); }
+    .act-bar-meta { display: flex; flex-wrap: wrap; gap: 0.32em; }
+    .act-bar-meta .chip { font-size: 0.64rem; padding: 0.24em 0.6em; }
+    .act-bar-plus { flex: 0 0 auto; align-self: center; width: 1.4em; height: 1.4em; position: relative; margin-right: 0.95em; }
+    .act-bar-plus::before, .act-bar-plus::after { content: ""; position: absolute; top: 50%; left: 50%; background: var(--gc); border-radius: 2px; transform: translate(-50%, -50%); transition: opacity 0.2s ease, transform 0.2s ease; }
+    .act-bar-plus::before { width: 0.9em; height: 2.5px; }
+    .act-bar-plus::after { width: 2.5px; height: 0.9em; }
+    .act-bar-wrap[open] .act-bar-plus::after { opacity: 0; transform: translate(-50%, -50%) rotate(90deg); }
+    .act-bar-wrap[open] .act-bar { border-bottom: 1px solid var(--rule); }
+    .act-drawer { padding: 0.95em 1.1em 1.15em; }
+    .act-drawer p.how { margin: 0; color: var(--ink-soft); line-height: 1.55; }
   </style>
 </head>
 <body class="launcher">
@@ -123,6 +156,8 @@
         carries the specific reason it helps, so you can trust it, not just do it.
       </p>
     </div>
+
+    <div class="topic-nav" id="topic-nav"></div>
 
     <div class="where-row" id="where-row"></div>
 
@@ -164,6 +199,7 @@
     const GROUP_ORDER = ['Make', 'Mark', 'Sensory', 'Pretend', 'Practical', 'Move'];
     const KITS = ['No kit', 'Household', 'A few bits'];
     const GROUP_EMOJI = { Make: '🧱', Mark: '🎨', Sensory: '💧', Pretend: '🎭', Practical: '🫗', Move: '🤸' };
+    const GROUP_SHORT = { Make: 'Make', Mark: 'Draw', Sensory: 'Sensory', Pretend: 'Pretend', Practical: 'Real jobs', Move: 'Move' };
 
     const PALETTE = [
       { c: '#4A9ED4', cd: '#2D6FA8', cs: '#E4F1FA' },
@@ -188,9 +224,30 @@
     const fMess = document.getElementById('f-mess');
     const fAge = document.getElementById('f-age');
     const whereRow = document.getElementById('where-row');
+    const topicNav = document.getElementById('topic-nav');
     const list = document.getElementById('list');
     const count = document.getElementById('count');
     let activeKit = '';
+    let activeGroup = '';
+
+    // Topic squares — one per group, tap to filter to that topic (tap again to clear).
+    const GPAL = {};
+    GROUP_ORDER.forEach((k, i) => { GPAL[k] = PALETTE[i % PALETTE.length]; });
+    topicNav.innerHTML = GROUP_ORDER.map((key) => {
+      const p = GPAL[key];
+      return `<button type="button" class="topic-sq" data-group="${key}" style="--gc:${p.c};--gcd:${p.cd};--gcs:${p.cs};">
+        <span class="topic-sq-emo" aria-hidden="true">${GROUP_EMOJI[key]}</span>
+        <span class="topic-sq-lbl">${GROUP_SHORT[key]}</span>
+      </button>`;
+    }).join('');
+    topicNav.querySelectorAll('.topic-sq').forEach(btn => {
+      btn.addEventListener('click', () => {
+        activeGroup = (activeGroup === btn.dataset.group) ? '' : btn.dataset.group;
+        topicNav.querySelectorAll('.topic-sq').forEach(b => b.classList.toggle('active', b.dataset.group === activeGroup));
+        render();
+        list.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
 
     fBuild.innerHTML = '<option value="">Any skill</option>' +
       window.ACTIVITY_TRAITS.map(t => `<option value="${t}">${t}</option>`).join('');
@@ -210,9 +267,8 @@
     function highlightWhy(s) { return esc(s).replace(HL_RE, '<mark class="hl">$1</mark>'); }
     function messClass(m) { return m === 'Tidy' ? 'mess-tidy' : m === 'Messy' ? 'mess-messy' : 'mess-some'; }
 
-    function cardHTML(a, i, groupIdx) {
-      const grp = window.ACTIVITY_GROUPS[a.group];
-      const pal = PALETTE[(i + groupIdx) % PALETTE.length];
+    function cardHTML(a) {
+      const pal = GPAL[a.group] || PALETTE[0];
       const meta = [
         `<span class="chip">${esc(a.kit)}</span>`,
         `<span class="chip ${messClass(a.mess)}">${esc(a.mess)}</span>`,
@@ -221,30 +277,35 @@
       const traits = a.traits.map(t => `<span class="trait" data-trait="${esc(t)}">${t}</span>`).join('');
       const recipe = a.recipe ? `<div class="recipe-box"><span class="recipe-pill">🧪 Make it yourself</span><p>${esc(a.recipe)}</p></div>` : '';
       const tweak = a.tweak ? `<p class="tweak"><b>Tune it:</b> ${esc(a.tweak)}</p>` : '';
+      // Photo left when we have one; the gradient emoji tile otherwise.
+      const left = a.image
+        ? `<span class="act-bar-photo" style="background-image:url('${esc(a.image)}')"></span>`
+        : `<span class="act-bar-photo"><span class="act-bar-emo" aria-hidden="true">${a.emoji || '✨'}</span></span>`;
       return `
-        <div class="card act-card" style="--gc:${pal.c};--gcd:${pal.cd};--gcs:${pal.cs};">
-          <div class="act-head">
-            <span class="act-badge">${a.emoji || '✨'}</span>
-            <div class="act-head-text">
-              <h3>${esc(a.name)}</h3>
-              <span class="act-tag">${esc(grp.label)}</span>
-            </div>
-          </div>
-          <div class="act-body">
-            <div class="meta-row">${meta}</div>
+        <details class="act-bar-wrap" style="--gc:${pal.c};--gcd:${pal.cd};--gcs:${pal.cs};">
+          <summary class="act-bar">
+            ${left}
+            <span class="act-bar-text">
+              <span class="act-bar-name">${esc(a.name)}</span>
+              <span class="act-bar-meta">${meta}</span>
+            </span>
+            <span class="act-bar-plus" aria-hidden="true"></span>
+          </summary>
+          <div class="act-drawer">
             <p class="how">${esc(a.how)}</p>
             <div class="why-box"><span class="why-pill">Why</span><p>${highlightWhy(a.why)}</p></div>
             ${recipe}
             ${tweak}
             <div class="traits">${traits}</div>
           </div>
-        </div>`;
+        </details>`;
     }
 
     function render() {
       const q = fSearch.value.toLowerCase().trim();
       const build = fBuild.value, mess = fMess.value, age = fAge.value;
       const filtered = window.ACTIVITIES.filter(a => {
+        if (activeGroup && a.group !== activeGroup) return false;
         if (activeKit && a.kit !== activeKit) return false;
         if (build && !a.traits.includes(build)) return false;
         if (mess && a.mess !== mess) return false;
@@ -267,7 +328,7 @@
             <h2><span class="group-emoji">${GROUP_EMOJI[key] || ''}</span>${grp.label}</h2>
             <p class="group-blurb">${grp.blurb}</p>
           </div>`;
-        html += inGroup.map((a, i) => cardHTML(a, i, groupIdx)).join('');
+        html += inGroup.map(a => cardHTML(a)).join('');
       });
       list.innerHTML = html || '<p class="empty">Nothing matches that yet — try clearing a filter.</p>';
 
