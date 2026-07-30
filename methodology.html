@@ -384,32 +384,81 @@
     #root .act-nudge-emo { font-size: 1.25rem; line-height: 1; flex: 0 0 auto; }
 
     /* ════════════════════════════════════════════════════════════
-       THE GRABBER v5 — the landing page opens in SCAN mode, not read mode.
-       Hook headline → three big proof numbers → bulleted claims with bold
-       lead-ins → their own words. The narrative moves BELOW the options and
-       becomes opt-in, because nobody reads a story before they're sold.
-       Newspaper/direct-response order: promise, proof, detail, then story.
+       THE GRABBER v6 — built for SCAN mode, with real newspaper RHYTHM.
+       No two consecutive blocks share a shape, density or colour: huge hook →
+       proof numbers → a light drop-cap punch → a two-column OLD-vs-NEW contrast
+       → a giant pull-quote (a visual rest) → tight fascination bullets → a
+       yellow-highlighted line → one saturated feature box. Variety is the whole
+       point — an equally-dense page fatigues the eye (per eye-tracking research).
+       Accent = the school's OWN colour (--ga/--gad/--gas), set inline.
        ════════════════════════════════════════════════════════════ */
-    #root .grab { margin: 0.35em 0 0; }
-    #root .grab-hook { font-family: var(--display); font-weight: 800; font-size: clamp(1.72rem, 7.3vw, 2.45rem); line-height: 1.05; letter-spacing: -0.028em; color: var(--ink); margin: 0.15em 0 0.42em; }
-    #root .grab-promise { font-size: 1.15rem; line-height: 1.5; font-weight: 600; color: var(--ink-soft); margin: 0 0 1.3em; }
+    #root .grab { margin: 0.4em 0 0; --gwarm: #E0871F; --gmark: #FFE86B; }
 
-    /* three big numbers — the fastest possible proof for a scanning eye */
-    #root .grab-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.55em; margin: 0 0 1.7em; }
-    #root .gstat { position: relative; overflow: hidden; background: #fff; border-radius: 15px; padding: 0.95em 0.45em 0.85em; text-align: center; box-shadow: var(--shadow-sm); }
-    #root .gstat::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.6px; background: linear-gradient(135deg, var(--acc-bright), var(--acc)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; opacity: 0.55; }
-    #root .gs-n { display: block; font-family: var(--display); font-weight: 800; font-size: clamp(1.02rem, 4.5vw, 1.38rem); line-height: 1.05; letter-spacing: -0.02em; color: var(--acc); }
-    #root .gs-l { display: block; margin-top: 0.5em; font-size: 0.73rem; line-height: 1.32; font-weight: 600; color: var(--ink-mute); }
+    /* 1 — the hook: as big as we dare */
+    #root .grab-hook { font-family: var(--display); font-weight: 800; font-size: clamp(2rem, 8.6vw, 3rem); line-height: 1.0; letter-spacing: -0.032em; color: var(--ink); margin: 0.1em 0 0.4em; }
+    #root .grab-hook .hl-word { color: var(--ga); }
+    #root .grab-promise { font-size: 1.2rem; line-height: 1.48; font-weight: 600; color: var(--ink-soft); margin: 0 0 1.5em; }
 
-    /* the claims — bold lead-in, then the payoff. A scanning eye reads only
-       the bold and still gets the whole method. */
-    #root .grab-label { font-family: var(--sans); font-weight: 800; font-size: 0.66rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--acc); margin: 0 0 0.15em; }
-    #root .grab-points { list-style: none; padding: 0; margin: 0.5em 0 0; }
-    #root .grab-points li { position: relative; padding: 0.92em 0 0.92em 2.15em; border-top: 1px solid var(--rule); font-size: 1.04rem; line-height: 1.62; color: var(--ink-soft); }
+    /* 2 — three big proof numbers. The middle one is lifted to break symmetry. */
+    #root .grab-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5em; margin: 0 0 0.6em; }
+    #root .gstat { position: relative; overflow: hidden; border-radius: 16px; padding: 1.05em 0.4em 0.9em; text-align: center; background: var(--gas); }
+    #root .gstat.mid { background: linear-gradient(155deg, var(--ga), var(--gad)); transform: scale(1.06); box-shadow: 0 10px 24px color-mix(in srgb, var(--ga) 34%, transparent); }
+    #root .gs-n { display: block; font-family: var(--display); font-weight: 800; font-size: clamp(1.35rem, 6.4vw, 1.95rem); line-height: 0.95; letter-spacing: -0.03em; color: var(--gad); }
+    #root .gs-n .gs-u { font-size: 0.5em; font-weight: 800; margin-left: 0.12em; letter-spacing: 0; }
+    #root .gstat.mid .gs-n { color: #fff; }
+    #root .gs-l { display: block; margin-top: 0.55em; font-size: 0.72rem; line-height: 1.3; font-weight: 700; color: var(--ink-mute); }
+    #root .gstat.mid .gs-l { color: rgba(255,255,255,0.9); }
+
+    /* crosshead — a 2–4 word mini-headline that makes the eye STOP */
+    #root .gx-cross { font-family: var(--sans); font-weight: 800; font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ga); display: flex; align-items: center; gap: 0.7em; margin: 2.3em 0 0.7em; }
+    #root .gx-cross::after { content: ""; flex: 1; height: 2px; border-radius: 2px; background: linear-gradient(90deg, color-mix(in srgb, var(--ga) 45%, transparent), transparent); }
+
+    /* 3 — a light drop-cap punch paragraph (low density — a breather) */
+    #root .gx-open { font-size: 1.18rem; line-height: 1.62; color: var(--ink); margin: 0; }
+    #root .gx-open::first-letter { font-family: var(--display); font-weight: 800; float: left; font-size: 3.1em; line-height: 0.68; margin: 0.04em 0.12em 0 0; color: var(--ga); }
+
+    /* 4 — OLD vs NEW two-column contrast (a totally different shape) */
+    #root .gx-contrast { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6em; margin: 0.4em 0 0; }
+    #root .gxc { border-radius: 16px; padding: 1em 0.95em 1.1em; }
+    #root .gxc-old { background: #F2F4F7; border: 1px solid var(--rule); }
+    #root .gxc-new { position: relative; background: var(--gas); }
+    #root .gxc-new::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.7px; background: linear-gradient(135deg, var(--ga), var(--gad)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; }
+    #root .gxc-label { font-family: var(--sans); font-weight: 800; font-size: 0.64rem; letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 0.7em; }
+    #root .gxc-old .gxc-label { color: var(--ink-mute); }
+    #root .gxc-new .gxc-label { color: var(--gad); }
+    #root .gxc ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.6em; }
+    #root .gxc li { position: relative; padding-left: 1.5em; font-size: 0.95rem; line-height: 1.4; }
+    #root .gxc-old li { color: var(--ink-mute); }
+    #root .gxc-old li::before { content: "✕"; position: absolute; left: 0; top: 0.02em; font-weight: 800; color: #B6C0CE; }
+    #root .gxc-new li { color: var(--ink); font-weight: 500; }
+    #root .gxc-new li::before { content: "✓"; position: absolute; left: 0; top: 0.02em; font-weight: 900; color: var(--ga); }
+
+    /* 5 — a GIANT pull-quote: the visual rest between dense blocks */
+    #root .gx-bigq { text-align: center; margin: 2.6em auto 2.2em; max-width: 16em; }
+    #root .gx-bigq::before { content: "\201C"; display: block; font-family: var(--display); font-weight: 800; font-size: 5rem; line-height: 0.5; color: var(--ga); opacity: 0.25; margin-bottom: 0.1em; }
+    #root .gx-bigq p { font-family: var(--display); font-weight: 700; font-style: normal; font-size: clamp(1.6rem, 7vw, 2.15rem); line-height: 1.16; letter-spacing: -0.02em; color: var(--ink); margin: 0; }
+    #root .gx-bigq cite { display: block; margin-top: 0.85em; font-family: var(--sans); font-style: normal; font-weight: 800; font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ga); }
+
+    /* 6 — tight fascination bullets: bold lead on its own line, then payoff */
+    #root .grab-points { list-style: none; padding: 0; margin: 0.4em 0 0; }
+    #root .grab-points li { position: relative; padding: 0.85em 0 0.9em 2.15em; border-top: 1px solid var(--rule); }
     #root .grab-points li:first-child { border-top: none; }
-    #root .grab-points li::before { content: "✓"; position: absolute; left: 0; top: 1.08em; width: 1.42em; height: 1.42em; border-radius: 999px; background: linear-gradient(150deg, var(--acc-bright), var(--acc)); color: #fff; font-size: 0.72em; font-weight: 900; display: grid; place-items: center; box-shadow: 0 2px 6px color-mix(in srgb, var(--acc) 34%, transparent); }
-    #root .grab-points b { color: var(--ink); font-weight: 800; }
-    #root .grab .pullquote { margin: 1.9em auto 0.4em; }
+    #root .grab-points li::before { content: "→"; position: absolute; left: 0; top: 0.78em; width: 1.5em; height: 1.5em; border-radius: 999px; background: var(--gas); color: var(--ga); font-size: 0.9em; font-weight: 900; display: grid; place-items: center; }
+    #root .grab-points .gp-lead { display: block; font-family: var(--display); font-weight: 800; font-size: 1.1rem; line-height: 1.25; letter-spacing: -0.01em; color: var(--ink); margin-bottom: 0.15em; }
+    #root .grab-points .gp-rest { font-size: 1rem; line-height: 1.58; color: var(--ink-soft); }
+
+    /* 7 — a single yellow-highlighted line, big, centred: the takeaway */
+    #root .gx-mark { font-family: var(--display); font-weight: 700; font-size: clamp(1.2rem, 5vw, 1.5rem); line-height: 1.5; letter-spacing: -0.01em; color: var(--ink); text-align: center; margin: 2.4em 0 0; }
+    #root .gx-mark span { background: linear-gradient(180deg, transparent 55%, var(--gmark) 55%); padding: 0 0.12em; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+
+    /* 8 — one saturated feature box: the full-bleed focal moment */
+    #root .gx-feature { position: relative; overflow: hidden; margin: 2.5em 0 0; border-radius: 22px; padding: 1.5em 1.4em 1.55em; background: linear-gradient(150deg, var(--ga), var(--gad)); box-shadow: 0 16px 38px color-mix(in srgb, var(--gad) 36%, transparent); }
+    #root .gx-feature .gxf-mark { position: absolute; top: -0.35em; right: 0.1em; font: 900 8rem/1 var(--display); color: rgba(255,255,255,0.12); pointer-events: none; }
+    #root .gxf-tag { position: relative; z-index: 1; display: inline-block; font-family: var(--sans); font-weight: 800; font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gad); background: #fff; border-radius: 999px; padding: 0.4em 0.75em; margin-bottom: 0.75em; }
+    #root .gxf-title { position: relative; z-index: 1; font-family: var(--display); font-weight: 800; font-size: 1.7rem; line-height: 1.05; letter-spacing: -0.02em; color: #fff; margin: 0 0 0.4em; }
+    #root .gxf-body { position: relative; z-index: 1; font-size: 1.05rem; line-height: 1.6; color: rgba(255,255,255,0.94); margin: 0 0 1em; }
+    #root .gxf-examples { position: relative; z-index: 1; display: flex; flex-wrap: wrap; gap: 0.5em; }
+    #root .gxf-examples span { font-family: var(--sans); font-weight: 700; font-size: 0.86rem; color: #fff; background: rgba(255,255,255,0.18); border: 1.5px solid rgba(255,255,255,0.34); border-radius: 999px; padding: 0.45em 0.85em; }
 
     /* ── The story, moved below the options and made opt-in ── */
     #root .story { margin: 2.5em 0 0; background: #fff; border: 1px solid var(--rule); border-radius: 18px; box-shadow: var(--shadow-sm); overflow: hidden; }
@@ -557,16 +606,44 @@
       // and only then the narrative, folded away for whoever wants it.
       // Traditions without `grab` keep the original story-first layout.
       const g = m.grab;
+      // Build the grabber as a deliberately VARIED sequence — every block a
+      // different shape/density/colour so the scanning eye keeps getting caught.
+      const gStats = g && g.stats ? `<div class="grab-stats">${g.stats.map((s, i) => `
+        <div class="gstat${i === 1 ? ' mid' : ''}"><span class="gs-n">${s.n}${s.unit ? `<span class="gs-u">${s.unit}</span>` : ''}</span><span class="gs-l">${s.l}</span></div>`).join('')}</div>` : '';
+      const gOpen = g && g.openBody ? `
+        <div class="gx-cross">${g.openCross || 'The problem'}</div>
+        <p class="gx-open">${hl(g.openBody)}</p>` : '';
+      const gContrast = g && g.contrast ? `
+        <div class="gx-cross">${g.contrast.cross || 'The difference'}</div>
+        <div class="gx-contrast">
+          <div class="gxc gxc-old"><div class="gxc-label">${g.contrast.old.label}</div><ul>${g.contrast.old.items.map(x => `<li>${x}</li>`).join('')}</ul></div>
+          <div class="gxc gxc-new"><div class="gxc-label">${g.contrast.alpha.label}</div><ul>${g.contrast.alpha.items.map(x => `<li>${x}</li>`).join('')}</ul></div>
+        </div>` : '';
+      const gBigQ = g && g.bigQuote ? `<blockquote class="gx-bigq"><p>${g.bigQuote.text}</p>${g.bigQuote.cite ? `<cite>${g.bigQuote.cite}</cite>` : ''}</blockquote>` : '';
+      const gPoints = g && g.points ? `
+        <div class="gx-cross">${g.pointsCross || 'What makes it work'}</div>
+        <ul class="grab-points">${g.points.map(p => `<li><span class="gp-lead">${p.lead}</span><span class="gp-rest">${hl(p.rest)}</span></li>`).join('')}</ul>` : '';
+      const gMark = g && g.mark ? `<p class="gx-mark"><span>${g.mark}</span></p>` : '';
+      const gFeature = g && g.feature ? `
+        <div class="gx-feature">
+          <span class="gxf-mark" aria-hidden="true">★</span>
+          <span class="gxf-tag">${g.feature.tag}</span>
+          <h3 class="gxf-title">${g.feature.title}</h3>
+          <p class="gxf-body">${g.feature.body}</p>
+          ${g.feature.examples ? `<div class="gxf-examples">${g.feature.examples.map(e => `<span>${e}</span>`).join('')}</div>` : ''}
+        </div>` : '';
+
       const grabber = g ? `
-        <section class="grab">
+        <section class="grab" style="--ga:${m.color};--gad:${m.colorDeep};--gas:${m.colorSoft}">
           <h2 class="grab-hook">${g.hook}</h2>
           ${g.promise ? `<p class="grab-promise">${g.promise}</p>` : ''}
-          ${g.stats ? `<div class="grab-stats">${g.stats.map(s => `
-            <div class="gstat"><span class="gs-n">${s.n}</span><span class="gs-l">${s.l}</span></div>`).join('')}</div>` : ''}
-          ${g.points ? `
-            <div class="grab-label">The whole idea, at a glance</div>
-            <ul class="grab-points">${g.points.map(p => `<li><b>${p.lead}</b> ${hl(p.rest)}</li>`).join('')}</ul>` : ''}
-          ${g.quote ? `<blockquote class="pullquote"><p>${g.quote.text}</p>${g.quote.cite ? `<cite>${g.quote.cite}</cite>` : ''}</blockquote>` : ''}
+          ${gStats}
+          ${gOpen}
+          ${gContrast}
+          ${gBigQ}
+          ${gPoints}
+          ${gMark}
+          ${gFeature}
         </section>` : '';
 
       const storyBlock = g ? `
