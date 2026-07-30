@@ -383,6 +383,41 @@
     #root .act-nudge b { color: #5E440C; }
     #root .act-nudge-emo { font-size: 1.25rem; line-height: 1; flex: 0 0 auto; }
 
+    /* ── ACTIVITIES v3 — homepage-style photo BARS that drop down + a quick-nav ── */
+    /* quick-nav: little squares that jump to (and open) a topic */
+    #root .act-nav { display: flex; flex-wrap: wrap; gap: 0.5em; margin: 1.4em 0 1.2em; }
+    #root .act-chip { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 0.35em; cursor: pointer; background: #fff; border: none; border-radius: 14px; padding: 0.75em 0.5em 0.7em; box-shadow: var(--shadow-sm); position: relative; overflow: hidden; transition: transform 0.14s ease; }
+    #root .act-chip::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.5px; background: linear-gradient(135deg, var(--gc), var(--gcd)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; opacity: 0.5; }
+    #root .act-chip:active { transform: scale(0.95); }
+    #root .act-chip-emo { width: 2em; height: 2em; border-radius: 999px; background: linear-gradient(150deg, var(--gc), var(--gcd)); display: grid; place-items: center; font-size: 1.05rem; line-height: 1; box-shadow: 0 3px 8px color-mix(in srgb, var(--gc) 32%, transparent); }
+    #root .act-chip-lbl { font-family: var(--sans); font-weight: 800; font-size: 0.68rem; letter-spacing: 0.01em; color: var(--ink); line-height: 1.15; text-align: center; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+    /* the topic drop-downs */
+    #root .act-topics { display: grid; gap: 0.7em; }
+    #root .act-topic { position: relative; overflow: hidden; background: #fff; border-radius: 18px; box-shadow: var(--shadow-sm); }
+    #root .act-topic::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.6px; background: linear-gradient(135deg, var(--gc), var(--gcd)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; opacity: 0.5; z-index: 3; }
+    /* the bar: photo left, text right, plus far right */
+    #root .act-bar { list-style: none; cursor: pointer; display: flex; align-items: stretch; gap: 0; }
+    #root .act-bar::-webkit-details-marker { display: none; }
+    #root .act-bar-photo { flex: 0 0 auto; width: 92px; align-self: stretch; position: relative; overflow: hidden; background: linear-gradient(150deg, var(--gc), var(--gcd)); background-size: cover; background-position: center; }
+    #root .act-bar-photo-ov { position: absolute; inset: 0; background: linear-gradient(120deg, transparent, color-mix(in srgb, var(--gc) 16%, transparent)); }
+    #root .act-bar-photo--emo { display: grid; place-items: center; }
+    #root .act-bar-emo { font-size: 2rem; line-height: 1; filter: drop-shadow(0 2px 3px rgba(0,0,0,0.22)); }
+    #root .act-bar-text { flex: 1; min-width: 0; padding: 0.85em 0.5em 0.85em 1em; display: flex; flex-direction: column; justify-content: center; gap: 0.22em; }
+    #root .act-bar-kicker { font-family: var(--sans); font-weight: 800; font-size: 0.64rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gcd); }
+    #root .act-bar-name { font-family: var(--display); font-weight: 800; font-size: clamp(1.08rem, 4.4vw, 1.24rem); line-height: 1.18; letter-spacing: -0.015em; color: var(--ink); }
+    #root .act-bar-plus { flex: 0 0 auto; align-self: center; width: 1.5em; height: 1.5em; position: relative; margin-right: 1em; }
+    #root .act-bar-plus::before, #root .act-bar-plus::after { content: ""; position: absolute; top: 50%; left: 50%; background: var(--gc); border-radius: 2px; transform: translate(-50%, -50%); transition: opacity 0.2s ease, transform 0.2s ease; }
+    #root .act-bar-plus::before { width: 0.95em; height: 2.5px; }
+    #root .act-bar-plus::after { width: 2.5px; height: 0.95em; }
+    #root .act-topic[open] .act-bar-plus::after { opacity: 0; transform: translate(-50%, -50%) rotate(90deg); }
+    #root .act-topic[open] .act-bar { border-bottom: 1px solid var(--rule); }
+    #root .act-topic-body { padding: 0.4em 1.05em 0.6em; }
+    #root .act-topic-body .act-group-intro { margin: 0.7em 0.05em 0.3em; }
+    #root .act-list--flat { background: #fff; border-radius: 16px; padding: 0.35em 1.05em; box-shadow: var(--shadow-sm); }
+    /* inside a topic drop-down the list is bare — the topic card is the frame */
+    #root .act-topic-body .act-list { background: none; border-radius: 0; padding: 0; box-shadow: none; }
+
     /* ════════════════════════════════════════════════════════════
        THE GRABBER v8 — dead simple. Seven punchy core ideas as a clean
        tap-to-open list. Scannable at a glance (bold titles), detail on demand
@@ -803,30 +838,56 @@
           { c: '#B83A6E', cd: '#8E2A54' }, { c: '#2563A8', cd: '#1B4C82' }
         ];
         const GEMO = ['🏠', '✨', '✍️', '🍎', '🎨', '🌳'];
+        const grouped = !!(groups[0] && groups[0].heading);
+        // Short chip label — first word or two of the heading, for the quick-nav.
+        const shortLbl = (h) => h.split(/[&,]| and /)[0].trim();
         let n = 0;
-        const midQuote = s.quote && groups.length > 2 ? Math.floor(groups.length / 2) : -1;
+        // Each themed group becomes a homepage-style BAR (photo left, title right)
+        // that opens as a drop-down — so the page is short and you tap what you want.
         const blocks = groups.map((g, gi) => {
           const a = GA[gi % GA.length];
-          const head = g.heading
-            ? `<div class="act-banner" style="--gc:${a.c};--gcd:${a.cd}">
-                 <span class="act-banner-emo" aria-hidden="true">${g.icon || GEMO[gi % GEMO.length]}</span>
-                 <span class="act-banner-txt">
-                   <span class="act-banner-kicker">Part ${String(gi + 1).padStart(2, '0')}</span>
-                   <span class="act-banner-name">${g.heading}</span>
-                 </span>
-                 <span class="act-count">${g.items.length} to try</span>
-               </div>${g.intro ? `<p class="act-group-intro">${hl(g.intro)}</p>` : ''}`
-            : '';
+          if (!grouped) {
+            const rows = g.items.map(x => item(x, ++n)).join('');
+            return `<div class="act-list act-list--flat">${rows}</div>`;
+          }
+          const emo = g.icon || GEMO[gi % GEMO.length];
           const rows = g.items.map(x => item(x, ++n)).join('');
-          const brk = gi === midQuote ? `<blockquote class="pullquote"><p>${s.quote.text}</p>${s.quote.cite ? `<cite>${s.quote.cite}</cite>` : ''}</blockquote>` : '';
-          return `<div class="act-group" style="--gc:${a.c};--gcd:${a.cd}">${head}<div class="act-list">${rows}</div></div>${brk}`;
+          const photo = g.photo
+            ? `<span class="act-bar-photo" style="background-image:url('${g.photo}')"><span class="act-bar-photo-ov"></span></span>`
+            : `<span class="act-bar-photo act-bar-photo--emo"><span class="act-bar-emo" aria-hidden="true">${emo}</span></span>`;
+          return `
+            <details class="act-topic" id="act-g${gi}" style="--gc:${a.c};--gcd:${a.cd}">
+              <summary class="act-bar">
+                ${photo}
+                <span class="act-bar-text">
+                  <span class="act-bar-kicker">${emo} Part ${String(gi + 1).padStart(2, '0')} · ${g.items.length} to try</span>
+                  <span class="act-bar-name">${g.heading}</span>
+                </span>
+                <span class="act-bar-plus" aria-hidden="true"></span>
+              </summary>
+              <div class="act-topic-body">
+                ${g.intro ? `<p class="act-group-intro">${hl(g.intro)}</p>` : ''}
+                <div class="act-list">${rows}</div>
+              </div>
+            </details>`;
         }).join('');
+        // Quick-nav: little squares that jump to (and open) a topic.
+        const nav = grouped ? `
+          <div class="act-nav">${groups.map((g, gi) => {
+            const a = GA[gi % GA.length];
+            return `<button type="button" class="act-chip" data-target="act-g${gi}" style="--gc:${a.c};--gcd:${a.cd}">
+              <span class="act-chip-emo" aria-hidden="true">${g.icon || GEMO[gi % GEMO.length]}</span>
+              <span class="act-chip-lbl">${shortLbl(g.heading)}</span>
+            </button>`;
+          }).join('')}</div>` : '';
         const total = groups.reduce((t, g) => t + g.items.length, 0);
         body = `
           <div class="ed-lead ed-lead-intro">${multiPara(s.intro, 2)}</div>
           <p class="act-nudge"><span class="act-nudge-emo" aria-hidden="true">💡</span>
             <span><b>You are not meant to do all ${total}.</b> Pick one or two that catch your eye — that is the whole method.</span></p>
-          ${blocks}
+          ${nav}
+          <div class="act-topics">${blocks}</div>
+          ${s.quote ? `<blockquote class="pullquote"><p>${s.quote.text}</p>${s.quote.cite ? `<cite>${s.quote.cite}</cite>` : ''}</blockquote>` : ''}
         `;
       } else if (key === 'reading-list') {
         body = `
@@ -938,6 +999,15 @@
           else window.Reader.readElement(document.getElementById('root'));
         });
       }
+      // Activities quick-nav: a chip opens its topic drop-down and scrolls to it.
+      document.querySelectorAll('.act-chip').forEach((chip) => {
+        chip.addEventListener('click', () => {
+          const t = document.getElementById(chip.dataset.target);
+          if (!t) return;
+          t.open = true;
+          t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      });
     }
 
     if ('serviceWorker' in navigator) {
