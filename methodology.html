@@ -414,6 +414,8 @@
     #root .act-topic[open] .act-bar { border-bottom: 1px solid var(--rule); }
     #root .act-topic-body { padding: 0.4em 1.05em 0.6em; }
     #root .act-topic-body .act-group-intro { margin: 0.7em 0.05em 0.3em; }
+    /* bring-it-home step detail inside a drop-down bar */
+    #root .act-topic-body .bih-step-d { font-family: var(--sans); font-size: 1.02rem; line-height: 1.6; color: var(--ink-soft); margin: 0.55em 0.05em 0.35em; }
     #root .act-list--flat { background: #fff; border-radius: 16px; padding: 0.35em 1.05em; box-shadow: var(--shadow-sm); }
     /* inside a topic drop-down the list is bare — the topic card is the frame */
     #root .act-topic-body .act-list { background: none; border-radius: 0; padding: 0; box-shadow: none; }
@@ -948,7 +950,23 @@
         body = `
           <div class="ed-lead ed-lead-intro">${multiPara(s.intro, 2)}</div>
           ${s.steps ? `<div class="bih-cross">Build your own version</div>
-            <ol class="bih-steps">${s.steps.map(x => `<li><span class="bih-step-t">${x.t}</span><span class="bih-step-d">${hl(x.d)}</span></li>`).join('')}</ol>` : ''}
+            <div class="act-topics">${s.steps.map((x, i) => {
+              const a = PRINCIPLE_ACCENTS[i % PRINCIPLE_ACCENTS.length];
+              const photo = x.photo
+                ? `<span class="act-bar-photo" style="background-image:url('${x.photo}')"><span class="act-bar-photo-ov"></span></span>`
+                : `<span class="act-bar-photo act-bar-photo--emo"><span class="act-bar-emo" aria-hidden="true">🌱</span></span>`;
+              return `<details class="act-topic" style="--gc:${a.c};--gcd:${a.cd}">
+                <summary class="act-bar">
+                  ${photo}
+                  <span class="act-bar-text">
+                    <span class="act-bar-kicker">Step ${i + 1}</span>
+                    <span class="act-bar-name">${x.t}</span>
+                  </span>
+                  <span class="act-bar-plus" aria-hidden="true"></span>
+                </summary>
+                <div class="act-topic-body"><p class="bih-step-d">${hl(x.d)}</p></div>
+              </details>`;
+            }).join('')}</div>` : ''}
           ${s.apps ? `<div class="bih-cross">The apps to reach for</div>
             <div class="bih-apps">${s.apps.map(appCard).join('')}</div>
             <p class="bih-fine">Free where it says free. Links open the App Store or Google Play — always check what suits your child before downloading.</p>` : ''}
