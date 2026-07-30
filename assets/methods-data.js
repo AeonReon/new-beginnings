@@ -171,6 +171,7 @@ window.METHODS = [
                         "heading": "Books & narration",
                         "intro": "Read a living book, then let them tell it back — the heart of the method.",
                         "icon": "📖",
+                        "photo": "assets/methods/classical/act-beauty.jpg",
                         "items": [
                                 {
                                         "name": "Read one Beatrix Potter, twice",
@@ -226,6 +227,7 @@ window.METHODS = [
                         "heading": "Beauty: picture, music & making",
                         "intro": "One painting, one piece of music, one made thing — slowly, deeply.",
                         "icon": "🎨",
+                        "photo": "assets/methods/waldorf/act-making.jpg",
                         "items": [
                                 {
                                         "name": "Picture study, one painting, two weeks",
@@ -878,6 +880,7 @@ window.METHODS = [
                         "heading": "Story, song & outdoors",
                         "intro": "A tale told from memory, a simple tune, a walk in any weather.",
                         "icon": "🎵",
+                        "photo": "assets/methods/charlotte-mason/act-nature.jpg",
                         "items": [
                                 {
                                         "name": "Tell a fairy tale from memory",
@@ -1120,6 +1123,7 @@ window.METHODS = [
                         "heading": "Memory & words",
                         "intro": "A verse, a fable, a family saying — filling the well, a little each day.",
                         "icon": "📜",
+                        "photo": "assets/methods/forest-school/act-watching.jpg",
                         "items": [
                                 {
                                         "name": "Memorise one short verse a month",
@@ -1179,6 +1183,7 @@ window.METHODS = [
                         "heading": "Heroes, faith & virtue",
                         "intro": "Stories of brave and good people, and one small habit practised for real.",
                         "icon": "⭐",
+                        "photo": "assets/methods/waldorf/act-seasons.jpg",
                         "items": [
                                 {
                                         "name": "Read a saint's life or hero story weekly",
@@ -1461,6 +1466,7 @@ window.METHODS = [
                         "heading": "Outdoors & nature",
                         "intro": "The same wild place through the year — moon, birds, blackberries, sunset.",
                         "icon": "🌳",
+                        "photo": "assets/methods/charlotte-mason/act-nature.jpg",
                         "items": [
                                 {
                                         "name": "A weekly nature walk to the same place",
@@ -1496,6 +1502,7 @@ window.METHODS = [
                         "heading": "The gathered morning",
                         "intro": "A basket of books, poems and songs to open the day together.",
                         "icon": "📖",
+                        "photo": "assets/methods/classical/act-beauty.jpg",
                         "items": [
                                 {
                                         "name": "A morning basket setup",
@@ -1551,6 +1558,7 @@ window.METHODS = [
                         "heading": "Slow living, together",
                         "intro": "Meeting other families, marking the season, and leaving room to breathe.",
                         "icon": "☀️",
+                        "photo": "assets/methods/_shared/walk.jpg",
                         "items": [
                                 {
                                         "name": "A monthly meet-up with another family",
@@ -1799,6 +1807,7 @@ window.METHODS = [
                         "heading": "Light, colour & shadow",
                         "intro": "A light table, a mirror, a shadow walk — the world made strange and lovely.",
                         "icon": "💡",
+                        "photo": "assets/methods/montessori/act-the-hand.jpg",
                         "items": [
                                 {
                                         "name": "Set up a light table",
@@ -1854,6 +1863,7 @@ window.METHODS = [
                         "heading": "Wonder & investigation",
                         "intro": "A puddle, a magnifying glass, a weekly question worth chasing.",
                         "icon": "🔍",
+                        "photo": "assets/methods/forest-school/act-watching.jpg",
                         "items": [
                                 {
                                         "name": "A puddle investigation",
@@ -1881,6 +1891,7 @@ window.METHODS = [
                         "heading": "Loose parts & documenting",
                         "intro": "Open-ended bits to build with, and a record of what unfolds.",
                         "icon": "🧩",
+                        "photo": "assets/methods/_shared/blocks.jpg",
                         "items": [
                                 {
                                         "name": "Document today's work",
@@ -2134,6 +2145,7 @@ window.METHODS = [
                         "heading": "Fire & cooking",
                         "intro": "A small fire, a stick to cook on, and a story to close the day.",
                         "icon": "🔥",
+                        "photo": "assets/methods/_shared/fire.jpg",
                         "items": [
                                 {
                                         "name": "Light a small fire (with adult)",
@@ -2468,6 +2480,7 @@ window.METHODS = [
                         "heading": "Out in the world",
                         "intro": "Errands, museums, buses, long visits — real life is the curriculum.",
                         "icon": "🚌",
+                        "photo": "assets/methods/classical/act-beauty.jpg",
                         "items": [
                                 {
                                         "name": "Take them on every errand",
@@ -2499,6 +2512,7 @@ window.METHODS = [
                         "heading": "Follow the interest",
                         "intro": "Feed the obsession — a magazine, the library, a strewn new thing.",
                         "icon": "🔎",
+                        "photo": "assets/methods/forest-school/act-watching.jpg",
                         "items": [
                                 {
                                         "name": "Subscribe to one good magazine",
@@ -2526,6 +2540,7 @@ window.METHODS = [
                         "heading": "Make & do at home",
                         "intro": "Cook it, plant it, build it, spend the real money — do the real thing.",
                         "icon": "🍳",
+                        "photo": "assets/methods/charlotte-mason/act-realwork.jpg",
                         "items": [
                                 {
                                         "name": "Cook a meal end-to-end together",
@@ -2553,6 +2568,7 @@ window.METHODS = [
                         "heading": "Space to be",
                         "intro": "A yes-house, a dance party, and an afternoon free to be gloriously bored.",
                         "icon": "🎶",
+                        "photo": "assets/methods/_shared/play.jpg",
                         "items": [
                                 {
                                         "name": "Set up a \"yes\" environment",
@@ -2802,6 +2818,7 @@ window.METHODS = [
                         "heading": "Homer, heroes & words",
                         "intro": "The great stories told aloud, and a first taste of the Greek tongue.",
                         "icon": "📜",
+                        "photo": "assets/methods/classical/act-wonder.jpg",
                         "items": [
                                 {
                                         "name": "Tell a Homer episode from memory",
@@ -2829,6 +2846,7 @@ window.METHODS = [
                         "heading": "Gods, art & beauty",
                         "intro": "A vase, a statue, a little shrine — beauty and the sacred, side by side.",
                         "icon": "🏺",
+                        "photo": "assets/methods/classical/act-beauty.jpg",
                         "items": [
                                 {
                                         "name": "Visit a museum and find a Greek vase",
@@ -2856,6 +2874,7 @@ window.METHODS = [
                         "heading": "Body & play — the gymnastic",
                         "intro": "Running, wrestling, knucklebones — the body trained alongside the mind.",
                         "icon": "🤸",
+                        "photo": "assets/methods/_shared/play.jpg",
                         "items": [
                                 {
                                         "name": "Knucklebones (or jacks)",
@@ -2875,6 +2894,7 @@ window.METHODS = [
                         "heading": "Home, song & seasons",
                         "intro": "Olive oil, a hymn, the turning year, and real talk at the table.",
                         "icon": "🫒",
+                        "photo": "assets/methods/montessori/act-food-nature.jpg",
                         "items": [
                                 {
                                         "name": "A weekly hymn",
@@ -3130,6 +3150,7 @@ window.METHODS = [
                         "heading": "Great Roman stories",
                         "intro": "Cincinnatus, Horatius, Cornelia — and your own family's stories too.",
                         "icon": "📜",
+                        "photo": "assets/methods/classical/act-wonder.jpg",
                         "items": [
                                 {
                                         "name": "Tell the story of Cincinnatus",
@@ -3157,6 +3178,7 @@ window.METHODS = [
                         "heading": "The shrine & the prayer",
                         "intro": "A household shrine and a few small daily rituals of belonging.",
                         "icon": "🏛️",
+                        "photo": "assets/methods/waldorf/act-seasons.jpg",
                         "items": [
                                 {
                                         "name": "A household shrine (lararium)",
@@ -3212,6 +3234,7 @@ window.METHODS = [
                         "heading": "Words, art & gathering",
                         "intro": "A Latin phrase, a noble building, a walk and a meal all together.",
                         "icon": "🏺",
+                        "photo": "assets/methods/_shared/walk.jpg",
                         "items": [
                                 {
                                         "name": "A weekly family meal with real conversation",
@@ -3460,6 +3483,7 @@ window.METHODS = [
                         "heading": "Short, sharp learning",
                         "intro": "Two focused bursts, mastered before moving on — the two-hour idea at home.",
                         "icon": "⏱️",
+                        "photo": "assets/methods/montessori/act-the-hand.jpg",
                         "items": [
                                 {
                                         "name": "Do a short, sharp burst",
