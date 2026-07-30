@@ -396,6 +396,347 @@ window.METHODS = [
   },
   {
     id: 'montessori',
+    stages: {
+          "6-9": {
+                "day-in-life": {
+                      "title": "A day in the life",
+                      "icon": "sun",
+                      "intro": "A six- to nine-year-old is a different creature from the little one who just wanted to touch and pour. Now the mind reasons, imagines, and asks why about everything. The day still holds a long stretch of self-chosen work, but it fills up with big questions, real projects, and the itch to test ideas against the wide world. At home, with one child, the shape is loose and led by what they are chasing that week.",
+                      "timeline": [
+                            {
+                                  "time": "7:30",
+                                  "title": "Waking and the real jobs of the house",
+                                  "body": "They get themselves up and dressed, and take on a share of the morning that actually matters. Making breakfast for the family, feeding a pet, checking the calendar. At this age a child wants responsibility that is real, not pretend, because they are building a picture of themselves as a capable person in a working household."
+                            },
+                            {
+                                  "time": "8:30",
+                                  "title": "A big story to open the mind",
+                                  "body": "You tell one of the great impressionistic stories, or return to one, told with drama and wonder rather than facts to memorise. The coming of the universe, the coming of life, how numbers or writing began. The point is to light a fire: everything is connected, and the small thing they study today hangs on a huge frame."
+                            },
+                            {
+                                  "time": "9:00",
+                                  "title": "The long work cycle begins",
+                                  "body": "This is the heart of the day and it must not be chopped up. The child chooses what to pursue and settles into deep concentration for a couple of uninterrupted hours. Some days that is a self-chosen research project; other days it is maths materials, word study, or a timeline they are building across the floor."
+                            },
+                            {
+                                  "time": "9:30",
+                                  "title": "Following a question down the rabbit hole",
+                                  "body": "Say they asked why volcanoes erupt. Now they read about it, draw it, maybe build a model, and want to know where the nearest volcano ever was. You do not tidy the question into a neat lesson. You give them the reference books, the materials, and the room to chase it as far as it will go."
+                            },
+                            {
+                                  "time": "10:30",
+                                  "title": "Maths you can hold in your hands",
+                                  "body": "The reasoning mind can start to let go of the concrete, but not all at once. They work with hands-on materials that show what is really happening in multiplication, fractions, or large numbers, moving slowly toward doing it on paper. The material is the bridge; you never rush them across it before they are ready."
+                            },
+                            {
+                                  "time": "11:30",
+                                  "title": "Going out into the real world",
+                                  "body": "The child plans a genuine trip to research something. The library for a book they need, a museum, a farm, or a shop to ask a real question of a real person. They work out how to get there and what to ask. This is not a treat bolted on; it is the second plane's deep need for independence and community, taken seriously."
+                            },
+                            {
+                                  "time": "13:00",
+                                  "title": "Cooking and caring for the space",
+                                  "body": "Lunch is often something they help make from start to finish, following a real recipe and doing the sums to double it. Afterwards, caring for the home. At this age these are not chores to endure but proof that they belong to a working world, and cooking quietly folds in reading, measuring, and planning."
+                            },
+                            {
+                                  "time": "14:00",
+                                  "title": "Working alongside others",
+                                  "body": "This age is gregarious to the bone. They want to work with other children, argue ideas, and share a project. So the afternoon leans social when it can: a home-ed group, a club, a friend, a shared build. Their fierce new sense of fairness gets exercised here, in real negotiation with real people."
+                            },
+                            {
+                                  "time": "16:00",
+                                  "title": "Free time, movement, and their own pursuits",
+                                  "body": "Boundless energy needs somewhere to go. Running, climbing, a sport, or a self-driven hobby they have chosen for themselves. This is not filler between the real work; it is where the body keeps pace with the fast-growing mind, and where they practise being the author of their own time."
+                            },
+                            {
+                                  "time": "19:30",
+                                  "title": "Reading together and winding down",
+                                  "body": "The day closes with a shared book, often something meatier than a picture book now, and easy talk about whatever they are wondering about. A calm, connected end matters more than a tidy one, and the questions raised here often become tomorrow's project."
+                            }
+                      ],
+                      "note": "The one thing that never bends is the long, uninterrupted work cycle and the child's right to follow a real question all the way; the times, the trips, and the order of the day flex completely around what your one child is chasing this week."
+                },
+                "activities": {
+                      "title": "Things to do this week",
+                      "icon": "hand",
+                      "intro": "Your child is six to nine now. The mind wants reasons, not just facts. It wants the big picture, the whole story, the why behind everything. It loves working with others, it feels justice keenly, and it can imagine worlds it has never seen. So this week we open big doors and follow where the child runs. Nothing here is a fixed lesson. Each one is an invitation. Watch which one lights them up, and give that one more room.",
+                      "groups": [
+                            {
+                                  "heading": "The Great Lessons & big questions",
+                                  "intro": "Open a huge story, then follow the child's own questions out from it.",
+                                  "icon": "🌌",
+                                  "items": [
+                                        {
+                                              "name": "Tell the story of the universe",
+                                              "body": "Sit together and tell how everything began, from nothing, to stars, to our own planet cooling down. Tell it like a wonder tale, not a lecture. Then just ask: what do you want to know more about? Follow that thread all week."
+                                        },
+                                        {
+                                              "name": "The coming of life",
+                                              "body": "Tell how the first tiny life appeared in the sea, and how over a very long time it grew into fish, then land animals, then us. Draw a long strip together showing the order things arrived. Let their questions decide what you look up next."
+                                        },
+                                        {
+                                              "name": "A 'big question' jar",
+                                              "body": "Give your child a jar and small paper slips. Every time they ask a big question this week, they write it down and drop it in. On one day, pull one out and hunt the answer together, using books, a walk, or a phone call to someone who knows."
+                                        },
+                                        {
+                                              "name": "The story of numbers",
+                                              "body": "Tell how humans once had no numbers, and counted with stones, knots, and marks on bone. Show how counting was invented because people needed to trade and remember. Let your child invent their own number marks, then compare with how Romans or Egyptians did it."
+                                        },
+                                        {
+                                              "name": "The story of writing",
+                                              "body": "Tell how people first drew pictures to send messages, then slowly turned pictures into letters. Give your child clay or dough and let them press their own picture-signs. Then ask: how would you write your name if letters had not been invented yet?"
+                                        }
+                                  ],
+                                  "photo": "assets/methods/classical/act-wonder.jpg"
+                            },
+                            {
+                                  "heading": "Going out & the real world",
+                                  "intro": "A real question, a real trip, real research in your own community.",
+                                  "icon": "🚶",
+                                  "items": [
+                                        {
+                                              "name": "Plan a 'going out' trip",
+                                              "body": "Pick a question your child cares about, like where does our water come from, or who built that old bridge. Together plan the trip: where to go, what to ask, what to bring. Your child does the planning, not you, and you go along to help."
+                                        },
+                                        {
+                                              "name": "Interview a real worker",
+                                              "body": "Help your child choose someone in your town with a real job, a baker, a farmer, a fixer of things. Write three or four questions first. Then visit or phone, and let your child ask and remember the answers to share later."
+                                        },
+                                        {
+                                              "name": "Map your own street",
+                                              "body": "Walk your road slowly with paper and pencil. Draw the houses, the trees, the postbox, the shop, in the right order. Back home, make a neat map together and mark what is living, what is built by people, and what is natural."
+                                        },
+                                        {
+                                              "name": "Library research mission",
+                                              "body": "Take a trip to your local library with one question to answer. Show your child how to find the right shelf and ask the librarian for help. They leave with a book they chose to answer their own question, not one you picked."
+                                        },
+                                        {
+                                              "name": "Track where your food comes from",
+                                              "body": "On a shop trip, pick five foods and find where each one was grown or made, reading the labels together. Back home, find those places on a map or globe. Ask: which travelled furthest to reach our kitchen, and why?"
+                                        }
+                                  ],
+                                  "photo": "assets/methods/_shared/walk.jpg"
+                            },
+                            {
+                                  "heading": "Hands to abstraction — maths & language",
+                                  "intro": "Start with real things you can touch, then let the child let go of them.",
+                                  "icon": "🔢",
+                                  "items": [
+                                        {
+                                              "name": "Build big numbers with real objects",
+                                              "body": "Use dried beans, buttons, or stones. Make ones, then bundle ten into a group, then ten groups into a hundred. Let your child hold a hundred in their hands, then write the number beside it, so the symbol means something real."
+                                        },
+                                        {
+                                              "name": "The passage to paper",
+                                              "body": "Once your child can build a sum with objects, ask them to do the same sum again using only pencil and paper. Do a few both ways, side by side. Soon they will reach for the paper first, because they trust the objects underneath it."
+                                        },
+                                        {
+                                              "name": "Make a timeline of their own day",
+                                              "body": "Draw a long line across a page for one day, from waking to sleeping. Your child marks each thing that happened and roughly when. This makes time visible, and it is the first step toward the big history timelines they will love."
+                                        },
+                                        {
+                                              "name": "Word-study hunt",
+                                              "body": "Pick one small word part, like 'un' or 'tri' or 'port'. Together hunt for words that carry it, undo, triangle, transport, and work out what the part means on its own. Your child becomes a detective who cracks words open to see inside."
+                                        },
+                                        {
+                                              "name": "Grammar with moving cards",
+                                              "body": "Write a few nouns, verbs, and describing words on separate cards. Lay them out and build silly sentences by swapping cards. Ask: which words name a thing, which ones do an action? They feel grammar as something you move, not something you memorise."
+                                        }
+                                  ],
+                                  "photo": "assets/methods/montessori/act-the-hand.jpg"
+                            },
+                            {
+                                  "heading": "Real work & caring for the world",
+                                  "intro": "Real responsibility, given fully, because the child is ready to carry it.",
+                                  "icon": "🌱",
+                                  "items": [
+                                        {
+                                              "name": "Cook a real meal, start to finish",
+                                              "body": "Choose a simple meal together. Your child helps plan it, measures the ingredients, cooks with your help, and serves it to the family. Let them do the real steps, not pretend ones, and thank them the way you would thank any cook."
+                                        },
+                                        {
+                                              "name": "Keep a small budget",
+                                              "body": "Give your child a small real amount for one shopping errand this week, perhaps for fruit or bread. Help them plan what to buy, add up the cost, and hand over the money. They learn that numbers live in the real world, not just on paper."
+                                        },
+                                        {
+                                              "name": "Care for a growing thing",
+                                              "body": "Plant seeds in a pot or care for a corner of the garden. Your child waters, watches, and keeps a little log of what changes each day. It is slow, real responsibility, and the plant does not grow unless they remember."
+                                        },
+                                        {
+                                              "name": "Sort and name living things",
+                                              "body": "Go outside and gather leaves, or watch the birds and bugs. Back home, sort them into groups your child invents, then look up the real names and families. This is the beginning of classifying the living world, which the elementary child loves."
+                                        },
+                                        {
+                                              "name": "Take charge of one space",
+                                              "body": "Give your child full care of one real area, a bookshelf, the shoe rack, the plant corner. They decide how it should be ordered, set it right, and keep it that way all week. Real trust in a real job builds a real sense of dignity."
+                                        }
+                                  ],
+                                  "photo": "assets/methods/wild-free/act-growing.jpg"
+                            }
+                      ],
+                      "quote": {
+                            "text": "The greatest sign of success for a teacher is to be able to say, 'The children are now working as if I did not exist.'",
+                            "cite": "Maria Montessori"
+                      }
+                },
+                "reading-list": {
+                      "title": "Reading list",
+                      "icon": "book",
+                      "intro": "At 6 to 9 the child is crossing into the reasoning years. They want the big picture, real knowledge, heroes, and true stories — not thin, silly books. Montessori called this hunger the reasoning mind, and it is fed by real, living books over twaddle. This is a well to draw from, not a list to finish. The reading range at this age is huge: one child of eight reads long chapter books alone, another still loves being read to. Both are right. Follow your child, read aloud often, and let their questions choose the next book.",
+                      "forChild": {
+                            "intro": "Real stories, real knowledge, real wonder — many still want the best ones read aloud.",
+                            "groups": [
+                                  {
+                                        "heading": "First real chapter books & read-alouds",
+                                        "books": [
+                                              "Charlotte's Web — E. B. White",
+                                              "The Little House series — Laura Ingalls Wilder",
+                                              "Winnie-the-Pooh — A. A. Milne",
+                                              "My Father's Dragon — Ruth Stiles Gannett",
+                                              "The Chronicles of Narnia — C. S. Lewis",
+                                              "Pippi Longstocking — Astrid Lindgren",
+                                              "The Tale of Despereaux — Kate DiCamillo",
+                                              "The Wind in the Willows — Kenneth Grahame (read aloud)"
+                                        ]
+                                  },
+                                  {
+                                        "heading": "Myths, legends & hero tales",
+                                        "books": [
+                                              "D'Aulaires' Book of Greek Myths — Ingri & Edgar Parin d'Aulaire",
+                                              "D'Aulaires' Book of Norse Myths — Ingri & Edgar Parin d'Aulaire",
+                                              "The Heroes — Charles Kingsley",
+                                              "Tales of King Arthur and the Round Table — retellings (Howard Pyle / Roger Lancelyn Green)",
+                                              "The Adventures of Robin Hood — Roger Lancelyn Green",
+                                              "Irish Fairy Tales — James Stephens",
+                                              "Celtic and Irish legends — Cú Chulainn and Fionn mac Cumhaill retellings"
+                                        ]
+                                  },
+                                  {
+                                        "heading": "How the world works — real knowledge & nature",
+                                        "books": [
+                                              "The Burgess Bird Book / Burgess Animal Book — Thornton W. Burgess",
+                                              "The Story of the World, Vol. 1 (Ancient Times) — Susan Wise Bauer",
+                                              "A Child's Introduction to the World / to Space — Heather Alexander",
+                                              "The Magic School Bus series — Joanna Cole",
+                                              "Anything by Gail Gibbons (real how-things-work non-fiction)",
+                                              "A good children's encyclopedia (DK or Usborne) to dip into"
+                                        ]
+                                  },
+                                  {
+                                        "heading": "Poetry, folk tales & wonder",
+                                        "books": [
+                                              "A Child's Garden of Verses — Robert Louis Stevenson",
+                                              "When We Were Very Young / Now We Are Six — A. A. Milne",
+                                              "The Blue Fairy Book — Andrew Lang (folk tales from around the world)",
+                                              "Aesop's Fables — a well-illustrated edition",
+                                              "Grimm's Fairy Tales — a good complete edition",
+                                              "The Random House Book of Poetry for Children — Jack Prelutsky (ed.)"
+                                        ]
+                                  }
+                            ]
+                      },
+                      "forParent": {
+                            "intro": "Montessori's own elementary work first, then trusted modern guides to the second plane.",
+                            "books": [
+                                  {
+                                        "title": "To Educate the Human Potential",
+                                        "author": "Maria Montessori",
+                                        "note": "Her core book on the elementary child and cosmic education. Short and foundational — start here."
+                                  },
+                                  {
+                                        "title": "The Advanced Montessori Method (Vols I & II)",
+                                        "author": "Maria Montessori",
+                                        "note": "Her own detailed work on the 6–12 child. Denser; read after the shorter book."
+                                  },
+                                  {
+                                        "title": "From Childhood to Adolescence",
+                                        "author": "Maria Montessori",
+                                        "note": "Carries the vision forward past elementary. Useful for seeing where the second plane is heading."
+                                  },
+                                  {
+                                        "title": "Montessori: The Science Behind the Genius",
+                                        "author": "Angeline Stoll Lillard",
+                                        "note": "The research-backed modern case for the method. Reassuring if you want evidence, not just tradition."
+                                  },
+                                  {
+                                        "title": "Understanding the Human Being",
+                                        "author": "Silvana Quattrocchi Montanaro",
+                                        "note": "Clear on the planes of development and why the 6–9 child changes. Good for the 'why' behind the shift."
+                                  }
+                            ]
+                      },
+                      "free": "Project Gutenberg and Librivox hold most of these classics free — the d'Aulaire-era myths, Kingsley's The Heroes, Burgess nature books, Aesop, Grimm, and Stevenson's verses, in text and audio."
+                },
+                "competency": {
+                      "title": "What to expect at 6–9",
+                      "icon": "sprout",
+                      "intro": "Something big is turning over. The little child who soaked up the world just by living in it is becoming a thinker. Now your child wants reasons. They ask why, they argue points of fairness, they want the whole big picture of how things fit together. These notes are here to help you recognise what you are seeing, not to grade it.",
+                      "landmarks": [
+                            {
+                                  "area": "The reasoning mind",
+                                  "items": [
+                                        "Asks why about everything, and wants a real answer, not a quick one",
+                                        "Loves the big picture: how the universe, life, or history all fits together",
+                                        "Imagines things they cannot see yet, from ancient times to far-off places",
+                                        "Reasons out loud, working a problem through by talking it over",
+                                        "Is drawn to the vast and the wonderful: dinosaurs, space, deep time"
+                                  ]
+                            },
+                            {
+                                  "area": "Social life & morality",
+                                  "items": [
+                                        "Wants to work and play in a group, not always alone",
+                                        "Has a best friend, or a few, and talks about them a lot",
+                                        "Feels fairness deeply, and will tell you loudly when something is not fair",
+                                        "Cares about right and wrong, and loves stories of heroes who do the right thing",
+                                        "Notices rules, tests them, and wants to help make them"
+                                  ]
+                            },
+                            {
+                                  "area": "Independence & real responsibility",
+                                  "items": [
+                                        "Wants real jobs that matter, not pretend ones",
+                                        "Likes to plan a trip, a project, or a whole afternoon",
+                                        "Can carry out a task from start to finish when it means something to them",
+                                        "Enjoys going out into the world: the shop, the library, a walk with a purpose",
+                                        "Takes pride in being trusted with something important"
+                                  ]
+                            },
+                            {
+                                  "area": "Reading & writing",
+                                  "items": [
+                                        "Reading gets smoother, and may slip into quiet reading to themselves",
+                                        "Reads for the story or the facts, not just to practise",
+                                        "Writing starts to flow, sometimes long and messy and full of ideas",
+                                        "Writes to a friend, a list, a story, a plan of their own",
+                                        "Spelling and neatness come along in their own time, at their own pace"
+                                  ]
+                            },
+                            {
+                                  "area": "Maths — concrete to abstract",
+                                  "items": [
+                                        "Moves from beads and blocks toward numbers on paper",
+                                        "Starts to hold sums in their head instead of only in their hands",
+                                        "Enjoys big numbers, and the idea that numbers go on forever",
+                                        "Sees patterns: skip counting, times tables, shapes that repeat",
+                                        "Wants to know how and why a method works, not just the answer"
+                                  ]
+                            },
+                            {
+                                  "area": "The child as researcher",
+                                  "items": [
+                                        "Wants to find things out for themselves and tell you what they learned",
+                                        "Loves to sort, classify, and name: animals, rocks, plants, countries",
+                                        "Fills notebooks, makes charts, draws maps and diagrams",
+                                        "Follows one interest deep, sometimes for weeks",
+                                        "Uses books, questions, and looking closely to answer their own wonderings"
+                                  ]
+                            }
+                      ],
+                      "note": "Remember, the range at this age is huge: one child reads easily at six, another at eight, and both are perfectly fine — so watch your own child with warmth and let these be landmarks to orient by, never a scoreboard."
+                }
+          }
+    },
     image: 'assets/tiles/montessori.jpg',
     name: 'Montessori',
     short: 'Montessori',

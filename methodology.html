@@ -560,11 +560,11 @@
     const SECTION_ORDER = ['day-in-life', 'activities', 'bring-it-home', 'reading-list', 'competency'];
     const SECTION_META = {
       'core-idea':   { n: '01', title: 'Core idea',            tag: 'The philosophy in plain language, with the why' },
-      'day-in-life': { n: '02', title: 'A day in the life',    tag: 'What a typical day looks like for a four-year-old' },
-      'activities':  { n: '03', title: 'Things to do this week', tag: 'Twenty activities — pick one or two a day' },
+      'day-in-life': { n: '02', title: 'A day in the life',    tag: 'What a typical day looks like at this age' },
+      'activities':  { n: '03', title: 'Things to do this week', tag: 'Real things to do — pick one or two' },
       'bring-it-home': { n: '04', title: 'Bring it home',       tag: 'Build your own version — the apps, tools and how to start' },
-      'reading-list':{ n: '05', title: 'Reading list',         tag: 'Books for you, and books to read aloud' },
-      'competency':  { n: '06', title: 'What to expect at four', tag: 'Landmarks at four — orientation, not a test' }
+      'reading-list':{ n: '05', title: 'Reading list',         tag: 'Books for you, and books to share' },
+      'competency':  { n: '06', title: 'What to expect',        tag: 'Landmarks to orient by, not a test' }
     };
 
     // ── Age stages (defined BEFORE the main flow — a const-before-use TDZ here
@@ -582,10 +582,13 @@
     const AGE_SPECIFIC = new Set(['day-in-life', 'activities', 'reading-list', 'competency']);
     function getStage() { try { return localStorage.getItem('nb-stage') || DEFAULT_STAGE; } catch { return DEFAULT_STAGE; } }
     function setStage(s) { try { localStorage.setItem('nb-stage', s); } catch {} }
-    function sectionReady(m, key, stage) {
-      if (AGE_SPECIFIC.has(key)) return stage === DEFAULT_STAGE && !!(m.sections && m.sections[key]);
-      return !!(m.sections && m.sections[key]);
+    // Resolve a section's content for the chosen stage. Evergreen sections and
+    // Early Years use m.sections[key]; other stages use m.stages[stage][key].
+    function getSection(m, key, stage) {
+      if (!AGE_SPECIFIC.has(key) || stage === DEFAULT_STAGE) return m.sections && m.sections[key];
+      return m.stages && m.stages[stage] && m.stages[stage][key];
     }
+    function sectionReady(m, key, stage) { return !!getSection(m, key, stage); }
 
     // Copywriter's marker — highlight the key idea in each block so the eye lands
     // on what matters instead of wading through a wall of text.
@@ -644,6 +647,9 @@
 
     function renderMethodLanding(m) {
       const stage = getStage();
+      // Show the "being written" note only when this stage is still incomplete
+      // for THIS tradition — once its age-specific sections exist, drop it.
+      const stageIncomplete = stage !== DEFAULT_STAGE && [...AGE_SPECIFIC].some(k => !sectionReady(m, k, stage));
       const toc = SECTION_ORDER.map((key, idx) => {
         const built = sectionReady(m, key, stage);
         const meta = SECTION_META[key];
@@ -715,7 +721,7 @@
           <div class="stage-pick" role="group" aria-label="Your child's age">
             ${STAGES.map(st => `<button type="button" class="stage-btn${st.id === stage ? ' active' : ''}" data-stage="${st.id}"><span class="stage-lbl">${st.label}</span><span class="stage-sub">${st.sub}</span></button>`).join('')}
           </div>
-          ${stage !== DEFAULT_STAGE ? `<p class="stage-note">The ideas and the method are the same at every age — read them above, and in <b>Bring it home</b>. The day, the activities, the book list and the milestones for <b>${STAGES.find(s => s.id === stage).sub}</b> are being written next.</p>` : ''}
+          ${stageIncomplete ? `<p class="stage-note">The ideas and the method are the same at every age — read them above, and in <b>Bring it home</b>. The day, the activities, the book list and the milestones for <b>${STAGES.find(s => s.id === stage).sub}</b> are being written next.</p>` : ''}
           <div class="ed-toc-head">${g ? 'Explore it' : 'Read on'}</div>
           <nav class="ed-toc">${toc}</nav>
           ${storyBlock}
@@ -725,7 +731,8 @@
     }
 
     function renderSubSection(m, key) {
-      const s = m.sections[key];
+      const stage = getStage();
+      const s = getSection(m, key, stage) || m.sections[key];
       let body = '';
 
       if (key === 'core-idea') {
@@ -1025,20 +1032,25 @@
         'reading-list': 'Reading list',
         'competency': 'What to expect at four'
       };
+      // The section's own title wins (e.g. "What to expect at 6–9"); the eyebrow
+      // shows the stage so you always know which age you're reading.
+      const heading = s.title || titles[key];
+      const stageLabel = (STAGES.find(x => x.id === stage) || {}).sub;
+      const eyebrow = `${m.name} · ${m.era}${(stage !== DEFAULT_STAGE && stageLabel) ? ' · ages ' + stageLabel : ''}`;
 
       // Open on a confident photo, like the homepage hero — not a dry title.
       const header = m.image
         ? `<div class="ed-shero">
              <img src="${m.image}" alt="">
              <div class="shero-in">
-               <span class="shero-eyebrow">${m.name} · ${m.era}</span>
-               <h1 class="shero-title">${titles[key]}</h1>
+               <span class="shero-eyebrow">${eyebrow}</span>
+               <h1 class="shero-title">${heading}</h1>
                <button class="read-btn ed-read" id="sub-read-btn">▶ Read aloud</button>
              </div>
            </div>`
         : `<header class="ed-sub-hero">
-             <div class="ed-eyebrow">${m.name} · ${m.era}</div>
-             <h1 class="ed-title">${titles[key]}</h1>
+             <div class="ed-eyebrow">${eyebrow}</div>
+             <h1 class="ed-title">${heading}</h1>
              <button class="read-btn ed-read" id="sub-read-btn">▶ Read aloud</button>
            </header>`;
 
