@@ -411,6 +411,36 @@
     #root .qa-d { padding: 0 0.2em 1.15em 3.35em; }
     #root .qa-d p { font-family: var(--sans); font-size: 1.06rem; line-height: 1.62; color: var(--ink-soft); margin: 0; }
 
+    /* ── BRING IT HOME — build-your-own guide + apps with real store links ── */
+    #root .bih-cross { font-family: var(--display); font-weight: 800; font-size: clamp(1.35rem, 5.4vw, 1.62rem); letter-spacing: -0.02em; color: var(--ink); margin: 2.3em 0 0.85em; }
+    #root .bih-cross::after { content: ""; display: block; width: 44px; height: 3px; border-radius: 3px; margin-top: 0.4em; background: linear-gradient(90deg, var(--acc-bright), var(--acc)); }
+    /* numbered build-your-own steps */
+    #root .bih-steps { list-style: none; counter-reset: bih; padding: 0; margin: 0; }
+    #root .bih-steps li { counter-increment: bih; position: relative; padding: 0.9em 0 0.95em 2.9em; border-top: 1px solid var(--rule); }
+    #root .bih-steps li:first-child { border-top: none; }
+    #root .bih-steps li::before { content: counter(bih); position: absolute; left: 0; top: 0.82em; width: 1.95em; height: 1.95em; border-radius: 999px; background: var(--acc-soft); color: var(--acc); font-family: var(--display); font-weight: 800; font-size: 0.98rem; display: grid; place-items: center; }
+    #root .bih-step-t { display: block; font-family: var(--sans); font-weight: 800; font-size: 1.1rem; line-height: 1.26; color: var(--ink); margin-bottom: 0.15em; }
+    #root .bih-step-d { font-size: 1.01rem; line-height: 1.58; color: var(--ink-soft); }
+    /* app cards with store buttons */
+    #root .bih-apps { display: grid; gap: 0.7em; }
+    #root .bih-app { position: relative; background: #fff; border-radius: 16px; padding: 1em 1.1em 1.05em; box-shadow: var(--shadow-sm); }
+    #root .bih-app::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.5px; background: linear-gradient(135deg, var(--acc-bright), var(--acc)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; opacity: 0.4; }
+    #root .bih-app-head { display: flex; align-items: center; gap: 0.6em; margin-bottom: 0.3em; }
+    #root .bih-app-name { font-family: var(--display); font-weight: 800; font-size: 1.14rem; letter-spacing: -0.01em; color: var(--ink); }
+    #root .bih-app-price { flex: 0 0 auto; font-family: var(--sans); font-weight: 800; font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-mute); background: var(--rule-soft); border-radius: 999px; padding: 0.32em 0.62em; }
+    #root .bih-app-price.is-free { color: #1B7A4A; background: #DCF3E7; }
+    #root .bih-app-tag { font-size: 1rem; line-height: 1.55; color: var(--ink-soft); margin-bottom: 0.75em; }
+    #root .bih-app-links { display: flex; flex-wrap: wrap; gap: 0.45em; }
+    #root .bih-store { display: inline-flex; align-items: center; gap: 0.35em; font-family: var(--sans); font-weight: 700; font-size: 0.82rem; text-decoration: none; padding: 0.5em 0.9em; border-radius: 999px; background: var(--acc); color: #fff; transition: transform 0.12s ease; }
+    #root .bih-store:active { transform: scale(0.96); }
+    #root .bih-store.bih-play { background: var(--acc-deep, #1F5E8A); }
+    #root .bih-store.bih-site { background: #fff; color: var(--acc); border: 1.5px solid var(--acc-soft); }
+    #root .bih-fine { font-size: 0.86rem; line-height: 1.5; color: var(--ink-mute); margin: 0.9em 0.2em 0; }
+    /* worth-knowing note */
+    #root .bih-note { margin: 2.3em 0 0; background: var(--acc-soft); border-radius: 16px; padding: 1.1em 1.25em 1.2em; }
+    #root .bih-note-label { font-family: var(--sans); font-weight: 800; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--acc); margin-bottom: 0.4em; }
+    #root .bih-note p { margin: 0; font-size: 1.03rem; line-height: 1.66; color: var(--ink-soft); }
+
     /* ── The story, moved below the options and made opt-in ── */
     #root .story { margin: 2.5em 0 0; background: #fff; border: 1px solid var(--rule); border-radius: 18px; box-shadow: var(--shadow-sm); overflow: hidden; }
     #root .story > summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 0.8em; padding: 1.05em 1.15em; }
@@ -469,15 +499,20 @@
       { c: '#B83A6E', cd: '#8E2A54', cs: '#F8E5ED' }  // rose
     ];
     // Which glyph fronts each section on the landing "Read on" list.
-    const SECTION_ICON = { 'core-idea': 'compass', 'day-in-life': 'sun', 'activities': 'hand', 'reading-list': 'book', 'competency': 'sprout' };
+    const SECTION_ICON = { 'core-idea': 'compass', 'day-in-life': 'sun', 'activities': 'hand', 'bring-it-home': 'sprout', 'reading-list': 'book', 'competency': 'sun' };
 
-    const SECTION_ORDER = ['core-idea', 'day-in-life', 'activities', 'reading-list', 'competency'];
+    // NOTE: 'core-idea' is intentionally NOT in this list — the landing page IS
+    // the core ideas now (the drop-down list). The old core-idea sub-page still
+    // renders for direct ?s=core-idea links, it just has no button. 'bring-it-home'
+    // is the new "how to actually do this at home" section.
+    const SECTION_ORDER = ['day-in-life', 'activities', 'bring-it-home', 'reading-list', 'competency'];
     const SECTION_META = {
       'core-idea':   { n: '01', title: 'Core idea',            tag: 'The philosophy in plain language, with the why' },
       'day-in-life': { n: '02', title: 'A day in the life',    tag: 'What a typical day looks like for a four-year-old' },
       'activities':  { n: '03', title: 'Things to do this week', tag: 'Twenty activities — pick one or two a day' },
-      'reading-list':{ n: '04', title: 'Reading list',         tag: 'Books for you, and books to read aloud' },
-      'competency':  { n: '05', title: 'What to expect at four', tag: 'Landmarks at four — orientation, not a test' }
+      'bring-it-home': { n: '04', title: 'Bring it home',       tag: 'Build your own version — the apps, tools and how to start' },
+      'reading-list':{ n: '05', title: 'Reading list',         tag: 'Books for you, and books to read aloud' },
+      'competency':  { n: '06', title: 'What to expect at four', tag: 'Landmarks at four — orientation, not a test' }
     };
 
     // Copywriter's marker — highlight the key idea in each block so the eye lands
@@ -823,12 +858,40 @@
           `).join('')}
           ${s.note ? `<p class="note-box">${hl(s.note)}</p>` : ''}
         `;
+      } else if (key === 'bring-it-home') {
+        // How to actually run a version of this at home: a build-your-own guide,
+        // the apps to reach for (with real App Store / Google Play links), and
+        // one worth-knowing note about how the school really works.
+        const appCard = (a) => `
+          <div class="bih-app">
+            <div class="bih-app-head">
+              <span class="bih-app-name">${a.name}</span>
+              <span class="bih-app-price${/free/i.test(a.price) ? ' is-free' : ''}">${a.price}</span>
+            </div>
+            <div class="bih-app-tag">${hl(a.tag)}</div>
+            <div class="bih-app-links">
+              ${a.ios ? `<a class="bih-store" href="${a.ios}" target="_blank" rel="noopener"> App Store</a>` : ''}
+              ${a.android ? `<a class="bih-store bih-play" href="${a.android}" target="_blank" rel="noopener">▶ Google Play</a>` : ''}
+              ${a.site ? `<a class="bih-store bih-site" href="${a.site}" target="_blank" rel="noopener">↗ Website</a>` : ''}
+            </div>
+          </div>`;
+        body = `
+          <div class="ed-lead ed-lead-intro">${multiPara(s.intro, 2)}</div>
+          ${s.steps ? `<div class="bih-cross">Build your own version</div>
+            <ol class="bih-steps">${s.steps.map(x => `<li><span class="bih-step-t">${x.t}</span><span class="bih-step-d">${hl(x.d)}</span></li>`).join('')}</ol>` : ''}
+          ${s.apps ? `<div class="bih-cross">The apps to reach for</div>
+            <div class="bih-apps">${s.apps.map(appCard).join('')}</div>
+            <p class="bih-fine">Free where it says free. Links open the App Store or Google Play — always check what suits your child before downloading.</p>` : ''}
+          ${s.watch ? `<div class="bih-cross">Worth watching</div><div class="bih-apps">${s.watch.map(appCard).join('')}</div>` : ''}
+          ${s.note ? `<aside class="bih-note"><div class="bih-note-label">Worth knowing</div><p>${hl(s.note)}</p></aside>` : ''}
+        `;
       }
 
       const titles = {
         'core-idea': 'Core idea',
         'day-in-life': 'A day in the life',
         'activities': 'Things to do this week',
+        'bring-it-home': 'Bring it home',
         'reading-list': 'Reading list',
         'competency': 'What to expect at four'
       };

@@ -1817,6 +1817,81 @@ window.METHODS = [
       ]
     },
     sections: {
+      "bring-it-home": {
+              "title": "Bring it home",
+              "icon": "sprout",
+              "intro": "You can't put an AI tutor and a six-figure guide in your kitchen. But the engine underneath Alpha is simple, and you can run a smaller version of it at home starting this week. It comes down to six moves.",
+              "steps": [
+                      {
+                              "t": "Give it two focused hours, then stop",
+                              "d": "Pick a short, sharp morning block for the real academic work. When it's done, it's done — hand the rest of the day back to your child."
+                      },
+                      {
+                              "t": "Let one good app meet them at their level",
+                              "d": "A well-made adaptive app is the closest thing at home to a personal tutor. Ten to twenty fully-focused minutes beats an hour of drift. See the picks below."
+                      },
+                      {
+                              "t": "Master it before moving on",
+                              "d": "Don't move to the next thing until this one is genuinely easy — not just done once. A perfect foundation now is the whole trick to going fast later."
+                      },
+                      {
+                              "t": "Be the guide, not the lecturer",
+                              "d": "Your job isn't to deliver the lesson — the app does that. Yours is to spark, unblock and cheer. Sit beside them, not in front of them."
+                      },
+                      {
+                              "t": "Give the afternoon to real life",
+                              "d": "Protect the freed time for a real skill or passion — a little business, a build, a performance, hours outside. That is where a person is actually formed."
+                      },
+                      {
+                              "t": "Set a real 'Test2Pass'",
+                              "d": "Pick a skill and a live challenge in front of the family: juggle for ten seconds, finish the LEGO set, give a small talk. They pass by doing it for real, not describing it."
+                      }
+              ],
+              "apps": [
+                      {
+                              "name": "Khan Academy Kids",
+                              "price": "Free",
+                              "tag": "The standout free one. Adaptive, ad-free, gentle, ages 2–8 — reading, maths, drawing, stories. If you try only one, try this.",
+                              "ios": "https://apps.apple.com/app/id1378467217",
+                              "android": "https://play.google.com/store/apps/details?id=org.khankids.android",
+                              "site": "https://khankids.org"
+                      },
+                      {
+                              "name": "Duolingo ABC",
+                              "price": "Free",
+                              "tag": "Early reading and phonics from the Duolingo team — hundreds of short, playful lessons that build letters into words. Free, no ads.",
+                              "ios": "https://apps.apple.com/app/id1440502568",
+                              "android": "https://play.google.com/store/apps/details?id=com.duolingo.literacy",
+                              "site": "https://www.duolingo.com/abc"
+                      },
+                      {
+                              "name": "Todo Math",
+                              "price": "Free",
+                              "tag": "Mastery-style early maths, counting up to early sums, with a clear map of skills to unlock — the same 'own it before you move on' idea Alpha runs on.",
+                              "ios": "https://apps.apple.com/app/id666465255",
+                              "android": "https://play.google.com/store/search?q=Todo%20Math%20Enuma&c=apps",
+                              "site": "https://www.todoschool.com"
+                      },
+                      {
+                              "name": "Teach Your Monster to Read",
+                              "price": "Free on web",
+                              "tag": "A much-loved phonics game — the child grows a monster as they learn to blend sounds into words. Free in a browser; a small paid app on phones.",
+                              "ios": "https://apps.apple.com/search?term=teach%20your%20monster%20to%20read",
+                              "android": "https://play.google.com/store/search?q=teach%20your%20monster%20to%20read&c=apps",
+                              "site": "https://www.teachyourmonster.org"
+                      },
+                      {
+                              "name": "IXL",
+                              "price": "Paid",
+                              "tag": "The grown-up, adaptive mastery curriculum Alpha itself leans on — thousands of skills that adjust to the child. Overkill for some four-year-olds, but it is the real thing if you want it.",
+                              "ios": null,
+                              "android": "https://play.google.com/store/apps/details?id=com.ixl.ixlmath",
+                              "site": "https://www.ixl.com"
+                      }
+              ],
+              "note": "The most surprising thing about Alpha isn't the AI — it's the adults. They are called guides, not teachers. They start at a minimum salary of around $100,000, and only about a third have a traditional teaching background. Alpha deliberately hires accomplished people — a Fulbright scholar, a therapist, veteran coaches — because once the software handles the lessons, the adult's real job is to know the child and light the fire. At home, with your own child, you are already that guide."
+      },
+
       "core-idea": {
         title: "Core idea",
         icon: "compass",
