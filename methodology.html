@@ -384,91 +384,30 @@
     #root .act-nudge-emo { font-size: 1.25rem; line-height: 1; flex: 0 0 auto; }
 
     /* ════════════════════════════════════════════════════════════
-       THE GRABBER v7 — the Frank Kern lesson. The last version LOOKED busy but
-       READ like an icy driveway. Two fixes: (1) VOICE — conversational, first-
-       and second-person, short standalone lines that pull one to the next; the
-       copy lives in the data. (2) EVERYTHING LEFT-ALIGNED with real air — a
-       centred line has no fixed left edge for the eye to snap back to. Body text
-       is the plain SANS (Inter), not the display face. Reserve the display face
-       for the hook + numbers only. Highlights kept — they earn their keep.
-       Accent = the school's OWN colour (--ga/--gad/--gas), set inline.
+       THE GRABBER v8 — dead simple. Seven punchy core ideas as a clean
+       tap-to-open list. Scannable at a glance (bold titles), detail on demand
+       (drop-downs). No columns, no boxes, no centred body text. Accent = the
+       school's own colour (--ga/--gad/--gas), set inline.
        ════════════════════════════════════════════════════════════ */
-    #root .grab { margin: 0.4em 0 0; --gmark: #FFE86B; }
+    #root .grab { margin: 0.5em 0 0; }
+    #root .grab-hook { font-family: var(--display); font-weight: 800; font-size: clamp(1.9rem, 8vw, 2.6rem); line-height: 1.04; letter-spacing: -0.03em; color: var(--ink); margin: 0.1em 0 0.35em; }
+    #root .grab-deck { font-family: var(--sans); font-size: 1.1rem; line-height: 1.45; font-weight: 500; color: var(--ink-mute); margin: 0 0 1.4em; }
 
-    /* the hook — big, left, tight */
-    #root .grab-hook { font-family: var(--display); font-weight: 800; font-size: clamp(2rem, 8.4vw, 2.9rem); line-height: 1.02; letter-spacing: -0.03em; color: var(--ink); margin: 0.1em 0 0.7em; }
-
-    /* the conversational lead — short lines, each its own paragraph, lots of air.
-       This is the Frank Kern move: talk to one person, one thought per line. */
-    #root .grab-lead { margin: 0 0 1.7em; }
-    #root .grab-lead p { font-family: var(--sans); font-size: 1.24rem; line-height: 1.5; color: var(--ink); margin: 0 0 0.7em; font-weight: 500; }
-    #root .grab-lead p:first-child { font-weight: 800; }
-    #root .grab-lead p:last-child { margin-bottom: 0; color: var(--ga); font-weight: 700; }
-
-    /* connective "brigade" line — the little nudge that pulls you into the next
-       block ("I know how that sounds. So here are the numbers:") */
-    #root .gx-say { font-family: var(--sans); font-size: 1.12rem; line-height: 1.5; font-weight: 600; color: var(--ink); margin: 1.8em 0 0.85em; }
-
-    /* proof numbers — the one place centred type is fine (they're numbers). */
-    #root .grab-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5em; margin: 0 0 0.4em; }
-    #root .gstat { position: relative; overflow: hidden; border-radius: 16px; padding: 1.05em 0.4em 0.9em; text-align: center; background: var(--gas); }
-    #root .gstat.mid { background: linear-gradient(155deg, var(--ga), var(--gad)); box-shadow: 0 8px 20px color-mix(in srgb, var(--ga) 30%, transparent); }
-    #root .gs-n { display: block; font-family: var(--display); font-weight: 800; font-size: clamp(1.35rem, 6.4vw, 1.95rem); line-height: 0.95; letter-spacing: -0.03em; color: var(--gad); }
-    #root .gs-n .gs-u { font-size: 0.5em; font-weight: 800; margin-left: 0.12em; letter-spacing: 0; }
-    #root .gstat.mid .gs-n { color: #fff; }
-    #root .gs-l { display: block; margin-top: 0.55em; font-size: 0.72rem; line-height: 1.3; font-weight: 700; color: var(--ink-mute); }
-    #root .gstat.mid .gs-l { color: rgba(255,255,255,0.92); }
-
-    /* crosshead — a short mini-headline that makes the eye STOP. Left, of course. */
-    #root .gx-cross { font-family: var(--display); font-weight: 800; font-size: clamp(1.4rem, 5.6vw, 1.72rem); line-height: 1.12; letter-spacing: -0.02em; color: var(--ink); margin: 2.2em 0 0.7em; }
-
-    /* the "how" explanation — plain sans, short lines, generous air, LEFT */
-    #root .grab-how { margin: 0; }
-    #root .grab-how p { font-family: var(--sans); font-size: 1.14rem; line-height: 1.62; color: var(--ink-soft); margin: 0 0 0.8em; }
-    #root .grab-how p:last-child { margin-bottom: 0; }
-    #root .grab-how p.punch { font-weight: 800; color: var(--ink); font-size: 1.2rem; }
-
-    /* OLD vs NEW contrast — clean, left, no heavy chrome */
-    #root .gx-contrast { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6em; margin: 0.3em 0 0; }
-    #root .gxc { border-radius: 16px; padding: 1.05em 1em 1.15em; }
-    #root .gxc-old { background: #F4F6F9; }
-    #root .gxc-new { background: var(--gas); }
-    #root .gxc-label { font-family: var(--sans); font-weight: 800; font-size: 0.66rem; letter-spacing: 0.09em; text-transform: uppercase; margin: 0 0 0.75em; }
-    #root .gxc-old .gxc-label { color: var(--ink-mute); }
-    #root .gxc-new .gxc-label { color: var(--gad); }
-    #root .gxc ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.62em; }
-    #root .gxc li { position: relative; padding-left: 1.55em; font-size: 0.97rem; line-height: 1.42; }
-    #root .gxc-old li { color: var(--ink-mute); }
-    #root .gxc-old li::before { content: "✕"; position: absolute; left: 0; top: 0.02em; font-weight: 800; color: #B6C0CE; }
-    #root .gxc-new li { color: var(--ink); font-weight: 500; }
-    #root .gxc-new li::before { content: "✓"; position: absolute; left: 0; top: 0.02em; font-weight: 900; color: var(--ga); }
-
-    /* the one hard rule — a LEFT-aligned quote with a fat coloured bar, not a
-       centred island. Reads like someone leaning in to tell you the key thing. */
-    #root .gx-bigq { margin: 2.4em 0 2.1em; padding: 0.15em 0 0.15em 1.05em; border-left: 5px solid var(--ga); }
-    #root .gx-bigq p { font-family: var(--display); font-weight: 700; font-size: clamp(1.5rem, 6.2vw, 1.95rem); line-height: 1.2; letter-spacing: -0.02em; color: var(--ink); margin: 0; }
-    #root .gx-bigq cite { display: block; margin-top: 0.65em; font-family: var(--sans); font-style: normal; font-weight: 800; font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ga); }
-
-    /* the payoff bullets — bold lead on its own line, then the payoff. Left. */
-    #root .grab-points { list-style: none; padding: 0; margin: 0.3em 0 0; }
-    #root .grab-points li { position: relative; padding: 0.9em 0 0.95em 1.9em; border-top: 1px solid var(--rule); }
-    #root .grab-points li:first-child { border-top: none; }
-    #root .grab-points li::before { content: ""; position: absolute; left: 0; top: 1.28em; width: 0.72em; height: 0.72em; border-radius: 3px; background: linear-gradient(150deg, var(--ga), var(--gad)); }
-    #root .grab-points .gp-lead { display: block; font-family: var(--sans); font-weight: 800; font-size: 1.14rem; line-height: 1.28; color: var(--ink); margin-bottom: 0.15em; }
-    #root .grab-points .gp-rest { font-family: var(--sans); font-size: 1.04rem; line-height: 1.55; color: var(--ink-soft); }
-
-    /* the highlighted takeaway — LEFT, big, with a real marker stroke */
-    #root .gx-mark { font-family: var(--display); font-weight: 700; font-size: clamp(1.25rem, 5.2vw, 1.6rem); line-height: 1.48; letter-spacing: -0.01em; color: var(--ink); text-align: left; margin: 2.3em 0 0; }
-    #root .gx-mark span { background: linear-gradient(180deg, transparent 58%, var(--gmark) 58%); padding: 0 0.1em; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
-
-    /* one saturated feature box — the single loud colour moment, at the end */
-    #root .gx-feature { position: relative; overflow: hidden; margin: 2.4em 0 0; border-radius: 22px; padding: 1.5em 1.4em 1.55em; background: linear-gradient(150deg, var(--ga), var(--gad)); box-shadow: 0 16px 38px color-mix(in srgb, var(--gad) 36%, transparent); }
-    #root .gx-feature .gxf-mark { position: absolute; top: -0.35em; right: 0.1em; font: 900 8rem/1 var(--display); color: rgba(255,255,255,0.12); pointer-events: none; }
-    #root .gxf-tag { position: relative; z-index: 1; display: inline-block; font-family: var(--sans); font-weight: 800; font-size: 0.6rem; letter-spacing: 0.13em; text-transform: uppercase; color: var(--gad); background: #fff; border-radius: 999px; padding: 0.4em 0.75em; margin-bottom: 0.75em; }
-    #root .gxf-title { position: relative; z-index: 1; font-family: var(--display); font-weight: 800; font-size: 1.7rem; line-height: 1.05; letter-spacing: -0.02em; color: #fff; margin: 0 0 0.4em; }
-    #root .gxf-body { position: relative; z-index: 1; font-family: var(--sans); font-size: 1.05rem; line-height: 1.6; color: rgba(255,255,255,0.94); margin: 0 0 1em; }
-    #root .gxf-examples { position: relative; z-index: 1; display: flex; flex-wrap: wrap; gap: 0.5em; }
-    #root .gxf-examples span { font-family: var(--sans); font-weight: 700; font-size: 0.86rem; color: #fff; background: rgba(255,255,255,0.18); border: 1.5px solid rgba(255,255,255,0.34); border-radius: 999px; padding: 0.45em 0.85em; }
+    /* the list — each idea is a row; the closed list is a scannable menu */
+    #root .qa { border-top: 2px solid var(--rule); }
+    #root .qa-item { border-bottom: 2px solid var(--rule); }
+    #root .qa-item > summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 0.8em; padding: 1.05em 0.15em; }
+    #root .qa-item > summary::-webkit-details-marker { display: none; }
+    #root .qa-num { flex: 0 0 auto; width: 1.85em; height: 1.85em; border-radius: 999px; background: var(--gas); color: var(--gad); font-family: var(--display); font-weight: 800; font-size: 0.95rem; display: grid; place-items: center; }
+    #root .qa-t { flex: 1; min-width: 0; font-family: var(--display); font-weight: 800; font-size: clamp(1.1rem, 4.6vw, 1.28rem); line-height: 1.22; letter-spacing: -0.015em; color: var(--ink); }
+    #root .qa-plus { flex: 0 0 auto; width: 1.5em; height: 1.5em; position: relative; }
+    #root .qa-plus::before, #root .qa-plus::after { content: ""; position: absolute; top: 50%; left: 50%; background: var(--ga); border-radius: 2px; transform: translate(-50%, -50%); transition: opacity 0.2s ease, transform 0.2s ease; }
+    #root .qa-plus::before { width: 0.95em; height: 2.5px; }
+    #root .qa-plus::after { width: 2.5px; height: 0.95em; }
+    #root .qa-item[open] .qa-plus::after { opacity: 0; transform: translate(-50%, -50%) rotate(90deg); }
+    #root .qa-item[open] .qa-num { background: linear-gradient(150deg, var(--ga), var(--gad)); color: #fff; }
+    #root .qa-d { padding: 0 0.2em 1.15em 3.35em; }
+    #root .qa-d p { font-family: var(--sans); font-size: 1.06rem; line-height: 1.62; color: var(--ink-soft); margin: 0; }
 
     /* ── The story, moved below the options and made opt-in ── */
     #root .story { margin: 2.5em 0 0; background: #fff; border: 1px solid var(--rule); border-radius: 18px; box-shadow: var(--shadow-sm); overflow: hidden; }
@@ -616,50 +555,23 @@
       // and only then the narrative, folded away for whoever wants it.
       // Traditions without `grab` keep the original story-first layout.
       const g = m.grab;
-      // The grabber reads as ONE flowing conversation — short lines that pull
-      // one to the next — dressed in varied, left-aligned, airy blocks.
-      const gLead = g && g.lead ? `<div class="grab-lead">${g.lead.map(l => `<p>${l}</p>`).join('')}</div>` : '';
-      const gStats = g && g.stats ? `
-        ${g.proofLead ? `<p class="gx-say">${g.proofLead}</p>` : ''}
-        <div class="grab-stats">${g.stats.map((s, i) => `
-          <div class="gstat${i === 1 ? ' mid' : ''}"><span class="gs-n">${s.n}${s.unit ? `<span class="gs-u">${s.unit}</span>` : ''}</span><span class="gs-l">${s.l}</span></div>`).join('')}</div>` : '';
-      // "how" — a crosshead question, then short standalone lines. The last
-      // short line before the long one is marked as the punch.
-      const gHow = g && g.how ? `
-        <div class="gx-cross">${g.howCross || 'So how does it work?'}</div>
-        <div class="grab-how">${g.how.map((p, i) => `<p${(p.length < 34 && i > 0) ? ' class="punch"' : ''}>${hl(p)}</p>`).join('')}</div>` : '';
-      const gContrast = g && g.contrast ? `
-        <div class="gx-cross">${g.contrast.cross || 'The difference'}</div>
-        <div class="gx-contrast">
-          <div class="gxc gxc-old"><div class="gxc-label">${g.contrast.old.label}</div><ul>${g.contrast.old.items.map(x => `<li>${x}</li>`).join('')}</ul></div>
-          <div class="gxc gxc-new"><div class="gxc-label">${g.contrast.alpha.label}</div><ul>${g.contrast.alpha.items.map(x => `<li>${x}</li>`).join('')}</ul></div>
-        </div>` : '';
-      const gBigQ = g && g.bigQuote ? `<blockquote class="gx-bigq"><p>${g.bigQuote.text}</p>${g.bigQuote.cite ? `<cite>${g.bigQuote.cite}</cite>` : ''}</blockquote>` : '';
-      const gPoints = g && g.points ? `
-        <div class="gx-cross">${g.pointsCross || 'What makes it work'}</div>
-        <ul class="grab-points">${g.points.map(p => `<li><span class="gp-lead">${p.lead}</span><span class="gp-rest">${hl(p.rest)}</span></li>`).join('')}</ul>` : '';
-      const gMark = g && g.mark ? `<p class="gx-mark"><span>${g.mark}</span></p>` : '';
-      const gFeature = g && g.feature ? `
-        ${g.featureLead ? `<p class="gx-say">${g.featureLead}</p>` : ''}
-        <div class="gx-feature">
-          <span class="gxf-mark" aria-hidden="true">★</span>
-          <span class="gxf-tag">${g.feature.tag}</span>
-          <h3 class="gxf-title">${g.feature.title}</h3>
-          <p class="gxf-body">${g.feature.body}</p>
-          ${g.feature.examples ? `<div class="gxf-examples">${g.feature.examples.map(e => `<span>${e}</span>`).join('')}</div>` : ''}
-        </div>` : '';
-
+      // Dead-simple grabber: the core ideas as a scannable list of bold titles,
+      // each a tap-to-open drop-down with a short "what it means".
       const grabber = g ? `
         <section class="grab" style="--ga:${m.color};--gad:${m.colorDeep};--gas:${m.colorSoft}">
-          <h2 class="grab-hook">${g.hook}</h2>
-          ${gLead}
-          ${gStats}
-          ${gHow}
-          ${gContrast}
-          ${gBigQ}
-          ${gPoints}
-          ${gMark}
-          ${gFeature}
+          ${g.hook ? `<h2 class="grab-hook">${g.hook}</h2>` : ''}
+          ${g.deck ? `<p class="grab-deck">${g.deck}</p>` : ''}
+          <div class="qa">
+            ${g.bullets.map((b, i) => `
+              <details class="qa-item">
+                <summary>
+                  <span class="qa-num">${i + 1}</span>
+                  <span class="qa-t">${b.t}</span>
+                  <span class="qa-plus" aria-hidden="true"></span>
+                </summary>
+                <div class="qa-d"><p>${hl(b.d)}</p></div>
+              </details>`).join('')}
+          </div>
         </section>` : '';
 
       const storyBlock = g ? `
