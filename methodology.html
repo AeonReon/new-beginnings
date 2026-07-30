@@ -56,6 +56,18 @@
     #root .ed-toc .toc-soon { flex: 0 0 auto; font-size: 0.66rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-mute); background: var(--rule-soft); border-radius: 999px; padding: 0.3em 0.7em; }
     #root .ed-toc .toc-stub { opacity: 0.6; pointer-events: none; }
 
+    /* Age-stage picker — a segmented control on the landing */
+    #root .stage-head { font-family: var(--sans); font-weight: 800; font-size: 0.66rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-mute); margin: 2.3em 0 0.5em; }
+    #root .stage-pick { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.35em; background: var(--rule-soft); border-radius: 15px; padding: 0.35em; }
+    #root .stage-btn { display: flex; flex-direction: column; align-items: center; gap: 0.05em; cursor: pointer; border: none; background: transparent; border-radius: 11px; padding: 0.62em 0.3em; transition: background 0.15s ease, box-shadow 0.15s ease; }
+    #root .stage-btn .stage-lbl { font-family: var(--sans); font-weight: 800; font-size: 0.84rem; line-height: 1.1; color: var(--ink-soft); }
+    #root .stage-btn .stage-sub { font-family: var(--sans); font-weight: 700; font-size: 0.66rem; color: var(--ink-mute); }
+    #root .stage-btn.active { background: #fff; box-shadow: var(--shadow-sm); }
+    #root .stage-btn.active .stage-lbl { color: var(--acc); }
+    #root .stage-btn.active .stage-sub { color: var(--acc); }
+    #root .stage-note { font-size: 0.98rem; line-height: 1.55; color: var(--ink-soft); background: var(--acc-soft); border-radius: 13px; padding: 0.8em 1em; margin: 0.75em 0 0; }
+    #root .stage-note b { color: var(--acc); font-weight: 800; }
+
     /* Sub-section header */
     #root .ed-sub-hero { margin: 0.2em 0 1.2em; }
     #root .ed-sub-hero .ed-title { margin-top: 0.15em; }
@@ -555,6 +567,26 @@
       'competency':  { n: '06', title: 'What to expect at four', tag: 'Landmarks at four — orientation, not a test' }
     };
 
+    // ── Age stages (defined BEFORE the main flow — a const-before-use TDZ here
+    // once blanked the whole page). v1 content is Early Years (3–6). The
+    // philosophy/method (core ideas, the story, Bring it home) is evergreen and
+    // shows at every age; only the day, activities, book list and milestones are
+    // age-specific and get added stage by stage. We build the METHOD, not a
+    // curriculum — enough for a parent to find their child's own level. ──────────
+    const STAGES = [
+      { id: '3-6',  label: 'Early years', sub: '3–6' },
+      { id: '6-9',  label: 'School age',  sub: '6–9' },
+      { id: '9-12', label: 'Older child', sub: '9–12' }
+    ];
+    const DEFAULT_STAGE = '3-6';
+    const AGE_SPECIFIC = new Set(['day-in-life', 'activities', 'reading-list', 'competency']);
+    function getStage() { try { return localStorage.getItem('nb-stage') || DEFAULT_STAGE; } catch { return DEFAULT_STAGE; } }
+    function setStage(s) { try { localStorage.setItem('nb-stage', s); } catch {} }
+    function sectionReady(m, key, stage) {
+      if (AGE_SPECIFIC.has(key)) return stage === DEFAULT_STAGE && !!(m.sections && m.sections[key]);
+      return !!(m.sections && m.sections[key]);
+    }
+
     // Copywriter's marker — highlight the key idea in each block so the eye lands
     // on what matters instead of wading through a wall of text.
     const HL_TERMS = ['mastery-based', 'one-to-one', 'love of learning', 'growth mindset', 'the whole child', 'the prepared environment', 'living books', 'short lessons', 'follow the child', 'phonological awareness', 'working memory', 'fine motor', 'pincer grip', 'hand strength', 'self-control', 'problem-solving', 'out of doors', 'free play', 'two hours a day', 'top 1–2%', 'narration', 'mastery', 'independence', 'resilience', 'curiosity', 'wonder', 'limitless', 'imagination'].sort((a, b) => b.length - a.length);
@@ -611,8 +643,9 @@
     }
 
     function renderMethodLanding(m) {
+      const stage = getStage();
       const toc = SECTION_ORDER.map((key, idx) => {
-        const built = !!(m.sections && m.sections[key]);
+        const built = sectionReady(m, key, stage);
         const meta = SECTION_META[key];
         const a = PRINCIPLE_ACCENTS[idx % PRINCIPLE_ACCENTS.length];
         const glyph = SUB_ICONS[SECTION_ICON[key]] || '';
@@ -678,11 +711,17 @@
             <p class="ed-promise-line">${m.promise}</p>
             ${m.essence ? `<ul class="ed-essence">${m.essence.map(e => `<li>${e}</li>`).join('')}</ul>` : ''}
           </aside>` : ''}
+          <div class="stage-head">For your child's age</div>
+          <div class="stage-pick" role="group" aria-label="Your child's age">
+            ${STAGES.map(st => `<button type="button" class="stage-btn${st.id === stage ? ' active' : ''}" data-stage="${st.id}"><span class="stage-lbl">${st.label}</span><span class="stage-sub">${st.sub}</span></button>`).join('')}
+          </div>
+          ${stage !== DEFAULT_STAGE ? `<p class="stage-note">The ideas and the method are the same at every age — read them above, and in <b>Bring it home</b>. The day, the activities, the book list and the milestones for <b>${STAGES.find(s => s.id === stage).sub}</b> are being written next.</p>` : ''}
           <div class="ed-toc-head">${g ? 'Explore it' : 'Read on'}</div>
           <nav class="ed-toc">${toc}</nav>
           ${storyBlock}
         </article>
       `;
+      root.querySelectorAll('.stage-btn').forEach(b => b.addEventListener('click', () => { setStage(b.dataset.stage); renderMethodLanding(m); }));
     }
 
     function renderSubSection(m, key) {
