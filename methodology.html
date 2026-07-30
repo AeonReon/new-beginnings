@@ -594,7 +594,7 @@
           <p class="ed-deck">${m.tagline}</p>
           ${m.image ? `<figure class="ed-hero"><img src="${m.image}" alt="${m.name}"></figure>` : ''}
           ${g ? grabber : `<div class="ed-lead">${multiPara(m.blurb, 2)}</div>`}
-          ${m.promise ? `
+          ${(!g && m.promise) ? `
           <aside class="ed-promise">
             <div class="ed-promise-label">In one breath</div>
             <p class="ed-promise-line">${m.promise}</p>

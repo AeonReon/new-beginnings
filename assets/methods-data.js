@@ -16,6 +16,40 @@ window.METHODS = [
     icon: 'leaf',
     built: true,
     blurb: 'A Victorian schoolmistress who rejected fact-cramming and built a method around living books, the child\'s own narration, hours outdoors, the slow training of habit, and what she called "the inward part of education."',
+    grab: {
+          "hook": "What Charlotte Mason is all about",
+          "deck": "Seven simple ideas. Tap any one to open it.",
+          "bullets": [
+                {
+                      "t": "Your child is already a full person",
+                      "d": "Not a blank slate to fill. A whole human being with a mind and a will from day one — treat them like it."
+                },
+                {
+                      "t": "Learning is about real relationships",
+                      "d": "A child learns by meeting real things — a tree, a poem, a piece of music, a person — not by covering topics."
+                },
+                {
+                      "t": "Living books, never twaddle",
+                      "d": "Books by one author who loves the subject, in language that's alive. Skip the dumbed-down, committee-written textbooks."
+                },
+                {
+                      "t": "The child tells it back",
+                      "d": "After you read aloud, ask 'tell me what you remember.' They narrate, you listen — no quizzing."
+                },
+                {
+                      "t": "Short lessons, full attention",
+                      "d": "Ten to fifteen minutes at four. Full focus for that window, then stop while attention is still warm."
+                },
+                {
+                      "t": "One good habit at a time",
+                      "d": "Lay a single habit like a rail the day can run on — attention, truthfulness, kindness. One at a time, until it sticks."
+                },
+                {
+                      "t": "Hours outside, every day",
+                      "d": "Not a scheduled nature walk — just out. Two to six hours in the open, in almost any weather."
+                }
+          ]
+    },
     sections: {
       'core-idea': {
         title: 'Core idea',
@@ -207,6 +241,40 @@ window.METHODS = [
       'Real work (pouring, sweeping, chopping) instead of plastic toys',
       'Long, uninterrupted work blocks that build deep concentration'
     ],
+    grab: {
+          "hook": "What Montessori is all about",
+          "deck": "Seven simple ideas. Tap any one to open it.",
+          "bullets": [
+                {
+                      "t": "Follow the child",
+                      "d": "Watch what they choose and come back to. Their interest is the lesson plan — your job is to notice it."
+                },
+                {
+                      "t": "The room does the teaching",
+                      "d": "A low shelf of a few beautiful, real materials. Set it up well and the space teaches while you quietly observe."
+                },
+                {
+                      "t": "Protect one long stretch of focus",
+                      "d": "A 90-minute to three-hour block to choose, work and repeat. Real concentration doesn't even begin until the 90-minute mark."
+                },
+                {
+                      "t": "Real work, not pretend",
+                      "d": "A broom that sweeps real dirt, a knife that cuts real banana. Competence comes from work that actually matters."
+                },
+                {
+                      "t": "Let the material show the mistake",
+                      "d": "Give toys that reveal their own errors — a puzzle that only fits one way. They fix it themselves, without you saying 'wrong.'"
+                },
+                {
+                      "t": "Under six, they absorb everything",
+                      "d": "Language, manners, music, the mood of the home — it all sinks in unfiltered. So mind what surrounds them."
+                },
+                {
+                      "t": "Grace and courtesy are taught",
+                      "d": "How to greet, wait, interrupt and apologise — shown and practised like any other skill, not just demanded."
+                }
+          ]
+    },
     sections: {
       'core-idea': {
         title: 'Core idea',
@@ -361,6 +429,40 @@ window.METHODS = [
     icon: 'flower',
     built: true,
     blurb: 'Rudolf Steiner\'s schools wrap childhood in a strong daily, weekly, and seasonal rhythm. Beeswax modelling, wet-on-wet watercolour, fairy tales told from memory, hours outside in any weather, festival life — and no letters or numbers introduced until the second teeth come in around age 6 or 7.',
+    grab: {
+          "hook": "What Waldorf is all about",
+          "deck": "Seven simple ideas. Tap any one to open it.",
+          "bullets": [
+                {
+                      "t": "Rhythm matters more than schedule",
+                      "d": "A day and week that returns in the same shape — bread day, painting day. The rhythm is what makes a small child feel safe."
+                },
+                {
+                      "t": "They copy, they don't get told",
+                      "d": "A four-year-old learns by watching you knead bread or sweep. Live well beside them and they absorb it."
+                },
+                {
+                      "t": "Protect the senses",
+                      "d": "Natural materials, soft voices, no screens, no cartoon characters. A young nervous system is still settling."
+                },
+                {
+                      "t": "Stories told, not read",
+                      "d": "Learn a fairy tale by heart and tell it in your own voice — the same one for a fortnight. A told story is alive."
+                },
+                {
+                      "t": "Live the seasons",
+                      "d": "Make lanterns in autumn, light candles in winter, dance in spring. The child feels the year turning, not just hears about it."
+                },
+                {
+                      "t": "Outside in any weather",
+                      "d": "There's no bad weather, only bad clothes. Two to four hours out, every day."
+                },
+                {
+                      "t": "No early academics",
+                      "d": "No letters or numbers before six or seven. Reading pushed too early usually costs a life-long love of it."
+                }
+          ]
+    },
     sections: {
       'core-idea': {
         title: 'Core idea',
@@ -495,6 +597,40 @@ window.METHODS = [
     icon: 'column',
     built: true,
     blurb: 'The classical tradition holds that education is paideia — the formation of a whole human being, oriented to truth, goodness, and beauty. For a 4-year-old this means filling the well: memorise a poem, sing a hymn, hear a myth, watch a parent do real work. The formal trivium (grammar, logic, rhetoric) begins later — at four, the ground is being prepared.',
+    grab: {
+          "hook": "What a Classical education is all about",
+          "deck": "Seven simple ideas. Tap any one to open it.",
+          "bullets": [
+                {
+                      "t": "Form a whole person, not a worker",
+                      "d": "Paideia — shaping mind, character and soul together. The goal is a full human being, not a future employee."
+                },
+                {
+                      "t": "Truth, goodness and beauty are real",
+                      "d": "Not just preferences. Even a four-year-old can feel the difference — so point at it, and give them the real thing."
+                },
+                {
+                      "t": "Great books from the very start",
+                      "d": "Read aloud from Homer, Aesop, the Bible and the myths, in a children's retelling. Start young, start rich."
+                },
+                {
+                      "t": "Memory fills the well",
+                      "d": "A poem or verse a month, learned by heart. Treasures the child draws on for the rest of their life."
+                },
+                {
+                      "t": "Virtue is a habit, not a mood",
+                      "d": "We are what we repeatedly do. Honesty is built by telling the truth over and over, not by feeling honest."
+                },
+                {
+                      "t": "Stories shape the moral imagination",
+                      "d": "Myths, hero tales and saints' lives — unsanitised — are how a child learns what courage and cowardice look like."
+                },
+                {
+                      "t": "You're the mentor, not the entertainer",
+                      "d": "The adult's authority is real — earned by knowing the tradition and living it in front of them every day."
+                }
+          ]
+    },
     sections: {
       'core-idea': {
         title: 'Core idea',
@@ -639,6 +775,40 @@ window.METHODS = [
     icon: 'tree',
     built: true,
     blurb: 'Ainsley Arment\'s movement gathers Charlotte Mason, nature study, and a reverent view of childhood into a modern, beautifully-photographed practice. Hours outside, morning baskets, mixed-age siblings, slow mornings, real food, real books. Especially strong in the United States, growing worldwide.',
+    grab: {
+          "hook": "What Wild + Free is all about",
+          "deck": "Seven simple ideas. Tap any one to open it.",
+          "bullets": [
+                {
+                      "t": "Childhood is sacred",
+                      "d": "Not a small adult or a future worker to optimise. A person at a stage that matters in its own right — protect it."
+                },
+                {
+                      "t": "Outdoors is the curriculum",
+                      "d": "Two to four hours out, every day. Not a nature walk — just outside, rain or shine. The outdoors does the teaching."
+                },
+                {
+                      "t": "Living books over textbooks",
+                      "d": "Fill the home with beautiful books by people who loved their subject, and read aloud, often."
+                },
+                {
+                      "t": "Start with a morning basket",
+                      "d": "A short gathered ritual on the rug — a poem, a story, a hymn, a picture book. One calm anchor to open the day."
+                },
+                {
+                      "t": "Mix the ages",
+                      "d": "Older children teach the younger, younger ones stretch the older. Play across ages, not in same-age boxes."
+                },
+                {
+                      "t": "Raising them is real, skilled work",
+                      "d": "Not babysitting, not a holding pattern. Wild + Free treats motherhood as a genuine vocation."
+                },
+                {
+                      "t": "Ignore the comparison feed",
+                      "d": "Every home looks different, and yours won't look like the photos. That's fine — the photos are the highlight reel."
+                }
+          ]
+    },
     sections: {
       'core-idea': {
         title: 'Core idea',
@@ -776,6 +946,40 @@ window.METHODS = [
     icon: 'palette',
     built: true,
     blurb: 'Born in the rubble of post-war Italy by educator Loris Malaguzzi and the parents of a few northern Italian villages, the Reggio approach treats the child as a competent researcher with a hundred languages — drawing, building, dancing, speaking, sculpting — for thinking through the world. The classroom is the "third teacher" after the parent and peer.',
+    grab: {
+          "hook": "What Reggio Emilia is all about",
+          "deck": "Seven simple ideas. Tap any one to open it.",
+          "bullets": [
+                {
+                      "t": "Your child is capable right now",
+                      "d": "Not an empty vessel — a real researcher, full of questions and theories worth taking seriously today."
+                },
+                {
+                      "t": "A hundred languages",
+                      "d": "Drawing, building, dancing, singing, dramatising — each is a way the child thinks. Don't reduce it all to talking and writing."
+                },
+                {
+                      "t": "The space is the third teacher",
+                      "d": "After you and other children, the room teaches — light, mirrors, natural materials, beauty at child height."
+                },
+                {
+                      "t": "Follow the question into a project",
+                      "d": "'Where does the puddle go?' taken seriously becomes a week of real investigation. Chase the question."
+                },
+                {
+                      "t": "Watch and document",
+                      "d": "Photograph what they do, write down what they say, keep the drawings dated. Revisit weekly to see what's unfolding."
+                },
+                {
+                      "t": "Set a provocation, don't direct",
+                      "d": "Lay out something interesting — a light box, prisms, leaves — and see what they do. Invite, don't instruct."
+                },
+                {
+                      "t": "Mistakes are theories",
+                      "d": "'The moon follows me' isn't wrong — it's a theory about the world. Don't correct; ask how they worked it out."
+                }
+          ]
+    },
     sections: {
       'core-idea': {
         title: 'Core idea',
@@ -910,6 +1114,40 @@ window.METHODS = [
     icon: 'pine',
     built: true,
     blurb: 'Forest School emerged from Scandinavian preschools in the 1950s, brought to the UK by Bridgwater College nursery in 1993, and now run worldwide. A weekly half-day or full-day in the woods, in any weather. Real tools, real fire, real dens, real assessed risk, under trained supervision. The woods are the classroom.',
+    grab: {
+          "hook": "What Forest School is all about",
+          "deck": "Seven simple ideas. Tap any one to open it.",
+          "bullets": [
+                {
+                      "t": "The same woods, every week, all year",
+                      "d": "Not a string of day trips — one patch of woodland, visited weekly through the seasons, until they know it like family."
+                },
+                {
+                      "t": "Assess the risk, don't remove it",
+                      "d": "Tree-climbing, real tools, slippery logs — under a trained eye. A child who never meets risk never learns to judge it."
+                },
+                {
+                      "t": "No bad weather, only bad clothes",
+                      "d": "Rain, frost and wind are part of it. The right layers make a wet day one of the best days."
+                },
+                {
+                      "t": "Give it long, unstructured time",
+                      "d": "Sessions run in hours, not minutes. The first 45 are restless; the deep play arrives around the 90-minute mark."
+                },
+                {
+                      "t": "Real tools, real fire",
+                      "d": "A four-year-old can peel a stick, carry a log, help feed a fire — with supervision. Tools aren't toys, and that's the point."
+                },
+                {
+                      "t": "The child leads, the adult follows",
+                      "d": "No lesson plan. Set the space and the safety line, then watch — they notice the mushroom, they build the den."
+                },
+                {
+                      "t": "Open and close with a ritual",
+                      "d": "Begin and end with a gathering — a song, a check-in. The child marks the time as special and carries the wood home in their head."
+                }
+          ]
+    },
     sections: {
       'core-idea': {
         title: 'Core idea',
@@ -1044,6 +1282,40 @@ window.METHODS = [
     icon: 'compass',
     built: true,
     blurb: 'John Holt watched what schools did to children\'s natural curiosity and concluded the cure was to stop schooling. Unschooling means following the child\'s interests, surrounding them with rich resources, and trusting that real learning happens in real life. Especially valuable as a corrective to over-scheduled childhood — and worth understanding even if you choose differently.',
+    grab: {
+          "hook": "What Unschooling is all about",
+          "deck": "Seven simple ideas. Tap any one to open it.",
+          "bullets": [
+                {
+                      "t": "Children are natural learners",
+                      "d": "A toddler masters walking and talking with no lessons. That engine doesn't switch off at four — feed it, don't override it."
+                },
+                {
+                      "t": "Follow the obsession",
+                      "d": "When they fall for dinosaurs, pour fuel on it — books, the museum, films, dinner talk. Interest is the fastest teacher there is."
+                },
+                {
+                      "t": "Strew interesting things",
+                      "d": "Leave a new book on the table, a microscope on the shelf. Don't announce it — just let them find it and bite."
+                },
+                {
+                      "t": "Real life is the curriculum",
+                      "d": "Cooking is chemistry, shopping is maths, chatting is language. The ordinary day is already full of learning."
+                },
+                {
+                      "t": "Be the resource, not the instructor",
+                      "d": "Answer when asked, find out together, sit with them when it's hard. Support the learning; don't run it."
+                },
+                {
+                      "t": "Trust the timing",
+                      "d": "Some read at four, some at ten, and both are fine. Pushed reading isn't really 'ahead' by ten years old anyway."
+                },
+                {
+                      "t": "Honour boredom",
+                      "d": "'I'm bored' is the doorway to their own imagination. Resist the urge to rescue it with a screen or an activity."
+                }
+          ]
+    },
     sections: {
       'core-idea': {
         title: 'Core idea',
@@ -1176,6 +1448,40 @@ window.METHODS = [
     icon: 'owl',
     built: true,
     blurb: 'In the Athens of Pericles, Socrates, and Plato, the citizen-class family understood education as paideia — the lifelong shaping of a free human being capable of beauty, reason, and self-government. The 4-year-old in such a household was being prepared, slowly and beautifully, to take their place among the free.',
+    grab: {
+          "hook": "What an Athenian upbringing is all about",
+          "deck": "Seven simple ideas. Tap any one to open it.",
+          "bullets": [
+                {
+                      "t": "Form the whole person",
+                      "d": "Paideia: shaping body, mind, soul and character together into a full human being, not just a set of skills."
+                },
+                {
+                      "t": "Aim for excellence",
+                      "d": "Arete — being the best version of what you are. For a four-year-old it starts as becoming brave, honest and kind."
+                },
+                {
+                      "t": "Balance the arts and the body",
+                      "d": "Music, poetry, song and dance to soften the soul; running and play to strengthen the body. A child needs both."
+                },
+                {
+                      "t": "Homer is the textbook",
+                      "d": "Every Athenian child grew up on the Iliad and the Odyssey, told and re-told. The heroes teach courage, loyalty and cunning."
+                },
+                {
+                      "t": "Honour the household gods",
+                      "d": "The hearth, the shrine, the daily offering, the festivals. A child raised in that rhythm feels part of something larger."
+                },
+                {
+                      "t": "The home is the first school",
+                      "d": "The mother and the household women taught the small child first — the prayers, the stories, the manners."
+                },
+                {
+                      "t": "Conversation is the highest teacher",
+                      "d": "At table the family talks about ideas, beauty and what's right. The child sits in and soaks it up."
+                }
+          ]
+    },
     sections: {
       'core-idea': {
         title: 'Core idea',
@@ -1308,6 +1614,40 @@ window.METHODS = [
     icon: 'laurel',
     built: true,
     blurb: 'In the Roman Republic at its height — the centuries of Cincinnatus, the Scipios, Cato the Elder — the patrician family understood the raising of a child as the most serious work of the household. Pietas (duty to family, gods, and country). Gravitas (weight of character). Virtus (courage and excellence). The 4-year-old in such a household was being formed to one day stand among the magistrates of Rome.',
+    grab: {
+          "hook": "What a Roman upbringing is all about",
+          "deck": "Seven simple ideas. Tap any one to open it.",
+          "bullets": [
+                {
+                      "t": "Duty in every direction",
+                      "d": "Pietas — duty to family, ancestors, gods and the Republic. A child learns early they belong to something bigger than themselves."
+                },
+                {
+                      "t": "Character has weight",
+                      "d": "Gravitas — words and acts that carry weight, not chatter or show. Prize seriousness and steadiness over cleverness."
+                },
+                {
+                      "t": "Follow the way of the ancestors",
+                      "d": "The mos maiorum: stories of great Romans who did their duty. The child inherits a line to live up to."
+                },
+                {
+                      "t": "The father sets the example",
+                      "d": "The head of the household isn't a tyrant but a present, weighty presence who models what a good person does."
+                },
+                {
+                      "t": "The mother is the first teacher",
+                      "d": "The Roman ideal was the mother who taught her own children — Cornelia, who called her sons her jewels."
+                },
+                {
+                      "t": "Real responsibility, young",
+                      "d": "Children ran errands, carried messages, helped the household and watched real adult business. Competence came from doing."
+                },
+                {
+                      "t": "Honour the household gods",
+                      "d": "Every home had its lararium — the shrine to the guardians of the family, tended daily. Belonging, made a daily habit."
+                }
+          ]
+    },
     sections: {
       'core-idea': {
         title: 'Core idea',
