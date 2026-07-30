@@ -390,8 +390,10 @@
        school's own colour (--ga/--gad/--gas), set inline.
        ════════════════════════════════════════════════════════════ */
     #root .grab { margin: 0.5em 0 0; }
-    #root .grab-hook { font-family: var(--display); font-weight: 800; font-size: clamp(1.9rem, 8vw, 2.6rem); line-height: 1.04; letter-spacing: -0.03em; color: var(--ink); margin: 0.1em 0 0.35em; }
-    #root .grab-deck { font-family: var(--sans); font-size: 1.1rem; line-height: 1.45; font-weight: 500; color: var(--ink-mute); margin: 0 0 1.4em; }
+    #root .grab-hook { font-family: var(--display); font-weight: 800; font-size: clamp(1.9rem, 8vw, 2.6rem); line-height: 1.04; letter-spacing: -0.03em; color: var(--ink); margin: 0.1em 0 0.45em; }
+    /* one-paragraph summary — the quick gist, above the drop-downs */
+    #root .grab-summary { font-family: var(--sans); font-size: 1.18rem; line-height: 1.62; font-weight: 500; color: var(--ink); margin: 0 0 1.4em; }
+    #root .grab-deck { font-family: var(--sans); font-weight: 800; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ga); margin: 0 0 0.6em; }
 
     /* the list — each idea is a row; the closed list is a scannable menu */
     #root .qa { border-top: 2px solid var(--rule); }
@@ -560,6 +562,7 @@
       const grabber = g ? `
         <section class="grab" style="--ga:${m.color};--gad:${m.colorDeep};--gas:${m.colorSoft}">
           ${g.hook ? `<h2 class="grab-hook">${g.hook}</h2>` : ''}
+          ${g.summary ? `<p class="grab-summary">${g.summary}</p>` : ''}
           ${g.deck ? `<p class="grab-deck">${g.deck}</p>` : ''}
           <div class="qa">
             ${g.bullets.map((b, i) => `
@@ -584,7 +587,7 @@
             </span>
             <span class="story-chev" aria-hidden="true">▾</span>
           </summary>
-          <div class="story-body">${multiPara(m.blurb, 2)}</div>
+          <div class="story-body">${g.story ? g.story.map(p => `<p>${hl(p)}</p>`).join('') : multiPara(m.blurb, 2)}</div>
         </details>` : '';
 
       root.innerHTML = `
