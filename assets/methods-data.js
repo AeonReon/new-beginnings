@@ -53,6 +53,56 @@ window.METHODS = [
           ]
     },
     sections: {
+      "bring-it-home": {
+              "intro": "Charlotte Mason at home is gentle and low-cost. You need good books, a little time, and the outdoors. Lessons are short. You read a lovely book, your child tells it back to you in their own words, and then you go outside for hours. That is most of it. No screens, no worksheets, no rush.",
+              "steps": [
+                      {
+                              "t": "Read a living book, then let them narrate",
+                              "d": "Pick a warm, well-written story and read a short bit aloud. Then ask your child to tell it back to you in their own words. This 'narration' is the heart of the method and it works from about age six, but you can start gently now."
+                      },
+                      {
+                              "t": "Keep lessons short",
+                              "d": "For a young child, 10 to 15 minutes on one thing is plenty. Stop while they are still keen. Short and happy beats long and tired."
+                      },
+                      {
+                              "t": "Lay one habit at a time",
+                              "d": "Choose a single good habit, like putting shoes away or coming when called, and gently practise just that one until it sticks. Add the next only when the first feels easy."
+                      },
+                      {
+                              "t": "Get outdoors for hours",
+                              "d": "Charlotte Mason wanted children out in the fresh air for a big part of the day. Walk, climb, splash, watch the birds. In Northern Ireland, pack a coat and go anyway."
+                      },
+                      {
+                              "t": "Keep a nature notebook",
+                              "d": "Give your child a little notebook to draw what they find outside, a leaf, a snail, a puddle. It does not need to be neat. It teaches them to look closely and love the natural world."
+                      },
+                      {
+                              "t": "Fill the home with living books",
+                              "d": "Choose books written by someone who loves their subject, with real language and warmth. Mason called dull, watered-down books 'twaddle'. A basket of a few lovely books beats a shelf of empty ones."
+                      }
+              ],
+              "kit": [
+                      {
+                              "name": "A few living books",
+                              "tag": "Warm, well-written picture and story books to read aloud."
+                      },
+                      {
+                              "name": "A nature notebook and pencils",
+                              "tag": "A simple blank book for drawing finds from your walks."
+                      },
+                      {
+                              "name": "A morning basket",
+                              "tag": "One basket to hold the books and bits you share together each morning."
+                      },
+                      {
+                              "name": "Ambleside Online",
+                              "tag": "A full, free Charlotte Mason curriculum you can use as much or as little as you like.",
+                              "site": "https://www.amblesideonline.org"
+                      }
+              ],
+              "screens": "Charlotte Mason favours real books and real nature over screens in the early years, so this one leans low-tech on purpose.",
+              "note": "Charlotte Mason trained teachers herself at her House of Education in Ambleside, in England's Lake District, from the 1890s, and her PNEU movement spread the method to homes and schools. She insisted that 'children are born persons', worthy of real ideas and real books, not just simplified scraps. Today the Charlotte Mason Institute and Ambleside Online carry the method on."
+      },
       'core-idea': {
         title: 'Core idea',
         icon: 'compass',
@@ -280,6 +330,65 @@ window.METHODS = [
           ]
     },
     sections: {
+      "bring-it-home": {
+              "intro": "Montessori at home is simpler and nearly free. You do not need a special room or a shelf full of wooden toys. You need one low shelf your child can reach, a few real jobs they can do with you, and one long quiet block of time where nobody rushes them. Show a thing slowly once, then step back and let them try. That is most of it.",
+              "steps": [
+                      {
+                              "t": "Set up one low shelf",
+                              "d": "Put a few activities at your child's height, each in its own basket or tray, so they can choose and put things back on their own. Keep it sparse. Five or six things they can reach beat a full toy box they cannot manage."
+                      },
+                      {
+                              "t": "Give real work, not toys",
+                              "d": "A four-year-old loves doing the real thing. Let them pour their own water from a small jug, butter their toast, wipe a spill, water a plant, or sort the socks. Real work builds real focus."
+                      },
+                      {
+                              "t": "Protect one long quiet block",
+                              "d": "Pick one part of the day and leave it uninterrupted. When your child is deep in an activity, do not step in to praise, fix, or hurry them. Long stretches of focus are where the calm and the confidence grow."
+                      },
+                      {
+                              "t": "Show slowly, then step back",
+                              "d": "When you teach a task, do it slowly with your hands and few words, then hand it over. Resist finishing it for them. A wobbly pour they did themselves is worth more than a neat one you did."
+                      },
+                      {
+                              "t": "Follow the child",
+                              "d": "Watch what pulls them in this week and give them more of it. If they keep washing things, set up a little washing station. Their interest tells you what they are ready to learn."
+                      },
+                      {
+                              "t": "Teach grace and courtesy",
+                              "d": "Model the small kind habits: how to carry a tray, how to greet someone, how to wait for a turn, how to say sorry and mean it. Practise them gently in real moments, not as a lecture."
+                      }
+              ],
+              "kit": [
+                      {
+                              "name": "A low open shelf",
+                              "tag": "Any short bookshelf at your child's height, so they can reach and tidy on their own."
+                      },
+                      {
+                              "name": "Small jugs, trays and jars",
+                              "tag": "Child-sized real crockery for pouring, sorting and carrying. Charity shops are ideal."
+                      },
+                      {
+                              "name": "A learning tower or stool",
+                              "tag": "A safe step so they can reach the kitchen counter and join in real cooking."
+                      },
+                      {
+                              "name": "Sandpaper letters and number rods",
+                              "tag": "Classic touch-and-trace materials for letters and counting when your child shows interest."
+                      },
+                      {
+                              "name": "The Montessori Notebook",
+                              "tag": "Clear, honest home guidance from a trained guide and mother.",
+                              "site": "https://www.themontessorinotebook.com"
+                      },
+                      {
+                              "name": "AMI free essays",
+                              "tag": "Read Maria Montessori's own ideas straight from the source, for free.",
+                              "site": "https://montessori-ami.org"
+                      }
+              ],
+              "screens": "Montessori keeps screens out of the early years on purpose, so real hands-on activities stay the main event; if you want one gentle exception, the best-made app is Montessori Preschool by Edoki (edokiacademy.com).",
+              "note": "Montessori guides train through an intensive diploma, classically with AMI, the Association Montessori Internationale, which Maria Montessori founded herself, or with AMS. They learn to present each material precisely and then get out of the way so the child can work. One honest thing to know: the word Montessori is not trademarked, so anyone can use the name and quality varies a lot. It is always worth visiting a setting in person before you trust it."
+      },
       'core-idea': {
         title: 'Core idea',
         icon: 'compass',
@@ -470,6 +579,60 @@ window.METHODS = [
           ]
     },
     sections: {
+      "bring-it-home": {
+              "intro": "Waldorf at home is not about buying special toys or wooden everything. It is about a warm, steady rhythm and a few simple, natural things. Your child learns by living the day beside you and copying what you really do. Calm days, real work, stories, and time outside matter far more than any product.",
+              "steps": [
+                      {
+                              "t": "Give the week a shape",
+                              "d": "Pick a rhythm your child can feel, like bread day, soup day, or painting day. Doing the same thing on the same day each week makes the world feel safe and predictable."
+                      },
+                      {
+                              "t": "Let them copy real work",
+                              "d": "Sweep, wash up, hang laundry, chop veg, and let your child work beside you with a small cloth or a wooden spoon. Young children learn by imitating real, useful tasks, so you do not need to entertain them."
+                      },
+                      {
+                              "t": "Tell one fairy tale from memory",
+                              "d": "Choose a simple fairy tale and tell it out loud, not reading from a book. Tell the same story every night for about two weeks; the repetition is what a young child loves."
+                      },
+                      {
+                              "t": "Mark the seasons in a small way",
+                              "d": "Notice the year turning with tiny festivals: a lantern walk in autumn, a spring table with flowers, gathering conkers or the first snow. Keep it small and homemade, not a big event."
+                      },
+                      {
+                              "t": "Go out in any weather",
+                              "d": "Get outside every day, rain or shine, with good boots and waterproofs. Puddles, mud, wind, and cold are part of the fun, not a reason to stay in."
+                      },
+                      {
+                              "t": "Hold back letters and numbers, lean into play",
+                              "d": "There is no rush to teach reading, writing, or sums to a four-year-old. Let them build, dig, bake, and make-believe; formal learning comes gently later."
+                      }
+              ],
+              "kit": [
+                      {
+                              "name": "Beeswax modelling wax",
+                              "tag": "Warms in little hands and shapes into anything."
+                      },
+                      {
+                              "name": "Watercolour paints and thick paper",
+                              "tag": "Just red, yellow, and blue on wet paper for soft, glowing colour."
+                      },
+                      {
+                              "name": "Natural play things",
+                              "tag": "Play silks, wooden blocks, pinecones, shells, and stones for open-ended play."
+                      },
+                      {
+                              "name": "Good wellies and waterproofs",
+                              "tag": "The one thing that makes daily outside time easy in Northern Ireland."
+                      },
+                      {
+                              "name": "Sparkle Stories",
+                              "tag": "Optional screen-free audio stories and songs if you want some.",
+                              "site": "https://www.sparklestories.com"
+                      }
+              ],
+              "screens": "Waldorf keeps screens away from young children on purpose, so if you want stories or music, choose screen-free audio rather than video.",
+              "note": "Waldorf (Steiner) teachers usually train for two to three years in special Steiner or Waldorf teacher-training courses that blend art, music, storytelling, and Rudolf Steiner's philosophy, called Anthroposophy. A class teacher often stays with the same children for several years, so they really get to know each child. It is worth knowing that the underlying philosophy is spiritual, and not every family shares those beliefs; you can borrow the warm, practical parts that suit you."
+      },
       'core-idea': {
         title: 'Core idea',
         icon: 'compass',
@@ -640,6 +803,56 @@ window.METHODS = [
           ]
     },
     sections: {
+      "bring-it-home": {
+              "intro": "At four, classical education is really just filling the well. You give your child good things to soak up — poems, songs, myths, and the sight of you doing real work — and trust that it settles deep. No Latin drills, no worksheets. Just beautiful things, over and over, until they belong to your child.",
+              "steps": [
+                      {
+                              "t": "One poem a month",
+                              "d": "Pick one short poem or verse and say it together a little each day. In a month your child will know it by heart, and it stays with them for years."
+                      },
+                      {
+                              "t": "Sing together",
+                              "d": "Learn one hymn or old song and sing it often — at bath time, in the car, walking to the shop. Their ear and memory grow while you both enjoy it."
+                      },
+                      {
+                              "t": "Read a myth aloud",
+                              "d": "Read one old story or myth out loud, slowly, with your own voice. Greek myths, fairy tales, Bible stories — the big, brave, wondrous ones."
+                      },
+                      {
+                              "t": "Practise one virtue",
+                              "d": "Pick one small habit for the season, like telling the truth or sharing. Name it kindly, catch them doing it well, and let it become normal."
+                      },
+                      {
+                              "t": "Let them watch you work",
+                              "d": "Let them see you cook, fix, clean, or write — real work with real hands. Children learn deeply just from watching a grown-up do a thing well."
+                      },
+                      {
+                              "t": "Name the good and beautiful",
+                              "d": "In plain words, talk about what is true, good, and beautiful as you meet it — a kind act, a lovely sunset, an honest word. Little sentences, no lecture."
+                      }
+              ],
+              "kit": [
+                      {
+                              "name": "A book of myths and fairy tales",
+                              "tag": "The old, unsanitised versions — brave, strange, and wondrous."
+                      },
+                      {
+                              "name": "A children's poetry anthology",
+                              "tag": "A collection to dip into for your poem of the month."
+                      },
+                      {
+                              "name": "A hymn or classical-music playlist",
+                              "tag": "Simple hymns and gentle classical pieces to sing and listen to together."
+                      },
+                      {
+                              "name": "Librivox",
+                              "tag": "Free public-domain audiobooks — myths, poems and classics read by volunteers.",
+                              "site": "https://librivox.org"
+                      }
+              ],
+              "screens": "Classical education at four leans on real books, real music, and real conversation far more than on any screen.",
+              "note": "Classical teachers are usually people who are steeped in the great books themselves. Many classical schools follow the trivium and grew out of the modern revival — inspired by Dorothy Sayers and supported by groups like the CiRCE Institute and classical academies. The old ideal is the teacher as a mentor whose own character teaches, not just the lessons on the page."
+      },
       'core-idea': {
         title: 'Core idea',
         icon: 'compass',
@@ -820,6 +1033,56 @@ window.METHODS = [
           ]
     },
     sections: {
+      "bring-it-home": {
+              "intro": "Wild + Free is less a curriculum and more a rhythm you build into your week. Long hours outdoors, good books read aloud, and slow, unhurried mornings. You are not buying a system. You are shaping a childhood around fresh air, story, and time to just be four.",
+              "steps": [
+                      {
+                              "t": "Get outside every day",
+                              "d": "Aim for hours outdoors, rain or shine. In Northern Ireland that means going out anyway, in the drizzle and the wind, and letting the weather be part of the day."
+                      },
+                      {
+                              "t": "Start a small morning basket",
+                              "d": "Keep a basket with a few picture books, a poem, and a song or two. Ten quiet minutes together over breakfast is enough to begin."
+                      },
+                      {
+                              "t": "Read living books aloud",
+                              "d": "Choose warm, well-told stories over dry fact books. Read them out loud together and let your child fall in love with the characters and the words."
+                      },
+                      {
+                              "t": "Let ages mix and play",
+                              "d": "If you have more than one child, let older and younger learn side by side. Free play together teaches more than any worksheet."
+                      },
+                      {
+                              "t": "Protect childhood, do not rush it",
+                              "d": "There is no race to finish. Treat these early years as something worth guarding, with plenty of room for play, mud, and imagination."
+                      },
+                      {
+                              "t": "Make it your own",
+                              "d": "Scroll past the perfect feeds. Copy no one exactly. Take the pieces that fit your family and your child, and build a rhythm that feels like home."
+                      }
+              ],
+              "kit": [
+                      {
+                              "name": "A morning basket and living books",
+                              "tag": "A few loved picture books, a poem, a song to open the day."
+                      },
+                      {
+                              "name": "Good waterproofs and wellies",
+                              "tag": "Made for Northern Ireland rain, so nobody dreads going out."
+                      },
+                      {
+                              "name": "A simple nature bag",
+                              "tag": "Magnifying glass, a jar, and a little field notebook for finds."
+                      },
+                      {
+                              "name": "Wild + Free community and bundles",
+                              "tag": "Optional membership, books and gatherings for parents.",
+                              "site": "https://www.bewildandfree.org"
+                      }
+              ],
+              "screens": "Wild + Free leans hard toward real outdoors and real books over screens.",
+              "note": "Wild + Free is parent-led, so there is no teaching credential to earn. The mother, or father, is the teacher, and the movement gathers parents through books, a membership community, and large conferences. It was started by Ainsley Arment around 2014. One gentle thing to remember: the beautiful photos are meant as inspiration, not a standard to feel bad against."
+      },
       'core-idea': {
         title: 'Core idea',
         icon: 'compass',
@@ -993,6 +1256,59 @@ window.METHODS = [
           ]
     },
     sections: {
+      "bring-it-home": {
+              "intro": "You cannot copy a Reggio school at home, and you do not need to. What you can borrow is its spirit: set out interesting things, follow your child's own question, and then watch more than you talk. In Reggio, the child is seen as strong and full of ideas, and the grown-up's job is to notice those ideas and give them room to grow.",
+              "steps": [
+                      {
+                              "t": "Set a provocation, not a task",
+                              "d": "Instead of saying 'let's make a flower', lay out a few beautiful things on the table — petals, a mirror, some coloured paper — and let your child decide what to do with them. The invitation does the teaching."
+                      },
+                      {
+                              "t": "Follow the question into a project",
+                              "d": "When your four-year-old keeps asking about something — worms, shadows, the moon — treat that as a thread to pull, not a passing remark. Come back to it over days: draw it, build it, go and look at it again."
+                      },
+                      {
+                              "t": "Treat mistakes as theories",
+                              "d": "When your child says something 'wrong' — the moon follows our car, big things always sink — don't correct it flat. Ask 'what makes you think that?' and test it together. Their wrong idea is a real theory worth exploring."
+                      },
+                      {
+                              "t": "Offer many languages",
+                              "d": "Let one idea be expressed in more than one way — draw it, then build it with blocks, then make it in clay, then act it out or dance it. Each 'language' lets your child understand the same thing from a new side."
+                      },
+                      {
+                              "t": "Document and revisit",
+                              "d": "Take a photo of what your child makes, or jot down the exact words they said, then look back at it together later. Seeing their own thinking laid out helps them go further with it."
+                      },
+                      {
+                              "t": "Make the space a quiet teacher",
+                              "d": "Arrange a small corner with care — natural light, tidy open materials at child height, a little order and beauty. A calm, well-set space invites focus without you saying a word."
+                      }
+              ],
+              "kit": [
+                      {
+                              "name": "Open-ended materials",
+                              "tag": "Clay, loose parts, buttons, shells, mirrors — things with no fixed use."
+                      },
+                      {
+                              "name": "Light box or torch and prisms",
+                              "tag": "A cheap LED light panel or a torch with a prism, for exploring light, colour and shadow."
+                      },
+                      {
+                              "name": "Good art materials",
+                              "tag": "Real paper, proper pencils, watercolours and clay — quality invites care."
+                      },
+                      {
+                              "name": "A little notebook or camera",
+                              "tag": "To photograph and note what your child does, and revisit it together."
+                      },
+                      {
+                              "name": "Natural objects",
+                              "tag": "Leaves, stones, pinecones and seed pods gathered on walks — free and endlessly re-arrangeable."
+                      }
+              ],
+              "screens": "Reggio leans on real, hands-on materials and real light and space rather than screens, so keep this one off-screen where you can.",
+              "note": "Reggio schools have two roles most schools don't: the 'atelierista', a trained artist who runs the studio, called the atelier, and the 'pedagogista', a coordinator who supports several schools at once. Teachers are treated as researchers who learn alongside the children rather than simply instruct them. The approach grew after the Second World War in and around the town of Reggio Emilia in Italy, led by the teacher Loris Malaguzzi."
+      },
       'core-idea': {
         title: 'Core idea',
         icon: 'compass',
@@ -1163,6 +1479,60 @@ window.METHODS = [
           ]
     },
     sections: {
+      "bring-it-home": {
+              "intro": "You can bring Forest School home without a course or a badge. Pick one patch of woods near you, go back every week through the seasons, dress for the weather, and let your child lead the play while you hold the safety line. Over time the same trees become their own little world. Northern Ireland has good local groups too if you want company.",
+              "steps": [
+                      {
+                              "t": "Choose one wood and return",
+                              "d": "Pick a local wood you can reach easily and go back to the same spot every week. Seeing it change through rain, mud, autumn leaves and spring buds is the whole magic."
+                      },
+                      {
+                              "t": "Dress for the weather",
+                              "d": "There is no bad weather, only bad clothes. Waterproofs, wellies and a warm layer mean you go out in the wet and cold, not just on sunny days."
+                      },
+                      {
+                              "t": "Let the child lead",
+                              "d": "Follow what your child is drawn to, whether that is a puddle, a log or a snail. You keep the safety line; they choose the play."
+                      },
+                      {
+                              "t": "Bring in real tools slowly",
+                              "d": "Start small and always supervised. A potato peeler on a stick for whittling comes long before any knife, and only when they are ready."
+                      },
+                      {
+                              "t": "Give long, unhurried time",
+                              "d": "Leave the clock at home. Deep play and real focus only come when a child is not rushed, so plan to stay a good while."
+                      },
+                      {
+                              "t": "Open and close with a small ritual",
+                              "d": "A simple hello to the wood at the start and a thank-you at the end gives the visit shape. Children love the rhythm of the same little moment each week."
+                      }
+              ],
+              "kit": [
+                      {
+                              "name": "Waterproofs and wellies",
+                              "tag": "The kit that makes all-weather visits possible."
+                      },
+                      {
+                              "name": "Flask and a snack",
+                              "tag": "A warm drink and a bite turn a walk into a proper outing."
+                      },
+                      {
+                              "name": "Potato peeler and a small bow saw",
+                              "tag": "For supervised whittling and simple wood work, introduced slowly."
+                      },
+                      {
+                              "name": "Tarp and rope",
+                              "tag": "For building a den or shelter together."
+                      },
+                      {
+                              "name": "Forest School Association",
+                              "tag": "Find a local accredited group near you.",
+                              "site": "https://www.forestschoolassociation.org"
+                      }
+              ],
+              "screens": "Forest School is the opposite of a screen; the whole point is real weather, real tools and real woods.",
+              "note": "A real Forest School leader holds an accredited Level 3 Forest School qualification, which covers ecology, practical skills, risk-benefit assessment and outdoor first aid, so the freedom the children enjoy sits on real training. The model came from Scandinavia in the 1950s and reached the UK in 1993. Risk here is assessed, not ignored: a leader weighs the good a child gets from a real tool or a climb against the danger, then makes it as safe as it needs to be."
+      },
       'core-idea': {
         title: 'Core idea',
         icon: 'compass',
@@ -1333,6 +1703,60 @@ window.METHODS = [
           ]
     },
     sections: {
+      "bring-it-home": {
+              "intro": "Unschooling at home is mostly a change in you, not a change in your child. You trust that a four-year-old is already curious, and you turn ordinary days into the learning. It is not doing nothing. It is paying close attention, and quietly feeding whatever they are hungry to know.",
+              "steps": [
+                      {
+                              "t": "Follow the current obsession",
+                              "d": "Watch what your child returns to again and again, whether it is diggers, dinosaurs, or the moon. Feed that one thing with books, trips, videos, and real objects until they move on by themselves."
+                      },
+                      {
+                              "t": "Strew and say nothing",
+                              "d": "Leave something interesting where they will find it, like shells on the table or a jigsaw on the floor, then walk away. No lesson, no pressure. Let them pick it up in their own time, or not at all."
+                      },
+                      {
+                              "t": "Let real life be the lessons",
+                              "d": "Cooking teaches counting, weighing, and halves. Shopping teaches money and choosing. You do not need a worksheet when the kitchen and the shop are already full of maths."
+                      },
+                      {
+                              "t": "Be a resource, not the boss",
+                              "d": "Answer questions when they are asked, find the book, fetch the tool, then step back. The moment you take over and run the show, it becomes school again and the spark goes out."
+                      },
+                      {
+                              "t": "Trust the timing",
+                              "d": "Reading can arrive at four, or at nine, and both are normal. Offer letters and stories, then relax. A child who is not rushed usually gets there, and enjoys it more."
+                      },
+                      {
+                              "t": "Let boredom breathe",
+                              "d": "When your child says they are bored, you do not have to rescue them with a screen. Boredom is the empty space where their own ideas start. Wait, and watch what they invent."
+                      }
+              ],
+              "kit": [
+                      {
+                              "name": "A shelf of interesting books",
+                              "tag": "Well stocked and easy to reach, so a curious child can browse without asking."
+                      },
+                      {
+                              "name": "A library card",
+                              "tag": "Free, endless, and lets their obsession of the month change without costing you a thing."
+                      },
+                      {
+                              "name": "Real everyday tools",
+                              "tag": "A real kitchen, a magnifying glass, a tape measure, a map. Real things, not toy versions."
+                      },
+                      {
+                              "name": "Open-ended materials",
+                              "tag": "Paper, blocks, tape, clay, boxes. Stuff with no single right answer, so play can go anywhere."
+                      },
+                      {
+                              "name": "John Holt's writing",
+                              "tag": "The original thinking behind unschooling, if you want to read the source.",
+                              "site": "https://www.johnholtgws.com"
+                      }
+              ],
+              "screens": "Unschooling does not ban screens, but it protects real curiosity and boredom, so a screen stays a tool you reach for on purpose, not the default babysitter.",
+              "note": "By design there are no teachers here. You are a facilitator, not an instructor, someone who sets things up and then gets out of the way. The idea comes from John Holt, an American teacher in the 1960s and 70s who decided the cure for what school did to curiosity was simply to stop schooling. Done lazily it fails and the child drifts. Done with real attention it works, because the curiosity was there all along."
+      },
       'core-idea': {
         title: 'Core idea',
         icon: 'compass',
@@ -1501,6 +1925,60 @@ window.METHODS = [
           ]
     },
     sections: {
+      "bring-it-home": {
+              "intro": "You can't copy ancient Athens, and you shouldn't try. But its heart still travels well. The Athenians wanted to grow a whole person, not just a clever one, through beauty, balance, and real talk. That part you can borrow today, at your kitchen table in Northern Ireland, with a four-year-old.",
+              "steps": [
+                      {
+                              "t": "Talk with, not at",
+                              "d": "Ask your child real questions and truly listen to the answer. This is the old 'Socratic' habit, named after Socrates, a famous Athenian teacher: you learn together by asking, not just by telling."
+                      },
+                      {
+                              "t": "Read the old Greek stories aloud",
+                              "d": "Share the Greek myths and the tales of Homer's Odyssey and Iliad in a gentle children's retelling. Big, brave stories give a small child heroes to think with."
+                      },
+                      {
+                              "t": "Music and movement, same day",
+                              "d": "The Athenians balanced 'music' (poetry, song, the arts) with 'gymnastic' (running, play, the body). Try to touch both every day: a song or a story, and time outside to run."
+                      },
+                      {
+                              "t": "Aim quietly at arete",
+                              "d": "Arete (say it 'ah-reh-TAY') means becoming excellent as a person: brave, honest, kind. Don't lecture it. Just notice and name it warmly when you see it in your child."
+                      },
+                      {
+                              "t": "Keep one small daily ritual",
+                              "d": "A candle at dinner, a thank-you before bed, a walk that's always yours. A tiny repeated moment gives a child the feeling of belonging to something larger than the day."
+                      },
+                      {
+                              "t": "Make the table a place for ideas",
+                              "d": "Let the family table be for wonder, not just food. Ask 'what surprised you today?' and let questions and little ideas be welcome there."
+                      }
+              ],
+              "kit": [
+                      {
+                              "name": "A children's book of Greek myths",
+                              "tag": "Big stories, gently told for small listeners."
+                      },
+                      {
+                              "name": "A children's Odyssey and Iliad",
+                              "tag": "Homer's adventures in a picture-book retelling."
+                      },
+                      {
+                              "name": "A simple songbook or first instrument",
+                              "tag": "Your everyday 'music' for poetry and song."
+                      },
+                      {
+                              "name": "Space to run and play",
+                              "tag": "A garden, park, or hall for daily 'gymnastic'."
+                      },
+                      {
+                              "name": "LibriVox free audiobooks",
+                              "tag": "Free spoken classics to listen to together.",
+                              "site": "https://librivox.org"
+                      }
+              ],
+              "screens": "Be honest with yourself here: the Athenian tools are conversation, story, music, and movement, not screens.",
+              "note": "In a citizen household, a young boy was guided day to day by a 'paidagogos' (say 'pie-da-go-GOSS'): a trusted household attendant, often an educated enslaved man, who walked him to lessons and shaped his manners, while separate tutors taught him letters, music, and gymnastics. But this world was not equal, it left out girls and enslaved people entirely. So we keep the good idea, raise a person and not just a pupil, and we gladly leave the rest behind."
+      },
       'core-idea': {
         title: 'Core idea',
         icon: 'compass',
@@ -1669,6 +2147,56 @@ window.METHODS = [
           ]
     },
     sections: {
+      "bring-it-home": {
+              "intro": "The Roman gift is simple: they treated even a small child as someone becoming a person of substance. Your four-year-old is not just 'the baby' — they are part of the family's story, trusted with a real place in it and, little by little, real duty. When a child feels they truly belong and truly matter, they rise to it.",
+              "steps": [
+                      {
+                              "t": "Give real jobs, and let them matter",
+                              "d": "Romans called it pietas (say it 'pee-eh-tas') — duty to family, and it starts tiny. Give your child one real task that helps everyone, like laying the spoons or feeding the cat, and let them see it counted."
+                      },
+                      {
+                              "t": "Be the example you want copied",
+                              "d": "Children absorb what you do far more than what you say. Show the patience, the kindness, and the follow-through you hope to see, because your child is quietly copying you all day."
+                      },
+                      {
+                              "t": "Tell your family's stories",
+                              "d": "Tell your child about their grandparents, and about good people who did the right thing even when it was hard. Stories teach a small child who 'we' are and what 'we' stand for."
+                      },
+                      {
+                              "t": "Prize steadiness over showing off",
+                              "d": "The Romans admired gravitas (say it 'grav-ee-tas') — being calm, steady, and keeping your word. Praise your child for finishing a job or telling the truth, not just for being loud or clever."
+                      },
+                      {
+                              "t": "Keep one small daily ritual",
+                              "d": "Pick one tiny thing you do together every day — a candle at dinner, a saying at bedtime, a hand on the door on the way out. It quietly says: we belong to something."
+                      },
+                      {
+                              "t": "Expect responsibility, warmly",
+                              "d": "Ask a little more than feels easy, then stand close and cheer them on. Warm, clear expectations tell a child you believe in them, and they grow to fit the size of that belief."
+                      }
+              ],
+              "kit": [
+                      {
+                              "name": "A book of hero and Roman stories",
+                              "tag": "Short tales of ordinary people doing their duty — read one at bedtime.",
+                              "site": "https://librivox.org"
+                      },
+                      {
+                              "name": "A family 'jobs' chart",
+                              "tag": "A simple picture chart of daily tasks your child can own and tick off."
+                      },
+                      {
+                              "name": "A daily ritual object",
+                              "tag": "A dinner candle or a short family saying — one small thing repeated every day."
+                      },
+                      {
+                              "name": "A real place for real chores",
+                              "tag": "A low hook, a child-height shelf, or a little basket so helping is actually reachable."
+                      }
+              ],
+              "screens": "Honestly, the Roman tools are example, real work, and story — none of them live on a screen.",
+              "note": "In a Roman home the best teachers were the parents themselves: the father as the living model to copy, and the mother as the first teacher — Cornelia, a famous Roman mother, called her sons 'her jewels.' Wealthier families also kept a paedagogus (say it 'pie-da-gog-us'), often an educated Greek, to guide and tutor the child through the day. Rome was also strict and steeply hierarchical, so we keep the heart — character built early, through duty and example — and gently leave the rest."
+      },
       'core-idea': {
         title: 'Core idea',
         icon: 'compass',
