@@ -166,6 +166,118 @@ window.METHODS = [
         title: 'Things you can do this week',
         icon: 'hand',
         intro: 'Twenty Mason-true activities for a 4-year-old. Pick one or two a day. None of them is "the lesson"; they are how the day fills itself.',
+        "groups": [
+                {
+                        "heading": "Books & narration",
+                        "intro": "Read a living book, then let them tell it back — the heart of the method.",
+                        "icon": "📖",
+                        "items": [
+                                {
+                                        "name": "Read one Beatrix Potter, twice",
+                                        "body": "Choose Peter Rabbit, Squirrel Nutkin, or Jemima Puddle-Duck. Read it Monday. Read it Tuesday. Ask Wednesday: \"Can you tell me what happened?\""
+                                },
+                                {
+                                        "name": "Tell a fairy tale from memory",
+                                        "body": "No book. Just you, telling. Hansel and Gretel, Three Billy Goats Gruff, Goldilocks. Tell it differently than the book — that is the point."
+                                },
+                                {
+                                        "name": "Read aloud above their level",
+                                        "body": "A chapter of Winnie-the-Pooh, of Charlotte's Web, of The Wind in the Willows. They will not catch every word. They will catch the shape and rhythm of real English."
+                                },
+                                {
+                                        "name": "Memorise one short verse",
+                                        "body": "Eight to twelve lines. Say it together once at breakfast and once at bedtime, every day for two weeks. By week 2 the child will say it with you."
+                                },
+                                {
+                                        "name": "A finger-rhyme repertoire",
+                                        "body": "Round and Round the Garden, This Little Piggy, Five Little Ducks. Repeat until the parent is sick of them and the child still asks."
+                                }
+                        ]
+                },
+                {
+                        "heading": "Out of doors",
+                        "intro": "Hours outside, watching one patch of the world change through the year.",
+                        "icon": "🌳",
+                        "photo": "assets/methods/charlotte-mason/act-nature.jpg",
+                        "items": [
+                                {
+                                        "name": "Visit one tree, one season",
+                                        "body": "Pick a tree near you. Visit it weekly. Notice what is the same and what has changed. Take a leaf home in autumn."
+                                },
+                                {
+                                        "name": "Find and name three birds",
+                                        "body": "On your walks. Use one good field guide or a printed page from RSPB. Repeat until they greet the robin like a friend."
+                                },
+                                {
+                                        "name": "Walk to the post box",
+                                        "body": "A short errand the child can lead. Buy a stamp. Post a letter to a grandparent. Real-world competence."
+                                },
+                                {
+                                        "name": "Bring something in from outside",
+                                        "body": "A pinecone, a feather, an interesting stone. Put it on a nature shelf. Add to it over the year."
+                                },
+                                {
+                                        "name": "Lie on the grass and listen",
+                                        "body": "Five minutes. Eyes closed. Name three sounds. Repeat in different places."
+                                }
+                        ]
+                },
+                {
+                        "heading": "Beauty: picture, music & making",
+                        "intro": "One painting, one piece of music, one made thing — slowly, deeply.",
+                        "icon": "🎨",
+                        "items": [
+                                {
+                                        "name": "Picture study, one painting, two weeks",
+                                        "body": "Print one painting (Vermeer, Renoir, Van Gogh). Put it on the wall. Look at it for two minutes a day. Talk about what you see."
+                                },
+                                {
+                                        "name": "Composer study, one piece, two weeks",
+                                        "body": "Play one piece daily — Mozart's Magic Flute overture, Vivaldi's Spring. Don't explain. Let it become familiar."
+                                },
+                                {
+                                        "name": "Sing a hymn, daily, for a month",
+                                        "body": "One hymn. Same one. Every morning. By month's end it is theirs forever."
+                                },
+                                {
+                                        "name": "Beeswax modelling",
+                                        "body": "A small block of beeswax warmed in the hand. Shape into an animal, a person, a snail. No instructions."
+                                },
+                                {
+                                        "name": "Watercolour without a plan",
+                                        "body": "Wet paper, a few colours, one brush. No \"paint a tree.\" Just colour, water, paper."
+                                }
+                        ]
+                },
+                {
+                        "heading": "Real work at home",
+                        "intro": "A small pitcher, a real broom, a loaf of bread — competence a child can feel.",
+                        "icon": "🫗",
+                        "photo": "assets/methods/charlotte-mason/act-realwork.jpg",
+                        "items": [
+                                {
+                                        "name": "A loaf of bread together",
+                                        "body": "The child measures (with help), kneads, watches it rise. Eat it warm. Repeat weekly until they can do most of it themselves."
+                                },
+                                {
+                                        "name": "Pour water from a small pitcher",
+                                        "body": "Set up a child-sized pitcher and two cups on a tray. Let them pour every morning. Spills are part of it."
+                                },
+                                {
+                                        "name": "Sweep with a child-sized broom",
+                                        "body": "Real broom, child-sized. Real mess to sweep. Real work — not pretend."
+                                },
+                                {
+                                        "name": "Cut a banana with a butter knife",
+                                        "body": "Sitting at the table. The child does the cutting. You watch and do nothing."
+                                },
+                                {
+                                        "name": "Help set the table",
+                                        "body": "Every meal. The same way each time. Practice = habit."
+                                }
+                        ]
+                }
+        ],
         items: [
           { name: 'Memorise one short verse', body: 'Eight to twelve lines. Say it together once at breakfast and once at bedtime, every day for two weeks. By week 2 the child will say it with you.' },
           { name: 'Visit one tree, one season', body: 'Pick a tree near you. Visit it weekly. Notice what is the same and what has changed. Take a leaf home in autumn.' },
@@ -669,6 +781,119 @@ window.METHODS = [
         title: 'Things you can do this week',
         icon: 'hand',
         intro: 'Twenty Waldorf-true activities for a 4-year-old. Most use natural materials you can buy once and use for years.',
+        "groups": [
+                {
+                        "heading": "Making by hand",
+                        "intro": "Beeswax, wool and paint — warm, natural things shaped in little hands.",
+                        "icon": "🎨",
+                        "photo": "assets/methods/waldorf/act-making.jpg",
+                        "items": [
+                                {
+                                        "name": "Wet-on-wet watercolour",
+                                        "body": "Wet the paper, drop in two primary colours, watch them bleed. No \"paint a tree.\" Just colour meeting water."
+                                },
+                                {
+                                        "name": "Beeswax modelling",
+                                        "body": "A block of natural beeswax warmed in the hand. Shape a snail, a sleeping mouse, a fish. The wax is the material; the child is the artist."
+                                },
+                                {
+                                        "name": "Finger-knit a snake",
+                                        "body": "Wool yarn, four fingers. Show how to loop. Hours of meditative work for the child. Use the snake as a doll's belt afterwards."
+                                },
+                                {
+                                        "name": "A silk for play",
+                                        "body": "A 90cm square of dyed silk. Becomes a cape, a baby blanket, a roof, a river. Open-ended for years."
+                                },
+                                {
+                                        "name": "A puppet from a wool sock",
+                                        "body": "Wool sock, simple stitched eyes, a story to tell with it. The child can take it over for their own stories."
+                                },
+                                {
+                                        "name": "Mend something visibly",
+                                        "body": "A small rip in clothes. Sit and stitch in front of the child. Let them try. Real repair, named."
+                                }
+                        ]
+                },
+                {
+                        "heading": "The warm home",
+                        "intro": "Bread, soup, a candle, a song while you work — the day's steady rhythm.",
+                        "icon": "🍞",
+                        "photo": "assets/methods/waldorf/act-home.jpg",
+                        "items": [
+                                {
+                                        "name": "Bake a loaf together, weekly",
+                                        "body": "A simple recipe, the same one. The child measures, kneads, watches it rise. Eat the warm bread together. Repeat every Monday."
+                                },
+                                {
+                                        "name": "Make soup together from scratch",
+                                        "body": "A vegetable each day cut for the soup. By Thursday it is a meal. The child has cut every vegetable that is in the pot."
+                                },
+                                {
+                                        "name": "Sweep the floor with a real broom",
+                                        "body": "A child-sized broom and dustpan. Sweep the same patch each morning. The habit forms over weeks."
+                                },
+                                {
+                                        "name": "A verse before meals",
+                                        "body": "A short blessing or seasonal verse. The same one for the season, then change at the next festival. Spoken or sung together."
+                                },
+                                {
+                                        "name": "Light a candle at dinner",
+                                        "body": "Every evening meal. The child lights it (with help). The candle is blown out together at the end."
+                                },
+                                {
+                                        "name": "Sing while you work",
+                                        "body": "Folk songs while sweeping, lullabies while kneading. The child hears that work has a soundtrack and that you choose it."
+                                }
+                        ]
+                },
+                {
+                        "heading": "Turning of the year",
+                        "intro": "Lanterns, bulbs and a nature table — living the seasons, not just naming them.",
+                        "icon": "🕯️",
+                        "photo": "assets/methods/waldorf/act-seasons.jpg",
+                        "items": [
+                                {
+                                        "name": "Make a lantern for Martinmas (November)",
+                                        "body": "A glass jar, tissue paper, glue, a tea light. Process the child through the doing. Walk with lanterns at dusk on November 11th, singing a lantern song."
+                                },
+                                {
+                                        "name": "Sing the same song, daily, for a season",
+                                        "body": "Pick one folk song or seasonal verse. Sing it every morning. By month's end the child sings it without prompting."
+                                },
+                                {
+                                        "name": "A nature table",
+                                        "body": "A low table or windowsill with a silk cloth in this season's colour. Add pinecones, leaves, a vase of weeds, a tiny gnome. Change with the season."
+                                },
+                                {
+                                        "name": "Plant a spring bulb in autumn",
+                                        "body": "A daffodil bulb, a pot, soil. Plant in October. Watch through winter. Bloom in spring. The year is real."
+                                },
+                                {
+                                        "name": "Beeswax candle dipping (around Advent)",
+                                        "body": "A pot of melted beeswax, a length of wick. Dip, dry, dip again. Slow, satisfying, beautiful."
+                                }
+                        ]
+                },
+                {
+                        "heading": "Story, song & outdoors",
+                        "intro": "A tale told from memory, a simple tune, a walk in any weather.",
+                        "icon": "🎵",
+                        "items": [
+                                {
+                                        "name": "Tell a fairy tale from memory",
+                                        "body": "Pick one (Sweet Porridge, Goldilocks, Three Billy Goats Gruff). Memorise it. Tell it every night for two weeks. Do not vary it."
+                                },
+                                {
+                                        "name": "A pentatonic flute or kantele",
+                                        "body": "A simple five-note instrument. Even random playing sounds musical. No instruction — just availability."
+                                },
+                                {
+                                        "name": "Walk in any weather",
+                                        "body": "Even — especially — when it is raining. A puddle is a destination. Boots and a waterproof are the curriculum."
+                                }
+                        ]
+                }
+        ],
         items: [
           { name: 'Bake a loaf together, weekly', body: 'A simple recipe, the same one. The child measures, kneads, watches it rise. Eat the warm bread together. Repeat every Monday.' },
           { name: 'Wet-on-wet watercolour', body: 'Wet the paper, drop in two primary colours, watch them bleed. No "paint a tree." Just colour meeting water.' },
@@ -890,6 +1115,118 @@ window.METHODS = [
         title: 'Things you can do this week',
         icon: 'hand',
         intro: 'Twenty classical activities for a 4-year-old. Most are short, repeatable, and inheritable.',
+        "groups": [
+                {
+                        "heading": "Memory & words",
+                        "intro": "A verse, a fable, a family saying — filling the well, a little each day.",
+                        "icon": "📜",
+                        "items": [
+                                {
+                                        "name": "Memorise one short verse a month",
+                                        "body": "Pick a 4–8 line poem. Say it together at breakfast and bedtime. By month's end the child has it."
+                                },
+                                {
+                                        "name": "Tell an Aesop fable from memory",
+                                        "body": "Pick one a week. Tell it; ask the child to tell it back. By month's end you have four together."
+                                },
+                                {
+                                        "name": "A Plutarch story, simplified",
+                                        "body": "Plutarch wrote moral biography. Tell one episode (the boy Cyrus, young Alexander, the boy Pythagoras). The child meets the great as children themselves."
+                                },
+                                {
+                                        "name": "Latin or Greek alphabet (gentle exposure)",
+                                        "body": "Sing the Greek alphabet as a song around 5–6. Not before. Just exposure, not instruction."
+                                },
+                                {
+                                        "name": "Family verse before bed",
+                                        "body": "A short blessing said over the child by the parent. Same words, every night, for years."
+                                }
+                        ]
+                },
+                {
+                        "heading": "Song, art & beauty",
+                        "intro": "One hymn, one painting, one composer — the good loved before it is explained.",
+                        "icon": "🎼",
+                        "photo": "assets/methods/classical/act-beauty.jpg",
+                        "items": [
+                                {
+                                        "name": "Sing one hymn or folk song daily",
+                                        "body": "The same one for the season. Sing while you cook, while you walk. The child learns it without effort."
+                                },
+                                {
+                                        "name": "Look at one painting for a month",
+                                        "body": "Print it. Put it on the wall at child height. Look together for two minutes a day. Name what you see."
+                                },
+                                {
+                                        "name": "A composer for the term",
+                                        "body": "Pick one (Bach, Vivaldi, Mozart, Handel). Play one piece daily for 6 weeks. No explanation needed."
+                                },
+                                {
+                                        "name": "Beautiful objects at home",
+                                        "body": "A few — a small icon, a vase of weeds, a hand-bound book, a candle. The child grows up surrounded by considered beauty."
+                                },
+                                {
+                                        "name": "A handcraft each season",
+                                        "body": "Make a candle, a wreath, a small carving, a bound notebook. Skilled hands; visible workmanship."
+                                },
+                                {
+                                        "name": "Visit one place of beauty monthly",
+                                        "body": "A cathedral, a museum, a stately garden, a great library. Quiet visits. The child sees what care has produced."
+                                }
+                        ]
+                },
+                {
+                        "heading": "Heroes, faith & virtue",
+                        "intro": "Stories of brave and good people, and one small habit practised for real.",
+                        "icon": "⭐",
+                        "items": [
+                                {
+                                        "name": "Read a saint's life or hero story weekly",
+                                        "body": "Short, narrative, with a virtue at the centre. The story carries the moral; do not preach."
+                                },
+                                {
+                                        "name": "Bible story or myth daily",
+                                        "body": "A short story from your tradition. Genesis stories, Greek myths, Hindu epics — depending on what tradition you are passing on."
+                                },
+                                {
+                                        "name": "Practise one virtue for a fortnight",
+                                        "body": "Pick one (truthfulness, courage, kindness, attention). Notice it, name it, celebrate when seen, gently address when missed."
+                                },
+                                {
+                                        "name": "Pour libation of milk for the household saint or hero",
+                                        "body": "A small ritual — every Sunday, place fresh water, milk, or a small flower at the family shrine, ancestor photo, or hero shelf. A tradition the child owns."
+                                },
+                                {
+                                        "name": "Light a candle for the day's reading",
+                                        "body": "When you read a story or do memory work, light a candle. Mark the moment as worth attention. Blow it out together at the end."
+                                },
+                                {
+                                        "name": "Walk past a noble building",
+                                        "body": "A church, an old town hall, an old library. Name what it is, who used it. The child meets the inheritance physically."
+                                }
+                        ]
+                },
+                {
+                        "heading": "Wonder & conversation",
+                        "intro": "The stars, a shelf of good books, and a real conversation at the table.",
+                        "icon": "🌟",
+                        "photo": "assets/methods/classical/act-wonder.jpg",
+                        "items": [
+                                {
+                                        "name": "A real conversation at the dinner table",
+                                        "body": "About something serious — a beautiful thing, a true thing, a hard thing in the world. The 4yo does not need to follow it. They are absorbing the register."
+                                },
+                                {
+                                        "name": "Identify three constellations",
+                                        "body": "On clear nights, find the Plough, Orion, the Pleiades. Name them. The sky is named, not random."
+                                },
+                                {
+                                        "name": "A small library shelf at child height",
+                                        "body": "Twenty or thirty real, beautiful books they can take down and look at. Replace seasonally."
+                                }
+                        ]
+                }
+        ],
         items: [
           { name: 'Memorise one short verse a month', body: 'Pick a 4–8 line poem. Say it together at breakfast and bedtime. By month\'s end the child has it.' },
           { name: 'Sing one hymn or folk song daily', body: 'The same one for the season. Sing while you cook, while you walk. The child learns it without effort.' },
@@ -1119,6 +1456,117 @@ window.METHODS = [
         title: 'Things you can do this week',
         icon: 'hand',
         intro: 'Twenty Wild + Free activities for a 4-year-old. Most happen outside. All are slow, beautiful, repeatable.',
+        "groups": [
+                {
+                        "heading": "Outdoors & nature",
+                        "intro": "The same wild place through the year — moon, birds, blackberries, sunset.",
+                        "icon": "🌳",
+                        "items": [
+                                {
+                                        "name": "A weekly nature walk to the same place",
+                                        "body": "Pick one woodland, hedgerow, stretch of river. Visit every week. Note what is changing. Bring something small home."
+                                },
+                                {
+                                        "name": "Watch the moon for a month",
+                                        "body": "On clear nights, step outside and find it. New, crescent, half, full, gibbous. The child sees the cycle."
+                                },
+                                {
+                                        "name": "Make a wildflower posy weekly",
+                                        "body": "On Sunday walks, gather a few wildflowers (where legal). Put them in a small jar on the kitchen table."
+                                },
+                                {
+                                        "name": "Lie on the grass and look at clouds",
+                                        "body": "Ten minutes. Name the shapes. No agenda."
+                                },
+                                {
+                                        "name": "Bird feeder at the window",
+                                        "body": "Hang it where the child can see. Learn the names of the regulars together."
+                                },
+                                {
+                                        "name": "Pick blackberries (or apples, plums, what is in season)",
+                                        "body": "A bag, a hedgerow, an afternoon. Eat them; cook them into something."
+                                },
+                                {
+                                        "name": "Watch a sunset together once a week",
+                                        "body": "Whatever the weather. Step outside, face west, watch the light go. Talk or do not."
+                                }
+                        ]
+                },
+                {
+                        "heading": "The gathered morning",
+                        "intro": "A basket of books, poems and songs to open the day together.",
+                        "icon": "📖",
+                        "items": [
+                                {
+                                        "name": "A morning basket setup",
+                                        "body": "A real basket on the table. Inside: this week's poem (printed), the current picture book, a fairy tale book, a hymn-and-folk-song book. Ready every morning."
+                                },
+                                {
+                                        "name": "Read one Beatrix Potter twice",
+                                        "body": "Read Monday, read Tuesday, ask Wednesday: \"Can you tell me what happened?\" By the end of the year the child knows the whole set."
+                                },
+                                {
+                                        "name": "Family read-aloud at every meal",
+                                        "body": "A chapter of a book during dinner. The child listens. The adults take turns reading. Two years of dinners = many books."
+                                },
+                                {
+                                        "name": "Sing a folk song while you do anything",
+                                        "body": "While walking, while cooking, while folding washing. The child learns the song without it being a \"lesson.\""
+                                }
+                        ]
+                },
+                {
+                        "heading": "Making & growing",
+                        "intro": "A garden, a bake, a mud day, a shelf of found treasures.",
+                        "icon": "🌱",
+                        "photo": "assets/methods/wild-free/act-growing.jpg",
+                        "items": [
+                                {
+                                        "name": "A nature shelf",
+                                        "body": "A low shelf with the things brought home — feathers, pinecones, shells, interesting stones. Add monthly; rotate seasonally."
+                                },
+                                {
+                                        "name": "A weekly muffin or bread bake",
+                                        "body": "The child measures and stirs. Same recipe weekly. By Christmas they can make it nearly alone."
+                                },
+                                {
+                                        "name": "Plant a small vegetable garden",
+                                        "body": "Beans, peas, lettuce, tomatoes. A 4yo can plant, water, weed, harvest. Real food they grew."
+                                },
+                                {
+                                        "name": "A monthly art print on the wall",
+                                        "body": "Pick one painting. Print it large. Hang it at child height. Look together for two minutes a day."
+                                },
+                                {
+                                        "name": "A jar of found objects",
+                                        "body": "On every walk, find one small thing. Put it in the jar at home. By the end of summer the jar is a museum."
+                                },
+                                {
+                                        "name": "A messy mud day",
+                                        "body": "A wet day, old clothes, the back garden. No clean-up rule. Two hours of mud."
+                                }
+                        ]
+                },
+                {
+                        "heading": "Slow living, together",
+                        "intro": "Meeting other families, marking the season, and leaving room to breathe.",
+                        "icon": "☀️",
+                        "items": [
+                                {
+                                        "name": "A monthly meet-up with another family",
+                                        "body": "Outside. Mixed-age children together. Coffee for the adults. Hours of free play."
+                                },
+                                {
+                                        "name": "A simple seasonal celebration",
+                                        "body": "May Day with flowers in the hair. Midsummer with a candle outside at the longest day. Harvest with apples and bread. Mark the year."
+                                },
+                                {
+                                        "name": "Refuse one thing this week",
+                                        "body": "A class, a screen time, a \"must-do\" preschool activity. Replace it with an afternoon outside. Notice the difference."
+                                }
+                        ]
+                }
+        ],
         items: [
           { name: 'A morning basket setup', body: 'A real basket on the table. Inside: this week\'s poem (printed), the current picture book, a fairy tale book, a hymn-and-folk-song book. Ready every morning.' },
           { name: 'A weekly nature walk to the same place', body: 'Pick one woodland, hedgerow, stretch of river. Visit every week. Note what is changing. Bring something small home.' },
@@ -1346,6 +1794,117 @@ window.METHODS = [
         title: 'Things you can do this week',
         icon: 'hand',
         intro: 'Twenty Reggio-inspired activities for a 4-year-old at home. Most involve setting up an environment or provocation, then stepping back.',
+        "groups": [
+                {
+                        "heading": "Light, colour & shadow",
+                        "intro": "A light table, a mirror, a shadow walk — the world made strange and lovely.",
+                        "icon": "💡",
+                        "items": [
+                                {
+                                        "name": "Set up a light table",
+                                        "body": "A clear plastic bin lit from below with battery LEDs, or even a window with a piece of frosted paper. Place coloured cellophane, glass beads, leaves on top. The child explores."
+                                },
+                                {
+                                        "name": "A mirror on the table",
+                                        "body": "A safe mirror flat on the table. Place small objects on it. The child sees the object plus its reflection — and starts asking about symmetry."
+                                },
+                                {
+                                        "name": "Take a \"shadow walk\" at three times of day",
+                                        "body": "Morning, noon, late afternoon. Stand in the same place. Notice how the shadows change. Draw them when you come home."
+                                },
+                                {
+                                        "name": "Mix only two colours",
+                                        "body": "Provoke with red and yellow paint. Let them discover orange. Next time, blue and yellow. Discovery, not instruction."
+                                },
+                                {
+                                        "name": "Listen to one sound for one minute",
+                                        "body": "Sit outside. Close eyes. Name what you hear. Birds, wind, traffic, neighbour's door. The child trains attention to one sense at a time."
+                                }
+                        ]
+                },
+                {
+                        "heading": "Clay, paint & big paper",
+                        "intro": "Real materials and plenty of room — a child thinking through their hands.",
+                        "icon": "🎨",
+                        "photo": "assets/methods/reggio/act-clay.jpg",
+                        "items": [
+                                {
+                                        "name": "A clay station",
+                                        "body": "Real clay (terracotta, air-drying). A small wooden board, a few wire tools. The child sculpts what they have been thinking about — a bird, a snail, themselves."
+                                },
+                                {
+                                        "name": "Make a \"self-portrait\" with materials",
+                                        "body": "Buttons, pipe-cleaners, wool, paper. The child makes themselves. The result reveals more about the child than any drawing."
+                                },
+                                {
+                                        "name": "Big paper, small child",
+                                        "body": "Roll out a long strip of butcher paper on the floor. Let the child paint the whole strip. The scale invites different work."
+                                },
+                                {
+                                        "name": "Listen to and draw a piece of music",
+                                        "body": "Play one piece. The child draws what they hear (no instructions on what it should look like)."
+                                },
+                                {
+                                        "name": "A drawing of a question, not an answer",
+                                        "body": "Ask \"where do birds sleep?\" The child draws their theory. Investigate the answer together later."
+                                }
+                        ]
+                },
+                {
+                        "heading": "Wonder & investigation",
+                        "intro": "A puddle, a magnifying glass, a weekly question worth chasing.",
+                        "icon": "🔍",
+                        "items": [
+                                {
+                                        "name": "A puddle investigation",
+                                        "body": "After rain, visit the same puddle daily for a week. Mark its edge with a stick. Notice when it shrinks, grows, dries. Theorise together about where the water goes."
+                                },
+                                {
+                                        "name": "A \"look closely\" magnifying tray",
+                                        "body": "Magnifying glass, a tray of natural objects (acorn, leaf, feather, seed). The child looks closely. Draw what they see, much bigger."
+                                },
+                                {
+                                        "name": "A weekly \"wonder question\"",
+                                        "body": "Each week, the child names one thing they are wondering about. Together you find one way to investigate it. Document the journey."
+                                },
+                                {
+                                        "name": "Walk and collect \"treasures\"",
+                                        "body": "On every walk, the child collects three things. Bring them home, sort them, name them, draw them."
+                                },
+                                {
+                                        "name": "A child-led \"garden meeting\"",
+                                        "body": "Once a week, sit in the garden together. What is new? What changed? The child notices; you record."
+                                }
+                        ]
+                },
+                {
+                        "heading": "Loose parts & documenting",
+                        "intro": "Open-ended bits to build with, and a record of what unfolds.",
+                        "icon": "🧩",
+                        "items": [
+                                {
+                                        "name": "Document today's work",
+                                        "body": "Photograph today's drawing or building. Print and pin it to a board with the date. By month's end you have a record."
+                                },
+                                {
+                                        "name": "Bring the outside in",
+                                        "body": "Sticks, stones, leaves, feathers brought home are set on a beautiful tray in the dining room. They become the centrepiece."
+                                },
+                                {
+                                        "name": "Build with loose parts",
+                                        "body": "Wooden blocks, but also stones, shells, pinecones, fabric scraps. The child constructs, deconstructs, theorises."
+                                },
+                                {
+                                        "name": "A weekly \"exhibition\"",
+                                        "body": "On Friday, pin up the week's drawings and photos on one wall. Walk the whole family through it. The child explains."
+                                },
+                                {
+                                        "name": "A \"no plastic\" hour",
+                                        "body": "Once a week, an hour with only natural materials — wood, wool, cloth, clay. Notice the difference in play."
+                                }
+                        ]
+                }
+        ],
         items: [
           { name: 'Set up a light table', body: 'A clear plastic bin lit from below with battery LEDs, or even a window with a piece of frosted paper. Place coloured cellophane, glass beads, leaves on top. The child explores.' },
           { name: 'A mirror on the table', body: 'A safe mirror flat on the table. Place small objects on it. The child sees the object plus its reflection — and starts asking about symmetry.' },
@@ -1570,6 +2129,119 @@ window.METHODS = [
         title: 'Things you can do this week',
         icon: 'hand',
         intro: 'Twenty Forest School activities for a 4-year-old. Most are for the woodland session; some can be done in a garden or park.',
+        "groups": [
+                {
+                        "heading": "Fire & cooking",
+                        "intro": "A small fire, a stick to cook on, and a story to close the day.",
+                        "icon": "🔥",
+                        "items": [
+                                {
+                                        "name": "Light a small fire (with adult)",
+                                        "body": "Tinder bundle, twigs in a pyramid. The adult lights with a match or steel and flint. The child feeds it small sticks."
+                                },
+                                {
+                                        "name": "Cook a sausage or a marshmallow on a stick",
+                                        "body": "A peeled stick, a sausage threaded on. Held over the fire. Eaten. Real cooking."
+                                },
+                                {
+                                        "name": "Make tea from foraged leaves",
+                                        "body": "Pine needles, mint, blackberry leaves (all edible). Boil over the fire. Cool. Drink."
+                                },
+                                {
+                                        "name": "Close the day with a story by the fire",
+                                        "body": "No book. Just you. A simple woodland tale. The child remembers it."
+                                }
+                        ]
+                },
+                {
+                        "heading": "Dens, ropes & climbing",
+                        "intro": "Build it, climb it, swing from it — the woods as a giant workshop.",
+                        "icon": "🪵",
+                        "photo": "assets/methods/forest-school/act-dens.jpg",
+                        "items": [
+                                {
+                                        "name": "Build a small den",
+                                        "body": "Long sticks leaned against a fallen tree make a teepee. Add branches, leaves. The child sits inside."
+                                },
+                                {
+                                        "name": "Climb one tree (assessed)",
+                                        "body": "The adult checks the tree — alive, branches solid, low first branches. The child climbs as high as they can comfortably get down from."
+                                },
+                                {
+                                        "name": "Cross a log over the stream",
+                                        "body": "A fallen log over a small stream. Hands on a low branch for balance. The child crosses."
+                                },
+                                {
+                                        "name": "A rope swing on a low branch",
+                                        "body": "A short rope, a knot, a stick to sit on. The adult hangs it. The child swings."
+                                },
+                                {
+                                        "name": "Hammock from a sheet between two trees",
+                                        "body": "A simple sheet tied at both ends. A heavy 4yo can lie in it."
+                                }
+                        ]
+                },
+                {
+                        "heading": "Tools & making",
+                        "intro": "A peeler, a bow saw, some mud — real tools, real making, supervised.",
+                        "icon": "🔪",
+                        "photo": "assets/methods/forest-school/act-tools.jpg",
+                        "items": [
+                                {
+                                        "name": "Whittle a stick (with peeler)",
+                                        "body": "A potato peeler is safe for a 4yo on a green stick. Show the away-from-body motion. They peel for ages."
+                                },
+                                {
+                                        "name": "Bow saw a small branch (with two hands and adult)",
+                                        "body": "Adult holds the branch. Child saws. Both hands on the bow saw. The wood is cut by the child."
+                                },
+                                {
+                                        "name": "Mud paints",
+                                        "body": "Mud, water, a stick. Paint on a tree, on a rock. Wash off in the next rain."
+                                },
+                                {
+                                        "name": "A \"fairy door\"",
+                                        "body": "At the base of a tree, arrange sticks, moss, stones into a tiny door. The child invents the story."
+                                },
+                                {
+                                        "name": "Collect natural items for a face on the ground",
+                                        "body": "A flat patch, sticks, leaves, stones. Make a face. Walk away."
+                                },
+                                {
+                                        "name": "Make a small bow and arrow (around 5)",
+                                        "body": "A green springy stick, string. Aim at a soft target only. Real craft."
+                                }
+                        ]
+                },
+                {
+                        "heading": "Watching & tracking",
+                        "intro": "A sit spot, three trees, five birds — coming to know one wood deeply.",
+                        "icon": "🐦",
+                        "photo": "assets/methods/forest-school/act-watching.jpg",
+                        "items": [
+                                {
+                                        "name": "Find your \"sit spot\"",
+                                        "body": "On your first visit, the child picks a tree to be their tree. Visit it every week. Notice the changes."
+                                },
+                                {
+                                        "name": "Identify three trees",
+                                        "body": "Pick three that are common in your wood (oak, birch, beech). Learn the leaf, the bark, the seed. The child names them on every visit."
+                                },
+                                {
+                                        "name": "Find five birds by sound",
+                                        "body": "Sit quietly for ten minutes. Name what you hear. By month's end the child knows them."
+                                },
+                                {
+                                        "name": "Track an animal",
+                                        "body": "A mud bank, a snowy day. Find prints. Whose? Follow as far as they go."
+                                },
+                                {
+                                        "name": "Bird call call-and-response",
+                                        "body": "You imitate a bird; the child answers. Quietly. See if a real bird responds."
+                                }
+                        ]
+                }
+        ],
         items: [
           { name: 'Find your "sit spot"', body: 'On your first visit, the child picks a tree to be their tree. Visit it every week. Notice the changes.' },
           { name: 'Build a small den', body: 'Long sticks leaned against a fallen tree make a teepee. Add branches, leaves. The child sits inside.' },
@@ -1791,6 +2463,116 @@ window.METHODS = [
         title: 'Things you can do this week',
         icon: 'hand',
         intro: 'Unschooling doesn\'t prescribe activities — but here are twenty ways to support a 4-year-old\'s self-directed learning.',
+        "groups": [
+                {
+                        "heading": "Out in the world",
+                        "intro": "Errands, museums, buses, long visits — real life is the curriculum.",
+                        "icon": "🚌",
+                        "items": [
+                                {
+                                        "name": "Take them on every errand",
+                                        "body": "Post office, grocery, bank, hardware shop, the dump. They watch you do real things and ask real questions."
+                                },
+                                {
+                                        "name": "A monthly museum visit",
+                                        "body": "No itinerary. The child leads. Sometimes the gift shop is the highlight. Sometimes one dinosaur for an hour. Both are good."
+                                },
+                                {
+                                        "name": "A walk to no destination",
+                                        "body": "Just walking. The child stops to look at things. You stop too."
+                                },
+                                {
+                                        "name": "A visit to someone who does interesting work",
+                                        "body": "A potter, a baker, a beekeeper, a farmer. The 4yo asks questions; the worker answers."
+                                },
+                                {
+                                        "name": "A trip on public transport",
+                                        "body": "A bus, a train, a tram. The journey is the lesson — tickets, maps, stops, the view."
+                                },
+                                {
+                                        "name": "Visit a relative for a long afternoon",
+                                        "body": "Grandparents, uncles, aunts, family friends. Long visits, not quick ones. The child sees how others live."
+                                }
+                        ]
+                },
+                {
+                        "heading": "Follow the interest",
+                        "intro": "Feed the obsession — a magazine, the library, a strewn new thing.",
+                        "icon": "🔎",
+                        "items": [
+                                {
+                                        "name": "Subscribe to one good magazine",
+                                        "body": "National Geographic Kids, Storytime, Anorak. A new issue monthly. Leave it on the table."
+                                },
+                                {
+                                        "name": "A weekly library visit",
+                                        "body": "No agenda. The child chooses. Sometimes 10 picture books. Sometimes one. Always go."
+                                },
+                                {
+                                        "name": "A documentary at dinner",
+                                        "body": "Once a week, a David Attenborough or similar. The child watches as long as they want."
+                                },
+                                {
+                                        "name": "Strew a new tool or material",
+                                        "body": "A new musical instrument left on the floor. A new set of pencils. A microscope. A handful of magnets. No instructions."
+                                },
+                                {
+                                        "name": "Read whatever they ask for, again",
+                                        "body": "The seventh time of the same book is the seventh time deeper. Do not skip pages."
+                                }
+                        ]
+                },
+                {
+                        "heading": "Make & do at home",
+                        "intro": "Cook it, plant it, build it, spend the real money — do the real thing.",
+                        "icon": "🍳",
+                        "items": [
+                                {
+                                        "name": "Cook a meal end-to-end together",
+                                        "body": "Pick a meal. The child helps with every step (with help). It is dinner."
+                                },
+                                {
+                                        "name": "Plant something the child chose",
+                                        "body": "They picked the seed. They water it. They notice it."
+                                },
+                                {
+                                        "name": "Build with what is available",
+                                        "body": "A pile of cushions. A blanket fort. A cardboard box. A roll of masking tape. Hours."
+                                },
+                                {
+                                        "name": "A weekly bath-painting session",
+                                        "body": "Washable bath paints. The child decorates the tiles. Wash off at end."
+                                },
+                                {
+                                        "name": "Real money and a piggy bank",
+                                        "body": "Coins to sort, a tin to keep them in. A weekly small allowance. They learn what coins are by handling them."
+                                }
+                        ]
+                },
+                {
+                        "heading": "Space to be",
+                        "intro": "A yes-house, a dance party, and an afternoon free to be gloriously bored.",
+                        "icon": "🎶",
+                        "items": [
+                                {
+                                        "name": "Set up a \"yes\" environment",
+                                        "body": "A home where most things can be touched, tried, opened, climbed. Removes the constant \"no\" and frees curiosity."
+                                },
+                                {
+                                        "name": "Conversations that take the 4yo seriously",
+                                        "body": "At meals, in the car, on walks. Listen, ask follow-up questions, do not condescend."
+                                },
+                                {
+                                        "name": "Loud music dance party",
+                                        "body": "Choose a piece (anything from Bach to Beyoncé). Dance. The whole family."
+                                },
+                                {
+                                        "name": "A boredom afternoon",
+                                        "body": "One afternoon a week, no screens, no planned activity. Let them complain. Let them invent."
+                                }
+                        ]
+                }
+        ],
         items: [
           { name: 'Take them on every errand', body: 'Post office, grocery, bank, hardware shop, the dump. They watch you do real things and ask real questions.' },
           { name: 'Subscribe to one good magazine', body: 'National Geographic Kids, Storytime, Anorak. A new issue monthly. Leave it on the table.' },
@@ -2015,6 +2797,116 @@ window.METHODS = [
         title: 'Things you can do this week',
         icon: 'hand',
         intro: 'Twenty ways to bring the spirit of the Athenian household into a modern home for a 4-year-old.',
+        "groups": [
+                {
+                        "heading": "Homer, heroes & words",
+                        "intro": "The great stories told aloud, and a first taste of the Greek tongue.",
+                        "icon": "📜",
+                        "items": [
+                                {
+                                        "name": "Tell a Homer episode from memory",
+                                        "body": "The wooden horse. Odysseus and the Cyclops. Hector's farewell. Tell it; do not read. A new episode every fortnight."
+                                },
+                                {
+                                        "name": "Memorise a short Greek phrase",
+                                        "body": "\"Gnothi seauton\" — know yourself. \"Meden agan\" — nothing in excess. The 4yo says it; you say what it means."
+                                },
+                                {
+                                        "name": "A short verse before bed",
+                                        "body": "A prayer, a line from a poem, a wish for the next day. Same words, every night, for years."
+                                },
+                                {
+                                        "name": "A printed Greek alphabet on the wall",
+                                        "body": "Alpha, beta, gamma. The 4yo sees the letters. Sing them as a song around 5–6."
+                                },
+                                {
+                                        "name": "Read a picture book about a Greek hero",
+                                        "body": "D'Aulaires' Greek Myths. Sutcliff's retellings. One chapter at dinner."
+                                }
+                        ]
+                },
+                {
+                        "heading": "Gods, art & beauty",
+                        "intro": "A vase, a statue, a little shrine — beauty and the sacred, side by side.",
+                        "icon": "🏺",
+                        "items": [
+                                {
+                                        "name": "Visit a museum and find a Greek vase",
+                                        "body": "Find one with a scene. Have the child describe what is happening. Who is the hero? What are they doing?"
+                                },
+                                {
+                                        "name": "A small herm or shrine at the front door",
+                                        "body": "A small statue, a flat stone with a candle, a photograph of a beloved ancestor. Touch it as you come and go."
+                                },
+                                {
+                                        "name": "Family libation on a special day",
+                                        "body": "A small ritual on Sundays or special meals. Pour a few drops of water, milk, or wine onto the earth (outside) or into a small bowl before drinking. Say a brief blessing or name a thing you are grateful for."
+                                },
+                                {
+                                        "name": "Look at one Greek sculpture for a month",
+                                        "body": "The Charioteer of Delphi. A photo of the Parthenon frieze. Pinned to the wall at child height."
+                                },
+                                {
+                                        "name": "Visit a Greek-style architecture nearby",
+                                        "body": "A neoclassical building, a Greek revival church, a museum portico. Name what it is, where it came from."
+                                }
+                        ]
+                },
+                {
+                        "heading": "Body & play — the gymnastic",
+                        "intro": "Running, wrestling, knucklebones — the body trained alongside the mind.",
+                        "icon": "🤸",
+                        "items": [
+                                {
+                                        "name": "Knucklebones (or jacks)",
+                                        "body": "The Athenian child's favourite game. Buy a set; play. Hand skill, attention."
+                                },
+                                {
+                                        "name": "Wrestling, running, balance — the gymnastic side",
+                                        "body": "Pretend wrestling on the rug, foot races in the garden, balancing on logs. The Athenian child did all of this daily."
+                                },
+                                {
+                                        "name": "A Greek-style picnic",
+                                        "body": "Bread, olives, cheese, grapes, figs, fish. Eaten outside, on a blanket, with conversation."
+                                }
+                        ]
+                },
+                {
+                        "heading": "Home, song & seasons",
+                        "intro": "Olive oil, a hymn, the turning year, and real talk at the table.",
+                        "icon": "🫒",
+                        "items": [
+                                {
+                                        "name": "A weekly hymn",
+                                        "body": "Pick a piece of music — Greek Orthodox chant, classical Greek-themed piece, or any old hymn. Sing or listen once a week. By the season it is theirs."
+                                },
+                                {
+                                        "name": "Olive oil at every meal",
+                                        "body": "A simple Mediterranean practice. Good olive oil on bread, on salads. The 4yo grows up with the taste of the Greek table."
+                                },
+                                {
+                                        "name": "Plant an olive (if your climate allows) or a grapevine",
+                                        "body": "A small symbolic planting. Athena's tree. Even a potted bay laurel does the work."
+                                },
+                                {
+                                        "name": "A family dinner conversation about virtue",
+                                        "body": "Once a week, at dinner, raise one question: What does it mean to be brave? Honest? Kind? The 4yo listens and sometimes joins."
+                                },
+                                {
+                                        "name": "Mark the seasons with the Greek calendar",
+                                        "body": "The festival of Athena in summer. Demeter's mourning in winter. Persephone's return in spring. The year has a Greek shape."
+                                },
+                                {
+                                        "name": "Family conversation about the gods (or virtues, or values)",
+                                        "body": "For modern families, the Greek gods can be discussed as personifications of human qualities — Athena (wisdom), Apollo (light, music), Artemis (the wild). The 4yo meets the qualities through the figures."
+                                },
+                                {
+                                        "name": "One handcraft each season",
+                                        "body": "A wreath of laurel for spring. A small clay lamp for winter. The hands learn the tradition."
+                                }
+                        ]
+                }
+        ],
         items: [
           { name: 'Tell a Homer episode from memory', body: 'The wooden horse. Odysseus and the Cyclops. Hector\'s farewell. Tell it; do not read. A new episode every fortnight.' },
           { name: 'Memorise a short Greek phrase', body: '"Gnothi seauton" — know yourself. "Meden agan" — nothing in excess. The 4yo says it; you say what it means.' },
@@ -2233,6 +3125,117 @@ window.METHODS = [
         title: 'Things you can do this week',
         icon: 'hand',
         intro: 'Twenty ways to bring the spirit of the Roman household into a modern home for a 4-year-old.',
+        "groups": [
+                {
+                        "heading": "Great Roman stories",
+                        "intro": "Cincinnatus, Horatius, Cornelia — and your own family's stories too.",
+                        "icon": "📜",
+                        "items": [
+                                {
+                                        "name": "Tell the story of Cincinnatus",
+                                        "body": "The farmer called from his plough to save Rome, who served as dictator only long enough to win the war, then went home to his plough. Tell it; re-tell it. Pietas in action."
+                                },
+                                {
+                                        "name": "Tell the story of Horatius at the bridge",
+                                        "body": "The single Roman who held the bridge against the Etruscan army. Courage, sacrifice, loyalty to the Republic."
+                                },
+                                {
+                                        "name": "Tell the story of Cornelia and her jewels",
+                                        "body": "When asked to show her jewels, Cornelia pointed to her two sons (the Gracchi). The mother's honour."
+                                },
+                                {
+                                        "name": "Read a picture-book biography of a Roman",
+                                        "body": "Marcus Aurelius for children. Caesar. Cicero. Augustine (in late antiquity). Real lives, simply told."
+                                },
+                                {
+                                        "name": "Tell the family's own stories",
+                                        "body": "A great-grandparent's emigration. A grandfather's war. A family victory or hardship. The 4yo learns they belong to a line."
+                                }
+                        ]
+                },
+                {
+                        "heading": "The shrine & the prayer",
+                        "intro": "A household shrine and a few small daily rituals of belonging.",
+                        "icon": "🏛️",
+                        "items": [
+                                {
+                                        "name": "A household shrine (lararium)",
+                                        "body": "A small shelf with a candle, a photograph of grandparents, an icon if your tradition includes it, a small bowl for grain or salt. The family's sacred spot."
+                                },
+                                {
+                                        "name": "Morning blessing at the shrine",
+                                        "body": "Before breakfast, a brief moment at the shrine. A word of thanks, a remembrance of an ancestor, a wish for the day. The child watches; soon joins."
+                                },
+                                {
+                                        "name": "A Latin grace before meals",
+                                        "body": "\"Benedic, Domine, nos et haec tua dona quae de tua largitate sumus sumpturi.\" A short Latin blessing the family says together."
+                                },
+                                {
+                                        "name": "A short prayer at bedtime",
+                                        "body": "A simple invocation to the family's gods, ancestors, or to a remembered loved one. Same words, every night."
+                                },
+                                {
+                                        "name": "Mark the family calendar",
+                                        "body": "Birthdays of living and dead family members. Wedding anniversaries. Days the family remembers. The 4yo grows up knowing what the family marks."
+                                }
+                        ]
+                },
+                {
+                        "heading": "Duty & real work",
+                        "intro": "Carry the message, do the daily job — small duties that truly count.",
+                        "icon": "🛠️",
+                        "photo": "assets/methods/rome/act-duty.jpg",
+                        "items": [
+                                {
+                                        "name": "The child carries the day's message",
+                                        "body": "Send the 4yo with a real message to a neighbour, a relative, the parent. They learn the dignity of being entrusted."
+                                },
+                                {
+                                        "name": "A wooden sword and a small shield",
+                                        "body": "The Roman boy played at being a soldier. Wooden gladius, simple shield. Pretend battles in the garden. Courage is rehearsed in play."
+                                },
+                                {
+                                        "name": "Daily small responsibility",
+                                        "body": "A specific small task the 4yo owns. Watering a particular plant. Setting their place at the table. Putting the family napkins out. Same task every day."
+                                },
+                                {
+                                        "name": "A weekly visit to an elder",
+                                        "body": "A grandparent, a great-aunt, an older neighbour. The child learns to honour age and to listen."
+                                },
+                                {
+                                        "name": "A weekly handcraft or domestic skill",
+                                        "body": "Bread, mending, polishing, gardening. The 4yo learns one or two real skills by the end of the year, taught by the parent."
+                                }
+                        ]
+                },
+                {
+                        "heading": "Words, art & gathering",
+                        "intro": "A Latin phrase, a noble building, a walk and a meal all together.",
+                        "icon": "🏺",
+                        "items": [
+                                {
+                                        "name": "A weekly family meal with real conversation",
+                                        "body": "Once a week, a deliberate dinner with adult conversation about ideas, family matters, the city. The 4yo sits in."
+                                },
+                                {
+                                        "name": "Memorise a Latin phrase a season",
+                                        "body": "\"Carpe diem.\" \"Memento mori.\" \"Audentes Fortuna iuvat.\" The child says it; you say what it means."
+                                },
+                                {
+                                        "name": "Visit a Roman or neoclassical building",
+                                        "body": "A bank, a courthouse, an old church. Name the columns, the architraves, the pediments. The Roman world is built into our cities."
+                                },
+                                {
+                                        "name": "Look at a Roman bust or sculpture for a month",
+                                        "body": "Print one — Marcus Aurelius, Augustus, Cicero. Hang at child height. Look together. The Roman face."
+                                },
+                                {
+                                        "name": "A weekly family hike or walk",
+                                        "body": "The Romans built their citizens through real walking and hard travel. A family walk every Sunday. Rain or shine."
+                                }
+                        ]
+                }
+        ],
         items: [
           { name: 'Tell the story of Cincinnatus', body: 'The farmer called from his plough to save Rome, who served as dictator only long enough to win the war, then went home to his plough. Tell it; re-tell it. Pietas in action.' },
           { name: 'Tell the story of Horatius at the bridge', body: 'The single Roman who held the bridge against the Etruscan army. Courage, sacrifice, loyalty to the Republic.' },
@@ -2452,6 +3455,63 @@ window.METHODS = [
         title: "Things you can do this week",
         icon: "hand",
         intro: "You do not need a campus to borrow the best of it. Here is the Alpha model, shrunk to a kitchen table.",
+        "groups": [
+                {
+                        "heading": "Short, sharp learning",
+                        "intro": "Two focused bursts, mastered before moving on — the two-hour idea at home.",
+                        "icon": "⏱️",
+                        "items": [
+                                {
+                                        "name": "Do a short, sharp burst",
+                                        "body": "Pick one skill, work at it with full focus for ten or fifteen minutes, and stop while it is still fun. Short and sharp beats long and weary every time."
+                                },
+                                {
+                                        "name": "Master it before moving on",
+                                        "body": "Stay with the same sounds or numbers until they are genuinely easy — not just done once. A solid foundation now saves years of struggle later."
+                                },
+                                {
+                                        "name": "Let their edge set the pace",
+                                        "body": "Where they are flying, let them race ahead; where a thing is hard, slow right down and stay there. Their edge, not the calendar, decides."
+                                },
+                                {
+                                        "name": "Keep a mastery chart",
+                                        "body": "A wall of skills to unlock — sounds, numbers, jobs, tricks — ticked off as they are truly owned. Children love watching the climb, and it is exactly how Alpha tracks progress."
+                                },
+                                {
+                                        "name": "Use a great adaptive app, briefly",
+                                        "body": "Khan Academy Kids is free, excellent and ad-free. A short, focused go meets a child at their own level — the same personalised idea Alpha builds its mornings on."
+                                }
+                        ]
+                },
+                {
+                        "heading": "The rest of the day is theirs",
+                        "intro": "You as the guide, a real challenge to pass, an afternoon for a passion.",
+                        "icon": "🏆",
+                        "photo": "assets/methods/future-of-education/act-realday.jpg",
+                        "items": [
+                                {
+                                        "name": "Be the guide, not the teacher",
+                                        "body": "Sit beside them and spark, unblock and cheer — and let them do the doing. Your job is the fire, not the lecture."
+                                },
+                                {
+                                        "name": "Set a real Test2Pass",
+                                        "body": "Pick a skill and a live challenge: juggle three scarves for ten seconds, finish the LEGO set, solve the cube, give a little talk to the family. They pass by doing it for real, in front of someone."
+                                },
+                                {
+                                        "name": "Name the growth out loud",
+                                        "body": "Last week you couldn't, this week you can. Point at the climb so the child hears the story of themselves as a capable, growing learner."
+                                },
+                                {
+                                        "name": "Give the afternoon to a passion",
+                                        "body": "Clear the busywork and hand the time to whatever they love. Protect the block — the passion is where the deep learning actually happens."
+                                },
+                                {
+                                        "name": "Teach one life skill on purpose",
+                                        "body": "Tie a lace, run a lemonade stand, learn to introduce themselves and shake a hand. The afternoon of the model is really the practising of grown-up competence."
+                                }
+                        ]
+                }
+        ],
         items: [
           { name: "Do a short, sharp burst", body: "Pick one skill, work at it with full focus for ten or fifteen minutes, and stop while it is still fun. Short and sharp beats long and weary every time." },
           { name: "Master it before moving on", body: "Stay with the same sounds or numbers until they are genuinely easy — not just done once. A solid foundation now saves years of struggle later." },
