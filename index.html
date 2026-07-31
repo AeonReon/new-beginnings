@@ -122,15 +122,15 @@
     <details class="welcome" id="welcomeBox">
       <summary class="welcome-sum">
         <span class="wl-badge" aria-hidden="true">👋</span>
-        <span class="wl-sumtxt"><b>New here?</b> A one-minute intro — read it or press play</span>
+        <span class="wl-sumtxt"><b>New here?</b> A short intro — read it, or press play to listen</span>
         <span class="wl-chev" aria-hidden="true">▾</span>
       </summary>
       <div class="welcome-body">
         <button type="button" class="wl-play" id="wlPlay">
-          <span class="wl-play-ic" aria-hidden="true">▶</span><span id="wlPlayLabel">Listen · 1 min</span>
+          <span class="wl-play-ic" aria-hidden="true">▶</span><span id="wlPlayLabel">Listen · 2 min</span>
         </button>
-        <p class="intro-welcome">For everyone who wants a better way — <strong>whether your children are in school or learning at home.</strong></p>
-        <p class="intro-lead">Conscious parenting across the whole of family life. The best of every tradition and the best of the evidence, each with the real reason behind it. No dogma, no pressure — take what fits, and leave the rest.</p>
+        <p class="intro-welcome">Welcome — and well done for being here. <strong>Whether your children are in school or learning at home, you belong.</strong></p>
+        <p class="intro-lead">Most of us raise our children the way we were raised, doing what everyone else does, without stopping to ask if there's a better way. Conscious parenting is simply choosing, on purpose, to be the best parent you can be — and getting a little better every day. The tools are all right here, so there's no excuse: just pick one small thing and begin.</p>
         <div class="how-steps">
           <div class="how-step"><span class="how-n">1</span><div><b>Check "For today"</b><span>A few fresh, do-it-now ideas each day.</span></div></div>
           <div class="how-step"><span class="how-n">2</span><div><b>Explore the approaches</b><span>The traditions it's all built on — take what fits.</span></div></div>
@@ -245,13 +245,6 @@
     </section>
     -->
 
-    <section class="why-banner">
-      <a href="compass.html" class="why-link">
-        <span class="why-mark">Why?</span>
-        <span class="why-text">First-principles, not dogma — the one rule behind everything in this app.</span>
-        <span class="why-arrow">→</span>
-      </a>
-    </section>
 
   </main>
 
@@ -410,10 +403,10 @@
       const label = document.getElementById('wlPlayLabel');
       const ic = btn && btn.querySelector('.wl-play-ic');
       if (!audio || !btn) return;
-      const reset = () => { if (ic) ic.textContent = '▶'; label.textContent = 'Listen · 1 min'; };
+      const reset = () => { if (ic) ic.textContent = '▶'; label.textContent = 'Listen · 2 min'; };
       audio.addEventListener('error', () => { btn.disabled = true; label.textContent = 'Narration coming soon'; if (ic) ic.textContent = '🔇'; });
       audio.addEventListener('ended', reset);
-      audio.addEventListener('pause', () => { if (!audio.ended) { if (ic) ic.textContent = '▶'; label.textContent = 'Listen · 1 min'; } });
+      audio.addEventListener('pause', () => { if (!audio.ended) { if (ic) ic.textContent = '▶'; label.textContent = 'Listen · 2 min'; } });
       btn.addEventListener('click', () => {
         if (audio.paused) {
           audio.play().then(() => { if (ic) ic.textContent = '❚❚'; label.textContent = 'Pause'; })
