@@ -15,7 +15,6 @@ window.SCHOOL_CATS = {
 window.SCHOOLS = [
   // ── Steiner / Waldorf ──
   { name: 'Holywood Steiner School', cat: 'steiner', town: 'Holywood', address: 'Croft Road, Holywood, Co Down, BT18 0PR', phone: '028 9042 8029', lat: 54.6386, lon: -5.8236, url: 'https://www.holywood-steiner.co.uk/', note: "Ireland's only Steiner-Waldorf school taking pupils preschool to GCSE (ages 3–17). Founded 1975." },
-  { name: 'Ballymoney Steiner Kindergarten', cat: 'steiner', town: 'Ballymoney', address: 'Ballymoney, Co Antrim', phone: '', lat: 55.0700, lon: -6.5170, url: 'https://ballymoneysteiner.com/', note: 'Steiner-Waldorf kindergarten — “where children have time to be children”.' },
   { name: 'Puddleducks Playgroup (Steiner-Waldorf)', cat: 'steiner', town: 'Omagh', address: 'Omagh, Co Tyrone', phone: '', lat: 54.5980, lon: -7.3100, url: 'https://www.charitycommissionni.org.uk/', note: 'Steiner-Waldorf pre-school playgroup — calm, unhurried sessions, 8.30am–12pm weekdays.' },
 
   // ── Montessori (Family Support NI registry) ──

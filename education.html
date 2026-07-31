@@ -26,6 +26,22 @@
     #tradition-grid .tile-tagline { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
     #tradition-grid .tile-era { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
+    /* Premium (locked) tradition card — visible, admired, but not clickable */
+    .tile-premium { cursor: default; -webkit-user-select: none; user-select: none; }
+    .tile-premium:hover { transform: none; box-shadow: 0 1px 2px rgba(40,30,20,0.05), 0 10px 30px rgba(40,30,20,0.08); }
+    .tile-premium:hover .tile-icon-wrap { transform: none; }
+    .tile-premium:active { transform: none; }
+    .tile-premium.bounce { animation: premiumBounce .42s cubic-bezier(0.34, 1.56, 0.64, 1); }
+    @keyframes premiumBounce { 0% { transform: scale(1); } 34% { transform: scale(0.955); } 100% { transform: scale(1); } }
+    .tile-badge-premium {
+      display: inline-flex; align-items: center; gap: 0.32em;
+      background: linear-gradient(135deg, #FBE7A1 0%, #E9B84A 48%, #C6871B 100%);
+      color: #4A3410;
+      box-shadow: 0 2px 7px rgba(150,105,15,0.4), inset 0 1px 0 rgba(255,255,255,0.6);
+      letter-spacing: 0.09em;
+    }
+    .tile-badge-premium .tbp-mark { font-size: 1.05em; line-height: 1; }
+
     .sch-pin { width: 18px; height: 18px; background: var(--pc, #4FA4D2); border: 3px solid #fff; border-radius: 50%; box-shadow: 0 1px 5px rgba(20,35,60,.55); cursor: pointer; transition: transform .12s ease; }
     .sch-pin:hover { transform: scale(1.28); }
 
@@ -245,6 +261,31 @@
         </div>
       </a>
     `).join('');
+
+    // The School of Light — a premium, locked tradition. Shown last; admired, not opened.
+    grid.insertAdjacentHTML('beforeend', `
+      <div class="tile has-photo tile-premium" style="--c:#F0C557;--cd:#C6871B;--cs:#FBF3DA;" role="button" aria-disabled="true" aria-label="The School of Light — premium, coming soon">
+        <span class="tile-badge tile-badge-premium"><span class="tbp-mark">✦</span>Premium</span>
+        <div class="tile-photo"><img src="assets/tiles/school-of-light.png" alt="The School of Light" loading="lazy"><div class="tile-icon-wrap"><svg viewBox="0 0 64 64" class="tile-icon">${ICONS.compass}</svg></div></div>
+        <div class="tile-body">
+          <div class="tile-name">The School of Light</div>
+          <div class="tile-tagline">First principles · open to the best way · observable reality</div>
+          <div class="tile-era">Premium · coming soon</div>
+        </div>
+      </div>
+    `);
+
+    // Locked: give a little pressed-bounce, but never navigate.
+    const premiumTile = grid.querySelector('.tile-premium');
+    if (premiumTile) {
+      const bump = () => {
+        premiumTile.classList.remove('bounce');
+        void premiumTile.offsetWidth; // reflow so the animation can retrigger
+        premiumTile.classList.add('bounce');
+      };
+      premiumTile.addEventListener('click', bump);
+      premiumTile.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); bump(); } });
+    }
   </script>
 
   <script src="assets/schools-data.js"></script>
