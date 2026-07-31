@@ -5310,7 +5310,7 @@ window.METHODS = [
         "day-in-life": {
           "title": "A day in the life",
           "icon": "sun",
-          "intro": "Here is how a free-born citizen boy might have spent a school day in Athens, roughly two and a half thousand years ago. It is a real historical picture, so it holds hard parts too. Only citizen boys went to school. Girls learned at home. The man who walked the boy to school, called the paidagogos, was usually an enslaved person, because Athenian life was built on slavery. We look at the whole picture with clear eyes, keep the good parts, and leave the rest behind.",
+          "intro": "Here is how a boy in Athens might have spent a school day, roughly two and a half thousand years ago. The Athenians aimed at what they called kalos kagathos — a fine, well-rounded person, strong in mind and body alike. So the day wove together letters, music, and training of the body, all carried by the great poems. This is a picture to learn from and borrow, shaped around your own one child. The 6 to 9 range is huge, so take the parts that fit.",
           "timeline": [
             {
               "time": "Just after dawn",
@@ -5320,7 +5320,7 @@ window.METHODS = [
             {
               "time": "Early morning",
               "title": "Walked to school by the paidagogos",
-              "body": "A trusted household servant, the paidagogos, walked the boy to school. He was there to guard him and to guide his manners along the way. Say this honestly to your child: this man was almost always an enslaved person, not free. It was a real and unfair part of that world."
+              "body": "A household attendant called the paidagogos walked the boy to school. His job was to keep the boy safe and to guide his manners along the way — a steady, familiar presence at the start and end of each day."
             },
             {
               "time": "Mid morning",
@@ -5355,7 +5355,7 @@ window.METHODS = [
             {
               "time": "Evening",
               "title": "Home before dark",
-              "body": "The paidagogos walked the boy home again. Families ate a plain supper. Wealthy homes might have talk, stories, or a little more music."
+              "body": "The paidagogos walked the boy home again. Families ate a plain supper. Some homes might have talk, stories, or a little more music."
             },
             {
               "time": "Night",
@@ -5363,7 +5363,7 @@ window.METHODS = [
               "body": "With only oil lamps for light, evenings were short. The boy slept early, ready to rise with the sun and begin again."
             }
           ],
-          "note": "This is one imagined day, not a fixed timetable. Real Athenian childhoods varied by family, by wealth, and by luck. Use it as a picture to talk about with your own child, not a schedule to copy."
+          "note": "This is one imagined day, not a fixed timetable. Real Athenian childhoods varied from home to home. Use it as a picture to talk about with your own child, and borrow the shape that fits."
         },
         "activities": {
           "title": "Things to do this week",
@@ -5389,7 +5389,7 @@ window.METHODS = [
                 },
                 {
                   "name": "Read a myth as a myth",
-                  "body": "Read one Greek myth together. Say clearly: this is a story the ancient Greeks told to explain their world, not a fact. Then ask what your child thinks it means."
+                  "body": "Read one Greek myth together. Say clearly: this is a story the ancient Greeks told to explain their world. Then ask what your child thinks it means."
                 },
                 {
                   "name": "Draw the story",
@@ -5491,7 +5491,7 @@ window.METHODS = [
         "reading-list": {
           "title": "Reading list",
           "icon": "book",
-          "intro": "Athenian learning ran on Homer and the old stories. These are read as myths, the tales the Greeks told, not as facts. Start with whatever fits your child right now. A younger 6 may want you to read aloud while a keen 9 reads alone.",
+          "intro": "Athenian learning ran on Homer and the old stories. These are read as myths, the tales the Greeks told. Start with whatever fits your child right now. A younger 6 may want you to read aloud while a keen 9 reads alone.",
           "forChild": {
             "intro": "Read the myths together and enjoy them as stories. It helps to say plainly: the ancient Greeks believed in these gods and heroes, and these are the tales they told to make sense of their world.",
             "groups": [
@@ -5518,7 +5518,7 @@ window.METHODS = [
             ]
           },
           "forParent": {
-            "intro": "These help you hold the whole picture, the beauty and the hard parts, so you can share it honestly.",
+            "intro": "These help you understand what the Greeks valued and why, so you can share it well.",
             "books": [
               {
                 "title": "The Greek Way",
@@ -5543,7 +5543,7 @@ window.METHODS = [
               {
                 "title": "Who Killed Homer?",
                 "author": "Victor Davis Hanson & John Heath",
-                "note": "A sharp, opinionated argument for why the Greeks still matter. Read it as one strong point of view."
+                "note": "A spirited case for why the Greeks still matter. Read it as one strong point of view."
               }
             ]
           },
@@ -5552,7 +5552,7 @@ window.METHODS = [
         "competency": {
           "title": "What to expect at 6–9",
           "icon": "sprout",
-          "intro": "This is a historical picture to learn from, not a ladder to climb. The Athenians were not aiming at the same milestones we are, and much of their world was unequal. So treat these as skills worth borrowing, and watch your own real child. The 6 to 9 range is huge: two children the same age can be far apart, and both be fine.",
+          "intro": "This is a historical picture to learn from, not a ladder to climb. The Athenians were not aiming at the same milestones we are. So treat these as skills worth borrowing, and watch your own real child. The 6 to 9 range is huge: two children the same age can be far apart, and both be fine.",
           "landmarks": [
             {
               "area": "Memory and recitation",
@@ -5960,7 +5960,7 @@ window.METHODS = [
         "day-in-life": {
           "title": "A day in the life",
           "icon": "sun",
-          "intro": "Here is one picture of how a well-off Roman boy of about 6 to 9 might spend a school day, roughly two thousand years ago. It is a real historical model, and it has hard parts we will not hide. Schooling depended a lot on money and status. A rich family paid a teacher; a poor family often could not, so many poor children got little schooling or none. Roman society ran on slavery, and many of the teachers and home tutors were enslaved Greeks. Girls often learned at home and usually stopped early. So read this as one day from long ago, not a plan to copy. We keep the good parts and leave the rest.",
+          "intro": "Here is one picture of how a Roman boy of about 6 to 9 might spend a school day, roughly two thousand years ago. Roman schooling was built on memory, repetition, and the stories of admired figures, all aimed at forming a capable, dutiful person. This is a picture to learn from and borrow, not a plan to copy whole. The 6 to 9 range is huge, so take the parts that fit your own child.",
           "timeline": [
             {
               "time": "Before dawn",
@@ -5970,7 +5970,7 @@ window.METHODS = [
             {
               "time": "Early morning",
               "title": "The walk to school",
-              "body": "An enslaved household servant called a paedagogus, often an educated Greek, walked the boy to the ludus, the primary school. He carried the boy's things and kept him safe and well-behaved on the way."
+              "body": "A household attendant called a paedagogus walked the boy to the ludus, the primary school. He carried the boy's things and kept him safe and well-behaved on the way."
             },
             {
               "time": "Morning",
@@ -5998,11 +5998,6 @@ window.METHODS = [
               "body": "Much of the day was memory work. The children recited, saying passages aloud together until they knew them. The Romans trusted a trained memory, and this was how they built it."
             },
             {
-              "time": "Afternoon",
-              "title": "Strict discipline",
-              "body": "We say this part honestly. Discipline was strict, and the cane, the rod, was real and routine. A child who got it wrong or fidgeted could be hit. Not every teacher agreed with this, and we do not copy it."
-            },
-            {
               "time": "Late afternoon",
               "title": "Stories of good Romans",
               "body": "To grow good character, children heard exempla, stories of admired Romans held up as models, like Cincinnatus who left his farm to serve then went home again, or brave Horatius at the bridge. The lesson was in the person, not just the words."
@@ -6013,12 +6008,12 @@ window.METHODS = [
               "body": "The paedagogus walked the boy home. The family gathered for the main meal. Older Romans passed on the mos maiorum, the way of the ancestors, quiet duty and seriousness, more by living it than teaching it."
             }
           ],
-          "note": "Remember, 6 to 9 is a huge stretch. A just-6 child and an almost-9 child are worlds apart. Take the shape of the day, short lessons, real counters, memory, story, and bend it to your one child. Skip the harsh parts. A Roman schoolroom was strict and could be unkind; your home is warm."
+          "note": "Remember, 6 to 9 is a huge stretch. A just-6 child and an almost-9 child are worlds apart. Take the shape of the day — short lessons, real counters, memory, story — and bend it to your one child. Keep it short, warm, and joyful."
         },
         "activities": {
           "title": "Things to do this week",
           "icon": "hand",
-          "intro": "Four gentle ways to borrow the best of the Roman way this week, at home in Northern Ireland. None of it needs the hard parts. We take memory, neat copywork, sums with real counters, character through story, and clear speaking. Pick what fits your child today and leave the rest for another week. There is no rush and no test.",
+          "intro": "Four gentle ways to borrow the best of the Roman way this week, at home in Northern Ireland. We take memory, neat copywork, sums with real counters, character through story, and clear speaking. Pick what fits your child today and leave the rest for another week. There is no rush and no test.",
           "groups": [
             {
               "heading": "Write like a Roman",
@@ -6126,16 +6121,16 @@ window.METHODS = [
                   "body": "Read one of Aesop's Fables. Each is short and ends with a lesson. Ask your child what the story is teaching before you say it."
                 },
                 {
-                  "name": "Talk about the hard parts too",
-                  "body": "When you meet Rome's history, be honest with your child, in a gentle way, that it ran on slavery and was often unfair. Admiring some Roman virtues does not mean pretending the rest was fine."
+                  "name": "Keep a book of heroes",
+                  "body": "Start a little notebook where your child collects the people they admire and one line on why. Over time it becomes their own gallery of good examples to look up to."
                 }
               ],
               "photo": "assets/methods/rome/act-duty.jpg"
             }
           ],
           "quote": {
-            "text": "I am no advocate of severity in education; I disapprove of the use of the rod. We should begin by making the boy love his studies.",
-            "cite": "Quintilian, Institutio Oratoria (condensed from Book I) — the Roman teacher of rhetoric, who argued against beating children"
+            "text": "We learn not for school, but for life.",
+            "cite": "a well-known saying adapted from Seneca — Non scholae sed vitae discimus"
           }
         },
         "reading-list": {
@@ -6168,12 +6163,12 @@ window.METHODS = [
             ]
           },
           "forParent": {
-            "intro": "To understand the real Rome, the greatness and the cruelty both, and the character ideals Roman education aimed at. Start wherever you find traction.",
+            "intro": "To understand the real Rome and the character ideals its education aimed at. Start wherever you find traction.",
             "books": [
               {
                 "title": "SPQR: A History of Ancient Rome",
                 "author": "Mary Beard",
-                "note": "The best single modern history of Rome. Clear, honest and readable, including who was left out and who was enslaved. Begin here."
+                "note": "The best single modern history of Rome. Clear, honest and readable. Begin here."
               },
               {
                 "title": "How to Think Like a Roman Emperor",
@@ -6188,7 +6183,7 @@ window.METHODS = [
               {
                 "title": "Climbing Parnassus",
                 "author": "Tracy Lee Simmons",
-                "note": "A passionate case for classical education, Latin and Greek and memory. One person's strong view, not neutral, but a stirring read."
+                "note": "A passionate case for classical education, Latin and Greek and memory. One person's strong view, and a stirring read."
               },
               {
                 "title": "Caesar and Christ",
@@ -6202,7 +6197,7 @@ window.METHODS = [
         "competency": {
           "title": "What to expect at 6–9",
           "icon": "sprout",
-          "intro": "This is a historical picture to learn from, not a ladder to climb. The Romans did not think in modern milestones, and neither should you. What follows are the borrowable skills, memory, neat copywork, character through story, and clear speaking, with a plain reminder that 6 to 9 is a huge range. Watch your own one child, not a chart. Where your child is is exactly right.",
+          "intro": "This is a historical picture to learn from, not a ladder to climb. The Romans did not think in modern milestones, and neither should you. What follows are the borrowable skills — memory, neat copywork, character through story, and clear speaking — with a plain reminder that 6 to 9 is a huge range. Watch your own one child, not a chart. Where your child is is exactly right.",
           "landmarks": [
             {
               "area": "Reading and letters",
@@ -6255,12 +6250,12 @@ window.METHODS = [
               "items": [
                 "Can name someone they admire and say why",
                 "Understands simple ideas of courage, duty and fairness through story",
-                "Beginning to sense that history has hard, unfair parts, and can hear this honestly and gently",
+                "Enjoys hearing true stories of people from long ago and what they did",
                 "Learns character far more from what they see lived at home than from being told"
               ]
             }
           ],
-          "note": "Hold all of this lightly. It is a historical model to learn from, not a test to pass. The parts truly worth borrowing are memory, neat copywork, character through story, and clear speaking, done with warmth and never with the rod. Rome's schooling was steeply unequal and often harsh; your home is gentle and just for your one child. Meet the child in front of you, and enjoy the journey together."
+          "note": "Hold all of this lightly. It is a historical model to learn from, not a test to pass. The parts truly worth borrowing are memory, neat copywork, character through story, and clear speaking, done with warmth. Meet the child in front of you, and enjoy the journey together."
         }
       }
     },
