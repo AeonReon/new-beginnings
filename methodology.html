@@ -584,8 +584,15 @@
     function setStage(s) { try { localStorage.setItem('nb-stage', s); } catch {} }
     // Resolve a section's content for the chosen stage. Evergreen sections and
     // Early Years use m.sections[key]; other stages use m.stages[stage][key].
+    const stageIdx = (id) => STAGES.findIndex(s => s.id === id);
+    // Some approaches are genuinely designed only for the early years (e.g. Reggio
+    // Emilia is a birth-to-six approach). Rather than invent school-age content it
+    // doesn't have, a tradition can set `cappedStage` and any older stage is gated
+    // off with an honest note. We don't push what doesn't help.
+    const stageCapped = (m, stage) => !!(m && m.cappedStage && stageIdx(stage) > stageIdx(m.cappedStage));
     function getSection(m, key, stage) {
       if (!AGE_SPECIFIC.has(key) || stage === DEFAULT_STAGE) return m.sections && m.sections[key];
+      if (stageCapped(m, stage)) return null;
       return m.stages && m.stages[stage] && m.stages[stage][key];
     }
     function sectionReady(m, key, stage) { return !!getSection(m, key, stage); }
@@ -647,9 +654,11 @@
 
     function renderMethodLanding(m) {
       const stage = getStage();
+      const capped = stageCapped(m, stage);
       // Show the "being written" note only when this stage is still incomplete
       // for THIS tradition — once its age-specific sections exist, drop it.
-      const stageIncomplete = stage !== DEFAULT_STAGE && [...AGE_SPECIFIC].some(k => !sectionReady(m, k, stage));
+      const stageIncomplete = !capped && stage !== DEFAULT_STAGE && [...AGE_SPECIFIC].some(k => !sectionReady(m, k, stage));
+      const capSub = (STAGES.find(s => s.id === m.cappedStage) || {}).sub || '3–6';
       const toc = SECTION_ORDER.map((key, idx) => {
         const built = sectionReady(m, key, stage);
         const meta = SECTION_META[key];
@@ -662,7 +671,7 @@
               <span class="toc-name">${meta.title}</span>
               <span class="toc-tag">${meta.tag}</span>
             </span>
-            ${built ? '<span class="toc-arrow" aria-hidden="true">→</span>' : '<span class="toc-soon">Soon</span>'}
+            ${built ? '<span class="toc-arrow" aria-hidden="true">→</span>' : (capped && AGE_SPECIFIC.has(key) ? `<span class="toc-soon">Ages ${capSub}</span>` : '<span class="toc-soon">Soon</span>')}
           </a>`;
       }).join('');
 
@@ -721,6 +730,7 @@
           <div class="stage-pick" role="group" aria-label="Your child's age">
             ${STAGES.map(st => `<button type="button" class="stage-btn${st.id === stage ? ' active' : ''}" data-stage="${st.id}"><span class="stage-lbl">${st.label}</span><span class="stage-sub">${st.sub}</span></button>`).join('')}
           </div>
+          ${capped ? `<p class="stage-note">${m.name} is an approach for the <b>early years</b> — about ${capSub}. There isn't an honest school-age version to teach, so we don't invent one. The ideas above still travel with you: carry them into whichever approach you choose for the older years.</p>` : ''}
           ${stageIncomplete ? `<p class="stage-note">The ideas and the method are the same at every age — read them above, and in <b>Bring it home</b>. The day, the activities, the book list and the milestones for <b>${STAGES.find(s => s.id === stage).sub}</b> are being written next.</p>` : ''}
           <div class="ed-toc-head">${g ? 'Explore it' : 'Read on'}</div>
           <nav class="ed-toc">${toc}</nav>
@@ -732,6 +742,11 @@
 
     function renderSubSection(m, key) {
       const stage = getStage();
+      if (AGE_SPECIFIC.has(key) && stageCapped(m, stage)) {
+        const capSub = (STAGES.find(s => s.id === m.cappedStage) || {}).sub || '3–6';
+        root.innerHTML = `<article class="ed-article"><h1 class="ed-title">${m.name}</h1><p class="ed-deck">An early-years approach</p><p class="stage-note">${m.name} is designed for the early years — about ${capSub}. There isn't an honest school-age version of this section to show. <a href="methodology.html?id=${m.id}">← Back to ${m.name}</a></p></article>`;
+        return;
+      }
       const s = getSection(m, key, stage) || m.sections[key];
       let body = '';
 

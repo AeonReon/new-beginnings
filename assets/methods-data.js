@@ -6,6 +6,323 @@ window.METHODS = [
   {
     id: 'charlotte-mason',
     stages: {
+      "9-12": {
+          "day-in-life": {
+            "title": "A day in the life",
+            "icon": "sun",
+            "intro": "By nine to twelve the shape of a Charlotte Mason day is the same as it always was, only deeper. Lessons are still short and full of attention. Living books still do the teaching. And the hours out of doors are still long. The one real change is that your child now begins to write their tellings-back, not only say them. Remember the range here is wide. A just-turned-nine and an almost-twelve are very different people. Watch the child in front of you and move at their pace, not the clock's. This is a picture of one gentle rhythm, not a rule.",
+            "timeline": [
+              {
+                "time": "7:30",
+                "title": "Waking and pottering",
+                "body": "A slow, unhurried start. Breakfast, chores, feeding the pet, a look at the sky. The morning does not need to be rushed to be good."
+              },
+              {
+                "time": "8:30",
+                "title": "Something read together",
+                "body": "A chapter from a living book, or a Psalm, or a poem read aloud. A calm start settles the mind before lessons begin."
+              },
+              {
+                "time": "9:00",
+                "title": "The hardest lesson first",
+                "body": "Maths or the trickiest subject goes first, while attention is freshest. Keep it short. Twenty minutes of full focus beats an hour of drifting."
+              },
+              {
+                "time": "9:30",
+                "title": "Written narration",
+                "body": "You read a passage of history or a story once, with care. Then your child writes their own telling-back in their own words. This is the big new step at this age. Start with a few sentences and let it grow."
+              },
+              {
+                "time": "10:15",
+                "title": "A break and a stretch",
+                "body": "Up from the table. A drink, a run in the garden, a handstand against the wall. Short lessons work because the breaks are real."
+              },
+              {
+                "time": "10:45",
+                "title": "A living book lesson",
+                "body": "Geography from a real travel writer, or natural history, or Shakespeare through the Lambs' Tales. One subject, read well, told back."
+              },
+              {
+                "time": "11:30",
+                "title": "Copywork or dictation",
+                "body": "A short passage copied by hand, or a prepared dictation for spelling. Neat, careful, small. The hand and the eye learn together."
+              },
+              {
+                "time": "12:15",
+                "title": "Lunch and free time",
+                "body": "A proper break. Building, drawing, reading for pleasure, or simply doing nothing. The afternoon is lighter on purpose."
+              },
+              {
+                "time": "13:30",
+                "title": "Out of doors",
+                "body": "Rain or shine, whatever Northern Ireland sends. A walk, a hedgerow, a beach, a river. This is where the nature notebook fills up."
+              },
+              {
+                "time": "15:30",
+                "title": "A handicraft or skill",
+                "body": "Whittling, knitting, cooking, a real repair, an instrument. Hands that make things grow patient and capable."
+              },
+              {
+                "time": "19:30",
+                "title": "A read-aloud before bed",
+                "body": "A long story shared, one you both love. Being read to never stops being good, no matter the age."
+              }
+            ],
+            "note": "Some days the weather wins, a lesson falls flat, or written narration ends in tears. That is normal. Shorten, soften, go outside, try again tomorrow. A missed day is a missed day, never a mark against your child."
+          },
+          "activities": {
+            "title": "Things to do this week",
+            "icon": "hand",
+            "intro": "These are ideas to grow the method at nine to twelve, not a list to finish. Pick the two or three that fit your child this week and leave the rest. The aim is a wide feast of living things, told back in the child's own voice, with long time outdoors and real work for the hands.",
+            "groups": [
+              {
+                "heading": "Written narration",
+                "intro": "The gentle move from telling to writing. Go slowly and keep the joy in it.",
+                "icon": "✍️",
+                "items": [
+                  {
+                    "name": "Read once, then write",
+                    "body": "Read one passage of a living book aloud, one time, with attention. Then ask your child to write their own telling-back. Reading once trains careful listening."
+                  },
+                  {
+                    "name": "Start small",
+                    "body": "Begin with three or four sentences. A short, true telling is worth more than pages of padding. Length grows on its own over the months."
+                  },
+                  {
+                    "name": "Their words, not yours",
+                    "body": "Do not correct as they go. Let the telling be theirs, in their own voice. You can look at spelling and punctuation later, kindly."
+                  },
+                  {
+                    "name": "Keep a narration book",
+                    "body": "One handsome notebook holds their written tellings across the year. Looking back over it shows real growth better than any test."
+                  },
+                  {
+                    "name": "Alternate spoken and written",
+                    "body": "Not every narration needs to be written. Mix spoken tellings in freely so writing never becomes a wall the child dreads."
+                  }
+                ],
+                "photo": "assets/methods/montessori/absorbent-mind.jpg"
+              },
+              {
+                "heading": "The wider feast",
+                "intro": "New books and new worlds open up at this age. Each subject from one living book, read a little at a time.",
+                "icon": "📚",
+                "items": [
+                  {
+                    "name": "Meet Shakespeare",
+                    "body": "Read a play through Charles and Mary Lamb's Tales from Shakespeare first, so the story is clear. Then read a scene or two aloud, taking parts. A Midsummer Night's Dream is a warm place to start."
+                  },
+                  {
+                    "name": "Read Plutarch slowly",
+                    "body": "A children's Plutarch gives real people from long ago to think about. Read a little, told back, over many weeks. It grows a sense of character and citizenship."
+                  },
+                  {
+                    "name": "History in order",
+                    "body": "Read history as a story, in the order it happened, from a living book rather than a list of dates. One good narrative your child can picture and retell."
+                  },
+                  {
+                    "name": "Geography from a traveller",
+                    "body": "Follow a real journey on a real map. Trace it with a finger, mark the rivers and coasts. Geography becomes a place, not a page."
+                  },
+                  {
+                    "name": "Begin a foreign language",
+                    "body": "A few minutes a day, by ear first, songs and simple phrases. Irish, French, or whatever draws you. Little and often beats long and rare."
+                  }
+                ],
+                "photo": "assets/methods/classical/act-wonder.jpg"
+              },
+              {
+                "heading": "Out of doors and the nature notebook",
+                "intro": "Long hours outside, whatever the weather, and a notebook that grows more careful and true.",
+                "icon": "🌿",
+                "items": [
+                  {
+                    "name": "Draw what you actually see",
+                    "body": "The nature notebook now grows more accurate. Draw the real leaf in front of you, not a leaf from memory. Slow, honest looking is the whole point."
+                  },
+                  {
+                    "name": "Name it properly",
+                    "body": "Use a field guide to find the real name of the bird, tree, or flower you found, and write it down. Naming what you meet makes it a friend."
+                  },
+                  {
+                    "name": "Keep a weather and season log",
+                    "body": "Note the same hedgerow or tree across the weeks. Watching one place change teaches more than visiting many."
+                  },
+                  {
+                    "name": "Follow the NI coast and hills",
+                    "body": "A rock pool at Ballycastle, a bog, a forest park, a river. Northern Ireland gives a rich outdoors within a short drive."
+                  },
+                  {
+                    "name": "Be out in the rain",
+                    "body": "Waterproofs on, out you go. Puddles, wind, and mud are part of the year here. Children who go out in all weather grow hardy and glad."
+                  }
+                ],
+                "photo": "assets/methods/charlotte-mason/act-nature.jpg"
+              },
+              {
+                "heading": "Hands, habit, and skill",
+                "intro": "Handicrafts grow more skilled now, and good habits are built one small effort at a time.",
+                "icon": "🔨",
+                "items": [
+                  {
+                    "name": "Take on a real handicraft",
+                    "body": "Whittling, knitting a proper garment, sewing, woodwork, or bread from scratch. Choose one and let the skill deepen over a term, not a day."
+                  },
+                  {
+                    "name": "Prepared dictation for spelling",
+                    "body": "Show a short passage, let your child study the tricky words, then dictate it. Studying first means they meet the word spelled right, not wrong."
+                  },
+                  {
+                    "name": "Copy something worth copying",
+                    "body": "Copywork of a fine sentence or verse, written slowly and well. The hand learns good English and neat letters at the same time."
+                  },
+                  {
+                    "name": "Learn a piece of music",
+                    "body": "An instrument, or singing a folk song by heart. A short daily practice builds patience and a real accomplishment."
+                  },
+                  {
+                    "name": "Own a household job",
+                    "body": "One real, useful task done well and to the end, cooking a meal or mending a thing. Real work builds the habit of attention and care."
+                  }
+                ],
+                "photo": "assets/methods/charlotte-mason/act-realwork.jpg"
+              }
+            ],
+            "quote": {
+              "text": "The question is not, — how much does the youth know? when he has finished his education — but how much does he care?",
+              "cite": "Charlotte Mason, School Education (Vol. 3)"
+            }
+          },
+          "reading-list": {
+            "title": "Reading list",
+            "icon": "book",
+            "intro": "Living books do the teaching in this method, so the books matter most of all. For your child, choose real stories and real writing, whole books rather than snippets. For you, Charlotte Mason's own words come first, with warm modern guides as the on-ramp. Meet your own child where they are. A just-nine may still love being read to for everything, while an almost-twelve reads much alone.",
+            "forChild": {
+              "intro": "Rich, whole books for the nine-to-twelve years. Read many aloud together even when your child can read them alone. Some are a stretch for a younger reader and a gentle read for an older one, so pick by the child, not the age.",
+              "groups": [
+                {
+                  "heading": "Story and adventure",
+                  "books": [
+                    "Swallows and Amazons — Arthur Ransome",
+                    "The Hobbit — J.R.R. Tolkien",
+                    "Treasure Island — Robert Louis Stevenson",
+                    "Kidnapped — Robert Louis Stevenson",
+                    "Anne of Green Gables — L.M. Montgomery"
+                  ]
+                },
+                {
+                  "heading": "Shakespeare and heroes",
+                  "books": [
+                    "Tales from Shakespeare — Charles and Mary Lamb",
+                    "The Heroes — Charles Kingsley",
+                    "Plutarch's Lives for Boys and Girls — W.H. Weston (a children's Plutarch)"
+                  ]
+                },
+                {
+                  "heading": "History and nature",
+                  "books": [
+                    "Our Island Story — H.E. Marshall (a living children's history, read in order)",
+                    "The Burgess Bird Book for Children — Thornton W. Burgess",
+                    "A well-chosen nature-study reader for keeping alongside the notebook"
+                  ]
+                }
+              ]
+            },
+            "forParent": {
+              "intro": "Charlotte Mason herself is the source, and her own words are the fullest statement of the method. They are formal but clear. The modern guides come after, and Karen Glass on written narration is especially worth reading now, as this is the age that step begins.",
+              "books": [
+                {
+                  "title": "Towards a Philosophy of Education (Vol. 6)",
+                  "author": "Charlotte Mason",
+                  "note": "Her own final summary of the whole method, and the fullest statement of it. Formal, but the clearest single volume. Begin here if you read only one."
+                },
+                {
+                  "title": "Home Education (Vol. 1)",
+                  "author": "Charlotte Mason",
+                  "note": "The foundations, the habits, and the case for hours out of doors. Written for the early years but the spirit carries right through."
+                },
+                {
+                  "title": "Know and Tell: The Art of Narration",
+                  "author": "Karen Glass",
+                  "note": "Practical, warm, and exactly right for now. The best guide to moving your child gently from spoken to written narration."
+                },
+                {
+                  "title": "Consider This",
+                  "author": "Karen Glass",
+                  "note": "Places Mason's method in the older classical tradition. A clear, readable why behind the what."
+                },
+                {
+                  "title": "A Charlotte Mason Companion",
+                  "author": "Karen Andreola",
+                  "note": "A gentle, encouraging tour of the whole method for a home. Good for the days you need heart as much as instruction."
+                }
+              ]
+            },
+            "free": "Ambleside Online (amblesideonline.org) is a full, free Charlotte Mason curriculum with booklists and week-by-week schedules for exactly these forms. Much of the reading is in the public domain, free on Project Gutenberg to read and on Librivox to hear."
+          },
+          "competency": {
+            "title": "What to expect at 9–12",
+            "icon": "sprout",
+            "intro": "These are things many children grow into somewhere across the nine-to-twelve years, in the spirit of the method rather than a checklist to tick. The range is wide. A just-nine and an almost-twelve differ a great deal, and children arrive at each landmark in their own order and their own time. Use this to see the shape of the road, never to measure your child against a line.",
+            "landmarks": [
+              {
+                "area": "Written narration",
+                "items": [
+                  "Begins to write their tellings-back, not only say them",
+                  "Can listen to a passage read once and then retell it",
+                  "Starts with a few sentences and slowly writes more over the year",
+                  "Puts things in their own words rather than copying the book"
+                ]
+              },
+              {
+                "area": "Reading and language",
+                "items": [
+                  "Reads whole living books, many of them alone",
+                  "Still loves and gains from being read to",
+                  "Copywork moves toward transcription and prepared dictation",
+                  "Spelling grows through meeting words spelled correctly, not through lists of errors"
+                ]
+              },
+              {
+                "area": "The wider feast",
+                "items": [
+                  "Meets Shakespeare through the Lambs' Tales and the plays",
+                  "Reads Plutarch slowly for a sense of character",
+                  "Follows history told in order, as a story",
+                  "Begins a foreign language by ear"
+                ]
+              },
+              {
+                "area": "Nature and out of doors",
+                "items": [
+                  "Keeps a more careful and accurate nature notebook",
+                  "Draws what they truly see and names it from a guide",
+                  "Is out of doors daily in most weathers",
+                  "Notices seasons and change in a place returned to often"
+                ]
+              },
+              {
+                "area": "Attention and habit",
+                "items": [
+                  "Holds attention for a short, full lesson",
+                  "Sees a real task through to the end",
+                  "Grows in self-command and good working habits",
+                  "Cares about doing a thing well for its own sake"
+                ]
+              },
+              {
+                "area": "Hands and skill",
+                "items": [
+                  "Handicrafts become more skilled and are carried over weeks",
+                  "Can follow a real recipe or make a real repair",
+                  "Practises an instrument or a craft a little each day",
+                  "Takes pride in a finished, useful piece of work"
+                ]
+              }
+            ],
+            "note": "In this method the term exam is simply your child narrating what they know, with no grades and no such thing as behind. If a landmark has not come yet, it is not late, it is on its way. Keep the lessons short, let the books teach, get outdoors daily whatever the Northern Ireland weather, and trust the slow, steady growth of the child in front of you."
+          }
+        },
       "6-9": {
         "day-in-life": {
           "title": "A day in the life",
@@ -726,6 +1043,331 @@ window.METHODS = [
   {
     id: 'montessori',
     stages: {
+      "9-12": {
+          "day-in-life": {
+            "title": "A day in the life",
+            "icon": "sun",
+            "intro": "By nine to twelve, your child is a different creature from the small child who needed the pink tower. Montessori called this the second plane — a reasoning, imaginative, deeply social mind that wants to know how everything fits together and why things are fair. Remember: this is a method, not a curriculum, and nine-to-twelve is a huge span. A just-nine child and an almost-teen are far apart. So read this as a shape, not a timetable. The heart of it is one long, uninterrupted stretch of work that your child steers, while you prepare good things around the edges and then step back.",
+            "timeline": [
+              {
+                "time": "Waking",
+                "title": "The slow start is theirs",
+                "body": "Older children often surface at their own pace now. Let the morning belong to them: breakfast they make, an animal to feed, a bed to sort. These small jobs still matter — they are how a person learns they can run their own life."
+              },
+              {
+                "time": "Morning gather",
+                "title": "A short talk over the plan",
+                "body": "Sit together for ten minutes. What is the big project this week? What did they promise to finish? You are not handing out tasks — you are helping them see their own week. Then you get out of the way."
+              },
+              {
+                "time": "The long work cycle",
+                "title": "Two or three uninterrupted hours",
+                "body": "This is the whole day, really. A long, unbroken block your child directs — research, maths, writing, whatever the current question is pulling them toward. Do not chop it up. The deep focus only comes when they know the time is protected and their own."
+              },
+              {
+                "time": "Mid-morning",
+                "title": "Following the big question",
+                "body": "A child this age falls into research. One question about how bridges hold up becomes a week of drawing, measuring, and building. Feed it with reference books and materials. Your job is to keep the shelves rich, not to steer the answer."
+              },
+              {
+                "time": "Toward abstraction",
+                "title": "Maths moving onto paper",
+                "body": "The concrete materials are still there when needed, but now fractions, decimals, and geometry are moving into the head and onto paper. Let this happen when they are ready, not on a schedule. Readiness shows itself; you will see it."
+              },
+              {
+                "time": "A pause",
+                "title": "Snack and a stretch",
+                "body": "Real hunger, real movement. A walk to the shop, a job in the garden, a bit of running. The body still leads the mind at this age — a stuck problem often unsticks on the move."
+              },
+              {
+                "time": "Midday",
+                "title": "Making lunch, running the home",
+                "body": "Your child can plan and cook a simple lunch now, and clear it after. This is not a chore to survive — it is real competence, and they feel proud of it. Practical life never ends; it just grows up."
+              },
+              {
+                "time": "Going out",
+                "title": "The trip they arranged",
+                "body": "Some afternoons, your child leaves the house to chase their research in the real world — a museum, a farm, a workshop. In Montessori's plan the child plans it themselves: rings ahead, works out the bus, writes the questions. You go along quietly. This 'going out' is the beating heart of these years."
+              },
+              {
+                "time": "Afternoon",
+                "title": "The living world, up close",
+                "body": "Study the plants and creatures you can actually see and name. A pond, a hedge, a jar of pondwater. Real looking, real sorting, real drawing. Better one snail truly observed than a hundred pictured in a book."
+              },
+              {
+                "time": "Later",
+                "title": "Reading, writing, story",
+                "body": "Rich language now — a real novel they choose, a story of an inventor or explorer, careful writing of their own. History arrives as story: the long line of people making tools and asking questions. Told as a tale, it grips them."
+              },
+              {
+                "time": "Evening",
+                "title": "Enterprise and quiet",
+                "body": "Older children love a real project with a real end — growing something to sell, running a little stall, mending and making. Then the day winds down into quiet: reading in bed, a talk about something that isn't fair in the world. That pull toward fairness is deeply theirs now. Honour it."
+              }
+            ],
+            "note": "Do not measure your day against this list. Some days are all one project and nothing else. Some days the trip fills the afternoon and the maths waits. The one thing to protect is the long, self-led work cycle — that is the engine. Everything else can flex around it."
+          },
+          "activities": {
+            "title": "Things to do this week",
+            "icon": "hand",
+            "intro": "Pick what fits the child in front of you, not the age on the label. A nine-year-old and a twelve-year-old want different things, and the same child wants different things in different weeks. The thread running through all of it is the same: real work, real questions, real independence. You prepare the ground and then let them lead.",
+            "groups": [
+              {
+                "heading": "Follow the big question",
+                "intro": "At this age a single question can power weeks of work. Your task is to feed it, not to answer it.",
+                "icon": "🔍",
+                "items": [
+                  {
+                    "name": "Start a research folder",
+                    "body": "When your child asks a big question — how does a lock work, why do rivers bend — hand them a folder and let them fill it. Drawings, notes, measurements, cut-outs. It is theirs to build and theirs to finish."
+                  },
+                  {
+                    "name": "Keep the reference shelf rich",
+                    "body": "A good atlas, a visual dictionary, books on how things work. When the question comes, the answer should be reachable on your own shelf. Let them go and find it themselves."
+                  },
+                  {
+                    "name": "Build the thing",
+                    "body": "Whatever they are studying, make a real version. A working model bridge from lolly sticks, a river shaped in a tray of sand. The hands prove what the head is only guessing."
+                  },
+                  {
+                    "name": "Let them teach you",
+                    "body": "When the project is done, sit and be taught. A child who has to explain it out loud finds the gaps and fills them. You just listen and ask."
+                  },
+                  {
+                    "name": "Follow the tangent",
+                    "body": "The bridge question becomes a boat question becomes a floating question. Do not drag them back to the plan. The tangent is the learning; let the river run."
+                  }
+                ],
+                "photo": "assets/methods/montessori/follow-the-child.jpg"
+              },
+              {
+                "heading": "Going out — the trip they run",
+                "intro": "The signature work of these years. The child plans and arranges a real outing themselves to chase real research. You are the quiet grown-up in the corner.",
+                "icon": "🚌",
+                "items": [
+                  {
+                    "name": "Let them make the call",
+                    "body": "If they want to visit a museum or workshop, they ring ahead and ask. It feels enormous to a child and shrinks fast once done. Stand near, but let them speak."
+                  },
+                  {
+                    "name": "Plan the journey together",
+                    "body": "Which bus, what time, how much it costs, when you get home. Work it out on paper with them. Northern Ireland's Translink journey planner makes this a real, doable puzzle."
+                  },
+                  {
+                    "name": "Prepare the questions first",
+                    "body": "Before you go, they write three real questions to ask a guide or a maker. A visit with questions is a different thing from a visit that just drifts past."
+                  },
+                  {
+                    "name": "Pick a free, real place",
+                    "body": "Many NI museums are free — the Ulster Museum, the Ulster Folk Museum days, local heritage centres. A working farm, a potter, a bakery. Real people doing real work beats any worksheet."
+                  },
+                  {
+                    "name": "Write it up after",
+                    "body": "Home again, the trip goes into the research folder — what they saw, what surprised them, what the maker said. The outing becomes a piece of work, not just a day out."
+                  }
+                ],
+                "photo": "assets/methods/montessori/real-work.jpg"
+              },
+              {
+                "heading": "The living world and real maths",
+                "intro": "Study creatures and plants you can actually see, and let number move gently from the hand onto the page.",
+                "icon": "🌿",
+                "items": [
+                  {
+                    "name": "Sort what you find",
+                    "body": "Collect leaves, or shells, or beetles from the garden, and sort them by real features — veins, legs, edges. Classifying by what you can observe is the root of clear thinking."
+                  },
+                  {
+                    "name": "Keep a nature notebook",
+                    "body": "One creature or plant, drawn carefully and named. Watch it over weeks — the same tree through the seasons, the frogs in a local pond. Slow, patient looking is the whole lesson."
+                  },
+                  {
+                    "name": "Move fractions onto paper",
+                    "body": "When the concrete fraction work is easy, try it on paper — halves, thirds, adding them. Only when they are ready. Cooking is the best proving ground: double a recipe, halve it."
+                  },
+                  {
+                    "name": "Draw with geometry",
+                    "body": "A compass and a ruler make beautiful, exact shapes. Circles, triangles, patterns that repeat. Geometry at this age is pleasure first, proof later."
+                  },
+                  {
+                    "name": "Measure the real world",
+                    "body": "How tall is the tree, using its shadow? How far around the garden? Real measuring turns number from a page into a tool they trust."
+                  }
+                ],
+                "photo": "assets/methods/montessori/act-food-nature.jpg"
+              },
+              {
+                "heading": "Fairness, words, and enterprise",
+                "intro": "The older child burns with fairness, loves rich language, and wants a real project with a real result. Feed all three.",
+                "icon": "⚖️",
+                "items": [
+                  {
+                    "name": "Run a small enterprise",
+                    "body": "Grow something and sell it at the gate. Make and sell cards. A real project with real money and a real end teaches more about the world than a stack of exercises."
+                  },
+                  {
+                    "name": "Argue a fair case",
+                    "body": "Pick something that seems unfair — a rule, a bit of news — and let them build the argument. This age wants to reason about right and wrong. Take their case seriously."
+                  },
+                  {
+                    "name": "Write for a real reader",
+                    "body": "A letter to the council, a review of a book they loved, a story for a younger cousin. Writing lands when someone real will read it."
+                  },
+                  {
+                    "name": "Learn grammar as a game",
+                    "body": "Take a sentence apart — which word does the work, which one paints it. Montessori made grammar tactile and playful. Keep it curious, never dry."
+                  },
+                  {
+                    "name": "Contribute to the community",
+                    "body": "A litter pick, helping a neighbour, a job at a local group. The pull to belong and to matter is strong now. Give it somewhere real to go."
+                  }
+                ],
+                "photo": "assets/methods/montessori/grace-courtesy.jpg"
+              }
+            ],
+            "quote": {
+              "text": "The greatest sign of success for a teacher is to be able to say, 'The children are now working as if I did not exist.'",
+              "cite": "Maria Montessori"
+            }
+          },
+          "reading-list": {
+            "title": "Reading list",
+            "icon": "book",
+            "intro": "Two shelves. One for your child — real, verifiable books about how the world works, and great stories to fall into. One for you — Montessori's own writing for these years, with honest warnings, and the warmer modern guides as your way in. Buy little; the library carries most of it.",
+            "forChild": {
+              "intro": "The second-plane child wants books they can check against the real world, and stories big enough to live inside. Give them both. Let them choose freely from the shelf.",
+              "groups": [
+                {
+                  "heading": "How the world works (real, checkable)",
+                  "books": [
+                    "The DK Children's Illustrated Atlas — DK",
+                    "The Usborne Illustrated Dictionary — Usborne",
+                    "The Way Things Work Now — David Macaulay",
+                    "The Story of Inventions — Anna Claybourne",
+                    "Britannica All New Children's Encyclopedia — Britannica"
+                  ]
+                },
+                {
+                  "heading": "Real lives (biography)",
+                  "books": [
+                    "Who Was...? series — various authors",
+                    "Little Leaders: Bold Women in Black History — Vashti Harrison",
+                    "Fantastically Great Women Who Changed the World — Kate Pankhurst",
+                    "Good Night Stories for Rebel Girls — Elena Favilli and Francesca Cavallo"
+                  ]
+                },
+                {
+                  "heading": "Stories to fall into",
+                  "books": [
+                    "The Hobbit — J.R.R. Tolkien",
+                    "The Wonderful Wizard of Oz — L. Frank Baum",
+                    "The Lion, the Witch and the Wardrobe — C.S. Lewis",
+                    "D'Aulaires' Book of Greek Myths — Ingri and Edgar Parin d'Aulaire",
+                    "The Wind in the Willows — Kenneth Grahame"
+                  ]
+                }
+              ]
+            },
+            "forParent": {
+              "intro": "Montessori wrote directly about these older years. Her own books are the source, though they are dense and of their time — begin with a modern guide if you need an easier door, then go to her.",
+              "books": [
+                {
+                  "title": "To Educate the Human Potential",
+                  "author": "Maria Montessori",
+                  "note": "Her book for the elementary years and the 'cosmic education' vision. The real source — but dense and of its time. Read it slowly, and hold the big-story chapters as a doorway to wonder, not as settled fact."
+                },
+                {
+                  "title": "From Childhood to Adolescence",
+                  "author": "Maria Montessori",
+                  "note": "Her thinking on the older child moving toward the teenage years. Short, and full of practical hints about 'going out' and real work."
+                },
+                {
+                  "title": "Montessori: The Science Behind the Genius",
+                  "author": "Angeline Stoll Lillard",
+                  "note": "The best modern bridge — pairs Montessori's ideas with what research now shows. Clear, fair, and a good place to start if her own books feel steep."
+                },
+                {
+                  "title": "Montessori Madness!",
+                  "author": "Trevor Eissler",
+                  "note": "A warm, fast, plain-language case for the method from an ordinary parent. The easiest read on this shelf."
+                },
+                {
+                  "title": "How to Raise an Amazing Child the Montessori Way",
+                  "author": "Tim Seldin",
+                  "note": "Practical and beautifully laid out. Covers the older child at home with real activities you can do this week."
+                },
+                {
+                  "title": "The Absorbent Mind",
+                  "author": "Maria Montessori",
+                  "note": "Her foundational work. More about the younger child, but it grounds everything the older years build on. Worth having for the whole picture."
+                }
+              ]
+            },
+            "free": "Your local library carries almost all of the children's shelf — reserve online and collect. Many Northern Ireland museums are free, and the outdoors costs nothing at all. A hedge, a pond, and a well-planned bus trip carry more of these years than any book can. For Montessori's own out-of-copyright works, check archive.org."
+          },
+          "competency": {
+            "title": "What to expect at 9–12",
+            "icon": "sprout",
+            "intro": "This is a wide band, and every child crosses it in their own time and order. Treat this as a map of the territory, not a checklist to tick. The whole point of the method is to meet the child you have, at the pace they show you. If something here has not arrived yet, that is not a problem — it is information about where this particular child is right now.",
+            "landmarks": [
+              {
+                "area": "The reasoning mind",
+                "items": [
+                  "Wants to know why, not just what — reasons things out",
+                  "Can hold a big project across days or weeks",
+                  "Enjoys hard puzzles and problems for their own sake",
+                  "Starts to think about their own thinking"
+                ]
+              },
+              {
+                "area": "Independence and going out",
+                "items": [
+                  "Can plan a real trip — the bus, the time, the cost",
+                  "Will phone ahead and ask a stranger a question",
+                  "Runs parts of the home: cooks, shops, mends",
+                  "Manages their own long work cycle without being steered"
+                ]
+              },
+              {
+                "area": "Maths toward abstraction",
+                "items": [
+                  "Moving from materials to working on paper",
+                  "Fractions, decimals, and simple geometry taking shape",
+                  "Beginning to enjoy number for its own sake",
+                  "Uses maths as a real tool — measuring, doubling, money"
+                ]
+              },
+              {
+                "area": "The living world",
+                "items": [
+                  "Observes and names plants and creatures they can see",
+                  "Sorts and classifies by real, observed features",
+                  "Keeps a careful nature notebook over time",
+                  "Prefers one thing truly watched to many things pictured"
+                ]
+              },
+              {
+                "area": "Language and story",
+                "items": [
+                  "Reads real novels and chooses their own",
+                  "Writes richly, and for real readers",
+                  "Enjoys taking sentences apart — grammar as play",
+                  "Loves history and human invention told as story"
+                ]
+              },
+              {
+                "area": "Fairness and community",
+                "items": [
+                  "Strong, keen sense of what is fair and unfair",
+                  "Wants to reason about right and wrong",
+                  "Drawn to belong to and contribute to a group",
+                  "Can run a small enterprise from start to finish"
+                ]
+              }
+            ],
+            "note": "If your child is racing ahead in one row and quiet in another, that is normal and healthy — children do not develop evenly. Watch what they reach for, feed that, and keep the shelves and the trips rich around them. Your steady job is to prepare the environment and then, as Montessori asked, step back so the work becomes truly theirs."
+          }
+        },
           "6-9": {
                 "day-in-life": {
                       "title": "A day in the life",
@@ -1328,6 +1970,330 @@ window.METHODS = [
   {
     id: 'waldorf',
     stages: {
+      "9-12": {
+          "day-in-life": {
+            "title": "A day in the life",
+            "icon": "sun",
+            "intro": "This is a picture of one rhythm, not a rule. Nine to twelve is a wide stretch, and your one child is somewhere along it in their own way. Steiner believed that around age nine or ten a child crosses a kind of bridge — they start to feel more separate from the world, and more ready to meet it and look at it honestly. That was his view of childhood, and it shapes the Waldorf day: a long, calm morning of one main subject at a time, told through story and drawing and real observation, then handwork, music, and time outside. Take what fits your child and your kitchen table, and leave the rest.",
+            "timeline": [
+              {
+                "time": "Morning start",
+                "title": "A gentle wake-up together",
+                "body": "The day opens slowly. A candle, a verse or a song, a look out of the window at the weather. At this age a child can help set the table and start the morning, which lets them feel trusted and steady before any lessons begin."
+              },
+              {
+                "time": "The main lesson block",
+                "title": "One subject, given a long run",
+                "body": "The heart of the Waldorf day is a long block — often two hours — on one main subject at a time, kept up for a few weeks before moving on. It might be local geography and map-making, fractions and then decimals, or the great stories of ancient peoples. Going deep into one thing suits this age far better than a scattered timetable."
+              },
+              {
+                "time": "Within the block",
+                "title": "Told, then done, then drawn",
+                "body": "A main lesson has a rhythm of its own. You bring the story or the idea alive by telling it, not reading from a screen. The child works with it — measuring, calculating, observing. Then they draw it and write it into their own main-lesson book, which becomes their handmade textbook."
+              },
+              {
+                "time": "A story to carry",
+                "title": "Myth and history as living tales",
+                "body": "History and myth arrive as vivid stories. In class four the Norse told of Odin, Thor, and the great ash tree. Later come the tales of ancient India, Persia, Mesopotamia, Egypt, and Greece, then Rome and the medieval world. They are met as stories peoples told, felt from the inside, not as dry dates to memorise."
+              },
+              {
+                "time": "A short break outside",
+                "title": "Fresh air and movement",
+                "body": "After the long focus of the main lesson, the body needs to move. A run in the garden, a walk down the lane, skipping or ball games. In Northern Ireland the weather rarely fully cooperates, and that is fine — coats on, out you go anyway."
+              },
+              {
+                "time": "Mid-morning",
+                "title": "Skills that need daily practice",
+                "body": "Shorter lessons follow the main block: lively grammar and writing, reading aloud, practising number facts. These are the things that grow with steady daily practice rather than long single sittings."
+              },
+              {
+                "time": "Late morning",
+                "title": "Beginnings of science, by watching first",
+                "body": "Steiner's way with science is to observe the real thing before naming any rule. You watch light and shadow move across the day, listen to how sounds differ, feel warmth spread through water, look closely at a plant or a stone you can hold. The idea grows out of what the child has truly seen, here and now."
+              },
+              {
+                "time": "Midday",
+                "title": "A shared, unhurried meal",
+                "body": "Lunch is made and eaten together, without a screen. At this age a child can cook a real part of the meal — and the kitchen is one of the best science rooms there is, full of heat, change, weighing, and measuring."
+              },
+              {
+                "time": "Early afternoon",
+                "title": "Handwork and craft",
+                "body": "Afternoons turn to the hands. Sewing, cross-stitch, knitting, and the beginnings of woodwork. A child of this age can make something genuinely useful and see it through to the end. The patience and the finished object matter as much as the skill."
+              },
+              {
+                "time": "Later afternoon",
+                "title": "Music, painting, and free time",
+                "body": "Music continues daily — an instrument, singing, keeping a rhythm. Painting with soft, flowing colour. And real free time, unfilled, where the child chooses. One child at home has plenty of space for their own projects and their own quiet."
+              },
+              {
+                "time": "Evening",
+                "title": "A calm close and a read-aloud",
+                "body": "The day winds down gently. A shared read-aloud from a good long tale is a lovely close at this age, even for a strong independent reader. Being read to still feeds them. Then an early, screen-light wind-down into sleep."
+              }
+            ],
+            "note": "Nine to twelve is a huge span, so hold this loosely. A just-nine child still leans on your warmth and story; a nearly-twelve child wants more challenge, more independence, and honest answers. Watch your own child and let the rhythm bend to meet them. The aim is a steady, unhurried day with room to go deep — not a full checklist."
+          },
+          "activities": {
+            "title": "Things to do this week",
+            "icon": "hand",
+            "intro": "These are simple, low-cost things you can do at your kitchen table, in the garden, or on a walk in your part of Northern Ireland. Pick a few that suit your child this week. The Waldorf spirit is: tell the story warmly, watch the real thing closely, and make something with your hands. No screens needed, and one child is plenty.",
+            "groups": [
+              {
+                "heading": "Stories to tell",
+                "intro": "History and myth come alive when told, not read off a page. Tell them in your own words, a little at a time, and let your child ask and wonder.",
+                "icon": "📖",
+                "items": [
+                  {
+                    "name": "A Norse tale by candlelight",
+                    "body": "Tell one story the Norse told — Thor's lost hammer, or the great ash tree Yggdrasil that they said held up the worlds. Say 'the Norse believed' and 'in this tale', so it is clearly a story an old people loved, not a fact. Then let your child draw the moment they liked best."
+                  },
+                  {
+                    "name": "A hero from ancient Greece",
+                    "body": "Tell the tale of Jason and the golden fleece, or Theseus in the maze. These are stories the Greeks told each other long ago. Stop at an exciting point and pick it up again tomorrow — the waiting is part of the magic."
+                  },
+                  {
+                    "name": "A day in ancient Egypt",
+                    "body": "Describe the great river, the flooding fields, the building of the pyramids, the scribes with their reeds. Present it as how one ancient people lived and what they believed, told as a story. Your child can try writing their name in a simple picture-script."
+                  },
+                  {
+                    "name": "A biography, told small",
+                    "body": "At this age history lands best through one real person's life. Tell the story of someone whose work your child can see or touch — a bridge-builder, a nurse, an inventor. One life, told warmly, teaches more than a list of dates."
+                  },
+                  {
+                    "name": "Your own local story",
+                    "body": "Tell the story of your own town or county — an old castle nearby, the Giant's Causeway and the tale people tell about how it came to be, the mills and the harbours. Then go and stand where it happened if you can."
+                  }
+                ],
+                "photo": "assets/methods/classical/act-wonder.jpg"
+              },
+              {
+                "heading": "Watch the world",
+                "intro": "Steiner's way with science is to observe the real thing first, before any rule or name. Watch closely, describe what you truly see, and let the understanding grow from there.",
+                "icon": "🔎",
+                "items": [
+                  {
+                    "name": "Shadows through the day",
+                    "body": "Stand a stick upright in the garden and mark where its shadow falls in the morning, at midday, and later. Watch how it swings and changes length. Just watch and note it — the pattern is the lesson, and it is happening right in front of you."
+                  },
+                  {
+                    "name": "Sound you can feel",
+                    "body": "Fill glasses with different amounts of water and tap them gently. Listen to how the notes change. Feel a speaker or a stretched string humming. Sound is something you can hear and feel here and now, so start there rather than in a book."
+                  },
+                  {
+                    "name": "Warmth on the move",
+                    "body": "Watch a spoonful of cold water added to warm, or butter softening near the stove. Feel where a room is warm and where it is cool. Describe carefully how the warmth spreads and fades — real, observed, in your own kitchen."
+                  },
+                  {
+                    "name": "A plant, up close",
+                    "body": "Choose one plant in the garden or a pot and visit it through the week. Draw it carefully — leaf, stem, bud, flower. Notice how it turns toward the light and changes day by day. Slow, close looking is the whole exercise."
+                  },
+                  {
+                    "name": "Rocks in the hand",
+                    "body": "Gather a few different stones on a walk — smooth beach pebbles, rough grey ones, a bit of quartz. Sort them by weight, colour, and hardness. Handle them, describe them, and wonder aloud together. Northern Ireland's coast and hills are full of them."
+                  }
+                ],
+                "photo": "assets/methods/waldorf/act-seasons.jpg"
+              },
+              {
+                "heading": "Number and shape",
+                "intro": "Maths at this age becomes practical and beautiful — the fractions in a recipe, the decimals in money, and shapes drawn first by hand and then with instruments.",
+                "icon": "📐",
+                "items": [
+                  {
+                    "name": "Fractions in the kitchen",
+                    "body": "Halve, quarter, and third a recipe together while you bake. Cut real things — an apple, a loaf, a bar of chocolate. Fractions make instant sense when they are on the plate rather than only on paper."
+                  },
+                  {
+                    "name": "Run a little shop",
+                    "body": "Set up a pretend shop or plan a real small purchase with pounds and pence. Add up the total, work out the change, try a discount. This is where decimals and everyday money-maths come alive and feel useful."
+                  },
+                  {
+                    "name": "Freehand geometry",
+                    "body": "Before any ruler or compass, draw circles and patterns freehand. Try to make a clean circle by eye, then a six-petal flower inside it. The hand learns the shape first — Steiner valued this beauty-before-instruments order."
+                  },
+                  {
+                    "name": "Geometry with instruments",
+                    "body": "When freehand feels steady, bring in the compass and straightedge. Draw a perfect hexagon inside a circle, then colour the pattern. The move from hand to instrument is a real step up, and this age is ready for it."
+                  },
+                  {
+                    "name": "Times tables with movement",
+                    "body": "Practise number facts while clapping, stepping, or bouncing a ball. Skip-count out loud around the garden. Joining the body to the number helps it stick far better than silent drilling at a desk."
+                  }
+                ],
+                "photo": "assets/methods/montessori/self-correcting.jpg"
+              },
+              {
+                "heading": "Make with your hands",
+                "intro": "Handwork deepens at this age. A child of nine to twelve can make something genuinely useful and see it through. The patience and the finished thing both matter.",
+                "icon": "🧵",
+                "items": [
+                  {
+                    "name": "Sew something useful",
+                    "body": "Make a simple drawstring bag, a pencil case, or a stuffed animal. Cutting, threading, and steady stitching all take patience — and at the end there is a real object your child made and can use."
+                  },
+                  {
+                    "name": "Try cross-stitch",
+                    "body": "A small cross-stitch pattern teaches counting, careful placement, and quiet focus all at once. Start with something little — a heart, a star, their initial — so it can be finished and felt as a win."
+                  },
+                  {
+                    "name": "First woodwork",
+                    "body": "With a bit of sandpaper and a safe simple tool, smooth and shape a piece of wood into a spoon, a boat, or a little animal. Working with real wood and real tools gives this age a deep, grounded satisfaction."
+                  },
+                  {
+                    "name": "Keep a main-lesson book",
+                    "body": "Let your child make their own beautiful book of a subject they are studying — their maps, their drawings, their careful writing, all by hand. It becomes their own textbook and something they are proud of."
+                  },
+                  {
+                    "name": "Music every day",
+                    "body": "Keep a little music in each day — a recorder or whistle, singing together, or keeping a steady beat. A short daily touch does far more than a long weekly session, and it lifts the whole rhythm of the home."
+                  }
+                ],
+                "photo": "assets/methods/waldorf/act-making.jpg"
+              }
+            ],
+            "quote": {
+              "text": "Our highest endeavour must be to develop free human beings who are able of themselves to impart purpose and direction to their lives.",
+              "cite": "Rudolf Steiner"
+            }
+          },
+          "reading-list": {
+            "title": "Reading list",
+            "icon": "book",
+            "intro": "In these years the great myths and the stories of ancient peoples are the heart of a child's reading. Read many of them aloud together, even to a strong independent reader — being read to still feeds them at this age. Alongside, keep a good long story on the go that your child can sink into alone.",
+            "forChild": {
+              "intro": "These are the tales that suit classes four to six — Norse myth first, then the myths and histories of the ancient world, all met as vivid stories. Read aloud, a little at a time, and let your child draw what they hear.",
+              "groups": [
+                {
+                  "heading": "Norse myths (around class 4)",
+                  "books": [
+                    "D'Aulaires' Book of Norse Myths — Ingri & Edgar Parin d'Aulaire",
+                    "The Children of Odin — Padraic Colum"
+                  ]
+                },
+                {
+                  "heading": "Greek myths and heroes (around class 5)",
+                  "books": [
+                    "D'Aulaires' Book of Greek Myths — Ingri & Edgar Parin d'Aulaire",
+                    "The Golden Fleece and the Heroes Who Lived Before Achilles — Padraic Colum"
+                  ]
+                },
+                {
+                  "heading": "Ancient peoples, told as story",
+                  "books": [
+                    "The Golden Goblet — Eloise Jarvis McGraw",
+                    "The Story of the World: Volume 1, Ancient Times — Susan Wise Bauer"
+                  ]
+                },
+                {
+                  "heading": "World myths and old tales",
+                  "books": [
+                    "The Orchard Book of Stories from the Ancient World — Geraldine McCaughrean",
+                    "Grimm's Fairy Tales — Jacob & Wilhelm Grimm"
+                  ]
+                }
+              ]
+            },
+            "forParent": {
+              "intro": "Start with a warm, practical account of teaching these very years, then read Steiner himself. His own works are dense and spiritual — they set out what he believed about the developing child, which is his view rather than proven fact. Begin where you find traction; you do not have to start at the deepest end.",
+              "books": [
+                {
+                  "title": "School as a Journey",
+                  "author": "Torin M. Finser",
+                  "note": "A Waldorf class teacher's own warm account of guiding a class through these very years. The best, most human place to begin."
+                },
+                {
+                  "title": "Understanding Waldorf Education",
+                  "author": "Jack Petrash",
+                  "note": "Clear, friendly, and short. A gentle overview of the whole approach for a parent new to it."
+                },
+                {
+                  "title": "Teaching as a Lively Art",
+                  "author": "Marjorie Spock",
+                  "note": "A classic on how the main lessons of these grades are brought to life through story and art. Practical and inspiring."
+                },
+                {
+                  "title": "Beyond the Rainbow Bridge",
+                  "author": "Barbara J. Patterson & Pamela Bradley",
+                  "note": "Rooted in the earlier years but full of the rhythm, warmth, and screen-light principles that carry right through this age."
+                },
+                {
+                  "title": "The Education of the Child",
+                  "author": "Rudolf Steiner",
+                  "note": "Steiner's own short lecture, the most accessible entry to his thinking. Dense and spiritual — this is what he believed, offered as his view, not established fact."
+                },
+                {
+                  "title": "The Kingdom of Childhood",
+                  "author": "Rudolf Steiner",
+                  "note": "Practical, warm lectures given to teachers. The most usable of his lecture cycles — read it after the shorter works if you want more of the source."
+                }
+              ]
+            },
+            "free": "Much of this is free and legal to read or hear. The d'Aulaire-era retellings, Padraic Colum's myth books, and Grimm's tales are largely on Project Gutenberg, and many have lovely free recordings on Librivox for read-aloud. And remember the best science lab of all is free and just outside your door — the garden, the lane, the beach, the sky over Northern Ireland."
+          },
+          "competency": {
+            "title": "What to expect at 9–12",
+            "icon": "sprout",
+            "intro": "Nine to twelve is a wide, changing stretch, so hold these as landmarks along a road, not a checklist to tick by a certain birthday. Steiner believed that somewhere around nine or ten a child crosses an inner bridge — feeling more separate from the world and readier to look at it honestly. That was his view. Whatever the theory, most children of this age do want more challenge, more truth, and more of their own two hands. Watch your own child and meet them where they actually are.",
+            "landmarks": [
+              {
+                "area": "A new separateness",
+                "items": [
+                  "Around nine or ten, a child often feels more apart from the world than before, and may be more thoughtful, more questioning, sometimes a little lonelier",
+                  "They start to want honest answers rather than only comforting ones",
+                  "Steiner saw this as a natural turning point and a chance to meet the world more objectively — his idea, offered as his view",
+                  "Your steady warmth still matters hugely, even as they reach for independence"
+                ]
+              },
+              {
+                "area": "Thinking and observing",
+                "items": [
+                  "Can watch something real closely and describe carefully what they actually see",
+                  "Beginning to reason from what they have observed rather than only being told",
+                  "Enjoys going deep into one subject for a stretch of weeks",
+                  "Holds a longer story or argument in mind and follows where it leads"
+                ]
+              },
+              {
+                "area": "Number and measure",
+                "items": [
+                  "Works confidently with fractions, then decimals, and everyday money-maths",
+                  "Uses maths for real, practical things — recipes, shopping, measuring",
+                  "Draws geometric shapes freehand, then moves on to compass and straightedge",
+                  "The wide range is normal: some children take to this fast, others need longer, and both are fine"
+                ]
+              },
+              {
+                "area": "Language and story",
+                "items": [
+                  "Reads longer books alone, yet still loves and benefits from being read to",
+                  "Writes livelier compositions and starts to grasp grammar as a structure",
+                  "Retells myths and histories in their own words with feeling and detail",
+                  "Keeps their own careful written and illustrated main-lesson books"
+                ]
+              },
+              {
+                "area": "The hands and the arts",
+                "items": [
+                  "Can sew, cross-stitch, and begin real woodwork, seeing a project through to the end",
+                  "Shows real patience and pride in making something genuinely useful",
+                  "Keeps up daily music — an instrument, singing, keeping a rhythm",
+                  "Paints and draws with more control and more of their own intention"
+                ]
+              },
+              {
+                "area": "Self and others",
+                "items": [
+                  "Takes on real, useful jobs at home and follows them through",
+                  "Has a strong and growing sense of what is fair",
+                  "Can work alone for longer and enjoys their own projects",
+                  "Still needs your warmth and closeness even while pushing for more freedom"
+                ]
+              }
+            ],
+            "note": "This is a method for meeting a child, not a curriculum to march through — and nine to twelve is a huge span. A just-turned-nine child and a nearly-twelve child are almost different people. If your one child is ahead in stories and behind in fractions, or the other way round, that is completely normal. Follow the child in front of you, keep the days calm and screen-light, and let the landmarks come in their own time."
+          }
+        },
       "6-9": {
         "day-in-life": {
           "title": "A day in the life",
@@ -1985,6 +2951,329 @@ window.METHODS = [
   {
     id: 'classical',
     stages: {
+      "9-12": {
+          "day-in-life": {
+            "title": "A day in the life",
+            "icon": "sun",
+            "intro": "Nine to twelve is a big stretch, and every child inside it is different — so treat this as a picture to borrow from, not a clock to obey. Something shifts around now: your child starts asking why. Why is that fair? Who says so? What's the proof? Classical people have a name for this new season — the logic stage, or dialectic. The idea is simple and warm: when a child begins to argue, you don't shut it down, you aim it at ideas. So the day still has chants and copywork, but reasoning becomes the heart. A gentle, discussion-rich home day for one child might flow like this.",
+            "timeline": [
+              {
+                "time": "8:00",
+                "title": "Slow start and a shared read",
+                "body": "Breakfast together, then a chapter of something rich read aloud — The Hobbit, a Greek myth, a stretch of history. Reading aloud stays even now; it lets the two of you meet a story at the same moment and talk about it."
+              },
+              {
+                "time": "8:45",
+                "title": "Latin, now with real grammar",
+                "body": "The chants of the younger years grow up. Today it might be a noun declension, or turning a short Latin sentence into English. Ten focused minutes beats an hour of drudgery. Keep it light and puzzle-like."
+              },
+              {
+                "time": "9:15",
+                "title": "The logic game",
+                "body": "A short round of spotting a bad argument — a page from a fun logic book, a silly advert to pick apart, a claim to test. You frame it as a game: catch the trick. Children this age love catching a grown-up out, so let them."
+              },
+              {
+                "time": "9:45",
+                "title": "Move the body",
+                "body": "Out to the garden, a walk, a scoot round the block, or a stretch of free running about. Thinking hard needs a body that has moved. No screens for this — just air."
+              },
+              {
+                "time": "10:15",
+                "title": "Maths firming up",
+                "body": "Arithmetic gets solid and starts leaning toward pre-algebra — a missing number in a puzzle, simple patterns, working with fractions. Aim for understanding, not speed. If a concept isn't landing, slow down; there's no race."
+              },
+              {
+                "time": "11:00",
+                "title": "History with cause and effect",
+                "body": "Not just what happened, but why — and what happened next. Read a chapter of a good narrative history, look at a source close to the events, and ask: what do historians think caused this? Your child begins forming an opinion and giving reasons for it."
+              },
+              {
+                "time": "12:00",
+                "title": "Lunch and a real conversation",
+                "body": "The dinner table is a classroom in disguise. Ask one open question — 'Was that king right to do that?' — and just keep asking 'why do you think so?' This gentle questioning is the oldest teaching tool there is."
+              },
+              {
+                "time": "1:00",
+                "title": "The written word",
+                "body": "The beginning of the essay: a short paragraph with a point and a reason, or a narration written down from the morning's reading. Little and often. A few strong sentences today are worth more than a page of tired ones."
+              },
+              {
+                "time": "1:45",
+                "title": "Follow the spark",
+                "body": "Whatever your one child is hungry for this season — a project, a craft, a musical instrument, coding, drawing, a deep dive into castles or how engines work. Their curiosity is doing the teaching here."
+              },
+              {
+                "time": "3:00",
+                "title": "Wide free reading",
+                "body": "A quiet hour with a stack of real books — myth, adventure, history, whatever pulls them in. This is where the vocabulary and the ideas soak in without any lesson at all."
+              },
+              {
+                "time": "Evening",
+                "title": "Family life",
+                "body": "Cooking, chores, a board game, a walk. The best debates often happen washing up. Learning doesn't clock off at three."
+              }
+            ],
+            "note": "No two days will match this, and they shouldn't. Some weeks the logic games take over; some weeks it's all history. Read your one child in front of you — their energy, their questions, the thing they can't stop talking about — and let the day bend to meet them."
+          },
+          "activities": {
+            "title": "Things to do this week",
+            "icon": "hand",
+            "intro": "The heart of these years is reasoning, and reasoning is best learned by doing it out loud, together, about things that actually interest your child. None of this needs a workbook. Pick a few that fit your one child this week — an argumentative ten-year-old is not a problem to fix, it's raw material to aim at good ideas.",
+            "groups": [
+              {
+                "heading": "Learning to think well",
+                "intro": "Formal logic, taught as a game. The goal isn't to make your child clever at winning; it's to help them tell a sound argument from a shaky one, gently and with good humour.",
+                "icon": "🧩",
+                "items": [
+                  {
+                    "name": "Spot the fallacy",
+                    "body": "Read one informal fallacy together — say, attacking the person instead of the point — then hunt for it in adverts, in a story, or in a friendly family debate all week. Turning it into a hunt makes it stick."
+                  },
+                  {
+                    "name": "The 'why do you think so?' game",
+                    "body": "Whenever your child states an opinion, warmly ask for the reason behind it, then the reason behind that. No trapping, no scoring. You're showing that opinions can rest on reasons — and that it's fine to change your mind."
+                  },
+                  {
+                    "name": "Sound or unsound?",
+                    "body": "Give two little arguments — one that holds together, one that doesn't — and let your child work out which is which and say why. Keep them short and a bit silly at first."
+                  },
+                  {
+                    "name": "Steelman the other side",
+                    "body": "Take something your child feels strongly about and ask them to argue the opposite as well as they can. It's hard and it's brilliant — it teaches that the other side usually has reasons too."
+                  },
+                  {
+                    "name": "Fact, opinion, or guess?",
+                    "body": "Read a paragraph of news or a claim and sort each sentence: is this something we can check, someone's view, or a guess dressed up as certainty? A quietly powerful habit for life."
+                  }
+                ],
+                "photo": "assets/methods/classical/act-wonder.jpg"
+              },
+              {
+                "heading": "Latin and the roots of words",
+                "intro": "Latin now moves from chant to real grammar — declensions, and translating simple sentences both ways. Short and steady wins. It also quietly explains half of English.",
+                "icon": "🏛️",
+                "items": [
+                  {
+                    "name": "Learn one declension",
+                    "body": "Take a single noun pattern this week and really know it. Chant it, write it, use it in a tiny sentence. One solid pattern beats five half-learned ones."
+                  },
+                  {
+                    "name": "Translate a real sentence",
+                    "body": "Turn a short Latin sentence into English, then an English one back into Latin. The first time a child cracks a sentence themselves, their face lights up — that's the whole game."
+                  },
+                  {
+                    "name": "Word detective",
+                    "body": "Pick an English word and trace it back to its Latin root — 'aqua' hiding inside aquarium, 'porto' inside import and transport. Suddenly the language is full of clues."
+                  },
+                  {
+                    "name": "Latin mottos around us",
+                    "body": "Find Latin on coins, crests, school badges, and old buildings, and work out what it means. NI has plenty on churches and civic buildings if you look."
+                  },
+                  {
+                    "name": "A copywork line a day",
+                    "body": "Copy one neat Latin sentence in your best handwriting each day. Calm, tidy, and it fixes the grammar in without it feeling like a test."
+                  }
+                ],
+                "photo": "assets/methods/montessori/absorbent-mind.jpg"
+              },
+              {
+                "heading": "History and the beginnings of the essay",
+                "intro": "History studied for cause and effect, with sources close to the events, and your child forming and defending real opinions — then setting those opinions down in writing.",
+                "icon": "📜",
+                "items": [
+                  {
+                    "name": "The cause-and-effect chain",
+                    "body": "After a history reading, draw the dominoes: this happened, which led to that, which led to the next thing. Historians think in chains like this, and now so does your child."
+                  },
+                  {
+                    "name": "Meet a source",
+                    "body": "Read a short letter, speech, or diary from someone who was actually there. Ask: what did they want us to think, and how do we know? A gentle first lesson in weighing evidence."
+                  },
+                  {
+                    "name": "Hold a mini-debate",
+                    "body": "Pose a real historical question — 'Should this ruler have done that?' — and let your child pick a side and defend it with reasons. You take the other side, kindly, and press a little."
+                  },
+                  {
+                    "name": "Write the first essay",
+                    "body": "One paragraph: a clear point, two reasons, a closing line. That's the whole seed of essay writing. Praise the structure, then the ideas; polish comes later."
+                  },
+                  {
+                    "name": "A timeline they build",
+                    "body": "Keep a long paper timeline across the middle ages and beyond, adding each new person and event. Seeing centuries laid out side by side makes cause and effect visible."
+                  }
+                ],
+                "photo": "assets/methods/montessori/grace-courtesy.jpg"
+              },
+              {
+                "heading": "Wide reading, myth, and maths",
+                "intro": "A steady diet of real literature and old stories feeds the imagination and the vocabulary, while arithmetic firms up and starts reaching toward pre-algebra.",
+                "icon": "📚",
+                "items": [
+                  {
+                    "name": "Read a myth and retell it",
+                    "body": "Read a Greek myth together, then have your child retell it in their own words — aloud or written. Old stories are packed with the patterns that later literature keeps reusing."
+                  },
+                  {
+                    "name": "A long book, a chapter a day",
+                    "body": "Work through something big and worthy — The Hobbit, a Narnia book — a chapter at a time. Living inside one long story for weeks builds stamina and love of reading."
+                  },
+                  {
+                    "name": "The missing-number puzzle",
+                    "body": "Play with simple equations where a shape hides a number: 'triangle plus 3 equals 8.' That's the friendly doorway into algebra, dressed up as a puzzle."
+                  },
+                  {
+                    "name": "Cook the fractions",
+                    "body": "Halve or double a recipe together in a real NI kitchen. Fractions stop being abstract the moment they decide whether there's enough flour for the tray bake."
+                  },
+                  {
+                    "name": "Keep a reading journal",
+                    "body": "A line or two after each book — favourite part, a question it raised, a word worth keeping. It turns reading into thinking, quietly."
+                  }
+                ],
+                "photo": "assets/methods/montessori/self-correcting.jpg"
+              }
+            ],
+            "quote": {
+              "text": "For the sole true end of education is simply this: to teach men how to learn for themselves; and whatever instruction fails to do this is effort spent in vain.",
+              "cite": "Dorothy Sayers, The Lost Tools of Learning"
+            }
+          },
+          "reading-list": {
+            "title": "Reading list",
+            "icon": "book",
+            "intro": "These years are for wide, rich reading and for the first real tools of thinking. The children's books below are the ones classical home-educating families reach for again and again — real literature, real myth, and two friendly logic books that make good thinking feel like a game. Read what your one child is ready for; a keen ten-year-old and a gentle twelve-year-old will want very different shelves.",
+            "forChild": {
+              "intro": "A mix of the tools of the logic stage and the wide reading that feeds it. Start where your child finds traction, and don't rush the harder titles — there's no prize for finishing early.",
+              "groups": [
+                {
+                  "heading": "Learning to think",
+                  "books": [
+                    "The Fallacy Detective — Nathaniel & Hans Bluedorn",
+                    "The Thinking Toolbox — Nathaniel & Hans Bluedorn"
+                  ]
+                },
+                {
+                  "heading": "History and myth",
+                  "books": [
+                    "The Story of the World, Vols 2–4 — Susan Wise Bauer",
+                    "D'Aulaires' Book of Greek Myths — Ingri & Edgar Parin d'Aulaire"
+                  ]
+                },
+                {
+                  "heading": "Great stories to live inside",
+                  "books": [
+                    "The Hobbit — J.R.R. Tolkien",
+                    "The Chronicles of Narnia — C.S. Lewis"
+                  ]
+                },
+                {
+                  "heading": "Latin to begin",
+                  "books": [
+                    "Latina Christiana — Cheryl Lowe"
+                  ]
+                }
+              ]
+            },
+            "forParent": {
+              "intro": "The logic stage has its own thinkers, and it helps to read one or two before you begin, so the 'why' underneath it all is clear. These are the real books classical educators return to — start with Bauer for the practical map, then reach for the deeper ones as your appetite grows.",
+              "books": [
+                {
+                  "title": "The Well-Trained Mind",
+                  "author": "Susan Wise Bauer & Jessie Wise",
+                  "note": "The practical map of classical home education. Go straight to the logic-stage chapters for these years — they lay out subject by subject what to do and when."
+                },
+                {
+                  "title": "The Question",
+                  "author": "Leigh Bortins",
+                  "note": "Written specifically about the dialectic stage at home — how to draw out a child who has started asking why, and turn arguing into good reasoning."
+                },
+                {
+                  "title": "The Core",
+                  "author": "Leigh Bortins",
+                  "note": "Bortins on the foundations of a classical education. Warm and encouraging for a parent who worries they didn't have this schooling themselves."
+                },
+                {
+                  "title": "Norms and Nobility",
+                  "author": "David Hicks",
+                  "note": "A deeper, more philosophical case for classical education and the shaping of character. Demanding but rewarding — read it when you want the bigger 'why'."
+                },
+                {
+                  "title": "Climbing Parnassus",
+                  "author": "Tracy Lee Simmons",
+                  "note": "A passionate defence of Latin and Greek at the heart of an education. Not a how-to; an inspiration for why the old languages still earn their place."
+                },
+                {
+                  "title": "The Lost Tools of Learning",
+                  "author": "Dorothy Sayers",
+                  "note": "The short 1947 essay that sparked the modern classical revival. A single sitting, free online, and the clearest statement of the grammar-logic-rhetoric idea."
+                }
+              ]
+            },
+            "free": "The public library is your richest free resource — the myths, the histories, and the classics are all on its shelves. Project Gutenberg has the out-of-copyright stories and histories as free ebooks, and Librivox has many of them read aloud for free if your child likes to listen. Best of all, the two things at the heart of these years — logic and good conversation — cost nothing at all."
+          },
+          "competency": {
+            "title": "What to expect at 9–12",
+            "icon": "sprout",
+            "intro": "Classical educators describe children moving through three seasons — first soaking up facts, then wanting to reason, then wanting to persuade. It's worth holding this lightly, as a helpful model of how many children seem to grow, not a proven law of the brain. Around ten to twelve, many children shift from happily memorising toward asking why, spotting contradictions, and wanting reasons — so the landmarks below lean on that. Every child arrives on their own timetable, and this range is a wide one; a nine-year-old and a twelve-year-old are almost different people. Treat these as gentle signposts, never a checklist to pass.",
+            "landmarks": [
+              {
+                "area": "Reasoning and logic",
+                "items": [
+                  "Starts asking 'why?' and 'says who?' — wanting reasons, not just facts",
+                  "Can spot a simple bad argument once shown what to look for, and enjoys the hunt",
+                  "Begins to tell a claim you can check from an opinion or a guess",
+                  "Can hold two sides of a question in mind, even one they disagree with"
+                ]
+              },
+              {
+                "area": "Language and Latin",
+                "items": [
+                  "Moves from Latin chants to real grammar — learning noun patterns and translating short sentences",
+                  "Recognises Latin roots hiding inside English words",
+                  "Vocabulary grows quickly from wide reading",
+                  "Enjoys wordplay, puns, and picking language apart"
+                ]
+              },
+              {
+                "area": "Writing and discussion",
+                "items": [
+                  "Can write a short paragraph with a point and a reason or two",
+                  "Begins the first structured essays — little and often",
+                  "Holds a real conversation at the table and defends a view with reasons",
+                  "Takes to gentle Socratic questioning rather than being lectured at"
+                ]
+              },
+              {
+                "area": "History and thinking about the past",
+                "items": [
+                  "Follows cause and effect — why something happened and what came next",
+                  "Can look at a source close to the events and ask who made it and why",
+                  "Forms an opinion about the past and gives reasons for it",
+                  "Places people and events on a timeline across the middle ages and beyond"
+                ]
+              },
+              {
+                "area": "Maths",
+                "items": [
+                  "Arithmetic becomes solid and automatic",
+                  "Works comfortably with fractions in real situations, like cooking",
+                  "Meets the first taste of pre-algebra — a missing number to find in a puzzle",
+                  "Understanding matters more than speed; some concepts simply need more time"
+                ]
+              },
+              {
+                "area": "Character and independence",
+                "items": [
+                  "Can be argumentative — this is the reasoning muscle warming up, not defiance to crush",
+                  "Takes on longer projects and sees them through with support",
+                  "Grows able to disagree respectfully and change their mind when shown a better reason",
+                  "Wants their views taken seriously, and rises when they are"
+                ]
+              }
+            ],
+            "note": "If your one child hits these later than the signposts suggest, that is completely normal and no cause for worry — the range across these years is enormous. The heart of this season is not a set of skills ticked off, but a child who is starting to think for themselves. When the arguing arrives, breathe and smile: it means the reasoning has switched on. Your job is simply to aim it at good ideas."
+          }
+        },
       "6-9": {
         "day-in-life": {
           "title": "A day in the life",
@@ -2650,6 +3939,325 @@ window.METHODS = [
   {
     id: 'wild-free',
     stages: {
+      "9-12": {
+          "day-in-life": {
+            "title": "A day in the life",
+            "icon": "sun",
+            "intro": "Wild + Free at nine to twelve is still rich with books and nature, but your child now goes deeper. One child at home means the day bends around what they love. A gentle note first: nine to twelve is a huge span. A newly-nine child and a nearly-thirteen child are worlds apart. So read this as a picture of a good rhythm, not a timetable. You keep reading aloud, you get outdoors whatever the sky is doing, and you feed the deep dive.",
+            "timeline": [
+              {
+                "time": "7:30",
+                "title": "Slow start",
+                "body": "Wake gently, breakfast, help with a real job around the house. At this age they can make their own porridge and lay the table. Small responsibility feels good to them."
+              },
+              {
+                "time": "8:30",
+                "title": "Morning time together",
+                "body": "Yes, keep reading aloud even at eleven or twelve. A chapter of a good story, a poem, maybe a psalm or a piece your family loves. This shared reading is the warm heart of the day."
+              },
+              {
+                "time": "9:15",
+                "title": "Reading and narration",
+                "body": "They read on their own now for a good stretch, then tell you back what happened in their own words, or write it down. Telling it back is how it sticks."
+              },
+              {
+                "time": "10:00",
+                "title": "The three Rs, kept light",
+                "body": "A short, steady bit of maths and writing. Little and often beats long and heavy. Twenty focused minutes is plenty at this age."
+              },
+              {
+                "time": "10:45",
+                "title": "Outdoors, whatever the weather",
+                "body": "Coats and wellies on. Northern Ireland gives you rain more days than not, and that is fine. A wet forest or a windy lough shore is still a lesson."
+              },
+              {
+                "time": "11:30",
+                "title": "Nature journal",
+                "body": "Back from the walk, they sketch and name what they actually met, a bird, a leaf, a beetle. Careful looking and honest drawing. This is real naturalist work now, not just doodling."
+              },
+              {
+                "time": "12:30",
+                "title": "Lunch and free time",
+                "body": "Eat together, then let them be. Boredom is where their own ideas start. Resist filling every gap."
+              },
+              {
+                "time": "13:30",
+                "title": "The deep dive",
+                "body": "The big block of the day. Their own chosen project, worked on over weeks, castles, coding, sea life, drawing, whatever has caught them. You supply books and materials and mostly get out of the way."
+              },
+              {
+                "time": "15:00",
+                "title": "Skills and making",
+                "body": "Baking, whittling, mending, gardening, a bit of pocket-money work. Real skills with real results they can hold."
+              },
+              {
+                "time": "16:00",
+                "title": "Friends and clubs",
+                "body": "A co-op, a club, or time with a friend. One child at home needs steady company, so protect this. Sport, music, Scouts, a home-ed meet-up."
+              },
+              {
+                "time": "19:30",
+                "title": "One more chapter",
+                "body": "Wind down with another read-aloud before bed. Ending the day inside a good story is a gift you can give right through these years."
+              }
+            ],
+            "note": "Screens stay low by default, not banned, just not the main event. And on the hard days, when nothing goes to plan, the reading aloud and the walk outdoors are enough on their own. Everything else can wait."
+          },
+          "activities": {
+            "title": "Things to do this week",
+            "icon": "hand",
+            "intro": "Pick what fits your child this week. A calmer, younger nine will want more together-time; a keen twelve may run off with a project alone. Follow the spark you see, not the list. None of this needs buying much, most of it is a coat, a notebook, and time outdoors.",
+            "groups": [
+              {
+                "heading": "Out in real nature",
+                "intro": "Study the living things right in front of you, here and now, the ones your child can actually watch.",
+                "icon": "🌿",
+                "items": [
+                  {
+                    "name": "Learn ten birds by name",
+                    "body": "Use a Collins or RSPB guide to name the birds at your feeder or on the lough. Watching and naming what you really see beats any picture in a screen."
+                  },
+                  {
+                    "name": "Keep a proper nature journal",
+                    "body": "One careful drawing a week of something they met, dated, named, with a note on the weather. By spring they will have a real record."
+                  },
+                  {
+                    "name": "Follow one hedgerow through the seasons",
+                    "body": "Pick a hedge or a tree near home and visit it monthly. Watch it bud, leaf, flower and fruit. Slow observation over time is real science."
+                  },
+                  {
+                    "name": "Track the moon for a month",
+                    "body": "Look up each clear night and draw the moon's shape. This is honest, watch-it-yourself observation, no need to claim anything you cannot see."
+                  },
+                  {
+                    "name": "Pond or rock-pool dipping",
+                    "body": "A net, a tray, and a lough shore or beach. Catch, look, name, gently return. County Down and the Antrim coast are full of spots."
+                  }
+                ],
+                "photo": "assets/methods/charlotte-mason/act-nature.jpg"
+              },
+              {
+                "heading": "The deep dive",
+                "intro": "Help your child pick one passion and go properly deep over several weeks. Depth teaches more than skimming ten topics.",
+                "icon": "🔎",
+                "items": [
+                  {
+                    "name": "Choose the topic together",
+                    "body": "Ask what they cannot stop thinking about. Castles, horses, coding, cooking, drawing, boats. Their choice, not yours. Ownership is the fuel."
+                  },
+                  {
+                    "name": "Build a project shelf",
+                    "body": "Gather library books, a notebook, and any bits they need in one spot. A visible corner keeps the dive alive between days."
+                  },
+                  {
+                    "name": "Visit a real place",
+                    "body": "Tie the topic to somewhere they can stand. A castle, a farm, a harbour, a museum. Northern Ireland has plenty within a short drive."
+                  },
+                  {
+                    "name": "Make something to show",
+                    "body": "End the dive with a made thing, a model, a comic, a talk for you, a little booklet. Making it real fixes the learning."
+                  },
+                  {
+                    "name": "Interview an expert",
+                    "body": "Find someone who does the thing and let your child ask questions. A beekeeper, a baker, a coder. Real people light real fires."
+                  }
+                ],
+                "photo": "assets/methods/montessori/work-cycle.jpg"
+              },
+              {
+                "heading": "Words and writing",
+                "intro": "At this age writing grows fast. Keep reading aloud daily and let their own writing follow naturally.",
+                "icon": "✍️",
+                "items": [
+                  {
+                    "name": "Start a commonplace book",
+                    "body": "A notebook for lines they love from their reading, copied out by hand. Copying good sentences quietly teaches good writing."
+                  },
+                  {
+                    "name": "Write their own story",
+                    "body": "No marking, no red pen. Just let them write a tale that is theirs. Praise the effort and the ideas first."
+                  },
+                  {
+                    "name": "Narrate in writing",
+                    "body": "After a chapter or a walk, they write down what happened in their own words. Simple, steady, and it builds real skill."
+                  },
+                  {
+                    "name": "Learn a poem by heart",
+                    "body": "One short poem a fortnight, said aloud. Carrying poems in the head is a lifelong gift and easy at this age."
+                  },
+                  {
+                    "name": "Write a real letter",
+                    "body": "To a grandparent, a friend, or a favourite author. A stamped letter feels grown-up and gives writing a true purpose."
+                  }
+                ],
+                "photo": "assets/methods/montessori/absorbent-mind.jpg"
+              },
+              {
+                "heading": "Real skills and first ventures",
+                "intro": "Older children love real work with real results. This is where the first taste of enterprise fits.",
+                "icon": "🛠️",
+                "items": [
+                  {
+                    "name": "Run a market stall",
+                    "body": "Bake, grow, or make something and sell it, at a car boot, a school fair, or the gate. Handling money and change teaches maths for real."
+                  },
+                  {
+                    "name": "Learn to cook one full meal",
+                    "body": "Not just help, but plan, shop for, and cook a whole dinner for the family. A skill they keep for life."
+                  },
+                  {
+                    "name": "Mentor a younger child",
+                    "body": "Read to a little cousin or help a neighbour's child. Teaching something you know is one of the best ways to learn it deeper."
+                  },
+                  {
+                    "name": "Grow food from seed",
+                    "body": "A pot of herbs or a row of carrots. Patience, care, and a harvest they can eat. Even a windowsill works."
+                  },
+                  {
+                    "name": "Fix or mend something",
+                    "body": "Sew a button, patch a bike tyre, oil a squeaky hinge. Real competence builds real confidence."
+                  }
+                ],
+                "photo": "assets/methods/charlotte-mason/act-realwork.jpg"
+              }
+            ],
+            "quote": {
+              "text": "When we allow our children to spend their days exploring the world around them, we give them the greatest gift of all: a childhood.",
+              "cite": "Ainsley Arment, The Call of the Wild and Free"
+            }
+          },
+          "reading-list": {
+            "title": "Reading list",
+            "icon": "book",
+            "intro": "Wild + Free runs on living books, stories with heart written by someone who loved the subject, not dry textbooks. At nine to twelve you do two things at once: read richer books aloud together, and let your child read longer books alone. Watch your own child. A gentle nine may still want you reading most of it; a strong twelve may devour these in a weekend. Both are right.",
+            "forChild": {
+              "intro": "Rich middle-grade classics and living books. Read some aloud, hand the rest over for solo reading. Follow their taste, if one does not land, try another.",
+              "groups": [
+                {
+                  "heading": "Big stories to fall into",
+                  "books": [
+                    "The Hobbit — J.R.R. Tolkien",
+                    "The Chronicles of Narnia — C.S. Lewis",
+                    "Swallows and Amazons — Arthur Ransome"
+                  ]
+                },
+                {
+                  "heading": "Warm classics",
+                  "books": [
+                    "Anne of Green Gables — L.M. Montgomery",
+                    "The Wind in the Willows — Kenneth Grahame"
+                  ]
+                },
+                {
+                  "heading": "For nature study and poetry",
+                  "books": [
+                    "RSPB Handbook of British Birds — Peter Holden and Tim Cleeves",
+                    "Collins Complete Guide to British Wildlife — Paul Sterry",
+                    "A Child's Garden of Verses — Robert Louis Stevenson"
+                  ]
+                }
+              ]
+            },
+            "forParent": {
+              "intro": "A short shelf to hold you steady and remind you why you chose this path. Read one slowly rather than five in a rush.",
+              "books": [
+                {
+                  "title": "The Call of the Wild and Free",
+                  "author": "Ainsley Arment",
+                  "note": "The founding book of the movement. Warm, freeing, and the best place to start."
+                },
+                {
+                  "title": "The Read-Aloud Family",
+                  "author": "Sarah Mackenzie",
+                  "note": "Makes the case for reading aloud right through the older years, with practical help."
+                },
+                {
+                  "title": "Teaching from Rest",
+                  "author": "Sarah Mackenzie",
+                  "note": "Short and calming. The antidote to the fear of not keeping up."
+                },
+                {
+                  "title": "Honey for a Child's Heart",
+                  "author": "Gladys Hunt",
+                  "note": "On choosing good books, with long lists to draw from for years."
+                },
+                {
+                  "title": "Last Child in the Woods",
+                  "author": "Richard Louv",
+                  "note": "Why children need real time outdoors, and what happens without it."
+                },
+                {
+                  "title": "For the Children's Sake",
+                  "author": "Susan Schaeffer Macaulay",
+                  "note": "The Charlotte Mason vision in plain, gentle words. See the note below on the overlap."
+                }
+              ]
+            },
+            "free": "None of this needs a big spend. Libraries NI lends the lot for free, and staff will order in almost any title you ask for. Northern Ireland's forest parks and lough shores are free to roam in any weather. And read-aloud podcasts, like Read-Aloud Revival, carry the book culture into the car and the kitchen at no cost. One honest note: Wild + Free is a modern movement and community, founded by Ainsley Arment around 2014, not an ancient tradition. It leans heavily on Charlotte Mason's much older ideas, living books, narration, nature study, short lessons, so if this approach speaks to you, reading Charlotte Mason directly will feel like coming home."
+          },
+          "competency": {
+            "title": "What to expect at 9–12",
+            "icon": "sprout",
+            "intro": "These are landmarks, not a finish line, and certainly not a race. Nine to twelve is a huge span, so a child may be well ahead in one area and taking their time in another. That is completely normal. Wild + Free asks you to protect the love of learning first. A child who still loves books and the outdoors at twelve is doing beautifully, whatever box they have or have not ticked.",
+            "landmarks": [
+              {
+                "area": "Reading",
+                "items": [
+                  "Reads longer books alone for a good stretch",
+                  "Chooses their own books and has real favourites",
+                  "Still enjoys being read aloud to, keep offering it",
+                  "Can tell back a chapter clearly in their own words"
+                ]
+              },
+              {
+                "area": "Writing",
+                "items": [
+                  "Writes their own stories and keeps a notebook",
+                  "Handwriting is settling and mostly readable",
+                  "Spelling of common words is steady, still learning the tricky ones",
+                  "Can write a simple letter or narration without much help"
+                ]
+              },
+              {
+                "area": "Maths",
+                "items": [
+                  "Confident with the four operations",
+                  "Handles money, change, and simple fractions",
+                  "Beginning to see maths in real life, cooking, building, selling",
+                  "Remember, little and often; some click with this later than others"
+                ]
+              },
+              {
+                "area": "Nature and observation",
+                "items": [
+                  "Names the common birds, trees and creatures near home",
+                  "Keeps a nature journal with careful, honest drawings",
+                  "Notices change through the seasons",
+                  "Looks closely and asks their own questions"
+                ]
+              },
+              {
+                "area": "The deep dive and independence",
+                "items": [
+                  "Can stick with one project over several weeks",
+                  "Follows a passion into real depth",
+                  "Finds things out for themselves using books",
+                  "Manages their own time on a chosen task"
+                ]
+              },
+              {
+                "area": "Real-world skills",
+                "items": [
+                  "Cooks a simple meal and does real house jobs",
+                  "Handles a small money venture, a stall or handmade goods",
+                  "Can help or mentor a younger child",
+                  "Growing confidence with tools, mending and making"
+                ]
+              }
+            ],
+            "note": "If your child is behind on this list, do not panic and do not push hard. Look at what they love, feed that, keep reading aloud, keep getting outdoors, and the rest tends to follow in its own time. The love of learning is the thing to guard. Everything else is downstream of it."
+          }
+        },
       "6-9": {
         "day-in-life": {
           "title": "A day in the life",
@@ -3313,6 +4921,7 @@ window.METHODS = [
   },
   {
     id: 'reggio',
+    cappedStage: '3-6',
     stages: {
       "6-9": {
         "day-in-life": {
@@ -3978,6 +5587,321 @@ window.METHODS = [
   {
     id: 'forest-school',
     stages: {
+      "9-12": {
+          "day-in-life": {
+            "title": "A day in the life",
+            "icon": "sun",
+            "intro": "By 9 to 12, Forest School looks calmer on the surface and much bigger underneath. You still return to the same patch of woodland, in the same weather-whatever, but now your child carries real skill and real jobs. This is a huge age band. A nine-year-old and a twelve-year-old are very different people, so read your own child, not the clock. The heart is unchanged: same wood, all seasons, child-led, with you holding safety. As one common Forest School saying goes, the adult keeps the day 'as safe as necessary, not as safe as possible' — which now means letting them do more, while the firm rules still hold.",
+            "timeline": [
+              {
+                "time": "Before you leave",
+                "title": "They pack the bag",
+                "body": "Your child now runs the kit check: water, waterproof, spare layer, snack, first-aid pouch, the tools they'll use. Sharp tools travel closed or sheathed. You cast an eye over it, but the list is theirs. Owning the pack is part of owning the day."
+              },
+              {
+                "time": "On arrival",
+                "title": "Reading the wood",
+                "body": "You walk in together and they tell you what's changed since last week — a fallen branch, new mud, a bird singing that wasn't here before. Then a quick shared safety scan: any hanging dead limbs overhead, wet slick roots, the plan for where the fire circle and cutting spot will be today."
+              },
+              {
+                "time": "Settling in",
+                "title": "A short sit-spot",
+                "body": "Everyone starts with a few quiet minutes in one place, watching. It sounds small. Supporters say this quiet arrival helps a child drop into the wood and notice more all session. Let it be unhurried."
+              },
+              {
+                "time": "Mid-morning",
+                "title": "Real tool work",
+                "body": "This is the big change at this age. Out comes the knife or the bow saw for a proper project — carving a spoon, cutting a tent-peg, sawing a log round. The rules are firm and non-negotiable: gloves on, you present or nearby by agreement, an agreed cutting area with no one inside the 'blood bubble' (arm plus tool length), and every cut made away from the body. When they stop, the tool is closed, sheathed, and checked back in to you."
+              },
+              {
+                "time": "Late morning",
+                "title": "Fire, earned",
+                "body": "An older child can take the lead on fire — sparking a fire steel onto a nest of dry tinder, or working a friction set. First, together, you build a clear fire circle: scraped bare earth, no leaf litter or low branches above, a bucket or bottle of water to hand, sleeves up, hair back. You stay right there the whole time. Fire is never left alone, even for a moment."
+              },
+              {
+                "time": "Midday",
+                "title": "Cooking a proper meal",
+                "body": "Now the fire earns its keep. They cook something real on it — flatbread on a stick, an egg, soup in a billy can, sausages. Long sleeves and care near the flame; hot pans lifted with a glove or a green stick, never bare hands. Eating food you made outside, in your own wood, lands differently than a packed lunch."
+              },
+              {
+                "time": "Early afternoon",
+                "title": "Build and navigate",
+                "body": "The afternoon is a bigger project: a shelter strong enough to sit out a downpour, using knots and lashings for a real frame, or a map-and-compass loop around the wood. You test the shelter by getting under it. You let them lead the navigation, even the wrong turns — finding the way back is the lesson."
+              },
+              {
+                "time": "Mid-afternoon",
+                "title": "Solo time",
+                "body": "An older child can handle a longer stretch alone now — twenty quiet minutes at their own sit-spot, in view or within an agreed boundary and a whistle-signal you both know. Time by themselves in a place they trust is part of growing up outdoors."
+              },
+              {
+                "time": "Later",
+                "title": "Tracking and naming",
+                "body": "With a Collins Gem or RSPB guide, they get sharper: which bird is calling, whose tracks are in the mud, what tree that leaf came from. Growing accuracy is the reward for coming back to the same wood week after week."
+              },
+              {
+                "time": "Before home",
+                "title": "Close the fire, close the day",
+                "body": "The fire is drowned with water, stirred, and checked cold with the back of a hand held near — never left even faintly warm. Tools are all counted back in. Then the reflection circle: one thing that worked, one thing that was hard, one thing they're proud of. This still matters at every age."
+              },
+              {
+                "time": "The walk out",
+                "title": "Leaving it as you found it",
+                "body": "You pack out everything you brought, scatter the fire's cold ashes, and let the wood settle behind you. The plan for next week often starts forming on the walk to the car — that pull to come back is the point."
+              }
+            ],
+            "note": "This is a shape, not a schedule. Some weeks are all fire and food; some are one long shelter build; some the child just wants to sit by the stream. The method is meeting THIS child in THIS wood — not getting through a list."
+          },
+          "activities": {
+            "title": "Things to do this week",
+            "icon": "hand",
+            "intro": "Pick a few, not all. With one child at 9 to 12, the joy is depth — the same wood, more skill, more trust. Every tool and fire idea has its safety rule built in, and those rules don't loosen as the child grows; the child earns more responsibility, not fewer boundaries. If your child is nearer nine, start smaller and hold more; if nearer twelve, hand over more and step back — but you stay the safety net either way.",
+            "groups": [
+              {
+                "heading": "Real tool work",
+                "intro": "This is the age for proper cutting tools, used well. The rule under all of them: gloves on, an adult present or nearby by agreement, an agreed working area no one else steps into, sharp edges always moving away from the body, and every tool closed and checked back in to you when finished.",
+                "icon": "🔪",
+                "items": [
+                  {
+                    "name": "Carve a spoon",
+                    "body": "The classic green-woodworking project. With a knife and a spoon-carving hook, shape a real spoon from a split branch over several sessions. Knife strokes go away from the body and away from the holding hand; thumb-push cuts only once you've shown them how. Gloves on, seated, tool sheathed the moment they pause."
+                  },
+                  {
+                    "name": "Saw with a bow saw",
+                    "body": "Let them cut log rounds with a bow saw. The hand not sawing stays well clear of the blade line, the log is steady on the ground or a saw-horse, and the guard goes back on the second they finish. You stay alongside for this."
+                  },
+                  {
+                    "name": "Make a tent peg or mallet",
+                    "body": "Whittle a point on a peg, or carve a simple wooden mallet. Small, satisfying, and it teaches control of the blade. Cut away from the body, brace the wood against a log not your knee, gloves on."
+                  },
+                  {
+                    "name": "Split kindling with a baton",
+                    "body": "Instead of swinging a blade, they place the knife on the log end and tap the spine down with a wooden baton — safe, controlled splitting. Fingers nowhere near the edge, wood on solid ground, you nearby."
+                  },
+                  {
+                    "name": "Tool-care ritual",
+                    "body": "End every session by wiping the blade, checking it's sharp not chipped, oiling if needed, and counting all tools back in to you. A cared-for tool is a safe tool, and this hand-back is how you both know nothing's left in the leaves."
+                  }
+                ],
+                "photo": "assets/methods/forest-school/act-tools.jpg"
+              },
+              {
+                "heading": "Fire and cooking",
+                "intro": "The older child can lead the fire — but the fire is never left alone and the circle is always prepped first. Every item here assumes: a cleared fire circle on bare earth, nothing flammable overhead, water to hand, sleeves up and hair back, and you present the whole time.",
+                "icon": "🔥",
+                "items": [
+                  {
+                    "name": "Light with a fire steel",
+                    "body": "Spark a fire steel into a nest of fine dry tinder they've gathered. It takes patience and it's deeply satisfying. Set the fire circle first — bare scraped earth, water bottle beside them — and keep your hand in the game while they learn."
+                  },
+                  {
+                    "name": "Try a friction fire",
+                    "body": "A bow-drill or hand-drill ember is hard-won and one of the proudest moments in bushcraft. Expect many tries. Same fire circle first, water to hand, and you right there throughout."
+                  },
+                  {
+                    "name": "Cook flatbread on a stick",
+                    "body": "Wrap simple dough round a peeled green stick and turn it over the embers. Long sleeves near the flame, hot stick handled with care, and let it cool before the first bite."
+                  },
+                  {
+                    "name": "Boil water in a billy can",
+                    "body": "Learn to hang or balance a can safely and boil water for a drink or soup. The can is lifted only with a gloved hand or a green pot-hook, never bare fingers, and set down away from feet."
+                  },
+                  {
+                    "name": "Drown it properly",
+                    "body": "The most important skill of all: put the fire fully out. Water on, stir the ashes, more water, check it's cold before you leave. A fire isn't finished when the flames die — it's finished when it's cold to a careful hand held nearby."
+                  }
+                ],
+                "photo": "assets/methods/_shared/fire.jpg"
+              },
+              {
+                "heading": "Build and navigate",
+                "intro": "Bigger structures and real wayfinding suit this age. Test everything they build by trusting it yourself, and let them make the navigation mistakes — recovering from a wrong turn is where the learning lives.",
+                "icon": "🧭",
+                "items": [
+                  {
+                    "name": "Build a rain-proof shelter",
+                    "body": "Not a play den — a lean-to or A-frame strong enough to sit out a real downpour, thatched with bracken or leaf litter. Check no dead branches hang above the spot, and test it by getting underneath together when the rain comes."
+                  },
+                  {
+                    "name": "Tie knots and lashings",
+                    "body": "Learn a handful of real knots — clove hitch, square lashing, a bowline — well enough to build with. Practise on the walk, then use them for a shelter frame or a tripod. Skills you keep for life."
+                  },
+                  {
+                    "name": "Make a bench or tripod",
+                    "body": "Lash poles into a real, sittable bench or a cooking tripod. Load-test it low and slowly before anyone sits or hangs a pot — a lashing that slips should slip while you're watching, not later."
+                  },
+                  {
+                    "name": "Map and compass loop",
+                    "body": "Bring a map of the wood and a compass. Let them set a bearing and lead a loop back to the start. Agree a boundary and a meeting point first, and let the wrong turns happen — finding the way back is the whole point."
+                  },
+                  {
+                    "name": "Draw your own map",
+                    "body": "Over weeks, they map the wood themselves — the fire circle, the good climbing tree, the stream crossing, the badger path. A hand-drawn map of a place you know deeply is a treasure."
+                  }
+                ],
+                "photo": "assets/methods/forest-school/act-dens.jpg"
+              },
+              {
+                "heading": "Track, know, and mentor",
+                "intro": "Deep nature knowledge and quiet responsibility. This is where the older child starts giving back — to the wood, and to a younger child if one comes along.",
+                "icon": "🦉",
+                "items": [
+                  {
+                    "name": "Follow tracks and signs",
+                    "body": "In mud, snow, or soft ground, find and follow animal tracks — read who passed, which way, how fast. Add feathers, chewed nuts, and droppings as clues. Real detective work in the observable, right-now wood."
+                  },
+                  {
+                    "name": "Get sharp on ID",
+                    "body": "With a Collins Gem or RSPB guide, name birds by call, trees by leaf and bark, plants by shape. Growing accuracy is the reward for returning to the same wood all year."
+                  },
+                  {
+                    "name": "Keep a longer sit-spot",
+                    "body": "Extend solo quiet time to twenty minutes or more at a spot they choose, within an agreed boundary and a whistle signal. Supporters say this steady quiet watching is where the deepest noticing happens."
+                  },
+                  {
+                    "name": "Learn simple first aid",
+                    "body": "Teach the basics for a wood — cleaning a graze, a plaster, what to do for a burn or a wobbly ankle, and how to get help. A child who can help in a small emergency feels genuinely capable."
+                  },
+                  {
+                    "name": "Mentor a younger child",
+                    "body": "If a younger friend, cousin, or sibling joins, let your child teach one small skill — how to hold a stick safely, how to spot a bird. Passing on what they know cements it, and it grows real, quiet leadership."
+                  }
+                ],
+                "photo": "assets/methods/forest-school/act-watching.jpg"
+              }
+            ],
+            "quote": {
+              "text": "There's no such thing as bad weather, only unsuitable clothing.",
+              "cite": "A Scandinavian saying long adopted as a Forest School motto"
+            }
+          },
+          "reading-list": {
+            "title": "Reading list",
+            "icon": "book",
+            "intro": "A short shelf goes a long way. For your child, choose books that lead to real making and real naming, not just facts to read. For you, a couple of Forest School guides plus the wider nature-connection thinking is plenty. You don't need all of these — one child's book and one of yours is a fine start.",
+            "forChild": {
+              "intro": "For 9 to 12, pick project books they can carry into the wood and a pocket ID guide they'll actually use. Let them choose which project to try — the point is doing, not finishing the book.",
+              "groups": [
+                {
+                  "heading": "Make and do",
+                  "books": [
+                    "Play the Forest School Way — Jane Worroll & Peter Houghton",
+                    "Forest Craft — Richard Irvine",
+                    "Woodland Craft — Ben Law"
+                  ]
+                },
+                {
+                  "heading": "Bushcraft and skills",
+                  "books": [
+                    "The Wilderness Handbook — Fergus Collins",
+                    "Bushcraft: A Family Guide — John Boe & Owen Senior",
+                    "The Boys' Book of Survival — Guy Campbell"
+                  ]
+                },
+                {
+                  "heading": "Know your wood",
+                  "books": [
+                    "Collins Gem Trees — Alastair Fitter & David More",
+                    "RSPB First Book of Birds — RSPB",
+                    "The Lost Words — Robert Macfarlane & Jackie Morris"
+                  ]
+                }
+              ]
+            },
+            "forParent": {
+              "intro": "A little reading here shifts how you hold the day — more trust, firmer safety, and a clearer sense of why the same wood every week matters.",
+              "books": [
+                {
+                  "title": "A Year of Forest School",
+                  "author": "Jane Worroll & Peter Houghton",
+                  "note": "Season-by-season activities that suit returning to one wood all year — a natural match for a home rhythm with one child."
+                },
+                {
+                  "title": "Play the Forest School Way",
+                  "author": "Jane Worroll & Peter Houghton",
+                  "note": "The most practical starting point: clear games and skills you can run yourself, no training required."
+                },
+                {
+                  "title": "Coyote's Guide to Connecting with Nature",
+                  "author": "Jon Young",
+                  "note": "The deeper mentoring philosophy behind sit-spots and quiet noticing. Big and unhurried — dip in, don't rush it."
+                },
+                {
+                  "title": "How to Raise a Wild Child",
+                  "author": "Scott Sampson",
+                  "note": "A warm case for outdoor childhood by age and stage. Supporters find it a gentle, encouraging read for parents new to this."
+                },
+                {
+                  "title": "Last Child in the Woods",
+                  "author": "Richard Louv",
+                  "note": "Coined the phrase 'nature-deficit disorder' — worth knowing this is a term he made to describe a worry, not a medical diagnosis. Read it for the argument, not as science."
+                }
+              ]
+            },
+            "free": "You don't need to spend a penny. Any woodland, forest park, or even the same tree line at the edge of a field works, as long as you return to it. In NI, the Woodland Trust and Forest Service sites are free to roam. The RSPB and Woodland Trust both offer free printable ID sheets for trees, birds, and tracks — enough to get sharp without buying a single book."
+          },
+          "competency": {
+            "title": "What to expect at 9–12",
+            "icon": "sprout",
+            "intro": "These are landmarks, not targets, and this is a wide age band — a nine-year-old and a twelve-year-old will be worlds apart. Some children race ahead with tools and hang back socially; others are the opposite. Watch YOUR child and follow where they are, not where a list says they should be. Nothing here is a test to pass.",
+            "landmarks": [
+              {
+                "area": "Tool skill",
+                "items": [
+                  "Uses a knife with real control — cutting away from the body without being reminded",
+                  "Saws log rounds with a bow saw and re-guards the blade unprompted",
+                  "Carves a genuine object over several sessions, like a spoon or peg",
+                  "Runs the tool-care and check-in ritual themselves"
+                ]
+              },
+              {
+                "area": "Fire",
+                "items": [
+                  "Prepares a safe fire circle before any spark, water to hand",
+                  "Lights a fire with a fire steel, and keeps trying at friction fire",
+                  "Cooks a simple real meal on the embers",
+                  "Puts a fire fully out and checks it cold before leaving"
+                ]
+              },
+              {
+                "area": "Shelter and knots",
+                "items": [
+                  "Ties several real knots and lashings from memory",
+                  "Builds a shelter that actually keeps the rain off",
+                  "Lashes a load-bearing structure like a bench or tripod",
+                  "Tests their own build before trusting it"
+                ]
+              },
+              {
+                "area": "Navigation",
+                "items": [
+                  "Uses a map and compass to set a simple bearing",
+                  "Leads a loop around a known wood and recovers from wrong turns",
+                  "Knows the wood well enough to draw a rough map of it",
+                  "Keeps to an agreed boundary and whistle signal"
+                ]
+              },
+              {
+                "area": "Nature knowledge",
+                "items": [
+                  "Names many local trees, birds, and plants with growing accuracy",
+                  "Reads animal tracks and signs to work out who passed",
+                  "Notices seasonal change across the year in one place",
+                  "Uses a pocket ID guide independently"
+                ]
+              },
+              {
+                "area": "Self and others",
+                "items": [
+                  "Holds a longer solo sit-spot calmly",
+                  "Handles basic first aid for a graze, burn, or knock",
+                  "Mentors a younger child in one small skill",
+                  "Reflects honestly in the closing circle on what worked and what was hard"
+                ]
+              }
+            ],
+            "note": "If your child hits few of these, nothing is wrong — plenty of capable, happy children come to bushcraft later, or just love the wood without wanting the tools. And the growing responsibility never means you step away from safety: real blades and real fire carry real risk that you keep managing, no matter how skilled your child becomes. The win is a child who wants to keep going back."
+          }
+        },
       "6-9": {
         "day-in-life": {
           "title": "A day in the life",
@@ -4642,6 +6566,323 @@ window.METHODS = [
   {
     id: 'unschooling',
     stages: {
+      "9-12": {
+          "day-in-life": {
+            "title": "A day in the life",
+            "icon": "sun",
+            "intro": "There is no timetable and no set list of subjects. At 9 to 12 your child can already carry a lot of their own day. Learning grows out of what they truly care about and out of ordinary home life. This is not \"do nothing\" — the law in Northern Ireland lets you home educate without following the national curriculum, but it still asks you to give a suitable, full education. So the real job is a rich home and a parent who is present and interested. This is one shape of a day, not a rule. Your child is one person with their own pace, so bend it to fit them.",
+            "timeline": [
+              {
+                "time": "Wakes on their own",
+                "title": "A slow, chosen start",
+                "body": "No alarm, no rush. A near-teen often wants a quiet start — breakfast, a book, a screen, or just thinking. Let the morning belong to them for a while."
+              },
+              {
+                "time": "Mid-morning",
+                "title": "The deep dive",
+                "body": "This is the big change at this age. Your child can teach themselves a lot about one loved subject — bikes, drawing, code, history, animals, football stats. Give them the time and space to go deep. You do not need to steer it."
+              },
+              {
+                "time": "Late morning",
+                "title": "A course they pulled themselves",
+                "body": "Many older children choose their own lessons online — a Khan Academy topic, a YouTube how-to, a free coding site. The point is that they reached for it. Sit nearby if they want you, or let them work alone."
+              },
+              {
+                "time": "Lunch",
+                "title": "Cooking and real talk",
+                "body": "Let them make lunch, or help. Over food, talk about real things — the news of your street, an idea, a plan. Take their opinions seriously. At this age they can feel when they are talked down to."
+              },
+              {
+                "time": "Early afternoon",
+                "title": "Out into real life",
+                "body": "A walk, the shop, the library, a visit to someone who makes or fixes things. Real places and real people teach a great deal. In Northern Ireland the coast, the hills, and the town are all short trips away."
+              },
+              {
+                "time": "Afternoon",
+                "title": "A real job of their own",
+                "body": "Maybe a small business — selling something they make, fixing bikes, walking dogs. Maybe helping a neighbour. Real work, real money, real customers. This teaches more than any worksheet."
+              },
+              {
+                "time": "Mid-afternoon",
+                "title": "A mentor or apprentice hour",
+                "body": "If they love something, find a person who does it well — a baker, a mechanic, a coder, a gardener. Time beside a skilled adult is one of the oldest and strongest ways to learn."
+              },
+              {
+                "time": "Late afternoon",
+                "title": "Reading their own way",
+                "body": "By now many read whatever they choose — a fat novel, a comic, a manual, a wiki. If reading came late, that is fine; plenty of children start slow and then read hungrily. Trust the pull of a good book."
+              },
+              {
+                "time": "Evening",
+                "title": "A club, a team, or friends",
+                "body": "One child at home still needs company. A sports club, a group, a friend's house, an online build-buddy. Belonging matters, and it will not always come from school-shaped places."
+              },
+              {
+                "time": "Before bed",
+                "title": "Quiet and their own thoughts",
+                "body": "Wind down with a book, a show, a chat, or nothing at all. A near-teen needs some private space in the day. Let the evening close gently."
+              }
+            ],
+            "note": "You will not do all of this in one day, and no two days will look alike. That unevenness is normal here — the day follows the child, not a clock. Keep the home rich with things to try, stay curious with them, and the learning takes care of itself."
+          },
+          "activities": {
+            "title": "Things to do this week",
+            "icon": "hand",
+            "intro": "None of these are lessons. They are invitations — real experiences you can set up this week. In unschooling we sometimes \"strew\": we leave interesting things around and let the child pick them up. But at 9 to 12 your child also seeks things out alone, so half your job is simply to say yes and open doors. Pick what fits your one child. Skip the rest.",
+            "groups": [
+              {
+                "heading": "Go deep on one loved thing",
+                "intro": "The older child's superpower is the deep dive. Feed the obsession of the moment.",
+                "icon": "🔍",
+                "items": [
+                  {
+                    "name": "The obsession box",
+                    "body": "Whatever they love this month, gather it in one place — books, tools, links, materials. Let the pile grow. Do not tidy it away."
+                  },
+                  {
+                    "name": "Follow one rabbit hole all week",
+                    "body": "Let one question lead to the next with no end goal. \"How does a bike gear work?\" can fill days. Let it."
+                  },
+                  {
+                    "name": "Make a real thing",
+                    "body": "Turn the interest into an object — a model, a drawing, a working gadget, a written story. Finishing something real teaches a lot."
+                  },
+                  {
+                    "name": "Teach it back to you",
+                    "body": "Ask them to explain their subject to you as if you knew nothing. Teaching is the deepest kind of learning."
+                  },
+                  {
+                    "name": "Find the experts online",
+                    "body": "Help them find a good channel, forum, or free course on the topic. Then step back and let them follow it themselves."
+                  }
+                ],
+                "photo": "assets/methods/montessori/follow-the-child.jpg"
+              },
+              {
+                "heading": "Real work, real money",
+                "intro": "At this age a small business or job turns learning into something that pays and matters.",
+                "icon": "💷",
+                "items": [
+                  {
+                    "name": "A market stall",
+                    "body": "Help them make and sell something at a car boot or a local market. Handling real money and real customers teaches maths and confidence at once."
+                  },
+                  {
+                    "name": "A tiny repair or make business",
+                    "body": "Fixing bikes, mending clothes, baking, making cards. Small, real, and theirs. Let them keep what they earn."
+                  },
+                  {
+                    "name": "A dog walk or garden round",
+                    "body": "A regular little job for a neighbour builds reliability. Turning up on time is a real skill."
+                  },
+                  {
+                    "name": "Do the money themselves",
+                    "body": "Let them price the thing, count the takings, work out the profit. Real numbers stick far better than made-up ones."
+                  },
+                  {
+                    "name": "A simple price list or poster",
+                    "body": "Writing, spelling, and design all come free when they are making a poster to sell their own thing."
+                  }
+                ],
+                "photo": "assets/methods/montessori/act-practical-life.jpg"
+              },
+              {
+                "heading": "People who know things",
+                "intro": "A mentor beside a child is one of the oldest ways humans have ever learned.",
+                "icon": "🤝",
+                "items": [
+                  {
+                    "name": "Find a neighbour with a craft",
+                    "body": "Someone nearby fixes bikes, bakes, gardens, or codes. Ask if your child can watch and help. Most people love to share what they know."
+                  },
+                  {
+                    "name": "A morning at a real workplace",
+                    "body": "A garage, a bakery, a shop, a workshop. Even one visit shows how a real trade works day to day."
+                  },
+                  {
+                    "name": "Volunteer together",
+                    "body": "A charity shop, a beach clean, a community garden. Doing good beside grown-ups grows a child in ways lessons cannot."
+                  },
+                  {
+                    "name": "Talk to an elder",
+                    "body": "A grandparent or older neighbour has stories and skills. Time with them is history you can touch."
+                  },
+                  {
+                    "name": "Join a group of makers",
+                    "body": "A club, a maker space, a coding group, a music session. Being the youngest in a room of keen people pulls a child up."
+                  }
+                ],
+                "photo": "assets/methods/montessori/act-care-shine.jpg"
+              },
+              {
+                "heading": "Strew and set free",
+                "intro": "Leave good things lying about, then let your child roam without you.",
+                "icon": "🌱",
+                "items": [
+                  {
+                    "name": "A shelf of possibilities",
+                    "body": "Rotate books, a game, a science kit, a musical instrument onto an open shelf. Say nothing. Let them notice."
+                  },
+                  {
+                    "name": "A free course, left open",
+                    "body": "Open Khan Academy or a coding site on the family device and leave it. They may wander in on their own."
+                  },
+                  {
+                    "name": "A day out with no lesson attached",
+                    "body": "A castle, a harbour, a museum, a forest walk. Go for the joy of it. The learning slips in on its own."
+                  },
+                  {
+                    "name": "More freedom to roam",
+                    "body": "At 9 to 12, more time out of your sight — a bike ride, a walk to the shop, a trip with a friend. Independence is a skill too."
+                  },
+                  {
+                    "name": "A blank notebook and free time",
+                    "body": "Hand over a notebook and an empty afternoon. Boredom is often the doorway to their best ideas."
+                  }
+                ],
+                "photo": "assets/methods/_shared/play.jpg"
+              }
+            ],
+            "quote": {
+              "text": "We can best help children learn, not by deciding what we think they should learn and thinking of ingenious ways to teach it to them, but by making the world, as far as we can, accessible to them, paying serious attention to what they do, answering their questions — if they have any — and helping them explore the things they are most interested in.",
+              "cite": "John Holt, How Children Learn"
+            }
+          },
+          "reading-list": {
+            "title": "Reading list",
+            "icon": "book",
+            "intro": "In unschooling there is no set reading list, because the child chooses. Whatever they love to read counts — a comic, a graphic novel, a manual, a whole book about the one thing they are obsessed with. Your job is to keep good books within reach and to read for your own joy where they can see you. Here are ideas for your child and books for you, all real.",
+            "forChild": {
+              "intro": "Let them choose freely. Keep a few loved classics on the shelf too, in case they reach for one. If reading came late, do not worry — many children start slow and then read hungrily on their own terms.",
+              "groups": [
+                {
+                  "heading": "Whatever they love counts",
+                  "books": [
+                    "A graphic novel or comic series they adore",
+                    "A how-to or manual on their current hobby",
+                    "A fat fact book about the one subject they are obsessed with",
+                    "A magazine or annual on their sport or interest"
+                  ]
+                },
+                {
+                  "heading": "Middle-grade classics on hand",
+                  "books": [
+                    "The Hobbit — J.R.R. Tolkien",
+                    "The Chronicles of Narnia — C.S. Lewis",
+                    "Charlotte's Web — E.B. White",
+                    "The Wind in the Willows — Kenneth Grahame"
+                  ]
+                },
+                {
+                  "heading": "Stories set close to home",
+                  "books": [
+                    "Artemis Fowl — Eoin Colfer",
+                    "The Guns of Easter — Gerard Whelan",
+                    "Under the Hawthorn Tree — Marita Conlon-McKenna"
+                  ]
+                }
+              ]
+            },
+            "forParent": {
+              "intro": "These are the books that explain and calm the unschooling path. Start with John Holt, then widen out. Grace Llewellyn is worth reading early, as your child is close to the teen years now.",
+              "books": [
+                {
+                  "title": "How Children Learn",
+                  "author": "John Holt",
+                  "note": "The gentle heart of it all — how learning happens on its own when we watch, trust, and open doors."
+                },
+                {
+                  "title": "Teach Your Own",
+                  "author": "John Holt & Pat Farenga",
+                  "note": "The practical home-education handbook from the man who named unschooling, updated with real family advice."
+                },
+                {
+                  "title": "Free to Learn",
+                  "author": "Peter Gray",
+                  "note": "A psychologist's case for why free, self-chosen learning and play work so well. Reassuring when doubt creeps in."
+                },
+                {
+                  "title": "The Unschooling Handbook",
+                  "author": "Mary Griffith",
+                  "note": "A clear, everyday guide to how unschooling actually looks in a home, day to day."
+                },
+                {
+                  "title": "The Teenage Liberation Handbook",
+                  "author": "Grace Llewellyn",
+                  "note": "Written for the near-teen and teen years — how a young person can build a real, self-directed life outside school. Perfect for what is coming."
+                },
+                {
+                  "title": "Free-Range Kids",
+                  "author": "Lenore Skenazy",
+                  "note": "On giving children more freedom and independence with a calm, sensible heart. Fits the wider roaming of this age."
+                }
+              ]
+            },
+            "free": "The whole curriculum can be free. The library gives endless books for both of you. The internet holds every how-to and forum your child could want. Khan Academy offers full free courses your child can pull for themselves. And real life — the market, the workshop, the coast, the neighbour with a skill — costs nothing and teaches most."
+          },
+          "competency": {
+            "title": "What to expect at 9–12",
+            "icon": "sprout",
+            "intro": "This is the honest part. Unschooling has no skills ladder by design, so there is no tidy list your child \"should\" tick off. Growth here is uneven and shaped by interest — deep and fast in a loved subject, slower in one they have not met yet. That is expected, not a problem. Judge by engagement and curiosity, not by year-group benchmarks. And be plain with yourself: the trust that skills arrive without formal teaching is a belief many hold strongly and some dispute. It is fair to hold it while keeping your eyes open. Remember too that 9 to 12 is a huge range — a nine-year-old and a twelve-year-old are worlds apart.",
+            "landmarks": [
+              {
+                "area": "Reading and words",
+                "items": [
+                  "Many are now reading long books on their own, of their own choosing",
+                  "If reading came late, it may only now be taking off — this is common and fine",
+                  "Can look things up, follow written instructions, and read to find something out",
+                  "Writing may still lag behind reading, especially if they have not needed to write much"
+                ]
+              },
+              {
+                "area": "Numbers and money",
+                "items": [
+                  "Real-world maths often runs ahead of paper maths — pricing, change, measuring",
+                  "May master the maths a hobby needs and skip the rest for now",
+                  "Can handle real money in a small business or job",
+                  "Gaps in \"school\" maths are normal and fill in later when there is a reason"
+                ]
+              },
+              {
+                "area": "The deep dive",
+                "items": [
+                  "Can teach themselves a remarkable amount about one loved subject",
+                  "Will happily go deeper than a school course ever would in that one area",
+                  "Learns to find their own sources — courses, videos, forums, people",
+                  "Expect expert-level knowledge in a narrow strip, and gaps elsewhere"
+                ]
+              },
+              {
+                "area": "Doing real things",
+                "items": [
+                  "Can run a small business or hold a little job with real customers",
+                  "Learns skills from mentors and apprenticeships, not only from books",
+                  "Cooks, fixes, makes, or grows something useful",
+                  "Follows a long project through to a finished result"
+                ]
+              },
+              {
+                "area": "Independence",
+                "items": [
+                  "Carries much of their own day without being told",
+                  "Roams further alone — a bike ride, a walk to the shop, a trip with friends",
+                  "Chooses what to learn and reaches for it themselves",
+                  "Grows able to plan a small thing from start to finish"
+                ]
+              },
+              {
+                "area": "Talking and thinking",
+                "items": [
+                  "Holds real conversations and expects to be taken seriously",
+                  "Forms opinions and can argue a point with reasons",
+                  "Notices and questions how the world around them works",
+                  "Enjoys the company of adults as well as other children"
+                ]
+              }
+            ],
+            "note": "If your child is deeply interested in things, keeps asking questions, and is learning to steer their own days, the method is working — even if the picture looks nothing like a school report. Trust the engagement over the checklist. And if a real gap starts to worry you or your child, that is simply the moment to offer a mentor, a course, or a helping hand. Following the child never means abandoning them."
+          }
+        },
       "6-9": {
         "day-in-life": {
           "title": "A day in the life",
@@ -5306,6 +7547,313 @@ window.METHODS = [
   {
     id: 'athens',
     stages: {
+      "9-12": {
+          "day-in-life": {
+            "title": "A day in the life",
+            "icon": "sun",
+            "intro": "By nine or ten, an Athenian boy had learned his letters, his lyre, and the run of the wrestling floor. Now the same three strands went deeper. He carried more poetry in his head, played and sang with more skill, trained his body harder, and — this is the new part — he began to think out loud with grown men, following a question wherever it led. Nine to twelve is a wide stretch, and no two children sit in the same place. Read this as one shape of a day, not a timetable. Borrow the parts that fit your child this year.",
+            "timeline": [
+              {
+                "time": "Early morning",
+                "title": "Up with the light",
+                "body": "The house woke early. A simple bite — bread, maybe a few olives or figs — and then out. The Greeks liked to do the hard work of the mind and body before the heat of the day."
+              },
+              {
+                "time": "Walk to lessons",
+                "title": "The paidagogos beside him",
+                "body": "A household attendant, the paidagogos, walked the boy to his teachers and stayed near. His job was less to teach facts and more to guard the boy's manners and keep him to his work. Company on the road, and a steady eye."
+              },
+              {
+                "time": "Morning",
+                "title": "Poetry, learned by heart",
+                "body": "With the grammatistes, the boy recited and copied poetry — above all Homer. The Greeks believed the great poems held wisdom about courage, friendship, and how to carry yourself, so a boy filled his memory with hundreds of lines and could speak them on cue."
+              },
+              {
+                "time": "Late morning",
+                "title": "The lyre and the singing",
+                "body": "With the kitharistes, he kept up his music. Plucking the lyre, singing the poems to their tunes. The Greeks thought music tuned the soul the way training tuned the body — that a boy raised on good music grew balanced and calm."
+              },
+              {
+                "time": "Midday",
+                "title": "A light meal and a rest",
+                "body": "A small lunch, then a pause in the hottest hours. Nothing heavy. The Greeks ate simply and saved the big meal for the evening."
+              },
+              {
+                "time": "Afternoon",
+                "title": "The palaestra — real training",
+                "body": "Now the wrestling ground. At this age the training grew serious: running, wrestling, jumping, throwing the discus and javelin, all under the paidotribes. The aim was a strong, quick, capable body — a boy who moved well and knew what his body could do."
+              },
+              {
+                "time": "Afternoon",
+                "title": "Number, shape, and proportion",
+                "body": "Number work reached toward geometry. The Greeks loved shape and pattern, and they saw whole numbers, ratios, and figures as a kind of order running through the world. A boy drew shapes, compared lengths, and looked for the rule behind them."
+              },
+              {
+                "time": "Late afternoon",
+                "title": "Learning to think out loud",
+                "body": "This is the age where good questions came forward. In the way later linked with Socrates, a boy learned to ask 'What do you mean by that?' and 'Why do you think it is so?' — and to follow an honest answer even when it upset what he first believed. Not winning an argument. Getting nearer the truth."
+              },
+              {
+                "time": "Evening",
+                "title": "Home, and the family meal",
+                "body": "Back home for the main meal of the day. Talk around the table, perhaps a story, perhaps a father asking his son what he had learned and turning it into a question of its own."
+              },
+              {
+                "time": "The whole aim",
+                "title": "Kalos kagathos",
+                "body": "Behind every part of the day stood one idea: kalos kagathos — the fine and good person, well-rounded, strong in mind and body alike. Not a specialist in one thing, but a whole human being who could think, speak, move, and sing."
+              }
+            ],
+            "note": "The Athenians built a person out of three strands braided together — poetry, music, and physical training — and, in the older years, added honest questioning on top. You do not need a wrestling ground or a lyre. You need the shape: fill the memory with good words, keep real music and real movement in the week, and talk to your child as a thinking person, not only as a child to be told."
+          },
+          "activities": {
+            "title": "Things to do this week",
+            "icon": "hand",
+            "intro": "Pick one strand and give it a real go this week — you do not need all four at once. The Athenian method was simple to run at home: put great words in the memory, keep music and the body strong, look for shape and pattern, and practise honest talk. One child at the kitchen table is plenty. Some of these will land now; some will land better in a year. Follow the ones your child leans into.",
+            "groups": [
+              {
+                "heading": "Memorise and recite great poetry",
+                "intro": "The heart of the Athenian way. A boy carried poetry in his head and could speak it aloud. Start small, build up, and make reciting a warm thing, not a test.",
+                "icon": "📜",
+                "items": [
+                  {
+                    "name": "Learn a short passage by heart",
+                    "body": "Choose eight to twelve lines from Homer — the parting of Hector and his wife, or Odysseus longing for home. Read it together for a few days, then let your child speak it without the book."
+                  },
+                  {
+                    "name": "Recite it aloud, standing up",
+                    "body": "The Greeks spoke poetry, they did not mumble it. Have your child stand, take a breath, and say the lines clearly to you. Clap at the end. Make it a small performance."
+                  },
+                  {
+                    "name": "Copy the lines out by hand",
+                    "body": "Writing the words slows the mind and helps them stick. Let your child copy the passage in their best hand and keep a growing notebook of memorised pieces."
+                  },
+                  {
+                    "name": "Talk about what the lines mean",
+                    "body": "After they know the words, ask what the person is feeling and why. The Greeks believed the poems taught how to live, so the meaning matters as much as the memory."
+                  },
+                  {
+                    "name": "Build a recital over the term",
+                    "body": "Add a new passage every week or two. By the end of a term your child might recite several pieces in a row — a real store of words to carry for life."
+                  }
+                ],
+                "photo": "assets/methods/montessori/absorbent-mind.jpg"
+              },
+              {
+                "heading": "Keep music and singing alive",
+                "intro": "The Greeks thought music shaped character. It does not need to be the lyre — any real instrument and real singing will do. The goal is a child who can make music, not only listen to it.",
+                "icon": "🎵",
+                "items": [
+                  {
+                    "name": "Learn a simple tune on any instrument",
+                    "body": "A recorder, a tin whistle, a keyboard, a guitar — whatever you have. A few notes played well beats many played badly. Ten minutes most days."
+                  },
+                  {
+                    "name": "Sing the poems you are learning",
+                    "body": "The Greeks sang their poetry. Put a simple melody to a few lines your child has memorised and sing them together. Words plus tune stick twice as fast."
+                  },
+                  {
+                    "name": "Listen closely, then describe it",
+                    "body": "Play one piece of music and ask your child what it makes them feel — calm, brave, sad. The Greeks believed some music steadied the soul and some stirred it up. Let them notice the difference."
+                  },
+                  {
+                    "name": "Keep a steady beat together",
+                    "body": "Clap or tap a rhythm and have your child keep it going, then swap. Simple, but it builds the sense of time and pattern the Greeks valued in both music and number."
+                  },
+                  {
+                    "name": "Learn one song fully, start to finish",
+                    "body": "Rather than snatches of many, learn one whole song properly over a couple of weeks. Mastery of one small thing was the Greek habit."
+                  }
+                ],
+                "photo": "assets/methods/classical/act-beauty.jpg"
+              },
+              {
+                "heading": "Explore geometry with real shapes",
+                "intro": "The Greeks loved shape, ratio, and pattern — they saw order in the world through it. Do this with your hands and eyes, not only on paper. Number becomes real when you can see and touch it.",
+                "icon": "📐",
+                "items": [
+                  {
+                    "name": "Draw with a compass and straight edge",
+                    "body": "Show your child how to draw a clean circle, then a triangle inside it. The Greeks built their geometry from just these two tools. Beauty comes out of very few rules."
+                  },
+                  {
+                    "name": "Hunt for shapes in the real world",
+                    "body": "Walk around the house or the town and find circles, triangles, and squares in windows, tiles, and wheels. The Greeks believed shape was everywhere underneath things."
+                  },
+                  {
+                    "name": "Build with proportion",
+                    "body": "Using blocks or paper, make one tower twice as tall as another, then three times. Talk about ratio — 'this is two of those.' Proportion was at the heart of Greek shape-sense."
+                  },
+                  {
+                    "name": "Fold and cut for symmetry",
+                    "body": "Fold paper and cut, then open it to see the matching halves. Folding is a hands-on way to feel symmetry, which the Greeks prized as a sign of order and beauty."
+                  },
+                  {
+                    "name": "Find the pattern, then the rule",
+                    "body": "Lay out a growing pattern — one dot, then three, then six — and ask your child what comes next and why. The Greeks always looked for the rule sitting underneath the numbers."
+                  }
+                ],
+                "photo": "assets/methods/montessori/self-correcting.jpg"
+              },
+              {
+                "heading": "Practise honest dialogue and debate",
+                "intro": "This is the strand that came forward at this age. In the way linked with Socrates, learning meant asking good questions and following the answer honestly — not scoring points, but getting nearer the truth together.",
+                "icon": "💬",
+                "items": [
+                  {
+                    "name": "Ask 'What do you mean by that?'",
+                    "body": "When your child says something is 'good' or 'fair,' ask them to say what they mean by the word. The Greeks found that half the muddle in an argument comes from words no one has pinned down."
+                  },
+                  {
+                    "name": "Ask 'Why do you think so?'",
+                    "body": "For any claim your child makes, gently ask for the reason behind it. Not to trip them up — to help them see whether the reason really holds. Reasons, not just opinions."
+                  },
+                  {
+                    "name": "Take turns arguing both sides",
+                    "body": "Pick a small real question — should we have a pet, should bedtime be later — and have your child argue for it, then against it. Seeing both sides was a Greek habit of a fair mind."
+                  },
+                  {
+                    "name": "Follow the argument where it leads",
+                    "body": "If your child's reasoning leads somewhere they did not expect, praise them for following it honestly rather than clinging to what they first said. Changing your mind on good grounds is a win, not a loss."
+                  },
+                  {
+                    "name": "Sit with a real question at dinner",
+                    "body": "Bring one open question to the table — what makes someone brave, what is a good friend — and think it through together out loud. No right answer needed. The thinking is the point."
+                  }
+                ],
+                "photo": "assets/methods/classical/act-wonder.jpg"
+              }
+            ],
+            "quote": {
+              "text": "The unexamined life is not worth living for a human being.",
+              "cite": "attributed to Socrates, in Plato's Apology"
+            }
+          },
+          "reading-list": {
+            "title": "Reading list",
+            "icon": "book",
+            "intro": "The Athenian mind was built on Homer and the myths — so that is where your child's reading begins. These are the very stories a Greek boy carried in his memory. Read them as the Greeks first met them: as stories the Greeks told, full of gods and heroes. For you, a short shelf on what the Greeks were reaching for and why it still repays borrowing.",
+            "forChild": {
+              "intro": "Read these aloud together, then let a confident reader carry on alone. When gods and heroes appear, keep the frame simple and honest: these are the stories the Greeks told to make sense of their world. In the myth, the gods do this. A nine-year-old and a twelve-year-old will meet these very differently — start lighter, go deeper as they are ready.",
+              "groups": [
+                {
+                  "heading": "The myths, told as stories",
+                  "books": [
+                    "D'Aulaires' Book of Greek Myths — Ingri & Edgar Parin d'Aulaire",
+                    "The Golden Fleece and the Heroes Who Lived Before Achilles — Padraic Colum"
+                  ]
+                },
+                {
+                  "heading": "Homer, made for children",
+                  "books": [
+                    "The Children's Homer — Padraic Colum",
+                    "Black Ships Before Troy — Rosemary Sutcliff",
+                    "The Wanderings of Odysseus — Rosemary Sutcliff"
+                  ]
+                },
+                {
+                  "heading": "The world around the stories",
+                  "books": [
+                    "Usborne Ancient Greece — Usborne"
+                  ]
+                }
+              ]
+            },
+            "forParent": {
+              "intro": "Start with Hamilton and Simmons — warm, readable, and full of the 'why.' Reach for Jaeger only when you want the deep scholarly account, and give it time. The others fill in the life and the argument.",
+              "books": [
+                {
+                  "title": "The Greek Way",
+                  "author": "Edith Hamilton",
+                  "note": "The warmest door in. Hamilton loved the Greeks and makes you feel why they matter. Begin here."
+                },
+                {
+                  "title": "Climbing Parnassus: A New Apologia for Greek and Latin",
+                  "author": "Tracy Lee Simmons",
+                  "note": "A modern case for a classical education, plainly argued. The best single book on why any of this is worth borrowing today."
+                },
+                {
+                  "title": "The Life of Greece",
+                  "author": "Will Durant",
+                  "note": "A broad, story-rich picture of Greek life and learning. Long, but easy to dip into a chapter at a time."
+                },
+                {
+                  "title": "Who Killed Homer?",
+                  "author": "Victor Davis Hanson & John Heath",
+                  "note": "A sharp, spirited argument for why the Greeks still matter and how we have let them slip. Opinionated and readable."
+                },
+                {
+                  "title": "Paideia: The Ideals of Greek Culture",
+                  "author": "Werner Jaeger",
+                  "note": "The great scholarly account of how the Greeks thought about forming a person. Dense and demanding — read it slowly, and only when the lighter books have left you wanting more."
+                }
+              ]
+            },
+            "free": "You do not need to buy much. The myths and the whole of Homer are out of copyright — you can read them free on Project Gutenberg and hear them read aloud free on Librivox. Many museums show real Greek pots, coins, and statues online for nothing, and your local library will have most of the children's titles above."
+          },
+          "competency": {
+            "title": "What to expect at 9–12",
+            "icon": "sprout",
+            "intro": "Nine to twelve is a wide stretch, and children move through it at their own pace — a nine-year-old and a twelve-year-old are almost different people. Read these as landmarks to aim toward, not a checklist to tick by a birthday. The Athenian aim was never a set of boxes filled. It was a whole person coming into shape: able to think, speak, move, and make music. Meet the child in front of you.",
+            "landmarks": [
+              {
+                "area": "Memory and recitation",
+                "items": [
+                  "Can learn a passage of ten or more lines by heart and hold it over weeks",
+                  "Speaks it aloud clearly, standing, without the book",
+                  "Is building a growing store of memorised pieces, not just one",
+                  "Can say, in their own words, what a passage is about"
+                ]
+              },
+              {
+                "area": "Music",
+                "items": [
+                  "Plays a simple tune on some instrument with a steady beat",
+                  "Can sing in time and hold a melody",
+                  "Notices what different music makes them feel and can say so",
+                  "Keeps a rhythm going and matches one they hear"
+                ]
+              },
+              {
+                "area": "Body and movement",
+                "items": [
+                  "Runs, jumps, and moves with growing strength and control",
+                  "Takes real physical training seriously, not just play",
+                  "Knows what their body can do and pushes it a little further over time",
+                  "Carries themselves with steadiness — the Greek idea of grace in movement"
+                ]
+              },
+              {
+                "area": "Number and shape",
+                "items": [
+                  "Draws clean circles and triangles with simple tools",
+                  "Spots shapes and symmetry in the world around them",
+                  "Understands proportion — 'twice as big,' 'three of these'",
+                  "Looks for the rule underneath a pattern, not just the next item"
+                ]
+              },
+              {
+                "area": "Thinking and dialogue",
+                "items": [
+                  "Asks 'What do you mean?' and 'Why do you think so?'",
+                  "Can give a reason for what they believe, not only the belief",
+                  "Will argue both sides of a small question fairly",
+                  "Can follow an argument to a surprising end and change their mind on good grounds"
+                ]
+              },
+              {
+                "area": "The whole person",
+                "items": [
+                  "Shows the Greek balance — strong in body and in mind, neither one alone",
+                  "Carries themselves with confidence when they speak or perform",
+                  "Is curious about big questions and enjoys thinking them through out loud",
+                  "Is growing toward kalos kagathos — the fine, well-rounded person"
+                ]
+              }
+            ],
+            "note": "If your child is strong in some strands and slower in others, that is normal and expected — few children arrive evenly. The Greeks would say keep all three strands in the week, poetry, music, and the body, and add honest talk on top, and the whole person comes into shape over years, not weeks. You are not racing anyone. You are braiding a person together, one steady thread at a time."
+          }
+        },
       "6-9": {
         "day-in-life": {
           "title": "A day in the life",
@@ -5956,6 +8504,318 @@ window.METHODS = [
   {
     id: 'rome',
     stages: {
+      "9-12": {
+          "day-in-life": {
+            "title": "A day in the life",
+            "icon": "sun",
+            "intro": "Picture an older Roman child — somewhere between nine and twelve — who has finished the first school, the ludus, and can already read, write and count. Now they move up to the grammaticus, the grammar school, where the real work is words: great poems, two languages, and learning to speak a clear case. Remember the age range here is wide. A nine-year-old and a twelve-year-old are very different people, so read this as a shape to borrow, not a timetable to obey. This is how the Romans did it long ago — take what helps your own child.",
+            "timeline": [
+              {
+                "time": "Before dawn",
+                "title": "A quiet, early start",
+                "body": "The Roman day began early, often before the sun was fully up. The child rose, washed, and ate a small, plain breakfast — bread, perhaps with a little cheese or olives. Lessons started while the mind was fresh."
+              },
+              {
+                "time": "Early morning",
+                "title": "Off to the grammaticus",
+                "body": "The child walked to the grammar teacher's rooms, sometimes with a household servant carrying their things. A wax tablet and stylus went along for writing, and scrolls of poetry for reading."
+              },
+              {
+                "time": "Morning",
+                "title": "Reading the poets closely",
+                "body": "The heart of the morning was literature. Above all they read Virgil, the great Roman poet, line by line — sounding out the words, understanding what each one meant, and asking why the poet chose it. Homer, from the Greek world, was studied too."
+              },
+              {
+                "time": "Mid-morning",
+                "title": "Grammar, properly",
+                "body": "They learned how the language actually works: the parts of speech, how words change their endings, how a sentence is built. This was slow, careful work, and the Romans thought it was the foundation of clear thinking."
+              },
+              {
+                "time": "Late morning",
+                "title": "Greek as well as Latin",
+                "body": "An educated Roman was expected to know two languages, not one. So the child worked at Greek alongside their own Latin — reading it, writing it, and speaking simple phrases aloud."
+              },
+              {
+                "time": "Midday",
+                "title": "A break and a light meal",
+                "body": "Around noon there was a pause and a simple lunch. Children played, stretched their legs, and rested the mind before the afternoon."
+              },
+              {
+                "time": "Early afternoon",
+                "title": "Reading aloud with feeling",
+                "body": "Reading was not silent and flat. The child practised reading poetry aloud with the right rhythm and feeling, so a listener could follow the meaning. Speaking well began here."
+              },
+              {
+                "time": "Afternoon",
+                "title": "Explaining the text",
+                "body": "The teacher would ask the child to explain a passage — what is happening, what this word means, why a hero acts as he does. Learning to unpack a text and put it into their own words was a daily habit."
+              },
+              {
+                "time": "Late afternoon",
+                "title": "Training the memory",
+                "body": "Romans prized a strong memory. The child learned lines of poetry by heart and could recite them. A trained memory was seen as a tool they would use for the rest of their life."
+              },
+              {
+                "time": "Evening",
+                "title": "Stories of good character",
+                "body": "At home, character was taught through the exempla — true and legendary stories the Romans told about admired figures like Cincinnatus, Horatius and Regulus. In the legend, each one stood for a virtue: duty, courage, keeping your word. The child was invited to admire and copy them."
+              },
+              {
+                "time": "Before bed",
+                "title": "A calm close",
+                "body": "The day ended simply. A little rest, perhaps a story retold, and early to bed — because tomorrow, like every day, began before the sun."
+              }
+            ],
+            "note": "No two households ran the same way, and much of what we know comes from families that valued learning. Treat this as one picture, not the only picture. What matters for you is the shape: fresh minds early, deep reading of one great work, a real language, speaking aloud, a trained memory, and good stories to grow on."
+          },
+          "activities": {
+            "title": "Things to do this week",
+            "icon": "hand",
+            "intro": "Here is the Roman method turned into things you can actually do this week, at home, with one child. You do not need Latin yourself, or a classroom, or a full day. Pick a few that suit your child's age and mood. A nine-year-old might do the gentler ones; a twelve-year-old can go deeper. Little and often beats long and rare — the Romans built strong minds one small, steady step at a time.",
+            "groups": [
+              {
+                "heading": "Study one great poem or story deeply",
+                "intro": "The Roman way was not to skim many books but to know one great work really well. Choose one story and live inside it for the week.",
+                "icon": "📜",
+                "items": [
+                  {
+                    "name": "Choose your one story",
+                    "body": "Pick a single tale from The Aeneid for Boys and Girls or a fable from Aesop. Read it together once, just to enjoy it, before you study anything."
+                  },
+                  {
+                    "name": "Read it again, slowly",
+                    "body": "Read the same story a second time. This time stop at any word your child does not fully know, and talk about what it means. Slow reading is the whole point."
+                  },
+                  {
+                    "name": "Draw the scene",
+                    "body": "Ask your child to draw the most exciting moment. Drawing forces them to picture the story clearly, which is how the Romans wanted a text to be understood."
+                  },
+                  {
+                    "name": "Ask 'why did they do that?'",
+                    "body": "Pick a character's choice and ask why they acted that way. There is no single right answer — the point is learning to explain a story in their own words."
+                  },
+                  {
+                    "name": "Retell it from memory",
+                    "body": "At the end of the week, ask your child to tell the whole story back to you with the book closed. This joins deep reading with a trained memory, just as Rome did."
+                  }
+                ],
+                "photo": "assets/methods/montessori/absorbent-mind.jpg"
+              },
+              {
+                "heading": "Begin a real language, properly",
+                "intro": "An educated Roman knew Latin and Greek. You can borrow the idea with any real language, done a little each day. Slow and steady is the Roman rhythm.",
+                "icon": "🗣️",
+                "items": [
+                  {
+                    "name": "Ten Latin words",
+                    "body": "Learn ten simple Latin words this week — like 'aqua' for water, 'terra' for land, 'stella' for star. Say them aloud together each day until they stick."
+                  },
+                  {
+                    "name": "Spot Latin hiding in English",
+                    "body": "Show your child how many English words come from Latin. 'Aqua' hides in aquarium; 'terra' hides in territory. This makes a language feel alive, not dusty."
+                  },
+                  {
+                    "name": "One phrase a day",
+                    "body": "Learn a short phrase and use it for real. 'Salve' means hello; 'gratias' means thank you. Greet each other with it all week."
+                  },
+                  {
+                    "name": "Choose the language that fits your family",
+                    "body": "If Latin does not suit, begin Irish, French or any real language properly instead. The Roman lesson is the habit of learning a second tongue, not which one."
+                  },
+                  {
+                    "name": "Write the words, don't just read them",
+                    "body": "Have your child copy the new words neatly by hand. Romans learned by writing on wax tablets — the hand helps the memory hold on."
+                  }
+                ],
+                "photo": "assets/methods/waldorf/act-home.jpg"
+              },
+              {
+                "heading": "Practise speaking a clear case",
+                "intro": "The crown of Roman education was rhetoric — speaking clearly and persuasively. You can start this young with fun, everyday practice.",
+                "icon": "🎤",
+                "items": [
+                  {
+                    "name": "Read a poem aloud with feeling",
+                    "body": "Take a few lines from Macaulay's Horatius and read them aloud together, big and bold. Reading with feeling was daily Roman work, and it is thrilling."
+                  },
+                  {
+                    "name": "Make the one-minute case",
+                    "body": "Give your child a fun question — 'should we have pancakes on Sunday?' — and one minute to argue their side clearly. Then swap and let them hear you argue back."
+                  },
+                  {
+                    "name": "Three reasons, in order",
+                    "body": "Teach the simple frame the Romans loved: say what you think, then give your best reason, your next reason, and your last. Clear order makes clear speaking."
+                  },
+                  {
+                    "name": "The daily 'tell me about your day'",
+                    "body": "Ask your child to tell you about their day in a clear beginning, middle and end. Everyday speaking, done well, is how confidence grows."
+                  },
+                  {
+                    "name": "Recite to the family",
+                    "body": "At the end of the week, have your child stand and recite a memorised passage or make their little speech to whoever is home. A friendly audience builds a steady voice."
+                  }
+                ],
+                "photo": "assets/methods/classical/act-wonder.jpg"
+              },
+              {
+                "heading": "Keep the trained memory and good stories",
+                "intro": "Two Roman treasures went hand in hand: a strong memory, and the exempla — stories of admired people held up to copy. Both are easy to keep alive at home.",
+                "icon": "🏛️",
+                "items": [
+                  {
+                    "name": "Learn four lines by heart",
+                    "body": "Choose four lines of poetry and learn them together over the week. A few lines, well remembered, is a real Roman achievement."
+                  },
+                  {
+                    "name": "A story of courage",
+                    "body": "Read the tale of Horatius holding the bridge, or Cincinnatus who left his farm to help and then went straight back to it. The Romans told these to show courage and duty — ask your child what they admire in them."
+                  },
+                  {
+                    "name": "Name the virtue",
+                    "body": "After each story, ask your child to name the good quality it shows — bravery, honesty, keeping a promise. The Romans learned character by naming and admiring it."
+                  },
+                  {
+                    "name": "A memory game at dinner",
+                    "body": "Play a simple 'I went to the market and bought...' game where each person adds an item and repeats the list. Fun practice for the very skill Rome prized."
+                  },
+                  {
+                    "name": "Copy a wise line",
+                    "body": "Have your child copy out one short wise saying in their best writing and pin it up. A good line, seen every day, quietly shapes the mind."
+                  }
+                ],
+                "photo": "assets/methods/rome/act-duty.jpg"
+              }
+            ],
+            "quote": {
+              "text": "Non scholae sed vitae discimus — we learn not for school but for life.",
+              "cite": "A line adapted from Seneca, Letters to Lucilius"
+            }
+          },
+          "reading-list": {
+            "title": "Reading list",
+            "icon": "book",
+            "intro": "These are real books you can find and enjoy. The Roman way was to read fewer books more deeply, so do not rush to own them all. Start with one for your child and one for you, and read them slowly. Several here are free, because the oldest and best of them are out of copyright.",
+            "forChild": {
+              "intro": "Books to read with your child, or for a confident older reader to enjoy alone. They bring the Roman world to life through stories, mysteries and great old tales. Choose by your child's reading level, not their age — the nine-to-twelve range is wide.",
+              "groups": [
+                {
+                  "heading": "Stories set in Roman times",
+                  "books": [
+                    "The Roman Mysteries series — Caroline Lawrence",
+                    "Detectives in Togas — Henry Winterfeld"
+                  ]
+                },
+                {
+                  "heading": "The great tales the Romans studied",
+                  "books": [
+                    "The Aeneid for Boys and Girls — Alfred J. Church",
+                    "Aesop's Fables — Aesop",
+                    "Horatius, from Lays of Ancient Rome — Thomas Babington Macaulay"
+                  ]
+                },
+                {
+                  "heading": "To explore the real Roman world",
+                  "books": [
+                    "Usborne Ancient Rome — Usborne"
+                  ]
+                }
+              ]
+            },
+            "forParent": {
+              "intro": "Books for you — to understand how the Romans taught, and to borrow the best of it. Some are modern and easy; one or two are the real old sources and ask for patience. Begin wherever you find traction.",
+              "books": [
+                {
+                  "title": "Climbing Parnassus",
+                  "author": "Tracy Lee Simmons",
+                  "note": "The clearest modern case for the old Latin-and-Greek education, and why it still forms a strong mind. Warm and readable. A good place to begin."
+                },
+                {
+                  "title": "SPQR: A History of Ancient Rome",
+                  "author": "Mary Beard",
+                  "note": "A lively, trustworthy history of Rome by one of the finest living historians. Read it for the world the child grew up in."
+                },
+                {
+                  "title": "How to Think Like a Roman Emperor",
+                  "author": "Donald Robertson",
+                  "note": "Uses the life of Marcus Aurelius to show the Roman idea of character and self-command in a modern, friendly way."
+                },
+                {
+                  "title": "Meditations",
+                  "author": "Marcus Aurelius",
+                  "note": "The private notebook of a Roman emperor, written to steady his own character. A primary source — short passages, best read a little at a time."
+                },
+                {
+                  "title": "Caesar and Christ",
+                  "author": "Will Durant",
+                  "note": "A big, sweeping story of Rome for the general reader. Rich and enjoyable; dip in rather than racing through."
+                }
+              ]
+            },
+            "free": "Good news for a free-by-default home: The Aeneid for Boys and Girls (Church), Aesop's Fables, Macaulay's Horatius and Marcus Aurelius' Meditations are all out of copyright. You can read them free on Project Gutenberg, and hear them read aloud free on Librivox. And for real Roman objects up close, the Ulster Museum in Belfast — and other museums — show Roman finds at little or no cost."
+          },
+          "competency": {
+            "title": "What to expect at 9–12",
+            "icon": "sprout",
+            "intro": "This is a rough map of what an older child can grow into during these years — not a test, and not a race. The nine-to-twelve range is huge: a nine-year-old is still close to little-childhood, while a twelve-year-old is nearly a young person. Meet the child in front of you, and let them move at their own pace. Every one of these grows slowly, with gentle, steady practice.",
+            "landmarks": [
+              {
+                "area": "Reading deeply",
+                "items": [
+                  "Reads a whole story and can say what happened, in order",
+                  "Stops at words they don't know and works out or asks the meaning",
+                  "Begins to notice why a writer chose a particular word",
+                  "Can enjoy re-reading the same good book and find more in it"
+                ]
+              },
+              {
+                "area": "Language and grammar",
+                "items": [
+                  "Knows the main parts of speech — naming words, doing words, describing words",
+                  "Sees how English is built, and can fix a muddled sentence",
+                  "Holds a small set of words in a second language, like Latin",
+                  "Spots how English words grow out of older languages"
+                ]
+              },
+              {
+                "area": "Speaking and reading aloud",
+                "items": [
+                  "Reads aloud clearly, with feeling, so a listener can follow",
+                  "Can make a short, clear case with a reason or two",
+                  "Speaks up in front of family without freezing",
+                  "Tells about their day or a story with a clear beginning, middle and end"
+                ]
+              },
+              {
+                "area": "A trained memory",
+                "items": [
+                  "Learns a few lines of poetry by heart and recites them",
+                  "Remembers a list or a sequence with a little practice",
+                  "Can retell a whole story from memory with the book closed",
+                  "Uses small tricks — rhythm, repetition — to help things stick"
+                ]
+              },
+              {
+                "area": "Character and stories",
+                "items": [
+                  "Knows and enjoys a handful of the old stories of good character",
+                  "Can name the virtue a story is showing — courage, duty, honesty",
+                  "Begins to admire good qualities and want to copy them",
+                  "Grows in steadiness, patience and doing what they said they would"
+                ]
+              },
+              {
+                "area": "Habits of a learner",
+                "items": [
+                  "Can sit with one task for a stretch that suits their age",
+                  "Starts the day willingly, with the mind fresh",
+                  "Takes pride in neat handwriting and careful work",
+                  "Asks good questions about what they read and hear"
+                ]
+              }
+            ],
+            "note": "If your child is not yet at some of these, that is completely normal — there is no fixed finish line across such a wide age range. Follow the child, keep it warm, and go one small step at a time. This is a method to borrow, not a curriculum to complete."
+          }
+        },
       "6-9": {
         "day-in-life": {
           "title": "A day in the life",
@@ -6599,6 +9459,327 @@ window.METHODS = [
   {
     id: 'future-of-education',
     stages: {
+      "9-12": {
+          "day-in-life": {
+            "title": "A day in the life",
+            "icon": "sun",
+            "intro": "Alpha School is a young, bold idea about how learning could work. The plan is simple: get the core academics done fast in a short, focused morning block on adaptive apps, then free the rest of the day for real projects and real-world skills. Alpha makes big claims about how much faster children learn this way. Those claims come mostly from the school itself and have not been independently checked, so hold them lightly. What follows is the everyday shape of the method, adapted for one older child at home in Northern Ireland. Nine to twelve is a wide range. A nine-year-old and a twelve-year-old are very different people, so treat every timing here as a rough sketch, not a rule. Watch your own child and adjust.",
+            "timeline": [
+              {
+                "time": "8:00",
+                "title": "Slow, calm start",
+                "body": "No rushing into books. Breakfast, a little tidy-up, maybe a walk outside. A settled body learns better than a rushed one."
+              },
+              {
+                "time": "8:45",
+                "title": "Set the goals for the day",
+                "body": "Your child looks at their own progress on the app and picks what they will work on. At this age they lead this, and you coach. Owning the goal is half the work."
+              },
+              {
+                "time": "9:00",
+                "title": "First focus block",
+                "body": "About one hour on a good adaptive app like Khan Academy. The app meets them at their exact level. The rule that matters most: they only move on once a skill is truly mastered."
+              },
+              {
+                "time": "10:00",
+                "title": "Move and snack",
+                "body": "A real break. Fresh air, water, a snack, a quick game. Short bursts of deep focus beat long tired ones."
+              },
+              {
+                "time": "10:20",
+                "title": "Second focus block",
+                "body": "Another shorter block, often a different subject. Reading, maths, or a language on Duolingo. The morning academics are meant to be done in roughly two focused hours, not stretched all day."
+              },
+              {
+                "time": "11:30",
+                "title": "Life-skills workshop",
+                "body": "One grown-up-useful skill practised for real: public speaking, budgeting pocket money, planning a task, working as part of a team on a shared job."
+              },
+              {
+                "time": "12:15",
+                "title": "Lunch and free time",
+                "body": "A proper break with no screens if you can. Let the mind wander. Boredom is where a lot of good ideas start."
+              },
+              {
+                "time": "13:15",
+                "title": "Passion project",
+                "body": "The heart of the afternoon. Your child works on their own ambitious project, their masterpiece. Building something, running a tiny business, or learning a hard skill to a real standard."
+              },
+              {
+                "time": "15:00",
+                "title": "Guide check-in",
+                "body": "You sit together for a few minutes. Not a lecture, a coach's chat. What went well, what was hard, what is the next step? Then they log their own progress."
+              },
+              {
+                "time": "15:30",
+                "title": "Free afternoon",
+                "body": "Play, sport, friends, reading for love, helping at home, or just rest. The short morning block is meant to buy this open time, so protect it."
+              }
+            ],
+            "note": "This is a shape, not a timetable to obey. Some days the passion project takes over and the app can wait. Some days a skill needs two goes. One focused child at home can often finish the core block faster than a class of thirty, so let the pace be your child's own, not the clock's."
+          },
+          "activities": {
+            "title": "Things to do this week",
+            "icon": "hand",
+            "intro": "The Alpha method has two engines: short, mastery-based academics on an adaptive app, and long, real, ambitious projects the child owns. These activities feed both, plus the grown-up-useful life skills and the self-tracking that make an older child more independent. Pick a few. You are the guide, not the lecturer.",
+            "groups": [
+              {
+                "heading": "The mastery morning",
+                "intro": "Short, focused academics where the child only moves on once a skill is truly learned. No gaps left behind.",
+                "icon": "🎯",
+                "items": [
+                  {
+                    "name": "Set up Khan Academy",
+                    "body": "Make a free account together and let it place your child at their real level. This one free app can carry the whole morning block. Let them start where they actually are, even if that feels behind or ahead of their age."
+                  },
+                  {
+                    "name": "The mastery rule",
+                    "body": "Agree one rule out loud: we do not move on until this is truly solid. If they rush and get things wrong, they go back. This is the whole point, so hold it kindly but firmly."
+                  },
+                  {
+                    "name": "Two short blocks, not one long one",
+                    "body": "Try two focused sessions of about forty-five minutes with a real break between. Watch where your child fades and stop before that, not after."
+                  },
+                  {
+                    "name": "A daily language streak",
+                    "body": "Ten minutes a day on Duolingo for Irish, French, or Spanish. Small and daily beats big and rare. Let them pick the language."
+                  },
+                  {
+                    "name": "Spot the real gap",
+                    "body": "If they keep stumbling on something, do not push forward. Drop back to the earlier skill it sits on. Most stuck spots are really a missing step from before."
+                  }
+                ],
+                "photo": "assets/methods/future-of-education/act-realday.jpg"
+              },
+              {
+                "heading": "The masterpiece project",
+                "intro": "One ambitious project the child owns and builds to a real standard over weeks, not an afternoon.",
+                "icon": "🛠️",
+                "items": [
+                  {
+                    "name": "Choose one real project",
+                    "body": "Ask what they would love to make or do for real. A working thing, a small business, a skill to a real standard. Their idea, not yours. Write it down together."
+                  },
+                  {
+                    "name": "Break it into steps",
+                    "body": "Help them turn the big goal into small weekly steps on paper. Learning to break a hard thing into steps is a life skill in itself."
+                  },
+                  {
+                    "name": "Learn to code it",
+                    "body": "If the project is digital, start on code.org or Scratch, then try building a simple game or site. Real, not pretend."
+                  },
+                  {
+                    "name": "Run a tiny business",
+                    "body": "Bake, make, or grow something and sell it to real people. Handle the money, the pricing, and the sorry-we-sold-out. Real stakes teach fast."
+                  },
+                  {
+                    "name": "Keep a build log",
+                    "body": "A notebook or a simple doc where they record what they did and what they learned each session. Looking back at their own progress builds pride and self-trust."
+                  }
+                ],
+                "photo": "assets/methods/montessori/real-work.jpg"
+              },
+              {
+                "heading": "Grown-up-useful life skills",
+                "intro": "The skills a capable adult needs, practised young and for real: money, speaking, planning, teamwork.",
+                "icon": "💬",
+                "items": [
+                  {
+                    "name": "Give a real talk",
+                    "body": "Have them prepare a short talk on something they love and give it to real people, even just family. Standing up and speaking clearly is a skill you build only by doing it."
+                  },
+                  {
+                    "name": "A budget of their own",
+                    "body": "Give a small amount of money and let them plan it: some to spend, some to save, some to give. Let them feel a bad choice safely. That is how the lesson lands."
+                  },
+                  {
+                    "name": "Plan the family outing",
+                    "body": "Hand them a real job with a real deadline, like planning a day out in County Down. They pick, they cost it, they run the day. You just guide."
+                  },
+                  {
+                    "name": "Teamwork on a shared job",
+                    "body": "Cook a meal or build something together where they own a real part. Learning to carry your bit of a shared job is teamwork you cannot fake."
+                  },
+                  {
+                    "name": "Set and track a weekly goal",
+                    "body": "Each Monday they write one goal. Each Friday they check it themselves. Owning the goal and the honest look-back is the habit that carries into adult life."
+                  }
+                ],
+                "photo": "assets/methods/montessori/act-practical-life.jpg"
+              },
+              {
+                "heading": "The real challenge (Test to Pass)",
+                "intro": "A real challenge finished in the real world, not a worksheet. Proof the skill is truly there.",
+                "icon": "🏅",
+                "items": [
+                  {
+                    "name": "Set one real challenge",
+                    "body": "Pick a challenge that ends with a real result: give a talk to an audience, launch a small stall, finish and show a build. Something that is either done or not."
+                  },
+                  {
+                    "name": "Prepare properly",
+                    "body": "Practise it for real beforehand. A talk gets rehearsed out loud. A stall gets a trial run. Preparing well is most of passing."
+                  },
+                  {
+                    "name": "Invite a real audience",
+                    "body": "Bring in family or neighbours so it counts. A real audience raises the stakes and the pride in a way a private test never can."
+                  },
+                  {
+                    "name": "Let them lead on the day",
+                    "body": "Step back and let your child run it, wobbles and all. Rescuing them steals the win. Your job is to be there, not to take over."
+                  },
+                  {
+                    "name": "Celebrate, then find the next",
+                    "body": "Mark the win properly, then ask what they would like to master next. One passed challenge should point straight at the next one."
+                  }
+                ],
+                "photo": "assets/methods/charlotte-mason/act-realwork.jpg"
+              }
+            ],
+            "quote": {
+              "text": "The average student under tutoring was about two standard deviations above the average of the control class taught in the conventional way.",
+              "cite": "Benjamin Bloom, describing his \"2 sigma\" research on one-to-one mastery tutoring (1984)"
+            }
+          },
+          "reading-list": {
+            "title": "Reading list",
+            "icon": "book",
+            "intro": "For the Alpha method, the child's core learning tools are adaptive apps, and the reading is real books read for love and for their own projects. For you, a short shelf on mastery, motivation, and how children actually learn, so you can guide well and keep the bold claims in honest perspective.",
+            "forChild": {
+              "intro": "The apps below are the daily engine of the mastery block. The books are for the two things a screen cannot give: falling in love with a story, and going deep on the child's own project. Let them choose freely here.",
+              "groups": [
+                {
+                  "heading": "The adaptive apps (the daily engine)",
+                  "books": [
+                    "Khan Academy — free, mastery-based maths, science and more; can carry the whole morning block",
+                    "IXL — the paid adaptive app Alpha uses; strong practice with instant feedback",
+                    "Duolingo — a daily language streak in Irish, French or Spanish",
+                    "Prodigy — game-style adaptive maths that many children enjoy",
+                    "Brilliant — deeper maths, logic and thinking puzzles for the older end of this range",
+                    "Scratch and code.org — free places to learn real coding by building"
+                  ]
+                },
+                {
+                  "heading": "Middle-grade novels to fall for",
+                  "books": [
+                    "Percy Jackson and the Lightning Thief — Rick Riordan",
+                    "The Boy at the Back of the Class — Onjali Q. Raúf",
+                    "Wonder — R. J. Palacio",
+                    "Skellig — David Almond",
+                    "The Hobbit — J. R. R. Tolkien"
+                  ]
+                },
+                {
+                  "heading": "Real non-fiction for their project",
+                  "books": [
+                    "A real how-to book on their chosen skill — coding, baking, drawing, building",
+                    "The DK or Usborne 'How To' and encyclopedia series — clear, practical, real",
+                    "A field guide to Northern Irish birds, trees or wildlife for outdoor projects",
+                    "A simple book on money and business for young people, for the tiny-business project"
+                  ]
+                }
+              ]
+            },
+            "forParent": {
+              "intro": "These sit behind the whole method. They explain mastery, motivation, and self-directed learning far better than any sales pitch, and they help you tell the solid ideas from the hype.",
+              "books": [
+                {
+                  "title": "Mindset",
+                  "author": "Carol Dweck",
+                  "note": "Why believing ability can grow changes how a child meets hard work. The engine under mastery learning."
+                },
+                {
+                  "title": "The Talent Code",
+                  "author": "Daniel Coyle",
+                  "note": "How real skill is built through focused, at-the-edge practice. Exactly what the mastery block is trying to do."
+                },
+                {
+                  "title": "Mastery",
+                  "author": "Robert Greene",
+                  "note": "The long road to real depth in a craft. Good perspective on why the passion project matters more than speed."
+                },
+                {
+                  "title": "Range",
+                  "author": "David Epstein",
+                  "note": "A healthy counterweight: broad exploration and trying many things often beats early narrow specialising."
+                },
+                {
+                  "title": "Free to Learn",
+                  "author": "Peter Gray",
+                  "note": "The case for trusting children's own drive and self-directed play. Speaks straight to freeing the afternoon."
+                },
+                {
+                  "title": "How Children Learn",
+                  "author": "John Holt",
+                  "note": "A gentle classic on watching how your own child actually learns, rather than following a fixed programme."
+                }
+              ]
+            },
+            "free": "Khan Academy is completely free and can carry the whole morning mastery block on its own. You do not need the paid apps to run this method well. Start free, and only add a paid app later if your child clearly wants more."
+          },
+          "competency": {
+            "title": "What to expect at 9–12",
+            "icon": "sprout",
+            "intro": "Nine to twelve is a wide, fast-changing stretch. A nine-year-old is still very much a child; a twelve-year-old is halfway to teenager. So read these as a loose map of what often grows in these years, not a checklist to tick or a race to win. Every child moves at their own pace, and with one child at home you can meet exactly where they are. Alpha is designed for children up to about this age, and its boldest claims about speed are the school's own and unverified, so judge by what you actually see in your child.",
+            "landmarks": [
+              {
+                "area": "Owning their learning",
+                "items": [
+                  "Can set a goal for the day or week with less help",
+                  "Begins to track their own progress honestly",
+                  "Notices when they have not truly understood something",
+                  "Starts to ask for help at the right moment, rather than giving up or bluffing"
+                ]
+              },
+              {
+                "area": "Real mastery, not just coverage",
+                "items": [
+                  "Can stick with one skill until it is genuinely solid",
+                  "Spots and goes back to fill a missing earlier step",
+                  "Explains a thing they have learned clearly to someone else",
+                  "Grows comfortable being wrong on the way to getting it right"
+                ]
+              },
+              {
+                "area": "Passion projects and craft",
+                "items": [
+                  "Carries one ambitious project over weeks, not just an afternoon",
+                  "Breaks a big goal into smaller steps",
+                  "Takes real pride in finishing something to a good standard",
+                  "Handles a setback in a project without quitting the whole thing"
+                ]
+              },
+              {
+                "area": "Grown-up-useful life skills",
+                "items": [
+                  "Can speak clearly in front of a small audience",
+                  "Understands saving, spending and simple budgeting with real money",
+                  "Plans a real task with a deadline and sees it through",
+                  "Works as part of a team and carries their share"
+                ]
+              },
+              {
+                "area": "Thinking and independence",
+                "items": [
+                  "Can focus deeply for a couple of hours across short blocks",
+                  "Manages more of their own time and routine",
+                  "Questions things and looks for the reasons behind them",
+                  "Reads real books for love and to feed their own interests"
+                ]
+              },
+              {
+                "area": "Heart and character",
+                "items": [
+                  "Growing resilience when work is hard or slow",
+                  "More able to name and steady their own feelings",
+                  "Kindness and fairness in how they treat others",
+                  "A sense of pride that comes from real effort, not from being told they are clever"
+                ]
+              }
+            ],
+            "note": "If your child is ahead in one area and behind in another, that is completely normal, not a problem to fix. The whole strength of one child at home is that you can let each skill find its own pace. Watch the child in front of you, not the age on the label."
+          }
+        },
       "6-9": {
         "day-in-life": {
           "title": "A day in the life",
