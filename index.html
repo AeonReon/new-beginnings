@@ -103,6 +103,24 @@
     .af-chips span{ font:800 12.5px/1 Inter; color:#1F5E8A; background:#E4F1FA; border:1.5px solid #BFE0F2; padding:.5em .8em; border-radius:999px; }
     .af-go{ display:inline-block; margin-top:15px; font:800 14.5px Inter; color:#fff; background:var(--grad-header); padding:.62em 1.2em; border-radius:999px; box-shadow:0 4px 13px rgba(46,132,189,.32); }
     .approaches-feature:active{ transform:scale(.995); }
+
+    /* Join / email capture — community sign-up at the foot of the page (endpoint wired later) */
+    .join-cta{ position:relative; margin:26px 0 6px; border-radius:22px; overflow:hidden; background:linear-gradient(160deg,#FFF8E8,#FFF1D6); box-shadow:0 4px 10px rgba(20,60,90,.12),0 18px 44px rgba(216,154,15,.18); }
+    .join-cta::before{ content:""; position:absolute; inset:0; border-radius:inherit; padding:2px; background:linear-gradient(135deg,#F4B82A,#6CB4E2); -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0); -webkit-mask-composite:xor; mask-composite:exclude; pointer-events:none; z-index:2; }
+    .join-inner{ position:relative; z-index:1; padding:22px 20px 24px; }
+    .join-eyebrow{ display:inline-block; font:800 11px/1 Inter; letter-spacing:.12em; text-transform:uppercase; color:#B77F0A; margin-bottom:8px; }
+    .join-title{ font-family:var(--display); font-weight:800; font-size:clamp(22px,5.6vw,29px); line-height:1.05; color:var(--text); letter-spacing:-.01em; margin:0; }
+    .join-sub{ margin:.6em 0 0; font-size:15px; line-height:1.55; color:#5a5138; max-width:52ch; }
+    .join-form{ display:flex; flex-wrap:wrap; gap:9px; margin:16px 0 0; }
+    .join-input{ flex:1; min-width:200px; font:600 15px Inter; color:var(--text); background:#fff; border:1.5px solid #EBD9AE; border-radius:13px; padding:.8em 1em; outline:none; transition:border-color .15s ease, box-shadow .15s ease; }
+    .join-input:focus{ border-color:var(--accent); box-shadow:0 0 0 3px rgba(244,184,42,.22); }
+    .join-input.err{ border-color:#D9534F; box-shadow:0 0 0 3px rgba(217,83,79,.18); }
+    .join-btn{ flex:none; border:0; cursor:pointer; color:#fff; font:800 15px Inter; background:linear-gradient(135deg,var(--accent),var(--accent-deep)); padding:.82em 1.35em; border-radius:13px; box-shadow:0 4px 13px rgba(216,154,15,.34); transition:transform .15s cubic-bezier(0.34,1.56,0.64,1); }
+    .join-btn:hover{ transform:translateY(-1px); } .join-btn:active{ transform:scale(.97); }
+    .join-btn:disabled{ opacity:.6; cursor:default; box-shadow:none; }
+    .join-note{ margin:11px 0 0; font-size:12.5px; color:#8a7c56; }
+    .join-done{ display:flex; align-items:center; gap:10px; margin:16px 0 0; padding:14px 16px; background:#fff; border:1.5px solid #CDEBD8; border-radius:14px; color:#1B7A4A; font:700 15px Inter; }
+    .join-done .jd-ic{ font-size:20px; }
   </style>
 </head>
 <body class="launcher">
@@ -245,6 +263,19 @@
     </section>
     -->
 
+
+    <section class="join-cta" id="joinCta" aria-labelledby="joinTitle">
+      <div class="join-inner">
+        <span class="join-eyebrow">Be part of it</span>
+        <h2 id="joinTitle" class="join-title">Let's raise them well, together</h2>
+        <p class="join-sub">This is only the beginning. We're gathering parents who've chosen a better way — with meet-ups, shared wisdom, and one day a whole new way of raising children, taking the best of every tradition. Leave your email and we'll keep you close as it grows.</p>
+        <form class="join-form" id="joinForm" novalidate>
+          <input type="email" id="joinEmail" name="email" class="join-input" placeholder="you@email.com" autocomplete="email" inputmode="email" required aria-label="Your email address">
+          <button type="submit" class="join-btn" id="joinBtn">Keep me posted</button>
+        </form>
+        <p class="join-note" id="joinNote">No spam, ever — just the occasional note as things grow.</p>
+      </div>
+    </section>
 
   </main>
 
@@ -444,6 +475,64 @@
         onReady:function(b){var s=b.querySelector('#installShareBtn'); if(s) s.addEventListener('click',shareIt);}
       });
     }
+  </script>
+
+  <script>
+    // Community email capture. Currently NOT wired to a server — it validates and
+    // stores sign-ups in localStorage so nothing is lost before launch.
+    // TO GO LIVE once the domain is bought: set JOIN_ENDPOINT to your submit URL.
+    //   • Web3Forms (matches the rest of the workspace): 'https://api.web3forms.com/submit'
+    //     — then add a hidden <input name="access_key" value="YOUR-KEY"> inside #joinForm.
+    //   • Or any endpoint that accepts { email } as JSON.
+    // With an endpoint set, the form POSTs there automatically; no other change needed.
+    (function () {
+      const JOIN_ENDPOINT = ''; // <-- leave blank until launch; then paste the URL here
+      const form = document.getElementById('joinForm');
+      const input = document.getElementById('joinEmail');
+      const btn = document.getElementById('joinBtn');
+      const note = document.getElementById('joinNote');
+      if (!form || !input) return;
+
+      const valid = (e) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);
+      const STORE = 'cpni_waitlist';
+
+      const showDone = (email) => {
+        const done = document.createElement('div');
+        done.className = 'join-done';
+        done.innerHTML = '<span class="jd-ic" aria-hidden="true">🎉</span><span>You\'re in — welcome. We\'ll keep you posted as it grows.</span>';
+        form.replaceWith(done);
+        if (note) note.textContent = 'Saved: ' + email;
+      };
+
+      input.addEventListener('input', () => input.classList.remove('err'));
+
+      form.addEventListener('submit', async (ev) => {
+        ev.preventDefault();
+        const email = input.value.trim();
+        if (!valid(email)) { input.classList.add('err'); input.focus(); return; }
+
+        // Always keep a local copy so no sign-up is lost before the endpoint is wired.
+        try {
+          const list = JSON.parse(localStorage.getItem(STORE) || '[]');
+          if (!list.includes(email)) { list.push(email); localStorage.setItem(STORE, JSON.stringify(list)); }
+        } catch (_) {}
+
+        if (!JOIN_ENDPOINT) { showDone(email); return; } // pre-launch: stored locally, show thanks
+
+        btn.disabled = true; btn.textContent = 'Sending…';
+        try {
+          const res = await fetch(JOIN_ENDPOINT, {
+            method: 'POST', headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email }),
+          });
+          if (!res.ok) throw new Error(res.status);
+          showDone(email);
+        } catch (_) {
+          btn.disabled = false; btn.textContent = 'Keep me posted';
+          if (note) note.textContent = "Hmm — that didn't send. Please try again in a moment.";
+        }
+      });
+    })();
   </script>
 </body>
 </html>
