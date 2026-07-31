@@ -945,7 +945,7 @@ window.METHODS = [
                                         "books": [
                                               "The Burgess Bird Book / Burgess Animal Book — Thornton W. Burgess",
                                               "The Story of the World, Vol. 1 (Ancient Times) — Susan Wise Bauer",
-                                              "A Child's Introduction to the World / to Space — Heather Alexander",
+                                              "A Child's Introduction to the World — Heather Alexander",
                                               "The Magic School Bus series — Joanna Cole",
                                               "Anything by Gail Gibbons (real how-things-work non-fiction)",
                                               "A good children's encyclopedia (DK or Usborne) to dip into"
@@ -1005,10 +1005,10 @@ window.METHODS = [
                                   "area": "The reasoning mind",
                                   "items": [
                                         "Asks why about everything, and wants a real answer, not a quick one",
-                                        "Loves the big picture: how the universe, life, or history all fits together",
+                                        "Loves the big picture: how things work and how history fits together",
                                         "Imagines things they cannot see yet, from ancient times to far-off places",
                                         "Reasons out loud, working a problem through by talking it over",
-                                        "Is drawn to the vast and the wonderful: dinosaurs, space, deep time"
+                                        "Is drawn to the vast and the wonderful: mountains, oceans, big machines and faraway places"
                                   ]
                             },
                             {
@@ -1280,7 +1280,7 @@ window.METHODS = [
               'Gail Gibbons — anything (clear non-fiction on bees, gardens, weather)'
             ]},
             { heading: 'Nature and observation', books: [
-              'Aliki — Digging Up Dinosaurs, A Weed Is a Flower',
+              'Aliki — Corn Is Maize, A Weed Is a Flower',
               'Lois Ehlert — Planting a Rainbow, Eating the Alphabet',
               'Steve Jenkins — Actual Size, What Do You Do With a Tail Like This?'
             ]},
@@ -2805,7 +2805,7 @@ window.METHODS = [
               "items": [
                 {
                   "name": "Chase this week's obsession",
-                  "body": "Dinosaurs, castles, space, horses. Get the library books, watch it grow, ride the wave while it lasts."
+                  "body": "Castles, horses, boats, bugs. Get the library books, watch it grow, ride the wave while it lasts."
                 },
                 {
                   "name": "A picture-book biography",
@@ -2943,7 +2943,7 @@ window.METHODS = [
               "items": [
                 "They notice more, name more, and ask deeper why questions",
                 "Close attention to small living things grows through nature study",
-                "When origins come up, mainstream scientists believe life developed over a very long time; share this honestly and gently, at their level",
+                "When big questions come up, there is no need to hand over one settled answer — share that people tell different stories, and let your child wonder",
                 "Wonder and curiosity are the real goal, not a store of facts"
               ]
             },
@@ -4745,7 +4745,7 @@ window.METHODS = [
                 },
                 {
                   "name": "Go all-in on the current craze",
-                  "body": "Dinosaurs, football, horses, Minecraft, drawing. Whatever it is this month, pile the world's best stuff around it and let them binge."
+                  "body": "Football, horses, Minecraft, drawing, building. Whatever it is this month, pile the world's best stuff around it and let them binge."
                 },
                 {
                   "name": "Meet a real expert",
@@ -4975,7 +4975,7 @@ window.METHODS = [
     built: true,
     blurb: 'John Holt watched what schools did to children\'s natural curiosity and concluded the cure was to stop schooling. Unschooling means following the child\'s interests, surrounding them with rich resources, and trusting that real learning happens in real life. Especially valuable as a corrective to over-scheduled childhood — and worth understanding even if you choose differently.',
     grab: {
-      "summary": "Unschooling starts from a simple observation: children are born wanting to learn, and they do it best when nobody forces them. Instead of a set curriculum, you follow what your child is curious about and fill their world with interesting things. The trust can feel frightening at first. But watch a four-year-old teach themselves the name of every dinosaur, and you start to understand why it works.",
+      "summary": "Unschooling starts from a simple observation: children are born wanting to learn, and they do it best when nobody forces them. Instead of a set curriculum, you follow what your child is curious about and fill their world with interesting things. The trust can feel frightening at first. But watch a four-year-old teach themselves the name of every bird in the garden, and you start to understand why it works.",
       "story": ["In the 1970s, an American teacher named John Holt kept noticing the same sad thing in his classrooms. Children arrived full of questions and left afraid to be wrong. He decided the problem was not bad teaching. The problem was school itself, sitting on top of a learner who was already working perfectly. His answer was to take the lid off. He called it unschooling.", "A day has no timetable and no lessons. Your child chases what interests them, and you act as a helper rather than a teacher. If they love diggers, you find books about diggers, visit a building site, and answer their questions. There is a lovely small practice called strewing: you simply leave interesting things where your child will find them, a magnifying glass on the table, a map on the wall, and let curiosity do the rest.", "What makes unschooling different is where the lessons come from. Baking a cake becomes weighing and counting. A walk near Belfast Lough becomes birds, tides, and weather. The shop till becomes real money and real change. Nothing is labelled as a subject, so nothing feels like work. The child learns the way they learned to walk and talk, by living, not by being tested.", "This matters most today, when many childhoods are packed with clubs, screens, and schedules from morning to night. Unschooling protects something quiet and valuable: time to be bored, to wonder, and to follow one thread all the way down. Even parents who choose a normal school find it useful. It reminds you that your child is a learner first, and that your trust is a real gift.", "Here is the honest part, because unschooling is easily misunderstood. It is not doing nothing, and it is not leaving a child alone in front of a tablet. It asks a lot of the adult: you must notice interests, gather resources, and stay present without taking over. Done lazily it fails. Done with care and attention, it can grow a child who never stops asking why."],
           "hook": "What Unschooling is all about",
           "deck": "Seven simple ideas. Tap any one to open it.",
@@ -4986,7 +4986,7 @@ window.METHODS = [
                 },
                 {
                       "t": "Follow the obsession",
-                      "d": "When they fall for dinosaurs, pour fuel on it — books, the museum, films, dinner talk. Interest is the fastest teacher there is."
+                      "d": "When they fall for diggers, pour fuel on it — books, the museum, films, dinner talk. Interest is the fastest teacher there is."
                 },
                 {
                       "t": "Strew interesting things",
@@ -5017,7 +5017,7 @@ window.METHODS = [
                       {
                               "photo": "assets/methods/_shared/blocks.jpg",
                               "t": "Follow the current obsession",
-                              "d": "Watch what your child returns to again and again, whether it is diggers, dinosaurs, or the moon. Feed that one thing with books, trips, videos, and real objects until they move on by themselves."
+                              "d": "Watch what your child returns to again and again, whether it is diggers, boats, or the moon. Feed that one thing with books, trips, videos, and real objects until they move on by themselves."
                       },
                       {
                               "photo": "assets/methods/montessori/act-the-hand.jpg",
@@ -5077,7 +5077,7 @@ window.METHODS = [
         intro: 'John Holt began as a school reformer and ended convinced that compulsory schooling could not be reformed — it had to be replaced with something more like a richly resourced life. For a 4-year-old, this means: no preschool, no scheduled academics, no "curriculum." Instead: time, space, materials, attention, conversation, and trust.',
         principles: [
           { name: 'Children are natural learners', body: 'A 1-year-old learns to walk and talk without instruction. A 2-year-old learns the names of every animal they meet. A 4-year-old will learn anything they are deeply interested in. The capacity is there from the start.', why: 'The premise of schooling is that children must be made to learn. The premise of unschooling is that they cannot help but learn — unless we make them dislike it. A 4yo who has not been disengaged by force-fed instruction is naturally hungry.' },
-          { name: 'Follow the interest', body: 'When the child becomes obsessed with dinosaurs, feed it — books, fossils at the museum, paintings, films, dinner conversation, the trip to see real fossils. Ride the wave.', why: 'A 4yo who deep-dives one obsession learns more about that topic than a curriculum could give them in a term. And they learn how to learn — which transfers to the next interest.' },
+          { name: 'Follow the interest', body: 'When the child becomes obsessed with diggers, feed it — books, the machines on a real building site, paintings, films, dinner conversation, a trip to watch them at work. Ride the wave.', why: 'A 4yo who deep-dives one obsession learns more about that topic than a curriculum could give them in a term. And they learn how to learn — which transfers to the next interest.' },
           { name: 'Strewing', body: 'A core unschooling practice. Leave interesting things in the child\'s path — a new book on the table, a microscope on the desk, a documentary on the TV at dinner. Do not require engagement; just provide.', why: 'A 4yo refuses what is pushed and approaches what is offered. Strewing puts the choice with the child, which preserves curiosity. The right thing at the right moment becomes the next deep dive.' },
           { name: 'Real life is the curriculum', body: 'Cooking is chemistry. Grocery shopping is math. Conversation is language arts. Walking the neighbourhood is geography. The 4yo is learning constantly — there is no need to interrupt it with "lessons."', why: 'A 4yo who is part of real life learns vocabulary, measurement, navigation, conversation, money, weather, plants. The same content packaged as "lessons" is thinner and less engaging.' },
           { name: 'The adult as resource, not instructor', body: 'When the child asks, answer. When they want to know, find out together. When they hit something hard, sit with them. But do not pre-empt — let the asking come.', why: 'A 4yo who experiences the adult as a useful resource builds a different relationship to learning than one who experiences the adult as a tester. The first becomes resourceful; the second becomes compliant or rebellious.' },
@@ -5118,7 +5118,7 @@ window.METHODS = [
                                 },
                                 {
                                         "name": "A monthly museum visit",
-                                        "body": "No itinerary. The child leads. Sometimes the gift shop is the highlight. Sometimes one dinosaur for an hour. Both are good."
+                                        "body": "No itinerary. The child leads. Sometimes the gift shop is the highlight. Sometimes one exhibit for an hour. Both are good."
                                 },
                                 {
                                         "name": "A walk to no destination",
@@ -5225,7 +5225,7 @@ window.METHODS = [
           { name: 'A weekly library visit', body: 'No agenda. The child chooses. Sometimes 10 picture books. Sometimes one. Always go.' },
           { name: 'A documentary at dinner', body: 'Once a week, a David Attenborough or similar. The child watches as long as they want.' },
           { name: 'Set up a "yes" environment', body: 'A home where most things can be touched, tried, opened, climbed. Removes the constant "no" and frees curiosity.' },
-          { name: 'A monthly museum visit', body: 'No itinerary. The child leads. Sometimes the gift shop is the highlight. Sometimes one dinosaur for an hour. Both are good.' },
+          { name: 'A monthly museum visit', body: 'No itinerary. The child leads. Sometimes the gift shop is the highlight. Sometimes one exhibit for an hour. Both are good.' },
           { name: 'Cook a meal end-to-end together', body: 'Pick a meal. The child helps with every step (with help). It is dinner.' },
           { name: 'A walk to no destination', body: 'Just walking. The child stops to look at things. You stop too.' },
           { name: 'Strew a new tool or material', body: 'A new musical instrument left on the floor. A new set of pencils. A microscope. A handful of magnets. No instructions.' },
@@ -5268,7 +5268,7 @@ window.METHODS = [
               'A subscription to Storytime or similar magazine'
             ]},
             { heading: 'Books for following an obsession', books: [
-              'Whatever subject grabs them — dinosaurs, trains, princesses, weather — buy or borrow the best books on that. Feed the fire.',
+              'Whatever subject grabs them — trains, princesses, weather, boats — buy or borrow the best books on that. Feed the fire.',
               'A few books slightly above their level for "stretching"'
             ]}
           ]

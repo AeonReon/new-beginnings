@@ -38,7 +38,7 @@ window.DEEDS = [
   { trad: 'forest-school', name: 'Ten minutes out', body: "Just get out the door — garden, step, street. No plan, no kit. A little weather never hurt; being outside is the lesson." },
 
   // ── Unschooling ──
-  { trad: 'unschooling', name: 'Say yes to the rabbit hole', body: "Whatever they've fixated on today — worms, diggers, dinosaurs — go with it. Ask, look closer, find out together. Interest is the engine." },
+  { trad: 'unschooling', name: 'Say yes to the rabbit hole', body: "Whatever they've fixated on today — worms, diggers, boats — go with it. Ask, look closer, find out together. Interest is the engine." },
   { trad: 'unschooling', name: 'Strew something', body: "Leave one interesting thing where they'll find it — a shell, an old key, a picture — and say nothing. Let curiosity do the rest." },
   { trad: 'unschooling', name: 'Answer the real question', body: "When they ask something, take it seriously and answer it properly, or find out together. Every answered question says: keep asking." },
 

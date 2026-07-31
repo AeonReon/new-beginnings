@@ -203,7 +203,7 @@ window.ACTIVITIES = [
   },
   {
     group: 'Pretend', emoji: '🦁', name: 'Small world play', kit: 'A few bits', mess: 'Tidy', age: '3–5',
-    how: 'A tray or rug with animals, cars, dolls or dinosaurs and a simple "world" made from boxes and cloth — a farm, a jungle, a garage, a zoo. Then let the stories unfold.',
+    how: 'A tray or rug with animals, cars, dolls or diggers and a simple "world" made from boxes and cloth — a farm, a jungle, a garage, a zoo. Then let the stories unfold.',
     why: 'Moving little figures through a story is rich narrative play — the child directs the whole scene, building language, sequencing and imagination as they voice every character.',
     traits: ['Imagination', 'Language']
   },
