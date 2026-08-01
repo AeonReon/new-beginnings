@@ -121,6 +121,16 @@
     .join-note{ margin:11px 0 0; font-size:12.5px; color:#8a7c56; }
     .join-done{ display:flex; align-items:center; gap:10px; margin:16px 0 0; padding:14px 16px; background:#fff; border:1.5px solid #CDEBD8; border-radius:14px; color:#1B7A4A; font:700 15px Inter; }
     .join-done .jd-ic{ font-size:20px; }
+
+    /* Install popup — big tappable iOS Share icon + one-tap Android install */
+    .ios-share-wrap{ display:flex; flex-direction:column; align-items:center; gap:6px; margin:10px 0 4px; }
+    .ios-share-btn{ display:inline-flex; align-items:center; justify-content:center; width:60px; height:60px; border:0; cursor:pointer; border-radius:16px; color:#fff; background:linear-gradient(135deg,#4FA4D2,#2D6FA8); box-shadow:0 4px 14px rgba(46,132,189,.4); animation:isPulse 1.8s ease-in-out infinite; }
+    .ios-share-btn:active{ transform:scale(.94); }
+    .ios-share-btn .ios-share-svg{ width:30px; height:30px; }
+    @keyframes isPulse{ 0%,100%{ box-shadow:0 4px 14px rgba(46,132,189,.4); } 50%{ box-shadow:0 4px 22px rgba(46,132,189,.7); } }
+    .ios-share-cap{ font:600 12px Inter; color:#7A8898; text-align:center; }
+    .install-now-btn{ display:flex; align-items:center; justify-content:center; gap:8px; width:100%; border:0; cursor:pointer; color:#fff; font:800 16px Inter; background:linear-gradient(135deg,#2FA96B,#1B7A4A); padding:.9em 1.2em; border-radius:14px; box-shadow:0 4px 14px rgba(31,122,74,.34); margin:4px 0 2px; }
+    .install-now-btn:active{ transform:scale(.98); }
   </style>
 </head>
 <body class="launcher">
@@ -454,26 +464,63 @@
       if(navigator.share){navigator.share(d).catch(()=>{});}
       else if(navigator.clipboard){navigator.clipboard.writeText(d.url);}
     }
+    // Android/Chrome fires this before offering install — capture it so we can
+    // trigger a real one-tap install from our own button.
+    let deferredInstallPrompt=null;
+    window.addEventListener('beforeinstallprompt',function(e){ e.preventDefault(); deferredInstallPrompt=e; });
+
+    // The iOS Share glyph (up-arrow out of a box) — the exact icon they'll tap.
+    const IOS_SHARE_SVG='<svg class="ios-share-svg" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 6 V27"/><path d="M15 13 L22 6 L29 13"/><path d="M13 20 H11 a3 3 0 0 0 -3 3 V35 a3 3 0 0 0 3 3 H33 a3 3 0 0 0 3 -3 V23 a3 3 0 0 0 -3 -3 H31"/></svg>';
+
     function openInstall(){
       if(!window.RecipeModal){shareIt();return;}
-      const isIOS=/iphone|ipad|ipod/i.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+      const ua=navigator.userAgent;
+      const isIOS=/iphone|ipad|ipod/i.test(ua)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+      const isAndroid=/android/i.test(ua);
+
+      // iOS: the tappable Share icon sits right in step 1 — tap it and the menu pops up.
       const ios='<p class="rcm-h">On iPhone &amp; iPad</p><ol class="rcm-steps">'
-        +'<li>Tap the <b>Share</b> icon at the bottom of Safari.</li>'
-        +'<li>Scroll down and choose <b>Add to Home Screen</b>.</li>'
+        +'<li>Tap this icon and the iPhone menu pops up:'
+          +'<span class="ios-share-wrap"><button type="button" id="iosShareBtn" class="ios-share-btn" aria-label="Open the Share menu">'+IOS_SHARE_SVG+'</button>'
+          +'<span class="ios-share-cap">the same icon is at the bottom of Safari</span></span></li>'
+        +'<li>In the menu, scroll down and choose <b>Add to Home Screen</b>.</li>'
         +'<li>Tap <b>Add</b> — the icon lands on your home screen.</li></ol>';
       const android='<p class="rcm-h">On Android</p><ol class="rcm-steps">'
         +'<li>Tap the <b>⋮</b> menu in Chrome (top right).</li>'
         +'<li>Choose <b>Add to Home screen</b>.</li>'
         +'<li>Tap <b>Add</b>.</li></ol>';
+
+      // One-tap install button when the browser supports it (Android/Chrome/Edge).
+      const nowBtn=deferredInstallPrompt?'<button type="button" id="installNowBtn" class="install-now-btn">📲 Install this app</button>':'';
+
+      let steps;
+      if(isIOS) steps=ios;
+      else if(isAndroid) steps=android;
+      else steps=ios+android; // desktop / unknown — show both
+
       window.RecipeModal.openContent({
         compact:true,
         accent:{c:'#4FA4D2',cd:'#2D6FA8',cs:'#EAF4FB'},
         emoji:'📲', kicker:'Free · works offline', title:'Add to Home Screen',
         blurb:'Pop it on your home screen and it opens full-screen like a normal app — no app store, no sign-in.',
-        bodyHTML:(isIOS?ios+android:android+ios)
+        bodyHTML:nowBtn+steps
           +'<button class="read-btn rcm-read" id="installShareBtn" type="button">🔗 Share this app</button>',
-        onReady:function(b){var s=b.querySelector('#installShareBtn'); if(s) s.addEventListener('click',shareIt);}
+        onReady:function(b){
+          var s=b.querySelector('#installShareBtn'); if(s) s.addEventListener('click',shareIt);
+          var ip=b.querySelector('#iosShareBtn'); if(ip) ip.addEventListener('click',popShareSheet);
+          var nb=b.querySelector('#installNowBtn'); if(nb) nb.addEventListener('click',function(){
+            if(!deferredInstallPrompt) return;
+            deferredInstallPrompt.prompt();
+            deferredInstallPrompt.userChoice.finally(function(){ deferredInstallPrompt=null; nb.disabled=true; });
+          });
+        }
       });
+    }
+
+    // Pop the native iPhone share sheet (Add to Home Screen lives inside it).
+    function popShareSheet(){
+      const d={title:'Conscious Parenting NI',text:'A calm, first-principles guide to raising a bright, happy child.',url:location.origin+location.pathname};
+      if(navigator.share){ navigator.share(d).catch(function(){}); }
     }
   </script>
 
