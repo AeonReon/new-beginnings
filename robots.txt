@@ -1,0 +1,11 @@
+# The site is fine to crawl — but the in-app illustrative images are for use
+# inside the app only. Keep them out of image search / reverse-image indexes.
+User-agent: *
+Allow: /
+Disallow: /assets/games/
+Disallow: /assets/screens/
+
+# Belt-and-braces for the big image crawlers.
+User-agent: Googlebot-Image
+Disallow: /assets/games/
+Disallow: /assets/screens/

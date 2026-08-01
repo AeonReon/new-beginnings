@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#0EA5A4">
+  <!-- Images on this page are for in-app use only — keep them out of image search. -->
+  <meta name="robots" content="noimageindex, max-image-preview:none">
   <title>Conscious Parenting NI — Thinking Games</title>
   <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/png" href="icon-192.png">
@@ -26,60 +28,15 @@
 
     /* ── Group section banners — the chapter dividers ── */
     .group-header {
-      margin: 2.6em 0 1.1em; padding: 0.85em 1.1em;
-      border-radius: 16px; background: var(--gcs);
-      position: relative; overflow: hidden;
+      margin: 2.6em 0 1.1em; padding: 0.85em 1.1em; border-radius: 16px;
+      background: var(--gcs); position: relative; overflow: hidden; scroll-margin-top: 12px;
     }
-    .group-header::before {
-      content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 7px;
-      background: linear-gradient(180deg, var(--gc), var(--gcd));
-    }
+    .group-header::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 7px; background: linear-gradient(180deg, var(--gc), var(--gcd)); }
     .group-header:first-of-type { margin-top: 1.4em; }
-    .group-header h2 {
-      display: flex; align-items: center; gap: 0.5em; margin: 0 0 0.1em;
-      font-size: 1.32rem; color: var(--gcd); letter-spacing: -0.02em;
-    }
+    .group-header h2 { display: flex; align-items: center; gap: 0.5em; margin: 0 0 0.1em; font-size: 1.32rem; color: var(--gcd); letter-spacing: -0.02em; }
     .group-emoji { font-size: 1.15em; }
     .group-blurb { font-size: 0.92em; color: var(--ink-soft); margin: 0; }
 
-    /* ── Game card — rotating hue, coloured header cap, white body ── */
-    .game-card {
-      position: relative; border: none; border-radius: var(--radius-lg, 20px);
-      background: var(--paper-card, #fff); overflow: hidden;
-      box-shadow: var(--shadow-sm); margin: 0 0 1.05em; padding: 0;
-      transition: transform 0.18s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.18s ease;
-    }
-    .game-card::before {
-      content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 2px;
-      background: linear-gradient(135deg, var(--gc), var(--gcd));
-      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-      -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; z-index: 2;
-    }
-    .game-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md, 0 12px 30px rgba(20,35,60,0.12)); }
-
-    /* Coloured header cap — alternates hue down the page */
-    .game-head {
-      display: flex; align-items: center; gap: 0.8em;
-      padding: 0.9em 1.1em; background: var(--gcs);
-      border-bottom: 2px solid var(--gc);
-    }
-    .game-badge {
-      flex: 0 0 auto; width: 50px; height: 50px; border-radius: 15px;
-      display: grid; place-items: center; font-size: 27px; line-height: 1;
-      background: linear-gradient(150deg, var(--gc), var(--gcd));
-      box-shadow: 0 5px 13px color-mix(in srgb, var(--gc) 45%, transparent), inset 0 1.5px 0 rgba(255,255,255,0.45);
-    }
-    .game-head-text { min-width: 0; flex: 1; }
-    .game-head-text h3 { margin: 0 0 0.28em; font-size: 1.22rem; font-weight: 800; line-height: 1.12; color: var(--ink); letter-spacing: -0.015em; }
-    .game-tag {
-      display: inline-block; font-size: 0.58rem; font-weight: 800; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--gcd); background: rgba(255,255,255,0.75);
-      padding: 0.3em 0.7em; border-radius: var(--radius-pill);
-    }
-
-    .game-body { padding: 0.95em 1.1em 1.15em; }
-
-    .meta-row { display: flex; flex-wrap: wrap; gap: 0.4em; margin: 0 0 0.85em; }
     .chip {
       font-family: var(--sans); font-size: 0.72rem; font-weight: 700;
       padding: 0.28em 0.72em; border-radius: var(--radius-pill);
@@ -88,38 +45,51 @@
     .chip.turns { background: var(--sun-soft); color: var(--sun-deep); border-color: transparent; }
     .chip.age { background: var(--paper-warm); color: var(--ink-soft); border: 1px solid var(--rule-strong); }
 
-    .game-card p.how { margin: 0; color: var(--ink-soft); line-height: 1.55; }
-
     /* WHY callout — the reason, made to read, with key terms highlighted */
-    .why-box {
-      margin: 0.9em 0 0; padding: 0.8em 0.95em; background: #fff;
-      border: 1px solid var(--rule); border-left: 4px solid var(--gc); border-radius: 12px;
-    }
-    .why-pill {
-      display: inline-block; font-size: 0.6rem; font-weight: 800; letter-spacing: 0.14em;
-      text-transform: uppercase; color: #fff; background: linear-gradient(135deg, var(--gc), var(--gcd));
-      padding: 0.25em 0.7em; border-radius: var(--radius-pill); margin-bottom: 0.5em;
-    }
+    .why-box { margin: 0.9em 0 0; padding: 0.8em 0.95em; background: #fff; border: 1px solid var(--rule); border-left: 4px solid var(--gc); border-radius: 12px; }
+    .why-pill { display: inline-block; font-size: 0.6rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #fff; background: linear-gradient(135deg, var(--gc), var(--gcd)); padding: 0.25em 0.7em; border-radius: var(--radius-pill); margin-bottom: 0.5em; }
     .why-box p { margin: 0; font-size: 0.94em; line-height: 1.58; color: var(--ink-soft); }
-    /* Highlighter — the copywriter's marker on the key skill each game builds */
-    mark.hl {
-      background: linear-gradient(180deg, rgba(255,206,61,0) 58%, rgba(255,201,45,0.85) 58%);
-      color: inherit; font-weight: 700; padding: 0 0.06em; border-radius: 2px;
-    }
+    mark.hl { background: linear-gradient(180deg, rgba(255,206,61,0) 58%, rgba(255,201,45,0.85) 58%); color: inherit; font-weight: 700; padding: 0 0.06em; border-radius: 2px; }
 
     .tweak { font-size: 0.85em; color: var(--ink-mute); margin: 0.8em 0 0; }
     .tweak b { color: var(--ink-soft); font-weight: 700; }
 
     .traits { display: flex; flex-wrap: wrap; gap: 0.35em; margin-top: 0.95em; }
-    .trait {
-      font-family: var(--sans); font-size: 0.68rem; font-weight: 700;
-      padding: 0.22em 0.62em; border-radius: var(--radius-pill);
-      background: var(--paper-surface); color: var(--ink-mute);
-      border: 1px solid var(--rule-strong); cursor: pointer;
-    }
+    .trait { font-family: var(--sans); font-size: 0.68rem; font-weight: 700; padding: 0.22em 0.62em; border-radius: var(--radius-pill); background: var(--paper-surface); color: var(--ink-mute); border: 1px solid var(--rule-strong); cursor: pointer; }
     .trait:hover { border-color: var(--gc); color: var(--gcd); }
 
     .empty { color: var(--ink-mute); font-style: italic; margin: 2em 0; }
+
+    /* ══ Jump-to-section squares (one per group) — same pattern as Activities ══ */
+    .topic-nav { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.55em; margin: 0 0 1.4em; }
+    .topic-sq { position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; gap: 0.4em; cursor: pointer; background: var(--paper-card, #fff); border: none; border-radius: 15px; padding: 0.8em 0.4em 0.75em; box-shadow: var(--shadow-sm); transition: transform 0.14s cubic-bezier(0.34,1.56,0.64,1); }
+    .topic-sq::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.6px; background: linear-gradient(135deg, var(--gc), var(--gcd)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; opacity: 0.45; }
+    .topic-sq:active { transform: scale(0.95); }
+    .topic-sq-emo { width: 2.2em; height: 2.2em; border-radius: 13px; background: linear-gradient(150deg, var(--gc), var(--gcd)); display: grid; place-items: center; font-size: 1.15rem; line-height: 1; box-shadow: 0 4px 10px color-mix(in srgb, var(--gc) 34%, transparent), inset 0 1.5px 0 rgba(255,255,255,0.45); }
+    .topic-sq-lbl { font-family: var(--sans); font-weight: 800; font-size: 0.72rem; color: var(--ink); line-height: 1.1; text-align: center; }
+    .topic-sq.active { box-shadow: 0 6px 16px color-mix(in srgb, var(--gc) 30%, transparent); }
+    .topic-sq.active::before { opacity: 1; padding: 2.2px; }
+    .topic-sq.active .topic-sq-lbl { color: var(--gcd); }
+
+    /* ══ game BAR — photo/emoji left, title + meta right, drops down ══ */
+    .act-bar-wrap { position: relative; overflow: hidden; background: var(--paper-card, #fff); border-radius: 18px; box-shadow: var(--shadow-sm); margin: 0 0 0.7em; }
+    .act-bar-wrap::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.6px; background: linear-gradient(135deg, var(--gc), var(--gcd)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; z-index: 3; opacity: 0.5; }
+    .act-bar { list-style: none; cursor: pointer; display: flex; align-items: stretch; gap: 0; }
+    .act-bar::-webkit-details-marker { display: none; }
+    .act-bar-photo { flex: 0 0 auto; width: 88px; align-self: stretch; position: relative; overflow: hidden; background: linear-gradient(150deg, var(--gc), var(--gcd)); background-size: cover; background-position: center; display: grid; place-items: center; }
+    .act-bar-emo { font-size: 2rem; line-height: 1; filter: drop-shadow(0 2px 3px rgba(0,0,0,0.22)); }
+    .act-bar-text { flex: 1; min-width: 0; padding: 0.8em 0.5em 0.8em 1em; display: flex; flex-direction: column; justify-content: center; gap: 0.4em; }
+    .act-bar-name { font-family: var(--display, 'Poppins'); font-weight: 800; font-size: clamp(1.05rem, 4.4vw, 1.2rem); line-height: 1.16; letter-spacing: -0.015em; color: var(--ink); }
+    .act-bar-meta { display: flex; flex-wrap: wrap; gap: 0.32em; }
+    .act-bar-meta .chip { font-size: 0.64rem; padding: 0.24em 0.6em; }
+    .act-bar-plus { flex: 0 0 auto; align-self: center; width: 1.4em; height: 1.4em; position: relative; margin-right: 0.95em; }
+    .act-bar-plus::before, .act-bar-plus::after { content: ""; position: absolute; top: 50%; left: 50%; background: var(--gc); border-radius: 2px; transform: translate(-50%, -50%); transition: opacity 0.2s ease, transform 0.2s ease; }
+    .act-bar-plus::before { width: 0.9em; height: 2.5px; }
+    .act-bar-plus::after { width: 2.5px; height: 0.9em; }
+    .act-bar-wrap[open] .act-bar-plus::after { opacity: 0; transform: translate(-50%, -50%) rotate(90deg); }
+    .act-bar-wrap[open] .act-bar { border-bottom: 1px solid var(--rule); }
+    .act-drawer { padding: 0.95em 1.1em 1.15em; }
+    .act-drawer p.how { margin: 0; color: var(--ink-soft); line-height: 1.55; }
   </style>
 </head>
 <body class="launcher">
@@ -144,10 +114,10 @@
     <div class="card" style="margin-top: 0;">
       <h3>How to use this</h3>
       <p style="margin-bottom: 0.7em;">
-        You don't need all of these, and you don't need to do them "right". Pick
-        one that fits where you are — stuck in traffic, walking to the shop, waiting
-        for food — and play until it stops being fun. Most are turn-taking round
-        games: you go, they go, round and round until someone runs out.
+        You don't need all of these, and you don't need to do them "right". Tap a
+        square below to jump to a kind of game, then tap any bar to open it. Pick one
+        that fits where you are — stuck in traffic, walking to the shop, waiting for
+        food — and play until it stops being fun.
       </p>
       <p class="why" style="margin-bottom: 0;">
         Every game carries the actual reason it helps — the specific skill and how
@@ -157,6 +127,8 @@
         appetite over any list: if a game bores them, drop it and try another.
       </p>
     </div>
+
+    <div class="topic-nav" id="topic-nav"></div>
 
     <div class="where-row" id="where-row"></div>
 
@@ -190,9 +162,6 @@
     const GROUP_ORDER = ['Words', 'Focus', 'Thinking', 'Heart'];
     const WHERES = ['Anytime', 'Car', 'Waiting', 'Walk/Garden', 'Mealtime'];
 
-    // Card accents ROTATE through this palette (incl. the brand yellow) so no two
-    // cards in a row share a colour — the eye stays fresh instead of glazing over
-    // a single hue all the way down. Group is still shown by the banner + the tag.
     const PALETTE = [
       { c: '#4A9ED4', cd: '#2D6FA8', cs: '#E4F1FA' }, // sky
       { c: '#F5B21E', cd: '#B4790A', cs: '#FFF3CE' }, // sun (brand yellow)
@@ -203,6 +172,7 @@
     ];
 
     const GROUP_EMOJI = { Words: '🗣️', Focus: '🎯', Thinking: '🧠', Heart: '💖' };
+    const GROUP_SHORT = { Words: 'Words', Focus: 'Focus', Thinking: 'Thinking', Heart: 'Heart' };
     const GROUP_FALLBACK = { Words: '💬', Focus: '🎯', Thinking: '🧠', Heart: '💗' };
 
     // A distinct face for each game — instant identity, and the eye has an anchor.
@@ -227,9 +197,7 @@
       'Would You Rather Help…?': '🤝', 'How Do They Feel?': '💗', 'I Wonder…': '✨'
     };
 
-    // Copywriter's highlighter — the key skill phrase in each "why" gets marked,
-    // so the eye lands on WHAT the game builds without reading every word. Longest
-    // phrases first so "verbal working memory" wins over "working memory".
+    // Copywriter's highlighter — the key skill phrase in each "why" gets marked.
     const HL_TERMS = [
       'the single strongest predictor', 'phonological awareness', 'verbal working memory',
       'working memory', 'executive function', 'self-regulation', 'impulse control',
@@ -244,10 +212,28 @@
     const fBuild = document.getElementById('f-build');
     const fAge = document.getElementById('f-age');
     const whereRow = document.getElementById('where-row');
+    const topicNav = document.getElementById('topic-nav');
     const list = document.getElementById('list');
     const count = document.getElementById('count');
 
     let activeWhere = '';
+
+    // Jump-to-section squares — one per group. Tap = scroll to that section (no filtering).
+    const GPAL = {};
+    GROUP_ORDER.forEach((k, i) => { GPAL[k] = PALETTE[i % PALETTE.length]; });
+    topicNav.innerHTML = GROUP_ORDER.map((key) => {
+      const p = GPAL[key];
+      return `<button type="button" class="topic-sq" data-group="${key}" style="--gc:${p.c};--gcd:${p.cd};--gcs:${p.cs};">
+        <span class="topic-sq-emo" aria-hidden="true">${GROUP_EMOJI[key]}</span>
+        <span class="topic-sq-lbl">${GROUP_SHORT[key]}</span>
+      </button>`;
+    }).join('');
+    topicNav.querySelectorAll('.topic-sq').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = document.getElementById('grp-' + btn.dataset.group);
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
 
     fBuild.innerHTML = '<option value="">Any skill</option>' +
       window.GAME_TRAITS.map(t => `<option value="${t}">${t}</option>`).join('');
@@ -266,42 +252,41 @@
     });
 
     function esc(s) {
-      return String(s).replace(/[&<>"]/g, c =>
+      return String(s == null ? '' : s).replace(/[&<>"]/g, c =>
         ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
     }
-    function highlightWhy(s) {
-      return esc(s).replace(HL_RE, '<mark class="hl">$1</mark>');
-    }
+    function highlightWhy(s) { return esc(s).replace(HL_RE, '<mark class="hl">$1</mark>'); }
 
-    function cardHTML(g, i, groupIdx) {
-      const grp = window.GAME_GROUPS[g.group];
-      const pal = PALETTE[(i + groupIdx) % PALETTE.length];
+    // Collapsible bar for one game — photo left when we have one, emoji tile otherwise.
+    function cardHTML(g) {
+      const pal = GPAL[g.group] || PALETTE[0];
       const icon = GAME_ICONS[g.name] || GROUP_FALLBACK[g.group] || '🎲';
       const meta = [];
-      g.where.forEach(w => meta.push(`<span class="chip">${w}</span>`));
-      meta.push(`<span class="chip age">Age ${g.age}</span>`);
+      g.where.forEach(w => meta.push(`<span class="chip">${esc(w)}</span>`));
+      meta.push(`<span class="chip age">Age ${esc(g.age)}</span>`);
       if (g.turns) meta.push(`<span class="chip turns">Take turns</span>`);
-      const traits = g.traits.map(t =>
-        `<span class="trait" data-trait="${esc(t)}">${t}</span>`).join('');
-      const tweak = g.tweak
-        ? `<p class="tweak"><b>Tune it:</b> ${esc(g.tweak)}</p>` : '';
+      const traits = g.traits.map(t => `<span class="trait" data-trait="${esc(t)}">${t}</span>`).join('');
+      const tweak = g.tweak ? `<p class="tweak"><b>Tune it:</b> ${esc(g.tweak)}</p>` : '';
+      const left = g.image
+        ? `<span class="act-bar-photo" style="background-image:url('${esc(g.image)}')"></span>`
+        : `<span class="act-bar-photo"><span class="act-bar-emo" aria-hidden="true">${icon}</span></span>`;
       return `
-        <div class="card game-card" style="--gc:${pal.c};--gcd:${pal.cd};--gcs:${pal.cs};">
-          <div class="game-head">
-            <span class="game-badge">${icon}</span>
-            <div class="game-head-text">
-              <h3>${esc(g.name)}</h3>
-              <span class="game-tag">${esc(grp.label)}</span>
-            </div>
-          </div>
-          <div class="game-body">
-            <div class="meta-row">${meta.join('')}</div>
+        <details class="act-bar-wrap" style="--gc:${pal.c};--gcd:${pal.cd};--gcs:${pal.cs};">
+          <summary class="act-bar">
+            ${left}
+            <span class="act-bar-text">
+              <span class="act-bar-name">${esc(g.name)}</span>
+              <span class="act-bar-meta">${meta.join('')}</span>
+            </span>
+            <span class="act-bar-plus" aria-hidden="true"></span>
+          </summary>
+          <div class="act-drawer">
             <p class="how">${esc(g.how)}</p>
             <div class="why-box"><span class="why-pill">Why</span><p>${highlightWhy(g.why)}</p></div>
             ${tweak}
             <div class="traits">${traits}</div>
           </div>
-        </div>`;
+        </details>`;
     }
 
     function render() {
@@ -324,27 +309,23 @@
       count.textContent = `${filtered.length} of ${window.GAMES.length} games`;
 
       let html = '';
-      GROUP_ORDER.forEach((key, groupIdx) => {
+      GROUP_ORDER.forEach((key) => {
         const grp = window.GAME_GROUPS[key];
         const inGroup = filtered.filter(g => g.group === key);
         if (!inGroup.length) return;
         html += `
-          <div class="group-header" style="--gc:${grp.c};--gcd:${grp.cd};--gcs:${grp.cs};">
+          <div class="group-header" id="grp-${key}" style="--gc:${grp.c};--gcd:${grp.cd};--gcs:${grp.cs};">
             <h2><span class="group-emoji">${GROUP_EMOJI[key] || ''}</span>${grp.label}</h2>
             <p class="group-blurb">${grp.blurb}</p>
           </div>`;
-        html += inGroup.map((g, i) => cardHTML(g, i, groupIdx)).join('');
+        html += inGroup.map(g => cardHTML(g)).join('');
       });
 
       list.innerHTML = html || '<p class="empty">No games match that yet — try clearing a filter.</p>';
 
-      list.querySelectorAll('.trait').forEach(el => {
-        el.addEventListener('click', () => {
-          fBuild.value = el.dataset.trait;
-          render();
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-      });
+      list.querySelectorAll('.trait').forEach(el => el.addEventListener('click', () => {
+        fBuild.value = el.dataset.trait; render(); window.scrollTo({ top: 0, behavior: 'smooth' });
+      }));
     }
 
     [fSearch, fBuild, fAge].forEach(el => el.addEventListener('input', render));
