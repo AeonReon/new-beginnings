@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#4FA4D2">
+  <title>Conscious Parenting NI — Turn It Around</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="icon-192.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="launcher">
+  <main class="launcher-main article">
+    <header class="page-hero" style="--hc:#8B6FD1;--hcd:#5B3FA8;">
+      <div class="page-cover">
+        <img src="assets/pillars/emotions.jpg" alt="">
+        <div class="page-cover-veil"></div>
+        <div class="page-cover-text">
+          <div class="page-eyebrow">Conscious Parenting NI</div>
+          <h1>Turn It Around</h1>
+          <p class="page-tagline">Every difficult hour has a way out of it. Here's the next minute, and what to change before tomorrow.</p>
+        </div>
+      </div>
+    </header>
+
+    <p class="page-intro">Pick what's happening and you'll get the next minute first — then what to work backwards through so it happens less, then how the traditions honestly differ. No single right answer, because there isn't one. Most days turn around faster than you'd think.</p>
+
+    <div class="mo-hub-list" id="momentList"></div>
+
+    <section class="mo-block mo-honest" style="margin-top:1.8em;">
+      <h2 class="mo-h">How to use these</h2>
+      <ul class="mo-list">
+        <li>Read only the top of the page in the moment. The rest will keep until everyone is calm.</li>
+        <li>The "work backwards" section is the one that changes things for good. Most of what helps happened hours earlier — sleep, food, how long they'd been holding it together, how the house felt.</li>
+        <li>The traditions genuinely disagree. Take the one that fits your child and your household, and ignore the rest without guilt.</li>
+        <li>Change one thing at a time, and give it a week. That's usually all it takes to see whether it was the thing.</li>
+      </ul>
+    </section>
+
+    <p class="mo-also">
+      <a href="emotions.html">Emotions &amp; Connection</a>
+      <a href="education.html">The Great Traditions</a>
+      <a href="rhythm.html">Daily rhythms</a>
+    </p>
+  </main>
+
+  <script src="assets/moments-data.js"></script>
+  <script src="assets/app.js"></script>
+  <script>
+    // Built from the data, so a new moment is content-only.
+    (function () {
+      const list = document.getElementById('momentList');
+      const moments = window.MOMENTS;
+      if (!list || !moments || !moments.length) return;
+
+      const esc = (s) => String(s == null ? '' : s)
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+
+      list.innerHTML = moments.map((m) => `
+        <a class="mo-hub-item" href="moment.html?id=${encodeURIComponent(m.id)}">
+          <span class="mo-hub-emoji" aria-hidden="true">${esc(m.emoji || '')}</span>
+          <span class="mo-hub-body">
+            <b>${esc(m.title)}</b>
+            <span>${esc(m.covers || '')}</span>
+          </span>
+          <span class="mo-hub-go" aria-hidden="true">→</span>
+        </a>`).join('');
+    })();
+  </script>
+</body>
+</html>
