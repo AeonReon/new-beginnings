@@ -2139,6 +2139,15 @@ body.random-page {
 .mo-way-body .why { font-size: 0.92em; color: var(--ink-soft); border-left: 3px solid var(--rule-strong); padding-left: 0.8em; font-style: normal; }
 .mo-way-link { display: inline-block; font-family: var(--sans); font-weight: 800; font-size: 0.82em; color: var(--sky-deep); text-decoration: none; }
 
+/* Work backwards — the lead-up. Given its own colour so it reads as a
+   different KIND of thinking from the in-the-moment steps. */
+.mo-leadup { padding: 1.1em 1.15em; border-radius: var(--radius-lg); background: linear-gradient(135deg, var(--paper-card) 0%, var(--leaf-soft) 100%); border: 1px solid #BFE0CF; }
+.mo-checks { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.7em; }
+.mo-check { display: flex; flex-direction: column; gap: 0.18em; padding-left: 0.9em; border-left: 3px solid var(--leaf); }
+.mo-check b { font-family: var(--sans); font-size: 0.72rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #14663F; }
+.mo-check span { font-size: 0.93em; line-height: 1.45; color: var(--ink); }
+.mo-note { margin: 1em 0 0; font-size: 0.88em; font-style: italic; line-height: 1.45; color: var(--ink-soft); }
+
 .mo-list { margin: 0; padding-left: 1.15em; display: flex; flex-direction: column; gap: 0.55em; }
 .mo-list li { font-size: 0.95em; line-height: 1.5; color: var(--ink); }
 
@@ -2146,6 +2155,21 @@ body.random-page {
 .mo-honest { padding: 1.05em 1.15em; border-radius: var(--radius-lg); background: var(--paper-surface); border: 1px solid var(--rule); }
 .mo-honest .mo-h { font-size: clamp(1.02rem, 3.9vw, 1.15rem); }
 .mo-honest .mo-list li { color: var(--ink-soft); font-size: 0.92em; }
+
+/* The hub list of hard moments, on emotions.html */
+.mo-hub { margin: 0 0 1.8em; }
+.mo-hub-h { font-family: var(--serif); font-weight: 800; font-size: clamp(1.2rem, 4.6vw, 1.45rem); color: var(--ink); margin: 0 0 0.3em; }
+.mo-hub-sub { font-size: 0.94em; line-height: 1.5; color: var(--ink-soft); margin: 0 0 1em; }
+.mo-hub-list { display: flex; flex-direction: column; gap: 0.55em; }
+.mo-hub-item { position: relative; display: flex; align-items: center; gap: 0.85em; padding: 0.85em 0.95em; border-radius: 14px; background: var(--paper-card); box-shadow: var(--shadow-sm); text-decoration: none; color: var(--ink); transition: transform 0.24s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.24s ease; }
+.mo-hub-item::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 2px; background: linear-gradient(135deg, #8B6FD1 0%, var(--sky) 100%); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; }
+.mo-hub-item:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.mo-hub-item:active { transform: scale(0.985); }
+.mo-hub-emoji { flex: none; font-size: 1.5rem; }
+.mo-hub-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 0.15em; }
+.mo-hub-body b { font-family: var(--serif); font-weight: 800; font-size: 1.02em; line-height: 1.25; }
+.mo-hub-body span { font-size: 0.86em; color: var(--ink-mute); line-height: 1.35; }
+.mo-hub-go { flex: none; font-weight: 800; color: var(--ink-mute); }
 
 .mo-also { display: flex; flex-wrap: wrap; gap: 0.5em; margin: 1.6em 0 0; }
 .mo-also a { font-family: var(--sans); font-weight: 700; font-size: 0.84em; color: var(--sky-deep); background: var(--sky-soft-bg); padding: 0.5em 0.9em; border-radius: var(--radius-pill); text-decoration: none; }

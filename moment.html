@@ -63,6 +63,15 @@
           </div>
         </details>`).join('');
 
+      // Reverse-engineering the hours before. Most out-of-character behaviour
+      // has a cause sitting behind it, and changing the cause beats managing
+      // the act. Prompts to notice, never claims about all children.
+      const leadUp = (m.leadUp || []).map((c) => `
+        <li class="mo-check">
+          <b>${esc(c.check)}</b>
+          <span>${esc(c.note)}</span>
+        </li>`).join('');
+
       const after = (m.after || []).map((a) => `<li>${esc(a)}</li>`).join('');
       const notT = (m.notTelling || []).map((n) => `<li>${esc(n)}</li>`).join('');
       const also = (m.seeAlso || []).map((s) =>
@@ -87,8 +96,16 @@
           <ol class="mo-steps">${steps}</ol>
         </section>
 
+        ${leadUp ? `
+        <section class="mo-block mo-leadup">
+          <h2 class="mo-h">Work backwards — what changed?</h2>
+          <p class="mo-lead">${esc(m.leadUpLead || '')}</p>
+          <ul class="mo-checks">${leadUp}</ul>
+          ${m.leadUpNote ? `<p class="mo-note">${esc(m.leadUpNote)}</p>` : ''}
+        </section>` : ''}
+
         <section class="mo-block">
-          <h2 class="mo-h">Five ways, honestly different</h2>
+          <h2 class="mo-h">${(m.ways || []).length} ways, honestly different</h2>
           <p class="mo-lead">${esc(m.waysLead || '')}</p>
           ${ways}
         </section>

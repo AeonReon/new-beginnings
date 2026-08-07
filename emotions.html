@@ -32,15 +32,11 @@
     </header>
     <p class="page-intro">The relationship is the whole thing. Underneath every method and every "behaviour" is a child who wants to feel safe, seen and close to you. This pillar is about that.</p>
 
-    <a href="moment.html?id=hitting" class="week-card">
-      <span class="wk-top">
-        <span class="wk-pill">A hard moment</span>
-        <span class="wk-virtue">First one built</span>
-      </span>
-      <span class="wk-title">✋ They've hit</span>
-      <span class="wk-sub">The next minute, then five honestly different answers from the traditions — Montessori, Waldorf, Charlotte Mason, unschooling, classical. Not one right way.</span>
-      <span class="wk-go">Open it <span aria-hidden="true">→</span></span>
-    </a>
+    <section class="mo-hub" id="momentHub" hidden>
+      <h2 class="mo-hub-h">When it's hard</h2>
+      <p class="mo-hub-sub">The rest of the app is for a good day. This is for the other hours. Each one gives you the next minute, then what to work backwards through, then how the traditions genuinely differ.</p>
+      <div class="mo-hub-list" id="momentList"></div>
+    </section>
 
     <div class="soon-hero">
       <b>Being built now.</b> Here's what's coming — the day-to-day of the parent-child bond, held to the same first-principles rule: the real reason behind each thing, not "because the experts say so".
@@ -78,6 +74,31 @@
 
   </main>
 
+  <script src="assets/moments-data.js"></script>
   <script src="assets/app.js"></script>
+  <script>
+    // Built from the data, so a new hard moment is content-only — no edit here.
+    (function () {
+      const list = document.getElementById('momentList');
+      const hub = document.getElementById('momentHub');
+      if (!list || !window.MOMENTS || !MOMENTS.length) return;
+
+      const esc = (s) => String(s == null ? '' : s)
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+
+      list.innerHTML = MOMENTS.map((m) => `
+        <a class="mo-hub-item" href="moment.html?id=${encodeURIComponent(m.id)}">
+          <span class="mo-hub-emoji" aria-hidden="true">${esc(m.emoji || '')}</span>
+          <span class="mo-hub-body">
+            <b>${esc(m.title)}</b>
+            <span>${esc(m.covers || '')}</span>
+          </span>
+          <span class="mo-hub-go" aria-hidden="true">→</span>
+        </a>`).join('');
+
+      hub.hidden = false;
+    })();
+  </script>
 </body>
 </html>
