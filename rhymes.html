@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#3FBF97">
+  <title>Conscious Parenting NI — Rhymes &amp; Songs</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="icon-192.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    .where-row { display: flex; flex-wrap: wrap; gap: 0.5em; margin: 0 0 1.4em; }
+    .where-chip {
+      font-family: var(--sans); font-size: 0.92rem; font-weight: 700;
+      color: var(--ink-soft); background: var(--paper-card);
+      border: 1.5px solid var(--rule-strong); border-radius: var(--radius-pill);
+      padding: 0.5em 1.05em; cursor: pointer;
+      transition: transform 0.15s cubic-bezier(0.34,1.56,0.64,1), border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+    }
+    .where-chip:hover { transform: translateY(-1px); border-color: var(--sky); }
+    .where-chip.active { color: white; border-color: transparent; background: var(--grad-sky); box-shadow: var(--shadow-sm); }
+
+    #count { font-family: var(--sans); font-size: 0.85em; color: var(--ink-mute); margin: 0.2em 0 1.4em; }
+
+    .group-header {
+      margin: 2.6em 0 1.1em; padding: 0.85em 1.1em; border-radius: 16px;
+      background: var(--gcs); position: relative; overflow: hidden;
+    }
+    .group-header::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 7px; background: linear-gradient(180deg, var(--gc), var(--gcd)); }
+    .group-header:first-of-type { margin-top: 1.4em; }
+    .group-header h2 { display: flex; align-items: center; gap: 0.5em; margin: 0 0 0.1em; font-size: 1.32rem; color: var(--gcd); letter-spacing: -0.02em; }
+    .group-emoji { font-size: 1.15em; }
+    .group-blurb { font-size: 0.92em; color: var(--ink-soft); margin: 0; }
+
+    .chip { font-family: var(--sans); font-size: 0.72rem; font-weight: 700; padding: 0.28em 0.72em; border-radius: var(--radius-pill); background: #fff; color: var(--gcd); border: 1.5px solid var(--gc); }
+    .chip.age { background: var(--paper-warm); color: var(--ink-soft); border: 1px solid var(--rule-strong); }
+    .chip.mv-still { background: #EDE8FA; color: #5B3FA8; border-color: transparent; }
+    .chip.mv-hands { background: #FFF3CE; color: #B4790A; border-color: transparent; }
+    .chip.mv-body  { background: #D8F3E9; color: #1B7A4A; border-color: transparent; }
+
+    .why-box { margin: 0.9em 0 0; padding: 0.8em 0.95em; background: #fff; border: 1px solid var(--rule); border-left: 4px solid var(--gc); border-radius: 12px; }
+    .why-pill { display: inline-block; font-size: 0.6rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #fff; background: linear-gradient(135deg, var(--gc), var(--gcd)); padding: 0.25em 0.7em; border-radius: var(--radius-pill); margin-bottom: 0.5em; }
+    .why-box p { margin: 0; font-size: 0.94em; line-height: 1.58; color: var(--ink-soft); }
+    mark.hl { background: linear-gradient(180deg, rgba(255,206,61,0) 58%, rgba(255,201,45,0.85) 58%); color: inherit; font-weight: 700; padding: 0 0.06em; border-radius: 2px; }
+
+    /* The words themselves — set as verse, not prose */
+    .lyric-box { margin: 0.85em 0 0; padding: 0.9em 1.05em; background: var(--gcs); border-radius: 12px; border: 1px dashed var(--gc); }
+    .lyric-pill { display: inline-block; font-size: 0.6rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gcd); margin-bottom: 0.5em; }
+    .lyric-box p { margin: 0; font-size: 1em; line-height: 1.62; color: var(--ink); white-space: pre-line; font-family: var(--serif); font-weight: 500; }
+    .lyric-box p.nowords { font-family: var(--sans); font-weight: 400; font-size: 0.9em; font-style: italic; color: var(--ink-soft); white-space: normal; }
+
+    .origin { font-size: 0.82em; color: var(--ink-mute); margin: 0.75em 0 0; font-style: italic; }
+    .tweak { font-size: 0.85em; color: var(--ink-mute); margin: 0.8em 0 0; }
+    .tweak b { color: var(--ink-soft); font-weight: 700; }
+
+    .hear { display: flex; flex-wrap: wrap; gap: 0.4em; margin: 0.85em 0 0; }
+    .hear a { font-family: var(--sans); font-weight: 700; font-size: 0.76rem; color: var(--gcd); background: var(--gcs); padding: 0.42em 0.85em; border-radius: var(--radius-pill); text-decoration: none; }
+    .hear a:hover { background: #fff; }
+
+    .traits { display: flex; flex-wrap: wrap; gap: 0.35em; margin-top: 0.95em; }
+    .trait { font-family: var(--sans); font-size: 0.68rem; font-weight: 700; padding: 0.22em 0.62em; border-radius: var(--radius-pill); background: var(--paper-surface); color: var(--ink-mute); border: 1px solid var(--rule-strong); cursor: pointer; }
+    .trait:hover { border-color: var(--gc); color: var(--gcd); }
+
+    .empty { color: var(--ink-mute); font-style: italic; margin: 2em 0; }
+
+    /* topic squares — one per group, tap to filter */
+    .topic-nav { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.55em; margin: 0 0 1.4em; }
+    @media (min-width: 560px) { .topic-nav { grid-template-columns: repeat(6, 1fr); } }
+    .topic-sq { position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; gap: 0.4em; cursor: pointer; background: var(--paper-card, #fff); border: none; border-radius: 15px; padding: 0.8em 0.4em 0.75em; box-shadow: var(--shadow-sm); transition: transform 0.14s cubic-bezier(0.34,1.56,0.64,1); }
+    .topic-sq::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.6px; background: linear-gradient(135deg, var(--gc), var(--gcd)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; opacity: 0.45; }
+    .topic-sq:active { transform: scale(0.95); }
+    .topic-sq-emo { width: 2.2em; height: 2.2em; border-radius: 13px; background: linear-gradient(150deg, var(--gc), var(--gcd)); display: grid; place-items: center; font-size: 1.15rem; line-height: 1; box-shadow: 0 4px 10px color-mix(in srgb, var(--gc) 34%, transparent), inset 0 1.5px 0 rgba(255,255,255,0.45); }
+    .topic-sq-lbl { font-family: var(--sans); font-weight: 800; font-size: 0.7rem; color: var(--ink); line-height: 1.1; text-align: center; }
+    .topic-sq.active { box-shadow: 0 6px 16px color-mix(in srgb, var(--gc) 30%, transparent); }
+    .topic-sq.active::before { opacity: 1; padding: 2.2px; }
+    .topic-sq.active .topic-sq-lbl { color: var(--gcd); }
+
+    /* rhyme BAR — emoji left, title + meta right, drops down */
+    .act-bar-wrap { position: relative; overflow: hidden; background: var(--paper-card, #fff); border-radius: 18px; box-shadow: var(--shadow-sm); margin: 0 0 0.7em; }
+    .act-bar-wrap::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.6px; background: linear-gradient(135deg, var(--gc), var(--gcd)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; z-index: 3; opacity: 0.5; }
+    .act-bar { list-style: none; cursor: pointer; display: flex; align-items: stretch; gap: 0; }
+    .act-bar::-webkit-details-marker { display: none; }
+    .act-bar-photo { flex: 0 0 auto; width: 88px; align-self: stretch; position: relative; overflow: hidden; background: linear-gradient(150deg, var(--gc), var(--gcd)); display: grid; place-items: center; }
+    .act-bar-emo { font-size: 2rem; line-height: 1; filter: drop-shadow(0 2px 3px rgba(0,0,0,0.22)); }
+    .act-bar-text { flex: 1; min-width: 0; padding: 0.8em 0.5em 0.8em 1em; display: flex; flex-direction: column; justify-content: center; gap: 0.4em; }
+    .act-bar-name { font-family: var(--display, 'Poppins'); font-weight: 800; font-size: clamp(1.05rem, 4.4vw, 1.2rem); line-height: 1.16; letter-spacing: -0.015em; color: var(--ink); }
+    .act-bar-meta { display: flex; flex-wrap: wrap; gap: 0.32em; }
+    .act-bar-meta .chip { font-size: 0.64rem; padding: 0.24em 0.6em; }
+    .act-bar-plus { flex: 0 0 auto; align-self: center; width: 1.4em; height: 1.4em; position: relative; margin-right: 0.95em; }
+    .act-bar-plus::before, .act-bar-plus::after { content: ""; position: absolute; top: 50%; left: 50%; background: var(--gc); border-radius: 2px; transform: translate(-50%, -50%); transition: opacity 0.2s ease, transform 0.2s ease; }
+    .act-bar-plus::before { width: 0.9em; height: 2.5px; }
+    .act-bar-plus::after { width: 2.5px; height: 0.9em; }
+    .act-bar-wrap[open] .act-bar-plus::after { opacity: 0; transform: translate(-50%, -50%) rotate(90deg); }
+    .act-bar-wrap[open] .act-bar { border-bottom: 1px solid var(--rule); }
+    .act-drawer { padding: 0.95em 1.1em 1.15em; }
+    .act-drawer p.how { margin: 0; color: var(--ink-soft); line-height: 1.55; }
+  </style>
+</head>
+<body class="launcher">
+  <main class="launcher-main article">
+    <header class="page-hero" style="--hc:#3FBF97;--hcd:#2F9E77;">
+      <div class="page-cover">
+        <img src="assets/pillars/books.jpg" alt="">
+        <div class="page-cover-veil"></div>
+        <div class="page-cover-text">
+          <div class="page-eyebrow">Conscious Parenting NI</div>
+          <h1>Rhymes &amp; Songs</h1>
+          <p class="page-tagline">The ones you half-remember — and the words, so you can finish them.</p>
+        </div>
+      </div>
+    </header>
+
+    <p class="page-intro">
+      Knee bounces, finger games, counting songs, the daft ones for the car and the
+      slow ones for bedtime. They cost nothing, need no kit, and fit in the small
+      gaps a proper activity is too big for. Most parents know the first line of
+      thirty of these and the whole of about four — so the words are here.
+    </p>
+
+    <div class="card" style="margin-top: 0;">
+      <h3>How to use this</h3>
+      <p style="margin-bottom: 0.7em;">
+        You don't need to sing well. A child does not notice and does not care —
+        yours is the voice they would choose over any recording. Pick one, do it two
+        or three times so they can join in, and stop before they want you to.
+      </p>
+      <p class="why" style="margin-bottom: 0;">
+        These are not filler. Rhyme and rhythm train a child's ear to hear the
+        separate sounds inside words, and that hearing is what reading is later built
+        on — long before any letter is taught. The actions add the body, the counting
+        songs add number, and the old ones hand over a bit of where they come from.
+        Every rhyme here says what it's actually doing.
+      </p>
+    </div>
+
+    <div class="topic-nav" id="topic-nav"></div>
+
+    <div class="where-row" id="where-row"></div>
+
+    <div class="filters">
+      <div>
+        <label for="f-search">Search</label>
+        <input type="search" id="f-search" placeholder="e.g. counting, bedtime, tickle, Irish">
+      </div>
+      <div>
+        <label for="f-build">Builds</label>
+        <select id="f-build"></select>
+      </div>
+      <div>
+        <label for="f-moves">Moves</label>
+        <select id="f-moves"></select>
+      </div>
+      <div>
+        <label for="f-age">Age</label>
+        <select id="f-age"></select>
+      </div>
+    </div>
+
+    <p id="count"></p>
+    <div id="list"></div>
+
+    <p class="mo-also" style="margin-top:2em;">
+      <a href="books.html">Read-alouds &amp; audiobooks</a>
+      <a href="games.html">Thinking games</a>
+      <a href="feast.html">This week's feast</a>
+    </p>
+  </main>
+
+  <script src="assets/rhymes-data.js"></script>
+  <script src="assets/app.js"></script>
+  <script>
+    const GROUP_ORDER = ['Action', 'Lap', 'Count', 'Calm', 'Classic', 'Local'];
+    const WHENS = ['Anytime', 'In the car', 'Bath & bed'];
+    const GROUP_EMOJI = { Action: '🙌', Lap: '🧸', Count: '🔢', Calm: '🌙', Classic: '📖', Local: '🍀' };
+    const GROUP_SHORT = { Action: 'Moving', Lap: 'Knee', Count: 'Counting', Calm: 'Calm', Classic: 'Old ones', Local: 'At home' };
+
+    // Highlight what each rhyme is actually training.
+    const HL_TERMS = [
+      'separate sounds inside words', 'phonological', 'fine-motor', 'fine motor',
+      'self-control', 'concentration', 'memory work', 'anticipation', 'subtraction',
+      'backwards', 'sequence', 'rhythm', 'turn', 'listening', 'vocabulary', 'counting'
+    ].sort((a, b) => b.length - a.length);
+    const HL_RE = new RegExp('(' + HL_TERMS.map(t => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|') + ')', 'gi');
+
+    const fSearch = document.getElementById('f-search');
+    const fBuild = document.getElementById('f-build');
+    const fMoves = document.getElementById('f-moves');
+    const fAge = document.getElementById('f-age');
+    const whereRow = document.getElementById('where-row');
+    const topicNav = document.getElementById('topic-nav');
+    const list = document.getElementById('list');
+    const count = document.getElementById('count');
+    let activeWhen = '';
+    let activeGroup = '';
+
+    const RHYMES = window.RHYMES || [];
+    const GROUPS = window.RHYME_GROUPS || {};
+
+    function esc(s) {
+      return String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+    }
+    function highlightWhy(s) { return esc(s).replace(HL_RE, '<mark class="hl">$1</mark>'); }
+    function movesClass(m) { return m === 'Sit still' ? 'mv-still' : m === 'Whole body' ? 'mv-body' : 'mv-hands'; }
+
+    // Topic squares — tap to filter to that group, tap again to clear.
+    topicNav.innerHTML = GROUP_ORDER.map((key) => {
+      const g = GROUPS[key];
+      return `<button type="button" class="topic-sq" data-group="${key}" style="--gc:${g.c};--gcd:${g.cd};--gcs:${g.cs};">
+        <span class="topic-sq-emo" aria-hidden="true">${GROUP_EMOJI[key]}</span>
+        <span class="topic-sq-lbl">${GROUP_SHORT[key]}</span>
+      </button>`;
+    }).join('');
+    topicNav.querySelectorAll('.topic-sq').forEach(btn => {
+      btn.addEventListener('click', () => {
+        activeGroup = (activeGroup === btn.dataset.group) ? '' : btn.dataset.group;
+        topicNav.querySelectorAll('.topic-sq').forEach(b => b.classList.toggle('active', b.dataset.group === activeGroup));
+        render();
+        list.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    fBuild.innerHTML = '<option value="">Any skill</option>' +
+      (window.RHYME_TRAITS || []).map(t => `<option value="${t}">${t}</option>`).join('');
+
+    // Build the Moves and Age options from the data, so they can never drift
+    // out of step with what's actually in there.
+    const uniq = (k) => [...new Set(RHYMES.map(r => r[k]))].filter(Boolean).sort();
+    fMoves.innerHTML = '<option value="">Any</option>' + uniq('moves').map(m => `<option value="${m}">${m}</option>`).join('');
+    fAge.innerHTML = '<option value="">Any age</option>' + uniq('age').map(a => `<option value="${a}">Age ${a}</option>`).join('');
+
+    whereRow.innerHTML = WHENS.map(w => `<button type="button" class="where-chip" data-when="${w}">${w}</button>`).join('');
+    whereRow.querySelectorAll('.where-chip').forEach(btn => {
+      btn.addEventListener('click', () => {
+        activeWhen = (activeWhen === btn.dataset.when) ? '' : btn.dataset.when;
+        whereRow.querySelectorAll('.where-chip').forEach(b => b.classList.toggle('active', b.dataset.when === activeWhen));
+        render();
+      });
+    });
+
+    function cardHTML(r) {
+      const g = GROUPS[r.group];
+      const meta = [
+        `<span class="chip">${esc(r.when)}</span>`,
+        `<span class="chip ${movesClass(r.moves)}">${esc(r.moves)}</span>`,
+        `<span class="chip age">Age ${esc(r.age)}</span>`
+      ].join('');
+      const traits = (r.traits || []).map(t => `<span class="trait" data-trait="${esc(t)}">${esc(t)}</span>`).join('');
+
+      // Words only where they're public domain; otherwise say why not.
+      const lyrics = r.words
+        ? `<div class="lyric-box"><span class="lyric-pill">🎵 The words</span><p>${esc(r.words)}</p></div>`
+        : (r.wordsNote
+            ? `<div class="lyric-box"><span class="lyric-pill">🎵 The words</span><p class="nowords">${esc(r.wordsNote)}</p></div>`
+            : '');
+
+      const origin = r.origin ? `<p class="origin">${esc(r.origin)}</p>` : '';
+      const tweak = r.tweak ? `<p class="tweak"><b>Tune it:</b> ${esc(r.tweak)}</p>` : '';
+      const q = encodeURIComponent(r.name + ' nursery rhyme');
+      const hear = `<div class="hear">
+        <a href="https://www.youtube.com/results?search_query=${q}" target="_blank" rel="noopener">Hear it on YouTube</a>
+        <a href="https://www.google.com/search?q=${q}" target="_blank" rel="noopener">More verses</a>
+      </div>`;
+
+      return `
+        <details class="act-bar-wrap" style="--gc:${g.c};--gcd:${g.cd};--gcs:${g.cs};">
+          <summary class="act-bar">
+            <span class="act-bar-photo"><span class="act-bar-emo" aria-hidden="true">${r.emoji || '🎵'}</span></span>
+            <span class="act-bar-text">
+              <span class="act-bar-name">${esc(r.name)}</span>
+              <span class="act-bar-meta">${meta}</span>
+            </span>
+            <span class="act-bar-plus" aria-hidden="true"></span>
+          </summary>
+          <div class="act-drawer">
+            <p class="how">${esc(r.how)}</p>
+            ${lyrics}
+            <div class="why-box"><span class="why-pill">Why</span><p>${highlightWhy(r.why)}</p></div>
+            ${origin}
+            ${tweak}
+            ${hear}
+            <div class="traits">${traits}</div>
+          </div>
+        </details>`;
+    }
+
+    function render() {
+      const q = fSearch.value.toLowerCase().trim();
+      const build = fBuild.value, moves = fMoves.value, age = fAge.value;
+      const filtered = RHYMES.filter(r => {
+        if (activeGroup && r.group !== activeGroup) return false;
+        if (activeWhen && r.when !== activeWhen) return false;
+        if (build && !(r.traits || []).includes(build)) return false;
+        if (moves && r.moves !== moves) return false;
+        if (age && r.age !== age) return false;
+        if (q) {
+          const hay = [r.name, r.how, r.why, r.words || '', r.origin || '', r.tweak || '',
+            (r.traits || []).join(' '), GROUPS[r.group].label].join(' ').toLowerCase();
+          if (!hay.includes(q)) return false;
+        }
+        return true;
+      });
+      count.textContent = `${filtered.length} of ${RHYMES.length} rhymes and songs`;
+
+      let html = '';
+      GROUP_ORDER.forEach((key) => {
+        const grp = GROUPS[key];
+        const inGroup = filtered.filter(r => r.group === key);
+        if (!inGroup.length) return;
+        html += `
+          <div class="group-header" style="--gc:${grp.c};--gcd:${grp.cd};--gcs:${grp.cs};">
+            <h2><span class="group-emoji">${GROUP_EMOJI[key] || ''}</span>${grp.label}</h2>
+            <p class="group-blurb">${grp.blurb}</p>
+          </div>`;
+        html += inGroup.map(cardHTML).join('');
+      });
+      list.innerHTML = html || '<p class="empty">Nothing matches that yet — try clearing a filter.</p>';
+
+      list.querySelectorAll('.trait').forEach(el => el.addEventListener('click', () => {
+        fBuild.value = el.dataset.trait; render(); window.scrollTo({ top: 0, behavior: 'smooth' });
+      }));
+    }
+
+    [fSearch, fBuild, fMoves, fAge].forEach(el => el.addEventListener('input', render));
+    render();
+  </script>
+</body>
+</html>
