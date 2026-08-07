@@ -176,6 +176,18 @@
       <div class="today-list" id="todayGrid"></div>
     </section>
 
+    <a href="feast.html" class="week-card" id="weekCard" hidden>
+      <span class="wk-top">
+        <span class="wk-pill" id="wkPill">Week 1</span>
+        <span class="wk-virtue" id="wkVirtue" hidden></span>
+      </span>
+      <span class="wk-title">This week's feast</span>
+      <span class="wk-sub">A poem, a piece of music, a painting, a story, something in nature, something with your hands. Do one. Do all. Do none.</span>
+      <span class="wk-items" id="wkItems"></span>
+      <span class="wk-go">Open this week <span aria-hidden="true">→</span></span>
+      <span class="wk-back" id="wkBack" hidden></span>
+    </a>
+
     <a href="education.html" class="approaches-feature">
       <span class="af-banner"><img src="assets/pillars/education-banner.jpg" alt="" loading="lazy"></span>
       <span class="af-body">
@@ -299,6 +311,8 @@
   <script src="assets/philosophy-data.js"></script>
   <script src="assets/recipes-data.js"></script>
   <script src="assets/recipe-credits.js"></script>
+  <script src="assets/feast-data.js"></script>
+  <script src="assets/path.js"></script>
   <script src="assets/reader.js"></script>
   <script src="assets/recipe-modal.js"></script>
   <script src="assets/app.js"></script>
@@ -579,6 +593,58 @@
           if (note) note.textContent = "Hmm — that didn't send. Please try again in a moment.";
         }
       });
+    })();
+  </script>
+
+  <script>
+    // "This week" — the Path. The feast weeks aren't a tradition, they're
+    // universal culture on a seasonal rhythm, so every family shares the same
+    // week whichever approach they lean toward. Gives the app a thread to
+    // hold without ever narrowing the buffet.
+    (function () {
+      const card = document.getElementById('weekCard');
+      if (!card || !window.Path || !window.FEAST) return;
+
+      const w = Path.week();
+      const f = Path.feast(w);
+      if (!f) return;
+
+      const term = Path.term(w);
+      const pill = document.getElementById('wkPill');
+      pill.textContent = term
+        ? `Week ${w} · ${term.charAt(0).toUpperCase() + term.slice(1)} term`
+        : `Week ${w}`;
+
+      const virtue = Path.virtue(w);
+      if (virtue) {
+        const vEl = document.getElementById('wkVirtue');
+        vEl.textContent = virtue.name;
+        vEl.hidden = false;
+      }
+
+      // Nature prompts run to a couple of sentences — the card wants the hook,
+      // not the whole instruction, so take the first sentence only.
+      const firstSentence = (s) => {
+        const m = /^[^.!?]+[.!?]?/.exec(String(s || '').trim());
+        return m ? m[0].trim() : '';
+      };
+
+      // Three tastes only — the full seven live on the feast page.
+      const rows = [
+        ['Poem', f.poem && f.poem.title],
+        ['Music', f.composer_piece && f.composer_piece.title],
+        ['Outside', firstSentence(f.nature && f.nature.prompt)],
+      ].filter(r => r[1]);
+
+      document.getElementById('wkItems').innerHTML = rows.map(([kind, what]) =>
+        `<span class="wk-item"><span class="wk-kind">${kind}</span><span class="wk-what"></span></span>`
+      ).join('');
+      // Set text via textContent so content data can never inject markup.
+      document.querySelectorAll('#wkItems .wk-what').forEach((el, i) => {
+        el.textContent = rows[i][1];
+      });
+
+      card.hidden = false;
     })();
   </script>
 </body>

@@ -20,6 +20,14 @@
 
     <button id="read-btn" class="read-btn" style="margin-bottom: 1em;">▶ Read aloud</button>
 
+    <div class="feast-drift" id="drift" hidden>
+      <span id="driftMsg"></span>
+      <span class="feast-drift-acts">
+        <button type="button" class="secondary" id="driftBack">Back to this week</button>
+        <button type="button" id="driftSet">Make this our week</button>
+      </span>
+    </div>
+
     <div id="feast-root"></div>
 
     <div class="feast-nav">
@@ -29,26 +37,41 @@
   </main>
 
   <script src="assets/feast-data.js"></script>
+  <script src="assets/path.js"></script>
   <script src="assets/app.js"></script>
   <script src="assets/reader.js"></script>
   <script>
-    const KEY = 'nb.feastWeek';
-    let currentWeek = parseInt(localStorage.getItem(KEY) || '1', 10);
-    if (currentWeek < 1 || currentWeek > 52) currentWeek = 1;
+    // The week comes from the Path — derived from the date the family began,
+    // so it moves on its own. Prev/next only BROWSE the other 51 weeks; they
+    // never quietly shift the family off their own week. "Make this our week"
+    // is the one deliberate way to move the Path.
+    let currentWeek = Path.week();
 
     document.getElementById('prev').addEventListener('click', () => {
       currentWeek = currentWeek > 1 ? currentWeek - 1 : 52;
-      saveWeek();
       render();
     });
     document.getElementById('next').addEventListener('click', () => {
       currentWeek = currentWeek < 52 ? currentWeek + 1 : 1;
-      saveWeek();
       render();
     });
 
-    function saveWeek() {
-      try { localStorage.setItem(KEY, String(currentWeek)); } catch {}
+    document.getElementById('driftBack').addEventListener('click', () => {
+      currentWeek = Path.week();
+      render();
+    });
+    document.getElementById('driftSet').addEventListener('click', () => {
+      Path.goTo(currentWeek);
+      render();
+    });
+
+    function renderDrift() {
+      const bar = document.getElementById('drift');
+      const real = Path.week();
+      if (currentWeek === real) { bar.hidden = true; return; }
+      document.getElementById('driftMsg').textContent =
+        `You're looking at week ${currentWeek}. Your week is ${real}.`;
+      bar.hidden = false;
     }
 
     function searchLinks(query) {
@@ -85,7 +108,10 @@
       const virtue = VIRTUES[month];
 
       document.getElementById('week-pill').textContent =
-        `Week ${w} · ${term.charAt(0).toUpperCase() + term.slice(1)} term`;
+        `Week ${w} · ${term.charAt(0).toUpperCase() + term.slice(1)} term` +
+        (w === Path.week() ? ' · your week' : '');
+
+      renderDrift();
 
       const root = document.getElementById('feast-root');
 
