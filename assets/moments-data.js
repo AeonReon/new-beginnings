@@ -71,8 +71,8 @@ window.MOMENTS = [
     ],
 
     seeAlso: [
-      { label: 'Emotions & Connection', href: 'emotions.html' },
-      { label: 'The Great Traditions', href: 'education.html' }
+      { label: 'The Great Traditions', href: 'education.html' },
+      { label: 'Thinking games', href: 'games.html' }
     ]
   },
 
@@ -127,8 +127,8 @@ window.MOMENTS = [
     ],
 
     seeAlso: [
-      { label: 'Emotions & Connection', href: 'emotions.html' },
-      { label: 'Daily rhythms', href: 'rhythm.html' }
+      { label: 'Daily rhythms', href: 'rhythm.html' },
+      { label: 'The Great Traditions', href: 'education.html' }
     ]
   },
 
@@ -239,8 +239,8 @@ window.MOMENTS = [
     ],
 
     seeAlso: [
-      { label: 'Emotions & Connection', href: 'emotions.html' },
-      { label: 'Activities for two', href: 'activities.html' }
+      { label: 'Activities for two', href: 'activities.html' },
+      { label: 'Days out', href: 'things-to-do.html' }
     ]
   },
 

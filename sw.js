@@ -1,4 +1,4 @@
-const CACHE = 'new-beginnings-v123';
+const CACHE = 'new-beginnings-v124';
 const ASSETS = [
   './',
   './index.html',
@@ -8,7 +8,6 @@ const ASSETS = [
   './food.html',
   './things-to-do.html',
   './health.html',
-  './emotions.html',
   './books.html',
   './learning-apps.html',
   './watching.html',
