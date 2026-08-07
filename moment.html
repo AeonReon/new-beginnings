@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#4FA4D2">
+  <title>Conscious Parenting NI — A hard moment</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="icon-192.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="launcher">
+  <main class="launcher-main article" id="root">
+    <p class="page-intro" id="fallback">Loading…</p>
+  </main>
+
+  <script src="assets/moments-data.js"></script>
+  <script src="assets/app.js"></script>
+  <script src="assets/reader.js"></script>
+  <script>
+    // A hard moment. Structure is deliberate: steady the parent, then the next
+    // minute, then where the traditions actually differ, then the repair, then
+    // what we are not claiming. A parent opening this has usually just had a
+    // bad few minutes — the immediate help must come before the depth.
+    (function () {
+      const esc = (s) => String(s == null ? '' : s)
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+
+      const params = new URLSearchParams(location.search);
+      const id = params.get('id') || (window.MOMENTS && window.MOMENTS[0] && window.MOMENTS[0].id);
+      const m = (window.MOMENTS || []).find((x) => x.id === id);
+
+      const root = document.getElementById('root');
+      if (!m) {
+        root.innerHTML = '<p class="page-intro">That moment isn\'t here yet. ' +
+          '<a href="emotions.html">Back to Emotions &amp; Connection</a>.</p>';
+        return;
+      }
+
+      document.title = 'Conscious Parenting NI — ' + m.title;
+
+      const steps = (m.now || []).map((s, i) => `
+        <li class="mo-step">
+          <span class="mo-n">${i + 1}</span>
+          <span class="mo-step-body">
+            <b>${esc(s.do)}</b>
+            <span>${esc(s.why)}</span>
+          </span>
+        </li>`).join('');
+
+      const ways = (m.ways || []).map((w) => `
+        <details class="mo-way">
+          <summary>
+            <span class="mo-way-name">${esc(w.tradition)}</span>
+            <span class="mo-way-hint">would…</span>
+          </summary>
+          <div class="mo-way-body">
+            <p>${esc(w.what)}</p>
+            <p class="why">${esc(w.why)}</p>
+            <a class="mo-way-link" href="methodology.html?id=${encodeURIComponent(w.id)}">More on ${esc(w.tradition)} →</a>
+          </div>
+        </details>`).join('');
+
+      const after = (m.after || []).map((a) => `<li>${esc(a)}</li>`).join('');
+      const notT = (m.notTelling || []).map((n) => `<li>${esc(n)}</li>`).join('');
+      const also = (m.seeAlso || []).map((s) =>
+        `<a href="${esc(s.href)}">${esc(s.label)}</a>`).join('');
+
+      root.innerHTML = `
+        <header class="page-hero mo-hero" style="--hc:#8B6FD1;--hcd:#5B3FA8;">
+          <div class="mo-eyebrow">A hard moment</div>
+          <h1><span class="mo-emoji" aria-hidden="true">${esc(m.emoji || '')}</span>${esc(m.title)}</h1>
+          <p class="mo-covers">${esc(m.covers || '')}</p>
+        </header>
+
+        <section class="mo-steady">
+          <p>${esc(m.steady)}</p>
+        </section>
+
+        <button id="read-btn" class="read-btn">▶ Read aloud</button>
+
+        <section class="mo-block">
+          <h2 class="mo-h">In the next minute</h2>
+          <p class="mo-lead">${esc(m.nowLead || '')}</p>
+          <ol class="mo-steps">${steps}</ol>
+        </section>
+
+        <section class="mo-block">
+          <h2 class="mo-h">Five ways, honestly different</h2>
+          <p class="mo-lead">${esc(m.waysLead || '')}</p>
+          ${ways}
+        </section>
+
+        <section class="mo-block">
+          <h2 class="mo-h">${esc(m.afterLead || 'Later')}</h2>
+          <ul class="mo-list">${after}</ul>
+        </section>
+
+        <section class="mo-block mo-honest">
+          <h2 class="mo-h">What we are not telling you</h2>
+          <ul class="mo-list">${notT}</ul>
+        </section>
+
+        <p class="mo-also">${also}</p>
+      `;
+
+      const btn = document.getElementById('read-btn');
+      if (btn && window.Reader) {
+        btn.addEventListener('click', () => {
+          if (window.Reader.speaking) window.Reader.stop();
+          else window.Reader.readElement(document.querySelector('main'));
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
