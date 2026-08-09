@@ -1,4 +1,4 @@
-const CACHE = 'new-beginnings-v126';
+const CACHE = 'new-beginnings-v127';
 const ASSETS = [
   './',
   './index.html',
@@ -72,6 +72,8 @@ const ASSETS = [
   './turn-it-around.html',
   './when-its-hard.html',
   './assets/moments-data.js',
+  './make-it-a-game.html',
+  './assets/playful-data.js',
   './rhymes.html',
   './assets/rhymes-data.js',
   './assets/tools/rhymes.jpg',

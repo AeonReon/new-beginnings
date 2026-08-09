@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#E8894A">
+  <!-- Images on this page are for in-app use only — keep them out of image search. -->
+  <meta name="robots" content="noimageindex, max-image-preview:none">
+  <title>Conscious Parenting NI — Make It A Game</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="icon-192.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    /* Jump-to-moment squares — one per flashpoint (shared pattern with Games/Activities) */
+    .topic-nav { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.55em; margin: 0 0 1.6em; }
+    .topic-sq { position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; gap: 0.4em; cursor: pointer; background: var(--paper-card, #fff); border: none; border-radius: 15px; padding: 0.8em 0.4em 0.75em; box-shadow: var(--shadow-sm); transition: transform 0.14s cubic-bezier(0.34,1.56,0.64,1); }
+    .topic-sq::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.6px; background: linear-gradient(135deg, var(--gc), var(--gcd)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; opacity: 0.45; }
+    .topic-sq:active { transform: scale(0.95); }
+    .topic-sq-emo { width: 2.2em; height: 2.2em; border-radius: 13px; background: linear-gradient(150deg, var(--gc), var(--gcd)); display: grid; place-items: center; font-size: 1.15rem; line-height: 1; box-shadow: 0 4px 10px color-mix(in srgb, var(--gc) 34%, transparent), inset 0 1.5px 0 rgba(255,255,255,0.45); }
+    .topic-sq-lbl { font-family: var(--sans); font-weight: 800; font-size: 0.72rem; color: var(--ink); line-height: 1.1; text-align: center; }
+
+    /* Flashpoint banner — the chapter divider */
+    .group-header { margin: 2.6em 0 1.1em; padding: 0.9em 1.1em; border-radius: 16px; background: var(--gcs); position: relative; overflow: hidden; scroll-margin-top: 12px; }
+    .group-header::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 7px; background: linear-gradient(180deg, var(--gc), var(--gcd)); }
+    .group-header:first-of-type { margin-top: 1.4em; }
+    .group-header h2 { display: flex; align-items: center; gap: 0.5em; margin: 0 0 0.15em; font-size: 1.32rem; color: var(--gcd); letter-spacing: -0.02em; }
+    .group-emoji { font-size: 1.15em; }
+    .group-when { font-size: 0.94em; color: var(--ink-soft); margin: 0; line-height: 1.5; }
+
+    /* WHY callout — the real reason the child resists, and why play works */
+    .why-box { margin: 0 0 0.9em; padding: 0.85em 1em; background: #fff; border: 1px solid var(--rule); border-left: 4px solid var(--gc); border-radius: 12px; }
+    .why-pill { display: inline-block; font-size: 0.6rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #fff; background: linear-gradient(135deg, var(--gc), var(--gcd)); padding: 0.25em 0.7em; border-radius: var(--radius-pill); margin-bottom: 0.5em; }
+    .why-box p { margin: 0; font-size: 0.94em; line-height: 1.6; color: var(--ink-soft); }
+    mark.hl { background: linear-gradient(180deg, rgba(255,206,61,0) 58%, rgba(255,201,45,0.85) 58%); color: inherit; font-weight: 700; padding: 0 0.06em; border-radius: 2px; }
+
+    /* Game bar — emoji tile left, name + age right, drops down to the how-to */
+    .act-bar-wrap { position: relative; overflow: hidden; background: var(--paper-card, #fff); border-radius: 18px; box-shadow: var(--shadow-sm); margin: 0 0 0.7em; }
+    .act-bar-wrap::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.6px; background: linear-gradient(135deg, var(--gc), var(--gcd)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; z-index: 3; opacity: 0.5; }
+    .act-bar { list-style: none; cursor: pointer; display: flex; align-items: stretch; gap: 0; }
+    .act-bar::-webkit-details-marker { display: none; }
+    .act-bar-photo { flex: 0 0 auto; width: 76px; align-self: stretch; position: relative; overflow: hidden; background: linear-gradient(150deg, var(--gc), var(--gcd)); display: grid; place-items: center; }
+    .act-bar-emo { font-size: 1.9rem; line-height: 1; filter: drop-shadow(0 2px 3px rgba(0,0,0,0.22)); }
+    .act-bar-text { flex: 1; min-width: 0; padding: 0.8em 0.5em 0.8em 1em; display: flex; flex-direction: column; justify-content: center; gap: 0.4em; }
+    .act-bar-name { font-family: var(--display, 'Poppins'); font-weight: 800; font-size: clamp(1.05rem, 4.4vw, 1.2rem); line-height: 1.16; letter-spacing: -0.015em; color: var(--ink); }
+    .act-bar-meta { display: flex; flex-wrap: wrap; gap: 0.32em; }
+    .chip { font-family: var(--sans); font-size: 0.64rem; font-weight: 700; padding: 0.24em 0.6em; border-radius: var(--radius-pill); background: var(--paper-warm); color: var(--ink-soft); border: 1px solid var(--rule-strong); }
+    .act-bar-plus { flex: 0 0 auto; align-self: center; width: 1.4em; height: 1.4em; position: relative; margin-right: 0.95em; }
+    .act-bar-plus::before, .act-bar-plus::after { content: ""; position: absolute; top: 50%; left: 50%; background: var(--gc); border-radius: 2px; transform: translate(-50%, -50%); transition: opacity 0.2s ease, transform 0.2s ease; }
+    .act-bar-plus::before { width: 0.9em; height: 2.5px; }
+    .act-bar-plus::after { width: 2.5px; height: 0.9em; }
+    .act-bar-wrap[open] .act-bar-plus::after { opacity: 0; transform: translate(-50%, -50%) rotate(90deg); }
+    .act-bar-wrap[open] .act-bar { border-bottom: 1px solid var(--rule); }
+    .act-drawer { padding: 0.95em 1.1em 1.15em; }
+    .act-drawer p.how { margin: 0; color: var(--ink-soft); line-height: 1.58; }
+  </style>
+</head>
+<body class="launcher">
+  <main class="launcher-main article">
+    <header class="page-hero" style="--hc:#E8894A;--hcd:#B45309;">
+      <div class="page-cover">
+        <img src="assets/tools/activities.jpg" alt="">
+        <div class="page-cover-veil"></div>
+        <div class="page-cover-text">
+          <div class="page-eyebrow">Conscious Parenting NI</div>
+          <h1>Make It A Game</h1>
+          <p class="page-tagline">The jobs that turn into a fight — dressed, buckled, tidied, teeth — done laughing instead.</p>
+        </div>
+      </div>
+    </header>
+
+    <p class="page-intro" id="intro"></p>
+
+    <div class="card" style="margin-top: 0;">
+      <h3>How to use this</h3>
+      <p style="margin-bottom: 0;">
+        Tap a square to jump to the moment you're stuck on, then open any game to see
+        exactly what to say and do. Pick one, play it lightly, and swap it out the moment
+        it stops being fun — a game only works while it's still a game. Each one carries the
+        real reason the child digs in, so you can see what you're actually solving.
+      </p>
+    </div>
+
+    <div class="topic-nav" id="topic-nav"></div>
+
+    <div id="list"></div>
+
+    <section class="mo-block mo-honest" style="margin-top: 2.2em;">
+      <h2 class="mo-h">When no game lands</h2>
+      <p style="color: var(--ink-soft); line-height: 1.6;">
+        Some days a child is too tired, too hungry, or too far gone for play — and that's
+        information, not defiance. Drop the game, stay kind, do the necessary bit with as
+        little fuss as you can, and let it go. The game is a bridge, not a rule. If a whole
+        routine is a fight most days, the answer is usually further back — sleep, hunger, or
+        how much of you they've had — and that's what
+        <a href="turn-it-around.html">Turn It Around</a> is for.
+      </p>
+    </section>
+
+    <p class="mo-also">
+      <a href="turn-it-around.html">Turn It Around</a>
+      <a href="games.html">Thinking Games</a>
+      <a href="rhythm.html">Daily rhythms</a>
+    </p>
+  </main>
+
+  <script src="assets/playful-data.js"></script>
+  <script>
+    (function () {
+      const moments = window.PLAYFUL || [];
+      const intro = document.getElementById('intro');
+      const nav = document.getElementById('topic-nav');
+      const list = document.getElementById('list');
+      if (intro) intro.textContent = window.PLAYFUL_INTRO || '';
+      if (!moments.length) return;
+
+      // One warm accent per flashpoint — cycled from the app's palette.
+      const PAL = [
+        { c: '#4A9ED4', cd: '#2D6FA8', cs: '#E4F1FA' }, // sky
+        { c: '#FF9F3D', cd: '#C97D2A', cs: '#FFEFD6' }, // orange
+        { c: '#3FBF97', cd: '#2F9E77', cs: '#D8F3E9' }, // green
+        { c: '#8B6FD1', cd: '#5B3FA8', cs: '#EDE8FA' }, // violet
+        { c: '#FF5E8E', cd: '#C93E6A', cs: '#FFE2EC' }  // coral
+      ];
+
+      // Highlight the load-bearing phrase in each "why" — the copywriter's marker.
+      const HL_TERMS = [
+        'the one bit of power', 'in charge', 'the doing back to them', 'a finish line',
+        'least free', 'help do', 'no obvious end', 'no control over it', 'the playmate',
+        'a job to concentrate on', 'a bridge, not a rule'
+      ].sort((a, b) => b.length - a.length);
+      const HL_RE = new RegExp('(' + HL_TERMS.map(t => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|') + ')', 'gi');
+
+      const esc = (s) => String(s == null ? '' : s)
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+      const hl = (s) => esc(s).replace(HL_RE, '<mark class="hl">$1</mark>');
+
+      // Jump squares — tap scrolls to the flashpoint, no filtering.
+      nav.innerHTML = moments.map((m, i) => {
+        const p = PAL[i % PAL.length];
+        return `<button type="button" class="topic-sq" data-target="fp-${esc(m.id)}" style="--gc:${p.c};--gcd:${p.cd};--gcs:${p.cs};">
+          <span class="topic-sq-emo" aria-hidden="true">${esc(m.emoji)}</span>
+          <span class="topic-sq-lbl">${esc(m.title)}</span>
+        </button>`;
+      }).join('');
+      nav.querySelectorAll('.topic-sq').forEach(btn => btn.addEventListener('click', () => {
+        const t = document.getElementById(btn.dataset.target);
+        if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }));
+
+      // Each flashpoint: banner + why + its games as drop-down bars.
+      list.innerHTML = moments.map((m, i) => {
+        const p = PAL[i % PAL.length];
+        const games = (m.games || []).map(g => `
+          <details class="act-bar-wrap">
+            <summary class="act-bar">
+              <span class="act-bar-photo"><span class="act-bar-emo" aria-hidden="true">${esc(m.emoji)}</span></span>
+              <span class="act-bar-text">
+                <span class="act-bar-name">${esc(g.name)}</span>
+                <span class="act-bar-meta"><span class="chip">Best ${esc(g.best)}</span></span>
+              </span>
+              <span class="act-bar-plus" aria-hidden="true"></span>
+            </summary>
+            <div class="act-drawer"><p class="how">${esc(g.how)}</p></div>
+          </details>`).join('');
+        return `
+          <div style="--gc:${p.c};--gcd:${p.cd};--gcs:${p.cs};">
+            <div class="group-header" id="fp-${esc(m.id)}">
+              <h2><span class="group-emoji">${esc(m.emoji)}</span>${esc(m.title)}</h2>
+              <p class="group-when">${esc(m.when)}</p>
+            </div>
+            <div class="why-box"><span class="why-pill">Why they dig in</span><p>${hl(m.why)}</p></div>
+            ${games}
+          </div>`;
+      }).join('');
+    })();
+  </script>
+</body>
+</html>
