@@ -34,6 +34,14 @@
     .why-box p { margin: 0; font-size: 0.94em; line-height: 1.6; color: var(--ink-soft); }
     mark.hl { background: linear-gradient(180deg, rgba(255,206,61,0) 58%, rgba(255,201,45,0.85) 58%); color: inherit; font-weight: 700; padding: 0 0.06em; border-radius: 2px; }
 
+    /* Honest per-moment caution — neutral by default, stronger for a safety line */
+    .note-box { margin: 0.5em 0 0.2em; padding: 0.8em 1em; background: var(--paper-warm); border: 1px solid var(--rule-strong); border-left: 4px solid var(--ink-mute); border-radius: 12px; }
+    .note-box p { margin: 0; font-size: 0.9em; line-height: 1.55; color: var(--ink-soft); }
+    .note-pill { display: inline-block; font-size: 0.6rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); border: 1px solid var(--rule-strong); padding: 0.22em 0.6em; border-radius: var(--radius-pill); margin-bottom: 0.45em; }
+    .note-box.note-safety { background: #FFF3E6; border-color: #F0A85E; border-left-color: #D9741F; }
+    .note-box.note-safety .note-pill { color: #B45309; border-color: #E8894A; }
+    .note-box.note-safety p { color: #7A4A12; }
+
     /* Game bar — emoji tile left, name + age right, drops down to the how-to */
     .act-bar-wrap { position: relative; overflow: hidden; background: var(--paper-card, #fff); border-radius: 18px; box-shadow: var(--shadow-sm); margin: 0 0 0.7em; }
     .act-bar-wrap::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.6px; background: linear-gradient(135deg, var(--gc), var(--gcd)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; z-index: 3; opacity: 0.5; }
@@ -123,17 +131,24 @@
         { c: '#FF5E8E', cd: '#C93E6A', cs: '#FFE2EC' }  // coral
       ];
 
-      // Highlight the load-bearing phrase in each "why" — the copywriter's marker.
-      const HL_TERMS = [
-        'the one bit of power', 'in charge', 'the doing back to them', 'a finish line',
-        'least free', 'help do', 'no obvious end', 'no control over it', 'the playmate',
-        'a job to concentrate on', 'a bridge, not a rule'
-      ].sort((a, b) => b.length - a.length);
-      const HL_RE = new RegExp('(' + HL_TERMS.map(t => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|') + ')', 'gi');
-
       const esc = (s) => String(s == null ? '' : s)
         .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-      const hl = (s) => esc(s).replace(HL_RE, '<mark class="hl">$1</mark>');
+
+      // Highlight each moment's own load-bearing phrase (data-driven, first match only).
+      const whyHtml = (m) => {
+        const w = esc(m.why || '');
+        const key = esc(m.whyKey || '');
+        const i = key ? w.indexOf(key) : -1;
+        return i < 0 ? w : w.slice(0, i) + '<mark class="hl">' + key + '</mark>' + w.slice(i + key.length);
+      };
+
+      // Optional honest caution — 'safety' entries get the stronger styling.
+      const noteHtml = (m) => {
+        if (!m.note) return '';
+        const safety = m.noteKind === 'safety';
+        const pill = safety ? 'Safety first' : 'Worth knowing';
+        return `<div class="note-box${safety ? ' note-safety' : ''}"><span class="note-pill">${pill}</span><p>${esc(m.note)}</p></div>`;
+      };
 
       // Jump squares — tap scrolls to the flashpoint, no filtering.
       nav.innerHTML = moments.map((m, i) => {
@@ -169,8 +184,9 @@
               <h2><span class="group-emoji">${esc(m.emoji)}</span>${esc(m.title)}</h2>
               <p class="group-when">${esc(m.when)}</p>
             </div>
-            <div class="why-box"><span class="why-pill">Why they dig in</span><p>${hl(m.why)}</p></div>
+            <div class="why-box"><span class="why-pill">Why they dig in</span><p>${whyHtml(m)}</p></div>
             ${games}
+            ${noteHtml(m)}
           </div>`;
       }).join('');
     })();
