@@ -27,10 +27,8 @@
     #tradition-grid .tile-era { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
     /* Premium (locked) tradition card — visible, admired, but not clickable */
-    .tile-premium { cursor: default; -webkit-user-select: none; user-select: none; }
-    .tile-premium:hover { transform: none; box-shadow: 0 1px 2px rgba(40,30,20,0.05), 0 10px 30px rgba(40,30,20,0.08); }
-    .tile-premium:hover .tile-icon-wrap { transform: none; }
-    .tile-premium:active { transform: none; }
+    /* Was a locked/no-op tile. It now opens the School of Light application site,
+       so it behaves like every other tile: hover lift, pointer, the lot. */
     .tile-premium.bounce { animation: premiumBounce .42s cubic-bezier(0.34, 1.56, 0.64, 1); }
     @keyframes premiumBounce { 0% { transform: scale(1); } 34% { transform: scale(0.955); } 100% { transform: scale(1); } }
     .tile-badge-premium {
@@ -262,30 +260,19 @@
       </a>
     `).join('');
 
-    // The School of Light — a premium, locked tradition. Shown last; admired, not opened.
+    // The School of Light — shown last, and the only tile that leaves the app.
+    // It opens the application + waiting list site for the real place on the North Coast.
     grid.insertAdjacentHTML('beforeend', `
-      <div class="tile has-photo tile-premium" style="--c:#F0C557;--cd:#C6871B;--cs:#FBF3DA;" role="button" aria-disabled="true" aria-label="The School of Light — premium, coming soon">
-        <span class="tile-badge tile-badge-premium"><span class="tbp-mark">✦</span>Premium</span>
+      <a href="https://school-of-light-seven.vercel.app/" target="_blank" rel="noopener" class="tile has-photo tile-premium" aria-label="The School of Light — applications open, North Coast" style="--c:#F0C557;--cd:#C6871B;--cs:#FBF3DA;">
+        <span class="tile-badge tile-badge-premium"><span class="tbp-mark">✦</span>Applications open</span>
         <div class="tile-photo"><img src="assets/tiles/school-of-light.png" alt="The School of Light" loading="lazy"><div class="tile-icon-wrap"><svg viewBox="0 0 64 64" class="tile-icon">${ICONS.compass}</svg></div></div>
         <div class="tile-body">
           <div class="tile-name">The School of Light</div>
           <div class="tile-tagline">First principles · open to the best way · observable reality</div>
-          <div class="tile-era">Premium · coming soon</div>
+          <div class="tile-era">A real place · North Coast · apply for a place</div>
         </div>
-      </div>
+      </a>
     `);
-
-    // Locked: give a little pressed-bounce, but never navigate.
-    const premiumTile = grid.querySelector('.tile-premium');
-    if (premiumTile) {
-      const bump = () => {
-        premiumTile.classList.remove('bounce');
-        void premiumTile.offsetWidth; // reflow so the animation can retrigger
-        premiumTile.classList.add('bounce');
-      };
-      premiumTile.addEventListener('click', bump);
-      premiumTile.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); bump(); } });
-    }
   </script>
 
   <script src="assets/schools-data.js"></script>
