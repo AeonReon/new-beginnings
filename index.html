@@ -332,7 +332,10 @@
   <script src="assets/methods-data.js"></script>
   <script src="assets/games-data.js"></script>
   <script src="assets/deeds-data.js"></script>
+  <script src="assets/deeds-data-2.js"></script>
   <script src="assets/philosophy-data.js"></script>
+  <script src="assets/philosophy-data-2.js"></script>
+  <script src="assets/phrases-data.js"></script>
   <script src="assets/recipes-data.js"></script>
   <script src="assets/recipe-credits.js"></script>
   <script src="assets/feast-data.js"></script>
@@ -365,6 +368,8 @@
       const ponders = window.PONDERINGS || [];
       // COOK — a nice, real-food thing to make together today
       const recipes = window.RECIPES || [];
+      // WORDS — the exact sentence to try in one everyday moment
+      const phrases = window.PHRASES || [];
 
       // THIS WEEK — a gentle arc. One tradition is "in focus" each week; the
       // day's deed + thought lean into it so the week hangs together and you
@@ -397,6 +402,7 @@
         do:    { c: '#E0951A', cd: '#B4770F', cs: '#FBEFD3' },
         think: { c: '#1F8F5E', cd: '#166B46', cs: '#DCF3E7' },
         cook:  { c: '#C73B7A', cd: '#9E2A5F', cs: '#F9E2EE' },
+        words: { c: '#7B5EC7', cd: '#5A3FA0', cs: '#EAE3F9' },
       };
       let off = 0;
 
@@ -406,7 +412,9 @@
         const g = games.length ? pick(games, off) : null;
         const a = deeds.length ? ((off === 0 && weekDeeds.length) ? wrap(weekDeeds, dayNum) : pick(deeds, off)) : null;
         const p = ponders.length ? ((off === 0 && weekPonders.length) ? wrap(weekPonders, dayNum) : pick(ponders, off)) : null;
-        return { r, g, a, p };
+        // Offset by a prime so Words doesn't march in lock-step with the others.
+        const w = phrases.length ? pick(phrases, off * 7) : null;
+        return { r, g, a, p, w };
       }
 
       function barFace(type, emoji, kicker, title, teaser, image, acc) {
@@ -453,20 +461,36 @@
         });
       }
 
+      function openWords(w) {
+        const grp = (window.PHRASE_GROUPS || {})[w.group] || {};
+        const m = methodById[w.trad] || {};
+        window.RecipeModal.openContent({
+          accent: ACC.words, image: 'assets/daily/words.jpg', kicker: 'Words for today', emoji: '\uD83D\uDCAC', title: w.moment,
+          bodyHTML:
+            (w.instead ? `<p class="rcm-h">Instead of</p><div class="rcm-prose"><p>&ldquo;${esc(w.instead)}&rdquo;</p></div>` : '') +
+            `<p class="rcm-h">Try</p><p class="rcm-quote">&ldquo;${esc(w.say)}&rdquo;</p>` +
+            `<p class="rcm-h">Why it works</p><div class="rcm-prose"><p>${esc(w.why)}</p></div>` +
+            (grp.label ? `<div class="rcm-tags"><span class="rcm-tag-pill">${esc(grp.label)}</span></div>` : '') +
+            (m.name ? `<a class="rcm-morelink" href="methodology.html?id=${w.trad}">From ${esc(m.name)} \u2192</a>` : ''),
+        });
+      }
+
       function render() {
-        const { r, g, a, p } = today();
+        const { r, g, a, p, w } = today();
         const grid = el('todayGrid');
         const bars = [];
         if (g) bars.push(barFace('play', '🎲', "Today's game", g.name, g.how, 'assets/daily/play.jpg', ACC.play));
         if (a) bars.push(barFace('do', '☀️', 'One little thing', a.name, a.body, 'assets/daily/do.jpg', ACC.do));
         if (p) bars.push(barFace('think', '💭', 'A thought', p.source, p.text, 'assets/daily/think.jpg', ACC.think));
         if (r) bars.push(barFace('cook', '🍳', 'Cook together', r.name, r.blurb, 'assets/recipes/' + r.id + '.jpg', ACC.cook));
+        if (w) bars.push(barFace('words', '\uD83D\uDCAC', 'Words for today', w.moment, '\u201C' + w.say + '\u201D', 'assets/daily/words.jpg', ACC.words));
         grid.innerHTML = bars.join('');
         const wire = (sel, fn) => { const b = grid.querySelector(sel); if (b) b.addEventListener('click', fn); };
         if (g) wire('[data-c="play"]', () => openPlay(g));
         if (a) wire('[data-c="do"]', () => openDo(a));
         if (p) wire('[data-c="think"]', () => openThink(p));
         if (r) wire('[data-c="cook"]', () => window.RecipeModal.open(r.id));
+        if (w) wire('[data-c="words"]', () => openWords(w));
       }
 
       render();
