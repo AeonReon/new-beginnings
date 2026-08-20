@@ -14685,23 +14685,22 @@ window.METHODS = [
     "id": "school-of-light",
     "name": "The School of Light",
     "tagline": "Parents raising their own children, together, with the best of every method",
-    "era": "North Coast, Northern Ireland · Being built now",
+    "era": "First principles · Northern Ireland",
     "color": "#F0C557",
     "colorDeep": "#C6871B",
     "colorSoft": "#FBF3DA",
     "icon": "compass",
     "built": true,
-    "noStages": true,
     "image": "assets/tiles/school-of-light.png",
     "website": {
       "url": "https://school-of-light-seven.vercel.app/",
       "label": "This one is real, and it is open",
       "line": "Days out are running now on the North Coast, and a permanent place is in preparation. Ask for an invitation to the next one."
     },
-    "blurb": "The only approach in this list that is not a hundred years old, because we are building it. It takes the best of every tradition here, keeps the parent in the room, and is designed for the world children are actually moving into.",
+    "blurb": "An approach built on first principles rather than inherited from a founder: the parent stays, the child explores widely, and the best of every other tradition here is taken on merit. There is a community running it on the North Coast, and you will find it on the map.",
     "grab": {
       "hook": "Raise them yourself. Just not on your own.",
-      "summary": "Every other approach in this app was built by somebody else, somewhere else, a long time ago. This one is being built here, now, on the North Coast — and the difference that matters most is that the parent stays. Children play, build and learn in a group; their parents work in the next room and are twenty steps away all day. It takes what holds up from Montessori, Waldorf, forest school and the classical tradition, adds the tools that actually exist now, and drops the rest.",
+      "summary": "Every other approach in this list was worked out somewhere else, a long time ago, and arrived here finished. This one is being worked out from first principles — and the difference that matters most is that the parent stays. Children play, build and learn in a group; their parents work in the next room and are twenty steps away all day. It takes what holds up from Montessori, Waldorf, forest school and the classical tradition, adds the tools that actually exist now, and drops the rest. There is a community practising it on the North Coast.",
       "deck": "Twelve principles. Every one of them has to survive the question: why are we actually doing this?",
       "bullets": [
         {
@@ -14760,6 +14759,172 @@ window.METHODS = [
         "So The School of Light is two things. A group of families who go out together every week — parks, beaches, forests, farms, a coach hired between us to somewhere further — which is running now. And a permanent place in preparation on the North Coast: a barn set up as an indoor park, a garden, a quiet house, rooms for real work, and a proper work zone for parents, open eight in the morning until eight at night, seven days a week.",
         "Children three to eight, with their brothers and sisters. In school, home-educated, or somewhere in between — all three are welcome and the mix is deliberate. The parent comes too. That part does not vary, because it is the whole idea."
       ]
+    },
+    "ours": true,
+    "sections": {
+      "day-in-life": {
+        "title": "A day in the life",
+        "icon": "sun",
+        "intro": "There is no bell, and there is no timetable on the wall. A day here is shaped by the weather, by what the children have energy for, and by what is worth going to see.\n\nA good share of the week is spent out. That is deliberate rather than a treat: a child cannot know what they love until they have had a taste of enough things. Most of us have never explored the corners of our own country, never mind tried enough different activities to know which one lights us up. So we go — different towns, different landscapes, different hobbies, different kinds of place — and we watch what each child returns to.\n\nBetween the bigger trips you build a repertoire of local places you can reach on an ordinary Tuesday. The soft play that is actually good. The rock pools that are best at low tide. The park with the climbing frame that is genuinely hard. The nature walk with the river. Knowing thirty of those changes what a wet Wednesday can be.\n\nOutdoors wins whenever the weather allows it, and here that is a real qualifier — dark winters, wind, and rain that comes sideways. On the days it is too cold or too rough to be out safely, the building takes over. At this age the body leads: climbing something difficult, testing a limit, negotiating with another child. That is not the break between the learning. It is most of the learning.\n\nAnd the rest of it happens in conversation. A child who spends their days around thoughtful adults will outpace a child who does worksheets in a room full of noise, without anybody sitting them down. Socrates taught by talking, and nothing since has beaten it. What the adults talk about becomes what the children think about — so if the grown-ups in the room are discussing the television and who annoyed them, that is the inheritance. If they are discussing ideas and things worth building, that is the inheritance instead. It is the quiet reason we are careful about who is in the room.",
+        "timeline": [
+          {
+            "time": "8:00",
+            "icon": "🚪",
+            "title": "Doors open",
+            "body": "Families arrive when their own morning allows. Some are in at eight with a flask; some arrive at two. Both are normal, and neither is late."
+          },
+          {
+            "time": "8:30",
+            "icon": "🤸",
+            "title": "Bodies first",
+            "highlight": true,
+            "body": "Straight into the indoor park — swings, slides, climbing frames, the high one. Under eight a child thinks with their body before anything else, so we let them, first and for as long as they need. Nothing is scheduled against it."
+          },
+          {
+            "time": "10:00",
+            "icon": "🌳",
+            "title": "Out, if the weather allows",
+            "body": "The garden, or a local place from the list — the woods, the shore, a park worth the drive. On a good day this is where most of the morning goes. On a wild one, it does not happen and nobody pretends otherwise."
+          },
+          {
+            "time": "11:00",
+            "icon": "🔧",
+            "title": "The group task",
+            "body": "A small team, a real problem, no instructions. They ask each other, ask an adult, ask an AI. What matters is that the thing works at the end."
+          },
+          {
+            "time": "12:30",
+            "icon": "🍽️",
+            "title": "One table",
+            "body": "Everyone eats together and the children help make it. Chopping, stirring, laying out, clearing away. Real food, made where they can watch it being made."
+          },
+          {
+            "time": "13:30",
+            "icon": "😴",
+            "title": "Quiet — when they want it, not when the clock says",
+            "body": "Books on a beanbag, the costume box, the projector, or a proper sleep. A child who is tired rests. A child who is hungry eats. A child who needs the bathroom goes. Learning to read your own signals is a skill most systems quietly train out of people, and we would rather leave it in."
+          },
+          {
+            "time": "14:30",
+            "icon": "🥁",
+            "title": "A session",
+            "body": "Drums, art, cooking, building, stories. Sometimes a specialist we bring in. Sometimes a parent who is good at something and wants to share it."
+          },
+          {
+            "time": "16:00",
+            "icon": "🧹",
+            "title": "Jobs, and the shop",
+            "body": "The animals, the tidy-up, the food room. Paid in tokens that buy real things. The building is theirs, and a place that magically repairs itself overnight teaches a child nothing about what it costs to keep."
+          },
+          {
+            "time": "17:00",
+            "icon": "🧩",
+            "title": "Free flow",
+            "body": "Play zone, chill zone, the library, the shop, back outside. Children move on their own energy and the adults follow rather than herd."
+          },
+          {
+            "time": "20:00",
+            "icon": "🌙",
+            "title": "Doors close",
+            "body": "Stay for three hours or eleven. Three long days and four days at home. Two mornings a week. Whatever actually fits your family."
+          }
+        ]
+      },
+      "set-up-the-space": {
+        "title": "Set up the space",
+        "icon": "shelf",
+        "intro": "The ideal is a big barn: high ceilings, windows on every side, air that moves, and more than one level so children can be above and below each other.\n\nAlmost nobody starts there, and it does not matter. The principles scale all the way down to a single room. What follows is the full version, then what to keep when you have less — because the order you keep things in is the real lesson.",
+        "scales": [
+          {
+            "name": "One room",
+            "span": "A front room, a hall, a spare unit",
+            "body": "Keep three zones even if they are only corners: something to climb on, somewhere soft and quiet with books, and a low table with real tools and a bowl of water. Everything else is a nice-to-have. Children will make the rest up if those three exist."
+          },
+          {
+            "name": "A hall or a small unit",
+            "span": "The realistic middle",
+            "body": "Now you can separate loud from quiet properly. A climbing frame and mats at one end, a library and cushions at the other, a table in the middle for making, and a sink you can actually use. Add a corner with a plug and a desk so a parent can take a call without leaving."
+          },
+          {
+            "name": "The barn",
+            "span": "The full version",
+            "body": "An outdoor park brought indoors along one whole side — swings, slides, frames, ropes. Two levels. Montessori work benches and a real kitchen along another. A library worth sitting in. A shop. A quiet room. Work pods for the adults, or a caravan outside if the building cannot spare the corner. Several things happening at once, and children choosing between them."
+          }
+        ],
+        "elements": [
+          {
+            "t": "Light, height and moving air",
+            "d": "Big windows on more than one side, ceilings you can throw a ball at, and air that does not go stale by two o'clock. Children behave differently in a bright, high room and everybody notices it within an hour."
+          },
+          {
+            "t": "A park indoors",
+            "d": "Swings, slides, climbing frames, ropes, mats. Not a corner with a soft mat — a real one, taking up a real share of the floor, so that a wild wet day still has somewhere for the energy to go."
+          },
+          {
+            "t": "More than one level",
+            "d": "A mezzanine, a platform, a den built up on legs. Being above the room, or under it, matters more to a child than any piece of equipment you could buy."
+          },
+          {
+            "t": "A real sink and a low kitchen",
+            "d": "Montessori got this right. Water, a tap they can reach, blunt-but-real knives, a chopping board, a cloth to wipe up what they spill. Preparing food is the most useful work a young child can do and they know it is real."
+          },
+          {
+            "t": "A library worth sitting in",
+            "d": "High-quality books at every level in the room — picture books they can read alone, longer ones for an adult to read aloud, and a few that are frankly for the grown-ups. Faced outward where you can, so the covers do the inviting."
+          },
+          {
+            "t": "A chill zone",
+            "d": "Low light, cushions, blankets, a projector on the wall. Somewhere to go when the noise has been enough, without having to ask permission or explain."
+          },
+          {
+            "t": "The shop",
+            "d": "A counter, a till, real change, and a stock of things that can actually be bought with tokens earned from real jobs. It runs value-for-value on repeat without anybody teaching a lesson about it."
+          },
+          {
+            "t": "A costume box",
+            "d": "The cheapest thing in the building and often the busiest. Being somebody else for an afternoon is how a lot of thinking gets done at this age."
+          },
+          {
+            "t": "Somewhere for the adults to work",
+            "d": "Pods, a screened corner, a mezzanine desk, or a caravan in the yard. Good light, a plug, a decent signal, and a door you can shut for a call. If the parents cannot work, the parents cannot stay — and the whole design falls over."
+          },
+          {
+            "t": "Several things going at once",
+            "d": "One adult reading stories, another making something, another simply present. A child should be able to see three options from where they are standing and pick the one that matches their energy right now."
+          }
+        ],
+        "think": [
+          {
+            "t": "Loud and quiet in the same building",
+            "d": "This is the hardest problem and it is worth solving first. Distance, a solid wall, soft materials, or different levels. Get it wrong and the quiet room never gets used."
+          },
+          {
+            "t": "What the adults can see",
+            "d": "Open sightlines across the main space, so an adult can look up and find any child. Dens and hiding places are good; rooms only one adult can see into are not."
+          },
+          {
+            "t": "Wet coats and cold hands",
+            "d": "You are in Northern Ireland. Somewhere to dry twenty coats and forty boots is not a detail — it is the difference between going out most days and going out rarely."
+          },
+          {
+            "t": "Floors and falls",
+            "d": "If you are building height, budget for what is underneath it before you buy the frame. This is the one place not to economise."
+          },
+          {
+            "t": "What you keep when the money runs out",
+            "d": "Climbing, then books, then water and a table. In that order. Everything else can wait for next year."
+          }
+        ],
+        "avoid": [
+          "Rows of desks facing one direction",
+          "A bank of glowing tablets used to keep children quiet",
+          "A timetable on the wall that runs the day instead of the children",
+          "Character-branded plastic everywhere — it dates fast and it teaches nothing",
+          "Sweets, fizzy drinks and a tuck shop",
+          "Rooms that only one adult can see into"
+        ],
+        "note": "All of this is resource permitting, and saying so is not a get-out. If one room is what you have, one room is what you use — and a well-run room beats a badly-run barn every day of the week."
+      }
     }
   }
 ];

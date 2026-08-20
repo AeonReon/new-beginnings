@@ -247,8 +247,8 @@
       return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib);
     });
     grid.innerHTML = orderedMethods.map(m => `
-      <a href="methodology.html?id=${m.id}" class="tile${m.image ? ' has-photo' : ''}" style="--c:${m.color};--cd:${m.colorDeep};--cs:${m.colorSoft};">
-        ${m.built ? '' : '<span class="tile-badge">Preview</span>'}
+      <a href="methodology.html?id=${m.id}" class="tile${m.image ? ' has-photo' : ''}${m.ours ? ' tile-premium' : ''}" style="--c:${m.color};--cd:${m.colorDeep};--cs:${m.colorSoft};">
+        ${m.ours ? '<span class="tile-badge tile-badge-premium"><span class="tbp-mark">✦</span>Ours</span>' : (m.built ? '' : '<span class="tile-badge">Preview</span>')}
         ${m.image
           ? `<div class="tile-photo"><img src="${m.image}" alt="${m.name}" loading="lazy"><div class="tile-icon-wrap"><svg viewBox="0 0 64 64" class="tile-icon">${ICONS[m.icon] || ICONS.compass}</svg></div></div>`
           : `<div class="tile-icon-wrap"><svg viewBox="0 0 64 64" class="tile-icon">${ICONS[m.icon] || ICONS.compass}</svg></div>`}
@@ -260,19 +260,6 @@
       </a>
     `).join('');
 
-    // The School of Light — shown last. Ours, and the only one on this page that is a real
-    // place you can join. Opens its own philosophy page, which links out to the website.
-    grid.insertAdjacentHTML('beforeend', `
-      <a href="methodology.html?id=school-of-light" class="tile has-photo tile-premium" aria-label="The School of Light — read the philosophy" style="--c:#F0C557;--cd:#C6871B;--cs:#FBF3DA;">
-        <span class="tile-badge tile-badge-premium"><span class="tbp-mark">✦</span>Ours, being built</span>
-        <div class="tile-photo"><img src="assets/tiles/school-of-light.png" alt="The School of Light" loading="lazy"><div class="tile-icon-wrap"><svg viewBox="0 0 64 64" class="tile-icon">${ICONS.compass}</svg></div></div>
-        <div class="tile-body">
-          <div class="tile-name">The School of Light</div>
-          <div class="tile-tagline">First principles · open to the best way · observable reality</div>
-          <div class="tile-era">A real place on the North Coast · days out running now</div>
-        </div>
-      </a>
-    `);
   </script>
 
   <script src="assets/schools-data.js"></script>
