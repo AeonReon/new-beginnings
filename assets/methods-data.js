@@ -14681,6 +14681,87 @@ window.METHODS = [
       }
     }
   },
+  {
+    "id": "school-of-light",
+    "name": "The School of Light",
+    "tagline": "Parents raising their own children, together, with the best of every method",
+    "era": "North Coast, Northern Ireland · Being built now",
+    "color": "#F0C557",
+    "colorDeep": "#C6871B",
+    "colorSoft": "#FBF3DA",
+    "icon": "compass",
+    "built": true,
+    "noStages": true,
+    "image": "assets/tiles/school-of-light.png",
+    "website": {
+      "url": "https://school-of-light-seven.vercel.app/",
+      "label": "This one is real, and it is open",
+      "line": "Days out are running now on the North Coast, and a permanent place is in preparation. Ask for an invitation to the next one."
+    },
+    "blurb": "The only approach in this list that is not a hundred years old, because we are building it. It takes the best of every tradition here, keeps the parent in the room, and is designed for the world children are actually moving into.",
+    "grab": {
+      "hook": "Raise them yourself. Just not on your own.",
+      "summary": "Every other approach in this app was built by somebody else, somewhere else, a long time ago. This one is being built here, now, on the North Coast — and the difference that matters most is that the parent stays. Children play, build and learn in a group; their parents work in the next room and are twenty steps away all day. It takes what holds up from Montessori, Waldorf, forest school and the classical tradition, adds the tools that actually exist now, and drops the rest.",
+      "deck": "Twelve principles. Every one of them has to survive the question: why are we actually doing this?",
+      "bullets": [
+        {
+          "t": "Nobody has more at stake than you",
+          "d": "No teacher, no assistant and no institution has more interest in how your children turn out than you do, however good and however well-meaning they are. Responsibility for raising a child sits with the parent and cannot honestly be handed over — only neglected. So we do not take children off their parents' hands. We build the conditions in which a parent can carry the responsibility they already have."
+        },
+        {
+          "t": "Provide and be present at the same time",
+          "d": "The old trade — leave, earn, come home at six — was accepted because there was no alternative. There is one now for a great many people, because a very large number of parents work from a laptop at least part of the time. A parent working three metres from their child, looking up through the day and being found, is living a completely different life from one working thirty miles away with an hour at bedtime. This is not about working less. It is about not missing their childhood while you do it."
+        },
+        {
+          "t": "Find what lights them up, then push hard in that direction",
+          "d": "We do not begin with a predetermined outcome for a child. We begin by finding out who they already are. That takes exposure and room — a well-set-up environment, a lot of different days out, tools, animals, instruments, problems and people. You watch what they return to when nobody is directing them. And once you find it, you do not leave it at 'that's nice' — you put the resources, the facilities and the network behind it, so they build a life on a real strength rather than being averagely capable at subjects somebody else chose."
+        },
+        {
+          "t": "A calm room is the curriculum",
+          "d": "Emotional chaos does more damage to a developing child than almost anything else. A child who does not feel safe is not learning, whatever the timetable says. So the room is built for steadiness first: natural materials, real food only, and adults who are excited about life but calm in temperament. Excitement and volatility are not the same thing, and children can tell the difference immediately."
+        },
+        {
+          "t": "Never alone with an adult who is not their family",
+          "d": "A child here is never alone with an adult who is not their own family. There are always several facilitators and several parents in the room. This is architecture rather than a policy line — people behave differently when other adults can see them, and a group that is permanently visible to itself keeps its own standards without anybody having to police it. It protects the children, and it protects the adults from suspicion too."
+        },
+        {
+          "t": "Be the person you want them to become",
+          "d": "Children learn from what adults do, not what adults say. At three to eight they copy almost everything — tone, temper, posture, how you treat a stranger, what you reach for when you are tired. So the parent's own state is part of the curriculum whether we like it or not. A mother aims to be the woman she wants her daughter to become; a father aims to be the man he wants his son to become. And further: a mother is raising the sort of man other women will one day hope to find. This is not a demand for perfection. It is a standing commitment to improve, in public, alongside other people doing the same."
+        },
+        {
+          "t": "Children are useful now",
+          "d": "A child is not an apprentice person waiting until twenty-five to start participating. The moment they can do a real thing, they do it — gather logs, collect eggs, feed an animal, order something at the shop, chop, lay the table, tidy, help clean the car, look after the building they use. This is not chores as discipline. It is the difference between belonging somewhere and being hosted there. If the room magically repairs itself every night, a child never learns what it costs to put things back in order. Ownership scales outward: your space, your family, your town, your country."
+        },
+        {
+          "t": "Get out and live",
+          "d": "The days out are not a warm-up for the real thing — they are a statement about how a life should be used. Not finishing at five and watching television until bed. Using the whole of it to learn, make, explore, meet people and contribute, whatever your resources happen to be. Somebody with very little and somebody with a great deal can both live this way; it is a decision rather than a budget. Children raised around people who live like that never need to be told to be ambitious about life."
+        },
+        {
+          "t": "The good, the true and the beautiful",
+          "d": "We hold that beauty is not purely a matter of taste, that some ways of living lead to flourishing and others lead somewhere dark, and that working out which is which is one of the real jobs of a life. So we are openly looking for the optimal way to live, through first principles and observable reality rather than inherited assumption — willing to change our minds when what we observe says we should, and unwilling to pretend everything is equally good when it plainly is not."
+        },
+        {
+          "t": "Joy is a design requirement",
+          "d": "Higher-mindedness is meant to be enjoyable. Some of it is hard, and children should meet challenges and push through them, because that is where confidence comes from. But if the whole package is boring and miserable over the long run then it is not working, and we change it rather than demanding more discipline. Getting a child to a high standard in a place they cannot wait to arrive at is a far greater accomplishment than getting them there through dread. Children should cry when they leave, not when they arrive."
+        },
+        {
+          "t": "Take the best of every method",
+          "d": "When the UFC began, nobody actually knew whether boxing beat wrestling or karate beat jiu-jitsu. Everyone had a tradition and a lot of confidence. So they tested it, and what came out was a new discipline built from whatever survived. Education has never had that — each method sits in its own building, sincerely certain, rarely tested against the others. We do the mixed version on purpose: Montessori practical life and real tools, Waldorf rhythm and materials, forest-school hours outdoors, the classical tradition's focus on character, AI-led academics on e-ink screens for a couple of hours a day, and the things schools mostly skip — business, money, philosophy, how to make something and sell it."
+        },
+        {
+          "t": "One direction",
+          "d": "A magnet works because every particle inside it faces the same way. Scatter the alignment and it is a lump of metal. A group of families is the same. A shared, examined, consistent worldview is not a nice extra — it is the entire source of the strength. It is why the culture matters more than the building, why the application asks real questions, and why we would rather be a small group that agrees on what matters than a large one that does not."
+        }
+      ],
+      "story": [
+        "Raising good children is the most important work in a life, and almost everybody delegates it. Not out of laziness — out of arrangement. The school day was built around a working day that mostly no longer exists, so a parent hands their child over for the best hours of the day, to people they have not chosen and often never meet, and gets the tired end of them back.",
+        "Three things follow from that, and all three matter. The parent stops being the main influence, because school and the peer group become more present in the child's life than their mother and father — and the parents are quietly demoted to the people who pay, drive and feed. Protection is handed over with the day, because a parent filters what reaches their child: the food, the language, the ideas, the tone, the people. And the family unit weakens over a lifetime, because families that spend the formative years apart do not suddenly become close at eighteen.",
+        "The correction is not that everybody should home-educate. Plenty of families do that well, but the picture most people have of it stops them — one child at a kitchen table with nobody their own age, and one parent trying to be teacher, cook and entertainment for eleven hours a day. That picture is not entirely unfair, and it is exactly the part we are built to fix.",
+        "So The School of Light is two things. A group of families who go out together every week — parks, beaches, forests, farms, a coach hired between us to somewhere further — which is running now. And a permanent place in preparation on the North Coast: a barn set up as an indoor park, a garden, a quiet house, rooms for real work, and a proper work zone for parents, open eight in the morning until eight at night, seven days a week.",
+        "Children three to eight, with their brothers and sisters. In school, home-educated, or somewhere in between — all three are welcome and the mix is deliberate. The parent comes too. That part does not vary, because it is the whole idea."
+      ]
+    }
+  }
 ];
 
 window.METHOD_BY_ID = (id) => window.METHODS.find(m => m.id === id);
