@@ -15,7 +15,8 @@
        Cream-cool paper, navy ink, ONE blue accent, Fraunces display serif.
        Imagery + pull-quotes + whitespace do the work, not colour blocks.
        ════════════════════════════════════════════════════════════ */
-    #root { --acc: #2D6FA8; --acc-bright: #4FA4D2; --acc-soft: #EAF3FB; --warm: #C77A22; --display: var(--serif); }
+    #root { --acc: #2D6FA8; --acc-bright: #4FA4D2; --acc-soft: #EAF3FB; --warm: #C77A22; --display: var(--serif);
+             --go: #1B7A4A; --warn: #C0392B; --spring: cubic-bezier(0.34, 1.56, 0.64, 1); }
 
     /* Reading column — single, calm, ~680px */
     #root .ed-article { max-width: 680px; margin: 0 auto; padding-bottom: 2em; }
@@ -494,60 +495,95 @@
     #root .bih-note p { margin: 0; font-size: 1.03rem; line-height: 1.66; color: var(--ink-soft); }
 
 
-    /* ── Set up the space / Running the day / Your part ─────────────────── */
-    #root .su-cross { font-family: var(--sans); font-weight: 800; font-size: 0.66rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-mute); margin: 2.6em 0 0.9em; padding-bottom: 0.5em; border-bottom: 1px solid var(--rule); }
-    #root .su-cards { display: grid; gap: 0.75em; }
+    /* ── Set up the space / Running the day / Your part ───────────────────
+       These three pages are long. Rendered as one column of white cards behind
+       one faint blue outline they blurred into a single block — the content was
+       fine, the eye had nothing to hold onto. So every crosshead is now its own
+       tinted BAND carrying its own accent + emoji (PRINCIPLE_ACCENTS, set inline
+       as --sc / --scd / --scs), and the long lists inside became tap-to-open
+       drop-down bars borrowed wholesale from the activities page (.act-topic /
+       .act-bar). Colour variety comes from the SECTION BLOCK, never from the
+       tradition — every tradition still wears the one site blue.
+       ──────────────────────────────────────────────────────────────────── */
+    #root .su-band { position: relative; margin: 1.6em 0 0; padding: 1.15em 1.1em 1.35em; border-radius: 22px; background: var(--scs, var(--acc-soft)); }
+    #root .su-band::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.6px; background: linear-gradient(135deg, var(--sc), var(--scd)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; opacity: 0.38; }
+    #root .su-band-h { display: flex; align-items: center; gap: 0.65em; margin: 0 0 0.85em; }
+    #root .su-band-emo { flex: 0 0 auto; width: 2.15em; height: 2.15em; border-radius: 999px; background: linear-gradient(150deg, var(--sc), var(--scd)); display: grid; place-items: center; font-size: 1.05rem; line-height: 1; box-shadow: 0 3px 9px color-mix(in srgb, var(--sc) 34%, transparent); }
+    #root .su-band-t { flex: 1; min-width: 0; font-family: var(--display); font-weight: 800; font-size: clamp(1.16rem, 4.9vw, 1.38rem); line-height: 1.14; letter-spacing: -0.02em; color: var(--scd); }
+    #root .su-band-n { flex: 0 0 auto; font-family: var(--sans); font-weight: 800; font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--scd); background: color-mix(in srgb, var(--sc) 13%, #fff); border: 1.5px solid color-mix(in srgb, var(--sc) 26%, transparent); border-radius: 999px; padding: 0.36em 0.7em; white-space: nowrap; }
+    #root .su-band-lead { font-size: 0.99rem; line-height: 1.55; color: var(--ink-soft); margin: -0.35em 0.15em 0.9em; }
+    #root .su-band .act-topics { gap: 0.6em; }
+    #root .su-band .act-bar-photo { width: 74px; }
+    #root .su-band .act-topic { transition: box-shadow 0.24s var(--spring), transform 0.24s var(--spring); }
+    #root .su-band .act-topic[open] { box-shadow: var(--shadow-md); }
+    #root .su-band .act-bar:active { transform: scale(0.985); }
+    #root .act-topic-body .su-d { font-family: var(--sans); font-size: 1.02rem; line-height: 1.62; color: var(--ink-soft); margin: 0.55em 0.05em 0.4em; }
+    #root .su-prose { background: #fff; border-radius: 16px; padding: 0.35em 1.1em 0.5em; box-shadow: var(--shadow-sm); }
+    #root .su-prose p { font-size: 1.02rem; line-height: 1.66; color: var(--ink-soft); }
+    #root .su-prose .lead { font-weight: 700; color: var(--ink); }
+    /* white tiles — gradient outline, accent varies per tile via --sc/--scd */
+    #root .su-cards { display: grid; gap: 0.65em; }
     #root .su-card { position: relative; background: #fff; border-radius: 16px; padding: 1.05em 1.15em 1.1em; box-shadow: var(--shadow-sm); }
-    #root .su-card::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.5px; background: linear-gradient(135deg, var(--sc, var(--acc-bright)), var(--scd, var(--acc))); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; opacity: 0.5; }
+    #root .su-card::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.5px; background: linear-gradient(135deg, var(--sc, var(--acc-bright)), var(--scd, var(--acc))); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; opacity: 0.55; }
     #root .su-card-head { display: flex; align-items: baseline; gap: 0.6em; margin-bottom: 0.28em; }
     #root .su-card-t { font-family: var(--display); font-weight: 800; font-size: 1.13rem; line-height: 1.2; letter-spacing: -0.01em; color: var(--ink); }
-    #root .su-card-span { flex: 0 0 auto; margin-left: auto; font-family: var(--sans); font-weight: 800; font-size: 0.58rem; letter-spacing: 0.09em; text-transform: uppercase; color: var(--ink-mute); background: var(--rule-soft); border-radius: 999px; padding: 0.32em 0.62em; white-space: nowrap; }
+    #root .su-card-span { flex: 0 0 auto; margin-left: auto; font-family: var(--sans); font-weight: 800; font-size: 0.58rem; letter-spacing: 0.09em; text-transform: uppercase; color: var(--scd, var(--ink-mute)); background: color-mix(in srgb, var(--sc, var(--acc)) 12%, #fff); border-radius: 999px; padding: 0.32em 0.62em; white-space: nowrap; }
     #root .su-card-d { font-size: 1.01rem; line-height: 1.6; color: var(--ink-soft); }
-    /* numbered rows (room elements, the daily rhythm) */
+    /* numbered rows — kept for short lists that stay open */
     #root .su-rows { counter-reset: su; display: grid; gap: 0.2em; }
     #root .su-row { display: flex; gap: 0.9em; padding: 1em 0.2em; border-bottom: 1px solid var(--rule); }
     #root .su-row:last-child { border-bottom: 0; }
-    #root .su-no { counter-increment: su; flex: 0 0 auto; width: 1.95em; height: 1.95em; border-radius: 999px; background: var(--acc-soft); color: var(--acc); font-family: var(--display); font-weight: 800; font-size: 0.98rem; display: grid; place-items: center; }
+    #root .su-no { counter-increment: su; flex: 0 0 auto; width: 1.95em; height: 1.95em; border-radius: 999px; background: color-mix(in srgb, var(--sc, var(--acc)) 13%, #fff); color: var(--scd, var(--acc)); font-family: var(--display); font-weight: 800; font-size: 0.98rem; display: grid; place-items: center; }
     #root .su-no::before { content: counter(su); }
     #root .su-row-t { display: block; font-family: var(--sans); font-weight: 800; font-size: 1.08rem; line-height: 1.28; color: var(--ink); margin-bottom: 0.12em; }
     #root .su-row-d { font-size: 1.01rem; line-height: 1.58; color: var(--ink-soft); }
-    /* the tickable shopping list */
-    #root .su-shop { display: grid; gap: 0.55em; }
-    #root .su-item { position: relative; display: flex; gap: 0.8em; align-items: flex-start; background: #fff; border-radius: 14px; padding: 0.9em 1em; box-shadow: var(--shadow-sm); cursor: pointer; }
-    #root .su-item.is-got { opacity: 0.55; }
+    /* the tickable shopping list — now grouped inside drop-downs, one per aisle */
+    #root .su-shop { display: grid; gap: 0.55em; padding: 0.5em 0 0.3em; }
+    #root .su-item { position: relative; display: flex; gap: 0.8em; align-items: flex-start; background: #fff; border-radius: 14px; padding: 0.9em 1em; box-shadow: var(--shadow-sm); cursor: pointer; transition: transform 0.2s var(--spring), opacity 0.2s ease; }
+    #root .su-item:active { transform: scale(0.985); }
+    #root .su-item.is-got { opacity: 0.5; }
     #root .su-item.is-got .su-item-n { text-decoration: line-through; }
-    #root .su-tick { flex: 0 0 auto; width: 26px; height: 26px; margin-top: 0.1em; border-radius: 8px; border: 2px solid var(--acc-soft); background: #fff; display: grid; place-items: center; color: #fff; font-weight: 900; font-size: 0.85rem; }
-    #root .su-item.is-got .su-tick { background: var(--acc); border-color: var(--acc); }
+    #root .su-tick { flex: 0 0 auto; width: 26px; height: 26px; margin-top: 0.1em; border-radius: 8px; border: 2px solid color-mix(in srgb, var(--gc, var(--acc)) 30%, #fff); background: #fff; display: grid; place-items: center; color: #fff; font-weight: 900; font-size: 0.85rem; transition: background 0.2s var(--spring), border-color 0.2s var(--spring); }
+    #root .su-item.is-got .su-tick { background: var(--gc, var(--acc)); border-color: var(--gc, var(--acc)); }
     #root .su-item-n { display: block; font-family: var(--sans); font-weight: 800; font-size: 1.05rem; line-height: 1.3; color: var(--ink); margin-bottom: 0.1em; }
     #root .su-item-tag { font-size: 0.97rem; line-height: 1.5; color: var(--ink-soft); }
-    #root .su-item-where { display: inline-block; margin-top: 0.5em; font-family: var(--sans); font-weight: 700; font-size: 0.8rem; text-decoration: none; color: var(--acc); }
-    #root .su-shop-count { font-size: 0.86rem; color: var(--ink-mute); margin: 0.2em 0.2em 0.9em; }
-    /* leave-it-out / red-flag list */
+    #root .su-item-where { display: inline-block; margin-top: 0.5em; font-family: var(--sans); font-weight: 700; font-size: 0.8rem; text-decoration: none; color: var(--gcd, var(--acc)); }
+    #root .su-shop-count { font-size: 0.92rem; line-height: 1.5; color: var(--ink-soft); margin: -0.3em 0.15em 0.85em; }
+    /* "x of y got" pill, live-counted on the group's own bar */
+    #root .su-kit-count { flex: 0 0 auto; align-self: center; margin-right: 0.7em; font-family: var(--sans); font-weight: 800; font-size: 0.6rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gcd); background: color-mix(in srgb, var(--gc) 12%, #fff); border: 1.5px solid color-mix(in srgb, var(--gc) 26%, transparent); border-radius: 999px; padding: 0.36em 0.62em; white-space: nowrap; transition: background 0.24s var(--spring); }
+    #root .su-shopgroup.is-done .su-kit-count { background: var(--gc); border-color: var(--gc); color: #fff; }
+    /* leave-it-out / red-flag list — white cards so they sit on any tinted band */
     #root .su-nope { display: grid; gap: 0.5em; margin: 0; padding: 0; list-style: none; }
-    #root .su-nope li { display: flex; gap: 0.7em; align-items: flex-start; font-size: 1.01rem; line-height: 1.55; color: var(--ink-soft); background: #FDF2F2; border-radius: 13px; padding: 0.8em 1em; }
-    #root .su-nope li::before { content: "✕"; flex: 0 0 auto; font-weight: 900; color: #C0392B; }
+    #root .su-nope li { display: flex; gap: 0.7em; align-items: flex-start; font-size: 1.01rem; line-height: 1.55; color: var(--ink-soft); background: #fff; border-radius: 13px; padding: 0.85em 1em; box-shadow: var(--shadow-sm); }
+    #root .su-nope li::before { content: "✕"; flex: 0 0 auto; font-weight: 900; color: var(--warn); }
     /* do / don't pair */
-    #root .su-pair { display: grid; gap: 0.8em; }
+    #root .su-pair { display: grid; gap: 0.7em; }
     @media (min-width: 620px) { #root .su-pair { grid-template-columns: 1fr 1fr; } }
     #root .su-pane { background: #fff; border-radius: 16px; padding: 1.05em 1.15em 1.15em; box-shadow: var(--shadow-sm); }
     #root .su-pane-h { font-family: var(--sans); font-weight: 800; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 0.6em; }
-    #root .su-pane.is-do .su-pane-h { color: #1B7A4A; }
-    #root .su-pane.is-dont .su-pane-h { color: #C0392B; }
+    #root .su-pane.is-do .su-pane-h { color: var(--go); }
+    #root .su-pane.is-dont .su-pane-h { color: var(--warn); }
     #root .su-pane ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 0.55em; }
     #root .su-pane li { display: flex; gap: 0.6em; align-items: flex-start; font-size: 1rem; line-height: 1.52; color: var(--ink-soft); }
-    #root .su-pane.is-do li::before { content: "✓"; color: #1B7A4A; font-weight: 900; flex: 0 0 auto; }
-    #root .su-pane.is-dont li::before { content: "–"; color: #C0392B; font-weight: 900; flex: 0 0 auto; }
+    #root .su-pane.is-do li::before { content: "✓"; color: var(--go); font-weight: 900; flex: 0 0 auto; }
+    #root .su-pane.is-dont li::before { content: "–"; color: var(--warn); font-weight: 900; flex: 0 0 auto; }
     /* the big "how it works" model card */
     #root .su-model { position: relative; background: var(--acc-soft); border-radius: 18px; padding: 1.2em 1.3em 1.3em; margin: 1.6em 0 0; }
     #root .su-model-label { font-family: var(--sans); font-weight: 800; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--acc); margin-bottom: 0.35em; }
     #root .su-model-t { font-family: var(--display); font-weight: 800; font-size: 1.5rem; line-height: 1.15; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 0.4em; }
     #root .su-model p { margin: 0; font-size: 1.04rem; line-height: 1.66; color: var(--ink-soft); }
-    /* question-to-ask rows */
+    /* question-to-ask rows (now inside drop-downs) */
     #root .su-qa { display: grid; gap: 0.55em; }
     #root .su-q { background: #fff; border-radius: 14px; padding: 0.95em 1.05em; box-shadow: var(--shadow-sm); }
     #root .su-q-q { display: block; font-family: var(--display); font-weight: 700; font-size: 1.1rem; line-height: 1.3; color: var(--ink); margin-bottom: 0.25em; }
     #root .su-q-w { font-size: 0.98rem; line-height: 1.55; color: var(--ink-soft); }
-    #root .su-q-w b { color: var(--acc); font-weight: 800; }
+    #root .su-q-w b { color: var(--gcd, var(--acc)); font-weight: 800; }
+    @media (max-width: 430px) {
+      #root .su-band { padding: 1em 0.72em 1.15em; border-radius: 18px; }
+      #root .su-kit-count { font-size: 0.54rem; padding: 0.3em 0.45em; margin-right: 0.5em; }
+      #root .su-band .act-bar-photo { width: 62px; }
+      #root .su-band .act-topic-body { padding: 0.4em 0.8em 0.6em; }
+    }
 
     /* ── The story, moved below the options and made opt-in ── */
     #root .story { margin: 2.5em 0 0; background: #fff; border: 1px solid var(--rule); border-radius: 18px; box-shadow: var(--shadow-sm); overflow: hidden; }
@@ -680,6 +716,85 @@
       const groups = [];
       for (let i = 0; i < sents.length; i += per) groups.push(sents.slice(i, i + per).join('').trim());
       return groups.map((g, i) => i === 0 ? '<p>' + leadHtml(g) + '</p>' : '<p>' + hl(g) + '</p>').join('');
+    };
+
+    // ── Shared furniture for the three "how to actually run it" pages ──────
+    // (Set up the space / Running the day / Your part in it.) Those pages are
+    // long, and as one column of white cards they read as a single grey block.
+    // Two mechanics fix it, both lifted from the activities page: every
+    // crosshead becomes a tinted BAND with its own accent + emoji, and every
+    // long list becomes tap-to-open drop-down bars. Defined here — ABOVE the
+    // render calls — because a const-before-use once blanked this whole page.
+
+    // Bands: each one takes the next accent in PRINCIPLE_ACCENTS, so the eye
+    // gets a new colour every time it scrolls into a new part of the page.
+    const suBands = () => {
+      const list = [];
+      const add = (emo, title, inner, opts) => {
+        if (!inner) return '';
+        opts = opts || {};
+        const i = list.length;
+        const a = PRINCIPLE_ACCENTS[i % PRINCIPLE_ACCENTS.length];
+        const bid = 'su-b' + i;
+        list.push({ id: bid, emo: emo, short: opts.short || title, a: a });
+        return `<section class="su-band" id="${bid}" style="--sc:${a.c};--scd:${a.cd};--scs:${a.cs}">
+            <div class="su-band-h">
+              <span class="su-band-emo" aria-hidden="true">${emo}</span>
+              <span class="su-band-t">${title}</span>
+              ${opts.count ? `<span class="su-band-n">${opts.count}</span>` : ''}
+            </div>
+            ${opts.lead ? `<p class="su-band-lead">${opts.lead}</p>` : ''}
+            ${inner}
+          </section>`;
+      };
+      // Quick-nav chips — same component, and the existing .act-chip handler
+      // scrolls to the target for free.
+      const nav = () => list.length < 2 ? '' : `<div class="act-nav">${list.map(b => `
+          <button type="button" class="act-chip" data-target="${b.id}" style="--gc:${b.a.c};--gcd:${b.a.cd}">
+            <span class="act-chip-emo" aria-hidden="true">${b.emo}</span>
+            <span class="act-chip-lbl">${b.short}</span>
+          </button>`).join('')}</div>`;
+      // Which accent a band got — so tiles inside it can start from there.
+      const at = (i) => PRINCIPLE_ACCENTS[i % PRINCIPLE_ACCENTS.length];
+      return { add: add, nav: nav, at: at, count: () => list.length };
+    };
+
+    // A long list as drop-down bars. o.title/o.body are functions of the item;
+    // o.open says how many stay open by default (never ship a bare pane).
+    const suTopics = (list, o) => {
+      if (!list || !list.length) return '';
+      o = o || {};
+      const off = o.offset || 0;
+      const openN = o.open == null ? 2 : o.open;
+      const emos = o.emos && o.emos.length ? o.emos : ['🔹'];
+      return `<div class="act-topics">${list.map((x, i) => {
+        const a = PRINCIPLE_ACCENTS[(i + off) % PRINCIPLE_ACCENTS.length];
+        const kick = o.kicker ? o.kicker(x, i) : '';
+        return `<details class="act-topic${o.cls ? ' ' + o.cls : ''}"${i < openN ? ' open' : ''} style="--gc:${a.c};--gcd:${a.cd}">
+            <summary class="act-bar">
+              <span class="act-bar-photo act-bar-photo--emo"><span class="act-bar-emo" aria-hidden="true">${emos[i % emos.length]}</span></span>
+              <span class="act-bar-text">
+                ${kick ? `<span class="act-bar-kicker">${kick}</span>` : ''}
+                <span class="act-bar-name">${o.title(x, i)}</span>
+              </span>
+              ${o.pill ? o.pill(x, i) : ''}
+              <span class="act-bar-plus" aria-hidden="true"></span>
+            </summary>
+            <div class="act-topic-body">${o.body(x, i)}</div>
+          </details>`;
+      }).join('')}</div>`;
+    };
+
+    // White tiles inside a band — gradient outline, accent varying per tile.
+    const suCards = (list, off) => {
+      if (!list || !list.length) return '';
+      return `<div class="su-cards">${list.map((x, i) => {
+        const a = PRINCIPLE_ACCENTS[(i + (off || 0)) % PRINCIPLE_ACCENTS.length];
+        return `<div class="su-card" style="--sc:${a.c};--scd:${a.cd}">
+            <div class="su-card-head"><span class="su-card-t">${x.name || x.t}</span>${x.span ? `<span class="su-card-span">${x.span}</span>` : ''}</div>
+            <div class="su-card-d">${hl(x.body || x.d)}</div>
+          </div>`;
+      }).join('')}</div>`;
     };
 
     const id = new URLSearchParams(location.search).get('id') || 'charlotte-mason';
