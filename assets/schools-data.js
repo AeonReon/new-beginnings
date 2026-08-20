@@ -9,10 +9,17 @@ window.SCHOOL_CATS = {
   forest:     { label: 'Forest School',     color: '#1F8F5E', img: 'assets/tiles/forest-school.jpg' },
   outdoor:    { label: 'Outdoor & Nature',  color: '#2C8A6E', img: 'assets/tiles/wild-free.jpg' },
   reggio:     { label: 'Reggio-inspired',   color: '#7C3AED', img: 'assets/tiles/reggio.jpg' },
-  homeed:     { label: 'Home-Ed Network',   color: '#4FA4D2', img: 'assets/tiles/unschooling.jpg' }
+  homeed:     { label: 'Home-Ed Network',   color: '#4FA4D2', img: 'assets/tiles/unschooling.jpg' },
+  community:  { label: 'Family Community',  color: '#B4801A', img: 'assets/tiles/school-of-light.jpg' }
 };
 
 window.SCHOOLS = [
+  // ── Family community ──
+  // NOTE: the School of Light URL is a temporary Vercel address. When the real
+  // domain lands (school.thenationoflight.com was the candidate), change it in
+  // TWO places: here, and the tile in education.html.
+  { name: 'The School of Light', cat: 'community', town: 'Coleraine · North Coast', address: 'North Coast — days out across Coleraine, the Causeway Coast and beyond', phone: '', lat: 55.1326, lon: -6.6685, url: 'https://school-of-light-seven.vercel.app/', note: 'A North Coast community of families raising children for the world ahead, not the one that has gone. Weekly days out are running now — parks, beaches, forests, coach trips and workshops — for ages 2 to 8, with brothers and sisters a year either side. School families, home-educating families and everything between are welcome. Parents come along and stay responsible for their own children. A facility with indoor space, a garden and work rooms is in preparation.' },
+
   // ── Steiner / Waldorf ──
   { name: 'Holywood Steiner School', cat: 'steiner', town: 'Holywood', address: 'Croft Road, Holywood, Co Down, BT18 0PR', phone: '028 9042 8029', lat: 54.6386, lon: -5.8236, url: 'https://www.holywood-steiner.co.uk/', note: "Ireland's only Steiner-Waldorf school taking pupils preschool to GCSE (ages 3–17). Founded 1975." },
   { name: 'Puddleducks Playgroup (Steiner-Waldorf)', cat: 'steiner', town: 'Omagh', address: 'Omagh, Co Tyrone', phone: '', lat: 54.5980, lon: -7.3100, url: 'https://www.charitycommissionni.org.uk/', note: 'Steiner-Waldorf pre-school playgroup — calm, unhurried sessions, 8.30am–12pm weekdays.' },
