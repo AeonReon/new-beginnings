@@ -4641,6 +4641,414 @@ window.METHODS = [
           ]
     },
     sections: {
+      "set-up-the-space": {
+        "title": "Set up the space",
+        "icon": "shelf",
+        "intro": "A classical room is a study, not a nursery. It is quiet, it is plain, and the beautiful things in it are real rather than cartoon. You do not need a whole room to begin. You need a shelf of good books, a map on the wall, a table with a chair pulled up to it, and a basket you carry to wherever the family sits in the morning. That basket is the school. Everything else is decoration around it.",
+        "scales": [
+          {
+            "name": "A basket and one shelf",
+            "span": "Cost: under fifty pounds",
+            "body": "A lidless basket with this term's books in it, one low shelf beside the sofa or the kitchen table, and a map pinned at your child's eye height. You carry the basket to breakfast and take it away again. This is a complete classical setup and thousands of families run on nothing more."
+          },
+          {
+            "name": "A room set up as a study",
+            "span": "Cost: a few hundred pounds",
+            "body": "Now you can give it walls. A bookcase with the spines facing out, a plain table under a window, a timeline or memory board along one wall, one framed picture that changes each term, and a small speaker playing one composer. The room asks for a certain kind of behaviour the moment you walk in, and children read that instantly."
+          },
+          {
+            "name": "A co-op, academy or school",
+            "span": "Cost: fees, insurance and paperwork",
+            "body": "The usual shape is families meeting one or two days a week in a church hall or a community centre, with parents teaching the other days at home. Classical Conversations runs on exactly this pattern. A full classical school is a bigger thing again: a building, employed teachers, and in Northern Ireland registration with the Department of Education if you are teaching other people's school-age children full time. Phone them before you sign a lease."
+          }
+        ],
+        "elements": [
+          {
+            "t": "The morning basket",
+            "d": "One basket, holding only what you are using this term: the poem, the read-aloud, the picture, the song. It moves to wherever the family is. A basket works better than a shelf here because it can be brought to a warm sofa on a cold morning, and the morning that actually happens beats the one that was meant to."
+          },
+          {
+            "t": "Books with the spines showing, low down",
+            "d": "Real editions, on a shelf your four-year-old can reach without asking. A child who can pull a book down chooses books. A child who has to ask waits to be given one, and mostly stops asking."
+          },
+          {
+            "t": "A map on the wall at child height",
+            "d": "A world map, or a map of Ireland, hung so a small person can put a finger on it. Every story you read has a place, and pointing at it turns a name into somewhere real. Hung at adult height it becomes wallpaper."
+          },
+          {
+            "t": "A memory board or a memory box",
+            "d": "The poem, the verse and the song you are learning this month, written out large and pinned where you eat. Cards you have already learned go in a box and get pulled out at random once a week. Memory fades unless it is met again, and a box you can shuffle makes reviewing feel like a game rather than a test."
+          },
+          {
+            "t": "A plain table with a chair that fits",
+            "d": "Feet flat on the floor, elbows level with the top. No screen on it, nothing stored on it. Copywork and drawing need a clear surface and good light more than they need anything you can buy."
+          },
+          {
+            "t": "A recitation spot",
+            "d": "A rug, a hearth, a step, one particular place where you stand up and say the poem out loud. Having one fixed place makes the saying feel like an occasion rather than a demand, and children will start doing it without being asked."
+          },
+          {
+            "t": "One picture, changed each term",
+            "d": "A single good print, framed cheaply, hung low. Not six. One picture met every day for eight weeks is remembered for life. Six pictures met once are a wall."
+          },
+          {
+            "t": "Music playing, one composer at a time",
+            "d": "A small speaker and one composer for the term. Bach, Vivaldi, Handel, Mozart. No explaining, no quiz. Hearing the same music many times is how a child comes to know it, which is not the same as being taught about it."
+          },
+          {
+            "t": "A place for finished work",
+            "d": "A folder, a box file or a string with pegs. Narrations, drawings, first letters. It matters that the work goes somewhere rather than into the bin, because a child who sees their own work kept understands that it counted."
+          },
+          {
+            "t": "A few real, beautiful objects",
+            "d": "A globe, a magnifying glass, a fossil, a brass bell, a small statue. Things worth picking up and turning over. The classical claim is that beauty is real and can be pointed at, and a room makes that claim or it does not."
+          }
+        ],
+        "shopping": [
+          {
+            "heading": "The morning basket",
+            "items": [
+              {
+                "name": "One lidless basket",
+                "tag": "Big enough for six books and a folded map. Charity shop, three to five pounds."
+              },
+              {
+                "name": "A poetry book you actually like",
+                "tag": "A Child's Garden of Verses by Robert Louis Stevenson, or any good anthology of children's verse. Around eight pounds, or free in the library."
+              },
+              {
+                "name": "Aesop's Fables",
+                "tag": "Any illustrated edition. One fable a week, told rather than read, is a whole year of moral conversation for about seven pounds."
+              },
+              {
+                "name": "D'Aulaires' Book of Greek Myths",
+                "tag": "The standard first Homer for young children. Around fifteen pounds and it lasts a decade."
+              },
+              {
+                "name": "A hymnal or a folk song book",
+                "tag": "Only if your family sings. One song for a whole term, sung while cooking, is the entire method."
+              }
+            ]
+          },
+          {
+            "heading": "The walls and the table",
+            "items": [
+              {
+                "name": "A world map or a map of Ireland",
+                "tag": "Paper is fine and cheap. Around ten pounds. Hang it low."
+              },
+              {
+                "name": "A cork board or a length of ribbon and pegs",
+                "tag": "For the month's memory work and the timeline. Under fifteen pounds."
+              },
+              {
+                "name": "A cheap clip frame",
+                "tag": "For the picture of the term. Three pounds, and you swap the print rather than the frame."
+              },
+              {
+                "name": "Index cards and a small box",
+                "tag": "The memory box. Two pounds. This is the cheapest thing here and the one families keep longest."
+              },
+              {
+                "name": "A small speaker",
+                "tag": "Anything that plays one composer without you touching a phone. If you already have a radio, you already have this."
+              }
+            ]
+          },
+          {
+            "heading": "Curriculum, only when you want it",
+            "items": [
+              {
+                "name": "The Well-Trained Mind, Susan Wise Bauer",
+                "tag": "The book that reawakened classical home education for a generation of parents. Read it before you buy anything else. Around twenty pounds."
+              },
+              {
+                "name": "Ambleside Online",
+                "tag": "A full classical and Charlotte Mason booklist, given away free by the people who built it. Start here before you spend money.",
+                "where": "https://www.amblesideonline.org"
+              },
+              {
+                "name": "Memoria Press catalogue",
+                "tag": "Copybooks, recitation, Prima Latina. A structured, memory-heavy classical programme. Ships from the United States, so watch the postage.",
+                "where": "https://www.memoriapress.com"
+              },
+              {
+                "name": "The Circe Institute",
+                "tag": "Talks, podcasts and essays on the philosophy rather than the worksheets. Useful when you want to know why you are doing this.",
+                "where": "https://www.circeinstitute.org"
+              },
+              {
+                "name": "Song School Latin, or nothing at all",
+                "tag": "Latin at four is songs and nothing more, and it is entirely optional. Plenty of excellent classical families start Latin at nine."
+              }
+            ]
+          },
+          {
+            "heading": "Only if you are opening it to other families",
+            "items": [
+              {
+                "name": "A hall with a kitchen and outdoor space",
+                "tag": "Church halls and community centres in Northern Ireland commonly hire by the morning. Ask about storage — carrying everything in and out each week is what kills co-ops."
+              },
+              {
+                "name": "Access NI clearance and public liability insurance",
+                "tag": "For every adult who will be with other people's children. Non-negotiable, and it takes weeks."
+              },
+              {
+                "name": "Registration with the right body",
+                "tag": "Under school age and taking payment, you register with your local Health and Social Care Trust Early Years Team. Teaching other people's school-age children full time, you are an independent school and you talk to the Department of Education. Phone first and ask which you are."
+              },
+              {
+                "name": "A Classical Conversations licence, if you go that route",
+                "tag": "A licensed community model with set materials and a director role. Look at the current fees yourself rather than taking anyone's word for them.",
+                "where": "https://www.classicalconversations.com"
+              }
+            ]
+          }
+        ],
+        "think": [
+          {
+            "t": "Light on the table, not behind it",
+            "d": "Put the table where daylight falls onto the page. Copywork with a shadow across it makes a four-year-old give up in two minutes, and you will think they hate writing."
+          },
+          {
+            "t": "Where the family already sits in the morning",
+            "d": "Build the study around the room you actually eat in, not the spare room upstairs. Morning time survives when it happens where everyone already is."
+          },
+          {
+            "t": "Plain walls behind the memory board",
+            "d": "One board with this month's work on it reads clearly. Six charts, an alphabet frieze and a calendar all together read as nothing, and the child stops seeing any of it."
+          },
+          {
+            "t": "How much memory work belongs at four",
+            "d": "This is a genuine disagreement inside the tradition, not a settled question. Decide it by watching your own child rather than by picking a side. If the poem is a game they ask for, keep going. If it is a fight three days running, put it down for a year."
+          },
+          {
+            "t": "Sound, and only one thing at a time",
+            "d": "One composer, or nobody talking. Music with words underneath a read-aloud means the child hears neither."
+          },
+          {
+            "t": "Reachable and touchable",
+            "d": "If the globe is too precious to spin and the books are too good to pull down, you have built a display cabinet. Buy second-hand so that nothing in the room needs protecting from a child."
+          },
+          {
+            "t": "Where recitation gets an audience",
+            "d": "Set the room up so somebody can sit and listen. Saying a poem to a real person is the whole point of learning it, and a poem never said out loud to anyone quietly stops being learned."
+          },
+          {
+            "t": "Room to grow into",
+            "d": "The same shelf carries a four-year-old and a nine-year-old if you keep adding harder books above the reachable shelf. Children reach up when they see something worth reaching for."
+          }
+        ],
+        "avoid": [
+          "A wall covered in laminated charts. It looks like schoolwork and it teaches nothing that is not also on the one board.",
+          "Buying a full Latin, logic and history programme before you have run one morning basket for a month.",
+          "Thin early-reader books written to a word list. A classical shelf holds real language, because a child who hears only simple language develops a taste for it.",
+          "A screen in the study. This is the one room in the house where the point is a book, a voice and a pencil.",
+          "Turning the memory board into a chart of what your child has not yet learned.",
+          "Making the room so formal that a four-year-old is careful in it. Awe is good, fear is not, and a small child cannot tell them apart."
+        ],
+        "note": "Classical teachers do not all agree about how much a four-year-old should memorise, and it is honest to say so. Memoria Press and Classical Conversations set out a good deal of memory work early and find that small children take to chanting easily and enjoy it. Others working inside the same tradition, including many who follow Charlotte Mason and much of what the Circe Institute writes, think four is early for lists and that the years are better spent on story, song, and hours outdoors. Both are properly classical. Both raise children who read Homer at sixteen. You are allowed to choose, and your own child in front of you is better evidence than either camp."
+      },
+      "running-it": {
+        "title": "Running the day",
+        "icon": "clock",
+        "intro": "Classical education has one engine and it runs for about twenty minutes a day: the morning basket. Everyone sits together, you open with the same thing every morning, you review the memory work, you read aloud, and the child tells it back to you. That is the lesson. The rest of the day is ordinary life, which the tradition holds is where most of the forming actually happens. Whether you are one parent at a kitchen table or a tutor in front of eight children in a hall, the shape is the same.",
+        "tone": [
+          {
+            "t": "Read aloud as if you meant it",
+            "d": "Slow down, use your real voice, let the rhythm of the sentence carry. Children stay with a reader who is enjoying it and drift from one who is getting through it. Your delivery is most of the lesson."
+          },
+          {
+            "t": "Delight before duty",
+            "d": "The morning opens with something everyone likes — a song, a story, a poem you both find funny. A child who arrives at the basket expecting pleasure will sit for the harder five minutes afterwards. One who expects a test will fight the whole thing."
+          },
+          {
+            "t": "Hold the standard warmly",
+            "d": "The poem is said properly, the narration is a real telling, the copywork letter is formed the right way. But you correct once, quietly, and move on. The classical adult is a mentor, which means the standard is real and the warmth is also real, at the same time."
+          },
+          {
+            "t": "Speak in full sentences to a four-year-old",
+            "d": "Use real words and explain them when asked. Vocabulary is caught, not taught, and the ceiling on a child's language is the language they hear every day at home."
+          },
+          {
+            "t": "Be unhurried, and stop early",
+            "d": "End while they still want more. Twenty good minutes repeated four hundred times is an education. Forty minutes that ended in tears sets you back a week."
+          }
+        ],
+        "rhythm": [
+          {
+            "t": "Set the basket the night before",
+            "d": "Two minutes. This term's books, the poem card, the picture. A basket that is ready gets opened, and a morning that needs assembling gets skipped."
+          },
+          {
+            "t": "Open the same way every single day",
+            "d": "A candle, a prayer, a verse, a song — whatever fits your family, but the same one. The repeated opening tells a small child what is about to happen without anyone giving an instruction, which is why it works on days when everyone is tired."
+          },
+          {
+            "t": "Memory work, five minutes, review first",
+            "d": "Say the old poem, then the current one, then add one new line. Reviewing what is nearly forgotten is where the real gain is. Adding new lines every day and never going back gives you a child who half-knows twenty poems."
+          },
+          {
+            "t": "The read-aloud",
+            "d": "Ten to fifteen minutes of something genuinely good: a myth, a fable, a saint's life, a chapter of Beatrix Potter. Read one thing well rather than three things quickly."
+          },
+          {
+            "t": "Ask them to tell it back",
+            "d": "One question: tell me what happened. Then stay quiet and let them work. This one habit does more than any comprehension worksheet, because putting it into their own words is what turns hearing into knowing. At four, expect three sentences and be pleased."
+          },
+          {
+            "t": "The picture and the music, two minutes",
+            "d": "Look at this term's picture together and name what you see. Let the composer play. No explanation, no questions. Attention is the skill being practised here, not art history."
+          },
+          {
+            "t": "Copywork or letter play, if the hand is ready",
+            "d": "At four this is usually tracing in sand, drawing, or one letter, and often it is nothing at all. A small hand that is not ready is not behind. Push it and you buy a child who dislikes writing for three years."
+          },
+          {
+            "t": "Close, and go outside",
+            "d": "Shut the basket and get out for a long block. The tradition asks for a formed body as well as a formed mind, and a twenty-minute lesson followed by three hours outdoors is the classic classical day for a four-year-old."
+          },
+          {
+            "t": "Recitation at the end of the week",
+            "d": "Friday, or when a grandparent visits. Stand in the recitation spot and say the poem to a real audience. This is what the memory work was for, and children who get an audience keep learning poems."
+          }
+        ],
+        "does": [
+          "Reads aloud every single day, even on the days when nothing else happens.",
+          "Reviews old memory work before adding new.",
+          "Asks the child to tell it back, then waits without helping.",
+          "Names the beautiful thing and the true thing out loud, without turning it into a lecture.",
+          "Lets the child see them working, reading and being corrected themselves.",
+          "Stops the lesson early and takes everyone outside."
+        ],
+        "doesnt": [
+          "Explain the story before or after reading it. The story does its own work.",
+          "Ask test questions to prove the learning happened.",
+          "Push handwriting on a hand that is not ready.",
+          "Swap a great book for an easier one because the child looked puzzled. Puzzled is where learning lives.",
+          "Turn the memory board into a record of what the child has not managed.",
+          "Add a second subject because the first one finished early."
+        ],
+        "parents": "The group version of classical education is unusual, and worth understanding before you sign up. In a co-op or an academy the parent is not dropped from the picture — they are the main teacher, and the community day supplies the parts that are hard alone. Classical Conversations runs on this exactly: families meet one morning a week, a parent tutor leads the memory work and a presentation, and every parent stays in the building, usually in the room with their own child in the youngest years. The other four days are yours at home. Two-day academies work the same way with a heavier academic load. This means the honest question when you look at a group is not is this a good school, it is can I teach the other days, because that is what you are agreeing to. It also means the community is doing something a school cannot: it puts your child in front of another adult and a group of children once a week, gives them an audience to recite to, and gives you other parents who are two years further along. Families who last are almost always families who came for that, rather than families who came hoping to hand the teaching over.",
+        "mistakes": [
+          {
+            "t": "Doing thirty minutes and calling it school",
+            "d": "Not because thirty minutes is too little — it is plenty at four — but because families then feel guilty and start adding worksheets. The long outdoor block and the family meal are not the gap around the education. They are the education."
+          },
+          {
+            "t": "Buying the whole programme in August",
+            "d": "A full boxed classical curriculum for a four-year-old costs several hundred pounds and is usually abandoned by November. Run a free booklist for a term first and find out what your family actually does."
+          },
+          {
+            "t": "Reading three books badly instead of one book well",
+            "d": "The basket fills up, the morning gets long, and nobody remembers anything. Cut it back until the child is disappointed when it ends."
+          },
+          {
+            "t": "Correcting during the narration",
+            "d": "The child is telling it back and you jump in with the name they got wrong. They stop. Let them finish, then say the right name once, in passing, the next day."
+          },
+          {
+            "t": "Chanting facts nobody ever uses",
+            "d": "Memory work earns its place when it comes back later — in a story, at the dinner table, on a map. A list learned and never met again is the version of classical education its own critics complain about, and they have a point."
+          },
+          {
+            "t": "Treating a strong-willed four-year-old as a discipline problem",
+            "d": "Refusing the poem is usually tiredness, hunger, or a hand that is not ready. Look at sleep and food and the length of the lesson before you look at character."
+          }
+        ],
+        "training": "There is no licence to teach classically and no qualification anyone can require of you at home. What exists is genuinely useful reading and a few practical routes. Start with The Well-Trained Mind by Susan Wise Bauer, which is the practical manual, and Dorothy Sayers' short essay The Lost Tools of Learning, which is the argument. The Circe Institute runs conferences, an apprenticeship and a large free podcast archive aimed at the philosophy rather than the timetable. Classical Conversations trains its parent tutors through a three-day practicum each summer and licenses community directors. Memoria Press publishes a full graded curriculum and teacher guides, and running their materials for a year teaches you the method by doing it. In Northern Ireland, home educating is lawful and you do not need permission to teach your own child. The moment you take in other people's children, the rules change: under school age and taking payment means registering with your local Health and Social Care Trust Early Years Team, teaching other people's school-age children full time means talking to the Department of Education about independent school registration, and either way everyone needs Access NI clearance and public liability insurance. Phone before you commit to a hall."
+      },
+      "your-part": {
+        "title": "Your part in it",
+        "icon": "heart",
+        "intro": "Classical education asks more of the parent than almost any other model in this app, and it is fairer to say that plainly than to find out in October. Even families who join a co-op or an academy are teaching most of the week themselves. The good news is that the daily work is small and the same every day, and that you learn the material alongside your child, which most parents end up saying was the best part.",
+        "model": {
+          "label": "Mostly you — with one or two days a week alongside other families",
+          "body": "The common shape is not drop-off. In a classical co-op you stay in the building, and in the youngest years you are usually in the room. In a two-day academy your child is taught for two days and you teach the assigned work on the other three. Only a full classical school is a straightforward drop-off, and there are very few of those in Northern Ireland. So the question to ask yourself first is not which programme, it is can I read aloud for fifteen minutes a day, five days a week, for years. If the answer is yes, the rest is buying books. If the answer is no this year, that is worth knowing before you pay a deposit, and Montessori or a Forest School day may serve your family better right now."
+        },
+        "before": [
+          "Read the chapter yourself the night before, or at least look at it. Reading aloud cold is why parents start dreading the basket.",
+          "Feed them first. Memory work on an empty stomach is a fight about nothing.",
+          "Put the basket where you eat and open it before anyone gets up from the table. Getting up is what ends morning time.",
+          "On a co-op morning, get there early enough that your child walks in calmly rather than arriving into a room that has already started.",
+          "Learn the poem yourself. A child memorises far faster from a parent who is saying it with them than from one who is holding the card and checking."
+        ],
+        "after": [
+          "On the way home from a co-op day, say nothing about what they learned. Talk about the walk, the weather, what is for lunch.",
+          "Let the recitation come to you. Children say their poem in the car and in the bath, and almost never on request.",
+          "Give them a long, quiet, physical afternoon. A four-year-old who has sat and attended in a group needs to run, not to do a second lesson.",
+          "Do not test them for a grandparent. The moment their work becomes your evidence, they start performing rather than learning.",
+          "Do the assigned home days without dread and without apology. Fifteen minutes counts. A short day is not a failed day.",
+          "Notice out loud what they got right, and be specific: you said the whole verse without stopping. Specific noticing tells a child what to aim at, where general praise only tells them you were watching."
+        ],
+        "involvement": [
+          {
+            "t": "You are the teacher, most days",
+            "d": "Read aloud, hear the narration, keep the memory box. This is the job, and it is about twenty minutes. Everything else you may hear about classical education is optional."
+          },
+          {
+            "t": "Learn it yourself, out loud",
+            "d": "Read the Iliad, learn the poem, look at the picture. Children copy an adult who is learning far more reliably than they obey an adult who is instructing. This is also the reason many classical parents say the years re-educated them."
+          },
+          {
+            "t": "Tutor at the co-op",
+            "d": "Most communities need parents to lead a group. It is frightening for about two weeks and then it is the fastest way to actually understand the method."
+          },
+          {
+            "t": "Find two families further along",
+            "d": "A parent with a nine-year-old will tell you in five minutes what a book takes three hundred pages to say, and will tell you honestly which things they dropped."
+          },
+          {
+            "t": "Keep the home and the group agreeing",
+            "d": "If the group recites and the house has a television on all evening, the child learns which of the two the family really believes. Consistency between the two places is more powerful than any programme."
+          }
+        ],
+        "visit": [
+          {
+            "q": "How much am I expected to teach at home, on the days you do not meet?",
+            "why": "Get a number of days and a number of minutes. This is the single biggest cause of families leaving in the first year, and it is entirely avoidable by asking."
+          },
+          {
+            "q": "Do I stay in the building, and am I in the room with my own child?",
+            "why": "It changes your whole week. Both models are honest, but you need to know which one you are joining."
+          },
+          {
+            "q": "How much memory work is expected at four, and what happens if my child will not do it?",
+            "why": "Listen for whether the answer is patient. A community that treats a four-year-old refusing to chant as a discipline problem will be a hard place for a spirited child."
+          },
+          {
+            "q": "Which books do the children actually read, and can I see this term's list?",
+            "why": "A real classical group can hand you the list. If the answer is vague or it is mostly worksheets and printables, the name is on the door but the tradition is not inside."
+          },
+          {
+            "q": "What does a day look like for the youngest children?",
+            "why": "You want to hear stories, songs, movement and a short lesson. A four-year-old sitting at a desk for three hours is a warning, whatever the sign says."
+          },
+          {
+            "q": "Is Latin required, and starting when?",
+            "why": "Classical communities differ enormously. Some start Latin songs at four, some start grammar at nine, and both are within the tradition. Find out what you are agreeing to."
+          },
+          {
+            "q": "What is the total cost for a year, including books and materials?",
+            "why": "Fees are one line. Books, a licence, materials and travel are the rest. Ask for the full figure and ask what last year actually cost a family."
+          },
+          {
+            "q": "How do you handle a child who is behind the others in one thing?",
+            "why": "You want to hear that the child is met where they are. Classical education has a real failure mode of shaming slow readers, and a good community will tell you honestly how they avoid it."
+          }
+        ],
+        "flags": [
+          "Worksheets and printables in place of books.",
+          "Chanting that nobody can explain the purpose of, and that never returns in a story or on a map.",
+          "A four-year-old expected to sit at a desk for hours.",
+          "Reading treated as a race, with children compared out loud.",
+          "A leader who cannot name what the children are reading this term.",
+          "Pressure to buy a full boxed curriculum before you have visited twice.",
+          "Any suggestion that your child is behind at four. There is no behind at four."
+        ],
+        "note": "One last honest thing. Classical education is slow, and its rewards arrive years after the work. You will read Aesop for two years and see very little, and then at eight your child will use the word from a fable correctly in an argument and you will understand what you have been doing. If you need visible weekly progress to keep going, this tradition will be hard on you, and there is no shame in choosing something with faster feedback. If you can work without seeing the result for a while, it gives back more than almost anything else in this app."
+      },
       "bring-it-home": {
               "intro": "At four, classical education is really just filling the well. You give your child good things to soak up — poems, songs, myths, and the sight of you doing real work — and trust that it settles deep. No Latin drills, no worksheets. Just beautiful things, over and over, until they belong to your child.",
               "steps": [
@@ -10945,6 +11353,394 @@ window.METHODS = [
           ]
     },
     sections: {
+      "set-up-the-space": {
+        "title": "What the household held",
+        "icon": "shelf",
+        "intro": "There is no Athenian school to enrol in. Athens is a tradition you borrow from, not a setting you can visit, so this is not a shopping list for a classroom. It is what a citizen household in fifth-century Athens actually contained, and what a modern family can put in a house to get at the same effect. The Athenians would have found the idea of a special learning room strange. The house was the school, and the two halves of it were where the body trained and where the mind was fed.",
+        "scales": [
+          {
+            "name": "One habit and one shelf",
+            "span": "Cost: nothing",
+            "body": "Homer told aloud at bedtime, and the evening meal eaten at a table with no screen on it and real conversation across it. That is Athenian education in its smallest true form. The Athenians would say you have already got the two most important things."
+          },
+          {
+            "name": "A house shaped by it",
+            "span": "Cost: under a hundred and fifty pounds",
+            "body": "Add the rest of the pattern: something to make music on, a floor space where wrestling and tumbling are allowed indoors, a wax tablet or slate for making marks, a few beautiful objects at eye height, and a small place that marks the household — a hearth, a shelf, a candle lit at dinner."
+          },
+          {
+            "name": "The full daily pattern",
+            "span": "What it takes: time, not money",
+            "body": "Music and gymnastic every single day, in balance. Poetry heard and said until it is known by heart. Real conversation at the table with the child present. A body trained and a mind fed on the same day, for years. This costs almost nothing and is far harder than buying anything."
+          }
+        ],
+        "elements": [
+          {
+            "t": "The table, with everyone at it",
+            "d": "The Athenians held that a child learns to think by sitting near adults who are thinking out loud. A four-year-old cannot follow the argument and does not need to. They absorb the seriousness, the manners of speech and the idea that questions are worth having. Put the table where the family eats together and keep screens off it."
+          },
+          {
+            "t": "The hearth, or whatever marks the house",
+            "d": "In an Athenian home the hearth of Hestia was the centre, honoured daily, and the household shrine at the door marked the family as belonging to something older than itself. Modern families will decide for themselves what belongs here — a fire, a candle lit at dinner, a grace, a shelf of family photographs. The Athenian claim is that a house with a still centre that is honoured every day gives a child a different sense of place from one without."
+          },
+          {
+            "t": "Homer, told aloud",
+            "d": "Every Athenian child grew up inside the Iliad and the Odyssey. Not read privately — told, heard, performed. Achilles and Hector and Odysseus and Penelope were the gallery of what a life could be. A four-year-old who has heard Hector say goodbye to his wife and his frightened small son has met something no lesson on kindness can supply."
+          },
+          {
+            "t": "A lyre, or anything with strings",
+            "d": "Mousike meant far more than music to the Greeks. Plato held that the modes a child grows up hearing shape what they come to love, and that this happens before the child can reason about any of it. A simple lyre, a tin whistle, a small drum. The point is that the child makes the sound, not that the sound is good."
+          },
+          {
+            "t": "Floor space for wrestling and tumbling",
+            "d": "Gymnastic was half of the education, and the Athenians meant it literally: running, wrestling, throwing, dancing. A cleared floor, a mat, a garden. A body that has been used hard settles a mind, which any parent can test on a wet afternoon."
+          },
+          {
+            "t": "A wax tablet, a slate, or sand",
+            "d": "Athenian children learned letters on a wax tablet with a stylus, scraping them out and starting again. Something that wipes clean is better than paper for a four-year-old, because there is no record of the wrong attempt and so nothing to be embarrassed about."
+          },
+          {
+            "t": "Knucklebones, hoops and simple toys",
+            "d": "Real Athenian children played with knucklebones, hoops, balls, wooden animals and dolls. Nothing did anything by itself. A toy that performs leaves the child watching, and a toy that does nothing leaves the child inventing."
+          },
+          {
+            "t": "One beautiful thing at child height",
+            "d": "A good pot, a carving, a shell, a piece of cloth. The Greeks believed the eye is trained by what it meets every day, long before anybody explains why. Whatever is at your child's eye height is teaching them what beautiful means."
+          },
+          {
+            "t": "A door to outside",
+            "d": "Athenian life happened outdoors and in public far more than indoors. Boots by the door, and going out treated as ordinary rather than as an expedition."
+          },
+          {
+            "t": "A place to say something out loud",
+            "d": "A step, a hearth, a rug. Athens ran on speech — free citizens governed themselves by arguing in public — so a child was expected to be able to stand and say a thing. Somewhere to stand and be listened to is the closest a modern house gets to that."
+          }
+        ],
+        "shopping": [
+          {
+            "heading": "The stories",
+            "items": [
+              {
+                "name": "D'Aulaires' Book of Greek Myths",
+                "tag": "The best first Greek book for a young child. Around fifteen pounds and it is read for years."
+              },
+              {
+                "name": "Black Ships Before Troy and The Wanderings of Odysseus, Rosemary Sutcliff",
+                "tag": "Homer retold properly for children, without softening the hard parts. Around ten pounds each."
+              },
+              {
+                "name": "The Children's Homer, Padraic Colum",
+                "tag": "An older retelling, still in print and free in public domain editions. Reads aloud beautifully.",
+                "where": "https://www.gutenberg.org"
+              },
+              {
+                "name": "Aesop's Fables",
+                "tag": "Greek, short, and made for telling from memory. One a week."
+              },
+              {
+                "name": "A good adult translation for you",
+                "tag": "Robert Fagles or Emily Wilson for the Odyssey. Read it yourself. The child gets more from a parent who has actually met the poem."
+              }
+            ]
+          },
+          {
+            "heading": "The music half",
+            "items": [
+              {
+                "name": "A small lyre or a lap harp",
+                "tag": "Simple ones are widely sold online for around forty pounds. Buy the cheapest playable one, because the point is the child's hands on the strings."
+              },
+              {
+                "name": "A tin whistle",
+                "tag": "Ten pounds, and in Ireland everybody's cousin can teach it. A completely legitimate substitute for the lyre."
+              },
+              {
+                "name": "A hand drum",
+                "tag": "For rhythm and for dancing. Greek education included dance as a matter of course."
+              },
+              {
+                "name": "Songs you will sing hundreds of times",
+                "tag": "Free. Pick a few and sing the same ones. Repetition is what puts them in a child for life."
+              }
+            ]
+          },
+          {
+            "heading": "The body half",
+            "items": [
+              {
+                "name": "A mat or a cleared floor",
+                "tag": "For wrestling, tumbling and rough play indoors. Twenty pounds, or move the sofa."
+              },
+              {
+                "name": "A ball, a hoop, a length of rope",
+                "tag": "Under fifteen pounds for all three. Throwing, rolling, jumping — the same equipment a Greek boy had."
+              },
+              {
+                "name": "Knucklebones or five stones",
+                "tag": "The real Athenian children's game, still sold and still good. A few pounds."
+              }
+            ]
+          },
+          {
+            "heading": "Letters and marks",
+            "items": [
+              {
+                "name": "A small chalk slate or a wipe-clean board",
+                "tag": "Around eight pounds. The modern wax tablet, and better than paper for a hand that is still learning."
+              },
+              {
+                "name": "A tray of sand or salt",
+                "tag": "Free. Tracing a letter with a finger before holding a pencil, which is the order a small hand can manage."
+              },
+              {
+                "name": "The Greek alphabet on one card",
+                "tag": "Only if it delights them. Some four-year-olds love the strange shapes. Others do not, and nothing is lost."
+              }
+            ]
+          }
+        ],
+        "think": [
+          {
+            "t": "Balance is the whole idea",
+            "d": "Plato held that music alone makes a person soft and gymnastic alone makes them harsh, and that only both together make a person you would want as a neighbour. Look at your week and ask whether both halves are actually in it, because most modern homes have plenty of one and almost none of the other."
+          },
+          {
+            "t": "Poetry heard, not read",
+            "d": "The Greeks met their poems through the ear, out loud, many times over. Say the same poem to your child every night for a month rather than reading twenty different ones once each. Repeated hearing is what makes a poem stay."
+          },
+          {
+            "t": "Where the conversation happens",
+            "d": "Set the house up so there is one place and one time when adults talk about real things while the child is present. In most homes this has to be the meal, because nothing else reliably gathers everybody."
+          },
+          {
+            "t": "The stories are not soft, and that is deliberate",
+            "d": "Homer has grief, rage and death in it. The Athenian position is that a child meets these first inside a story, held by a trusted adult, which is a far better first meeting than the one life eventually arranges. You still choose the version that fits your own four-year-old."
+          },
+          {
+            "t": "Let the body be used before you ask for stillness",
+            "d": "Run first, then sit. This is not a modern discovery; the Greek order of the day put the palaestra before the lesson. Test it on your own child for a week."
+          },
+          {
+            "t": "What you honour daily is what they will think is real",
+            "d": "The household ritual, whatever yours is, is teaching whether you meant it or not. Choose it deliberately rather than by default."
+          },
+          {
+            "t": "Ask real questions, then be quiet",
+            "d": "Socrates is the tradition's most famous teacher and his whole method was asking and then listening. With a four-year-old this means asking what they think and then waiting, sometimes for an uncomfortably long time."
+          },
+          {
+            "t": "Beauty as an ordinary household expense",
+            "d": "The Greeks put good work on everyday objects: cups, jugs, doorways. One well-made thing your child handles daily does more than a wall of decoration they only look at."
+          }
+        ],
+        "avoid": [
+          "Turning it into a costume. Bedsheet chitons are fun for an afternoon and are not the tradition.",
+          "Reading about the Greeks instead of doing what they did. The tradition is a practice, not a topic.",
+          "Filling the shelf with fact books about ancient Greece and skipping Homer.",
+          "All mind and no body, which is the way modern homes drift by default.",
+          "Handing a four-year-old the Greek alphabet as work when they have not asked for it.",
+          "Talking about the gods of another people as silly. Present them as the Athenians held them, and let your family hold whatever it holds."
+        ],
+        "note": "One thing said plainly, once. This education was for the sons of free citizens. Girls were taught far less, usually only what was needed to run a household, and the leisure that made a free man's day possible rested on the work of enslaved people. That is true and it is not a small thing. What is worth noticing is that the parts most worth taking — the balance of body and mind, poetry known by heart, the long conversation at the table, a child treated as someone being formed rather than minded — do not depend on any of that. They cost nothing and they now belong to every child in your house, which is an improvement the Athenians did not manage and we can."
+      },
+      "running-it": {
+        "title": "The day it ran on",
+        "icon": "clock",
+        "intro": "Here is the honest frame: you are not rebuilding an Athenian household. You are taking four or five pieces out of one and putting them into a Northern Irish week. That is a reasonable thing to do and it is what almost everyone who admires this tradition actually does. The pieces that travel well are the balance of body and mind, poetry learned by ear, real questions asked and properly listened to, a daily ritual that marks the house, and the child at the table while adults talk. Those five will carry a whole education.",
+        "tone": [
+          {
+            "t": "Ask, then wait",
+            "d": "The Socratic habit is not clever questioning. It is asking a real question you do not already have the answer to, and then being quiet long enough for a small person to think. Most adults wait about two seconds. Try ten."
+          },
+          {
+            "t": "Speak to the child as a future free person",
+            "d": "Explain the reason, not just the rule. The Athenian aim was self-government, and a child who is only ever told what to do has had no practice at governing themselves."
+          },
+          {
+            "t": "Praise the deed, not the child",
+            "d": "Arete means excellence, and the Greeks pointed at acts: that was brave, that was well made, you kept going. Naming the act gives a child something they can do again. Naming the child gives them a label to defend."
+          },
+          {
+            "t": "Delight in beauty out loud",
+            "d": "Say when the light is good, when the music is lovely, when the pot is well made. Children learn what deserves attention from what their adults notice out loud."
+          },
+          {
+            "t": "Be serious with them sometimes",
+            "d": "Athenian adults did not maintain a permanent cheerful children's voice. A four-year-old who is occasionally spoken to seriously, as a person, sits up. Warmth and seriousness are not opposites."
+          }
+        ],
+        "rhythm": [
+          {
+            "t": "Wake and mark the day",
+            "d": "The Athenian household began with a greeting at the hearth and a word to the household gods. Whatever your family does — a greeting, a candle, a grace, a look out at the weather — do the same thing every morning. The repeated marker is what makes a day feel like a day rather than a series of demands."
+          },
+          {
+            "t": "Eat together, simply",
+            "d": "Bread, fruit, olives. The Greek meal was plain and shared. Sitting down together at the start of the day sets the tone more reliably than anything you say during it."
+          },
+          {
+            "t": "The body first",
+            "d": "Running, wrestling, climbing, dancing, out of the house. In Athens this was a formal part of the education with its own place and its own teacher. In your week it is a long block outdoors before anything that needs sitting."
+          },
+          {
+            "t": "Music, every day",
+            "d": "Ten minutes. Singing while you cook counts. Plucking three strings counts. Dancing to one piece counts. What matters is that it happens daily, because mousike was held to shape what a child comes to love, and that is built by repetition and not by lessons."
+          },
+          {
+            "t": "The poem, by ear",
+            "d": "Say the same short poem or the same passage aloud, and let them join in when they are ready. Never make them recite it to test them. A four-year-old will have it in a fortnight simply from hearing it."
+          },
+          {
+            "t": "Real work in the household, scaled small",
+            "d": "Carrying a message to a neighbour, watering, fetching, helping. The Athenian child was inside real household life rather than in a parallel world of activities made for children, and competence is built by doing things that genuinely needed doing."
+          },
+          {
+            "t": "The story, told rather than read",
+            "d": "One episode of Homer or one myth, in your own words, in the late afternoon or at bedtime. Telling beats reading here because you can watch their face and cut what is too much."
+          },
+          {
+            "t": "The evening meal, with the child present and listening",
+            "d": "This is the load-bearing one. Adults talk about real things. The child sits in, sometimes joins, mostly absorbs. Athens would say this is where a citizen is actually made, and it costs you nothing but the decision to eat together."
+          },
+          {
+            "t": "Close the day the same way",
+            "d": "A short story, a word at the hearth, sleep by full dark. The repeated ending matters as much as the repeated beginning."
+          }
+        ],
+        "does": [
+          "Puts the body and the mind into the same day, every day.",
+          "Tells the old stories out loud, in their own words.",
+          "Asks a real question and then waits.",
+          "Lets the child sit in on adult conversation instead of sending them away.",
+          "Names what is excellent, specifically, when it happens.",
+          "Keeps one daily ritual that marks the household, whatever the family believes."
+        ],
+        "doesnt": [
+          "Turn the poem into a test.",
+          "Replace conversation with an explanation.",
+          "Fill the day so full that there is no time to argue about something interesting.",
+          "Send the child away when the talk gets serious, unless it genuinely is not for them.",
+          "Present the whole thing as a history project.",
+          "Let the mind half quietly take over the body half, which is what happens if nobody watches for it."
+        ],
+        "parents": "In Athens the parent was not a supporter of the education. The parent was the education, for the first years without any exception. The mother and the household women raised the small child completely: the prayers, the songs, the manners, the family stories, the names of the gods. Nothing was outsourced before about seven. Then something happened that has no modern equivalent — the family chose a paidagogos, an older household servant, who walked the boy to his lessons every day, sat with him through them, and was responsible for his behaviour and his character the whole time. Not the teacher. The person who watched over him. Greek parents took that appointment enormously seriously, because they understood that the person who spends the hours with a child forms the child, whatever the timetable says. That is the striking, transferable observation for a modern parent: it is not the curriculum that shapes a four-year-old, it is whoever is beside them for the most hours. Look honestly at your week and count who those hours belong to. If it is you, the Athenians would say you already hold the most important post. If it is a nursery or a childminder, then choosing that person carefully is the single most classical decision you will make.",
+        "mistakes": [
+          {
+            "t": "Taking the reading and leaving the running",
+            "d": "Homer at bedtime with no wrestling, no dancing and no going out is half of the tradition presented as the whole. The Greeks would say you have produced exactly the kind of person they were trying to avoid."
+          },
+          {
+            "t": "Studying Greece instead of doing it",
+            "d": "A pile of books about ancient Athens is a topic. Poetry by heart, a body used hard, and a real conversation at the table are the education."
+          },
+          {
+            "t": "Asking questions you already know the answer to",
+            "d": "Children hear the difference immediately and start guessing what you want rather than thinking. Ask the ones you find genuinely interesting."
+          },
+          {
+            "t": "Being embarrassed by the hard parts of the stories",
+            "d": "Softening Homer until nothing is at stake removes the reason it forms anybody. Choose what fits your child's age, and do not sand it down to nothing."
+          },
+          {
+            "t": "Making arete a standard the child keeps failing",
+            "d": "Excellence is a direction, not a bar. A four-year-old who hears that they fell short every day learns to stop trying, which is the exact opposite of the aim."
+          },
+          {
+            "t": "Pretending the ugly parts did not exist",
+            "d": "Say it once, plainly, when they are old enough to ask, and then get on with the good parts. Both hiding it and lecturing about it stop you from actually using the tradition."
+          }
+        ],
+        "training": "There is no training body, no diploma and nobody to register with, because this is a tradition and not a sector. What there is, is reading. Werner Jaeger's Paideia is the great study of the whole idea, and it is long and hard. H. I. Marrou's A History of Education in Antiquity is the standard account of how it actually worked day to day. Plato's Republic Books II and III set out the music-and-gymnastic argument in his own words, and Xenophon and Plutarch supply the household detail. All of these are worth an evening rather than a course. If you want your child in a group that borrows from this consciously, look at classical schools and co-ops rather than searching for anything Athenian — the classical tradition in this app is the living descendant, and it is where the practice continues."
+      },
+      "your-part": {
+        "title": "Your part in it",
+        "icon": "heart",
+        "intro": "Because there is nowhere to send your child, every question about parental involvement has the same answer, and it is a demanding one. In this tradition you are not choosing a setting, you are deciding what the hours in your own house are made of. The Athenians thought about that decision far more carefully than most modern families do, and their conclusions are worth borrowing even if you keep none of the rest.",
+        "model": {
+          "label": "A tradition you borrow — there is no Athenian school to enrol in",
+          "body": "Nobody teaches this as a programme, and any school claiming to deliver an Athenian education is really offering classical education, which is its living descendant and a genuinely good thing. What Athens gives a modern parent is a set of decisions about your own home: that the body and the mind get trained on the same day, that poetry is learned by ear, that the child eats with the adults and hears them think, that questions are asked and answers are actually waited for, and that whoever spends the most hours beside your child is the person forming them. You can start every one of those this week and none of them costs money."
+        },
+        "before": [
+          "Decide what the day opens with and keep it the same. A greeting, a candle, a look at the sky. Small children get their sense of order from repeated markers, not from explanations.",
+          "Get the body used early. Out of the house before the first thing that needs sitting still.",
+          "Eat breakfast at a table with the child, not around them.",
+          "Have one thing you are learning by heart at any given time, and say it out loud yourself where they can hear.",
+          "Look honestly at who has your child's hours today. That is the Athenian question and it is the one that changes things."
+        ],
+        "after": [
+          "Sit down to the evening meal with the child at the table and talk about something real. This is the single highest-value habit in the whole tradition.",
+          "Let them stay for the adult conversation longer than feels necessary. They understand less than you think and absorb more.",
+          "Tell one story out loud rather than reading three. Your own words, your own face, watching theirs.",
+          "Ask one real question with no right answer, and then be quiet for as long as it takes.",
+          "End the day the same way every night. The repeated ending is what lets a small person let go of the day."
+        ],
+        "involvement": [
+          {
+            "t": "You are the whole institution",
+            "d": "There is nobody else. In the Athenian view that is not a burden, it is the natural state, and the household is the proper place for a small child to be formed. Twenty minutes of deliberate work and one shared meal a day is a genuine version of it."
+          },
+          {
+            "t": "Choose the hours-holder carefully",
+            "d": "This is the paidagogos lesson. If your child is with a childminder, a nursery or a grandparent for most of the waking hours, that person is doing the forming. Choose for character and attention, not for facilities."
+          },
+          {
+            "t": "Learn something yourself, visibly",
+            "d": "Read the Odyssey. Learn the whistle badly. Take up something you are not good at yet and let them watch you be bad at it. The Athenian household ran on adults visibly pursuing excellence, and children copy pursuit far more reliably than they follow instruction."
+          },
+          {
+            "t": "Get them among other adults and children",
+            "d": "Athens was a public, out-of-doors, conversational city. A four-year-old raised only inside one house misses half of it. A weekly group, a sport, a neighbour who talks to them properly."
+          },
+          {
+            "t": "Keep both halves on your own calendar",
+            "d": "Write music and movement into the week the way you would write an appointment. The half that is not booked is the half that quietly disappears."
+          }
+        ],
+        "visit": [
+          {
+            "q": "Does my child use their body hard every day, or only on good weather days?",
+            "why": "Gymnastic was half of it. Most modern weeks fail this one and nobody notices, because there is no report on it."
+          },
+          {
+            "q": "Is there music in this house daily, made by us and not only played at us?",
+            "why": "Plato's claim is that a child's loves are shaped by what they hear repeatedly, before any reasoning starts. Listening is good; making it is the practice."
+          },
+          {
+            "q": "Does my child eat a meal with adults who talk about real things?",
+            "why": "This is where the Athenians thought a citizen was actually formed. It is also the easiest of all of these to lose to schedules."
+          },
+          {
+            "q": "When did I last ask a question and wait for the answer?",
+            "why": "Ask a whole household to be honest about this and it is usually a lot longer ago than anyone expects."
+          },
+          {
+            "q": "What poem or story does my child know by heart right now?",
+            "why": "Not as a test of the child. As a check on whether anything is being repeated often enough to stay."
+          },
+          {
+            "q": "Who has my child's hours this week, and are they forming them the way I would?",
+            "why": "The paidagogos question. It is uncomfortable and it is the most useful one here."
+          },
+          {
+            "q": "If a group or a school says it teaches this way, what do the children actually do all day?",
+            "why": "Ask for the day, hour by hour. Any real classical setting can give you it. A vague answer means the tradition is on the sign and not in the timetable."
+          },
+          {
+            "q": "Is my daughter getting all of it?",
+            "why": "Athens did not give it to girls, and this is exactly the part we improve on. Check that the wrestling, the arguing and the public speaking are being offered to every child in the house."
+          }
+        ],
+        "flags": [
+          "A tradition that has become a topic — books about Greece, nothing done.",
+          "All poetry and no running, or all sport and nothing learned by heart.",
+          "A four-year-old regularly sent out of the room when adults talk.",
+          "Excellence used as a stick, so the child hears mostly what they fell short of.",
+          "Girls quietly getting the gentle half of it.",
+          "Anybody selling an Athenian curriculum. There is no such product.",
+          "Screens at the table, which removes the one thing this tradition most depends on."
+        ],
+        "note": "The reason Athens is in this app is not nostalgia. It is that a small number of their decisions still hold up when you test them in your own house this week: a used body settles a mind, poetry heard many times stays for life, a child who sits among thinking adults starts thinking, and whoever holds the hours does the forming. You can take those four, leave everything else, and your child is better off for it."
+      },
       "bring-it-home": {
               "intro": "You can't copy ancient Athens, and you shouldn't try. But its heart still travels well. The Athenians wanted to grow a whole person, not just a clever one, through beauty, balance, and real talk. That part you can borrow today, at your kitchen table in Northern Ireland, with a four-year-old.",
               "steps": [
@@ -11903,6 +12699,382 @@ window.METHODS = [
           ]
     },
     sections: {
+      "set-up-the-space": {
+        "title": "What the household held",
+        "icon": "shelf",
+        "intro": "Rome had no school for a small child and would not have wanted one. In the Republic, the household was the whole institution and the parents were the whole staff. So there is nothing to enrol in and nothing to buy a place at. What follows is what a Roman home actually contained, and what those things were for — because almost all of them have a modern version, and the modern versions cost very little.",
+        "scales": [
+          {
+            "name": "One shelf and one habit",
+            "span": "Cost: nothing",
+            "body": "A place in the house where the family is remembered — photographs of grandparents and great-grandparents, named out loud — and one real job your four-year-old does every day that the household genuinely needs. Those two things are most of Roman education in its smallest true form."
+          },
+          {
+            "name": "A house shaped by it",
+            "span": "Cost: under a hundred pounds",
+            "body": "Add the rest of the pattern: a daily marker at that shelf, a wax tablet or slate, the family stories written down so they do not get lost, a place where the child watches an adult do serious work, and a table where the day is talked about at the evening meal."
+          },
+          {
+            "name": "The full Republican pattern",
+            "span": "What it takes: the parent doing the teaching",
+            "body": "A parent who teaches personally rather than delegating. Cato the Elder is the extreme example and it is a real one: Plutarch records that he taught his own son his letters, the law, and how to swim, ride, box and throw a javelin, and wrote out a history for him in large letters in his own hand so the boy could learn about his country at home. That is the Roman ideal in one sentence, and there is nothing in it you cannot do."
+          }
+        ],
+        "elements": [
+          {
+            "t": "The lararium, or whatever marks the family",
+            "d": "Every Roman home had a shrine to the lares and penates, the guardians of the family and the store cupboard, honoured every morning with a small offering. Modern families will fill this in differently: a shelf of family photographs, a candle at dinner, a grace, a place where the dead are remembered by name. The Roman claim is that a child who sees adults pause daily at one fixed place grows up knowing the family is a real thing that exists beyond the people currently in the room."
+          },
+          {
+            "t": "The faces of the ancestors",
+            "d": "Roman families kept the imagines, wax portrait masks of their forebears, in the atrium where everyone walked past them daily. Photographs on a wall, named out loud, do the same work. A child who knows their great-grandmother's name and one story about her belongs to something long, and belonging to something long changes how a person behaves."
+          },
+          {
+            "t": "The exemplum — one story, one virtue, told again",
+            "d": "Roman moral teaching was almost entirely biography. Cincinnatus leaving the plough and going back to it. Horatius on the bridge. Cornelia calling her sons her jewels. One person, one deed, told and retold. A four-year-old cannot follow an argument about duty and can absolutely follow a story about a man who went back to his farm."
+          },
+          {
+            "t": "A wax tablet and stylus",
+            "d": "The Roman school tool. Write, smooth it flat, write again. A slate or a wipe-clean board is the modern one. What matters is that mistakes vanish completely, so a small hand keeps trying instead of looking at a page full of its own failures."
+          },
+          {
+            "t": "Somewhere the child watches an adult work",
+            "d": "Roman children sat at the edge of the salutatio while clients came to greet the head of the house, and they went with their fathers into public life as soon as they could walk. They saw adults being serious in the world. Set your house up so your child can watch you doing real work rather than being sent away from it."
+          },
+          {
+            "t": "Real jobs, at four",
+            "d": "Carrying, fetching, setting, watering, taking a message. Roman households gave small children genuine tasks the family relied on. A child who does something the household actually needs learns competence and dignity in a way that no task invented for them can supply."
+          },
+          {
+            "t": "Wool, or its modern equivalent",
+            "d": "The wool basket was the sign of the Roman matron — Livia was praised for spinning in the imperial house, and lanam fecit, she made wool, was carved on tombstones as high praise. The transferable part is the visible daily craft of the household, done in the main room where children see it: mending, baking, making, growing."
+          },
+          {
+            "t": "The table where the day is reported",
+            "d": "At the cena the family gathered and the adults talked about the day, the business, the news of the city. The child listened. A meal where adults say what actually happened is where a small person learns that the world outside is real and that they will one day be in it."
+          },
+          {
+            "t": "A plain room, and plain things",
+            "d": "Republican Rome prized gravitas, weight of character, and distrusted display. Old Roman families were proud of simple houses. A room without much in it is not a deprived room; it is a room that says the people matter more than the objects."
+          },
+          {
+            "t": "Space for the body, and for training",
+            "d": "The Campus Martius was where young Romans ran, rode, swam and drilled. Physical hardiness was a moral quality to them, not a hobby. A garden, a park, a mat on the floor, and the expectation that a child gets cold and wet sometimes and manages it."
+          }
+        ],
+        "shopping": [
+          {
+            "heading": "The family shelf",
+            "items": [
+              {
+                "name": "Printed photographs of four generations",
+                "tag": "A few pounds at any print shop. The single highest-value item here, and the one most modern families do not have."
+              },
+              {
+                "name": "A notebook for the family stories",
+                "tag": "Two pounds. Write down what your grandparents did, in plain sentences, before nobody can remember. This is the modern imagines."
+              },
+              {
+                "name": "A candle, or whatever your family marks the day with",
+                "tag": "The point is that the same thing happens at the same place every day, whatever your household believes."
+              },
+              {
+                "name": "A shelf or a small table",
+                "tag": "Somewhere fixed. Free if you already have a windowsill."
+              }
+            ]
+          },
+          {
+            "heading": "The stories",
+            "items": [
+              {
+                "name": "Plutarch's Lives",
+                "tag": "Moral biography, and the source for Cato teaching his own son. Free in the public domain, and better told by you in your own words than read aloud at four.",
+                "where": "https://www.gutenberg.org"
+              },
+              {
+                "name": "Livy, the early books",
+                "tag": "Where Cincinnatus, Horatius and the founding stories come from. Read it yourself and retell one episode a week.",
+                "where": "https://www.gutenberg.org"
+              },
+              {
+                "name": "A children's book of Roman myths and legends",
+                "tag": "Any decent illustrated edition, around ten pounds. Check it keeps the deeds in rather than reducing everything to facts about togas."
+              },
+              {
+                "name": "Aesop, again",
+                "tag": "The Romans used the same fables. One a week, told from memory, for a year."
+              }
+            ]
+          },
+          {
+            "heading": "Letters, work and the body",
+            "items": [
+              {
+                "name": "A slate or wipe-clean board and stylus",
+                "tag": "Around eight pounds. The wax tablet, in modern form."
+              },
+              {
+                "name": "Child-sized real tools",
+                "tag": "A working brush, a small trowel, a jug they can carry. Fifteen pounds for a set that actually works. Toy versions defeat the purpose completely."
+              },
+              {
+                "name": "A stool at the worktop",
+                "tag": "So the child can be beside the adult work rather than under it. Thirty pounds, and often free second-hand."
+              },
+              {
+                "name": "Outdoor clothes for bad weather",
+                "tag": "The most Roman purchase on this list. Physical hardiness was a virtue to them, and a child who is properly dressed can be out in Northern Irish weather all year."
+              }
+            ]
+          }
+        ],
+        "think": [
+          {
+            "t": "The parent is the teacher, and that is the point",
+            "d": "Rome did not admire parents who delegated. Cornelia was praised specifically for teaching her own sons rather than sending them away, and Cato taught his own boy in person when he could easily have bought a tutor. If you take one thing from this tradition, take that."
+          },
+          {
+            "t": "Where the family shelf goes",
+            "d": "It has to be somewhere everyone passes daily — the hall, the kitchen, the top of the stairs. A shrine in a spare room stops being visited within a fortnight."
+          },
+          {
+            "t": "One story, many times",
+            "d": "Resist telling twelve Roman legends. Tell Cincinnatus once a week for a term until your child can tell it back to you. Depth is what makes an exemplum work; a list of legends is just information."
+          },
+          {
+            "t": "Give a job that would actually be missed",
+            "d": "The test for a real task is whether anyone notices when it is not done. Watering the plant nobody needs teaches nothing. Setting the table for the family meal teaches a great deal."
+          },
+          {
+            "t": "Gravitas is caught from adults",
+            "d": "Children pick up the register of the house. If everything is treated lightly, a child cannot learn to treat anything as weighty. This does not mean a grim home — Romans laughed — it means that some things are visibly taken seriously."
+          },
+          {
+            "t": "Let them see the serious parts of adult life",
+            "d": "Bills, decisions, work, funerals, obligations honoured. Roman children were present for all of it. A four-year-old who is only ever shown the pleasant parts of adult life is being kept from the thing they are being formed for."
+          },
+          {
+            "t": "Discipline as consistency, not as harshness",
+            "d": "The Republic's real teaching device was the unbroken habit — the same shrine, the same meal, the same expectations, every day. Modern parents reaching for the Roman toughness usually reach for severity, which is the wrong lever. Reach for consistency instead and you will get the result they got."
+          },
+          {
+            "t": "Write it down while people are alive",
+            "d": "The mos maiorum, the way of the ancestors, only exists because someone kept telling it. Ask your oldest relative three questions this month and write the answers in the notebook."
+          }
+        ],
+        "avoid": [
+          "Buying a toga and calling it Roman education. The tradition is a way of running a household, not a theme.",
+          "Reaching for Roman severity. The parts of patria potestas that gave a father power over life and death are not a parenting technique and were extreme even to many Romans.",
+          "Telling twenty legends once each instead of one legend twenty times.",
+          "Inventing pretend chores. Children can tell, and a fake job teaches them the family does not really need them.",
+          "Turning the family shelf into something the child must perform at.",
+          "A house so serious that a four-year-old cannot be silly in it. Gravitas is for the weighty moments, not the whole day."
+        ],
+        "note": "One thing said plainly, once. The Roman household rested on slavery, the father held legal power over the family that no modern person would accept, and daughters were educated far less than sons and married very young. All of that is true and none of it is small. What is worth noticing is that the parts most worth taking — a parent who teaches personally, a family with a long memory, a child given real responsibility, and a household that visibly takes some things seriously — do not depend on any of it. Those parts belong to every child in the house, sons and daughters equally, and they cost nothing."
+      },
+      "running-it": {
+        "title": "The day it ran on",
+        "icon": "clock",
+        "intro": "You are borrowing pieces of this, not reconstructing a Roman household, and it is more useful to say that than to pretend otherwise. The pieces that carry across are four: a fixed daily marker at the family shelf, real responsibility given to a small child, the family stories told as moral instruction, and the parent doing the teaching in person rather than handing it on. Run those four and you have the working part of Roman education in a Northern Irish house.",
+        "tone": [
+          {
+            "t": "Say fewer things and mean them",
+            "d": "Gravitas begins with an adult whose words carry weight because they are not spent all day on nothing. A parent who issues forty instructions an hour has taught a child that instructions can be ignored."
+          },
+          {
+            "t": "Be the example, since you are the curriculum",
+            "d": "The Roman position is blunt: the child is watching you and learning what a person is. Not what you say about honesty — how you behave when the shop gives you too much change."
+          },
+          {
+            "t": "Keep your word exactly",
+            "d": "Fides, keeping faith, was the Roman virtue above almost all others. A four-year-old tests it constantly with small promises. Keeping every one of them teaches more about trust than any story."
+          },
+          {
+            "t": "Expect competence, warmly",
+            "d": "Speak to a small child as someone who can manage the task, then let them manage it slowly. Expectation lifts children when it comes with warmth and crushes them when it comes with impatience."
+          },
+          {
+            "t": "Take some things seriously in front of them",
+            "d": "A funeral, a promise, a debt, a duty to a neighbour. Let them see that certain things are not negotiable in this house. That is how a child learns there is such a category."
+          }
+        ],
+        "rhythm": [
+          {
+            "t": "The whole household starts together",
+            "d": "Romans rose early and everyone began at once. A house where everybody starts the day in the same room, however briefly, feels like one household rather than several people who live in the same building."
+          },
+          {
+            "t": "The morning marker at the shelf",
+            "d": "The Roman family paused at the lararium and made a small offering before the day began. Your version might be a candle, a grace, a name said, a moment of quiet. Do the same thing daily. The repetition is the whole mechanism, because a small child learns what matters from what is never skipped."
+          },
+          {
+            "t": "The child watches adult work",
+            "d": "The morning is when adults do serious things. Bring the four-year-old to the edge of it rather than sending them off. Watching a parent handle real business is the oldest form of instruction there is and it needs no preparation."
+          },
+          {
+            "t": "The real job, done daily",
+            "d": "The same task, at the same point in the day, that the household genuinely needs. Do not rotate it for variety. The value is in the reliability, and a four-year-old who has fed the cat every morning for a year has learned something about themselves."
+          },
+          {
+            "t": "Letters and numbers, briefly and by the parent",
+            "d": "Ten minutes on the slate at most, taught by you rather than by an app or a programme. At four this is playing with shapes and names. Cato taught his own son and thought it mattered enormously that it came from him rather than from a hired hand."
+          },
+          {
+            "t": "Midday meal, then rest",
+            "d": "A simple lunch and a quiet period. Roman days had a genuine pause in them, and small children in every century fall apart in the early afternoon without one."
+          },
+          {
+            "t": "The body, hard, in the afternoon",
+            "d": "Running, climbing, riding, swimming when you can. Physical hardiness was a moral quality to the Romans, not a leisure choice. Being out in weather that is not perfect is part of it."
+          },
+          {
+            "t": "The story of an ancestor or a hero, told",
+            "d": "Late afternoon or bedtime. One person, one deed, and the same one for a week. Cincinnatus. Your great-grandfather. Whoever your family holds up. Then leave it alone without adding a moral, because the story delivers itself and a lecture on top of it undoes the work."
+          },
+          {
+            "t": "The evening meal, with the day reported",
+            "d": "The whole family, the adults saying what actually happened, the child listening and sometimes joining. This is the Roman classroom and there is no substitute for it."
+          },
+          {
+            "t": "Close at the shelf",
+            "d": "A word, a name, a goodnight from each parent. The same ending every night, which is what allows a small person to put the day down."
+          }
+        ],
+        "does": [
+          "Teaches the child personally instead of handing the job on.",
+          "Keeps one daily marker that is never skipped.",
+          "Gives a real task and lets the child carry it badly at first.",
+          "Tells one ancestor story until the child can tell it back.",
+          "Lets the child be present for serious adult business.",
+          "Keeps every small promise made to a four-year-old."
+        ],
+        "doesnt": [
+          "Add a moral to the end of the story.",
+          "Invent a pretend job to keep the child busy.",
+          "Reach for severity when consistency is the thing that was missing.",
+          "Send the child away from the difficult parts of family life as a matter of routine.",
+          "Let the family shelf become a place where the child is inspected.",
+          "Mistake a heavy atmosphere for gravitas. Roman houses were affectionate."
+        ],
+        "parents": "There is no group version of this, and that is not an oversight — the Republic held that a small child belonged in the household and that handing them to a professional was a lesser choice. So the honest answer to what does the parent do is everything, and the honest follow-up is that Rome did not think this was too much to ask. What the tradition offers a modern parent who feels stretched is a reordering rather than an extra job. The Roman working day did not stop so the children could be taught. The children were brought into the working day. The four-year-old came to the workshop, stood at the edge of the meeting, carried the message, watched the accounts being done. If you work from home, this is directly available to you and it is closer to the Roman pattern than any curriculum. If you work away from the house, the Roman answer is the evening meal and the weekend, treated as seriously as anything on your calendar rather than as what is left over.",
+        "mistakes": [
+          {
+            "t": "Taking the toughness and leaving the presence",
+            "d": "People admire Roman discipline and try to install it without installing the daily hours of adult company that made it bearable. Discipline without presence is just severity, and children close down under it."
+          },
+          {
+            "t": "Skipping the daily marker for a week",
+            "d": "The whole device is that it never stops. Miss it for a fortnight and it becomes something the family used to do, which teaches a different lesson entirely."
+          },
+          {
+            "t": "Explaining the exemplum",
+            "d": "Tell the story and stop talking. The moment you say and that means we should always be brave, the child hears a lesson instead of meeting a person."
+          },
+          {
+            "t": "Delegating and then feeling guilty",
+            "d": "If the practical answer for your family is nursery, choose the person and the place carefully, and put the Roman pattern into the hours you do have. Guilt does not teach anybody anything."
+          },
+          {
+            "t": "Giving the daughter the softer version",
+            "d": "Rome mostly did, and it is the clearest place where a modern family should simply do better. The real jobs, the family stories and the physical hardiness are for every child."
+          },
+          {
+            "t": "Confusing weight with volume",
+            "d": "Gravitas is a quiet quality. Raising your voice is the opposite of it, and Roman writers said so."
+          }
+        ],
+        "training": "There is nothing to train in and nobody to register with. What is worth reading is short. Plutarch's Life of Cato the Elder contains the passage about Cato teaching his own son, and it is a page long and worth reading tonight. Plutarch's Life of Coriolanus gives you Roman motherhood at full strength. Livy's first books hold Cincinnatus and Horatius. Cicero's De Officiis, On Duties, was written to his own son and is the tradition explaining itself to the next generation, which makes it unusually direct. All of these are in the public domain and free. If you want your child in a group that carries these ideas forward, look at classical schools and co-ops, which are the living descendant of the Roman school and where this practice actually continues."
+      },
+      "your-part": {
+        "title": "Your part in it",
+        "icon": "heart",
+        "intro": "Rome gives the most direct answer of any tradition in this app to the question of what a parent is for, and it is not a comfortable one. You are not a supporter of your child's education. You are the thing being copied. Everything else follows from that, including the parts that are surprisingly easy.",
+        "model": {
+          "label": "A tradition you borrow — the parent is the whole school",
+          "body": "There is nowhere to send a four-year-old for a Roman education, and the Republic would have thought the idea odd. The household was the institution, the parents were the staff, and the curriculum was the way the adults actually behaved. Cornelia taught her own sons and was praised for refusing to hand them over. Cato taught his own boy his letters and his swimming and wrote out a history for him by hand. That is the model, and its demand is clear: whatever you want your child to become, be that in front of them, daily, for years. The relief hidden inside it is that you do not need to buy anything, learn a method, or find a place with room this September."
+        },
+        "before": [
+          "Do the daily marker at the family shelf, even on the mornings when it feels like nothing. The child is learning that some things do not depend on the mood of the adults.",
+          "Give the real job and then stand back and let it be done slowly and badly. Taking it over to save four minutes undoes months of it.",
+          "Say what is going to happen today, plainly. Romans ran on stated obligations, and a small child who knows the shape of the day argues far less about it.",
+          "Take them to the edge of your own work rather than away from it.",
+          "Keep whatever you promised yesterday. This is the single most Roman thing you will do all day."
+        ],
+        "after": [
+          "Eat together and say what actually happened in your day, in real words. Not a summary for children. The real version, at their level.",
+          "Tell the ancestor story or the hero story, and then say nothing more about it.",
+          "Name what they did that had weight. You carried that the whole way. You kept your word. Specific, factual, no fuss.",
+          "Let them see you handle something difficult properly — a phone call you did not want to make, a mistake you owned. This teaches more than any story, because it is happening in front of them.",
+          "Close the day the same way every night, at the same place."
+        ],
+        "involvement": [
+          {
+            "t": "You are the curriculum",
+            "d": "The Roman claim is that a child learns what a person is by watching one closely for years. It means your habits are the syllabus, which is uncomfortable and also the reason this tradition changes parents more than it changes children."
+          },
+          {
+            "t": "Teach one thing personally, badly",
+            "d": "Reading, swimming, a skill, a job. Not because you are better at it than a teacher, but because it comes from you. Cato's point was exactly this, and Plutarch records that he was not embarrassed about it."
+          },
+          {
+            "t": "Keep the family memory yourself",
+            "d": "Write the stories down, print the photographs, say the names. Nobody else will do this and in twenty years it is either there or it is gone."
+          },
+          {
+            "t": "Bring them into real life early",
+            "d": "The bank, the workshop, the meeting, the funeral, the visit to the elderly neighbour. Roman children were in all of it. A child kept in a world made for children learns nothing about the one they are joining."
+          },
+          {
+            "t": "Give the same offer to every child in the house",
+            "d": "This is the place where a modern family straightforwardly improves on Rome. Daughters get the real jobs, the hard weather, the family stories and the teaching, in full."
+          }
+        ],
+        "visit": [
+          {
+            "q": "What does my child see me do every single day?",
+            "why": "This is the Roman audit, and it is the only one the tradition really cares about. Whatever the answer is, that is the education currently being delivered."
+          },
+          {
+            "q": "Does my four-year-old have a job the household would actually miss?",
+            "why": "Real responsibility builds real competence. A pretend task builds a suspicion that they are being managed."
+          },
+          {
+            "q": "Can my child name their great-grandparents and tell one story about them?",
+            "why": "It is the modern version of the imagines, and it gives a child a long line to belong to rather than only the present moment."
+          },
+          {
+            "q": "Is there one thing in this house that never gets skipped?",
+            "why": "Consistency was the Roman teaching device. One unbroken daily habit does more than a dozen that come and go."
+          },
+          {
+            "q": "Did I keep every small promise I made this week?",
+            "why": "Fides. Children keep the ledger whether or not anyone else does, and they are learning from it what a promise is worth."
+          },
+          {
+            "q": "Am I teaching anything myself, or have I handed it all on?",
+            "why": "Rome would ask this bluntly. There is no shame in help, and there is a real difference between using help and disappearing."
+          },
+          {
+            "q": "Is my child present for the serious parts of family life?",
+            "why": "You want to be able to say yes, at their level. A child protected from every difficulty is unprepared for the ordinary business of being an adult."
+          },
+          {
+            "q": "If a school or a group claims to build character, how exactly?",
+            "why": "Ask for the mechanism, not the value. A real answer sounds like specific daily practices and specific responsibilities. A poster of virtues on a wall is not a mechanism."
+          }
+        ],
+        "flags": [
+          "Roman severity borrowed without Roman presence.",
+          "A family shelf that has become somewhere the child is judged.",
+          "Real jobs given and then taken back whenever they are done slowly.",
+          "Stories told with the moral bolted on the end.",
+          "A house where nothing is ever treated as weighty, so nothing can be.",
+          "A house where everything is treated as weighty, so a four-year-old cannot be silly.",
+          "Daughters getting the gentle version of the tradition."
+        ],
+        "note": "The demand this tradition makes is real, and so is what it gives back. You do not need money, a place, a programme or a September start date. You need to be a person worth copying, in the same house, most days, for years. Plenty of parents find that harder than any curriculum and also find that it is the only part that lasted."
+      },
       "bring-it-home": {
               "intro": "The Roman gift is simple: they treated even a small child as someone becoming a person of substance. Your four-year-old is not just 'the baby' — they are part of the family's story, trusted with a real place in it and, little by little, real duty. When a child feels they truly belong and truly matter, they rise to it.",
               "steps": [
@@ -12875,6 +14047,412 @@ window.METHODS = [
       ]
     },
     sections: {
+      "set-up-the-space": {
+        "title": "Set up the space",
+        "icon": "shelf",
+        "intro": "This room looks nothing like the other rooms in this app, and it is honest about why. The morning is one child, one screen, one adaptive tutor, at full concentration, for about two hours. The afternoon is a big table and real projects. So you are building two spaces, not one: a quiet place where a child can work alone without anyone behind them, and an open place where things get made, argued about and performed. Alpha School in Austin, Texas is the best-known version of this and its campuses are built on exactly that split.",
+        "scales": [
+          {
+            "name": "One child at your kitchen table",
+            "span": "Cost: a device you probably already own",
+            "body": "A laptop or tablet, a set of headphones, a timer, and Khan Academy, which is free. Two focused hours in the morning, then the table is cleared and the afternoon is yours. Thousands of home-educating families in the UK and Ireland already run something close to this without calling it anything."
+          },
+          {
+            "name": "A room set up for it",
+            "span": "Cost: a few hundred pounds",
+            "body": "A desk facing a wall rather than a window, a proper chair, wired internet if you can, headphones, a charging point, and a second surface — a big table — where the screens never go. Add a board where the week's goals are written up so progress is visible without anyone asking."
+          },
+          {
+            "name": "A microschool for a few families",
+            "span": "Cost: real money, registration and insurance",
+            "body": "Six to fifteen children, one guide, one device each, decent wifi, a workshop table, and a legal structure. In Northern Ireland this is the part people underestimate: taking in other people's children under school age means registering with your local Health and Social Care Trust Early Years Team, and teaching other people's school-age children full time means talking to the Department of Education about independent school registration. Everyone needs Access NI clearance and public liability insurance. Phone before you rent anything."
+          }
+        ],
+        "elements": [
+          {
+            "t": "One device per child, on a real desk",
+            "d": "Not shared, not on a sofa, not held in the hands. The morning block only works at full attention, and a device balanced on a knee produces a child who is half working. A proper chair at a proper height matters as much here as it does for handwriting."
+          },
+          {
+            "t": "Internet that does not fail",
+            "d": "This is the unglamorous one that decides everything. An adaptive tutor that stalls mid-question breaks concentration completely and a child does not get it back quickly. Wired connections beat wireless for the working desks if you can manage it."
+          },
+          {
+            "t": "Headphones, one pair each",
+            "d": "Most of these programmes speak. Without headphones a room of six children is unusable, and with them a child can work beside others without being pulled out of their own task every few seconds."
+          },
+          {
+            "t": "A screen nobody stands behind",
+            "d": "Put the desks so an adult can see the room but is not looming over a shoulder. Children who feel watched perform for the watcher instead of working, and the whole model depends on the child working honestly at their own edge."
+          },
+          {
+            "t": "A visible board of goals",
+            "d": "Each child's target for the week, written where they can see it. The claim underneath this model is that children work harder when the goal is theirs and the progress is visible, and a board makes that true without anybody being told off."
+          },
+          {
+            "t": "A big table with no screens on it",
+            "d": "The whole afternoon lives here: building, making, arguing, rehearsing, cooking, selling. This table should be bigger than you think you need and should never become a second desk."
+          },
+          {
+            "t": "Somewhere to actually perform",
+            "d": "Alpha ends its life-skills workshops with a live challenge in front of a real audience — do the thing rather than describe it. That needs floor space, a wall to face, and chairs that can be turned around. A skill performed under real stakes is a different thing from a skill written about."
+          },
+          {
+            "t": "A quiet corner with no device at all",
+            "d": "A chair and books. Two hours of adaptive software is genuinely tiring, and a child needs somewhere to go that is not another screen. If the only alternative to the working screen is a leisure screen, you have built a room made entirely of screens."
+          },
+          {
+            "t": "Charging, cables and spares, all in one place",
+            "d": "Boring and load-bearing. A flat battery at nine in the morning costs the whole block. One box, one wall, everything lives there."
+          },
+          {
+            "t": "A seat for the guide, in the room",
+            "d": "Not a desk at the front. The adult in this model is not lecturing, so they do not need a stage. They need somewhere to sit, watch the dashboard, and call children over one at a time."
+          }
+        ],
+        "shopping": [
+          {
+            "heading": "The morning block",
+            "items": [
+              {
+                "name": "A laptop or tablet with a keyboard",
+                "tag": "A refurbished Chromebook is around a hundred and fifty pounds and runs everything on this list. You do not need a fast machine."
+              },
+              {
+                "name": "Wired headphones",
+                "tag": "Around fifteen pounds, and wired is better here — nothing to charge, nothing to pair, nothing to lose mid-session."
+              },
+              {
+                "name": "A desk and a chair that fit the child",
+                "tag": "Feet flat, elbows level, screen at eye height. Around sixty pounds second-hand and worth more than any software you could buy."
+              },
+              {
+                "name": "A visible timer",
+                "tag": "Five pounds. The two-hour block works because it is bounded, and a child who can see the time left paces themselves."
+              },
+              {
+                "name": "A goals board and pens",
+                "tag": "A whiteboard, around fifteen pounds. Each child's week written up."
+              }
+            ]
+          },
+          {
+            "heading": "The software",
+            "items": [
+              {
+                "name": "Khan Academy",
+                "tag": "Free, mastery-based, covers maths from counting upward, and Khan Academy Kids is aimed at the youngest children. This is the honest starting point and it costs nothing.",
+                "where": "https://www.khanacademy.org"
+              },
+              {
+                "name": "Khanmigo",
+                "tag": "Khan Academy's AI tutor, paid, built on a large language model. Aimed at older children rather than four-year-olds. Try the free tools first and see whether you need it."
+              },
+              {
+                "name": "Synthesis",
+                "tag": "Grew out of the problem-solving programme run at SpaceX's school and now sells an AI maths tutor. Interesting, paid, and worth a trial before a subscription."
+              },
+              {
+                "name": "MagicSchool",
+                "tag": "Built for teachers rather than children — lesson planning and materials. Useful if you are the guide for several children."
+              },
+              {
+                "name": "A device management setting, not an app",
+                "tag": "Free. Turn on the built-in screen time and content controls before the first session rather than after the first problem."
+              }
+            ]
+          },
+          {
+            "heading": "The afternoon half",
+            "items": [
+              {
+                "name": "One big table",
+                "tag": "Second-hand, around fifty pounds. The most important piece of furniture in the room."
+              },
+              {
+                "name": "Real tools and real materials",
+                "tag": "Wood, tape, card, glue, needles, seeds, a hammer that works. Around forty pounds to start. The afternoon fails if the materials are toys."
+              },
+              {
+                "name": "A camera or a phone on a stand",
+                "tag": "For recording the talk, the pitch, the performance. Watching yourself back is the fastest way to improve at speaking, and children take to it."
+              },
+              {
+                "name": "A few chairs that face the performing space",
+                "tag": "You need a real audience for the live challenge, even if the audience is three people."
+              }
+            ]
+          },
+          {
+            "heading": "Only if you are opening it to other families",
+            "items": [
+              {
+                "name": "Business-grade internet and a backup",
+                "tag": "A mobile hotspot as a fallback. In this model a failed connection is a failed morning, which is not true of any other tradition in this app."
+              },
+              {
+                "name": "Access NI clearance and public liability insurance",
+                "tag": "For every adult in the room. Weeks, not days."
+              },
+              {
+                "name": "The right registration",
+                "tag": "Under school age and taking payment means the Health and Social Care Trust Early Years Team. Other people's school-age children full time means the Department of Education and independent school registration. Ask them which you are before you commit."
+              },
+              {
+                "name": "A written data policy",
+                "tag": "Free to write and essential. Which companies see your children's work, what they keep, and for how long. Parents will ask, and they should."
+              }
+            ]
+          }
+        ],
+        "think": [
+          {
+            "t": "Two hours is the claim, not a guarantee",
+            "d": "Alpha School states that its students complete core academics in about two hours a day and that they learn substantially faster than in a conventional classroom, and it points to its own internal test data. Long independent studies have not been published. Treat two hours as a target worth aiming at and watch what your own child actually does."
+          },
+          {
+            "t": "Where the idea came from",
+            "d": "Benjamin Bloom published a paper in 1984 arguing that one-to-one tutoring with mastery learning lifted average students dramatically compared with ordinary classrooms. That paper is the intellectual foundation for this whole model. It is also fair to say that the size of the effect has been hard to reproduce since, and that giving software the tutor's role is a further step that Bloom did not test."
+          },
+          {
+            "t": "Four is early for this",
+            "d": "The two-hour academic block is designed for school-age children. A four-year-old does not need it, and most of the people building these schools would say so. At four, the useful piece is the afternoon half — the real projects, the live challenge, the workshop table — and twenty minutes of anything on a screen is plenty."
+          },
+          {
+            "t": "Light and eyes",
+            "d": "Screen at eye height, daylight from the side rather than behind, and a break where the child looks at something far away. This is ordinary and it is the thing most home setups get wrong."
+          },
+          {
+            "t": "The afternoon is not the leftover",
+            "d": "The point of finishing academics fast is the afternoon, not more academics. If the afternoon has no plan, the model collapses into two hours of software and a lot of free time, which is not what anyone is claiming produces the results."
+          },
+          {
+            "t": "Who sees the data",
+            "d": "Every adaptive programme records what your child got wrong, how long they hesitated, and how often they gave up. Decide before you start which companies you are comfortable holding that, and read what they say they keep."
+          },
+          {
+            "t": "A screen for work and a screen for fun are not the same thing",
+            "d": "Children separate these easily if the adults do. Different device, or different place, or a clear line. Blur it once and the working device becomes something to negotiate over every morning."
+          },
+          {
+            "t": "What happens when the software is wrong",
+            "d": "It will sometimes teach a method badly or mark a right answer wrong. Decide who the child tells and what happens next. A child who learns that the program is always right stops thinking, which is the opposite of the aim."
+          }
+        ],
+        "avoid": [
+          "A tablet on the sofa. Same software, entirely different result.",
+          "Six hours of adaptive apps because the child is willing. The claim is that two hours is enough, and stretching it to six gives up the whole benefit.",
+          "Buying subscriptions before running the free tools for a term.",
+          "A room where every surface has a screen on it.",
+          "Treating the dashboard as a scoreboard between children.",
+          "A four-year-old doing the two-hour block. It was not built for them."
+        ],
+        "note": "Be plain with yourself about what is proven here and what is not. The pieces with the strongest support are old and boring: children learn faster with one-to-one attention, and gaps in the foundation cause failures later. The new part — that AI software can supply the one-to-one attention at scale — is genuinely promising, is being tried at real schools with real children right now, and does not yet have long independent evidence behind it. That is not a reason to avoid it. It is a reason to watch your own child closely rather than trusting anybody's numbers, including the school's own."
+      },
+      "running-it": {
+        "title": "Running the day",
+        "icon": "clock",
+        "intro": "The day has two halves and they are run completely differently. The morning is short, quiet and individual, and the adult barely speaks. The afternoon is loud, collective and hands-on, and the adult is running it. Getting the two halves properly separate is most of the job, because the failure mode of this model is a morning that leaks into the afternoon and eats it.",
+        "tone": [
+          {
+            "t": "You are a guide, not a teacher",
+            "d": "Alpha uses the word deliberately: the adults do not lecture, they motivate, unblock and encourage while the software teaches. If you find yourself explaining the maths, the model has stopped running and something else has started."
+          },
+          {
+            "t": "Coach the effort, not the score",
+            "d": "You went back and fixed the ones you got wrong. You stayed with that for twenty minutes. Naming what the child actually did is what makes them able to do it again. Naming the percentage teaches them to protect the percentage."
+          },
+          {
+            "t": "Be relentlessly can-do, and mean it",
+            "d": "The culture here is that ability grows with effort and that last week you could not do this. It works because it is usually true and the dashboard can prove it. Show them their own progress rather than telling them they are clever."
+          },
+          {
+            "t": "Quiet in the morning, loud in the afternoon",
+            "d": "Your voice sets which half the room is in. Two hours of near-silence, then a completely different energy after lunch, and children switch with it without being told."
+          },
+          {
+            "t": "Do not rescue the stuck child immediately",
+            "d": "Sitting with a hard problem for a few minutes is where the learning is. Come over, ask what they have tried, and leave again. Solving it for them removes the only difficult part of the day."
+          }
+        ],
+        "rhythm": [
+          {
+            "t": "Set the goals before the block starts",
+            "d": "Two minutes with each child: here is what you are aiming at this morning. A block with a stated target produces different behaviour from a block that is just a length of time."
+          },
+          {
+            "t": "The two-hour academic block",
+            "d": "Everyone on their own device, headphones on, everyone working on something different at their own level. No whole-group instruction, no announcements, nothing scheduled inside it. Protect this block above everything else in the day, because interrupting it costs far more than the minute it takes."
+          },
+          {
+            "t": "The guide watches the dashboard",
+            "d": "The adult sits with the live view of who is moving, who has stalled, and who has been on the same question for eleven minutes. This is the whole reason an adult is in the room, and it replaces marking books afterwards with noticing during."
+          },
+          {
+            "t": "One-to-one check-ins, two or three minutes each",
+            "d": "Called over, one at a time. What is stuck, what is next, what will you do differently. Short and frequent beats long and rare, because a child can act on a two-minute conversation the same morning."
+          },
+          {
+            "t": "A real break, off the screen",
+            "d": "Out of the room, moving, looking at something far away. Not a different screen. A tired child on adaptive software produces meaningless data as well as meaningless learning."
+          },
+          {
+            "t": "Academics finish, and stop",
+            "d": "When the block is done it is done, even if a child could keep going. The claim is that two focused hours does the job; if you routinely need four, something is wrong with the level, the sleep or the setup, and adding hours hides it rather than fixing it."
+          },
+          {
+            "t": "Lunch, with real jobs",
+            "d": "Setting up, cooking, clearing, taking responsibility for part of it. Competence is part of the curriculum here and lunch is the easiest place to practise it."
+          },
+          {
+            "t": "The afternoon workshop",
+            "d": "One life skill run in a long arc over several weeks — public speaking, running a small business, financial basics, cooking, coding, the outdoors. Long arcs beat one-off activities because a skill needs many repetitions before it belongs to the child."
+          },
+          {
+            "t": "Passion projects",
+            "d": "Time the child directs themselves, on something big enough to take months. This is where the freed hours are meant to go, and a child who has nothing they want to work on is a child who needs help finding one, not a child who needs more worksheets."
+          },
+          {
+            "t": "The live challenge",
+            "d": "At the end of the arc, do the thing in front of real people with real stakes. Give the talk, sell the product, run the event, perform the skill. Alpha calls this Test2Pass, and the useful idea inside it is that a skill you can perform in front of an audience is a skill you actually have."
+          }
+        ],
+        "does": [
+          "Watches the dashboard live and moves toward the child who has stalled.",
+          "Runs short one-to-one conversations, several times a morning.",
+          "Protects the two-hour block from every interruption, including their own.",
+          "Ends academics on time and gives the afternoon its full length.",
+          "Shows each child their own progress over weeks, not their rank against others.",
+          "Runs the afternoon workshop as a real arc ending in a real performance."
+        ],
+        "doesnt": [
+          "Stand at the front and teach the group.",
+          "Compare children's dashboards out loud.",
+          "Let the morning block stretch into the afternoon.",
+          "Solve the problem for the child who is nearly there.",
+          "Treat time on the device as the measure. Mastery is the measure.",
+          "Use the same screen for reward that is used for work."
+        ],
+        "parents": "This model asks something unusual of parents: not classroom help, but judgement about screens and honesty about data. Most microschools running this way keep parents well informed, because the dashboard makes it easy — you can often see exactly what your child worked on and where they are stuck, which almost no traditional school can offer. Take that access and use it as information rather than as a scoreboard. The harder part is that you are handing a lot of your child's day to software made by companies, and you are entitled to know which companies, what they record, and whether anything is used to train their systems. Ask before you enrol, not after. Some settings will have a clear written answer and some will not have thought about it, and which one you get tells you a great deal. Beyond that, the ordinary things still apply: sleep, breakfast, arriving on time, and taking the afternoon half seriously rather than treating it as the fun part around the real school.",
+        "mistakes": [
+          {
+            "t": "Letting the morning eat the afternoon",
+            "d": "The most common failure. Academics run long, the workshop gets cut, and the school becomes two-hour learning with four hours of extra practice. The afternoon is not the reward for the morning; it is the reason for it."
+          },
+          {
+            "t": "Treating the dashboard as a league table",
+            "d": "The moment children compare percentages, they start choosing easy work to protect the number. Show each child their own line over time and nobody else's."
+          },
+          {
+            "t": "Believing the software about mastery",
+            "d": "A child can pass a screen by pattern-matching without understanding anything. Ask them to explain it to you out loud once a week. If they cannot say it, they do not have it, whatever the program says."
+          },
+          {
+            "t": "No plan for the afternoon",
+            "d": "A room of children with free time and no arc drifts within a fortnight. The workshop needs the same preparation a lesson would."
+          },
+          {
+            "t": "Running the block for a four-year-old",
+            "d": "It was designed for school-age children. At four, twenty minutes and a great afternoon is the honest version."
+          },
+          {
+            "t": "Selling parents the claims as settled facts",
+            "d": "If you are opening a setting, quote the source and say what is not yet proven. Parents who later discover the evidence was thinner than presented will not forgive it, and they will be right."
+          }
+        ],
+        "training": "There is no established qualification for this role yet, and that is worth knowing rather than glossing over. Alpha recruits guides for character and coaching ability rather than subject teaching, and pays notably well for it. What is genuinely useful to learn is coaching, tutoring and how the software actually works: Khan Academy publishes free teacher and coach accounts and training material, and running its mastery dashboards for a term teaches you more than reading about the model. Read Benjamin Bloom's 1984 paper The 2 Sigma Problem for the argument this is all built on, and read the criticism of it too. MacKenzie Price, who founded Alpha School, talks about the model widely in podcasts and interviews, which is the clearest way to hear it in its own words. In Northern Ireland, if you are opening a microschool, your first calls are to your local Health and Social Care Trust Early Years Team for the under-school-age question, and to the Department of Education about independent school registration for school-age children. Access NI clearance and public liability insurance apply either way."
+      },
+      "your-part": {
+        "title": "Your part in it",
+        "icon": "heart",
+        "intro": "Two questions come up for every parent looking at this model, and both deserve straight answers rather than reassurance. The first is about screens: is two hours a day on a device good for a young child. The second is about evidence: is this actually proven. Neither has a tidy answer, and a setting that gives you one should make you more careful, not less.",
+        "model": {
+          "label": "Drop off — with more visibility than any school has ever offered you",
+          "body": "Microschools running this way are usually drop-off from school age, and the day is shorter and looser than a conventional school day. What is different is what you can see. The dashboard shows you what your child worked on, where they stalled, and what they mastered, often the same day. No traditional school has been able to offer that. Use it as a window rather than as a scoreboard, and resist the pull to check it three times a morning — a child who knows their parent is watching every question live starts working for the watcher. On screens, be clear-eyed: this model puts a young child in front of a device for a substantial block every day, and that is a real trade you are making deliberately in exchange for the freed afternoon. The people running these schools would say the trade is obviously worth it. You are allowed to weigh it yourself."
+        },
+        "before": [
+          "Sleep first. Adaptive software gives a tired child easier work and then records that as progress, so poor sleep shows up as a flat line on the dashboard rather than as tiredness.",
+          "Feed them properly. Two hours of unbroken concentration on an empty stomach does not happen.",
+          "Keep the morning screen-free at home. Arriving already saturated makes the working block much harder.",
+          "Get there on time. Walking into a silent room where everyone is already deep in work is difficult for a child and disruptive for the room.",
+          "Say goodbye once and go, the same as any other setting."
+        ],
+        "after": [
+          "Do not open with what did you score. Ask what they got stuck on and how they got past it. That question builds the habit the whole model depends on.",
+          "Ask them to explain one thing they learned, out loud, in their own words. It takes two minutes and it is the only real check on whether mastery on a screen is mastery in a head.",
+          "Ask about the afternoon first. The workshop and the project are where the person is being built, and children will talk about those far more readily.",
+          "Keep the hour after collection off screens entirely. A child who has just done two hours on a device does not need a third.",
+          "Get them outdoors and moving. This model gives back hours, and the outdoors is one of the best places to spend them.",
+          "Look at the dashboard once a week with them, not daily behind their back. Weekly, together, is information. Daily and secret is surveillance, and children can tell the difference."
+        ],
+        "involvement": [
+          {
+            "t": "Read the dashboard properly, once a week",
+            "d": "Look for the shape over time: what stalled, what suddenly moved, what they avoid. That pattern is more useful than any number on it, and it tells you things a school report never could."
+          },
+          {
+            "t": "Own the screen decision",
+            "d": "You are choosing device hours in exchange for freed afternoon hours. Make that a decision you have actually made, with a rule for the rest of the day, rather than something that drifts."
+          },
+          {
+            "t": "Take the afternoon seriously at home",
+            "d": "Ask about the project, come to the live challenge, be the audience. The performance half of this model needs real people in the chairs, and parents are the obvious ones."
+          },
+          {
+            "t": "Ask about the evidence, and keep asking",
+            "d": "This is a young model and honest people running it will say so. A setting that welcomes the question is a setting that is watching its own results."
+          },
+          {
+            "t": "Fill the gaps the software does not touch",
+            "d": "Reading aloud together, handwriting, music, being outdoors in bad weather, long unstructured play. Adaptive maths is very good at adaptive maths. It does none of these, and nobody at these schools claims it does."
+          }
+        ],
+        "visit": [
+          {
+            "q": "Which specific programmes do the children use, and can I try them myself?",
+            "why": "You want names, and you want ten minutes on the software yourself. Anyone confident in their tools will hand you a device."
+          },
+          {
+            "q": "How many hours a day is a child in front of a screen, in total?",
+            "why": "Ask for the real figure including the afternoon. This is the trade you are making and you should know its size."
+          },
+          {
+            "q": "Who owns my child's data, what is stored, and is any of it used to train these companies' systems?",
+            "why": "The single most important question in this section. You want a written answer naming the companies, not a reassurance. A setting that has never been asked this will tell you so, which is itself useful."
+          },
+          {
+            "q": "What evidence do you have that this works, and how much of it is your own?",
+            "why": "A good answer distinguishes between published independent research and the school's own internal test data, and does not blur them together."
+          },
+          {
+            "q": "What does the guide actually do all morning?",
+            "why": "You want to hear watching the dashboard and short one-to-one conversations. If the answer is supervising, the adult is a childminder and the model is missing half of itself."
+          },
+          {
+            "q": "What happens when a child stops progressing for three weeks?",
+            "why": "Listen for a real process — the guide notices, the level is checked, the gap is found. Every child stalls at some point and how a setting handles it is the whole difference."
+          },
+          {
+            "q": "What is in the afternoon this term, and how does it end?",
+            "why": "You want a specific arc and a specific live challenge. Vague afternoons are where this model most often falls apart."
+          },
+          {
+            "q": "What are the qualifications and turnover of your guides?",
+            "why": "This is a new role with no established route into it. Ask who they are, why they are here, and how long the last one stayed."
+          }
+        ],
+        "flags": [
+          "Claims stated as proven with no source named.",
+          "No clear written answer about data and which companies hold it.",
+          "Children's scores compared publicly.",
+          "An afternoon with no plan, filled with more device time.",
+          "A guide who cannot describe what they do during the morning block.",
+          "Pressure to sign up quickly, or fees that are hard to get in writing.",
+          "A four-year-old being put through the full academic block.",
+          "Any suggestion that this replaces reading aloud, being outdoors and long unstructured play."
+        ],
+        "note": "It is worth being fair to this model as well as careful about it. The people building these schools started from a first-principles question that deserves a real answer: why does learning have to take six hours a day, and how much of a normal school day is a child genuinely learning rather than waiting. That is a good question, the answer they have found is interesting, and children at these schools do appear to enjoy going, which is not nothing. Hold it as a promising experiment that is being run right now, with real children in it, rather than as either the future settled or a passing fashion. Watch your own child, ask for the evidence, and decide with your eyes open."
+      },
       "bring-it-home": {
               "title": "Bring it home",
               "icon": "sprout",
