@@ -699,6 +699,411 @@ window.METHODS = [
           ]
     },
     sections: {
+      "set-up-the-space": {
+        "title": "Set up the space",
+        "icon": "shelf",
+        "intro": "A Charlotte Mason education does not need a classroom. It was built for houses — a family, a table, a shelf of good books, and an afternoon outside. If you walk into a home doing this well, it looks like a home. What you are really setting up is a small number of things that are always ready, so that the morning starts in two minutes instead of twenty and nobody loses heart before the first lesson.",
+        "scales": [
+          {
+            "name": "One child at the kitchen table",
+            "span": "Cost: near nothing, if you use the library",
+            "body": "A basket that lives on a shelf and comes to the table each morning: the books you are reading now, a notebook, a pencil, a small paint box. A clock the child can see. Coats and boots by the door for the afternoon. That is a complete Charlotte Mason setup, and thousands of families run on exactly this."
+          },
+          {
+            "name": "A room given over to it",
+            "span": "Cost: a hundred pounds and a weekend",
+            "body": "Now you can leave things out. A table by the window, a low bookcase for the term's books, one framed print on the wall for picture study, a map, a shelf for the nature notebooks and the handicraft basket. The gain is not space, it is that setting up costs you nothing each morning."
+          },
+          {
+            "name": "A co-op for several families",
+            "span": "Cost: a hall hire, and some paperwork",
+            "body": "Charlotte Mason groups usually meet one or two days a week rather than five, because the method belongs to the home the rest of the time. You need a room with tables and good light, a place to hang wet coats, somewhere to walk outdoors, one set of the term's books, and a clear agreement about who teaches what. If parents stay and remain responsible for their own children, this is a very different thing legally from opening a childcare setting — but ring your Health and Social Care Trust Early Years Team and describe exactly what you are planning before you commit to anything."
+          }
+        ],
+        "elements": [
+          {
+            "t": "A short shelf of the books you are reading now",
+            "d": "Not the whole library. Six to ten books for this term, spines out, within reach. When the next book is visible, the child picks it up in the gaps, which is where a lot of the reading actually happens."
+          },
+          {
+            "t": "A table by a window, holding one lesson at a time",
+            "d": "Only the current book and notebook on the surface. Charlotte Mason built the whole method on short lessons given full attention, and a table covered in five other subjects is an invitation to look at any of them."
+          },
+          {
+            "t": "A clock the child can see",
+            "d": "Lessons are short on purpose — roughly ten to twenty minutes for a young child, growing with age. When the child can see the time, the shortness becomes a promise you are keeping rather than a mystery, and they give you their whole attention for it."
+          },
+          {
+            "t": "A nature notebook and a small paint box, kept together",
+            "d": "One plain sketchbook per person, a set of watercolour pans, a waterbrush or a small jar. Kept in one bag so it can leave the house in ten seconds. A nature notebook that has to be assembled never leaves the house."
+          },
+          {
+            "t": "Good paper and a pencil that works, for copywork",
+            "d": "A few lines of a well-made sentence, copied carefully by hand each day. Careful handwriting and correct spelling arrive through the eye and the hand together, so the materials have to be pleasant enough to be careful with."
+          },
+          {
+            "t": "One picture on the wall, changed each term",
+            "d": "Picture study means six works by one artist over a term. Print or postcard, hung where the child passes it. They look for a few minutes, then it is turned over and they describe it from memory. Living with one artist for twelve weeks is what makes the artist theirs."
+          },
+          {
+            "t": "Something to play music on",
+            "d": "Composer study works the same way — one composer for a term, the same handful of pieces heard often while you do other things. A speaker and a playlist is enough. Recognition comes from repetition, not from being told facts about the composer."
+          },
+          {
+            "t": "A handicraft basket with real tools",
+            "d": "Wool and needles, a small saw or whittling knife, string, clay, whatever your child is drawn to. Real tools that actually cut and actually sew. A child knows the difference between a tool and a toy immediately."
+          },
+          {
+            "t": "A Book of Centuries and a wall map",
+            "d": "A timeline notebook the child draws into as people and events come up in reading, and a map they can put a finger on. Both turn separate stories into one connected picture without anybody teaching a lesson about it."
+          },
+          {
+            "t": "Coats, boots and a bag by the door",
+            "d": "The afternoon outdoors is not an extra in this method, it is half of it. Whether you go out in Northern Ireland in February is decided entirely by whether the waterproofs are dry and findable at half past one."
+          }
+        ],
+        "shopping": [
+          {
+            "heading": "The morning table",
+            "items": [
+              {
+                "name": "A basket or shallow box for the current books",
+                "tag": "The single most useful thing you will buy. Everything for the morning lives in it and travels with you. £5, or free."
+              },
+              {
+                "name": "Plain notebooks, one per purpose",
+                "tag": "A narration book, a nature notebook, a Book of Centuries, a commonplace book for copied quotes. Plain and handsome beats printed and busy. £3–£8 each."
+              },
+              {
+                "name": "Decent paper and pencils",
+                "tag": "For copywork the paper matters more than the pen. A pad of smooth paper and a few HB pencils, sharpened. £10."
+              },
+              {
+                "name": "A visible clock or a small sand timer",
+                "tag": "So the child can see that the lesson really is short. £5."
+              },
+              {
+                "name": "A low bookcase",
+                "tag": "Charity shops and Facebook Marketplace are full of them. £0–£20."
+              }
+            ]
+          },
+          {
+            "heading": "The books that do the teaching",
+            "items": [
+              {
+                "name": "A free curriculum booklist",
+                "tag": "Ambleside Online publishes a complete year-by-year Charlotte Mason curriculum and booklist at no cost, and most of the older titles it uses are out of copyright and free to download.",
+                "where": "https://www.amblesideonline.org"
+              },
+              {
+                "name": "Two or three living books for this term",
+                "tag": "A living book is written by one person who loved the subject, in real prose, not a committee-written textbook. Start with Thornton Burgess's Burgess Bird Book, Holling C. Holling's Paddle-to-the-Sea, or Margaret Gatty's Parables from Nature. £5–£10 each, or free as scanned editions."
+              },
+              {
+                "name": "A poetry book and a fairy tale collection",
+                "tag": "Robert Louis Stevenson's A Child's Garden of Verses, Aesop, Andrew Lang's Blue Fairy Book. Read a poem at breakfast and you have covered poetry for the day."
+              },
+              {
+                "name": "Tales from Shakespeare by Charles and Mary Lamb",
+                "tag": "The prose retellings that let a young child hold the plot before meeting the play itself. Free out of copyright, or a few pounds second-hand."
+              },
+              {
+                "name": "A library card",
+                "tag": "Libraries NI will request titles from across the whole network for you. This is the cheapest route to a Charlotte Mason booklist by a wide margin. Free."
+              }
+            ]
+          },
+          {
+            "heading": "Nature study and the afternoon out",
+            "items": [
+              {
+                "name": "Watercolour pans and a waterbrush",
+                "tag": "A cheap half-pan set is fine at first. The waterbrush holds its own water and removes the reason not to paint on a wall or a beach. £10."
+              },
+              {
+                "name": "A hand lens",
+                "tag": "A folding 10x lens on a cord. It changes an ordinary walk more than any other five pounds you can spend."
+              },
+              {
+                "name": "A field guide you can carry",
+                "tag": "One small guide to birds or wild flowers. The Handbook of Nature Study by Anna Botsford Comstock is the classic companion for the adult, though it is American and old, so pair it with a local guide."
+              },
+              {
+                "name": "Waterproofs and wellies that actually work",
+                "tag": "Full waterproof trousers, not just a coat. This is the purchase that decides whether the method survives a Northern Irish winter. £25–£40, and Marketplace is full of outgrown sets."
+              },
+              {
+                "name": "A rucksack that stays packed",
+                "tag": "Notebook, paints, lens, a flask. Packed once, refilled after each walk."
+              }
+            ]
+          },
+          {
+            "heading": "Only if you are running a co-op",
+            "items": [
+              {
+                "name": "One set of the term's books plus a reading copy per family",
+                "tag": "Agree who buys what before term starts, or you will end up with six copies of one book and none of another."
+              },
+              {
+                "name": "A hall with tables, good light and a drying space for coats",
+                "tag": "Church halls and community centres are the usual route in Northern Ireland. Ask about a weekday morning rate."
+              },
+              {
+                "name": "Public liability insurance and Access NI clearance",
+                "tag": "Anyone teaching or supervising other people's children needs clearance. Insurance is often available through a homeschool or community group scheme."
+              },
+              {
+                "name": "A written agreement about the model",
+                "tag": "Who teaches, who stays, who is legally responsible for each child, what happens when someone drops out mid-term. Boring, and it prevents almost every co-op argument."
+              }
+            ]
+          }
+        ],
+        "think": [
+          {
+            "t": "Where the light falls at nine in the morning",
+            "d": "Lessons happen early and Northern Irish winter mornings are dark. Put the table where daylight reaches it, and add a warm lamp rather than a ceiling light."
+          },
+          {
+            "t": "How long setting up takes",
+            "d": "Count it. If it takes ten minutes to find the books, you will skip lessons on tired days. Everything in one basket, on one shelf, is the fix."
+          },
+          {
+            "t": "Keeping it a home, not a school",
+            "d": "Charlotte Mason wrote that education is an atmosphere — meaning the ordinary life of the household teaches, not a room dressed up to look educational. A wall of printed charts turns your living room into a small classroom, and you lose the thing that made home better than school."
+          },
+          {
+            "t": "Where the afternoon actually happens",
+            "d": "Find the three places you can reach within fifteen minutes in any weather — a hedgerow lane, a shore, a park with trees. Knowing them in advance is what makes going out automatic."
+          },
+          {
+            "t": "Other children in the house",
+            "d": "A younger sibling can sit with blocks under the table during a twenty-minute lesson. Plan a basket of quiet things that only appears during lessons, and it stays interesting."
+          },
+          {
+            "t": "What you can get for nothing",
+            "d": "Most of the classic Charlotte Mason booklist is out of copyright and free to read or print. Picture study prints can be downloaded from museum collections. The real cost of this method is your attention, not your money."
+          },
+          {
+            "t": "Where finished notebooks live",
+            "d": "Nature notebooks and narration books are the record of the year and the thing you will look back at. Give them a shelf, not a drawer."
+          },
+          {
+            "t": "Room for you to read",
+            "d": "Charlotte Mason expected the adult to keep reading and growing too — the writers around her called it mother culture. If there is nowhere for your own book and your own tea, it will not happen."
+          }
+        ],
+        "avoid": [
+          "Workbooks and comprehension worksheets that stand in for narration. If the child tells it back, you already know what they understood.",
+          "Abridged and simplified editions bought because the real book looks long. The real book is doing the teaching.",
+          "A wall covered in printed charts, alphabet friezes and laminated targets.",
+          "Buying a boxed curriculum before you have tried one week of reading once and asking for a telling-back.",
+          "Lessons that run until the work is finished rather than stopping at the agreed time.",
+          "Replacing the book with a video of the book. The prose is the point of it."
+        ],
+        "note": "You can start this method tomorrow morning with one library book, one notebook and twenty minutes. Everything on this page is a comfort, not a requirement. Families who set up the shelf first and start later almost always start later than they meant to."
+      },
+      "running-it": {
+        "title": "Running the day",
+        "icon": "clock",
+        "intro": "This is what the adult actually does. Charlotte Mason ran a training college at Ambleside and sent detailed programmes out to families through the Parents' National Educational Union, so there is a real, worked-out shape to the day. It is written here for whoever is leading it — a parent at the kitchen table, or someone teaching a co-op morning for several families.",
+        "tone": [
+          {
+            "t": "Cheerful and matter of fact",
+            "d": "Lessons happen because it is that time, the same way meals do. No bargaining, no bribing, no long explanations of why maths matters. A settled, pleasant expectation is easier for a child to meet than an argument."
+          },
+          {
+            "t": "Few words, said once",
+            "d": "You read the passage once, with care, and you do not repeat it. A child who knows you will read it again has no reason to listen the first time. Once is what trains the attention."
+          },
+          {
+            "t": "Respectful, because the child is a person",
+            "d": "Charlotte Mason's first principle was that children are born persons, not empty containers. In practice that means you do not talk over them, do not talk about them in the room, and do not water down a good book because you have decided they cannot manage it."
+          },
+          {
+            "t": "Willing to leave them alone",
+            "d": "Mason used the phrase masterly inactivity for the adult who is present, warm and in charge, and still does not interfere. The child working out a hard sentence by themselves is the lesson. Stepping in ends it."
+          },
+          {
+            "t": "Unhurried, and finished by lunch",
+            "d": "The morning is short and full of attention, and then it stops. That is the whole bargain you are making with the child, and keeping it is what makes the attention possible."
+          }
+        ],
+        "rhythm": [
+          {
+            "t": "A calm opening",
+            "d": "Something read aloud before lessons — a poem, a psalm, a hymn, a page of a story. Two or three minutes. It gathers everyone into the same room and the same mood without anyone being told to concentrate."
+          },
+          {
+            "t": "The hardest lesson first, and short",
+            "d": "Maths or whatever is heaviest goes first, while attention is fresh, and it is over in ten to twenty minutes for a young child. Stop while they are still with you, not when they collapse."
+          },
+          {
+            "t": "Alternate the kind of work",
+            "d": "A sitting-still lesson, then something with the body or the hands, then sitting again. Mason's reason was simple: a different sort of effort rests the mind more than a break does."
+          },
+          {
+            "t": "Read once, then ask for the telling-back",
+            "d": "Narration is the engine of the method. One reading, then \"tell me what you heard.\" The child assembles it themselves, in their own words, and that act of assembling is what fixes it. There is no shortcut around it and no test that replaces it."
+          },
+          {
+            "t": "Copywork or dictation, small and careful",
+            "d": "A few lines, done well. A short, beautifully copied sentence teaches more than a page of hurried writing, because the child is looking closely at every mark."
+          },
+          {
+            "t": "One of the arts, briefly",
+            "d": "Picture study, a composer's piece, a poem, a folk song. Ten minutes. Across a term the child ends up genuinely knowing an artist and a composer, which no single lesson could achieve."
+          },
+          {
+            "t": "Stop at lunchtime, and mean it",
+            "d": "Formal lessons end. Nothing is carried into the afternoon, nothing is set as homework. If a subject did not get done, it did not get done."
+          },
+          {
+            "t": "Out of doors for the afternoon",
+            "d": "Mason wanted long hours outside in all but genuinely dangerous weather. Not a nature lesson — free time out of doors, with the notebook available if something catches them."
+          },
+          {
+            "t": "Handicraft or a real job, then a read-aloud in the evening",
+            "d": "Something made with the hands, and a long story shared at bedtime that nobody is examined on. The read-aloud is where most families say the love of books actually forms."
+          }
+        ],
+        "does": [
+          "Reads the passage aloud with real attention, once.",
+          "Asks for a full telling-back, and then waits through the silence while the child finds their words.",
+          "Stops the lesson at the agreed time even when it is going well.",
+          "Works on one habit at a time — coming when called, or finishing what is started — rather than correcting everything at once.",
+          "Keeps the afternoon free and gets everyone outdoors.",
+          "Keeps reading grown-up books themselves, and lets the child see it."
+        ],
+        "doesnt": [
+          "Re-read a passage because the child drifted. The consequence of not listening is the lesson.",
+          "Interrupt a narration to correct a fact or a word.",
+          "Ask comprehension questions afterwards to check. The narration already showed you.",
+          "Mark, grade or score anything.",
+          "Fill the afternoon with more lessons because the morning felt thin.",
+          "Explain the book before reading it. That hands the child your understanding instead of their own."
+        ],
+        "parents": "This is the honest difference between Charlotte Mason and most of the other traditions in this app: there is usually no staff. The parent is the teacher, and no qualification is required to be one. Where families join together it is normally a co-op meeting one or two days a week, with parents teaching in turn — one takes nature study, one takes handicrafts, one reads the history. Parents stay on site. That model has a real strength, which is that the person teaching your child also loves your child, and a real weakness, which is that a rota collapses the week somebody's baby is ill. Decide early and write it down: are parents required to stay, is anyone being paid, and who is legally responsible for each child. Some co-ops hire a tutor for one subject, and that changes the picture — a paid adult supervising other people's children needs Access NI clearance and the group needs insurance. If you are considering something closer to a full-time setting where parents leave, phone your Health and Social Care Trust Early Years Team and describe the plan before you sign anything.",
+        "mistakes": [
+          {
+            "t": "Lessons that keep growing",
+            "d": "Twenty minutes becomes forty because it was going well. Attention is a muscle that is trained by short, complete efforts, and long lessons teach a child that they are allowed to drift partway through."
+          },
+          {
+            "t": "Rescuing the narration",
+            "d": "The child stalls, and the kind adult supplies the next bit. Sit in the silence instead. The pause is the child doing the work."
+          },
+          {
+            "t": "A booklist that quietly turns into textbooks",
+            "d": "Under pressure, families swap the long real book for a summary. Mason's word for thin, talking-down writing was twaddle, and her whole argument was that a child fed on it stops expecting anything better."
+          },
+          {
+            "t": "Dropping the afternoon outdoors first",
+            "d": "It is the part with no visible output, so it goes first on a busy week. Families who lose it usually report the mornings getting harder within a fortnight."
+          },
+          {
+            "t": "Doing every subject every day",
+            "d": "The PNEU programmes spread subjects across the week on purpose. Trying to touch everything daily is what makes a Charlotte Mason morning balloon to four hours and become unsustainable."
+          },
+          {
+            "t": "Turning the termly exam into a test",
+            "d": "Mason ended each term by asking the child to tell everything they knew about a topic, with no revision and no marking. It is a celebration of what stuck, not an assessment, and treating it as an assessment poisons the narration all term."
+          }
+        ],
+        "training": "There is no licence and no required qualification — this method was written for parents and it assumes an ordinary intelligent adult who is willing to read. The best preparation is Charlotte Mason's own sixth volume, A Philosophy of Education, which is out of copyright and free to read online, alongside Susan Schaeffer Macaulay's For the Children's Sake as a gentler way in and Karen Glass's Know and Tell if narration is the part you are stuck on. Ambleside Online provides a complete free curriculum, and Simply Charlotte Mason and the podcast A Delectable Education are the usual practical companions. The Charlotte Mason Institute runs conferences, and Redeemer University hosts a free digital collection of her original papers. In Northern Ireland, home educating your own child needs no permission — if the child has never been registered at a school you simply begin, and if they are on a school roll you write to the principal to have them removed. Check the current Education Authority guidance rather than relying on what a forum told you. The moment you are caring for or teaching other people's children, the rules change: Access NI clearance, public liability insurance, and a conversation with your Health and Social Care Trust Early Years Team about whether what you are planning counts as registrable childcare."
+      },
+      "your-part": {
+        "title": "Your part in it",
+        "icon": "heart",
+        "intro": "For most families the honest answer to \"what is my part\" is: all of it. This is the tradition in this app with the least drop-off and the most parent. That is worth knowing plainly before you begin, and it is also why it costs so little and fits so many households.",
+        "model": {
+          "label": "There is no drop-off — you are the teacher",
+          "body": "Charlotte Mason developed this for families and governesses, and then sent the programmes out to homes through the Parents' National Educational Union so that ordinary parents could run it themselves. That is still how nearly everyone does it. You read the books, you hear the narrations, you walk in the afternoons. Where families join up, it is a co-op of one or two mornings a week where parents stay and teach in turn — not a school you hand a child over to. A small number of Charlotte Mason schools do exist, but if you are in Northern Ireland you will almost certainly be doing this at your own table. The good news is that the method was designed for exactly that, and needs about two hours of your morning rather than your whole day."
+        },
+        "before": [
+          "Read the passage yourself before the lesson if you can. Even a skim changes how well you read it aloud, and reading it aloud well is most of the lesson.",
+          "Have the basket on the table before the child sits down. Hunting for a book while they wait is how a settled morning turns into a negotiation.",
+          "Eat first. A narration on an empty stomach is a fight neither of you can win.",
+          "Decide the order and the times the night before, so you are not making decisions at nine in the morning.",
+          "Put the waterproofs somewhere findable and dry, because you will decide about the afternoon in about four seconds."
+        ],
+        "after": [
+          "Stop cleanly at lunchtime, and let them see you stop. The shortness of the morning is the promise that makes their attention possible.",
+          "Do not review, quiz or return to the morning's subject over lunch.",
+          "Get outside even for twenty minutes. Most families find the afternoon walk repairs a morning that went badly.",
+          "Leave the nature notebook available and say nothing about it. Pressed nature journalling is the fastest way to kill it.",
+          "Read the narration book back to them occasionally, weeks later. Hearing their own words read seriously by an adult does more for a child's writing than any correction.",
+          "Notice one habit that went well today and say it plainly, once, without a stream of praise."
+        ],
+        "involvement": [
+          {
+            "t": "You are reading the books too",
+            "d": "Not every one, but enough that you are genuinely interested in the conversation. Children can tell the difference between an adult reading a book and an adult delivering a lesson."
+          },
+          {
+            "t": "Your own reading life",
+            "d": "The writers around Mason argued that a mother who keeps her own mind fed teaches better than one who empties herself into the children. Twenty minutes of your own book counts as school preparation."
+          },
+          {
+            "t": "A co-op, if you can find or start one",
+            "d": "One morning a week with other families covers the things that are hard alone — group singing, folk dancing, drama, nature walks with company — and gives you adults to talk to. In Northern Ireland these usually form through local home education groups rather than being advertised."
+          },
+          {
+            "t": "The end-of-term telling",
+            "d": "Set aside an afternoon at the end of term where your child tells everything they know about a few of the year's subjects, and you write it down. It is the record you will be glad of, and it is not a test."
+          },
+          {
+            "t": "Keeping the notebooks",
+            "d": "Date them. The nature notebook and the narration book from age six will mean more to both of you in ten years than any certificate."
+          }
+        ],
+        "visit": [
+          {
+            "q": "Which books are you actually reading this term?",
+            "why": "A confident Charlotte Mason group names real titles and authors. A vague answer about themes and topics usually means the books are not doing the teaching."
+          },
+          {
+            "q": "How long is a lesson?",
+            "why": "You want to hear short and specific — ten, fifteen, twenty minutes by age. An hour-long block for a young child is a different method."
+          },
+          {
+            "q": "Do the children narrate, and how do you handle a child who will not?",
+            "why": "Listen for patience, and for the adult sitting in the silence rather than filling it or moving on to another child."
+          },
+          {
+            "q": "Do you go outdoors in bad weather?",
+            "why": "In this method the long afternoon out is structural. A group that cancels the walk when it rains has kept the books and dropped half of the argument."
+          },
+          {
+            "q": "Do parents stay, and who is responsible for my child?",
+            "why": "This is the question that decides insurance, clearance and what happens if a child is hurt. A well-run co-op has a clear written answer."
+          },
+          {
+            "q": "Is anyone here paid, and are they Access NI cleared?",
+            "why": "Not a hostile question. Any group taking money or supervising children without their parents present should already have thought about it."
+          },
+          {
+            "q": "How are mixed ages handled?",
+            "why": "Charlotte Mason groups often read one book to a wide age range and expect different narrations from a six-year-old and an eleven-year-old. That is normal and works. Splitting into year groups is usually a sign the group is drifting towards school."
+          },
+          {
+            "q": "What do you do about a subject the group is bad at?",
+            "why": "An honest answer, like \"nobody here can teach music so we hired someone\", tells you the group knows itself."
+          }
+        ],
+        "flags": [
+          "Worksheets and printed comprehension questions handed out instead of narration.",
+          "A booklist made entirely of modern retellings and abridgements.",
+          "Grades, star charts, or children compared with each other.",
+          "A group that has never read anything Charlotte Mason wrote but uses her name.",
+          "Pressure to buy one particular boxed curriculum as a condition of joining.",
+          "Lessons for young children running well over half an hour.",
+          "Any suggestion that your four-year-old is behind. Mason did not begin formal lessons until around six, and the years before that are meant to be spent outdoors."
+        ],
+        "note": "One real disagreement worth knowing about: Charlotte Mason families argue among themselves about how closely to follow the original programmes. Some keep to the historic booklists and the full range of subjects; others take narration, living books, short lessons and the afternoons outdoors and build their own version around them. Both groups are reading the same six volumes. Neither is the fake one, and you do not need to pick a side to start on Monday."
+      },
       "bring-it-home": {
               "intro": "Charlotte Mason at home is gentle and low-cost. You need good books, a little time, and the outdoors. Lessons are short. You read a lovely book, your child tells it back to you in their own words, and then you go outside for hours. That is most of it. No screens, no worksheets, no rush.",
               "steps": [
@@ -2827,6 +3232,433 @@ window.METHODS = [
           ]
     },
     sections: {
+      "set-up-the-space": {
+        "title": "Set up the space",
+        "icon": "shelf",
+        "intro": "Walk into a Waldorf kindergarten and the first thing you notice is that it does not look like a school. Warm rose-coloured walls, soft lamps, wooden furniture, baskets of cloth and wood, a smell of bread or soup, and no alphabet on the wall anywhere. Every one of those choices is deliberate. A young child takes in the whole room through their senses before they think about any of it, so a Waldorf room is built to be worth taking in — warm, unhurried, made of real materials, and quiet enough that a child can hear their own play.",
+        "scales": [
+          {
+            "name": "Simplifying the room you already have",
+            "span": "Cost: nothing, and it usually saves money",
+            "body": "Take two thirds of the toys out of the room and put them in the loft. Add a basket of cloth, a basket of wooden blocks and offcuts, and a small table with a cloth and something from the garden on it. Turn off the big ceiling light and use a lamp. Almost every family who does this reports the same thing within a week: longer, calmer play."
+          },
+          {
+            "name": "A play room or a home kindergarten",
+            "span": "Cost: a few hundred pounds, spread out",
+            "body": "Now you can add wooden play stands or a clothes horse for building dens, a low shelf of open-ended materials, a proper nature table, hooks for aprons and waterproofs, and a corner where a story is told. If you are also cooking with the children, the kitchen becomes part of the room rather than a place they are kept out of."
+          },
+          {
+            "name": "A Steiner kindergarten",
+            "span": "Cost: thousands, and registration first",
+            "body": "A mixed-age group of roughly three to six, two adults, walls finished in thin layers of watercolour, a working kitchen the children help in, handwork materials, a puppet corner, and outdoor space you use every single day in Northern Irish weather. Registration with your Health and Social Care Trust Early Years Team, Access NI clearance and insurance all come before the first child arrives. Northern Ireland has had very few Steiner settings — the best known has been the Steiner school at Holywood in County Down — so phone before you plan around one."
+          }
+        ],
+        "elements": [
+          {
+            "t": "Warm colour on the walls",
+            "d": "Waldorf rooms are usually painted with thin, translucent layers of watercolour, a technique called lazure, in peach or rose or soft gold. The reason given is that a young child lives in their senses, and a warm, slightly glowing wall feels like a held space rather than a flat surface. A tin of warm matt emulsion gets most of the way there for far less money."
+          },
+          {
+            "t": "Soft, low light",
+            "d": "Lamps and daylight instead of overhead fluorescent strips. Overhead lighting flattens a room and, with some fittings, hums and flickers in a way adults stop noticing and children do not."
+          },
+          {
+            "t": "The nature table",
+            "d": "A small table with a coloured cloth, changed with the season — conkers and leaves in October, bare branches and stones in January, blossom in May. It gives the child a place where the outside year is visible indoors, and it costs nothing because the children collect it."
+          },
+          {
+            "t": "Unformed toys",
+            "d": "Wooden blocks, tree slices, shells, pine cones, plain silk cloths, dolls with barely a face. The argument is straightforward: a toy that is already a fire engine can only be a fire engine, while a block can be anything, so the child's imagination does the work instead of the manufacturer's. The doll with a simple face lets the child decide whether it is happy or sad today."
+          },
+          {
+            "t": "Silks and cloths, in quantity",
+            "d": "Large plain cloths in a basket become a sea, a cave, a cloak, a roof. Along with a clothes horse or two play stands, this is the single most-used material in a Waldorf room and one of the cheapest."
+          },
+          {
+            "t": "The kitchen at the centre",
+            "d": "Bread dough on a Tuesday, soup chopped on a Wednesday, apples peeled for snack. Real work with a real outcome the child then eats. Young children imitate what the adults around them are genuinely doing, so an adult really baking is a stronger invitation than any activity set out for them."
+          },
+          {
+            "t": "Natural materials you can feel the difference in",
+            "d": "Wood, wool, cotton, silk, beeswax, clay, stone. The claim is not that plastic is wicked — it is that a young child is learning the world through their hands, and materials with real weight, temperature and grain give them more to learn from."
+          },
+          {
+            "t": "A corner for the story and the puppets",
+            "d": "A small table, a cloth, a few simple standing puppets, a candle. The same story is told from memory for a week or more, and children ask for it word for word, which is exactly what makes it valuable to them."
+          },
+          {
+            "t": "No letters, numbers or printed learning on the walls",
+            "d": "This surprises visitors most. In the Waldorf picture of childhood, the years before roughly six or seven are for the body, the senses, movement and imagination, and formal reading is held back deliberately rather than being forgotten. Whether this is right is genuinely argued about by educators, and a good setting will discuss it with you openly rather than being defensive."
+          },
+          {
+            "t": "Handwork materials in reach",
+            "d": "Wool for finger knitting, a basket of fabric scraps, beeswax modelling blocks warmed on a radiator, needles and thick thread for older kindergarten children. Sewing a real thing builds patience and fine motor control at the same time."
+          },
+          {
+            "t": "Outdoor space used every day, and the gear to make that possible",
+            "d": "Mud, water, a tree, things to carry. Then full waterproofs, wellies and spare clothes for everyone, dried overnight. In this climate the waterproofs are what make the outdoor commitment real rather than aspirational."
+          }
+        ],
+        "shopping": [
+          {
+            "heading": "The room itself",
+            "items": [
+              {
+                "name": "A tin of warm matt emulsion",
+                "tag": "Peach, apricot or soft rose. If you want the true lazure effect, thinned watercolour glaze over white is the traditional method and takes a weekend. £25 for the simple version."
+              },
+              {
+                "name": "Two or three lamps with warm bulbs",
+                "tag": "So the ceiling light can stay off. Charity shops, £5–£15 each."
+              },
+              {
+                "name": "Baskets, in several sizes",
+                "tag": "Open baskets rather than lidded boxes, so the child sees what is there. Charity shops are full of them for a pound or two."
+              },
+              {
+                "name": "A small table and a set of coloured cloths",
+                "tag": "For the nature table. Plain cotton or muslin dyed in seasonal colours. £15 for a set, or use scarves you already own."
+              },
+              {
+                "name": "A clothes horse or two play stands",
+                "tag": "A wooden clothes horse plus cloths does almost everything a £200 pair of play stands does. £15."
+              }
+            ]
+          },
+          {
+            "heading": "Things to play with",
+            "items": [
+              {
+                "name": "Large plain play silks",
+                "tag": "Four or five in different colours. New Waldorf silks are around £15 each, so many families dye plain habotai silk squares themselves for a few pounds."
+              },
+              {
+                "name": "Plain wooden blocks and tree slices",
+                "tag": "A bag of natural blocks, plus slices cut from a branch with a saw. Ask a tree surgeon — offcuts are often free."
+              },
+              {
+                "name": "A doll with a simple face",
+                "tag": "A soft doll in natural fibres with two dots and a line for a mouth. Bought new from a Waldorf supplier this is expensive; a knitted or sewn one made at home is the traditional route and children usually prefer it."
+              },
+              {
+                "name": "Baskets of natural loose parts",
+                "tag": "Shells, cones, conkers, smooth stones, driftwood, wooden rings. Free, from a Northern Irish beach or wood."
+              },
+              {
+                "name": "A pentatonic instrument, if you can",
+                "tag": "A children's lyre or pentatonic flute. These are genuinely expensive. A simple xylophone, or just your own singing voice, works — the singing matters far more than the instrument.",
+                "where": "https://www.myriadonline.co.uk"
+              }
+            ]
+          },
+          {
+            "heading": "Kitchen, craft and handwork",
+            "items": [
+              {
+                "name": "A sturdy step stool or learning tower",
+                "tag": "So the child can stand at the worktop and take part in real cooking. £30 for a stool, £70 for a tower, and both appear on Marketplace constantly."
+              },
+              {
+                "name": "Real bowls, a board and a child-sized knife",
+                "tag": "A blunt-tipped but genuinely working knife. A tool that does not cut teaches nothing."
+              },
+              {
+                "name": "Beeswax modelling blocks and beeswax crayons",
+                "tag": "The block crayons are the recognisable Waldorf item and they are lovely to use, but they are not cheap. Stockmar is the usual brand. Around £15–£25 a set."
+              },
+              {
+                "name": "Watercolour paints, thick paper and a board",
+                "tag": "Waldorf painting is wet-on-wet: the paper is soaked, the colours are thin, and the colours run into each other. A child under six is exploring how colour behaves, not making a picture to keep. £20 for the basics."
+              },
+              {
+                "name": "Wool, felt and thick needles",
+                "tag": "For finger knitting and simple sewing. Charity shops and a local wool shop. £10."
+              }
+            ]
+          },
+          {
+            "heading": "Only if you are opening to other families",
+            "items": [
+              {
+                "name": "A working kitchen the children can use",
+                "tag": "Baking and soup-making with the group is central rather than decorative, so this is not an optional extra in the budget."
+              },
+              {
+                "name": "Outdoor space you can use in any weather",
+                "tag": "Plus a drying room or airing space for waterproofs. In this climate that is a real building requirement, not a nicety."
+              },
+              {
+                "name": "Trust registration, Access NI clearance and public liability insurance",
+                "tag": "In Northern Ireland you register with your local Health and Social Care Trust Early Years Team and work to the current Minimum Standards for day care. Phone them before you sign a lease — the process takes months and they would rather advise you early."
+              },
+              {
+                "name": "Waldorf early years training for at least one adult",
+                "tag": "The Steiner Waldorf Schools Fellowship keeps the current list of recognised training routes in the UK and Ireland. Budget for it properly; it is the difference between the method and the appearance of the method."
+              }
+            ]
+          }
+        ],
+        "think": [
+          {
+            "t": "Rhythm before objects",
+            "d": "If you can only do one thing, do the rhythm and not the shopping. A predictable week in an ordinary room produces more of what people admire in Waldorf settings than a beautiful room with an unpredictable week."
+          },
+          {
+            "t": "How much of this can be free",
+            "d": "Cloths, wood, shells, cones and stones cost nothing. Waldorf suppliers are expensive because the goods are genuinely well made, but a child cannot tell whether a block came from a catalogue or a branch."
+          },
+          {
+            "t": "Sound",
+            "d": "Soft surfaces, cloth, wool and low ceilings keep a room quiet enough for a child to stay inside their own play. A hard, echoing room breaks long play more reliably than anything else in the building."
+          },
+          {
+            "t": "What the adult is visibly doing",
+            "d": "Young children imitate. If the adult in the room is mending, chopping, sweeping or sewing, the children play at real life. If the adult is on a phone, that is what gets copied. Plan your own work into the room deliberately."
+          },
+          {
+            "t": "Warmth",
+            "d": "Waldorf settings pay unusual attention to keeping children warm — wool layers, slippers indoors, hats outdoors — on the view that a child using energy to stay warm has less available for everything else. Whether or not you accept the reasoning, warm children in a Northern Irish January play longer."
+          },
+          {
+            "t": "Screens, honestly, before you commit",
+            "d": "Many Waldorf settings ask families to keep young children away from screens, and some ask you to sign an agreement about it. Decide what you can genuinely live with before you enrol rather than agreeing and then feeling watched."
+          },
+          {
+            "t": "The philosophy underneath",
+            "d": "Waldorf education grew out of anthroposophy, the spiritual philosophy Rudolf Steiner founded, which sees the human being developing in roughly seven-year phases of body, feeling and thinking. That view is why the room looks as it does. Some settings talk about it openly with parents, some barely mention it, and families differ on how much they want of it. Ask, and expect a straight answer."
+          },
+          {
+            "t": "Room for the festivals",
+            "d": "Lantern walks in November, an Advent spiral in December, May Day. These need a bit of storage and some outdoor space, and they are one of the things families remember most, so plan for them rather than improvising in the week."
+          }
+        ],
+        "avoid": [
+          "Battery toys with lights and sounds. They perform, and the child watches instead of playing.",
+          "Character-branded toys and bedding. The character arrives with its story already written, and the child receives it rather than making one.",
+          "Alphabet friezes, number lines and printed learning charts in a kindergarten room.",
+          "Overhead fluorescent lighting.",
+          "Buying the expensive catalogue version of everything before you have simplified what is already in the house.",
+          "Screens in the room, including a television that is only ever off.",
+          "Treating the aesthetic as the method. A beautiful room with a chaotic week is not a Waldorf setting."
+        ],
+        "note": "The most common honest report from families who try this is that the removing did more than the buying. Two thirds of the toys into the loft, the ceiling light off, the same shape to every day — and then, months later, a few good wooden things bought slowly."
+      },
+      "running-it": {
+        "title": "Running the day",
+        "icon": "clock",
+        "intro": "In a Waldorf kindergarten the timetable is not the structure. The rhythm is. The same things happen in the same order every day, and the same things happen on the same day every week, until the child no longer has to be told and no longer has to be persuaded. Almost everything an adult does in the room follows from that, and from one other idea: a young child learns by imitating a grown-up who is genuinely doing something worth copying.",
+        "tone": [
+          {
+            "t": "Do, rather than instruct",
+            "d": "You begin sweeping and children come and sweep. You start kneading and children arrive. Direct instruction to a four-year-old competes with their play; a visible, absorbing job invites them into it."
+          },
+          {
+            "t": "Sing the change, do not announce it",
+            "d": "The same tidying song, the same song for washing hands, every day. A sung transition works where a spoken instruction produces an argument, because the child hears the familiar tune and their body already knows what comes next."
+          },
+          {
+            "t": "Warm and steady rather than bright and stimulating",
+            "d": "A low, calm voice, unhurried hands. The adult is the weather in the room. Excitement from the adult raises the whole group and then has to be brought back down."
+          },
+          {
+            "t": "Few words",
+            "d": "Short sentences, said once, and then you carry on with what you were doing. A stream of explanation and negotiation gives a young child more to manage than they can hold."
+          },
+          {
+            "t": "Repeat rather than refresh",
+            "d": "The same story for a fortnight, the same songs each season, the same soup on the same day. Adults find this dull and children find it satisfying. Knowing what comes next is what allows a young child to relax into deep play."
+          }
+        ],
+        "rhythm": [
+          {
+            "t": "The adult is already working when the children arrive",
+            "d": "Not standing waiting, not doing paperwork — chopping, mending, sweeping. The child walks into a room where life is already happening and joins it, rather than into a room waiting to be entertained."
+          },
+          {
+            "t": "A long stretch of free play",
+            "d": "Often an hour or more, indoors, with no adult-set activity at all. This is the largest block of the morning on purpose. Long, uninterrupted play is where a young child builds the ability to start something, sustain it and finish it."
+          },
+          {
+            "t": "Tidying, sung",
+            "d": "Everything is put away together to the same song, every day. It takes longer than an adult doing it and that is accepted, because putting the room right is part of the work."
+          },
+          {
+            "t": "Ring time",
+            "d": "Ten or fifteen minutes of songs, verses and movement together, seasonal and repeated for weeks. Movement, rhythm and speech together, with the adult doing it and the children joining when they are ready. Nobody is made to join in."
+          },
+          {
+            "t": "Snack, made and shared at the table",
+            "d": "Often food the children helped prepare. Everyone sits, there is a verse or a song before eating, and it is a social event rather than a refuelling stop."
+          },
+          {
+            "t": "Outdoors, in whatever the sky is doing",
+            "d": "Every day, and usually a long time. Digging, water, climbing, carrying, weather on the face. Waldorf settings are consistent about this and it is the part most likely to be quietly dropped in a wet week."
+          },
+          {
+            "t": "A story, told and not read",
+            "d": "The adult tells it from memory, the same story for a week or two, sometimes with simple standing puppets. Told rather than read means the adult can watch the children's faces and speak to them, and it lets the child build the pictures themselves."
+          },
+          {
+            "t": "A quiet rest",
+            "d": "Lying down, a candle, soft singing, or simply stillness. The day is shaped like breathing out and breathing in — a wide expanding activity, then a gathering-in one — and the rest is the deepest of the gathering-in moments."
+          },
+          {
+            "t": "A calm goodbye, child by child",
+            "d": "By name, at their height, with a hand shaken or a look. Endings matter as much as beginnings to a young child."
+          },
+          {
+            "t": "And a weekly rhythm underneath the daily one",
+            "d": "Baking day, painting day, soup day, walking day, always on the same weekday. The exact assignment varies between settings. A child who cannot yet read a calendar can still tell you it is bread day, and that is a real orientation in time."
+          }
+        ],
+        "does": [
+          "Works visibly and continuously — mending, baking, chopping, sewing — so there is always something worth imitating.",
+          "Protects the long free play block from interruption, including from well-meaning activities.",
+          "Tells the same story from memory for a week or more.",
+          "Sings the transitions rather than announcing them.",
+          "Goes outdoors every day, in rain, and has the gear to make that reasonable.",
+          "Mends a broken toy in front of the children rather than replacing it."
+        ],
+        "doesnt": [
+          "Teach letters or numbers formally to the under-sixes. In this picture of childhood those years belong to movement, the senses and imagination, and the reading comes later and quickly.",
+          "Ask test questions after the story.",
+          "Praise constantly. Noticing and thanking, yes. A running commentary of \"well done\", no.",
+          "Use screens, recorded music as background, or amplified sound in the room.",
+          "Cut short a child's deep play to run a planned activity.",
+          "Change the story, the songs or the order of the morning to keep things fresh for the adults."
+        ],
+        "parents": "A Waldorf kindergarten is normally a drop-off setting, and at the same time it asks more of the home than almost any other tradition here. Most settings hold parent evenings on child development, craft evenings where parents make things for the classroom and for the festivals, and seasonal festivals where families come and take part. Many ask families to limit or avoid screens for young children, and some ask you to sign an agreement about it. They will also usually ask you to keep a settled bedtime and an unhurried morning, because the rhythm they build in the room only holds if the child is not arriving from a rushed and stimulating start. None of that is meant as judgement of your household, and a good setting will say so plainly and explain the reasoning rather than implying you are doing it wrong. If you are the one running a setting, say all of this out loud at the enrolment conversation. Parents who agreed to something they did not understand become unhappy parents by November. There are also parent-and-child groups in the Waldorf world, where the adult stays for the whole session, and those are an honest and gentle way to see whether the rhythm suits your family before committing.",
+        "mistakes": [
+          {
+            "t": "Buying the look and skipping the rhythm",
+            "d": "Silks, wooden toys and a warm wall, but a different shape to every day. The objects are the smaller half. The predictable week is what actually produces the calm that visitors notice."
+          },
+          {
+            "t": "Too many beautiful things out at once",
+            "d": "A room full of lovely wooden materials is still a full room, and children graze in it. Rotate seasonally and keep most of it away."
+          },
+          {
+            "t": "Letting the outdoor time slide in a wet month",
+            "d": "It goes first because it is the hardest. Buy the waterproofs, build the drying space, and treat going out as non-negotiable, or by February it will have quietly disappeared."
+          },
+          {
+            "t": "Adults talking to each other over the children",
+            "d": "Two adults having a conversation across the room ends deep play faster than any child does, and it teaches the children that the room is really the adults'."
+          },
+          {
+            "t": "Being evasive about anthroposophy",
+            "d": "When a parent asks directly what the underlying philosophy is, a vague answer damages trust far more than a straight one would. Say what it is, say how much of it appears in the kindergarten day, and let the family decide."
+          },
+          {
+            "t": "Turning festivals into performances",
+            "d": "A lantern walk arranged for the parents to photograph becomes a show. The festivals work on the children because they are lived, not watched."
+          },
+          {
+            "t": "Ignoring a child who is already reading",
+            "d": "Some four- and five-year-olds teach themselves to read and want to. Holding a rhythm is one thing; refusing to meet a child who is asking is another, and settings genuinely differ on how they handle it. Ask how yours does."
+          }
+        ],
+        "training": "Waldorf early years teachers train through Waldorf-specific courses, and the Steiner Waldorf Schools Fellowship is the body that represents schools and kindergartens across the UK and Ireland and keeps the current list of training routes. Training normally includes a foundation year in anthroposophy alongside the practical early years work, which is worth knowing in advance — this is not a technique you can pick up separately from the philosophy it came from, and trainers will tell you that themselves. Courses run full time or part time over one to three years and cost thousands of pounds. There is also a shorter route many parents take instead: parent-and-child group leader courses, and the very good introductory books — Rahima Baldwin Dancy's You Are Your Child's First Teacher, Sharifa Oppenheimer's Heaven on Earth, Kim John Payne's Simplicity Parenting, and Ann Druitt's All Year Round for the festivals. One honest point: the word Steiner and the word Waldorf are used loosely, and plenty of settings describe themselves as Steiner-inspired with no trained teacher in the building. That is not automatically bad, but you should know which one you are looking at. In Northern Ireland, if you are opening to other people's children you register with your local Health and Social Care Trust Early Years Team, work to the current Minimum Standards for day care, and hold Access NI clearance and public liability insurance. Phone the Trust early — they are helpful and the process runs into months."
+      },
+      "your-part": {
+        "title": "Your part in it",
+        "icon": "heart",
+        "intro": "If your child goes to a Waldorf kindergarten, you hand them over at the door — and you also take on more at home than most settings would ever ask. That combination catches families by surprise. It is much better to understand it before you enrol than to discover it at the first parent evening.",
+        "model": {
+          "label": "Drop off — and the home is asked to match",
+          "body": "From around three, Waldorf kindergarten is a drop-off model with a gentle settling-in period first. Once your child is settled you leave, because a young child plays differently the moment their own adult is in the room and the long free play the morning is built around does not form while you are watching. But the agreement does not end at the door. The setting will normally ask you for an unhurried morning, a settled bedtime, simple food, and in most cases very limited screens for a child under six or seven. The reasoning offered is that a child cannot live in two contradictory rhythms at once, and the one at home is the stronger of the two because there is more of it. You are entitled to ask for that reasoning, to disagree with parts of it, and to decide it is not for your family. What does not work is agreeing to it out of politeness. There are also parent-and-child groups where you stay for every session, and those are the honest place to start if you are not sure."
+        },
+        "before": [
+          "Leave enough time that nobody is rushed. A hurried, loud morning at home takes a young child most of the session to come down from.",
+          "Feed them a proper breakfast and keep screens off before kindergarten, even if you allow them at other times.",
+          "Dress them in warm layers with full waterproofs and spare clothes, because they will be outside and they will be wet.",
+          "Let them put on their own boots and carry their own bag, however long it takes.",
+          "Arrive on time. The free play block starts early and joining a group that is already deep in play is genuinely hard for a small child.",
+          "Say goodbye once and go. A repeated goodbye teaches a child that the crying might work, which is harder on them than the first parting was."
+        ],
+        "after": [
+          "Do not open with \"what did you do today?\" They have been busy for three hours and have no summary ready. It will come out later, sideways, usually while you are doing something else.",
+          "Reconnect with your body before your words. A carry, a hand, a slow walk to the car.",
+          "Feed them soon. Hunger after a Waldorf morning is real, and most difficult behaviour at half past twelve is hunger and tiredness rather than anything else.",
+          "Keep the afternoon plain. A child who has held themselves together in a group all morning needs an unremarkable afternoon to unwind into, not a trip.",
+          "Expect them to fall apart with you sometimes. Doing it at home with the person they trust most is a good sign, not a bad one.",
+          "Keep the same evening shape every night — same order, same songs, same time. This is the part of the rhythm you actually control, and it is the part with the biggest effect."
+        ],
+        "involvement": [
+          {
+            "t": "Festivals",
+            "d": "Lantern walks, Advent, May Day, harvest. Families attend and usually help — making lanterns, carrying soup, setting up. They are the main way the community forms, and children remember them for decades."
+          },
+          {
+            "t": "Craft evenings",
+            "d": "Parents making puppets, mending toys, sewing costumes and dyeing cloths for the classroom. It sounds like an obligation and turns out to be the part most parents enjoy, partly because you learn to make things yourself."
+          },
+          {
+            "t": "Parent evenings about child development",
+            "d": "These explain why the room looks as it does. Go to them, and ask the awkward questions there rather than at the door in the morning."
+          },
+          {
+            "t": "The conversation about screens",
+            "d": "Have it properly and early. Ask what exactly is being asked, what the reasoning is, and what happens if your family does something different. A confident setting will discuss it rather than simply requiring it."
+          },
+          {
+            "t": "The long relationship with one teacher",
+            "d": "In many Waldorf settings a kindergarten group stays with the same teacher for two or three years, and in the school years a class often keeps one teacher for much longer. That is a deliberate choice about children being known deeply over time. It also means the relationship between you and that teacher matters a great deal, so meet them before you decide."
+          },
+          {
+            "t": "Bringing the rhythm home",
+            "d": "Same day for baking, same day for the walk, same songs at the same moments. You do not need the aesthetic. The repetition is the part that helps."
+          }
+        ],
+        "visit": [
+          {
+            "q": "How long is the uninterrupted free play?",
+            "why": "You want to hear an hour or more, indoors, with nothing scheduled into it. A morning cut into short adult-led activities is a different method using the name."
+          },
+          {
+            "q": "Do you go outside every day, including in heavy rain?",
+            "why": "Ask to see the waterproofs and the drying space. This is the fastest way to find out whether the outdoor commitment is real."
+          },
+          {
+            "q": "Is the story told from memory or read from a book?",
+            "why": "Told is the tradition, and it matters because the teller watches the children and the children build their own pictures. It also shows how well the adults have been trained."
+          },
+          {
+            "q": "What is your view on letters and numbers before six, and what if my child is already reading?",
+            "why": "A good setting explains the reasoning and tells you honestly how it meets an early reader. Settings genuinely differ here, and a defensive answer is more informative than the policy itself."
+          },
+          {
+            "q": "How does anthroposophy show up in the kindergarten day, and how much do you discuss it with parents?",
+            "why": "A straight, comfortable answer tells you this is a place that respects your right to decide. Evasion here is the flag, not the philosophy."
+          },
+          {
+            "q": "What exactly do you ask of families at home?",
+            "why": "Screens, bedtimes, food, clothing, festival attendance. Get the full list before enrolling, not after."
+          },
+          {
+            "q": "Is the food cooked here and do the children help?",
+            "why": "The kitchen is central in this tradition rather than a service. A setting where food arrives from elsewhere has dropped something structural."
+          },
+          {
+            "q": "How do you handle a child who hits, or one who will not join ring time?",
+            "why": "Listen for calm, for both children being cared for, and for nobody being made to join in. Compulsory participation in ring time is a sign the rhythm has hardened into a timetable."
+          },
+          {
+            "q": "How long will my child have the same teacher?",
+            "why": "The long relationship is a real feature of this tradition and worth knowing the answer to."
+          }
+        ],
+        "flags": [
+          "The look without the rhythm — beautiful wooden toys, and a different shape to every day.",
+          "Evasion when you ask directly about anthroposophy.",
+          "Nobody in the building with Waldorf early years training, while the sign says Steiner.",
+          "Shame or judgement about how your family lives, rather than an explained request.",
+          "Outdoor time that only happens when it is dry.",
+          "Children required to join ring time or the story.",
+          "A setting that will not discuss reading readiness with you, or that treats the question as an attack."
+        ],
+        "note": "Two honest disagreements you should know about. First, the late start on reading is genuinely contested among educators, and you are allowed to want the rhythm, the handwork and the outdoor life while also wanting your child's early reading met. Ask how that would work. Second, anthroposophy is a spiritual philosophy with a full picture of the human being, not a decorating style. Some families come to love it, many simply want the calm childhood and take the rest lightly, and both kinds of family exist happily in Waldorf settings. What matters is that you were told plainly what you were joining."
+      },
       "bring-it-home": {
               "intro": "Waldorf at home is not about buying special toys or wooden everything. It is about a warm, steady rhythm and a few simple, natural things. Your child learns by living the day beside you and copying what you really do. Calm days, real work, stories, and time outside matter far more than any product.",
               "steps": [
@@ -4799,6 +5631,436 @@ window.METHODS = [
           ]
     },
     sections: {
+      "set-up-the-space": {
+        "title": "Set up the space",
+        "icon": "shelf",
+        "intro": "Wild + Free does not have a building. It has a home and, for most families who stay with it, a small group of other families. So there are two things to set up and they are completely different. At home you are making a basket, a shelf and a table. In the group you are making a rota, a shared box of kit and an agreement about how the adults behave. Neither one costs much. Both take a few evenings to think through.",
+        "scales": [
+          {
+            "name": "A basket and a shelf",
+            "span": "Cost: under £50, and most of it second-hand",
+            "body": "One real basket that lives beside where you sit in the morning, holding six things: a poetry book, a picture book, a song or hymn book, a candle, and whatever you are reading aloud this fortnight. Then one low shelf of beautiful books your child can reach. That is a working Wild + Free home. Everything else is an extra."
+          },
+          {
+            "name": "A room, or the end of the kitchen",
+            "span": "Cost: £100 to £250",
+            "body": "Now you add a table you are genuinely willing to have ruined, art materials left out and reachable, a nature shelf by the window, a hook and boot tray by the door so going outside takes two minutes rather than fifteen, and a chair big enough for you and a child to read in together."
+          },
+          {
+            "name": "A co-op or nature group",
+            "span": "Cost: a rota, not a building",
+            "body": "Four to eight families meeting weekly, usually in a park, a beach, a forest car park, or a hall booked for the winter. What you are actually setting up is who hosts, who brings what, what happens in bad weather, and what the adults have agreed about other people's children. Hall hire in Northern Ireland runs about £10 to £25 an hour, split between families."
+          }
+        ],
+        "elements": [
+          {
+            "t": "The morning basket itself",
+            "d": "A real basket, not a shelf and not a pile. It comes out, it goes back, and that small ritual is what makes fifteen minutes of poetry happen on a Tuesday when nobody feels like it. Keep six things in it, not twenty, and change them every fortnight."
+          },
+          {
+            "t": "Books at the child's height, with some facing outward",
+            "d": "A four-year-old chooses what they can see. A spine says nothing to a child who cannot read; a cover does. A shallow picture-ledge shelf, or a wire rack, or a box with the books standing face-forward. Rotate what is on show."
+          },
+          {
+            "t": "A table you are willing to have ruined",
+            "d": "Paint, glue, mud, water, wax. If the table is precious, the making stops, and everyone can feel that even when nobody says it. A second-hand pine table from Facebook Marketplace for £20 is the right answer, or an oilcloth on the good one."
+          },
+          {
+            "t": "Art materials out and reachable, in small amounts",
+            "d": "A jar of good pencils, one set of watercolours, paper in a tray. Not a cupboard of craft kits. A child who has to ask an adult to open something makes far fewer things than a child who can simply start."
+          },
+          {
+            "t": "A nature shelf or table by the window",
+            "d": "Where the pine cones, feathers, shells and dead beetles go. It gives the outdoor hours somewhere to land indoors, and it is the reason a walk becomes something you talk about for three days rather than three minutes."
+          },
+          {
+            "t": "A hook, a boot tray and a peg for wet coats",
+            "d": "At the child's height, by the door, with a radiator or a rack nearby for drying. In this climate the difference between two outdoor hours a day and none is usually how long it takes to get out of the house."
+          },
+          {
+            "t": "One chair big enough for two",
+            "d": "Reading aloud is the spine of a Wild + Free day, and it needs a place. An armchair, a corner of a sofa, a window seat. Somewhere you both fit and where you can see the light."
+          },
+          {
+            "t": "No screen in the room where the morning happens",
+            "d": "Not a rule about screens in general — just about that room, at that hour. A television in the corner, even off, changes what a four-year-old suggests when the reading finishes."
+          },
+          {
+            "t": "Floor space that works for two ages at once",
+            "d": "A rug, a low basket of blocks, room to lie down. The four-year-old builds on the floor while the older one writes at the table and both hear the same read-aloud. Mixed ages in one room is the design, not a compromise."
+          },
+          {
+            "t": "Something for the adult's hands",
+            "d": "A basket with your own knitting, mending or peeling in it, beside the chair. If your hands are busy you stay in the room. If they are empty you pick up a phone, and the whole morning changes when you do."
+          }
+        ],
+        "shopping": [
+          {
+            "heading": "The morning basket",
+            "items": [
+              {
+                "name": "A real basket",
+                "tag": "Big enough for six books, with a handle. Charity shops always have them. £3."
+              },
+              {
+                "name": "A poetry book for children",
+                "tag": "A Child's Garden of Verses by Robert Louis Stevenson, or When We Were Very Young by A. A. Milne. Both are common second-hand for £2."
+              },
+              {
+                "name": "A Mother Goose or nursery rhyme collection",
+                "tag": "The Tasha Tudor or Blanche Fisher Wright editions are the ones Wild + Free families use most. £8 to £15."
+              },
+              {
+                "name": "A songbook, or just a list on a card",
+                "tag": "Folk songs, hymns, anything with a tune you can hold. Free — write down the ten you already know and work through them."
+              },
+              {
+                "name": "A beeswax candle and a safe holder",
+                "tag": "Lighting one candle is the signal that the morning has started, and small children respond to a signal far better than to being called. £5."
+              },
+              {
+                "name": "The current read-aloud",
+                "tag": "Winnie-the-Pooh, The Wind in the Willows, Beatrix Potter. Libraries NI membership is free and covers all of this."
+              },
+              {
+                "name": "A watercolour set and thick paper",
+                "tag": "One decent set beats six cheap ones. £10, plus £5 for cartridge paper."
+              }
+            ]
+          },
+          {
+            "heading": "The shelf and the messy table",
+            "items": [
+              {
+                "name": "A low bookshelf or a picture-ledge",
+                "tag": "A charity-shop bookcase cut down, or two picture ledges screwed to the wall at child height. £15, or free."
+              },
+              {
+                "name": "A second-hand table and two small chairs",
+                "tag": "Marketplace, £20 to £40, and the cheaper the better because it is going to get painted on."
+              },
+              {
+                "name": "An oilcloth or a cut-down shower curtain",
+                "tag": "Goes over the table and under the chairs. £8, and it saves the arguments."
+              },
+              {
+                "name": "Good pencils, wax crayons, scissors that cut",
+                "tag": "One jar. Blunt scissors that will not cut paper teach a four-year-old that they are bad at cutting. £12 for the lot."
+              },
+              {
+                "name": "Modelling beeswax or plain clay",
+                "tag": "Beeswax is warm and lovely and about £10; air-dry clay is £5 and does most of the same work."
+              },
+              {
+                "name": "A shallow tray for paper",
+                "tag": "So paper is reachable without asking. £3."
+              }
+            ]
+          },
+          {
+            "heading": "Getting outside every day",
+            "items": [
+              {
+                "name": "Waterproofs and wellies that actually work",
+                "tag": "The whole method rests on two to four outdoor hours a day, and in Northern Ireland that means proper waterproof trousers, not just a coat. £25 to £50 a set new, and constantly £5 on Facebook Marketplace."
+              },
+              {
+                "name": "A small rucksack the child carries",
+                "tag": "Water, a snack, and whatever they collect. Carrying their own bag changes how long they will walk. £10."
+              },
+              {
+                "name": "A hand lens and a bug pot",
+                "tag": "The cheapest thing on this list and the one that gets used most. £5."
+              },
+              {
+                "name": "One local field guide",
+                "tag": "The RSPB or Collins Gem guides to British birds, trees and wildflowers. £6 each second-hand, and one is enough to start."
+              },
+              {
+                "name": "A flask and two enamel mugs",
+                "tag": "A hot drink outdoors in February is the reason the walk happens at all. £15."
+              },
+              {
+                "name": "A nature journal for you as much as for them",
+                "tag": "A plain sketchbook. Your child copies what you do far more reliably than what you suggest. £4."
+              }
+            ]
+          },
+          {
+            "heading": "Only if you are starting a group",
+            "items": [
+              {
+                "name": "One shared kit box, and somebody who owns it",
+                "tag": "Craft materials, a rug, wipes, bin bags, spare gloves. It lives in one family's car boot and that family is named. £30 to fill."
+              },
+              {
+                "name": "A group first aid kit and a named first aider",
+                "tag": "Plus every adult's emergency contact and any allergy on one laminated card. £30."
+              },
+              {
+                "name": "A written group agreement, one page",
+                "tag": "Who is responsible for whose child, whether adults correct other people's children, what happens about food and allergies, and how somebody leaves the group without awkwardness. Free, and it prevents almost every problem groups actually have."
+              },
+              {
+                "name": "A hall booked for the worst eight weeks",
+                "tag": "Church halls, scout halls and community centres in Northern Ireland run about £10 to £25 an hour. Booking January and February in October is what keeps a group alive through winter."
+              },
+              {
+                "name": "A rota, in writing, three months ahead",
+                "tag": "Who hosts, who leads the activity, who brings the snack. Free, and it stops the whole group resting on one enthusiastic mother."
+              }
+            ]
+          }
+        ],
+        "think": [
+          {
+            "t": "When the morning basket actually happens",
+            "d": "Pick the hour and defend it. Straight after breakfast, at the table, before anybody gets dressed, works for most families. A ritual with no fixed time quietly stops happening within three weeks."
+          },
+          {
+            "t": "What the morning basket is competing with",
+            "d": "Usually a phone, a television, or a to-do list in your own head. Decide in advance where your phone will be during those fifteen minutes. This is the single most useful thing on this page."
+          },
+          {
+            "t": "The photographs",
+            "d": "Wild + Free is a movement with beautiful images attached to it, and the founder Ainsley Arment has written plainly about the pressure that creates. Your rug will have crumbs on it. The unphotographed Tuesday is the method working, and the photograph is not."
+          },
+          {
+            "t": "How you rotate rather than accumulate",
+            "d": "Keep most of the books and materials out of sight and swap a few each fortnight. A shelf with everything on it stops being chosen from. A box in a cupboard costs nothing and makes the same books feel new in March."
+          },
+          {
+            "t": "What the four-year-old does while an older child works",
+            "d": "In a mixed-age home this is the real daily question. The usual answers are a basket of quiet things kept only for that half hour, a place at the same table doing something with their hands, or simply being outside with you while the older one reads."
+          },
+          {
+            "t": "Drying, in this climate",
+            "d": "Two to four outdoor hours a day means a permanent wet-clothes problem. A rack over a radiator, a second set of everything, and a rule that boots come off outside. Solve this once or the outdoor block quietly shrinks."
+          },
+          {
+            "t": "Where the group goes when the weather is genuinely bad",
+            "d": "Not rain — rain is fine with the right clothes. Gales, ice, and the fortnight in January when it is dark at four. Have a hall, a swimming pool, a museum or one family's kitchen agreed in advance."
+          },
+          {
+            "t": "Who the group actually belongs to",
+            "d": "Groups die when one person does everything and burns out, or when nobody is responsible and it drifts. Name a person for the rota, a person for the kit and a person for the money, even if there are only four families."
+          }
+        ],
+        "avoid": [
+          "Buying the beautiful curriculum boxes before you have done one morning basket with three books from the library.",
+          "A basket with twenty things in it. Six, changed every fortnight, is what gets used.",
+          "Turning the morning into a lesson with questions at the end. It is a read-aloud, not a test.",
+          "Comparing your home to the photographs. The people in the photographs also have crumbs on the rug.",
+          "A group where the adults sit together talking while the children are somewhere else. That is a coffee morning, which is also a fine thing, but it is not the group you meant to start.",
+          "Letting one mother host, plan, bring the snack and lead the activity every week.",
+          "Cancelling the outdoor block for rain. Cancel it for ice and gales, not for weather you can dress for."
+        ],
+        "note": "A basket with a poetry book in it, a shelf your child can reach, and a coat by the door is the whole setup. Everything after that is decoration, and the families who last longest tend to own less of it than the ones who stop after a year."
+      },
+      "running-it": {
+        "title": "Running the morning",
+        "icon": "clock",
+        "intro": "This part is for whoever is leading the day — you at your own kitchen table, or you hosting six families in a park. Wild + Free has no timetable and it does have a rhythm, and the rhythm is what a four-year-old actually leans on. The adult's job is to hold the shape of the day and then be genuinely present inside it.",
+        "tone": [
+          {
+            "t": "Unhurried, out loud",
+            "d": "Say \"we have plenty of time\" and then behave as if it is true. A four-year-old reads your speed before your words, and most difficult mornings are a child responding to a rushed adult."
+          },
+          {
+            "t": "Read aloud as if you mean it",
+            "d": "Do the voices. Slow down at the good part. A child who hears an adult enjoying a book learns that books are enjoyable, which is not something you can tell them."
+          },
+          {
+            "t": "Warm, and not full of praise",
+            "d": "Notice the specific thing: \"you found the first snowdrop before anyone.\" A stream of well-done turns their attention toward your face and away from the thing they were looking at."
+          },
+          {
+            "t": "Willing to be bored with them",
+            "d": "A slow morning is not a failure to entertain. Sit in it. Boredom is where a four-year-old starts inventing, and it usually takes about twenty uncomfortable minutes."
+          },
+          {
+            "t": "Present, with your hands busy and your phone away",
+            "d": "Being in the room is not the same as being available. Peeling potatoes near a playing child is presence. Scrolling on a sofa near a playing child is not, and children can tell the difference precisely."
+          }
+        ],
+        "rhythm": [
+          {
+            "t": "A slow start with real food",
+            "d": "No alarm if you can manage it, a proper breakfast, and the child involved in making it. The first twenty minutes of a day set the speed of the rest of it."
+          },
+          {
+            "t": "Light the candle — the morning basket",
+            "d": "Fifteen to twenty minutes at the table or on the rug. One poem, one song, one picture book, a few pages of the read-aloud. Same content for a fortnight, because repetition is how a four-year-old comes to own a poem rather than hear it."
+          },
+          {
+            "t": "Straight out afterwards, before the day fills up",
+            "d": "Coats on while the morning feeling is still there. Two to four hours outside — garden, beach, forest, park, the same walk again. If you leave the outdoor block until the afternoon it gets eaten."
+          },
+          {
+            "t": "Let the outdoor time be led by them",
+            "d": "You are walking to nowhere in particular. They stop at the puddle for forty minutes. Your job is to be the person who does not hurry them past it and who knows the name of the bird when they ask."
+          },
+          {
+            "t": "Home, lunch made together, and something warm",
+            "d": "Soup, bread, whatever they helped with. The child washing the vegetables is the learning. Nothing is labelled as a subject."
+          },
+          {
+            "t": "A quiet hour, non-negotiable",
+            "d": "A nap, or books alone in a room, or lying under the table. This is as much for the adult as the child, and a household that skips it has a hard four o'clock."
+          },
+          {
+            "t": "Free play, hands-off, in the afternoon",
+            "d": "Blocks, dressing up, painting, mud outside. You are nearby and not directing. Do not tidy while they are still playing."
+          },
+          {
+            "t": "The afternoon read-aloud",
+            "d": "A chapter, in the big chair, before dinner. This is the second anchor of the day and it is the one children ask for first when a day has gone badly."
+          },
+          {
+            "t": "The child is part of the evening work",
+            "d": "Setting the table, stirring, folding washing. A four-year-old who is folded into real household work does not need to be entertained while it happens."
+          },
+          {
+            "t": "A closing ritual, short and the same",
+            "d": "Bath, story, one song or one prayer, lights out. Predictable endings do more for a child's sleep than anything else in the day."
+          }
+        ],
+        "does": [
+          "Holds the two anchors — the morning basket and the outdoor block — even on a bad week.",
+          "Reads aloud every day, well past the age the child could read alone.",
+          "Goes outside in rain, and dresses everyone properly first.",
+          "Lets the four-year-old be bored without rescuing them.",
+          "Includes the child in real work rather than working around them.",
+          "Keeps the same books and songs for a fortnight before changing them."
+        ],
+        "doesnt": [
+          "Turn the morning basket into comprehension questions.",
+          "Push letters, worksheets or preschool academics at four.",
+          "Fill the calendar with clubs and classes until there is no unhurried day left.",
+          "Tidy away a game that is still in progress.",
+          "Photograph the morning while it is happening. Do it afterwards or not at all.",
+          "Compare their child out loud to another child in the group."
+        ],
+        "parents": "In Wild + Free nobody drops off. A co-op or nature group is made of parents, and every adult stays, which makes the adults the thing most likely to go wrong. Groups fail in two directions. In the first, the adults stand in a circle talking to each other for two hours and the children are effectively unsupervised at the far end of the park — pleasant, and not what anybody signed up for. In the second, every adult manages their own child so closely that no play between children ever forms. The fix in both cases is the same: give each adult a job for the session and rotate it. One leads the activity, one holds the kit and the first aid, one walks the edge of where the children are, one makes the drinks. And write down, on one page, who is responsible for whose child and whether adults correct other people's children, because that is the thing groups argue about and nobody wants to raise it first.",
+        "mistakes": [
+          {
+            "t": "Buying the aesthetic instead of doing the practice",
+            "d": "The wooden toys, the linen pinafore, the perfect shelf. None of it is the method. Fifteen minutes of poetry and three hours outside is the method, and it is free."
+          },
+          {
+            "t": "Doing it in bursts and then stopping",
+            "d": "Three glorious weeks, then nothing for a month. The rhythm is the thing that works, and a small daily version beats a beautiful occasional one."
+          },
+          {
+            "t": "Letting the outdoor block become a scheduled nature walk",
+            "d": "Forty minutes with a plan is not the same as three unhurried hours. The noticing happens in the part where nothing is meant to be happening."
+          },
+          {
+            "t": "Adding academics at four because a relative asked",
+            "d": "This is the most common reason families drift away from what they chose. Decide your answer to that question in advance and say it kindly once."
+          },
+          {
+            "t": "One parent carrying the whole group",
+            "d": "The rota exists to stop this. A group of four families where one woman does everything lasts about eight months."
+          },
+          {
+            "t": "Reading a book you find dull",
+            "d": "Children hear it immediately. Put it down and pick another. There is no book you are obliged to finish."
+          }
+        ],
+        "training": "There is no qualification for this and Wild + Free does not claim one, which is worth saying plainly rather than dressing up. What people actually do instead is read: The Call of the Wild + Free by Ainsley Arment for the shape of the thing, For the Children's Sake by Susan Schaeffer Macaulay and Charlotte Mason's own volumes for the ideas underneath it, and Anna Botsford Comstock's Handbook of Nature Study, which is out of copyright and free on Project Gutenberg, for the outdoor half. The Wild + Free podcast and the articles at wildandfree.com are free. If you are moving from your own family to a group with other people's children, three practical things change: a two-day outdoor first aid certificate, an honest conversation about insurance if you are collecting money or hiring a hall, and Access NI clearance if you will ever be responsible for another family's child without their parent present. In Northern Ireland, if a group grows into something that looks like regular childcare rather than families meeting together, phone your Health and Social Care Trust Early Years Team and ask them directly where the line is. Most nature groups sit well below it, and it costs one phone call to be sure."
+      },
+      "your-part": {
+        "title": "Your part in it",
+        "icon": "heart",
+        "intro": "Wild + Free is unusual on this page because there is nowhere to send your child. There is no building, no staff and no drop-off. If your family does this, you are the one doing it, and the honest question is not how involved you should be but whether you want a life shaped this way.",
+        "model": {
+          "label": "Nobody drops off — you are the one running it",
+          "body": "This is a home method with a group of friends attached. That means one adult needs to be available most of the day, most days, which is a real financial and practical decision and deserves to be talked about plainly rather than assumed. What it gives back is that you are present for the years when a four-year-old is at their most interesting, and you are not handing that time to anyone else. What it asks is that you are the reader, the walker, the cook and the person who holds the rhythm when nobody feels like it. Some families do it with both parents working part-time. Some do it around shift work. Very few do it with two full-time jobs and no support, and it is fairer to say so than to pretend otherwise."
+        },
+        "before": [
+          "Decide the night before what is in the basket, so the morning does not start with a decision.",
+          "Put the coats, boots and bag by the door before breakfast. The outdoor block survives or dies on how long it takes to leave.",
+          "Eat with them rather than while they eat. Sitting down for ten minutes changes the whole speed of the morning.",
+          "Put your phone in another room for the morning basket. Not on silent, in another room.",
+          "Look at the sky and dress for what is coming, not for what is out of the window right now.",
+          "Say what the day holds in one sentence — basket, then the beach, then lunch. A four-year-old settles when they know the shape."
+        ],
+        "after": [
+          "Boots off outside, wet things straight onto the rack. Doing this every time is what makes tomorrow's walk possible.",
+          "Put whatever they collected on the nature shelf with them rather than for them. This is where the walk turns into something they remember.",
+          "Feed them soon and warm. Hunger after two hours outside arrives suddenly and looks exactly like bad behaviour.",
+          "Do not ask what they learned. Say what you noticed instead — \"you climbed higher than last week\" — and they will tell you the rest.",
+          "Read the chapter even on the day everything went wrong. It repairs more than a conversation about the day would.",
+          "Write down one line about what they were drawn to this week. Over a few months this becomes the only planning you need."
+        ],
+        "involvement": [
+          {
+            "t": "Join or start a group, and commit to a term",
+            "d": "One morning a week with the same four families beats six one-off events. Children need repetition to make friends, and so do adults."
+          },
+          {
+            "t": "Take a real turn on the rota",
+            "d": "Host, lead, or bring the snack, in writing, three months ahead. Groups run on this and nothing else."
+          },
+          {
+            "t": "Keep your own nature journal",
+            "d": "Not for them. A four-year-old copies an adult who is drawing far more readily than one who suggests drawing."
+          },
+          {
+            "t": "Find the other adult who will tell you the truth",
+            "d": "Somebody in the group you can say \"this week was terrible\" to. Home education in Northern Ireland is small and friendly, and the isolation is the risk, not the education."
+          },
+          {
+            "t": "Use what is free and local",
+            "d": "Libraries NI membership costs nothing and covers the whole read-aloud list. The National Museums Northern Ireland sites, including the Ulster Museum, are free to enter. The forest parks and the beaches are the curriculum."
+          }
+        ],
+        "visit": [
+          {
+            "q": "How often does the group meet, and is it the same families each time?",
+            "why": "Weekly and consistent is what builds friendships. A big drop-in event with different faces every month does something else."
+          },
+          {
+            "q": "Who is responsible for my child while we are there?",
+            "why": "In most nature groups the answer is you, and that is fine — you just want it said out loud so nobody assumes otherwise."
+          },
+          {
+            "q": "Is there a rota, and what turn would I be taking?",
+            "why": "A group with a written rota is a group that will still exist next year."
+          },
+          {
+            "q": "What happens in January?",
+            "why": "The answer tells you whether this is a summer group. Listen for a hall, a pool, or a stated willingness to be outside in the cold with proper clothes."
+          },
+          {
+            "q": "Is there a shared faith or outlook, and what is expected of me?",
+            "why": "Wild + Free groups vary a great deal here — some are explicitly Christian, some are not, some are mixed. It is a completely reasonable question and a good group answers it without any awkwardness."
+          },
+          {
+            "q": "How do you handle a child who hurts another child?",
+            "why": "You want to hear that adults step in calmly, care for both children, and that parents are told rather than protected from it."
+          },
+          {
+            "q": "Does it cost anything, and where does the money go?",
+            "why": "Hall hire and shared materials are normal. You just want to know it is a few pounds a week and who holds it."
+          },
+          {
+            "q": "How does someone leave the group?",
+            "why": "A strange question that saves a great deal of difficulty. Small groups where leaving feels like a betrayal become uncomfortable places to stay."
+          }
+        ],
+        "flags": [
+          "A group that is really one family's project and everyone else is a guest.",
+          "Adults standing in a talking circle while the children are out of sight for two hours.",
+          "A group that only meets in fine weather from May to September.",
+          "Pressure to buy a particular curriculum, box or set of materials to belong.",
+          "Anyone charging significant money for a group of parents meeting in a park.",
+          "A shared outlook that was not mentioned until you had joined.",
+          "Photographs of the morning being taken constantly while it is happening."
+        ],
+        "note": "The families who keep this going for years usually do less than the photographs suggest. A basket, a walk, a chapter, and the same four families every Wednesday. If you are choosing between doing the whole beautiful version occasionally and a small version daily, the small daily one is the method."
+      },
       "bring-it-home": {
               "intro": "Wild + Free is less a curriculum and more a rhythm you build into your week. Long hours outdoors, good books read aloud, and slow, unhurried mornings. You are not buying a system. You are shaping a childhood around fresh air, story, and time to just be four.",
               "steps": [
@@ -5464,6 +6726,432 @@ window.METHODS = [
           ]
     },
     sections: {
+      "set-up-the-space": {
+        "title": "Set up the space",
+        "icon": "shelf",
+        "intro": "Reggio Emilia calls the environment the third teacher, after the adults and the other children, and it means that literally. The room is expected to make offers to a child all day without an adult speaking. Light that can be played with, materials sorted so beautifully that they invite handling, mirrors and glass and transparency, the children's own work and words on the walls, and at the centre of a proper Reggio-inspired setting an atelier — a real studio, with an artist working in it. That studio is the argument, not the decoration.",
+        "scales": [
+          {
+            "name": "An atelier corner at home",
+            "span": "Cost: fifty pounds and a shelf",
+            "body": "One small table with good light, real materials in clear jars — wire, clay, charcoal, paper, thread, found objects — a mirror propped at the back, and a notebook where you write down what your child says while they work. Leave it out and available rather than bringing it out for sessions. The corner works because it is always there."
+          },
+          {
+            "name": "A studio room, or a childminder-scale group",
+            "span": "Cost: a few hundred pounds, and time",
+            "body": "Now the materials can be sorted properly by kind rather than by activity, and you can add a light table, a mirror at floor level, a clay board, and wall space for documentation. Time becomes the real cost here: revisiting and writing up what the children did takes hours every week, and it is the part that makes this Reggio-inspired rather than simply a nice craft room."
+          },
+          {
+            "name": "A full centre",
+            "span": "Cost: substantial, and staff time above everything",
+            "body": "A dedicated atelier with an atelierista, a mini-studio off each room, a piazza — a shared central space the rooms open onto — a visible kitchen, glass between spaces, two adults working together in each room, and paid non-contact time so the staff can meet and study the documentation. In Northern Ireland, registration with your Health and Social Care Trust Early Years Team, Access NI clearance and public liability insurance all come before you open. The largest line in a Reggio-inspired budget is adult hours, not equipment."
+          }
+        ],
+        "elements": [
+          {
+            "t": "The atelier — a real studio, not a craft cupboard",
+            "d": "A room with proper materials, tools and space to leave work standing overnight. In Reggio Emilia each preschool has one, and an atelierista, who is trained in an art discipline rather than in teaching, works there alongside the teachers. The reason given is that an artist asks different questions of a child's idea than a teacher does, and both are needed."
+          },
+          {
+            "t": "A mini-atelier off each room",
+            "d": "A small studio space attached to where the children already are, so a child can carry an idea from play into materials without leaving the group or asking to go somewhere."
+          },
+          {
+            "t": "The piazza",
+            "d": "A shared central space that all the rooms open onto, named after the town square. Children from different rooms meet there. It exists because a great deal of children's thinking happens between groups rather than inside one."
+          },
+          {
+            "t": "Light you can play with",
+            "d": "A light table, an overhead projector pointed at a sheet, translucent coloured shapes, a shadow screen, a window with prisms. Light is treated as a material in its own right, and a young child will investigate it for far longer than they will investigate a worksheet about it."
+          },
+          {
+            "t": "Mirrors, including at floor level",
+            "d": "A mirror triangle a child can crawl inside, mirrors under blocks, a mirror behind the materials. Reflection multiplies and changes what a child has built, and gives them a second view of their own work and of themselves."
+          },
+          {
+            "t": "Materials sorted by kind, in clear containers",
+            "d": "All the buttons together, all the wire together, all the wooden offcuts together, in glass jars on open shelves at child height. Sorting by material rather than by activity is the point: it hands the choosing back to the child, and an arrangement made with care is itself an invitation."
+          },
+          {
+            "t": "Clay, in real quantity, with real tools",
+            "d": "Not a small packet. A proper block, boards, wire cutters, water. Clay is the material Reggio settings return to most, because it holds an idea in three dimensions and can be changed again tomorrow."
+          },
+          {
+            "t": "Documentation on the walls, at both heights",
+            "d": "Photographs of a piece of work in progress, the children's own words written down exactly as they said them, and their drawings, arranged so the thinking can be followed. Hung low enough for the children as well as the adults. Documentation is not display — it is the record the adults plan from and the children revisit."
+          },
+          {
+            "t": "Transparency between spaces",
+            "d": "Glass walls, internal windows, doors that stay open. Children see other children working, adults see across the setting, and parents see in. It also quietly changes how adults behave when they can always be seen."
+          },
+          {
+            "t": "Quiet, neutral surfaces so the children's work is the colour",
+            "d": "White and natural walls, plain furniture, ordinary domestic objects. In a room already covered in primary colours and printed characters, a child's own drawing disappears."
+          },
+          {
+            "t": "The kitchen in view, and food treated as social",
+            "d": "In the municipal centres in Reggio Emilia the kitchen is visible and lunch is a proper shared meal rather than a break in the day. Eating together is treated as one of the settings where children learn most from each other."
+          },
+          {
+            "t": "A store of reclaimed materials from local businesses",
+            "d": "Offcuts, end-of-line pieces, packaging, wire, plastics, card. Reggio Emilia runs a creative recycling centre called REMIDA that collects exactly this from local industry and passes it to the schools. Any setting can copy the idea by asking three local businesses for their offcuts, and it costs nothing."
+          }
+        ],
+        "shopping": [
+          {
+            "heading": "Light, reflection and transparency",
+            "items": [
+              {
+                "name": "A light table or light panel",
+                "tag": "An A3 LED tracing panel does the job for around £30, far cheaper than a purpose-built light table."
+              },
+              {
+                "name": "An overhead projector or a small LED projector",
+                "tag": "Second-hand overhead projectors turn up on Marketplace and in school clearances for very little. Pointed at a wall with objects on the glass, it is one of the strongest invitations in this tradition."
+              },
+              {
+                "name": "Acrylic mirrors",
+                "tag": "Safety mirror sheet rather than glass. One large piece on a wall at floor level and two smaller pieces hinged into a triangle. £30."
+              },
+              {
+                "name": "Translucent bits and pieces",
+                "tag": "Coloured acetate, glass pebbles, jar lids, plastic gel sheets, cellophane. Charity shops, offcuts, and the recycling. Almost free."
+              },
+              {
+                "name": "A white sheet and a lamp for shadow work",
+                "tag": "A shadow screen is a bed sheet and a bright light. £0."
+              }
+            ]
+          },
+          {
+            "heading": "The material store",
+            "items": [
+              {
+                "name": "Glass or clear jars, many of them",
+                "tag": "Sorting by material only works if the child can see what is inside. Save jam jars, or buy a set of clear tubs. Nearly free."
+              },
+              {
+                "name": "Open shelving at child height",
+                "tag": "Open, no doors, no lids. Charity shops and Marketplace. £0–£30."
+              },
+              {
+                "name": "Reclaimed material from local businesses",
+                "tag": "Ring a joinery, a print shop, a fabric shop and an electrical firm and ask for offcuts. Most will say yes and be pleased to be asked. Free, and it is exactly how the REMIDA idea works in Reggio Emilia."
+              },
+              {
+                "name": "Wire, thread, string and tape",
+                "tag": "Soft aluminium and garden wire in a few gauges. Wire is the material children use to think in three dimensions when they are not yet strong enough for clay. £15."
+              },
+              {
+                "name": "Natural loose parts",
+                "tag": "Shells, driftwood, pebbles, cones, seed heads. A Northern Irish beach or wood supplies all of it. Free — but keep small items away from under-threes."
+              }
+            ]
+          },
+          {
+            "heading": "Clay, mark-making and the studio",
+            "items": [
+              {
+                "name": "A proper bag of clay and a few tools",
+                "tag": "Air-dry or terracotta, a board each, a wire cutter, a bowl of water. £20 for a large bag, which lasts a long time because unfired clay can be wedged and reused."
+              },
+              {
+                "name": "Real drawing materials",
+                "tag": "Charcoal, graphite sticks, fine liners, good paper. Fine liners and charcoal produce noticeably more careful looking than thick felt tips, because the child can record what they actually see."
+              },
+              {
+                "name": "Paint that behaves properly, and glass palettes",
+                "tag": "Decent liquid paint, mixed by the children in small dishes rather than handed out ready-made. Mixing colour is thinking."
+              },
+              {
+                "name": "A good desk lamp and a magnifier",
+                "tag": "Looking closely is half the practice. A lamp on the studio table and a lens on a stand. £25."
+              }
+            ]
+          },
+          {
+            "heading": "Documentation and, if you are opening, everything else",
+            "items": [
+              {
+                "name": "A camera, a notebook and a printer",
+                "tag": "A phone is fine for photographs. The notebook matters more — the children's exact words are the part most settings fail to capture. A cheap printer makes putting panels on the wall realistic instead of aspirational."
+              },
+              {
+                "name": "Paid time for adults to meet and write",
+                "tag": "This is the real cost of the approach. In Reggio Emilia teachers have non-contact hours built into the week for exactly this. A setting that does not budget for it will produce photographs instead of documentation."
+              },
+              {
+                "name": "A written consent and data policy for photographs",
+                "tag": "Documentation means recording children constantly. Get consent properly, store images securely, and be clear with parents about what goes on a public wall and what does not."
+              },
+              {
+                "name": "Trust registration, Access NI clearance and insurance",
+                "tag": "In Northern Ireland you register with your local Health and Social Care Trust Early Years Team and work to the current Minimum Standards for day care. Phone them before you commit to a building."
+              },
+              {
+                "name": "An atelierista, if the budget can reach",
+                "tag": "An artist rather than a teacher, working alongside the staff. This is the hardest part of the approach to reproduce outside Italy and the part most settings quietly leave out."
+              }
+            ]
+          }
+        ],
+        "think": [
+          {
+            "t": "Where the daylight comes from",
+            "d": "Light is a working material in this tradition, not just illumination. Note where the sun falls at different hours and put the studio table there. A north-facing room with one small window will limit what you can do."
+          },
+          {
+            "t": "Time, not equipment, is the budget",
+            "d": "The photographs are quick. Transcribing what children said, choosing what matters, printing it and putting it up takes hours every week. Decide who does it and when, before you start, or it will not happen."
+          },
+          {
+            "t": "The difference between documentation and display",
+            "d": "A wall of tidy photographs with captions for parents is display. Documentation shows a question a child had, what they tried, what failed, what they said, and where it went next. Only the second kind is any use to the adults planning tomorrow."
+          },
+          {
+            "t": "Photographs, consent and storage",
+            "d": "You will be recording children every day. Get written consent, be specific about public walls, websites and messaging groups, and store the files properly. This is a legal duty and also a matter of respect for the child."
+          },
+          {
+            "t": "Small parts and young children",
+            "d": "Loose parts and under-threes need real thought about choking. Reggio infant-toddler centres offer rich materials at that age, but scaled — larger pieces, closer adults, and materials chosen for the age rather than borrowed from the preschool room."
+          },
+          {
+            "t": "Two adults in the room, working together",
+            "d": "Reggio classrooms are staffed by two teachers of equal standing who plan together, with no head teacher above them in the room. One watching while the other works with a small group is how the observation actually gets done."
+          },
+          {
+            "t": "Sourcing locally rather than buying kits",
+            "d": "Ring local businesses for offcuts. The material a child has never seen before, from a real workshop, produces better thinking than anything sold as an educational resource."
+          },
+          {
+            "t": "Resisting the temptation to make it look finished",
+            "d": "Work that stays up half-made, a table left as the child left it, a project that goes nowhere for two weeks. A room that always looks tidy and complete is a room where the adults are ending things."
+          }
+        ],
+        "avoid": [
+          "Templates, and a wall of twenty near-identical outcomes. If they all look the same, the adult made them.",
+          "Craft kits with a picture on the box showing the finished result.",
+          "Materials used as decoration — a jar of beautiful buttons on a high shelf the children never touch.",
+          "A room already full of printed characters and primary colour, in which a child's own drawing cannot be seen.",
+          "Projects chosen in advance by the adults and then called child-led.",
+          "Documentation panels made only for parents to look at.",
+          "Calling the setting Reggio. Reggio Children is clear that the name belongs to the municipal schools of Reggio Emilia; everywhere else is Reggio-inspired, and saying so is accurate rather than modest."
+        ],
+        "note": "The origin of this tradition is worth remembering while you set up. In 1945, in a village outside Reggio Emilia, parents built a school themselves out of the rubble left by the war and funded it by selling what the retreating army left behind. Loris Malaguzzi heard about it, cycled out to see it, and stayed. The parents came first and the pedagogy grew out of what they built. That is why the environment and the parents both carry so much weight in this approach."
+      },
+      "running-it": {
+        "title": "Running the day",
+        "icon": "clock",
+        "intro": "Reggio Emilia is not a method with steps, and its own educators say so firmly — they describe it as a set of principles worked out over decades in one town, in one particular political and social history. What can be described is what the adults do: they listen very closely, they write down what children say, they work in pairs, they let projects run for weeks, and they meet regularly to study what they recorded and decide what to offer next.",
+        "tone": [
+          {
+            "t": "Listen more than you speak",
+            "d": "Carlina Rinaldi, who worked alongside Malaguzzi, describes a pedagogy of listening — taking a young child's theory about how the world works seriously enough to ask about it rather than correcting it. A four-year-old's explanation of why the moon follows the car is worth ten minutes of real conversation."
+          },
+          {
+            "t": "Ask questions you do not know the answer to",
+            "d": "Not \"what colour is that?\" but \"how could we find out?\" A question with a known answer is a test, and children can hear the difference instantly."
+          },
+          {
+            "t": "Be a researcher alongside them",
+            "d": "The adult is described as a co-researcher rather than an instructor. You genuinely do not know how this project will end, and saying that out loud to the children changes what they are willing to try."
+          },
+          {
+            "t": "Slow",
+            "d": "Long silences while a child works. No hurrying to an outcome. Projects that stall for a fortnight and then move. Speed is the enemy of the thinking this approach is trying to make visible."
+          },
+          {
+            "t": "Write it down as they say it",
+            "d": "Their exact words, not your summary. The transcript is what you take to the staff meeting, and a child's own phrasing carries their theory in a way a paraphrase never does."
+          }
+        ],
+        "rhythm": [
+          {
+            "t": "Arrival, unhurried, with parents coming inside",
+            "d": "Parents come into the room rather than handing over at a door. Conversations happen. The building is treated as somewhere the family belongs, not a place the child is deposited."
+          },
+          {
+            "t": "A morning meeting",
+            "d": "The group gathers to talk about what happened yesterday, what is still unsolved, who is going to continue with what. The children help decide the shape of the day, which is only meaningful if the adults have not already decided it."
+          },
+          {
+            "t": "Small groups, working on projects",
+            "d": "Not the whole room doing one thing. Three or four children on one investigation, sometimes for weeks, while others do something else. Small groups are used deliberately, because a child's idea gets tested against another child's idea rather than against an adult's."
+          },
+          {
+            "t": "The atelier is open alongside",
+            "d": "Children move to the studio when an idea needs a material. The atelierista works with them there, and often with the teachers too, thinking about how to give an idea a form."
+          },
+          {
+            "t": "One adult works, one adult observes and records",
+            "d": "The pair swap. Photographs, notes, exact quotes. Without this split the observation always loses to the immediate demands of the room."
+          },
+          {
+            "t": "Outdoors",
+            "d": "Gardens and courtyards, and going out into the town. Reggio settings are unusually committed to the idea that the town itself belongs to the children, and they take groups out into it regularly."
+          },
+          {
+            "t": "Lunch as a real shared meal",
+            "d": "Cooked on site, eaten together at proper tables, children serving and clearing. Treated as part of the day's learning rather than an interruption of it."
+          },
+          {
+            "t": "Rest, and then revisiting",
+            "d": "Later, the group looks again at photographs and notes from earlier in the week — \"you said the bridge would fall, what happened?\" Revisiting their own thinking is where a great deal of the depth comes from, and it is the step most often skipped elsewhere."
+          },
+          {
+            "t": "After the children leave, the adults study the documentation",
+            "d": "The staff sit down with what they recorded, decide what the children are really asking, and plan what to offer next. This is the planning process. There is no scheme of work to fall back on, which is exactly why the meeting is protected."
+          }
+        ],
+        "does": [
+          "Writes down children's exact words, every day.",
+          "Lets one project run for weeks, including through the parts where nothing seems to be happening.",
+          "Works in a pair, with one adult free to watch and record.",
+          "Offers a material in answer to a child's question rather than an explanation.",
+          "Puts the documentation where the children can see it and revisits it with them.",
+          "Meets regularly with the other adults to study what was recorded, and treats that meeting as the planning."
+        ],
+        "doesnt": [
+          "Decide the project in advance and steer the children into it.",
+          "Correct a child's theory about how something works before finding out how they got there.",
+          "Ask questions with known answers to check understanding.",
+          "Set out a task with one correct outcome.",
+          "Photograph for the parent newsletter and call that documentation.",
+          "Fill the walls with adult-made decoration."
+        ],
+        "parents": "Reggio Emilia is unusual among these traditions in that parents are structurally part of running the place. The first schools after the war were built and paid for by parents themselves, and when the town took the schools on, that involvement was written into how they are governed — the Italian term is gestione sociale, social management, and it means elected councils of parents, educators and citizens with real say over how a centre runs. In practice that looks like evening meetings, parents building furniture and repairing the garden, parents contributing materials from their own work, and long conversations about the documentation rather than a report card. Settling in is taken seriously and is called inserimento: the parent stays for part of the session over days or weeks while the child builds a relationship with the teachers, and only then does the drop-off become normal. Outside Italy this is almost always lighter, because most settings are private businesses rather than municipal services with an elected parent council. That is an honest difference and worth naming rather than implying otherwise. If you are running a setting, decide what real decisions parents actually get to make. Inviting parents to help and then deciding everything without them produces more resentment than not inviting them at all.",
+        "mistakes": [
+          {
+            "t": "The look without the listening",
+            "d": "Neutral walls, wooden trays and jars of buttons, and no record of a single thing a child said. This is the most common way a setting borrows Reggio and misses it entirely."
+          },
+          {
+            "t": "Documentation that is really a display for parents",
+            "d": "Pretty photographs, tidy captions, nothing about what puzzled the child or what failed. It is a lot of work for something no adult ever plans from."
+          },
+          {
+            "t": "Projects chosen by adults in advance",
+            "d": "A term plan headed \"Autumn\" with the activities already listed. Once the destination is set, the children are being led through it, whatever it is called."
+          },
+          {
+            "t": "Too many materials at once",
+            "d": "A room heaped with loose parts stops being an invitation and becomes noise. Offer fewer materials, chosen because of what the children were doing yesterday."
+          },
+          {
+            "t": "No protected time for the adults to meet",
+            "d": "The meeting is the planning in this approach. Cut it, and the documentation piles up unread and the projects drift."
+          },
+          {
+            "t": "One adult alone in the room",
+            "d": "Reggio teachers work in pairs of equal standing. Alone, nobody is ever free to sit and watch, and the observation quietly disappears."
+          },
+          {
+            "t": "Calling it a Reggio school",
+            "d": "Reggio Children is clear that the name belongs to the municipal schools of that town. Reggio-inspired is the accurate description and no parent will think less of you for using it."
+          }
+        ],
+        "training": "There is no Reggio diploma and no certification, and that is deliberate — the educators in Reggio Emilia argue that a certified method could be copied without being understood. The usual routes are reading, study visits and long practice. Reggio Children, the organisation set up in 1994 to manage the town's international work, runs study weeks at the Loris Malaguzzi International Centre in Reggio Emilia, which are excellent and expensive once flights and time off are counted. In the UK, Sightlines Initiative has been the long-standing reference point for educators working in this way and runs study groups and events. The core reading is The Hundred Languages of Children, edited by Edwards, Gandini and Forman, alongside Carlina Rinaldi's In Dialogue with Reggio Emilia, and Louise Boyd Cadwell's Bringing Reggio Emilia Home for a practical account by someone who trained there and then worked in another country. In Northern Ireland, any setting taking other people's children registers with the local Health and Social Care Trust Early Years Team, works to the current Minimum Standards for day care, and holds Access NI clearance and public liability insurance. Pre-school settings here also work to CCEA's Curricular Guidance for Pre-School Education, and a Reggio-inspired approach sits comfortably inside it — you will simply be evidencing it through documentation rather than through tick sheets, so agree that with your Trust early rather than after an inspection."
+      },
+      "your-part": {
+        "title": "Your part in it",
+        "icon": "heart",
+        "intro": "This is the tradition that expects the most from parents inside the institution itself. Not helping at home, and not staying in the room all session — a seat at the table where decisions about the place get made. Whether the setting you are looking at genuinely offers that is the most useful question you can ask it.",
+        "model": {
+          "label": "Drop off, and then take a real seat in running the place",
+          "body": "After a long settling-in period called inserimento, where you stay for part of each session over days or weeks, this becomes a drop-off setting. But the schools of Reggio Emilia were built by parents in the first place, after the war, and the town wrote that involvement into how they are governed — elected councils of parents, educators and townspeople with genuine say over the running of each centre. So the expectation is that you come to evening meetings, that you read the documentation and talk about it, that you help build and mend and supply materials, and that you know the educators well. Outside Italy this varies enormously. Some Reggio-inspired settings reproduce it seriously; many are private nurseries with a lovely studio and a parents' evening twice a year. Neither is dishonest, but they are very different offers, so ask what parents here actually decide before you assume."
+        },
+        "before": [
+          "Take the settling-in period seriously and clear the time for it. It is measured in days and weeks, and rushing it is the one thing that reliably makes the whole year harder.",
+          "Let them bring the thing they found — the feather, the broken bit of tile, the shell. Found objects are working material in this tradition, not clutter.",
+          "Come into the building rather than handing over at the door, if the setting allows it. The morning conversation with the educator is where most of what you need to know is exchanged.",
+          "Leave time to look at the wall on the way in. Two minutes reading yesterday's documentation gives you something real to talk to your child about.",
+          "Mention at the door anything the educators would want to know — a bad night, a visitor, a death, a new baby. They are watching your child closely and the context changes what they see."
+        ],
+        "after": [
+          "Read the documentation before you collect them, then ask about the specific thing. \"You said the bridge would fall down — did it?\" gets an answer where \"what did you do today?\" gets nothing.",
+          "Ask about the problem rather than the product. This is a tradition of long, unfinished work, and the interesting part is usually still in progress.",
+          "Do not expect something to bring home. Work often stays in the studio for weeks because it is not finished, and that is a sign the setting is doing this properly.",
+          "Keep what they do bring, and keep it visible for a while. A child who sees their own work taken seriously at home does more careful work.",
+          "Keep the hour after collection slow. Concentrating in a group all day is genuinely tiring, and the unravelling that happens with you is normal.",
+          "Save the interesting rubbish from your own week — wire offcuts, packaging, fabric ends, cable, corks. Ask what the setting could use."
+        ],
+        "involvement": [
+          {
+            "t": "The parent council or committee",
+            "d": "If there is one with real decisions attached, join it. If there is not, ask why. This is the part of the tradition that is most often left behind when it travels, and it is the part the founders would have said mattered most."
+          },
+          {
+            "t": "Evening meetings about the documentation",
+            "d": "Good settings hold evenings where the educators show a project properly — what the children asked, what they tried, what they said — and the parents discuss it. It is far more useful than a progress report, and it teaches you how to watch your own child."
+          },
+          {
+            "t": "Building, mending and making",
+            "d": "Shelving, garden beds, storage, light boxes. Parents doing practical work in the building is normal in this tradition rather than a favour, and it is how families come to know each other."
+          },
+          {
+            "t": "Materials from your own work",
+            "d": "If you work in joinery, printing, fabric, electrics, plumbing or a lab, you have access to offcuts that children will find genuinely fascinating because they have never seen them before. This is exactly the idea behind the creative recycling centre in Reggio Emilia."
+          },
+          {
+            "t": "Your own skill, offered",
+            "d": "A parent who can weld, sew, play an instrument, cook, or keep bees is a resource. Settings working this way are usually delighted to be asked."
+          },
+          {
+            "t": "A studio corner at home",
+            "d": "One table, good light, real materials, and a notebook where you write down what your child says. That last part is the one that changes things, and it costs nothing."
+          }
+        ],
+        "visit": [
+          {
+            "q": "Is there an atelier, and is there an atelierista?",
+            "why": "A studio space with an artist in it is the structural feature of this tradition. A craft trolley in the corner is not the same thing, and a straight answer tells you a great deal at once."
+          },
+          {
+            "q": "Can you show me documentation from a project that did not work?",
+            "why": "This is the best single question. A setting doing this properly has plenty and will be pleased to show you. A setting doing display only will have nothing but successes on the walls."
+          },
+          {
+            "q": "How many adults are in each room, and do they plan together?",
+            "why": "Reggio classrooms are staffed by pairs of equal standing. One adult alone means nobody is ever free to sit and observe."
+          },
+          {
+            "q": "When do staff get paid time to meet and study what they recorded?",
+            "why": "This is the planning process. If it happens in people's own time it will not happen for long."
+          },
+          {
+            "q": "How long do projects run here?",
+            "why": "Weeks or months is the answer you are listening for. A new topic every week is a themed curriculum wearing this name."
+          },
+          {
+            "q": "What do parents here actually decide?",
+            "why": "Ask for concrete examples of decisions parents have influenced. Warm words about partnership are common; a real council with real business is not."
+          },
+          {
+            "q": "How do you record what children say, and can I see some?",
+            "why": "You want to see exact quotes in a notebook, not a summary written afterwards. This is where the whole approach either lives or does not."
+          },
+          {
+            "q": "How do you handle photographs and consent?",
+            "why": "A tradition built on recording children should have thought carefully about this. A confident answer covers storage, public walls, websites and your right to say no."
+          },
+          {
+            "q": "What happens to a child who does not want to join a project?",
+            "why": "Listen for genuine ease with that, and for curiosity about what the child is doing instead."
+          }
+        ],
+        "flags": [
+          "The word Reggio on the sign, and no studio in the building.",
+          "Walls of identical outcomes, or anything made from a template.",
+          "Documentation that is only photographs and captions, with no child's words and no unfinished work.",
+          "Adults who describe the project they have planned for next term.",
+          "Beautiful loose parts arranged out of reach.",
+          "No protected time for staff to meet, and staff who look at you blankly when you ask about it.",
+          "Vagueness about consent for photographs.",
+          "A setting that cannot tell you one specific thing your child said this week."
+        ],
+        "note": "One thing the educators in Reggio Emilia say repeatedly, and it is worth repeating here: this is not a model to be copied. It came out of one town, one history, and forty years of argument between the people who did it. What travels is the stance — that a young child is capable and full of theories, that they have many ways of expressing an idea and only some of them involve words, that the room and the parents both teach, and that an adult's main work is to listen carefully and write it down. Malaguzzi's own phrase for the spirit of it was nothing without joy. A setting that has the studio and the jars and the neutral walls, but no joy and no listening, has copied the wrong part."
+      },
       "bring-it-home": {
               "intro": "You cannot copy a Reggio school at home, and you do not need to. What you can borrow is its spirit: set out interesting things, follow your child's own question, and then watch more than you talk. In Reggio, the child is seen as strong and full of ideas, and the grown-up's job is to notice those ideas and give them room to grow.",
               "steps": [
@@ -6442,6 +8130,471 @@ window.METHODS = [
           ]
     },
     sections: {
+      "set-up-the-space": {
+        "title": "Set up the site",
+        "icon": "shelf",
+        "intro": "Forest School does not have a room. It has a site, and the site is chosen rather than built. Most of the setup work is paperwork, walking the ground, and buying clothing that actually keeps a small person warm. You can run a real session on a patch of woodland with nothing but a tarp, a rope and a kettle — but only after somebody has said yes to you using it, and after you have walked it looking for what could hurt a four-year-old.",
+        "scales": [
+          {
+            "name": "A patch you already have access to",
+            "span": "Cost: the clothing, and nothing else",
+            "body": "Your own garden with two trees in it, a corner of a council park, a friend's field, the same bit of woodland you can walk to. One tarp, a sit mat each, a flask. You go back to the same spot every week. This is a real Forest School practice for one family and it needs no permission beyond the landowner already knowing you."
+          },
+          {
+            "name": "Your own small group in a permitted wood",
+            "span": "Cost: a few hundred pounds a year, plus paperwork",
+            "body": "Six to twelve children, one leader, one helper, on woodland you have written permission to use. Now you need a site risk assessment, an ecological impact assessment, public liability insurance, a first aid kit that goes with you every session, and a plan for what happens when somebody needs a toilet. The kit fits in a car boot and a wheelbarrow."
+          },
+          {
+            "name": "A registered setting for other people's children",
+            "span": "Cost: thousands, and months of lead time",
+            "body": "A qualified Level 3 Forest School Leader, a second trained adult, outdoor first aid certificates in date, Access NI clearance, insurance, a lease or a long permission, a shelter that stands up all winter, and registration with your Health and Social Care Trust Early Years Team if you are providing day care. Phone the Trust before you sign anything."
+          }
+        ],
+        "elements": [
+          {
+            "t": "Written permission from whoever owns the ground",
+            "d": "A text message is not enough. You want it in writing, naming the days, the group size, and whether you may light a fire. Forest Service Northern Ireland manages the state forests, councils own most town parks, the Woodland Trust and the National Trust own woods here too, and a lot of good sites belong to one farmer. Without this, one complaint ends your group."
+          },
+          {
+            "t": "An ecological impact assessment, written down",
+            "d": "Walk the wood and record what lives there, what is fragile, and what forty small feet a week will do to it. Then decide which areas are out of use, where the fire goes, and when you will move it. If you damage the wood you lose the wood, and the children lose the thing they came for."
+          },
+          {
+            "t": "A site risk assessment, plus a walk-round every single session",
+            "d": "The written one covers the permanent things: the stream, the drop, the road, the badger holes. The walk-round covers today: branches brought down by last night's wind, a new fallen tree, standing water, a broken bottle. Dead branches hanging in a canopy are the risk most new leaders miss, and they come down in wind."
+          },
+          {
+            "t": "Boundaries a four-year-old can actually see",
+            "d": "Not a line on your map. Bunting tied between trees, a rope, a path, a fence, a stream they know they do not cross. Walk it with them on the first session and again every time it moves. A child who can see the edge relaxes and plays further from you, which is the opposite of what most adults expect."
+          },
+          {
+            "t": "A base camp with a tarp over it",
+            "d": "One fixed place everybody knows. The tarp goes up first and comes down last, it keeps bags dry, and it gives you somewhere to take a cold child. Pitch it low on the weather side. In Northern Ireland the wind decides where your tarp goes more often than the view does."
+          },
+          {
+            "t": "A fire circle, built once and respected",
+            "d": "Bare scraped earth or a raised fire bowl, a ring of log seats set back from it, nothing flammable above, and a bucket of water plus a fire blanket beside it every time it is lit. Seats set back at a fixed distance do more for safety than any amount of telling children to be careful."
+          },
+          {
+            "t": "A tool area away from the running-about",
+            "d": "A separate spot with its own seats, out of the path of play, where cutting happens and only there. Children queue for it, work in it, and hand the tool back when they leave it. Keeping tools in one place is what makes it possible to know where every blade is."
+          },
+          {
+            "t": "Hand-washing water, and a toilet plan",
+            "d": "A jerrycan with a tap, soap, and a bowl at base camp, used before every snack. Woodland soil carries things that make small children ill. For toilets, either you are near real ones, or you agree a discreet spot well away from water with a trowel and a bag, and you tell parents which it is before they sign up."
+          },
+          {
+            "t": "A wet-kit and spare-clothes system",
+            "d": "A named dry bag per child holding a full spare set including socks, kept at base camp. Four-year-olds go into water. A child in wet clothes gets cold faster than an adult expects and the session ends for them. Spare gloves and spare socks are the two things you will use most."
+          },
+          {
+            "t": "A dry, findable place for the first aid kit and the phone",
+            "d": "Same box, same place, every session, and every adult knows it. Write down the grid reference or the what3words of your base camp and the nearest gate an ambulance could reach, and keep it in the lid of the box. Do this on a calm day, not on the day you need it."
+          }
+        ],
+        "shopping": [
+          {
+            "heading": "What the child wears, which matters more than any kit you buy",
+            "items": [
+              {
+                "name": "A proper waterproof jacket and separate trousers",
+                "tag": "Taped seams, a hood that stays up, big enough to go over a fleece. Muddy Puddles, Regatta, Trespass, Mountain Warehouse and Decathlon all do child sets from about £25. This is the single purchase that decides whether winter sessions work."
+              },
+              {
+                "name": "A waterproof all-in-one for the smallest ones",
+                "tag": "Puddle suits are easier than two pieces at four, and they keep the gap at the waist closed when a child sits in mud. £20 to £35 new, and they turn up constantly on Facebook Marketplace for £5."
+              },
+              {
+                "name": "Wellies, and warm boots for frost",
+                "tag": "Wellies alone are cold below about five degrees. Add thick socks, or wellington liners, or a pair of insulated boots for January. £12 to £30."
+              },
+              {
+                "name": "Wool or synthetic base layers, never cotton",
+                "tag": "Cotton holds water against the skin and pulls heat out of a child. Merino is best and expensive; cheap synthetic thermals from a supermarket do the same job. Two sets, so one is always dry."
+              },
+              {
+                "name": "Two pairs of gloves and a hat that covers the ears",
+                "tag": "Wet gloves end sessions. Buy them in twos, put a name in them, and expect to lose some. £5 a pair."
+              },
+              {
+                "name": "Spare everything in a named dry bag",
+                "tag": "Socks, trousers, top, pants, gloves. A dry bag costs £6 and a strong carrier bag costs nothing."
+              }
+            ]
+          },
+          {
+            "heading": "Base camp",
+            "items": [
+              {
+                "name": "Two tarps, 3 metres by 3 metres",
+                "tag": "One over base camp, one for the children to build with. A basic tarp is £15 and a good hammock-brand one is £60. Start with the cheap one."
+              },
+              {
+                "name": "Paracord, and a set of guy lines",
+                "tag": "50 metres of paracord covers pitching, den building and rope swings. £10."
+              },
+              {
+                "name": "A mallet and tarp pegs",
+                "tag": "Long pegs, because woodland soil is soft. £10."
+              },
+              {
+                "name": "A sit mat each",
+                "tag": "A square of closed-cell foam. Stops a cold, wet log turning into a cold child. £3 each, or cut up an old camping mat for free."
+              },
+              {
+                "name": "Two big plastic storage boxes with lids",
+                "tag": "One for tools and first aid, one for the fire and kitchen kit. Everything lives in them so nothing gets left in the leaves. £10 each."
+              },
+              {
+                "name": "A wheelbarrow or a folding trolley",
+                "tag": "You will be carrying water and boxes from a car park. This is the thing leaders wish they had bought first. £30 second-hand."
+              },
+              {
+                "name": "A group shelter for emergencies",
+                "tag": "A pop-up nylon bag that a whole group sits inside to get warm and out of the wind. £40 to £80, and worth it if you take other people's children."
+              }
+            ]
+          },
+          {
+            "heading": "Fire, water and the hot drink",
+            "items": [
+              {
+                "name": "A Kelly Kettle",
+                "tag": "Boils water fast on a handful of sticks. Made in County Mayo, sold everywhere here, and the reason a Forest School session can finish with hot chocolate in the rain. £50 to £80."
+              },
+              {
+                "name": "A fire steel and cotton wool",
+                "tag": "Cheap, reliable in damp weather, and a real skill a child can learn. £8. Petroleum jelly rubbed into cotton wool makes tinder that lights when everything is wet."
+              },
+              {
+                "name": "A metal bucket, a fire blanket and leather gloves",
+                "tag": "Water goes beside the fire before the fire is lit, not after. £25 for all three."
+              },
+              {
+                "name": "A fire bowl or a metal tray",
+                "tag": "If you are not allowed to burn on the ground, or the ground is peat, you raise the fire off it. Many permissions require this. £30."
+              },
+              {
+                "name": "Billy can, enamel mugs, a flask",
+                "tag": "Enamel or steel, not plastic. Charity shops are full of them."
+              },
+              {
+                "name": "A water container with a tap, plus soap",
+                "tag": "10 or 20 litres, carried in. Hand washing before food is not optional in a wood. £15."
+              }
+            ]
+          },
+          {
+            "heading": "Tools and the first aid kit that belongs with them",
+            "items": [
+              {
+                "name": "Vegetable peelers",
+                "tag": "The first cutting tool a four-year-old gets. They strip bark beautifully and they will not open a hand. 50p each, buy ten."
+              },
+              {
+                "name": "A palm drill and a hand drill",
+                "tag": "Making a hole is one of the most satisfying jobs there is, and both tools are slow enough to be forgiving. £10."
+              },
+              {
+                "name": "Bahco Laplander folding saw",
+                "tag": "The standard Forest School saw. Used two-handed with a glove on the holding hand, and folded away the moment the child stops. £25."
+              },
+              {
+                "name": "A bow saw with a blade guard",
+                "tag": "For sawing rounds on a saw horse. Used with an adult alongside at this age. £15."
+              },
+              {
+                "name": "Knives, later and slowly",
+                "tag": "A rounded-tip child's Opinel or a fixed-blade Morakniv, introduced one child at a time, sitting down, sheathed the second they pause. Most leaders do not put a knife in a four-year-old's hand at all. £12 to £20."
+              },
+              {
+                "name": "A first aid kit with a burns dressing in it",
+                "tag": "A standard outdoor kit plus a proper burns dressing, a triangular bandage, a tick remover, and a foil blanket. If you light fires you carry a burns dressing, every time. £30."
+              },
+              {
+                "name": "A whistle and one agreed signal",
+                "tag": "One blast means stop and look at me, three means come back to base camp. Practise it in week one as a game. £2."
+              }
+            ]
+          },
+          {
+            "heading": "Only if you are running it for other families",
+            "items": [
+              {
+                "name": "Public liability insurance",
+                "tag": "Non-negotiable, and most landowners will ask for the certificate before they give permission. Budget a few hundred pounds a year."
+              },
+              {
+                "name": "Access NI enhanced clearance for every adult",
+                "tag": "Arranged through a registered body. Do this early, it takes weeks."
+              },
+              {
+                "name": "Registration with your Health and Social Care Trust",
+                "tag": "If you are providing day care for other people's children in Northern Ireland, phone your Trust's Early Years Team before you plan anything else. They are helpful and the process is slow."
+              },
+              {
+                "name": "Consent, medical and photo forms for each child",
+                "tag": "Allergies, asthma inhalers, emergency contacts, and whether you may photograph them. A ring binder in the box."
+              }
+            ]
+          }
+        ],
+        "think": [
+          {
+            "t": "How far you carry everything",
+            "d": "Water is heavy, boxes are awkward, and you will do the walk twice at each end of every session. A slightly worse wood five minutes from a car park beats a perfect wood twenty minutes in."
+          },
+          {
+            "t": "Where the water goes when it rains",
+            "d": "Walk the site in heavy rain before you commit. The flat sheltered clearing that is perfect in June can be standing water from November to March."
+          },
+          {
+            "t": "What is above your head",
+            "d": "Look up at base camp, at the fire circle, and at every den spot. Dead limbs, ivy-heavy branches and leaning trees are the things that seriously hurt people in woodland, and they are invisible if you only look at the ground."
+          },
+          {
+            "t": "Ticks, and one or two plants",
+            "d": "Ticks are present across Northern Ireland and can carry Lyme disease, so long trousers, socks over trousers, and a check of the whole body at home is the routine. Learn to recognise giant hogweed near rivers, and know where any deep water is."
+          },
+          {
+            "t": "Toilets, honestly, before anyone signs up",
+            "d": "This is the question parents ask and leaders forget to answer. Say plainly whether there is a real toilet, and if not, describe exactly what happens instead."
+          },
+          {
+            "t": "The wear the site takes from you",
+            "d": "A weekly group flattens ground, strips low branches and kills grass in the same three places. Move the fire circle, rotate the den-building area, bring your own firewood some weeks, and take everything out that you brought in."
+          },
+          {
+            "t": "Winter light and the short days",
+            "d": "In December it is properly dark by four. Plan a shorter session, start earlier, and accept that fire matters more in winter than in summer for reasons that have nothing to do with skill."
+          },
+          {
+            "t": "The phone signal, and who is coming if you call",
+            "d": "Check the signal at base camp, note the nearest gate a vehicle can reach, and tell the second adult what you would do if you were the one who got hurt."
+          }
+        ],
+        "avoid": [
+          "A new wood every week. Forest School is the same place across the seasons, and the depth only appears when the child knows the ground.",
+          "Starting with knives and fire because they are exciting. Peelers first, for weeks, and everybody keeps their hands.",
+          "A timetable of activities. Free play is meant to be most of the session, and it takes about an hour to appear.",
+          "Cheap unbranded waterproofs that wet out in twenty minutes. The clothing is the one place not to save money.",
+          "Cotton clothing, including jeans and cotton socks. Wet cotton makes a child cold and the session stops.",
+          "Lighting a fire on peat, on tree roots, or without written permission.",
+          "Taking a group out on your own with nobody else on site."
+        ],
+        "note": "A single tarp, a rope, a bag of peelers and the same three trees every Tuesday is a genuine Forest School. The permission, the risk assessment and the waterproofs are what turn it into something you can keep doing for a year."
+      },
+      "running-it": {
+        "title": "Running the session",
+        "icon": "clock",
+        "intro": "A Forest School session looks unplanned from outside and is heavily prepared underneath. The leader arrives early, sets the safety, and then deliberately does very little. Most of what the adult does is watch, hold the boundaries, and say yes to things that look alarming and are not.",
+        "tone": [
+          {
+            "t": "Calm, and slower than you feel",
+            "d": "You set the speed of the group. Children who arrive excited settle to whatever pace the adults move at. If you rush the kit check, they run for the rest of the morning."
+          },
+          {
+            "t": "Say yes far more than you say no",
+            "d": "Before you stop something, ask yourself what could actually happen and how badly. Most of what makes an adult flinch — climbing, mud, a stick, a heavy log — is fine. Save no for the small number of things that really matter, and then it works."
+          },
+          {
+            "t": "Name the risk instead of forbidding it",
+            "d": "Try \"that branch is dead, put your weight on the one below it\" rather than \"get down\". You are teaching them to judge, which is the thing they will still have when you are not there."
+          },
+          {
+            "t": "Warm, and not full of praise",
+            "d": "Notice out loud what they did: \"you carried that log the whole way on your own.\" A stream of well-done teaches a child to look at you instead of at the work."
+          },
+          {
+            "t": "Firm and unbothered about the three hard rules",
+            "d": "Fire, tools and boundaries are not negotiated and not argued about. Everything else is open. Children settle quickly when they can feel which rules are real."
+          }
+        ],
+        "rhythm": [
+          {
+            "t": "Arrive early and walk the site alone",
+            "d": "Twenty minutes before anyone else. Look up for hanging branches, check for rubbish and animal holes, check the boundary markers are still there, pitch the tarp, put the water and fire blanket by the fire circle. This is the safety of the whole session and it happens before a child is present."
+          },
+          {
+            "t": "The greeting and the kit check",
+            "d": "One at a time, at their height, by name. Look at what they are wearing and say plainly if something is missing. Wellies on, coat zipped, gloves in a pocket. A four-year-old who is properly dressed stays two hours longer."
+          },
+          {
+            "t": "The boundary walk",
+            "d": "Walk the edge together, every session, even when nothing has changed. Touch the bunting, name the stream, look at today's new fallen branch. Then the boundary is theirs, not yours, and you stop having to police it."
+          },
+          {
+            "t": "The opening circle",
+            "d": "Short. A song or a call everyone knows, the weather named, anything new on the site named, and the one thing that is different today. Two minutes, not ten."
+          },
+          {
+            "t": "Free play, and it is most of the session",
+            "d": "Two to three hours of the child choosing. You stay present, sit down, and let the first restless forty minutes pass without filling it. Deep play arrives at about the ninety-minute mark and it will not arrive if you keep offering activities."
+          },
+          {
+            "t": "The fire is lit, and the circle rule holds",
+            "d": "Sleeves up, hair back, water and blanket beside it, everyone sitting outside the log ring, nobody walking between the seats and the flame. Children step in one at a time when invited to add a stick. The fire is never left with nobody watching it."
+          },
+          {
+            "t": "The tool talk, then the tool area opens",
+            "d": "Before any cutting: show the tool, show the grip, show the area, show what happens when you stop. Then one or two children at a time, seated, gloved, with an adult right there. Tools are counted out and counted back in."
+          },
+          {
+            "t": "The hot drink and the snack",
+            "d": "Hands washed, everyone at base camp, something hot from the Kelly Kettle even in June. This is the moment the group becomes a group, and children talk here in a way they do not talk in a circle."
+          },
+          {
+            "t": "Fire out, tools in, site restored",
+            "d": "Water on the fire, stir the ashes, more water, hand held near to check it is cold. Every tool accounted for by number. Everything you brought goes back in the boxes, and the children help."
+          },
+          {
+            "t": "The closing circle",
+            "d": "Each person says one thing they noticed or one thing they are proud of. Short, unhurried, and the same words every week. This is what turns three muddy hours into a memory the child carries home."
+          },
+          {
+            "t": "After they leave, write it down",
+            "d": "Ten minutes. What changed on the site, what each child chose, who is ready for the next tool, what nearly went wrong. Any near miss goes in a record. That page is next week planned."
+          }
+        ],
+        "does": [
+          "Walks the site and re-checks it before every single session.",
+          "Sits down, and lets the boring first hour happen.",
+          "Introduces one tool at a time, to one child at a time.",
+          "Holds the fire circle, the tool area and the boundary without argument.",
+          "Lets a child be cold or wet for a moment, then helps them fix it themselves.",
+          "Says what they see rather than what they think about it."
+        ],
+        "doesnt": [
+          "Fill the session with planned activities because the children look aimless.",
+          "Shout \"be careful\" across the wood. It tells the child nothing and interrupts the judgement they were making.",
+          "Lift a child into a tree they cannot climb themselves. Where they can get up on their own is a good measure of where they can get down.",
+          "Leave a fire with no adult beside it, even for ten seconds.",
+          "Let a tool go missing without stopping everything until it is found.",
+          "Cancel for rain. Cancel for high wind, because of falling branches."
+        ],
+        "parents": "Forest School splits here, and it splits mostly by age. Sessions for under-fives in Northern Ireland are very often parent-and-child: you stay, you are a second pair of eyes, and part of what you are learning is how to hold back. Sessions for school-age children are usually drop-off, because a four or five-year-old plays quite differently once their own adult is out of sight and the leader wants that deeper play to appear. Both are honest models and a good group tells you plainly which one it runs. If you are the leader and parents stay, give them a real job — the kettle, the hand-washing station, watching one edge of the boundary — and give them the same short briefing your helpers get. Parents with nothing to do will hover over their own child, tidy other people's dens, and answer questions that were not asked, and the session never settles.",
+        "mistakes": [
+          {
+            "t": "Running a nature-activity club and calling it Forest School",
+            "d": "Bug hunt, then leaf printing, then a story, then home. It is a nice morning and it is a different thing. Forest School is long child-led play in one place over a long time."
+          },
+          {
+            "t": "Cutting the session short",
+            "d": "An hour never reaches the good part. If you can only manage an hour, do it, but know that you are seeing the restless phase and not the deep one."
+          },
+          {
+            "t": "Too many adults, talking to each other",
+            "d": "Two adults chatting at base camp change the whole feel of a wood. Spread out, sit down, stay quiet."
+          },
+          {
+            "t": "Skipping the site check because it was fine last week",
+            "d": "One windy night changes a wood. This is the check that stops the accident that actually happens in woodland."
+          },
+          {
+            "t": "Letting tool rules drift as the group gets comfortable",
+            "d": "Standards slip quietly across a term. Say the same tool talk every week, in the same words, however boring it feels to you."
+          },
+          {
+            "t": "Rescuing a child who is cold instead of teaching them the fix",
+            "d": "Show them the spare socks bag, the dry gloves, the fire, the jumping-up-and-down. A child who can warm themselves goes out in January without fear."
+          }
+        ],
+        "training": "The recognised route in the UK is the Level 3 Forest School Leader qualification, which is what allows you to plan and run sessions for other people's children. It usually runs over six to twelve months, includes practical assessment and a written portfolio, and costs somewhere between £1,000 and £2,000. Level 1 is a short introduction and Level 2 is an assistant qualification, and Level 2 is genuinely useful for a parent who only wants to run something for their own family and friends. Alongside it you need a current outdoor first aid certificate — the two-day, 16-hour version, not a one-day workplace course — from a provider such as ITC First or Rescue Emergency Care. The Forest School Association at forestschoolassociation.org holds the ethos statement, a practitioner directory, and a list of recognised trainers. In Northern Ireland you also have three things to sort that are not part of the qualification: written landowner permission, public liability insurance, and Access NI clearance. If you are taking other people's children regularly rather than occasionally, contact your Health and Social Care Trust Early Years Team and ask directly whether what you are planning counts as day care and needs registering. Ask before you advertise, not after."
+      },
+      "your-part": {
+        "title": "Your part in it",
+        "icon": "heart",
+        "intro": "If your child goes to a Forest School group, what is being asked of you? At four, quite a lot — and most of it happens before you leave the house and after you get home. The clothing is your job, the tick check is your job, and the hardest part is standing still while somebody else's judgement decides how high your child climbs.",
+        "model": {
+          "label": "Under five, you usually stay — and the skill is stepping back",
+          "body": "Most Forest School groups here run parent-and-child sessions for under-fives and drop-off sessions from school age. So at four you are probably staying, and your real work is to be present without managing. That is harder than it sounds. Your child will do things that make your stomach tighten: climb higher than you would allow, put both hands in mud, hold a saw. The leader has assessed that risk deliberately, and the whole method rests on the child being the one who takes it. If you would rather a drop-off model, some groups do run one and it is equally honest — ask which it is before you book, so nobody is surprised on the first morning."
+        },
+        "before": [
+          "Dress them properly, and check it yourself. Waterproof over fleece over a wool or synthetic layer, never cotton next to the skin, socks over the trouser cuff. A cold child leaves early no matter how good the leader is.",
+          "Let them put their own boots and coat on, even when it takes ten minutes. Doing this themselves in the porch is what lets them fix their own clothes later in the wood.",
+          "Feed them a real breakfast. Being outside in cold air burns through a four-year-old fast, and hunger and cold arrive together.",
+          "Put a name in every glove, hat and welly. You will lose some anyway, and named ones come back.",
+          "Pack the spare bag and tell them it is there. Socks, trousers, pants, top, second gloves.",
+          "Leave your own worry at the gate. If you flinch every time they climb, they will stop climbing and watch your face instead."
+        ],
+        "after": [
+          "Strip the wet kit at the door onto a towel, and have dry clothes ready in the hall. Doing this outside the house saves the argument and the floor.",
+          "Warm them up before anything else — a bath, a hot drink, dry socks. Small children lose heat quickly and get miserable an hour after they stop moving, not while they are moving.",
+          "Do a tick check while they are in the bath. Behind the knees, the hairline, the waistband, under the arms. Ticks are present across Northern Ireland, and one removed within a day is very unlikely to cause a problem.",
+          "Feed them straight away. The hunger after three hours outside is real and it arrives suddenly.",
+          "Do not ask what they did. Ask nothing, walk beside them, and wait. It usually comes out in the bath or in the car about twenty minutes later.",
+          "Expect a hard hour, and an early night. A child who held themselves together in the cold for three hours often falls apart at five o'clock. That is tiredness, not behaviour.",
+          "Dry the kit properly tonight. Nothing ends a Forest School term faster than a Tuesday morning with wet boots."
+        ],
+        "involvement": [
+          {
+            "t": "Be a helper, not a hoverer",
+            "d": "Ask the leader for a job — the kettle, the hand-washing water, watching one boundary. With something to do you stop drifting toward your own child, and they play further away."
+          },
+          {
+            "t": "Go back to the same wood in your own week",
+            "d": "Once between sessions, on your own with them, no group. Ten minutes in the same place is enough. This is what turns a weekly club into a place they know."
+          },
+          {
+            "t": "Learn the same tool rules and use them at home",
+            "d": "If they saw a stick at Forest School and are told no at home, the skill stops there. Ask the leader to show you the tool talk and then let them use the peeler in your garden."
+          },
+          {
+            "t": "Tell the leader what is happening at home",
+            "d": "A bad night, a new baby, a bereavement, a sore ear. The leader is reading your child's behaviour all morning and needs the context to read it correctly."
+          },
+          {
+            "t": "Take the outdoor first aid course yourself if you can",
+            "d": "Two days, and it changes how you feel watching a child climb. It also makes you a genuinely useful second adult."
+          }
+        ],
+        "visit": [
+          {
+            "q": "Is it the same woodland every week, all year?",
+            "why": "A different beauty spot each week is a nature club. The depth of Forest School comes from one place across the seasons."
+          },
+          {
+            "q": "Who holds the Level 3 Forest School Leader qualification, and is their outdoor first aid in date?",
+            "why": "You want a name and a date, and a confident group gives both without hesitating. Ask how many trained adults are present, not how many adults."
+          },
+          {
+            "q": "How long is the session, and how much of it is free play?",
+            "why": "Listen for two to three hours with most of it child-led. A packed programme of activities is a different thing wearing the name."
+          },
+          {
+            "q": "Can I see the risk assessment, and what happened at your last near miss?",
+            "why": "A good leader is relaxed about this and will tell you a real story. A leader who says nothing has ever gone wrong is either very new or not recording."
+          },
+          {
+            "q": "What is the toilet arrangement?",
+            "why": "It is the practical question everybody is too polite to ask, and the answer tells you how carefully the site was planned."
+          },
+          {
+            "q": "Do I stay or do I leave, and what do you want me doing?",
+            "why": "You want a clear answer either way, plus a job if you are staying."
+          },
+          {
+            "q": "What do you do if a child is cold, or does not want to be there today?",
+            "why": "Listen for warmth and practical fixes — dry socks, the fire, a job to do — rather than either pushing on or going home immediately."
+          },
+          {
+            "q": "What is your ratio, and what happens in high wind?",
+            "why": "You want to hear that they cancel for wind because of falling branches, and that they do not cancel for rain."
+          }
+        ],
+        "flags": [
+          "A different location every week.",
+          "Nobody on site holds a Level 3 Forest School Leader qualification or a current outdoor first aid certificate.",
+          "No written landowner permission and no insurance certificate they can show you.",
+          "A fire with no water and no fire blanket beside it, or a fire left with nobody watching.",
+          "Tools handed out to a group at once, with no counting back in.",
+          "Sessions run by one adult alone.",
+          "Children kept in a tight cluster around the leader doing an activity for two hours.",
+          "A leader who tells you nothing has ever gone wrong."
+        ],
+        "note": "None of this is a judgement on gentler outdoor groups. A weekly nature walk, a beach morning, a woodland playgroup — all of those are good and worth doing, and they ask far less setup. It is simply worth knowing which one you have joined, so that you are not waiting for fire and tools at a group that was never going to offer them."
+      },
       "bring-it-home": {
               "intro": "You can bring Forest School home without a course or a badge. Pick one patch of woods near you, go back every week through the seasons, dress for the weather, and let your child lead the play while you hold the safety line. Over time the same trees become their own little world. Northern Ireland has good local groups too if you want company.",
               "steps": [
@@ -7425,6 +9578,416 @@ window.METHODS = [
           ]
     },
     sections: {
+      "set-up-the-space": {
+        "title": "Set up the space",
+        "icon": "shelf",
+        "intro": "Unschooling has no classroom and no shelf of special materials, and pretending otherwise would miss the point. What you are setting up is a house that answers questions. When a four-year-old asks how a lock works, how far away the moon is, or whether they can cut this open, the house either has an answer within reach or it does not. Most of the setup is removing the small obstacles between a child's question and the thing that would satisfy it.",
+        "scales": [
+          {
+            "name": "The house you already live in",
+            "span": "Cost: almost nothing",
+            "body": "A library card, a working internet connection, the tools you own left where they can be reached, and a kitchen your child is allowed into. Add a box of cardboard, tape and string. That is a complete unschooling environment and thousands of families are running on exactly this."
+          },
+          {
+            "name": "One corner given over to making things",
+            "span": "Cost: £150 to £400",
+            "body": "A low bench or an old table in a garage, shed, spare room or the end of a hall. Real tools on a board where they can be seen, safety glasses, offcuts of wood, a glue gun, tape, wire, a vice. The one thing this corner needs that the rest of the house does not is permission for a project to stay out overnight, half-finished."
+          },
+          {
+            "name": "A self-directed learning centre",
+            "span": "Cost: fees, staff and a building",
+            "body": "A real building where children set their own agenda, staffed by adults who are there as resources rather than teachers, usually with some form of democratic meeting where children and staff have an equal vote. Sudbury Valley School in Massachusetts, opened in 1968, is the model most of these follow. In the UK, Summerhill in Suffolk and Sands School in Devon are the long-running examples. There is no such school in Northern Ireland at the moment, so a family here who wants this is usually building a small group with other home-educating families instead."
+          }
+        ],
+        "elements": [
+          {
+            "t": "An internet connection and a device that is not hidden",
+            "d": "When a four-year-old asks what a volcano sounds like, you look it up together within a minute. Unschooling families disagree strongly about screen limits and it is worth knowing that before you take anybody's advice — but nearly all of them agree that the answer to a real question should be available immediately."
+          },
+          {
+            "t": "A library card, and a habit that goes with it",
+            "d": "Libraries NI membership is free, covers every branch, and will request a book from anywhere in the system for you. A four-year-old who chooses fourteen books themselves every fortnight, including the wrong ones and the too-hard ones, is doing the whole method in one activity."
+          },
+          {
+            "t": "Materials left out, at a height they can reach",
+            "d": "Paper, tape, scissors, string, cardboard, glue. Anything a child must ask an adult to fetch is a project that mostly does not happen. The rule is not tidiness, it is reachability."
+          },
+          {
+            "t": "A workshop corner with real tools",
+            "d": "A hammer, a hand drill, a small saw, a vice, safety glasses, a box of wood offcuts. Shown properly and used with you at four. Real tools do real things, and a four-year-old can feel the difference between a hammer and a toy hammer immediately."
+          },
+          {
+            "t": "A kitchen a child is allowed to use",
+            "d": "A step stool at the counter, a small sharp knife they have been shown how to hold, scales, and the freedom to make a mess and clean it. Cooking is the densest learning in an ordinary house — weighing, timing, heat, change, sequence — and none of it needs to be named."
+          },
+          {
+            "t": "Books everywhere, not sorted by level",
+            "d": "Picture books, an old encyclopaedia, an atlas, adult books about things you love. A four-year-old who pulls a heavy book about aeroplanes off a shelf and looks at the pictures for an hour is not doing it wrong."
+          },
+          {
+            "t": "Somewhere a project can stay out overnight",
+            "d": "A corner of a table, a tray, a shelf, a patch of floor. If everything must be cleared away at six o'clock, work never lasts more than one day, and the long projects are where the depth is."
+          },
+          {
+            "t": "A wall for maps and for the things they made",
+            "d": "A world map, a map of Northern Ireland, and their own drawings up beside them. A map on a wall gets looked at ten thousand times and asked about a hundred."
+          },
+          {
+            "t": "Adults doing real work where the child can see it",
+            "d": "Fixing, sewing, gardening, writing, accounts at the kitchen table. Children learn most of what they learn by watching a trusted adult do something that genuinely matters, and a house where all the real work happens elsewhere gives them nothing to watch."
+          },
+          {
+            "t": "Transport, and space in the week to use it",
+            "d": "The bus to the museum, the drive to the beach, the harbour where the boats are, the man in the shop who will explain the engine. Following an interest means physically going to it, and a diary with nothing free in it makes that impossible."
+          }
+        ],
+        "shopping": [
+          {
+            "heading": "The things that answer questions",
+            "items": [
+              {
+                "name": "A Libraries NI card",
+                "tag": "Free, for every child and adult, at any branch. This is the largest single resource on the list."
+              },
+              {
+                "name": "A second-hand children's encyclopaedia and an atlas",
+                "tag": "A DK or Usborne one from a charity shop, £3 each. Out of date on some facts and completely fine for a four-year-old."
+              },
+              {
+                "name": "A hand lens and a cheap microscope",
+                "tag": "The hand lens is £4 and gets used daily. A basic microscope is £30 and is worth it the week they find something on a leaf."
+              },
+              {
+                "name": "Binoculars",
+                "tag": "Even cheap ones change a walk. £20, or ask around — most families have a pair in a cupboard."
+              },
+              {
+                "name": "A world map and a map of Northern Ireland for the wall",
+                "tag": "£10. Put it at their eye height, not yours."
+              },
+              {
+                "name": "A device with a real browser, wherever you have decided it lives",
+                "tag": "A second-hand tablet is £60. Whether it lives in the kitchen or in a pocket is exactly the thing unschoolers argue about; make your own decision and be consistent about it."
+              }
+            ]
+          },
+          {
+            "heading": "The making corner",
+            "items": [
+              {
+                "name": "A small hammer, a hand drill and a junior hacksaw",
+                "tag": "Real ones, sized small. £25 for the three. Shown once, slowly, then used with you nearby."
+              },
+              {
+                "name": "A vice or a clamp fixed to a bench",
+                "tag": "The thing that makes a four-year-old able to work with two hands instead of one. £15."
+              },
+              {
+                "name": "Safety glasses that fit a child",
+                "tag": "£5, and putting them on becomes the signal that the work has started."
+              },
+              {
+                "name": "Wood offcuts, cardboard, string, tape, wire",
+                "tag": "Free. Builders' merchants, furniture shops and your own recycling. This is the most-used material in most unschooling homes."
+              },
+              {
+                "name": "A glue gun, low temperature",
+                "tag": "£10. It burns slightly and children learn quickly. Used at the table with you the first several times."
+              },
+              {
+                "name": "A big roll of plain paper",
+                "tag": "A metre-wide roll of lining paper from a decorating shop is about £4 and lasts months."
+              }
+            ]
+          },
+          {
+            "heading": "The kitchen they can use",
+            "items": [
+              {
+                "name": "A step stool or a learning tower",
+                "tag": "The single purchase that lets a four-year-old join real cooking. £15 for a sturdy stool, £70 for a tower, and both appear constantly second-hand."
+              },
+              {
+                "name": "A small sharp knife and a child-sized board",
+                "tag": "Sharp is safer than blunt because it does not slip. Shown properly, used sitting down at first. £10."
+              },
+              {
+                "name": "Digital scales and a measuring jug",
+                "tag": "Numbers with a reason attached to them. £12."
+              },
+              {
+                "name": "Their own apron on a low hook",
+                "tag": "£6, and it marks the start of work in the same way the safety glasses do."
+              }
+            ]
+          },
+          {
+            "heading": "Getting to the thing they are into",
+            "items": [
+              {
+                "name": "Free museum entry",
+                "tag": "National Museums NI sites, including the Ulster Museum in Belfast, are free to enter. So are most council-run local museums."
+              },
+              {
+                "name": "A National Trust or forest parks arrangement",
+                "tag": "A National Trust membership pays for itself here quickly if you use it. Many Forest Service and council parks charge only for parking."
+              },
+              {
+                "name": "Bus and train fares in the budget",
+                "tag": "Translink runs concessions for children and family day tickets. The journey is usually as interesting to a four-year-old as the destination."
+              },
+              {
+                "name": "The cost of one obsession at a time",
+                "tag": "Whatever they are into this month — a bucket of magnets, a bag of clay, a second-hand keyboard, a fishing net. Budget for one of these rather than a shelf of educational toys."
+              }
+            ]
+          }
+        ],
+        "think": [
+          {
+            "t": "Deschooling comes first, for you as much as for them",
+            "d": "If your child has been at school, most unschooling families describe a settling period of roughly a month for every year the child was there, where very little visible learning happens. Adults need it too. The urge to make the day productive is the thing that takes longest to loosen."
+          },
+          {
+            "t": "Screens, where unschoolers genuinely disagree",
+            "d": "Some hold that a child free to choose will self-regulate, and that limits do the damage. Others set clear limits and say the freedom is elsewhere. Both are held sincerely by long-standing unschooling families. Read both, decide, and be honest that you decided rather than that you discovered the truth."
+          },
+          {
+            "t": "Somebody has to be available",
+            "d": "Unschooling asks more adult time than home education with a curriculum, not less, because you are the person who finds the book, drives to the place, and answers at the moment the question is asked. Work this out financially before you begin."
+          },
+          {
+            "t": "What you keep, and why",
+            "d": "Nobody in Northern Ireland requires an unschooling family to submit work. Many families keep a simple record anyway — a line a day, photographs, a list of places you went — because it steadies you when you cannot remember what the last three months contained."
+          },
+          {
+            "t": "The question from relatives",
+            "d": "\"So what have they actually learned?\" You will be asked this at every family gathering. Decide your one calm sentence now, in advance, and use the same one every time. It is much easier than inventing an answer while you are being watched."
+          },
+          {
+            "t": "The house gets messier",
+            "d": "A house where projects stay out and materials are reachable does not look like a tidy house. Decide which rooms are allowed to be like that and which are not, and then stop fighting yourself about it."
+          },
+          {
+            "t": "Boredom is part of it",
+            "d": "A four-year-old who says they are bored is at the start of inventing something, and the twenty uncomfortable minutes before that happens are the part adults keep rescuing them from. Sit near them and do your own work."
+          },
+          {
+            "t": "Reading may come later than you expect",
+            "d": "Unschooling families report a wide spread — some children read at four, some at nine. That range is the ordinary result of the method, not a warning sign. If you would find a late reader genuinely frightening, this is worth knowing before you begin rather than at seven."
+          }
+        ],
+        "avoid": [
+          "Building a schoolroom. A desk, a whiteboard and a timetable on the wall recreate the thing you were stepping away from.",
+          "Educational toys that do one thing. A box of cardboard and tape outlasts every one of them.",
+          "Buying a curriculum \"just in case\" and then feeling guilty that it sits unopened.",
+          "Testing them in conversation. \"What number is that?\" turns a resource into an examiner very quickly.",
+          "Interrupting deep play to go to a scheduled activity. Guard the long absorbed afternoons more carefully than the clubs.",
+          "Filling every day with outings because the house feels quiet.",
+          "Taking any single voice on the internet as the definition of what unschooling is. Practitioners disagree with each other quite a lot."
+        ],
+        "note": "The setup that matters most is invisible in a photograph: a library card, a reachable pair of scissors, an adult who is interruptible, and a diary with empty afternoons in it."
+      },
+      "running-it": {
+        "title": "Running the day",
+        "icon": "clock",
+        "intro": "There is no lesson to deliver, which does not mean there is nothing to do. An unschooling day asks the adult to be available, to notice, and to keep supplying the world — while not taking over the moment something interesting starts. It is a real job and it looks, from outside, like nothing much is happening.",
+        "tone": [
+          {
+            "t": "Interruptible",
+            "d": "You have your own work and it can be put down. The whole method rests on a question being answered at the moment it is asked, because five hours later the child no longer wants to know."
+          },
+          {
+            "t": "Answer honestly, including \"I don't know\"",
+            "d": "Then go and find out together in front of them. A child who sees an adult look something up learns how to find out, which is worth more than the answer was."
+          },
+          {
+            "t": "Offer, never require",
+            "d": "Put the thing on the table and say nothing. A four-year-old refuses what is pushed and approaches what is available, and this is the most reliable pattern in the whole approach."
+          },
+          {
+            "t": "Curious about what they are doing, not evaluative",
+            "d": "Ask real questions you do not know the answer to. \"Why did you make it that way?\" is a conversation. \"What colour is that?\" is a test, and children hear the difference."
+          },
+          {
+            "t": "Calm about the quiet weeks",
+            "d": "There will be stretches where nothing visibly happens and you will worry. Every unschooling parent describes this. Say nothing, keep supplying, and wait."
+          }
+        ],
+        "rhythm": [
+          {
+            "t": "Wake without an alarm, eat together",
+            "d": "The day starts when the household starts. Sitting down to breakfast together is the one fixed point most unschooling families keep, because it is where the day's conversation begins."
+          },
+          {
+            "t": "Put one thing out, and walk away",
+            "d": "This is strewing, and it is the closest thing unschooling has to a lesson plan. A book left open on the table, a magnifying glass beside a shell, a map on the floor. No announcement, no invitation, no follow-up question."
+          },
+          {
+            "t": "Do your own real work where they can see you",
+            "d": "Bread, accounts, mending, the garden. Children join in at four far more often than they are asked to, and a household with visible work in it gives them something to enter."
+          },
+          {
+            "t": "Go out to something, most days",
+            "d": "Library, beach, park, harbour, a friend's house, the hardware shop. It does not need to be educational. It needs to be somewhere with things in it and people doing things."
+          },
+          {
+            "t": "Guard the long absorbed stretch",
+            "d": "When a child settles into something for an hour, everything else moves. Do not interrupt to eat, to praise, to photograph or to go to a club. These stretches are what the whole day exists for."
+          },
+          {
+            "t": "Follow the question the moment it appears",
+            "d": "They ask why boats float. You stop, you look it up, you fill the sink, you get the book from the library tomorrow. This is what \"resource, not instructor\" actually means in practice."
+          },
+          {
+            "t": "Eat together, and let the conversation be adult",
+            "d": "Real talk about real things, with the four-year-old included rather than talked down to. A great deal of vocabulary and reasoning arrives at this table and nowhere else."
+          },
+          {
+            "t": "Read aloud in the evening",
+            "d": "Well beyond the age they could read alone. It is the one daily ritual almost every unschooling family keeps, and it does the work that lessons would have done."
+          },
+          {
+            "t": "Write one line down after they are in bed",
+            "d": "What they chose, what they asked, what they stayed with. Ten seconds. Over months this is both your record and your only planning document."
+          }
+        ],
+        "does": [
+          "Stays available and puts their own work down when a question arrives.",
+          "Supplies constantly — books, trips, materials, people who know things.",
+          "Leaves interesting things where they will be found, without comment.",
+          "Answers the real question fully, at adult level, in plain words.",
+          "Protects long absorbed play from clubs, meals and tidying.",
+          "Says clearly what the family rules are. Unschooling is about learning, not about a house with no boundaries."
+        ],
+        "doesnt": [
+          "Set work, or turn an interest into a project with outcomes.",
+          "Ask test questions to check that learning happened.",
+          "Fill a quiet day with activities out of the adult's own anxiety.",
+          "Compare their child to a schooled child of the same age in front of them.",
+          "Take over the making. A worse boat they built themselves is the point.",
+          "Confuse unschooling with unparenting. Bedtimes, food, safety and kindness are still the adult's job."
+        ],
+        "parents": "In unschooling the parent is not a visitor to the process, they are the process, so this section works differently. The nearest thing to a facility is a self-directed learning centre or a democratic school, and there the agreement is unusual too: the staff are explicitly not teachers, children set their own agenda, and in Sudbury-model schools a weekly meeting where children and staff have one vote each decides the actual rules of the place. Parents at those schools are typically welcomed and firmly kept out of the day, because a child cannot practise self-government while their own adult is standing at the edge of the room. If you are running a home group with other families instead, the single most useful thing you can do is agree in advance that adults do not direct the children's activity — otherwise a well-meaning parent starts a craft table within twenty minutes and it becomes a lesson nobody asked for.",
+        "mistakes": [
+          {
+            "t": "Unschooling as an excuse to do nothing",
+            "d": "This is the failure the approach is fairly accused of. A child left with a tablet and no adult attention is not unschooling. The method is demanding of the adult, and John Holt himself said so."
+          },
+          {
+            "t": "Secretly running a curriculum and calling it unschooling",
+            "d": "Slipping phonics into the day and hoping they do not notice. Children always notice, and the trust that makes the whole thing work is what gets spent."
+          },
+          {
+            "t": "Panicking in month three and reversing everything",
+            "d": "The quiet stretch after you begin is normal and is what everybody describes. Reversing course in the middle of it is what makes families conclude that unschooling does not work."
+          },
+          {
+            "t": "Following your own interests and calling them theirs",
+            "d": "It is very easy to keep offering the thing you wish they loved. Notice how many of your strewn items came back untouched."
+          },
+          {
+            "t": "Filling the week with clubs to prove something is happening",
+            "d": "Usually the clubs are for the adult's peace of mind. They also eat exactly the long free afternoons the learning needs."
+          },
+          {
+            "t": "Having no other adults",
+            "d": "Isolation, not education, is what actually goes wrong for home-educating families. One regular group, even a small one, changes the whole year."
+          }
+        ],
+        "training": "There is no qualification for unschooling and no body that certifies it, and the honest version of \"training\" here is reading and time. John Holt's How Children Learn and Teach Your Own, Peter Gray's Free to Learn for the developmental research, Kerry McDonald's Unschooled for a modern survey, and Julie Bogart's The Brave Learner for parents who are anxious about not doing enough. The Alliance for Self-Directed Education publishes free essays and is the main hub for this world. If you want to run something for other families, the Agile Learning Centers network runs facilitator training for adults starting self-directed spaces, and the Sudbury schools publish their own model openly. In Northern Ireland the practical facts are these: home education is legal, and if your child has never been registered at a school you do not need anybody's permission to educate them at home. If they have been enrolled, you write to the school to have them removed from the register, and the Education Authority is notified. The Education Authority may make contact to be satisfied that a suitable education is being provided, and unschooling families here generally handle that with a written description of the approach rather than samples of work. Guidance changes, so read the Education Authority's current home education pages yourself rather than relying on a form number from a forum post, and talk to Home Education Northern Ireland, which is the long-running local support organisation and knows how the process actually runs here."
+      },
+      "your-part": {
+        "title": "Your part in it",
+        "icon": "heart",
+        "intro": "Nobody drops off, so the usual questions do not apply. The real questions are different ones: what do you actually do all day, how much of yourself does this take, and how do you stay steady when your mother-in-law asks what your four-year-old has learned this year?",
+        "model": {
+          "label": "Nobody drops off — you are the strategic partner",
+          "body": "Your job is not to teach and it is not to stand back and hope. It is closer to being the person who finds things: the book, the place, the person who repairs clocks, the club, the material, the answer. You watch what they are drawn to, you supply more of it, and you get out of the way once it starts. That takes real attention and a diary with room in it, and it is why unschooling is often harder on the adult than a curriculum would be. The compensation is that you get to see the whole of it happen, which is not something most parents get."
+        },
+        "before": [
+          "Decide the night before what you are putting on the table in the morning, and then say nothing about it.",
+          "Look at the week and check there are empty afternoons in it. If every day has an appointment, the deep work has nowhere to go.",
+          "Sort out your own work first thing if you can, so that when they ask something at eleven o'clock you can genuinely stop.",
+          "Eat breakfast together. It is where the day's conversation starts and it costs nothing to protect.",
+          "Do not announce a plan for the day. Have one privately, and let it be overtaken.",
+          "Put the phone somewhere else for the first hour. Being interruptible by your child and by your phone at the same time is not possible."
+        ],
+        "after": [
+          "Read aloud, every evening, whatever kind of day it was.",
+          "Write one line about what they chose and what they asked. This is your whole record and your whole plan.",
+          "Notice what came back untouched. Two or three ignored offerings in a row usually means you are following your interest rather than theirs.",
+          "Resist recapping the day to them. They lived it, and a summary turns it into a report.",
+          "Order the library book tonight for the thing they asked about today. The gap between the question and the arrival of the answer is the thing you are managing.",
+          "Say the one calm sentence to the relative who asks, and then change the subject. You are not obliged to defend it at a family dinner."
+        ],
+        "involvement": [
+          {
+            "t": "Find the people, not just the materials",
+            "d": "The neighbour with the bees, the man in the model shop, the fisherman at the harbour. A four-year-old learns a subject fastest from someone who loves it, and adults are almost always pleased to be asked."
+          },
+          {
+            "t": "Join one regular group and keep going",
+            "d": "Home education in Northern Ireland is a small and welcoming world, with local groups meeting weekly in most areas. Isolation is the thing that actually damages home-educating families, not the education."
+          },
+          {
+            "t": "Deschool yourself deliberately",
+            "d": "Read Holt, notice your own reflex to make the day productive, and give it months rather than weeks. Most of the difficulty in the first year is in the adult, not the child."
+          },
+          {
+            "t": "Keep a light record even though nobody requires it",
+            "d": "A line a day, or photographs. It is for you, on the week you cannot remember what happened, and it is what you would show the Education Authority if you were ever asked."
+          },
+          {
+            "t": "Have one person you tell the truth to",
+            "d": "Somebody who unschools too, who you can say \"I am worried he cannot count\" to without being told to send him to school."
+          }
+        ],
+        "visit": [
+          {
+            "q": "Who decides what a child does here on a given day?",
+            "why": "At a genuine self-directed centre the answer is the child, without hesitation and without a list of exceptions. Anything softer means there is a hidden timetable."
+          },
+          {
+            "q": "Is there a meeting where children make the rules, and do they have a real vote?",
+            "why": "In the Sudbury model this is the core of the whole thing. Ask whether staff can overrule the meeting, and listen carefully to the answer."
+          },
+          {
+            "q": "What do the adults here call themselves, and what do they actually do all day?",
+            "why": "You want to hear something like facilitator or staff member, and a description of being available, keeping the place safe, and being a resource — not delivering sessions."
+          },
+          {
+            "q": "What happens if my child does nothing for six months?",
+            "why": "A confident centre will say that happens, describe it calmly, and tell you what usually follows. A centre that promises it will not happen has not been doing this long."
+          },
+          {
+            "q": "How do you handle conflict between children?",
+            "why": "Many self-directed centres run a formal process, sometimes a judicial committee that children sit on. You want a real description, not \"we talk about it\"."
+          },
+          {
+            "q": "Can I spend a full day here before deciding?",
+            "why": "Places built on trust are usually relaxed about this. Reluctance tells you something."
+          },
+          {
+            "q": "What happens about qualifications later, and what have your leavers done?",
+            "why": "A settled place answers this easily — exams taken privately when a young person wants them, apprenticeships, further education. Ask for real examples rather than a principle."
+          },
+          {
+            "q": "What are the fees, and what is the notice period?",
+            "why": "These places are usually independent and fee-paying, and the money question is ordinary and fair."
+          }
+        ],
+        "flags": [
+          "A timetable on the wall alongside the word self-directed.",
+          "Staff who describe children's free choices as a phase to be worked through.",
+          "A democratic meeting that staff can overrule whenever they wish.",
+          "No clear safeguarding policy, no named designated person, and no Access NI clearance for adults.",
+          "An unwillingness to let you visit for a full day.",
+          "Nobody will tell you what happened to the young people who left.",
+          "At home rather than at a centre, the honest warning sign is different: weeks passing with the adult unavailable and the child alone with a screen. That is the failure mode, and it is worth checking yourself for it every so often."
+        ],
+        "note": "The legal position in Northern Ireland is straightforward and worth knowing accurately. Home education is legal. If your child has never been registered at a school, you do not need permission from anyone to educate them at home. If they have been enrolled, you write to the school to have them taken off the register and the Education Authority is informed. Read the Education Authority's current home education guidance directly, because the detail changes, and speak to Home Education Northern Ireland, who deal with this every week and will tell you how it actually goes here."
+      },
       "bring-it-home": {
               "intro": "Unschooling at home is mostly a change in you, not a change in your child. You trust that a four-year-old is already curious, and you turn ordinary days into the learning. It is not doing nothing. It is paying close attention, and quietly feeding whatever they are hungry to know.",
               "steps": [
