@@ -14718,11 +14718,7 @@ window.METHODS = [
         },
         {
           "t": "A calm room is the curriculum",
-          "d": "Emotional chaos does more damage to a developing child than almost anything else. A child who does not feel safe is not learning, whatever the timetable says. So the room is built for steadiness first: natural materials, real food only, and adults who are excited about life but calm in temperament. Excitement and volatility are not the same thing, and children can tell the difference immediately."
-        },
-        {
-          "t": "Never alone with an adult who is not their family",
-          "d": "A child here is never alone with an adult who is not their own family. There are always several facilitators and several parents in the room. This is architecture rather than a policy line — people behave differently when other adults can see them, and a group that is permanently visible to itself keeps its own standards without anybody having to police it. It protects the children, and it protects the adults from suspicion too."
+          "d": "Emotional chaos does more damage to a developing child than almost anything else. A child who does not feel safe is not learning, whatever the timetable says. So the room is built for steadiness first: natural materials, real food only, and adults who are excited about life but calm in temperament. Excitement and volatility are not the same thing, and children can tell the difference immediately. There are always several adults in the room too — more facilitators and more parents means more attention, more help, and more people who know your child by name."
         },
         {
           "t": "Be the person you want them to become",
@@ -14730,7 +14726,11 @@ window.METHODS = [
         },
         {
           "t": "Children are useful now",
-          "d": "A child is not an apprentice person waiting until twenty-five to start participating. The moment they can do a real thing, they do it — gather logs, collect eggs, feed an animal, order something at the shop, chop, lay the table, tidy, help clean the car, look after the building they use. This is not chores as discipline. It is the difference between belonging somewhere and being hosted there. If the room magically repairs itself every night, a child never learns what it costs to put things back in order. Ownership scales outward: your space, your family, your town, your country."
+          "d": "A child is not an apprentice person waiting until twenty-five to start participating. The moment they can do a real thing, they do it — gather logs, collect eggs, feed an animal, order something at the shop, chop, lay the table, tidy, help clean the car, look after the building they use. This is not chores as discipline. It is the difference between belonging somewhere and being hosted there. If the room magically repairs itself every night, a child never learns what it costs to put things back in order. Ownership scales outward: your own space, then your family, then the group, then the town you live in. A child who takes care of their own place grows into an adult who takes care of the place around them."
+        },
+        {
+          "t": "Value for value, at their level",
+          "d": "We want children who understand early, and from having done it, that you get by giving something worth having. It starts as play — shopkeepers, with real change and a real queue — and grows into things that are small but genuinely real: running a stall at one of our days out, organising a small event for the group, helping with a fundraiser and watching the money arrive because of work they did, or taking a proper job around the building and being paid for it in something they can spend. And it does not have to stop at pretend. A six-year-old who can describe an idea out loud can build a working app by talking to an AI, the same way the adults around them do. If it is good, why would it not go out into the world for other people to use? The paperwork is an adult's job. The idea, the work and the reward are theirs. Waiting until twenty-five to start learning this is a strange choice when they could start at five."
         },
         {
           "t": "Get out and live",
