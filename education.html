@@ -43,20 +43,28 @@
     .sch-pin { width: 18px; height: 18px; background: var(--pc, #4FA4D2); border: 3px solid #fff; border-radius: 50%; box-shadow: 0 1px 5px rgba(20,35,60,.55); cursor: pointer; transition: transform .12s ease; }
     .sch-pin:hover { transform: scale(1.28); }
 
-    .map-card-overlay { position: fixed; inset: 0; z-index: 1200; display: flex; align-items: center; justify-content: center; padding: 20px; background: rgba(20,35,60,0.5); backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px); animation: mapCardFade .14s ease; }
+    .map-card-overlay { position: fixed; inset: 0; z-index: 1200; display: flex; align-items: center; justify-content: center; padding: 26px 22px; background: rgba(20,35,60,0.5); backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px); animation: mapCardFade .14s ease; }
     .map-card-overlay[hidden] { display: none; }
     @keyframes mapCardFade { from { opacity: 0; } to { opacity: 1; } }
-    .map-card-shell { position: relative; width: 300px; max-width: calc(100vw - 40px); max-height: calc(100vh - 40px); overflow: auto; animation: mapCardPop .18s cubic-bezier(0.34,1.56,0.64,1); }
+    .map-card-shell { position: relative; width: 440px; max-width: calc(100vw - 44px); max-height: calc(100dvh - 52px); overflow: auto; animation: mapCardPop .18s cubic-bezier(0.34,1.56,0.64,1); }
     @keyframes mapCardPop { from { transform: scale(0.94); } to { transform: scale(1); } }
     .map-card-body { background: #fff; border: 1px solid var(--rule); border-radius: var(--radius-md); box-shadow: 0 18px 52px rgba(20,35,60,.4); overflow: hidden; }
     .map-card-close { position: absolute; top: 8px; right: 8px; z-index: 5; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 999px; background: rgba(0,0,0,0.5); color: #fff; border: 1px solid rgba(255,255,255,0.3); font-size: 16px; line-height: 1; cursor: pointer; font-family: inherit; }
-    .pop-img { width: 100%; height: 132px; object-fit: cover; display: block; }
-    .pop-inner { padding: 14px 16px 16px; }
-    .pop-cat { font-size: 0.72em; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; }
-    .pop-name { font-weight: 800; color: var(--ink); font-size: 1.05em; margin: 2px 0 5px; line-height: 1.2; }
-    .pop-meta { color: var(--ink-mute); font-size: 0.82em; margin: 2px 0; line-height: 1.35; }
-    .pop-detail { color: var(--ink-soft); font-size: 0.84em; line-height: 1.4; margin: 6px 0 8px; }
-    .pop-link { font-weight: 700; font-size: 0.86em; }
+    .pop-img { width: 100%; height: 150px; object-fit: cover; display: block; }
+    .pop-inner { padding: 18px 20px 20px; }
+    .pop-cat { font-size: 0.72em; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; }
+    .pop-name { font-weight: 800; color: var(--ink); font-size: 1.32em; margin: 3px 0 7px; line-height: 1.18; }
+    .pop-meta { color: var(--ink-mute); font-size: 0.86em; margin: 3px 0; line-height: 1.4; }
+    .pop-detail { color: var(--ink-soft); font-size: 0.94em; line-height: 1.6; margin: 12px 0 14px; }
+    .pop-detail p { margin: 0 0 0.85em; }
+    .pop-detail p:last-child { margin-bottom: 0; }
+    .pop-detail b { color: var(--ink); font-weight: 700; }
+    .pop-h { font-size: 0.95em; font-weight: 800; color: var(--ink); letter-spacing: 0.01em; margin: 1.15em 0 0.5em; }
+    .pop-list { list-style: none; margin: 0 0 0.9em; padding: 0; }
+    .pop-list li { position: relative; padding-left: 20px; margin-bottom: 6px; }
+    .pop-list li::before { content: '✦'; position: absolute; left: 2px; top: 0; font-size: 0.8em; color: var(--pc, var(--sky)); }
+    .pop-link { font-weight: 700; font-size: 0.92em; }
+    @media (max-width: 460px) { .pop-img { height: 128px; } .pop-inner { padding: 15px 16px 17px; } }
   </style>
 </head>
 <body class="launcher">
@@ -285,15 +293,37 @@
         markers.forEach(m => { m.el.style.display = visible(m.s) ? '' : 'none'; });
       });
 
+      // Notes are plain prose for most settings, but they can use blank lines for
+      // paragraphs, "# " for a small heading, "- " for bullets and **bold** for
+      // emphasis. One long grey block is the thing that makes these unreadable.
+      const emph = (t) => String(t).replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>');
+      // Walk the note a line at a time: "# " is a small heading, "- " is a bullet,
+      // a blank line ends the block, anything else is prose. One long grey block is
+      // the thing that makes these unreadable on a phone.
+      const noteHtml = (t) => {
+        let out = '', para = [], bullets = [];
+        const flushPara = () => { if (para.length) { out += '<p>' + emph(para.join(' ')) + '</p>'; para = []; } };
+        const flushList = () => { if (bullets.length) { out += '<ul class="pop-list">' + bullets.map(b => '<li>' + emph(b) + '</li>').join('') + '</ul>'; bullets = []; } };
+        String(t || '').split('\n').forEach(raw => {
+          const l = raw.trim();
+          if (!l) { flushList(); flushPara(); return; }
+          if (l.slice(0, 2) === '# ') { flushList(); flushPara(); out += '<div class="pop-h">' + emph(l.slice(2)) + '</div>'; return; }
+          if (l.slice(0, 2) === '- ') { flushPara(); bullets.push(l.slice(2)); return; }
+          flushList(); para.push(l);
+        });
+        flushList(); flushPara();
+        return out;
+      };
+
       function cardHtml(s) {
         const c = CATS[s.cat];
         return `<img class="pop-img" src="${c.img}" alt="${c.label}">
-          <div class="pop-inner">
+          <div class="pop-inner" style="--pc:${c.color}">
             <div class="pop-cat" style="color:${c.color}">${c.label}</div>
             <div class="pop-name">${s.name}</div>
             <div class="pop-meta">📍 ${s.address || s.town}</div>
             ${s.phone ? `<div class="pop-meta">📞 ${s.phone}</div>` : ''}
-            <div class="pop-detail">${s.note || ''}</div>
+            <div class="pop-detail">${noteHtml(s.note)}</div>
             ${s.url ? `<a class="pop-link" href="${s.url}" target="_blank" rel="noopener">Visit website →</a>` : ''}
           </div>`;
       }

@@ -14694,8 +14694,8 @@ window.METHODS = [
     "image": "assets/tiles/school-of-light.png",
     "website": {
       "url": "https://school-of-light-seven.vercel.app/",
-      "label": "This one is real, and it is open",
-      "line": "Days out are running now on the North Coast, and a permanent place is in preparation. Ask for an invitation to the next one."
+      "label": "Enrolment is open",
+      "line": "Weekly days out are running on the North Coast, and a permanent place is in preparation. Ask for an invitation to the next one."
     },
     "blurb": "An approach built on first principles rather than inherited from a founder: the parent stays, the child explores widely, and the best of every other tradition here is taken on merit. There is a community running it on the North Coast, and you will find it on the map.",
     "grab": {
