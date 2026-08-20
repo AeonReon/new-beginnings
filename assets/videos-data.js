@@ -26,22 +26,22 @@
 window.VIDEOS = {
 
   'charlotte-mason': {
-    id: 'i5QWMm4yMIA',
-    title: 'Starting Charlotte Mason from Scratch',
-    channel: 'Simply Charlotte Mason',
-    mins: '9:19',
-    views: 59913,
-    why: 'Sonya Shafer talking to a parent who is about to begin, in the tone the whole method is written in — unhurried and kind. Three things to watch for and three things to do, the most useful being: you do not have to teach everything this year. Small constant touches, layer on layer.',
+    id: 'uapHUlVb7T8',
+    title: 'Charlotte Mason for Beginners: The Basics You Need to Know',
+    channel: 'How to Homeschool',
+    mins: '8:08',
+    views: 16154,
+    why: 'Eight minutes on the whole method and where it came from — a classical educator in the 1800s who thought classical schooling had gone rigid, and wanted more nature, more character, and far better books. Her own summary is here too: education is an atmosphere, a discipline, a life. Then the practices that follow from it — habit training, living books, and hours outdoors.',
     checked: '2026-08-20'
   },
 
   montessori: {
-    id: 'GcgN0lEh5IA',
-    title: 'Montessori Madness!',
-    channel: '321fastdraw',
-    mins: '5:44',
-    views: 926165,
-    why: 'It opens with a mother describing her son moving from a Montessori school to a conventional one — she does not talk about grades or class sizes, she says she watched the light in his eyes go out. From there it lays out the one real difference: conventional schools assume a child must be made to learn, Montessori assumes the child already wants to.',
+    id: 'UzmvtVAuuyI',
+    title: 'Montessori School Education',
+    channel: 'Sprouts',
+    mins: '3:35',
+    views: 1226003,
+    why: 'Three and a half minutes and you know what Montessori is. Rome in 1907, a school for the children of low-income workers; the materials Maria Montessori built after noticing children understand more when every sense is involved; the deep concentration she watched them fall into when left alone. It ends with the checklist every Montessori setting shares — free choice of work, open rooms, the materials, mixed ages, three uninterrupted hours, no grades and no homework, a trained teacher who guides rather than instructs.',
     checked: '2026-08-20'
   },
 
@@ -86,12 +86,12 @@ window.VIDEOS = {
   },
 
   unschooling: {
-    id: 'Bg-GEzM7iTk',
-    title: 'The decline of play',
-    channel: 'Peter Gray · TEDxNavesink',
-    mins: '16:03',
-    views: 869126,
-    why: 'The research case underneath unschooling, from the man who made it. Gray studies play as a biologist: what it is for, what it builds, and what has happened to children over the fifty years in which free play has been steadily taken away from them. The most persuasive sixteen minutes on why self-directed learning is not neglect.',
+    id: 'hfwrCnt6N34',
+    title: 'Unschooling: Why Parents Teach Their Kids at Home',
+    channel: 'Sprouts',
+    mins: '6:47',
+    views: 62268,
+    why: 'Opens by asking where compulsory school actually came from — Prussia in 1763 — and then lays out what unschoolers do instead: no curriculum, no timetable, the child choosing what to pursue and how deep to go, learning to ask why this is worth learning rather than only what is on the test. Closes on John Holt, who started the whole thing.',
     checked: '2026-08-20'
   },
 
@@ -101,8 +101,8 @@ window.VIDEOS = {
     channel: 'TED-Ed',
     mins: '5:02',
     views: 4709620,
-    why: 'One family in Athens in 427 BC, hour by hour — the household, the children, the assembly, the workshop. It puts you inside the city that invented this way of raising a person, rather than describing it from outside.',
-    note: 'It is honest about the parts we would not keep: the family owns slaves, and Dexileia can neither vote nor own property. Worth seeing whole rather than tidied up.',
+    why: 'This shows you the life an Athenian upbringing was aiming at. You follow one citizen through a single day in 427 BC — the household shrine at dawn, the assembly on the Pnyx where five thousand men debate and vote, and the symposium at night where nine friends argue a decision until they change their minds about it. Watch it for what a formed Athenian was expected to be able to do.',
+    note: 'It shows the city rather than the schoolroom — the reading above is where the actual upbringing is. There is no good short video anywhere on Greek paideia itself; the one that exists is thinly written and has a few thousand views. It is also honest about what we would not keep: the family owns slaves, and the wife can neither vote nor own property.',
     checked: '2026-08-20'
   },
 
