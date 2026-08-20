@@ -45,6 +45,7 @@
   .rcm-meta{display:flex;flex-wrap:wrap;gap:.45em;margin:1em 0 1.3em;}
   .rcm-chip{font-family:var(--sans,system-ui);font-size:.72rem;font-weight:700;
     padding:.3em .75em;border-radius:999px;background:var(--rcs,#FCE7F3);color:var(--rcd,#A21D57);}
+  .rcm-chip-season{background:#FEF3C7;color:#B45309;border-color:#FDE68A;font-weight:800;}
   .rcm-job{display:flex;gap:.7em;align-items:flex-start;
     background:linear-gradient(135deg,var(--rcs,#FCE7F3),var(--paper-card,#fff));
     border:2px solid var(--rc,#C73B7A);border-radius:18px;padding:1em 1.15em;margin:0 0 1.5em;}
@@ -138,6 +139,25 @@
     if (onReady) onReady(body);
   }
 
+
+  // Which season we're actually in (northern hemisphere, meteorological).
+  function nowSeason() {
+    const m = new Date().getMonth(); // 0-11
+    if (m <= 1 || m === 11) return 'winter';
+    if (m <= 4) return 'spring';
+    if (m <= 7) return 'summer';
+    return 'autumn';
+  }
+  const SEASON_NOTE = {
+    spring: 'At its best in spring',
+    summer: 'At its best right now — peak summer',
+    autumn: 'At its best in autumn',
+    winter: 'Just right for winter',
+  };
+  function seasonOf(r) {
+    return r.season || (window.RECIPE_SEASONS || {})[r.id] || 'any';
+  }
+
   // ---- a full recipe ----
   function open(id) {
     const r = (window.RECIPES || []).find(x => x.id === id);
@@ -150,6 +170,7 @@
       <div class="rcm-meta">
         ${r.time ? `<span class="rcm-chip">⏱ ${esc(r.time)}</span>` : ''}
         ${r.makes ? `<span class="rcm-chip">Makes ${esc(r.makes)}</span>` : ''}
+        ${seasonOf(r) === nowSeason() ? `<span class="rcm-chip rcm-chip-season">\u2600 ${esc(SEASON_NOTE[seasonOf(r)])}</span>` : ''}
       </div>
       ${r.hands ? `<div class="rcm-job"><span class="rcm-ico" aria-hidden="true">🧒</span>
         <div><b>Your little one's job</b><p>${esc(r.hands)}</p></div></div>` : ''}

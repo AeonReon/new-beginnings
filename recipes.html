@@ -22,6 +22,8 @@
       transition: transform 0.15s cubic-bezier(0.34,1.56,0.64,1), border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
     }
     .kind-chip:hover { transform: translateY(-1px); border-color: var(--rc, var(--sky)); }
+    .chip-season { background: #FEF3C7; color: #B45309; font-weight: 800; }
+    .kind-chip.kind-season { margin-left: auto; }
     .kind-chip.active { color: #fff; border-color: transparent; box-shadow: var(--shadow-sm); background: var(--rc, var(--sky)); }
     #count { font-family: var(--sans); font-size: 0.85em; color: var(--ink-mute); margin: 0.1em 0 1.3em 0.15em; }
 
@@ -157,6 +159,7 @@
   </main>
 
   <script src="assets/recipes-data.js"></script>
+  <script src="assets/recipes-data-2.js"></script>
   <script src="assets/recipe-credits.js"></script>
   <script src="assets/reader.js"></script>
   <script src="assets/recipe-modal.js"></script>
@@ -167,6 +170,19 @@
     const count = document.getElementById('count');
     const kindRow = document.getElementById('kind-row');
     let activeKind = '';
+    let seasonOnly = false;
+
+    // Meteorological season, so the list can surface what's actually good now.
+    function nowSeason() {
+      const m = new Date().getMonth();
+      if (m <= 1 || m === 11) return 'winter';
+      if (m <= 4) return 'spring';
+      if (m <= 7) return 'summer';
+      return 'autumn';
+    }
+    const SEASON = nowSeason();
+    const SEASON_LABEL = { spring: 'Spring', summer: 'Summer', autumn: 'Autumn', winter: 'Winter' }[SEASON];
+    function seasonOf(r) { return r.season || (window.RECIPE_SEASONS || {})[r.id] || 'any'; }
 
     function esc(s) {
       return String(s).replace(/[&<>"]/g, c =>
@@ -178,11 +194,18 @@
       KIND_ORDER.map(k => {
         const kd = window.RECIPE_KINDS[k];
         return `<button type="button" class="kind-chip" data-kind="${k}" style="--rc:${kd.c};">${kd.label}s</button>`;
-      }).join('');
+      }).join('') +
+      `<button type="button" class="kind-chip kind-season" data-season="1" style="--rc:#B45309;">\u2600 ${SEASON_LABEL} picks</button>`;
     kindRow.querySelectorAll('.kind-chip').forEach(btn => {
       btn.addEventListener('click', () => {
+        if (btn.dataset.season) {
+          seasonOnly = !seasonOnly;
+          btn.classList.toggle('active', seasonOnly);
+          render();
+          return;
+        }
         activeKind = btn.dataset.kind;
-        kindRow.querySelectorAll('.kind-chip').forEach(b => b.classList.toggle('active', b.dataset.kind === activeKind));
+        kindRow.querySelectorAll('.kind-chip:not(.kind-season)').forEach(b => b.classList.toggle('active', b.dataset.kind === activeKind));
         render();
       });
     });
@@ -205,6 +228,7 @@
               <div class="rt-meta">
                 <span class="chip">⏱ ${esc(r.time)}</span>
                 <span class="chip">Makes ${esc(r.makes)}</span>
+                ${seasonOf(r) === SEASON ? `<span class="chip chip-season">\u2600 ${SEASON_LABEL}</span>` : ''}
               </div>
               <span class="rt-open">Cook together →</span>
             </div>
@@ -213,7 +237,8 @@
     }
 
     function render() {
-      const shown = window.RECIPES.filter(r => !activeKind || r.kind === activeKind);
+      const shown = window.RECIPES.filter(r =>
+        (!activeKind || r.kind === activeKind) && (!seasonOnly || seasonOf(r) === SEASON));
       count.textContent = `${shown.length} of ${window.RECIPES.length} recipes`;
       let html = '';
       KIND_ORDER.forEach(k => {
