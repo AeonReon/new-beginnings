@@ -640,12 +640,48 @@
     .site-cta-line { display: block; font-size: .9rem; color: #6B5B3A; margin-top: 3px; line-height: 1.45; }
     .site-cta-go { display: block; font-weight: 800; font-size: .84rem; color: #9A6410; margin-top: 8px; letter-spacing: .01em; }
     @media (min-width: 640px) { .site-cta:hover { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(40,30,20,.08), 0 16px 34px rgba(198,135,27,.22); } }
+
+    /* ── Watch — one curated video per tradition. Facade only: a thumbnail
+       until tapped, then the real player is injected. Nothing loads from
+       YouTube and no cookies are set on page load; the creator still gets
+       the view. ── */
+    .watch{ margin:26px 0 4px; }
+    .watch-head{ font:800 .74rem/1 -apple-system,system-ui,sans-serif; letter-spacing:.12em;
+      text-transform:uppercase; color:var(--gad,#2F4550); margin-bottom:10px; }
+    .watch-card{ border-radius:16px; overflow:hidden; background:#fff;
+      border:1.5px solid rgba(0,0,0,.08); box-shadow:0 2px 14px rgba(0,0,0,.05); }
+    .watch-play{ display:block; width:100%; padding:0; border:0; background:#0d0b12; cursor:pointer;
+      position:relative; aspect-ratio:16/9; line-height:0; }
+    .watch-play img{ width:100%; height:100%; object-fit:cover; opacity:.93;
+      transition:opacity .25s ease, transform .35s cubic-bezier(0.34,1.56,0.64,1); }
+    .watch-play:hover img{ opacity:1; transform:scale(1.03); }
+    .watch-btn{ position:absolute; inset:0; margin:auto; width:64px; height:64px; border-radius:50%;
+      background:linear-gradient(135deg,var(--ga,#7BA05B),var(--gad,#2F4550));
+      box-shadow:0 6px 22px rgba(0,0,0,.38); display:flex; align-items:center; justify-content:center;
+      transition:transform .3s cubic-bezier(0.34,1.56,0.64,1); }
+    .watch-play:hover .watch-btn{ transform:scale(1.1); }
+    .watch-btn::after{ content:""; width:0; height:0; margin-left:5px;
+      border-left:19px solid #fff; border-top:12px solid transparent; border-bottom:12px solid transparent; }
+    .watch-len{ position:absolute; right:9px; bottom:9px; background:rgba(12,10,18,.82); color:#fff;
+      font:800 .78rem/1 -apple-system,system-ui,sans-serif; padding:5px 8px; border-radius:7px; }
+    .watch-card iframe{ display:block; width:100%; aspect-ratio:16/9; border:0; }
+    .watch-tt{ padding:14px 16px 15px; }
+    .watch-name{ font:800 1.04em/1.32 -apple-system,system-ui,sans-serif; letter-spacing:-.01em; }
+    .watch-meta{ margin-top:5px; font:700 .84em -apple-system,system-ui,sans-serif; color:var(--gad,#2F4550); }
+    .watch-meta span{ opacity:.65; font-weight:600; }
+    .watch-why{ margin:10px 0 0; font-size:.96em; line-height:1.6; }
+    .watch-note{ margin-top:11px; padding:10px 12px; border-radius:11px; background:var(--gas,#F1F5EC);
+      font-size:.88em; line-height:1.55; }
+    .watch-note b{ color:var(--gad,#2F4550); }
+    .watch-out{ display:inline-block; margin-top:11px; font:700 .86em -apple-system,system-ui,sans-serif;
+      opacity:.62; text-decoration:none; color:inherit; }
   </style>
 </head>
 <body class="method-page">
   <main id="root" class="method-main"></main>
 
   <script src="assets/methods-data.js"></script>
+  <script src="assets/videos-data.js"></script>
   <script src="assets/app.js"></script>
   <script>
     const SUB_ICONS = {
@@ -865,6 +901,45 @@
       }
     }
 
+    // One curated video per tradition, keyed by tradition id. Facade only —
+    // nothing loads from YouTube until the parent actually taps play, so the
+    // page stays fast and sets no cookies. See assets/videos-data.js for the
+    // selection rule and why two traditions deliberately have none.
+    const VIDEOS = window.VIDEOS || {};
+
+    // 926165 -> "926K". Real recorded counts, refreshed by scripts/check-videos.mjs.
+    function fmtViews(n){
+      n = Number(n) || 0;
+      if (n >= 1e6) return (n / 1e6).toFixed(n >= 1e7 ? 0 : 1).replace(/\.0$/, '') + 'M';
+      if (n >= 1e3) return Math.round(n / 1e3) + 'K';
+      return String(n);
+    }
+
+    function watchBlock(m) {
+      const v = VIDEOS[m.id];
+      if (!v) return '';
+      const esc = x => String(x == null ? '' : x).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+      return `
+        <section class="watch" style="--ga:${m.color};--gad:${m.colorDeep};--gas:${m.colorSoft}">
+          <div class="watch-head">See it for yourself</div>
+          <div class="watch-card">
+            <button type="button" class="watch-play" data-vid="${esc(v.id)}" aria-label="Play: ${esc(v.title)}">
+              <img src="https://i.ytimg.com/vi/${esc(v.id)}/maxresdefault.jpg" alt="" loading="lazy"
+                   onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/${esc(v.id)}/hqdefault.jpg'">
+              <span class="watch-btn"></span>
+              ${v.mins ? `<span class="watch-len">${esc(v.mins)}</span>` : ''}
+            </button>
+            <div class="watch-tt">
+              <div class="watch-name">${esc(v.title)}</div>
+              <div class="watch-meta">${esc(v.channel)}${v.views ? ` <span>· ${fmtViews(v.views)} views</span>` : ''}</div>
+              ${v.why ? `<p class="watch-why">${esc(v.why)}</p>` : ''}
+              ${v.note ? `<div class="watch-note"><b>Worth knowing:</b> ${esc(v.note)}</div>` : ''}
+              <a class="watch-out" href="https://www.youtube.com/watch?v=${esc(v.id)}" target="_blank" rel="noopener">Watch on YouTube ↗</a>
+            </div>
+          </div>
+        </section>`;
+    }
+
     function renderMethodLanding(m) {
       const stage = getStage();
       const capped = stageCapped(m, stage);
@@ -961,10 +1036,21 @@
           ${stageIncomplete ? `<p class="stage-note">The ideas and the method are the same at every age — read them above, and in <b>Bring it home</b>. The day, the activities, the book list and the milestones for <b>${STAGES.find(s => s.id === stage).sub}</b> are being written next.</p>` : ''}
           <div class="ed-toc-head">${g ? 'Explore it' : 'Read on'}</div>
           <nav class="ed-toc">${toc}</nav>`}
+          ${watchBlock(m)}
           ${storyBlock}
         </article>
       `;
       root.querySelectorAll('.stage-btn').forEach(b => b.addEventListener('click', () => { setStage(b.dataset.stage); renderMethodLanding(m); }));
+      // Only now does anything load from YouTube. nocookie domain, and autoplay
+      // is allowed because the tap itself is the user gesture iOS requires.
+      root.querySelectorAll('.watch-play').forEach(btn => btn.addEventListener('click', () => {
+        const f = document.createElement('iframe');
+        f.src = 'https://www.youtube-nocookie.com/embed/' + btn.dataset.vid + '?autoplay=1&rel=0&modestbranding=1';
+        f.title = btn.getAttribute('aria-label') || 'Video';
+        f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+        f.allowFullscreen = true;
+        btn.replaceWith(f);
+      }));
     }
 
     function renderSubSection(m, key) {
