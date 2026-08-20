@@ -528,10 +528,22 @@
     #root .su-cards { display: grid; gap: 0.65em; }
     #root .su-card { position: relative; background: #fff; border-radius: 16px; padding: 1.05em 1.15em 1.1em; box-shadow: var(--shadow-sm); }
     #root .su-card::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.5px; background: linear-gradient(135deg, var(--sc, var(--acc-bright)), var(--scd, var(--acc))); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; opacity: 0.55; }
-    #root .su-card-head { display: flex; align-items: baseline; gap: 0.6em; margin-bottom: 0.28em; }
-    #root .su-card-t { font-family: var(--display); font-weight: 800; font-size: 1.13rem; line-height: 1.2; letter-spacing: -0.01em; color: var(--ink); }
-    #root .su-card-span { flex: 0 0 auto; margin-left: auto; font-family: var(--sans); font-weight: 800; font-size: 0.58rem; letter-spacing: 0.09em; text-transform: uppercase; color: var(--scd, var(--ink-mute)); background: color-mix(in srgb, var(--sc, var(--acc)) 12%, #fff); border-radius: 999px; padding: 0.32em 0.62em; white-space: nowrap; }
+    /* Block, not flex: a long cost line ("a few hundred pounds a year, plus
+       paperwork") in a nowrap flex pill pushed the whole card wider than the
+       screen and made the page scroll sideways. The pill now sits on its own
+       line under the title and wraps like ordinary text. */
+    #root .su-card-head { display: block; margin-bottom: 0.28em; }
+    #root .su-card-t { display: block; min-width: 0; overflow-wrap: break-word; font-family: var(--display); font-weight: 800; font-size: 1.13rem; line-height: 1.2; letter-spacing: -0.01em; color: var(--ink); }
+    #root .su-card-span { display: inline-block; max-width: 100%; margin: 0.4em 0 0.1em; white-space: normal; overflow-wrap: break-word; font-family: var(--sans); font-weight: 800; font-size: 0.58rem; letter-spacing: 0.09em; text-transform: uppercase; color: var(--scd, var(--ink-mute)); background: color-mix(in srgb, var(--sc, var(--acc)) 12%, #fff); border-radius: 999px; padding: 0.32em 0.62em; line-height: 1.35; }
     #root .su-card-d { font-size: 1.01rem; line-height: 1.6; color: var(--ink-soft); }
+    /* Overflow guards. A flex child defaults to min-width:auto, so one long
+       line or one unbreakable word (a domain name) refuses to shrink and the
+       whole page scrolls sideways. Every text child of a flex row here is
+       allowed to shrink, and long words break. */
+    #root .su-band-h { min-width: 0; }
+    #root .su-band-t, #root .su-row-text, #root .su-item-text { min-width: 0; overflow-wrap: break-word; }
+    #root .su-band, #root .su-card, #root .su-item, #root .su-q, #root .su-pane, #root .act-topic { max-width: 100%; }
+    #root .su-card-d, #root .su-row-d, #root .su-item-tag, #root .su-q-q, #root .su-q-w, #root .su-nope li, #root .su-pane li, #root .su-band-lead { overflow-wrap: break-word; }
     /* numbered rows — kept for short lists that stay open */
     #root .su-rows { counter-reset: su; display: grid; gap: 0.2em; }
     #root .su-row { display: flex; gap: 0.9em; padding: 1em 0.2em; border-bottom: 1px solid var(--rule); }
