@@ -320,7 +320,7 @@
         return `<img class="pop-img" src="${c.img}" alt="${c.label}">
           <div class="pop-inner" style="--pc:${c.color}">
             <div class="pop-cat" style="color:${c.color}">${c.label}</div>
-            <div class="pop-name">${s.name}</div>
+            <div class="pop-name">${s.tagline || s.name}</div>
             <div class="pop-meta">📍 ${s.address || s.town}</div>
             ${s.phone ? `<div class="pop-meta">📞 ${s.phone}</div>` : ''}
             <div class="pop-detail">${noteHtml(s.note)}</div>

@@ -14684,7 +14684,7 @@ window.METHODS = [
   {
     "id": "school-of-light",
     "name": "The School of Light",
-    "tagline": "Parents raising their own children, together, with the best of every method",
+    "tagline": "Parents raising their own children, together",
     "era": "First principles · Northern Ireland",
     "color": "#F0C557",
     "colorDeep": "#C6871B",
