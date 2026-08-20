@@ -905,7 +905,11 @@
     // nothing loads from YouTube until the parent actually taps play, so the
     // page stays fast and sets no cookies. See assets/videos-data.js for the
     // selection rule and why two traditions deliberately have none.
-    const VIDEOS = window.VIDEOS || {};
+    //
+    // Read window.VIDEOS at call time, NOT into a `const` up here. These
+    // helpers are declared below the code that first calls them, so a const
+    // would still be in its temporal dead zone when watchBlock() runs and the
+    // whole page would render blank. Function declarations hoist; consts don't.
 
     // 926165 -> "926K". Real recorded counts, refreshed by scripts/check-videos.mjs.
     function fmtViews(n){
@@ -916,7 +920,7 @@
     }
 
     function watchBlock(m) {
-      const v = VIDEOS[m.id];
+      const v = (window.VIDEOS || {})[m.id];
       if (!v) return '';
       const esc = x => String(x == null ? '' : x).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
       return `
