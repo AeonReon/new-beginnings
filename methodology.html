@@ -505,6 +505,9 @@
        .act-bar). Colour variety comes from the SECTION BLOCK, never from the
        tradition — every tradition still wears the one site blue.
        ──────────────────────────────────────────────────────────────────── */
+    #root .act-nav--su { margin: 1.5em 0 0.2em; }
+    #root .act-nav--su .act-chip { flex: 1 1 26%; min-width: 5.2em; }
+    #root .act-nav--su .act-chip-lbl { white-space: normal; overflow: visible; text-overflow: clip; }
     #root .su-band { position: relative; margin: 1.6em 0 0; padding: 1.15em 1.1em 1.35em; border-radius: 22px; background: var(--scs, var(--acc-soft)); }
     #root .su-band::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.6px; background: linear-gradient(135deg, var(--sc), var(--scd)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; opacity: 0.38; }
     #root .su-band-h { display: flex; align-items: center; gap: 0.65em; margin: 0 0 0.85em; }
@@ -749,7 +752,7 @@
       };
       // Quick-nav chips — same component, and the existing .act-chip handler
       // scrolls to the target for free.
-      const nav = () => list.length < 2 ? '' : `<div class="act-nav">${list.map(b => `
+      const nav = () => list.length < 2 ? '' : `<div class="act-nav act-nav--su">${list.map(b => `
           <button type="button" class="act-chip" data-target="${b.id}" style="--gc:${b.a.c};--gcd:${b.a.cd}">
             <span class="act-chip-emo" aria-hidden="true">${b.emo}</span>
             <span class="act-chip-lbl">${b.short}</span>
