@@ -1762,6 +1762,179 @@ window.METHODS = [
           ]
     },
     sections: {
+      'set-up-the-space': {
+        title: 'Set up the space',
+        icon: 'shelf',
+        intro: 'A Montessori room is not decorated, it is prepared. Every single thing in it is there for a reason, sits at the height of the child, and can be used without asking an adult. That is the whole trick, and it works the same whether you have a corner of your living room, a spare bedroom, or a hall you are opening to twelve families.',
+        scales: [
+          { name: 'A corner of a room', span: 'Cost: near nothing', body: 'One low shelf against a wall, six trays on it, a small rug rolled beside it, and a clear patch of floor. That is a real prepared environment. Nothing else in the corner competes for the eye. If you can only do one thing, do the shelf and clear everything else out of view.' },
+          { name: 'A whole room', span: 'Cost: a few hundred pounds', body: 'Now you can separate the areas: practical life near the water, a quiet corner for language, a low table for two, a floor space for mats. Add a small sink or a jug-and-basin station, a plant the child waters, and a low hook for their apron. The room starts to run itself.' },
+          { name: 'A group setting', span: 'Cost: thousands, and paperwork', body: 'Twelve to twenty-four children of mixed ages three to six, one trained guide plus an assistant, one complete set of each material, a working child-height kitchen area, an outdoor space you can open in any weather, and registration with your Health and Social Care Trust before a single child walks in.' }
+        ],
+        elements: [
+          { t: 'One low, open shelf per area', d: 'Open backs, no doors, no lids. The child sees everything available in one glance and returns it without help. Shelves higher than the child\'s shoulder become the adult\'s shelves, and the child stops owning the room.' },
+          { t: 'Trays and baskets — one activity per container', d: 'Every job is complete on its own tray: the jug, the two cups, the sponge. Nothing has to be hunted for. The tray is what makes a four-year-old able to start and finish something alone.' },
+          { t: 'Space, not fullness', d: 'Six to eight activities out at a time, with visible gaps between them. A full shelf reads as noise, and the child stops choosing and starts drifting. Everything else lives in a cupboard and comes out on rotation.' },
+          { t: 'Real materials — glass, wood, metal, ceramic', d: 'A glass jug tells the truth when it is dropped. Plastic tells the child that nothing they handle really matters, and removes the reason to be careful. Buy cheap and second-hand so a breakage is not a crisis.' },
+          { t: 'A floor you can work on', d: 'A washable rug or two, rolled and stored upright in a basket. The rug marks out the child\'s own territory on the floor, which is where most of the work happens.' },
+          { t: 'A table for one or two, not a class', d: 'Small tables and light chairs the child can move themselves. A single long table makes it a classroom with a teacher at the front, which is the thing Montessori was replacing.' },
+          { t: 'Water the child can reach', d: 'A jug, a basin, a small towel on a low hook — or a real low tap if you can. Half of practical life is pouring, washing, wiping. Without reachable water the adult becomes the bottleneck for everything.' },
+          { t: 'Living things and real beauty at eye level', d: 'One plant they water, a small vase they fill, one framed picture hung low. Children under six absorb the whole room without filtering it, so what is on the walls is teaching whether you meant it to or not.' },
+          { t: 'A place for the adult to sit still', d: 'A low stool in the corner, out of the traffic. If there is nowhere for you to sit and watch, you will hover, and hovering interrupts exactly the concentration you built the room for.' },
+          { t: 'A way out to the outside', d: 'Boots and coats on low hooks by the door, so going out is the child\'s decision and not a fifteen-minute operation.' }
+        ],
+        shopping: [
+          { heading: 'The bones of the room', items: [
+            { name: 'Low open shelf', tag: 'A two-tier IKEA Kallax on its side, or any charity-shop bookcase cut down. Around £30 new, often free second-hand.', where: 'https://www.ikea.com/gb/en/' },
+            { name: 'Small table and two light chairs', tag: 'Child height means feet flat on the floor and elbows level with the table top. Around £40, or free on Marketplace.' },
+            { name: 'Two washable rugs', tag: 'Small and thin enough for a four-year-old to roll and carry. £10 each.' },
+            { name: 'A tall basket for the rolled rugs', tag: 'So they stand upright and the child takes one without unrolling the lot. £5.' },
+            { name: 'Low coat hooks and a boot tray', tag: 'Screwed in at the child\'s shoulder height. £10 and twenty minutes.' }
+          ]},
+          { heading: 'Trays, jugs and the practical life kit', items: [
+            { name: 'Six wooden or bamboo trays', tag: 'The single most useful purchase. One per activity. £3 each, or charity-shop them.' },
+            { name: 'Small glass jugs and tumblers', tag: 'Two jugs and four small glasses. Charity shops are perfect — you want cheap and real, not precious.' },
+            { name: 'Small jars, tins and boxes with different lids', tag: 'Screw, snap, hinge, clip. Free — save them from your own kitchen.' },
+            { name: 'Child-sized brush, dustpan, mop and cloths', tag: 'They have to actually work, not be toys. Around £15 for the set.' },
+            { name: 'Sponges, a spray bottle, a small basin', tag: 'Cut a big sponge into child-hand pieces. £5.' },
+            { name: 'Aprons on a low hook', tag: 'Putting on the apron is how the child tells themselves work has started. £6.' },
+            { name: 'A learning tower or sturdy step stool', tag: 'The one thing that lets them join real cooking. £30 for a stool, £70 for a tower, and both are common second-hand.' }
+          ]},
+          { heading: 'The classic materials — buy slowly, only when they are wanted', items: [
+            { name: 'Sandpaper letters', tag: 'Lower case, in cursive or print. £25, or make them with sandpaper and card for £3.' },
+            { name: 'Movable alphabet', tag: 'For building words before the hand can write them. £30, and a cheap wooden set is fine.' },
+            { name: 'Number rods and spindle box', tag: 'Quantity you can feel in the arms before it is a symbol on a page. £30 each.' },
+            { name: 'Pink tower, brown stair or knobbed cylinders', tag: 'Beautiful and expensive. Buy one, not all three, and only once you see them reaching for that kind of work. £30–£60 each.', where: 'https://www.absorbentminds.co.uk' },
+            { name: 'A puzzle map and a few object baskets', tag: 'Real objects beat pictures at four. Charity shops, the beach, the garden.' }
+          ]},
+          { heading: 'Only if you are opening a group setting', items: [
+            { name: 'One complete set of each material', tag: 'One of each, deliberately, so children learn to wait and to watch. This is the single biggest cost — budget several thousand pounds.', where: 'https://www.absorbentminds.co.uk' },
+            { name: 'Child-height sink, low kitchen units, a fridge they can open', tag: 'The kitchen area is where the most learning happens in a Children\'s House.' },
+            { name: 'Public liability insurance and Trust registration', tag: 'In Northern Ireland you register with your local Health and Social Care Trust Early Years Team before you open. Phone them early — they are helpful and the process takes months.' }
+          ]}
+        ],
+        think: [
+          { t: 'Light and where it falls', d: 'Natural light on the shelf, not behind it. A room lit only from overhead feels institutional, and children work longer in warm side light.' },
+          { t: 'What the child sees from the doorway', d: 'Stand at the door and crouch to their height. Whatever is in that first glance is what they will choose. Put the work there and the clutter behind you.' },
+          { t: 'Sound', d: 'Hard floors, high ceilings and twelve children make a noise that stops concentration dead. Rugs, curtains, cork, soft board on one wall. This is the most commonly missed thing in a new setting.' },
+          { t: 'Order that is obvious without labels', d: 'Everything has one home and it is visually clear where. A four-year-old cannot read your labels, so the arrangement has to say it.' },
+          { t: 'How things get put back', d: 'Design the tidy-up before the activity. If putting it back takes an adult, the child cannot finish their own cycle, and the work is only half of what it should be.' },
+          { t: 'Safety without removing the risk', d: 'Real glass and real knives are the point, so make them small, sharp enough, and used at a table where you can see. Secure the tall furniture to the wall, cover the sockets, and then stop interfering.' },
+          { t: 'The rotation cupboard', d: 'Keep two thirds of everything out of sight and swap a few items each week, following what they are drawn to. The room stays fresh without ever being crowded.' },
+          { t: 'Room to grow into', d: 'The three-year-old shelf and the six-year-old shelf look different. In a mixed group, the older children need harder work visible or they coast.' }
+        ],
+        avoid: [
+          'Toy boxes and lidded storage — anything in a heap stops being a choice.',
+          'Character decorations and busy wall displays. In a room where children absorb everything, decoration is noise.',
+          'Battery toys with lights and sounds. They do the work, and the child watches.',
+          'Everything out at once, because it looks generous. It reads as chaos and the child drifts.',
+          'A shelf so beautiful it is really for the adults, or for a photograph.',
+          'Buying the full material set before you have a single child using the shelf you already own.'
+        ],
+        note: 'The order matters more than the money. A charity-shop shelf with six real jobs on it, arranged with care, teaches more than three thousand pounds of wooden material dumped into a busy room.'
+      },
+      'running-it': {
+        title: 'Running the day',
+        icon: 'clock',
+        intro: 'This is the part nobody writes down: what the adult actually does, hour by hour, and what they deliberately do not do. It is written for whoever is leading the day — a parent at the kitchen table, or someone opening a setting for other people\'s children. In Montessori the adult is called the guide, and the name is the job description.',
+        tone: [
+          { t: 'Quiet voice, slow hands', d: 'You set the volume of the room. Speak to one child at a time, close up, rather than across the room. Move slowly, because children copy the pace of the adult before they copy anything else.' },
+          { t: 'Say less than feels natural', d: 'Show with the hands, name the thing once, then stop talking. Commentary while a child works pulls them out of what they are doing.' },
+          { t: 'Warm, not gushing', d: 'No stream of "good girl, well done, clever boy." Notice instead: "you carried that the whole way without spilling." Praise makes the child work for you, which is the opposite of what the room is built for.' },
+          { t: 'Courteous, as you would be to an adult', d: 'Ask before you touch their work. Say excuse me. Apologise when you get it wrong. The manners you use are the manners you are teaching.' },
+          { t: 'Unhurried, even when you are behind', d: 'The child reads urgency in your body instantly, and concentration dissolves in it. If the schedule and the child conflict, the schedule bends.' }
+        ],
+        rhythm: [
+          { t: 'Before they arrive — set the room', d: 'Every tray complete, every material whole, everything back in its place, plants watered. Ten minutes of this decides how the morning goes. A room with a missing sponge produces a child who cannot finish.' },
+          { t: 'The greeting at the door', d: 'One at a time, at their height, by name, hand shaken or a good look in the eye. This is a real Montessori lesson, not a nicety — it is where grace and courtesy is practised every single day.' },
+          { t: 'The work cycle opens', d: 'The children choose. You do not announce an activity. Some go straight to work, some wander for twenty minutes — leave the wanderers alone a while, then quietly offer one thing.' },
+          { t: 'You give one or two presentations', d: 'A presentation is you showing one child one material, slowly, with almost no words, then leaving them with it. Two or three good ones in a morning is plenty. The rest of the time you are watching.' },
+          { t: 'You observe, sitting down, with a notebook', d: 'This is your main job and it looks like doing nothing. Write what each child chose, how long they stayed with it, what they repeat. That notebook is what you plan from — not a curriculum.' },
+          { t: 'Snack runs alongside, it does not stop the room', d: 'A small table with two chairs, food the children prepare and clear themselves. Calling the whole room to snack at once breaks the concentration of every child who was deep in something.' },
+          { t: 'The deep hour', d: 'Around the ninety-minute mark the room goes quiet by itself. Protect this like nothing else. No announcements, no photographs, no visitors walking through, no tidying near them.' },
+          { t: 'Tidying is part of the work, not the end of it', d: 'Each child returns their own material as they finish. Ten minutes before the end, a soft warning, then everyone restores the room together.' },
+          { t: 'A short gathering to close', d: 'A song, a story, something read aloud. Short. This is the one adult-led moment of the morning and it works because everything else was not.' },
+          { t: 'Outside, in whatever weather', d: 'Ideally the door is open all morning and going out is a choice. Where that is not possible, a long outdoor block after the work cycle.' },
+          { t: 'After they leave — reset and write up', d: 'Restore every tray, and then read your own notes. Who has not chosen anything new in two weeks? Who is ready for the next presentation? That is tomorrow planned.' }
+        ],
+        does: [
+          'Prepares the room before anyone arrives, every day.',
+          'Watches, and writes down what they see.',
+          'Gives short, precise presentations to one child at a time.',
+          'Lets a child repeat the same work twenty times without comment.',
+          'Steps in for safety, for cruelty, and for a child who is genuinely stuck and asking.',
+          'Models everything they want to see, including how to be wrong.'
+        ],
+        doesnt: [
+          'Correct a mistake the material will reveal on its own.',
+          'Interrupt to praise. This is the most common thing new guides have to unlearn.',
+          'Finish a task for a child who is slow at it.',
+          'Announce a whole-room activity in the middle of the work cycle.',
+          'Ask test questions ("what colour is that?") to prove learning happened.',
+          'Tidy a child\'s work away while they are still returning to it.'
+        ],
+        parents: 'In a classic Montessori setting the parents are warmly welcomed and mostly not in the room. That is not coldness — a three-year-old behaves completely differently while their adult is watching, and the independence the room is built to grow does not appear until the parent is out of sight. What good settings do instead is offer real observation windows: a scheduled morning where you sit still in a corner and watch without speaking, parent evenings where the materials are explained by letting you use them, and a proper settling-in period of days or weeks where you stay longer at first and leave earlier each time. If you are running a setting where parents stay all session — which is a different and equally honest model — say so plainly up front, give the parents a real job, and give them the same short training the assistants get, or they will hover and correct and the work cycle will never form.',
+        mistakes: [
+          { t: 'Chopping the morning into timetabled slots', d: 'Twenty minutes of this, then that, then circle time. It is the most common way a setting calls itself Montessori and is not. Concentration cannot form in twenty-minute pieces.' },
+          { t: 'Too much on the shelves', d: 'A new setting spends its money on materials and puts them all out. The children graze and never settle. Put two thirds away.' },
+          { t: 'Adults talking to each other across the room', d: 'Two members of staff chatting over the children\'s heads sets the volume and breaks the spell more thoroughly than any child does.' },
+          { t: 'Rescuing', d: 'The child struggles with the button, and the kind adult does it. Repeated a hundred times, this teaches the child they are someone things get done for.' },
+          { t: 'Splitting the ages', d: 'Mixed three to six is structural, not decorative. The three-year-olds learn most of what they learn by watching the five-year-olds, and the five-year-olds consolidate it by showing them.' },
+          { t: 'Documenting instead of observing', d: 'Photographs for the parent app are not observation. Observation is dull, written, and about what the child chose and how long they stayed.' }
+        ],
+        training: 'The recognised training routes are AMI, the Association Montessori Internationale that Maria Montessori founded herself, and AMS in the United States. A three-to-six diploma is roughly a year full time or two part time, costs a few thousand pounds, and is genuinely difficult — you make your own album of every presentation by hand. Assistants can take a short Assistants to Infancy or classroom-assistant course in a week or two, which is well worth doing even for a parent who will never work in a setting. One honest thing: the word Montessori is not trademarked, so anyone can put it above a door. The training is the difference. In Northern Ireland, if you are opening to other people\'s children you also register with your local Health and Social Care Trust Early Years Team, work to the Minimum Standards for Day Care, and hold Access NI clearance and public liability insurance — phone the Trust before you sign a lease, not after.'
+      },
+      'your-part': {
+        title: 'Your part in it',
+        icon: 'heart',
+        intro: 'If your child goes to a Montessori setting, what is actually being asked of you? Do you stay or do you leave? How involved are you meant to be? What should the morning at home look like, and what should you do at half past three when they come out? This part is rarely explained, and getting it wrong quietly undoes the work.',
+        model: {
+          label: 'Drop off — and then genuinely leave',
+          body: 'Montessori is a drop-off model from around age three. You settle them in over days or weeks, then you hand over and go. This is deliberate. A young child in a prepared environment does not begin to work independently while the person they are attached to is sitting at the edge of the room, and the whole method rests on that independent work forming. Trusting the guide is part of the deal you are making. If you want a model where you stay in the room the whole time, that exists too and it is a real and good thing — but it is not this one, and pretending otherwise leaves everybody frustrated.'
+        },
+        before: [
+          'Leave enough time that they can dress themselves. Rushing them into their coat every morning undoes the independence the setting is building.',
+          'Let them carry their own bag in and hang up their own coat, even when it takes four times as long.',
+          'Feed them properly and get them there on time. A child who arrives late walks into a room already deep in concentration and finds it very hard to enter.',
+          'Say goodbye once, warmly, and go. The long drawn-out goodbye is harder on them than the short one — coming back for one more hug teaches them that the crying works.',
+          'Keep your own worry off your face at the door. They read you before they read the room.'
+        ],
+        after: [
+          'Do not open with "what did you do today?" They have been concentrating for three hours and have no words ready. You will get "nothing" and both of you will feel it.',
+          'Reconnect physically first — a hand, a carry, a quiet walk. The talking comes later on its own, usually in the bath or in the car.',
+          'Keep the hour after collection slow and low. Most difficult late-afternoon behaviour is a child unclenching after holding it together all morning, not a child being difficult.',
+          'Feed them early. Hunger after a Montessori morning is real.',
+          'Let them keep doing things for themselves at home. If they pour their own water at school and you pour it at home, they learn that independence is something that only happens in that building.',
+          'Resist testing them. Asking them to perform their letters for a grandparent turns their work into your evidence.'
+        ],
+        involvement: [
+          { t: 'Observation mornings', d: 'Take every one you are offered. Sit still, say nothing, watch your own child from a corner. It is the single most useful hour you will spend as a Montessori parent, and it will change how you set up your own home.' },
+          { t: 'Parent evenings where you use the materials', d: 'Good settings let the adults handle the pink tower and the sandpaper letters. If you have felt it in your own hands, you stop mistaking it for a toy.' },
+          { t: 'Match the room at home, roughly', d: 'One low shelf, a few real jobs, a place for their coat. You are not recreating the classroom, you are removing the contradiction between the two places.' },
+          { t: 'Tell them what is happening at home', d: 'A new baby, a death, a bad night. The guide is watching your child closely and needs the context to read what they see.' },
+          { t: 'Trips and outdoor days', d: 'Most settings welcome a parent on an outing. It is also the easiest way to see how the guide speaks to children.' }
+        ],
+        visit: [
+          { q: 'How long is the uninterrupted work cycle?', why: 'The answer you want is around three hours, with nothing scheduled into it. "We do about forty minutes then circle time" is a different method wearing the name.' },
+          { q: 'Are the ages mixed three to six?', why: 'Split-age rooms lose the structural engine of the method — the younger watching the older, the older teaching what they know.' },
+          { q: 'Who is trained, and with whom?', why: 'AMI or AMS, and how recently. Ask how many trained guides are in the room, not how many staff.' },
+          { q: 'Can I come and observe for a morning before I decide?', why: 'A confident setting says yes without hesitation. Hesitation here tells you a lot.' },
+          { q: 'What happens when a child does nothing all morning?', why: 'You want to hear patience and observation, not a plan to redirect them into an activity.' },
+          { q: 'How do you handle a child who hurts another child?', why: 'Listen for whether the adult stays calm and factual, and whether both children are cared for.' },
+          { q: 'What is the settling-in process, and how long does it take?', why: 'A real answer is measured in days or weeks and is different for each child.' },
+          { q: 'How will you tell me what my child is actually doing?', why: 'Observation notes and a proper conversation, rather than a stream of photographs.' }
+        ],
+        flags: [
+          'Worksheets, or a wall of near-identical craft outcomes made from a template.',
+          'Every child doing the same thing at the same time on an adult\'s signal.',
+          'Bright plastic and character decoration through the room.',
+          'The word Montessori on the sign and nobody in the building holding a Montessori diploma.',
+          'A room so silent and so tidy that no work is actually happening in it.',
+          'Reluctance to let you sit and observe.',
+          'Children queueing for permission to do ordinary things.'
+        ],
+        note: 'None of this is a judgement on settings that work differently. A place where parents stay all session, or where the day is more structured, can be excellent — it is simply a different agreement, and the questions you should ask there are different ones. What matters is knowing which agreement you are making.'
+      },
       "bring-it-home": {
               "intro": "Montessori at home is simpler and nearly free. You do not need a special room or a shelf full of wooden toys. You need one low shelf your child can reach, a few real jobs they can do with you, and one long quiet block of time where nobody rushes them. Show a thing slowly once, then step back and let them try. That is most of it.",
               "steps": [

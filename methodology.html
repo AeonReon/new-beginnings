@@ -493,6 +493,62 @@
     #root .bih-note-label { font-family: var(--sans); font-weight: 800; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--acc); margin-bottom: 0.4em; }
     #root .bih-note p { margin: 0; font-size: 1.03rem; line-height: 1.66; color: var(--ink-soft); }
 
+
+    /* ── Set up the space / Running the day / Your part ─────────────────── */
+    #root .su-cross { font-family: var(--sans); font-weight: 800; font-size: 0.66rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-mute); margin: 2.6em 0 0.9em; padding-bottom: 0.5em; border-bottom: 1px solid var(--rule); }
+    #root .su-cards { display: grid; gap: 0.75em; }
+    #root .su-card { position: relative; background: #fff; border-radius: 16px; padding: 1.05em 1.15em 1.1em; box-shadow: var(--shadow-sm); }
+    #root .su-card::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.5px; background: linear-gradient(135deg, var(--sc, var(--acc-bright)), var(--scd, var(--acc))); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; opacity: 0.5; }
+    #root .su-card-head { display: flex; align-items: baseline; gap: 0.6em; margin-bottom: 0.28em; }
+    #root .su-card-t { font-family: var(--display); font-weight: 800; font-size: 1.13rem; line-height: 1.2; letter-spacing: -0.01em; color: var(--ink); }
+    #root .su-card-span { flex: 0 0 auto; margin-left: auto; font-family: var(--sans); font-weight: 800; font-size: 0.58rem; letter-spacing: 0.09em; text-transform: uppercase; color: var(--ink-mute); background: var(--rule-soft); border-radius: 999px; padding: 0.32em 0.62em; white-space: nowrap; }
+    #root .su-card-d { font-size: 1.01rem; line-height: 1.6; color: var(--ink-soft); }
+    /* numbered rows (room elements, the daily rhythm) */
+    #root .su-rows { counter-reset: su; display: grid; gap: 0.2em; }
+    #root .su-row { display: flex; gap: 0.9em; padding: 1em 0.2em; border-bottom: 1px solid var(--rule); }
+    #root .su-row:last-child { border-bottom: 0; }
+    #root .su-no { counter-increment: su; flex: 0 0 auto; width: 1.95em; height: 1.95em; border-radius: 999px; background: var(--acc-soft); color: var(--acc); font-family: var(--display); font-weight: 800; font-size: 0.98rem; display: grid; place-items: center; }
+    #root .su-no::before { content: counter(su); }
+    #root .su-row-t { display: block; font-family: var(--sans); font-weight: 800; font-size: 1.08rem; line-height: 1.28; color: var(--ink); margin-bottom: 0.12em; }
+    #root .su-row-d { font-size: 1.01rem; line-height: 1.58; color: var(--ink-soft); }
+    /* the tickable shopping list */
+    #root .su-shop { display: grid; gap: 0.55em; }
+    #root .su-item { position: relative; display: flex; gap: 0.8em; align-items: flex-start; background: #fff; border-radius: 14px; padding: 0.9em 1em; box-shadow: var(--shadow-sm); cursor: pointer; }
+    #root .su-item.is-got { opacity: 0.55; }
+    #root .su-item.is-got .su-item-n { text-decoration: line-through; }
+    #root .su-tick { flex: 0 0 auto; width: 26px; height: 26px; margin-top: 0.1em; border-radius: 8px; border: 2px solid var(--acc-soft); background: #fff; display: grid; place-items: center; color: #fff; font-weight: 900; font-size: 0.85rem; }
+    #root .su-item.is-got .su-tick { background: var(--acc); border-color: var(--acc); }
+    #root .su-item-n { display: block; font-family: var(--sans); font-weight: 800; font-size: 1.05rem; line-height: 1.3; color: var(--ink); margin-bottom: 0.1em; }
+    #root .su-item-tag { font-size: 0.97rem; line-height: 1.5; color: var(--ink-soft); }
+    #root .su-item-where { display: inline-block; margin-top: 0.5em; font-family: var(--sans); font-weight: 700; font-size: 0.8rem; text-decoration: none; color: var(--acc); }
+    #root .su-shop-count { font-size: 0.86rem; color: var(--ink-mute); margin: 0.2em 0.2em 0.9em; }
+    /* leave-it-out / red-flag list */
+    #root .su-nope { display: grid; gap: 0.5em; margin: 0; padding: 0; list-style: none; }
+    #root .su-nope li { display: flex; gap: 0.7em; align-items: flex-start; font-size: 1.01rem; line-height: 1.55; color: var(--ink-soft); background: #FDF2F2; border-radius: 13px; padding: 0.8em 1em; }
+    #root .su-nope li::before { content: "✕"; flex: 0 0 auto; font-weight: 900; color: #C0392B; }
+    /* do / don't pair */
+    #root .su-pair { display: grid; gap: 0.8em; }
+    @media (min-width: 620px) { #root .su-pair { grid-template-columns: 1fr 1fr; } }
+    #root .su-pane { background: #fff; border-radius: 16px; padding: 1.05em 1.15em 1.15em; box-shadow: var(--shadow-sm); }
+    #root .su-pane-h { font-family: var(--sans); font-weight: 800; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 0.6em; }
+    #root .su-pane.is-do .su-pane-h { color: #1B7A4A; }
+    #root .su-pane.is-dont .su-pane-h { color: #C0392B; }
+    #root .su-pane ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 0.55em; }
+    #root .su-pane li { display: flex; gap: 0.6em; align-items: flex-start; font-size: 1rem; line-height: 1.52; color: var(--ink-soft); }
+    #root .su-pane.is-do li::before { content: "✓"; color: #1B7A4A; font-weight: 900; flex: 0 0 auto; }
+    #root .su-pane.is-dont li::before { content: "–"; color: #C0392B; font-weight: 900; flex: 0 0 auto; }
+    /* the big "how it works" model card */
+    #root .su-model { position: relative; background: var(--acc-soft); border-radius: 18px; padding: 1.2em 1.3em 1.3em; margin: 1.6em 0 0; }
+    #root .su-model-label { font-family: var(--sans); font-weight: 800; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--acc); margin-bottom: 0.35em; }
+    #root .su-model-t { font-family: var(--display); font-weight: 800; font-size: 1.5rem; line-height: 1.15; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 0.4em; }
+    #root .su-model p { margin: 0; font-size: 1.04rem; line-height: 1.66; color: var(--ink-soft); }
+    /* question-to-ask rows */
+    #root .su-qa { display: grid; gap: 0.55em; }
+    #root .su-q { background: #fff; border-radius: 14px; padding: 0.95em 1.05em; box-shadow: var(--shadow-sm); }
+    #root .su-q-q { display: block; font-family: var(--display); font-weight: 700; font-size: 1.1rem; line-height: 1.3; color: var(--ink); margin-bottom: 0.25em; }
+    #root .su-q-w { font-size: 0.98rem; line-height: 1.55; color: var(--ink-soft); }
+    #root .su-q-w b { color: var(--acc); font-weight: 800; }
+
     /* ── The story, moved below the options and made opt-in ── */
     #root .story { margin: 2.5em 0 0; background: #fff; border: 1px solid var(--rule); border-radius: 18px; box-shadow: var(--shadow-sm); overflow: hidden; }
     #root .story > summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 0.8em; padding: 1.05em 1.15em; }
@@ -551,20 +607,23 @@
       { c: '#B83A6E', cd: '#8E2A54', cs: '#F8E5ED' }  // rose
     ];
     // Which glyph fronts each section on the landing "Read on" list.
-    const SECTION_ICON = { 'core-idea': 'compass', 'day-in-life': 'sun', 'activities': 'hand', 'bring-it-home': 'sprout', 'reading-list': 'book', 'competency': 'sun' };
+    const SECTION_ICON = { 'core-idea': 'compass', 'day-in-life': 'sun', 'activities': 'hand', 'bring-it-home': 'sprout', 'set-up-the-space': 'shelf', 'running-it': 'clock', 'your-part': 'heart', 'reading-list': 'book', 'competency': 'sun' };
 
     // NOTE: 'core-idea' is intentionally NOT in this list — the landing page IS
     // the core ideas now (the drop-down list). The old core-idea sub-page still
     // renders for direct ?s=core-idea links, it just has no button. 'bring-it-home'
     // is the new "how to actually do this at home" section.
-    const SECTION_ORDER = ['day-in-life', 'activities', 'bring-it-home', 'reading-list', 'competency'];
+    const SECTION_ORDER = ['day-in-life', 'activities', 'bring-it-home', 'set-up-the-space', 'running-it', 'your-part', 'reading-list', 'competency'];
     const SECTION_META = {
       'core-idea':   { n: '01', title: 'Core idea',            tag: 'The philosophy in plain language, with the why' },
       'day-in-life': { n: '02', title: 'A day in the life',    tag: 'What a typical day looks like at this age' },
       'activities':  { n: '03', title: 'Things to do this week', tag: 'Real things to do — pick one or two' },
       'bring-it-home': { n: '04', title: 'Bring it home',       tag: 'Build your own version — the apps, tools and how to start' },
-      'reading-list':{ n: '05', title: 'Reading list',         tag: 'Books for you, and books to share' },
-      'competency':  { n: '06', title: 'What to expect',        tag: 'Landmarks to orient by, not a test' }
+      'set-up-the-space': { n: '05', title: 'Set up the space',  tag: 'The room, the shopping list, and what to think about first' },
+      'running-it':  { n: '06', title: 'Running the day',       tag: 'For whoever leads it — the tone, the rhythm, the adult\'s job' },
+      'your-part':   { n: '07', title: 'Your part in it',       tag: 'Stay or drop off, before and after, what to ask on a visit' },
+      'reading-list':{ n: '08', title: 'Reading list',         tag: 'Books for you, and books to share' },
+      'competency':  { n: '09', title: 'What to expect',        tag: 'Landmarks to orient by, not a test' }
     };
 
     // ── Age stages (defined BEFORE the main flow — a const-before-use TDZ here
@@ -1037,6 +1096,106 @@
           ${s.watch ? `<div class="bih-cross">Worth watching</div><div class="bih-apps">${s.watch.map(appCard).join('')}</div>` : ''}
           ${s.note ? `<aside class="bih-note"><div class="bih-note-label">How their teachers are made</div><p>${hl(s.note)}</p></aside>` : ''}
         `;
+      } else if (key === 'set-up-the-space') {
+        // The room itself: what it costs, what has to be in it, what to buy,
+        // what to think about before you start, and what to leave out. Written
+        // so it works at three sizes — a corner, a room, or a whole setting.
+        const cardRow = (x, i) => {
+          const a = PRINCIPLE_ACCENTS[i % PRINCIPLE_ACCENTS.length];
+          return `<div class="su-card" style="--sc:${a.c};--scd:${a.cd}">
+            <div class="su-card-head"><span class="su-card-t">${x.name || x.t}</span>${x.span ? `<span class="su-card-span">${x.span}</span>` : ''}</div>
+            <div class="su-card-d">${hl(x.body || x.d)}</div>
+          </div>`;
+        };
+        const numbered = (list) => `<div class="su-rows">${list.map(x => `
+          <div class="su-row"><span class="su-no" aria-hidden="true"></span>
+            <span class="su-row-text"><span class="su-row-t">${x.t}</span><span class="su-row-d">${hl(x.d)}</span></span>
+          </div>`).join('')}</div>`;
+        const total = (s.shopping || []).reduce((t, g) => t + g.items.length, 0);
+        const shop = (s.shopping || []).map((g, gi) => `
+          <div class="su-cross">${g.heading}</div>
+          <div class="su-shop">${g.items.map((it, ii) => `
+            <label class="su-item" data-kit="${m.id}:${gi}:${ii}">
+              <span class="su-tick" aria-hidden="true">✓</span>
+              <span class="su-item-text">
+                <span class="su-item-n">${it.name}</span>
+                <span class="su-item-tag">${hl(it.tag)}</span>
+                ${it.where ? `<a class="su-item-where" href="${it.where}" target="_blank" rel="noopener">↗ Where to find it</a>` : ''}
+              </span>
+            </label>`).join('')}</div>`).join('');
+        body = `
+          <div class="ed-lead ed-lead-intro">${multiPara(s.intro, 2)}</div>
+          ${s.scales ? `<div class="su-cross">Three sizes of the same idea</div>
+            <div class="su-cards">${s.scales.map(cardRow).join('')}</div>` : ''}
+          ${s.elements ? `<div class="su-cross">What you would expect to see</div>${numbered(s.elements)}` : ''}
+          ${s.shopping ? `<div class="su-cross">The shopping list</div>
+            <p class="su-shop-count">${total} things, tap to tick them off. Nearly half of it is charity-shop or free — start at the top of each list and stop when the room works.</p>${shop}` : ''}
+          ${s.think ? `<div class="su-cross">Things to think about first</div>
+            <div class="su-cards">${s.think.map(cardRow).join('')}</div>` : ''}
+          ${s.avoid ? `<div class="su-cross">What to leave out</div>
+            <ul class="su-nope">${s.avoid.map(x => `<li>${hl(x)}</li>`).join('')}</ul>` : ''}
+          ${s.note ? `<p class="note-box">${hl(s.note)}</p>` : ''}
+        `;
+      } else if (key === 'running-it') {
+        // The facilitator's guide — for whoever is leading the day, at home or
+        // in a setting. Tone first, because it decides everything after it.
+        const cardRow = (x, i) => {
+          const a = PRINCIPLE_ACCENTS[i % PRINCIPLE_ACCENTS.length];
+          return `<div class="su-card" style="--sc:${a.c};--scd:${a.cd}">
+            <div class="su-card-head"><span class="su-card-t">${x.t}</span></div>
+            <div class="su-card-d">${hl(x.d)}</div>
+          </div>`;
+        };
+        body = `
+          <div class="ed-lead ed-lead-intro">${multiPara(s.intro, 2)}</div>
+          ${s.tone ? `<div class="su-cross">The tone you set</div>
+            <div class="su-cards">${s.tone.map(cardRow).join('')}</div>` : ''}
+          ${s.rhythm ? `<div class="su-cross">What you do, every day</div>
+            <div class="su-rows">${s.rhythm.map(x => `
+              <div class="su-row"><span class="su-no" aria-hidden="true"></span>
+                <span class="su-row-text"><span class="su-row-t">${x.t}</span><span class="su-row-d">${hl(x.d)}</span></span>
+              </div>`).join('')}</div>` : ''}
+          ${(s.does || s.doesnt) ? `<div class="su-cross">The adult's job</div>
+            <div class="su-pair">
+              ${s.does ? `<div class="su-pane is-do"><div class="su-pane-h">What the adult does</div><ul>${s.does.map(x => `<li>${hl(x)}</li>`).join('')}</ul></div>` : ''}
+              ${s.doesnt ? `<div class="su-pane is-dont"><div class="su-pane-h">What the adult does not do</div><ul>${s.doesnt.map(x => `<li>${hl(x)}</li>`).join('')}</ul></div>` : ''}
+            </div>` : ''}
+          ${s.parents ? `<div class="su-cross">Where the parents fit</div>${multiPara(s.parents, 2)}` : ''}
+          ${s.mistakes ? `<div class="su-cross">Where it usually goes wrong</div>
+            <div class="su-cards">${s.mistakes.map(cardRow).join('')}</div>` : ''}
+          ${s.training ? `<aside class="bih-note"><div class="bih-note-label">Training, and what it takes to open</div><p>${hl(s.training)}</p></aside>` : ''}
+        `;
+      } else if (key === 'your-part') {
+        // The parent's side: stay or drop off, what to do before and after, and
+        // what to ask when you go and look at a place.
+        const cardRow = (x, i) => {
+          const a = PRINCIPLE_ACCENTS[i % PRINCIPLE_ACCENTS.length];
+          return `<div class="su-card" style="--sc:${a.c};--scd:${a.cd}">
+            <div class="su-card-head"><span class="su-card-t">${x.t}</span></div>
+            <div class="su-card-d">${hl(x.d)}</div>
+          </div>`;
+        };
+        body = `
+          <div class="ed-lead ed-lead-intro">${multiPara(s.intro, 2)}</div>
+          ${s.model ? `<div class="su-model">
+              <div class="su-model-label">How this one works</div>
+              <div class="su-model-t">${s.model.label}</div>
+              <p>${hl(s.model.body)}</p>
+            </div>` : ''}
+          ${(s.before || s.after) ? `<div class="su-cross">The morning, and the pick-up</div>
+            <div class="su-pair">
+              ${s.before ? `<div class="su-pane is-do"><div class="su-pane-h">Before they go</div><ul>${s.before.map(x => `<li>${hl(x)}</li>`).join('')}</ul></div>` : ''}
+              ${s.after ? `<div class="su-pane is-do"><div class="su-pane-h">When you collect them</div><ul>${s.after.map(x => `<li>${hl(x)}</li>`).join('')}</ul></div>` : ''}
+            </div>` : ''}
+          ${s.involvement ? `<div class="su-cross">How involved you actually are</div>
+            <div class="su-cards">${s.involvement.map(cardRow).join('')}</div>` : ''}
+          ${s.visit ? `<div class="su-cross">What to ask when you go and look</div>
+            <div class="su-qa">${s.visit.map(q => `
+              <div class="su-q"><span class="su-q-q">${q.q}</span><span class="su-q-w"><b>Why ask:</b> ${hl(q.why)}</span></div>`).join('')}</div>` : ''}
+          ${s.flags ? `<div class="su-cross">What should make you pause</div>
+            <ul class="su-nope">${s.flags.map(x => `<li>${hl(x)}</li>`).join('')}</ul>` : ''}
+          ${s.note ? `<p class="note-box">${hl(s.note)}</p>` : ''}
+        `;
       }
 
       const titles = {
@@ -1044,6 +1203,9 @@
         'day-in-life': 'A day in the life',
         'activities': 'Things to do this week',
         'bring-it-home': 'Bring it home',
+        'set-up-the-space': 'Set up the space',
+        'running-it': 'Running the day',
+        'your-part': 'Your part in it',
         'reading-list': 'Reading list',
         'competency': 'What to expect at four'
       };
@@ -1090,6 +1252,22 @@
           if (!t) return;
           t.open = true;
           t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      });
+      // Shopping list ticks — kept in localStorage so the list survives a trip
+      // to the charity shop and a closed tab. Key is per tradition.
+      const KIT_KEY = 'nb-kit';
+      let kitGot = {};
+      try { kitGot = JSON.parse(localStorage.getItem(KIT_KEY) || '{}'); } catch {}
+      document.querySelectorAll('.su-item').forEach((el) => {
+        const id = el.dataset.kit;
+        if (kitGot[id]) el.classList.add('is-got');
+        el.addEventListener('click', (e) => {
+          if (e.target.closest('a')) return;
+          e.preventDefault();
+          const got = el.classList.toggle('is-got');
+          if (got) kitGot[id] = 1; else delete kitGot[id];
+          try { localStorage.setItem(KIT_KEY, JSON.stringify(kitGot)); } catch {}
         });
       });
     }
