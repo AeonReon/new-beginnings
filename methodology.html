@@ -1213,23 +1213,15 @@
         `;
       } else if (key === 'set-up-the-space') {
         // The room itself: what it costs, what has to be in it, what to buy,
-        // what to think about before you start, and what to leave out. Written
-        // so it works at three sizes — a corner, a room, or a whole setting.
-        const cardRow = (x, i) => {
-          const a = PRINCIPLE_ACCENTS[i % PRINCIPLE_ACCENTS.length];
-          return `<div class="su-card" style="--sc:${a.c};--scd:${a.cd}">
-            <div class="su-card-head"><span class="su-card-t">${x.name || x.t}</span>${x.span ? `<span class="su-card-span">${x.span}</span>` : ''}</div>
-            <div class="su-card-d">${hl(x.body || x.d)}</div>
-          </div>`;
-        };
-        const numbered = (list) => `<div class="su-rows">${list.map(x => `
-          <div class="su-row"><span class="su-no" aria-hidden="true"></span>
-            <span class="su-row-text"><span class="su-row-t">${x.t}</span><span class="su-row-d">${hl(x.d)}</span></span>
-          </div>`).join('')}</div>`;
+        // what to think about before you start, and what to leave out. Every
+        // crosshead is its own tinted band; the two longest lists (the room,
+        // and the things to think about) open on tap so the page stays short.
+        const B = suBands();
         const total = (s.shopping || []).reduce((t, g) => t + g.items.length, 0);
-        const shop = (s.shopping || []).map((g, gi) => `
-          <div class="su-cross">${g.heading}</div>
-          <div class="su-shop">${g.items.map((it, ii) => `
+        const SHOP_EMO = ['🪵', '🫖', '🔤', '🏫', '🧺', '🧩'];
+        const shopBlocks = (s.shopping || []).map((g, gi) => {
+          const a = PRINCIPLE_ACCENTS[(gi + 2) % PRINCIPLE_ACCENTS.length];
+          const items = g.items.map((it, ii) => `
             <label class="su-item" data-kit="${m.id}:${gi}:${ii}">
               <span class="su-tick" aria-hidden="true">✓</span>
               <span class="su-item-text">
@@ -1237,82 +1229,103 @@
                 <span class="su-item-tag">${hl(it.tag)}</span>
                 ${it.where ? `<a class="su-item-where" href="${it.where}" target="_blank" rel="noopener">↗ Where to find it</a>` : ''}
               </span>
-            </label>`).join('')}</div>`).join('');
+            </label>`).join('');
+          return `<details class="act-topic su-shopgroup"${gi === 0 ? ' open' : ''} style="--gc:${a.c};--gcd:${a.cd}">
+              <summary class="act-bar">
+                <span class="act-bar-photo act-bar-photo--emo"><span class="act-bar-emo" aria-hidden="true">${SHOP_EMO[gi % SHOP_EMO.length]}</span></span>
+                <span class="act-bar-text">
+                  <span class="act-bar-kicker">List ${String(gi + 1).padStart(2, '0')} · ${g.items.length} things</span>
+                  <span class="act-bar-name">${g.heading}</span>
+                </span>
+                <span class="su-kit-count">0 of ${g.items.length} got</span>
+                <span class="act-bar-plus" aria-hidden="true"></span>
+              </summary>
+              <div class="act-topic-body"><div class="su-shop">${items}</div></div>
+            </details>`;
+        }).join('');
+        const blocks = [
+          B.add('📐', 'Three sizes of the same idea', suCards(s.scales, 0),
+            { short: 'Three sizes', count: s.scales ? s.scales.length + ' ways' : '' }),
+          B.add('👀', 'What you would expect to see', suTopics(s.elements, {
+            offset: 1, open: 2, emos: ['🪟', '🪜', '🧺', '🪴', '🧽', '🖼️', '🧩', '🪑', '📚', '🌿'],
+            kicker: (x, i) => 'In the room · ' + String(i + 1).padStart(2, '0'),
+            title: (x) => x.t, body: (x) => `<p class="su-d">${hl(x.d)}</p>`
+          }), { short: 'In the room', count: s.elements ? s.elements.length + ' things' : '', lead: 'Tap any one to read why it is there.' }),
+          B.add('🛒', 'The shopping list', shopBlocks,
+            { short: 'Shopping', count: total ? total + ' things' : '',
+              lead: `Tap an item to tick it off — the list remembers. Nearly half of it is charity-shop or free, so start at the top of each list and stop when the room works.` }),
+          B.add('💭', 'Things to think about first', suTopics(s.think, {
+            offset: 3, open: 2, emos: ['💡', '🔊', '🚪', '🌡️', '🧭', '🧯', '⏱️', '🪟'],
+            title: (x) => x.t, body: (x) => `<p class="su-d">${hl(x.d)}</p>`
+          }), { short: 'Think first', count: s.think ? s.think.length + ' to weigh' : '' }),
+          B.add('🚫', 'What to leave out', s.avoid ? `<ul class="su-nope">${s.avoid.map(x => `<li>${hl(x)}</li>`).join('')}</ul>` : '',
+            { short: 'Leave out', count: s.avoid ? s.avoid.length + ' to skip' : '' })
+        ].join('');
         body = `
           <div class="ed-lead ed-lead-intro">${multiPara(s.intro, 2)}</div>
-          ${s.scales ? `<div class="su-cross">Three sizes of the same idea</div>
-            <div class="su-cards">${s.scales.map(cardRow).join('')}</div>` : ''}
-          ${s.elements ? `<div class="su-cross">What you would expect to see</div>${numbered(s.elements)}` : ''}
-          ${s.shopping ? `<div class="su-cross">The shopping list</div>
-            <p class="su-shop-count">${total} things, tap to tick them off. Nearly half of it is charity-shop or free — start at the top of each list and stop when the room works.</p>${shop}` : ''}
-          ${s.think ? `<div class="su-cross">Things to think about first</div>
-            <div class="su-cards">${s.think.map(cardRow).join('')}</div>` : ''}
-          ${s.avoid ? `<div class="su-cross">What to leave out</div>
-            <ul class="su-nope">${s.avoid.map(x => `<li>${hl(x)}</li>`).join('')}</ul>` : ''}
+          ${B.nav()}
+          ${blocks}
           ${s.note ? `<p class="note-box">${hl(s.note)}</p>` : ''}
         `;
       } else if (key === 'running-it') {
         // The facilitator's guide — for whoever is leading the day, at home or
         // in a setting. Tone first, because it decides everything after it.
-        const cardRow = (x, i) => {
-          const a = PRINCIPLE_ACCENTS[i % PRINCIPLE_ACCENTS.length];
-          return `<div class="su-card" style="--sc:${a.c};--scd:${a.cd}">
-            <div class="su-card-head"><span class="su-card-t">${x.t}</span></div>
-            <div class="su-card-d">${hl(x.d)}</div>
-          </div>`;
-        };
-        body = `
-          <div class="ed-lead ed-lead-intro">${multiPara(s.intro, 2)}</div>
-          ${s.tone ? `<div class="su-cross">The tone you set</div>
-            <div class="su-cards">${s.tone.map(cardRow).join('')}</div>` : ''}
-          ${s.rhythm ? `<div class="su-cross">What you do, every day</div>
-            <div class="su-rows">${s.rhythm.map(x => `
-              <div class="su-row"><span class="su-no" aria-hidden="true"></span>
-                <span class="su-row-text"><span class="su-row-t">${x.t}</span><span class="su-row-d">${hl(x.d)}</span></span>
-              </div>`).join('')}</div>` : ''}
-          ${(s.does || s.doesnt) ? `<div class="su-cross">The adult's job</div>
-            <div class="su-pair">
+        const B = suBands();
+        const blocks = [
+          B.add('🕊️', 'The tone you set', suCards(s.tone, 0),
+            { short: 'The tone', count: s.tone ? s.tone.length + ' habits' : '' }),
+          B.add('🕘', 'What you do, every day', suTopics(s.rhythm, {
+            offset: 1, open: 2, emos: ['🌅', '🧹', '🤫', '👀', '🍎', '🧺', '📖', '🎵', '🌤️', '🌙', '✨'],
+            kicker: (x, i) => 'Step ' + String(i + 1).padStart(2, '0'),
+            title: (x) => x.t, body: (x) => `<p class="su-d">${hl(x.d)}</p>`
+          }), { short: 'Every day', count: s.rhythm ? s.rhythm.length + ' steps' : '', lead: 'The whole day in order. Tap a step to see what it actually involves.' }),
+          B.add('🎯', 'The adult\'s job', (s.does || s.doesnt) ? `<div class="su-pair">
               ${s.does ? `<div class="su-pane is-do"><div class="su-pane-h">What the adult does</div><ul>${s.does.map(x => `<li>${hl(x)}</li>`).join('')}</ul></div>` : ''}
               ${s.doesnt ? `<div class="su-pane is-dont"><div class="su-pane-h">What the adult does not do</div><ul>${s.doesnt.map(x => `<li>${hl(x)}</li>`).join('')}</ul></div>` : ''}
-            </div>` : ''}
-          ${s.parents ? `<div class="su-cross">Where the parents fit</div>${multiPara(s.parents, 2)}` : ''}
-          ${s.mistakes ? `<div class="su-cross">Where it usually goes wrong</div>
-            <div class="su-cards">${s.mistakes.map(cardRow).join('')}</div>` : ''}
+            </div>` : '', { short: 'The job' }),
+          B.add('👪', 'Where the parents fit', s.parents ? `<div class="su-prose">${multiPara(s.parents, 2)}</div>` : '',
+            { short: 'Parents' }),
+          B.add('⚠️', 'Where it usually goes wrong', suTopics(s.mistakes, {
+            offset: 4, open: 2, emos: ['⏱️', '📋', '🧸', '🗣️', '🎯', '🧩'],
+            title: (x) => x.t, body: (x) => `<p class="su-d">${hl(x.d)}</p>`
+          }), { short: 'Goes wrong', count: s.mistakes ? s.mistakes.length + ' traps' : '' })
+        ].join('');
+        body = `
+          <div class="ed-lead ed-lead-intro">${multiPara(s.intro, 2)}</div>
+          ${B.nav()}
+          ${blocks}
           ${s.training ? `<aside class="bih-note"><div class="bih-note-label">Training, and what it takes to open</div><p>${hl(s.training)}</p></aside>` : ''}
         `;
       } else if (key === 'your-part') {
         // The parent's side: stay or drop off, what to do before and after, and
         // what to ask when you go and look at a place.
-        const cardRow = (x, i) => {
-          const a = PRINCIPLE_ACCENTS[i % PRINCIPLE_ACCENTS.length];
-          return `<div class="su-card" style="--sc:${a.c};--scd:${a.cd}">
-            <div class="su-card-head"><span class="su-card-t">${x.t}</span></div>
-            <div class="su-card-d">${hl(x.d)}</div>
-          </div>`;
-        };
-        body = `
-          <div class="ed-lead ed-lead-intro">${multiPara(s.intro, 2)}</div>
-          ${s.model ? `<div class="su-model">
-              <div class="su-model-label">How this one works</div>
-              <div class="su-model-t">${s.model.label}</div>
-              <p>${hl(s.model.body)}</p>
-            </div>` : ''}
-          ${(s.before || s.after) ? `<div class="su-cross">The morning, and the pick-up</div>
-            <div class="su-pair">
+        const B = suBands();
+        const blocks = [
+          B.add('🤝', 'How this one works', s.model ? `<div class="su-cards"><div class="su-card" style="--sc:${PRINCIPLE_ACCENTS[0].c};--scd:${PRINCIPLE_ACCENTS[0].cd}">
+              <div class="su-card-head"><span class="su-card-t">${s.model.label}</span></div>
+              <div class="su-card-d">${hl(s.model.body)}</div>
+            </div></div>` : '', { short: 'How it works' }),
+          B.add('🌅', 'The morning, and the pick-up', (s.before || s.after) ? `<div class="su-pair">
               ${s.before ? `<div class="su-pane is-do"><div class="su-pane-h">Before they go</div><ul>${s.before.map(x => `<li>${hl(x)}</li>`).join('')}</ul></div>` : ''}
               ${s.after ? `<div class="su-pane is-do"><div class="su-pane-h">When you collect them</div><ul>${s.after.map(x => `<li>${hl(x)}</li>`).join('')}</ul></div>` : ''}
-            </div>` : ''}
-          ${s.involvement ? `<div class="su-cross">How involved you actually are</div>
-            <div class="su-cards">${s.involvement.map(cardRow).join('')}</div>` : ''}
-          ${s.visit ? `<div class="su-cross">What to ask when you go and look</div>
-            <div class="su-qa">${s.visit.map(q => `
-              <div class="su-q"><span class="su-q-q">${q.q}</span><span class="su-q-w"><b>Why ask:</b> ${hl(q.why)}</span></div>`).join('')}</div>` : ''}
-          ${s.flags ? `<div class="su-cross">What should make you pause</div>
-            <ul class="su-nope">${s.flags.map(x => `<li>${hl(x)}</li>`).join('')}</ul>` : ''}
+            </div>` : '', { short: 'Morning' }),
+          B.add('🙋', 'How involved you actually are', suCards(s.involvement, 2),
+            { short: 'How involved', count: s.involvement ? s.involvement.length + ' ways in' : '' }),
+          B.add('❓', 'What to ask when you go and look', suTopics(s.visit, {
+            offset: 3, open: 2, emos: ['❓', '🔍', '🗝️', '🧭', '👂', '🕰️', '📋', '🤝'],
+            kicker: (x, i) => 'Question ' + String(i + 1).padStart(2, '0'),
+            title: (x) => x.q, body: (x) => `<p class="su-d"><b>Why ask —</b> ${hl(x.why)}</p>`
+          }), { short: 'Ask on a visit', count: s.visit ? s.visit.length + ' questions' : '', lead: 'Take these with you. Tap one to see what the answer tells you.' }),
+          B.add('🚩', 'What should make you pause', s.flags ? `<ul class="su-nope">${s.flags.map(x => `<li>${hl(x)}</li>`).join('')}</ul>` : '',
+            { short: 'Pause', count: s.flags ? s.flags.length + ' flags' : '' })
+        ].join('');
+        body = `
+          <div class="ed-lead ed-lead-intro">${multiPara(s.intro, 2)}</div>
+          ${B.nav()}
+          ${blocks}
           ${s.note ? `<p class="note-box">${hl(s.note)}</p>` : ''}
         `;
       }
-
       const titles = {
         'core-idea': 'Core idea',
         'day-in-life': 'A day in the life',
@@ -1374,6 +1387,18 @@
       const KIT_KEY = 'nb-kit';
       let kitGot = {};
       try { kitGot = JSON.parse(localStorage.getItem(KIT_KEY) || '{}'); } catch {}
+      // "3 of 7 got" on each group's own bar — so a closed drop-down still
+      // tells you where you are without opening it.
+      const syncKitCounts = () => {
+        document.querySelectorAll('.su-shopgroup').forEach((grp) => {
+          const items = grp.querySelectorAll('.su-item');
+          let got = 0;
+          items.forEach((it) => { if (it.classList.contains('is-got')) got++; });
+          const pill = grp.querySelector('.su-kit-count');
+          if (pill) pill.textContent = got + ' of ' + items.length + ' got';
+          grp.classList.toggle('is-done', items.length > 0 && got === items.length);
+        });
+      };
       document.querySelectorAll('.su-item').forEach((el) => {
         const id = el.dataset.kit;
         if (kitGot[id]) el.classList.add('is-got');
@@ -1383,8 +1408,10 @@
           const got = el.classList.toggle('is-got');
           if (got) kitGot[id] = 1; else delete kitGot[id];
           try { localStorage.setItem(KIT_KEY, JSON.stringify(kitGot)); } catch {}
+          syncKitCounts();
         });
       });
+      syncKitCounts();
     }
 
     if ('serviceWorker' in navigator) {
