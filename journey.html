@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#2D6FA8">
+  <meta name="robots" content="noimageindex, max-image-preview:none">
+  <title>Conscious Parenting NI — The Journey</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="icon-192.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    /* Compact section header — the emoji badge stands in for a photo, so a section
+       page opens straight into content instead of half a screen of hero. */
+    .sec-top { display: flex; align-items: center; gap: 0.55em; margin: 0.2em 0 1em; }
+    .sec-back { font-family: var(--sans); font-weight: 700; font-size: 0.84em; color: var(--gcd); background: var(--gcs); border: 1px solid color-mix(in srgb, var(--gc) 30%, transparent); padding: 0.5em 0.95em; border-radius: var(--radius-pill); text-decoration: none; }
+    .sec-count { font-family: var(--sans); font-weight: 700; font-size: 0.76em; color: var(--ink-mute); margin-left: auto; }
+
+    .sec-hero { position: relative; overflow: hidden; border-radius: var(--radius-lg); background: linear-gradient(135deg, var(--gc), var(--gcd)); padding: 1.35em 1.3em 1.4em; margin: 0 0 1.3em; box-shadow: 0 2px 6px rgba(20,35,60,0.10), 0 14px 34px rgba(20,35,60,0.14); }
+    .sec-hero::after { content: ""; position: absolute; right: -18px; bottom: -34px; width: 150px; height: 150px; border-radius: 50%; background: rgba(255,255,255,0.13); pointer-events: none; }
+    .sec-hero-emo { position: relative; z-index: 2; display: grid; place-items: center; width: 2.6em; height: 2.6em; border-radius: 16px; background: rgba(255,255,255,0.22); font-size: 1.35rem; line-height: 1; margin-bottom: 0.6em; box-shadow: inset 0 1.5px 0 rgba(255,255,255,0.4); }
+    .sec-hero h1 { position: relative; z-index: 2; color: #fff; margin: 0 0 0.3em; font-size: clamp(1.6rem, 5.2vw, 2.1rem); letter-spacing: -0.03em; line-height: 1.1; text-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+    .sec-hero p { position: relative; z-index: 2; color: rgba(255,255,255,0.96); margin: 0; font-weight: 600; font-size: 1em; line-height: 1.45; }
+
+    /* WHY callout */
+    .why-box { margin: 0 0 1.3em; padding: 0.85em 1em; background: #fff; border: 1px solid var(--rule); border-left: 4px solid var(--gc); border-radius: 12px; }
+    .why-pill { display: inline-block; font-size: 0.6rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #fff; background: linear-gradient(135deg, var(--gc), var(--gcd)); padding: 0.25em 0.7em; border-radius: var(--radius-pill); margin-bottom: 0.5em; }
+    .why-box p { margin: 0; font-size: 0.94em; line-height: 1.6; color: var(--ink-soft); }
+    mark.hl { background: linear-gradient(180deg, rgba(255,206,61,0) 58%, rgba(255,201,45,0.85) 58%); color: inherit; font-weight: 700; padding: 0 0.06em; border-radius: 2px; }
+
+    .jr-p { margin: 0 0 1.15em; color: var(--ink-soft); line-height: 1.62; }
+
+    /* The running order — numbered timeline with a spine */
+    .jr-steps { list-style: none; margin: 0 0 1.1em; padding: 0; counter-reset: jrstep; }
+    .jr-step { position: relative; padding: 0 0 1.15em 3em; }
+    .jr-step::before { counter-increment: jrstep; content: counter(jrstep); position: absolute; left: 0; top: 0; width: 2em; height: 2em; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(150deg, var(--gc), var(--gcd)); color: #fff; font-family: var(--sans); font-weight: 800; font-size: 0.86rem; box-shadow: 0 3px 8px color-mix(in srgb, var(--gc) 32%, transparent); z-index: 2; }
+    .jr-step::after { content: ""; position: absolute; left: calc(1em - 1.5px); top: 2.1em; bottom: -0.15em; width: 3px; border-radius: 2px; background: color-mix(in srgb, var(--gc) 26%, transparent); }
+    .jr-step:last-child::after { display: none; }
+    .jr-step-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.5em; margin: 0.15em 0 0.3em; }
+    .jr-step-name { font-family: var(--display, 'Poppins'); font-weight: 800; font-size: 1.06rem; letter-spacing: -0.015em; color: var(--ink); line-height: 1.2; }
+    .jr-buys { font-family: var(--sans); font-size: 0.63rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.26em 0.65em; border-radius: var(--radius-pill); background: var(--gcs); color: var(--gcd); border: 1px solid color-mix(in srgb, var(--gc) 34%, transparent); }
+    .jr-step-text { margin: 0; color: var(--ink-soft); line-height: 1.6; font-size: 0.96em; }
+
+    /* Collapsible checklist — headline at a glance, open the one you want */
+    .jr-fold { position: relative; overflow: hidden; background: var(--paper-card, #fff); border-radius: 16px; box-shadow: var(--shadow-sm); margin: 0 0 0.7em; }
+    .jr-fold::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.6px; background: linear-gradient(135deg, var(--gc), var(--gcd)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; z-index: 3; opacity: 0.45; }
+    .jr-fold-sum { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 0.75em; padding: 0.95em 1.05em; }
+    .jr-fold-sum::-webkit-details-marker { display: none; }
+    .jr-fold-title { flex: 1; min-width: 0; font-family: var(--display, 'Poppins'); font-weight: 800; font-size: 1.02rem; line-height: 1.2; letter-spacing: -0.015em; color: var(--ink); }
+    .jr-fold-n { font-family: var(--sans); font-weight: 800; font-size: 0.64rem; padding: 0.26em 0.6em; border-radius: var(--radius-pill); background: var(--gcs); color: var(--gcd); border: 1px solid color-mix(in srgb, var(--gc) 30%, transparent); }
+    .jr-fold-plus { flex: 0 0 auto; width: 1.3em; height: 1.3em; position: relative; }
+    .jr-fold-plus::before, .jr-fold-plus::after { content: ""; position: absolute; top: 50%; left: 50%; background: var(--gc); border-radius: 2px; transform: translate(-50%, -50%); transition: opacity 0.2s ease, transform 0.2s ease; }
+    .jr-fold-plus::before { width: 0.85em; height: 2.5px; }
+    .jr-fold-plus::after { width: 2.5px; height: 0.85em; }
+    .jr-fold[open] .jr-fold-plus::after { opacity: 0; transform: translate(-50%, -50%) rotate(90deg); }
+    .jr-fold[open] .jr-fold-sum { border-bottom: 1px solid var(--rule); }
+    .jr-fold-body { padding: 0.95em 1.1em 0.4em; }
+
+    .jr-list { list-style: none; margin: 0; padding: 0; }
+    .jr-item { position: relative; padding: 0 0 0.85em 1.6em; }
+    .jr-item::before { content: ""; position: absolute; left: 0.15em; top: 0.52em; width: 0.55em; height: 0.55em; border-radius: 50%; background: linear-gradient(150deg, var(--gc), var(--gcd)); }
+    .jr-item b { font-family: var(--sans); font-weight: 800; color: var(--ink); }
+    .jr-item span { color: var(--ink-soft); line-height: 1.6; }
+
+    /* Group heading above a run of drop-down bars */
+    .jr-group-title { font-family: var(--sans); font-weight: 800; font-size: 0.68rem; letter-spacing: 0.13em; text-transform: uppercase; color: var(--gcd); margin: 0.4em 0 0.7em; display: flex; align-items: center; gap: 0.6em; }
+    .jr-group-title::after { content: ""; flex: 1; height: 1px; background: color-mix(in srgb, var(--gc) 28%, transparent); }
+
+    /* Drop-down bars */
+    .act-bar-wrap { position: relative; overflow: hidden; background: var(--paper-card, #fff); border-radius: 18px; box-shadow: var(--shadow-sm); margin: 0 0 0.7em; }
+    .act-bar-wrap::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.6px; background: linear-gradient(135deg, var(--gc), var(--gcd)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; z-index: 3; opacity: 0.5; }
+    .act-bar { list-style: none; cursor: pointer; display: flex; align-items: stretch; gap: 0; }
+    .act-bar::-webkit-details-marker { display: none; }
+    .act-bar-photo { flex: 0 0 auto; width: 68px; align-self: stretch; position: relative; overflow: hidden; background: linear-gradient(150deg, var(--gc), var(--gcd)); display: grid; place-items: center; }
+    .act-bar-emo { font-size: 1.7rem; line-height: 1; filter: drop-shadow(0 2px 3px rgba(0,0,0,0.22)); }
+    .act-bar-text { flex: 1; min-width: 0; padding: 0.8em 0.5em 0.8em 1em; display: flex; flex-direction: column; justify-content: center; gap: 0.4em; }
+    .act-bar-name { font-family: var(--display, 'Poppins'); font-weight: 800; font-size: clamp(1rem, 4.1vw, 1.14rem); line-height: 1.16; letter-spacing: -0.015em; color: var(--ink); }
+    .act-bar-meta { display: flex; flex-wrap: wrap; gap: 0.32em; }
+    .chip { font-family: var(--sans); font-size: 0.64rem; font-weight: 700; padding: 0.24em 0.6em; border-radius: var(--radius-pill); background: var(--paper-warm); color: var(--ink-soft); border: 1px solid var(--rule-strong); }
+    .act-bar-plus { flex: 0 0 auto; align-self: center; width: 1.4em; height: 1.4em; position: relative; margin-right: 0.95em; }
+    .act-bar-plus::before, .act-bar-plus::after { content: ""; position: absolute; top: 50%; left: 50%; background: var(--gc); border-radius: 2px; transform: translate(-50%, -50%); transition: opacity 0.2s ease, transform 0.2s ease; }
+    .act-bar-plus::before { width: 0.9em; height: 2.5px; }
+    .act-bar-plus::after { width: 2.5px; height: 0.9em; }
+    .act-bar-wrap[open] .act-bar-plus::after { opacity: 0; transform: translate(-50%, -50%) rotate(90deg); }
+    .act-bar-wrap[open] .act-bar { border-bottom: 1px solid var(--rule); }
+    .act-drawer { padding: 0.95em 1.1em 1.15em; }
+    .act-drawer p.how { margin: 0; color: var(--ink-soft); line-height: 1.58; }
+
+    .jr-links { display: flex; flex-wrap: wrap; gap: 0.5em; margin: 0.2em 0 1.3em; }
+    .jr-links a { font-family: var(--sans); font-weight: 700; font-size: 0.84em; color: var(--gcd); background: var(--gcs); border: 1px solid color-mix(in srgb, var(--gc) 30%, transparent); padding: 0.5em 0.9em; border-radius: var(--radius-pill); text-decoration: none; }
+    .jr-links a[target]::after { content: " ↗"; opacity: 0.6; }
+
+    .note-box { margin: 0.5em 0 1.2em; padding: 0.8em 1em; background: var(--paper-warm); border: 1px solid var(--rule-strong); border-left: 4px solid var(--ink-mute); border-radius: 12px; }
+    .note-box p { margin: 0; font-size: 0.9em; line-height: 1.55; color: var(--ink-soft); }
+    .note-pill { display: inline-block; font-size: 0.6rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); border: 1px solid var(--rule-strong); padding: 0.22em 0.6em; border-radius: var(--radius-pill); margin-bottom: 0.45em; }
+    .note-box.note-safety { background: #FFF3E6; border-color: #F0A85E; border-left-color: #D9741F; }
+    .note-box.note-safety .note-pill { color: #B45309; border-color: #E8894A; }
+    .note-box.note-safety p { color: #7A4A12; }
+
+    /* Prev / next along the journey */
+    .jr-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7em; margin: 2em 0 0.6em; }
+    .jr-nav a { position: relative; overflow: hidden; display: flex; flex-direction: column; gap: 0.2em; padding: 0.9em 1em; border-radius: 15px; background: var(--paper-card, #fff); box-shadow: var(--shadow-sm); text-decoration: none; }
+    .jr-nav a::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.6px; background: linear-gradient(135deg, var(--gc), var(--gcd)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; opacity: 0.4; }
+    .jr-nav .k { font-family: var(--sans); font-size: 0.64rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-mute); }
+    .jr-nav .t { font-family: var(--display, 'Poppins'); font-weight: 800; font-size: 0.98rem; line-height: 1.16; color: var(--ink); }
+    .jr-nav a.next { text-align: right; align-items: flex-end; }
+    .jr-nav .spacer { }
+  </style>
+</head>
+<body class="launcher">
+  <main class="launcher-main article" id="main">
+    <p class="jr-p" id="fallback" hidden>Section not found. <a href="journeys.html">Back to The Journey</a>.</p>
+  </main>
+
+  <script src="assets/journey-data.js"></script>
+  <script src="assets/app.js"></script>
+  <script>
+    (function () {
+      const chapters = window.JOURNEY || [];
+      const main = document.getElementById('main');
+
+      // Same accent cycle as the hub, keyed on position, so a section is the
+      // same colour on its tile and on its own page.
+      const PAL = [
+        { c: '#4A9ED4', cd: '#2D6FA8', cs: '#E4F1FA' },
+        { c: '#FF9F3D', cd: '#C97D2A', cs: '#FFEFD6' },
+        { c: '#3FBF97', cd: '#2F9E77', cs: '#D8F3E9' },
+        { c: '#8B6FD1', cd: '#5B3FA8', cs: '#EDE8FA' },
+        { c: '#FF5E8E', cd: '#C93E6A', cs: '#FFE2EC' }
+      ];
+
+      const esc = (s) => String(s == null ? '' : s)
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+
+      const whyHtml = (ch) => {
+        const w = esc(ch.why || '');
+        const key = esc(ch.whyKey || '');
+        const i = key ? w.indexOf(key) : -1;
+        return i < 0 ? w : w.slice(0, i) + '<mark class="hl">' + key + '</mark>' + w.slice(i + key.length);
+      };
+
+      const noteHtml = (text, kind) => {
+        if (!text) return '';
+        const safety = kind === 'safety';
+        return `<div class="note-box${safety ? ' note-safety' : ''}"><span class="note-pill">${safety ? 'Safety first' : 'Worth knowing'}</span><p>${esc(text)}</p></div>`;
+      };
+
+      // A titled checklist folds away so the page reads as headlines first. The
+      // first fold in a section opens by default so it never looks empty.
+      let foldIndex = 0;
+      const blockHtml = (b, ch) => {
+        switch (b.k) {
+          case 'p':
+            return `<p class="jr-p">${esc(b.text)}</p>`;
+
+          case 'steps':
+            return `<ol class="jr-steps">${(b.items || []).map(s => `
+              <li class="jr-step">
+                <div class="jr-step-head">
+                  <span class="jr-step-name">${esc(s.name)}</span>
+                  ${s.buys ? `<span class="jr-buys">${esc(s.buys)}</span>` : ''}
+                </div>
+                <p class="jr-step-text">${esc(s.text)}</p>
+              </li>`).join('')}</ol>`;
+
+          case 'list': {
+            const items = `<ul class="jr-list">${(b.items || []).map(i =>
+              `<li class="jr-item"><b>${esc(i.name)}</b> — <span>${esc(i.text)}</span></li>`).join('')}</ul>`;
+            if (!b.title) return `<div style="margin-bottom:1.1em">${items}</div>`;
+            const open = foldIndex++ === 0 ? ' open' : '';
+            return `<details class="jr-fold"${open}>
+              <summary class="jr-fold-sum">
+                <span class="jr-fold-title">${esc(b.title)}</span>
+                <span class="jr-fold-n">${(b.items || []).length}</span>
+                <span class="jr-fold-plus" aria-hidden="true"></span>
+              </summary>
+              <div class="jr-fold-body">${items}</div>
+            </details>`;
+          }
+
+          case 'bars':
+            return (b.title ? `<div class="jr-group-title">${esc(b.title)}</div>` : '') +
+              (b.items || []).map(g => `
+              <details class="act-bar-wrap">
+                <summary class="act-bar">
+                  <span class="act-bar-photo"><span class="act-bar-emo" aria-hidden="true">${esc(ch.emoji)}</span></span>
+                  <span class="act-bar-text">
+                    <span class="act-bar-name">${esc(g.name)}</span>
+                    ${g.tag ? `<span class="act-bar-meta"><span class="chip">${esc(g.tag)}</span></span>` : ''}
+                  </span>
+                  <span class="act-bar-plus" aria-hidden="true"></span>
+                </summary>
+                <div class="act-drawer"><p class="how">${esc(g.how)}</p></div>
+              </details>`).join('');
+
+          case 'links':
+            return `<div class="jr-links">${(b.items || []).map(l =>
+              `<a href="${esc(l.href)}"${l.ext ? ' target="_blank" rel="noopener"' : ''}>${esc(l.label)}</a>`).join('')}</div>`;
+
+          case 'note':
+            return noteHtml(b.text, b.kind);
+
+          default:
+            return '';
+        }
+      };
+
+      function render() {
+        const slug = decodeURIComponent(location.hash.slice(1));
+        const i = chapters.findIndex(c => c.id === slug);
+        if (i < 0) { location.replace('journeys.html'); return; }
+        const ch = chapters[i];
+        const p = PAL[i % PAL.length];
+        foldIndex = 0;
+
+        const prev = chapters[i - 1];
+        const next = chapters[i + 1];
+        const navHtml = (prev || next) ? `<div class="jr-nav">
+          ${prev ? `<a href="#${esc(prev.id)}"><span class="k">← Before this</span><span class="t">${esc(prev.title)}</span></a>` : '<span class="spacer"></span>'}
+          ${next ? `<a class="next" href="#${esc(next.id)}"><span class="k">Next →</span><span class="t">${esc(next.title)}</span></a>` : '<span class="spacer"></span>'}
+        </div>` : '';
+
+        main.style.setProperty('--gc', p.c);
+        main.style.setProperty('--gcd', p.cd);
+        main.style.setProperty('--gcs', p.cs);
+        document.title = 'The Journey — ' + ch.title;
+        const themeTag = document.querySelector('meta[name="theme-color"]');
+        if (themeTag) themeTag.setAttribute('content', p.cd);
+
+        main.innerHTML = `
+          <div class="sec-top">
+            <a class="sec-back" href="journeys.html">← The Journey</a>
+            <span class="sec-count">${i + 1} of ${chapters.length}</span>
+          </div>
+          <header class="sec-hero">
+            <div class="sec-hero-emo" aria-hidden="true">${esc(ch.emoji)}</div>
+            <h1>${esc(ch.title)}</h1>
+            <p>${esc(ch.when)}</p>
+          </header>
+          <div class="why-box"><span class="why-pill">Why this works</span><p>${whyHtml(ch)}</p></div>
+          ${(ch.blocks || []).map(b => blockHtml(b, ch)).join('')}
+          ${noteHtml(ch.note, ch.noteKind)}
+          ${navHtml}
+          <p class="mo-also" style="margin-top:1.2em"><a href="journeys.html">All sections</a></p>`;
+        window.scrollTo(0, 0);
+      }
+
+      window.addEventListener('hashchange', render);
+      render();
+    })();
+  </script>
+</body>
+</html>

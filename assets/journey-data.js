@@ -46,6 +46,7 @@ window.JOURNEY = [
 
   {
     id: 'running-order',
+    blurb: "The spine of the whole thing. Read this one first — it takes two minutes.",
     emoji: '🕐',
     title: 'The Running Order',
     when: "The single biggest change you can make: not what you bring, but the order you spend it in.",
@@ -81,6 +82,7 @@ window.JOURNEY = [
 
   {
     id: 'before-you-go',
+    blurb: "The days before, the night before, the morning. Most of it is won here.",
     emoji: '🎒',
     title: 'Before You Go',
     when: "The drive is mostly won or lost in the two days before you turn the key.",
@@ -118,6 +120,7 @@ window.JOURNEY = [
 
   {
     id: 'the-bag',
+    blurb: "The full list, grouped by what each thing is actually for.",
     emoji: '🧳',
     title: 'What To Pack',
     when: "The list, grouped by what each thing is actually for.",
@@ -165,6 +168,7 @@ window.JOURNEY = [
 
   {
     id: 'comfort',
+    blurb: "Five minutes with the car that saves an hour of complaining you can't diagnose.",
     emoji: '🪑',
     title: 'Setting Up The Seat',
     when: "Five minutes with the car before you go, that saves an hour of complaining you can't diagnose.",
@@ -197,6 +201,7 @@ window.JOURNEY = [
 
   {
     id: 'car-sickness',
+    blurb: "Why it happens, how to cut it right down without medicine, and what to do at the first sign.",
     emoji: '🌀',
     title: 'Car Sickness',
     when: "The thing that decides what's even possible in your car — and it can be reduced a long way without medicine.",
@@ -240,50 +245,46 @@ window.JOURNEY = [
 
   {
     id: 'things-to-do',
+    blurb: "Games that work in a moving car — out loud, out of the window, in their hands.",
     emoji: '🎲',
-    title: 'Things To Do While You Drive',
-    when: "The pack itself — and roughly what each one buys you.",
+    title: 'Things To Do',
+    when: "A few that work well in a moving car — the rest are one tap away.",
     why: "The best car activities have one thing in common: they need no table, no small pieces and no looking " +
          "down. A car is a moving, tilting, poorly-lit box with nowhere to put anything, so the games that work " +
          "in the kitchen mostly fail in it. What works is out loud, out of the window, and in their hands rather " +
          "than on their knees.",
     whyKey: "out loud, out of the window",
     blocks: [
-      { k: 'bars', items: [
+      { k: 'bars', title: 'Four to start with', items: [
         { name: 'I Spy, adjusted for age', tag: 'from 2',
           how: "Colours for the youngest ones, first letters from about four, and \"something that's been alive\" or \"something older than Granny\" for the ones who've outgrown it. It's the oldest car game there is because it's the only one that turns the window into the board." },
-        { name: 'The number plate game', tag: 'from 5',
-          how: "Make the silliest sentence you can from the three letters. NGB becomes \"nine gorillas baking\". Everyone gets a go, the daftest wins, and it lasts far longer than it sounds like it should." },
         { name: 'Spot it first', tag: 'from 2',
           how: "Name five things before you set off — a tractor, a white horse, a church steeple, a red lorry, a windmill. First to shout it wins that one. Works from toddler age, and it points their eyes exactly where you want them for car sickness." },
-        { name: 'Twenty questions', tag: 'from 5',
-          how: "One person thinks of something in the car or something you've passed; everyone else asks yes-or-no questions. Costs nothing, needs no kit, and stretches to fill any gap." },
+        { name: 'The number plate game', tag: 'from 5',
+          how: "Make the silliest sentence you can from the three letters. NGB becomes \"nine gorillas baking\". Everyone gets a go, the daftest wins, and it lasts far longer than it sounds like it should." },
         { name: 'The story you build together', tag: 'from 3',
-          how: "Someone starts with one sentence, the next person adds one, round and round. It gets ridiculous within about six turns, which is the point. Better than any game at pulling a whole car of different ages into the same thing." },
-        { name: 'Would you rather', tag: 'from 4',
-          how: "\"Would you rather have hands for feet, or a nose that whistles?\" Endless, free, and it tells you things about your child you'd never otherwise hear." },
-        { name: 'Guess the sound', tag: 'from 3',
-          how: "Everyone closes their eyes and you name the three things you can hear. Doubles as a genuine calm-down when the car is getting loud." },
-        { name: 'Landmark bingo', tag: 'from 4',
-          how: "The map they drew before you left, ticked off as you pass each one. This is the one that quietly kills \"are we nearly there\" — the answer is on their own lap." },
-        { name: 'Sticker books and reusable sticker scenes', tag: 'from 2',
-          how: "Peel-and-stick scenes with no small parts. About twenty minutes each, and the pieces reposition so they last a whole trip. Skip for a carsick child — it's a looking-down activity." },
-        { name: 'A magnetic drawing board', tag: 'from 2',
-          how: "The one with the attached pen. Nothing to drop, nothing to lose down the side of the seat, and it wipes clean with a slider." },
-        { name: 'Finger puppets or two small figures', tag: 'from 2',
-          how: "Soft, silent, and they turn the back seat into a whole world without a single instruction from the front." },
-        { name: 'Songs on repeat, deliberately', tag: 'from 1',
-          how: "The daft ones with actions. A toddler will do the same song eleven times and be delighted every time, which is eleven times you didn't have to think of anything." }
+          how: "Someone starts with one sentence, the next person adds one, round and round. It gets ridiculous within about six turns, which is the point. Better than any game at pulling a whole car of different ages into the same thing." }
       ]},
       { k: 'links', items: [
-        { label: 'More out-loud thinking games', href: 'games.html' },
-        { label: 'Songs and rhymes with the words', href: 'rhymes.html' }
+        { label: 'The full set of out-loud games', href: 'games.html' },
+        { label: 'Songs and rhymes, with the words', href: 'rhymes.html' }
+      ]},
+      { k: 'list', title: 'Things for their hands', items: [
+        { name: 'Sticker books and reusable sticker scenes', text: "Peel-and-stick scenes with no small parts. About twenty minutes each, and the pieces reposition so they last a whole trip." },
+        { name: 'A magnetic drawing board', text: "The one with the attached pen. Nothing to drop, nothing to lose down the side of the seat, and it wipes clean with a slider." },
+        { name: 'Finger puppets or two small figures', text: "Soft, silent, and they turn the back seat into a whole world without a single instruction from the front." },
+        { name: 'A lap tray — only if nobody gets carsick', text: "It turns a lap into a table, but looking down at a tray is one of the fastest ways to bring on nausea. For a queasy child, skip every item in this list and go straight to something to listen to." }
+      ]},
+      { k: 'list', title: 'Landmark bingo — the one that ends "are we nearly there"', items: [
+        { name: 'Draw the route before you leave', text: "A simple line with five or six landmarks on it — a bridge, a big hill, the services, the sign for the town." },
+        { name: 'Hand it to them, not to you', text: "They tick each one off as you pass it. The answer to how much longer is now on their own lap, which is the whole trick." }
       ]}
     ]
   },
 
   {
     id: 'listening',
+    blurb: "The strongest hour you have, and most of it is free.",
     emoji: '🎧',
     title: 'What To Listen To',
     when: "The strongest hour you have — and most of it is free.",
@@ -294,7 +295,7 @@ window.JOURNEY = [
     whyKey: "build the picture themselves",
     blocks: [
       { k: 'p', text: "Download everything before you leave. The moment you need it is the moment you're in a valley with no signal." },
-      { k: 'bars', items: [
+      { k: 'bars', title: 'What to put on', items: [
         { name: 'Play a film they already know — with only the sound', tag: 'the best-kept trick',
           how: "Put a film they've watched before through the car speakers and never show the picture. Because they already know it, their head supplies every scene, and children will happily sit through the whole thing looking out of the window. It's the gentlest possible way to get the pull of a film with none of the eyes-down cost, and it's the one to reach for when you'd otherwise cave and hand over a tablet." },
         { name: 'Audiobooks', tag: 'buys the most',
@@ -303,16 +304,15 @@ window.JOURNEY = [
           how: "Your local library card gets you a large catalogue of audiobooks to borrow and download, at no cost. If you do one thing on this page before your next trip, make it this." },
         { name: 'Audio drama and story podcasts', tag: 'free',
           how: "Full-cast stories with sound effects, which hold a younger child better than a single narrator. Storynory, Sparkle Stories, Stories Podcast, Circle Round, Six Minutes and Bedtime Stories with R.A. Spratt are all free, and BBC Sounds has a large children's section." },
-        { name: 'Wow in the World and the curious ones', tag: 'from 5',
-          how: "Science and discovery podcasts for children. They generate questions rather than closing them down, and the conversation they start often outlasts the episode." },
-        { name: 'Librivox', tag: 'free',
-          how: "Volunteer-read recordings of out-of-copyright books — the classics, free, forever. Narration quality varies a lot, so listen to two minutes before you commit to three hours of it." },
         { name: 'Film soundtracks and singalong albums', tag: 'from 2',
           how: "The music from a film they love does a lot of the same work as the film. Good for the tired stretch when nobody has the concentration for a story." },
-        { name: 'A child-controlled audio player', tag: 'if you want a device',
-          how: "A card-based or button-based player lets a child choose and change their own story without a screen, and without asking the front seat every four minutes. It's a purchase rather than a free option, but it's the one piece of kit that genuinely earns its place on long trips." },
         { name: 'Headphones once there\'s an age gap', tag: 'from 4',
           how: "So a nine-year-old can have their story while a two-year-old sleeps. Volume-limited ones for children. This solves more back-seat conflict than anything else in this section." }
+      ]},
+      { k: 'list', title: 'Also worth knowing', items: [
+        { name: 'Wow in the World and the curious ones', text: "Science and discovery podcasts from about five. They generate questions rather than closing them down, and the conversation they start often outlasts the episode." },
+        { name: 'Librivox', text: "Volunteer-read recordings of out-of-copyright books — the classics, free, forever. Narration quality varies a lot, so listen to two minutes before you commit to three hours of it." },
+        { name: 'A child-controlled audio player', text: "A card-based or button-based player lets a child choose and change their own story without a screen, and without asking the front seat every four minutes. It's a purchase rather than a free option, but it's the one piece of kit that genuinely earns its place on long trips." }
       ]},
       { k: 'links', items: [
         { label: 'Read-alouds and audiobooks worth their time', href: 'books.html' }
@@ -323,6 +323,7 @@ window.JOURNEY = [
 
   {
     id: 'stops',
+    blurb: "How often, how long, what makes a good one, and leaving without a fight.",
     emoji: '🛑',
     title: 'Stopping Well',
     when: "How often, how long, and what makes a stop actually work.",
@@ -369,6 +370,7 @@ window.JOURNEY = [
 
   {
     id: 'sleep',
+    blurb: "Timing the drive around naps, pyjamas as a signal, and the honest case on night driving.",
     emoji: '😴',
     title: 'Sleep, Pyjamas And Driving At Night',
     when: "The hours a child sleeps are hours you don't have to fill — but they're not free.",
@@ -399,6 +401,7 @@ window.JOURNEY = [
 
   {
     id: 'more-than-one',
+    blurb: "Two in the back isn't twice the work — it's a different job.",
     emoji: '👧',
     title: 'More Than One Child',
     when: "Two in the back is not twice the work — it's a different job.",
@@ -437,6 +440,7 @@ window.JOURNEY = [
 
   {
     id: 'arriving',
+    blurb: "The last half hour, and the first ten minutes out of the car.",
     emoji: '🏁',
     title: 'Arriving Well',
     when: "The last half hour, and the first ten minutes out of the car.",
