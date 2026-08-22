@@ -107,6 +107,7 @@
 
     <p class="mo-also">
       <a href="turn-it-around.html">Turn It Around</a>
+      <a href="journeys.html">The Journey</a>
       <a href="games.html">Thinking Games</a>
       <a href="rhythm.html">Daily rhythms</a>
     </p>
@@ -190,6 +191,13 @@
             ${noteHtml(m)}
           </div>`;
       }).join('');
+
+      // Anchors here are rendered by JS, so a #fp-... hash arriving with the page
+      // has nothing to scroll to yet. Resolve it once the list is in the DOM.
+      if (location.hash) {
+        const t = document.getElementById(location.hash.slice(1));
+        if (t) requestAnimationFrame(() => t.scrollIntoView({ block: 'start' }));
+      }
     })();
   </script>
 </body>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#2D6FA8">
+  <!-- Images on this page are for in-app use only — keep them out of image search. -->
+  <meta name="robots" content="noimageindex, max-image-preview:none">
+  <title>Conscious Parenting NI — The Journey</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="icon-192.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    /* Jump-to-chapter squares — shared pattern with Make It A Game / Games / Activities */
+    .topic-nav { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.55em; margin: 0 0 1.6em; }
+    .topic-sq { position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; gap: 0.4em; cursor: pointer; background: var(--paper-card, #fff); border: none; border-radius: 15px; padding: 0.8em 0.4em 0.75em; box-shadow: var(--shadow-sm); transition: transform 0.14s cubic-bezier(0.34,1.56,0.64,1); }
+    .topic-sq::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.6px; background: linear-gradient(135deg, var(--gc), var(--gcd)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; opacity: 0.45; }
+    .topic-sq:active { transform: scale(0.95); }
+    .topic-sq-emo { width: 2.2em; height: 2.2em; border-radius: 13px; background: linear-gradient(150deg, var(--gc), var(--gcd)); display: grid; place-items: center; font-size: 1.15rem; line-height: 1; box-shadow: 0 4px 10px color-mix(in srgb, var(--gc) 34%, transparent), inset 0 1.5px 0 rgba(255,255,255,0.45); }
+    .topic-sq-lbl { font-family: var(--sans); font-weight: 800; font-size: 0.72rem; color: var(--ink); line-height: 1.1; text-align: center; }
+
+    /* Chapter banner */
+    .group-header { margin: 2.6em 0 1.1em; padding: 0.9em 1.1em; border-radius: 16px; background: var(--gcs); position: relative; overflow: hidden; scroll-margin-top: 12px; }
+    .group-header::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 7px; background: linear-gradient(180deg, var(--gc), var(--gcd)); }
+    .group-header:first-of-type { margin-top: 1.4em; }
+    .group-header h2 { display: flex; align-items: center; gap: 0.5em; margin: 0 0 0.15em; font-size: 1.32rem; color: var(--gcd); letter-spacing: -0.02em; }
+    .group-emoji { font-size: 1.15em; }
+    .group-when { font-size: 0.94em; color: var(--ink-soft); margin: 0; line-height: 1.5; }
+
+    /* WHY callout */
+    .why-box { margin: 0 0 1em; padding: 0.85em 1em; background: #fff; border: 1px solid var(--rule); border-left: 4px solid var(--gc); border-radius: 12px; }
+    .why-pill { display: inline-block; font-size: 0.6rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #fff; background: linear-gradient(135deg, var(--gc), var(--gcd)); padding: 0.25em 0.7em; border-radius: var(--radius-pill); margin-bottom: 0.5em; }
+    .why-box p { margin: 0; font-size: 0.94em; line-height: 1.6; color: var(--ink-soft); }
+    mark.hl { background: linear-gradient(180deg, rgba(255,206,61,0) 58%, rgba(255,201,45,0.85) 58%); color: inherit; font-weight: 700; padding: 0 0.06em; border-radius: 2px; }
+
+    /* Plain prose inside a chapter */
+    .jr-p { margin: 0 0 1em; color: var(--ink-soft); line-height: 1.62; }
+
+    /* The running order — numbered timeline with a spine */
+    .jr-steps { list-style: none; margin: 0 0 1.1em; padding: 0 0 0 0; counter-reset: jrstep; }
+    .jr-step { position: relative; padding: 0 0 1.15em 3em; }
+    .jr-step::before { counter-increment: jrstep; content: counter(jrstep); position: absolute; left: 0; top: 0; width: 2em; height: 2em; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(150deg, var(--gc), var(--gcd)); color: #fff; font-family: var(--sans); font-weight: 800; font-size: 0.86rem; box-shadow: 0 3px 8px color-mix(in srgb, var(--gc) 32%, transparent); z-index: 2; }
+    .jr-step::after { content: ""; position: absolute; left: calc(1em - 1.5px); top: 2.1em; bottom: -0.15em; width: 3px; border-radius: 2px; background: color-mix(in srgb, var(--gc) 26%, transparent); }
+    .jr-step:last-child::after { display: none; }
+    .jr-step-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.5em; margin: 0.15em 0 0.3em; }
+    .jr-step-name { font-family: var(--display, 'Poppins'); font-weight: 800; font-size: 1.06rem; letter-spacing: -0.015em; color: var(--ink); line-height: 1.2; }
+    .jr-buys { font-family: var(--sans); font-size: 0.63rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.26em 0.65em; border-radius: var(--radius-pill); background: var(--gcs); color: var(--gcd); border: 1px solid color-mix(in srgb, var(--gc) 34%, transparent); }
+    .jr-step-text { margin: 0; color: var(--ink-soft); line-height: 1.6; font-size: 0.96em; }
+
+    /* Titled checklists */
+    .jr-listwrap { margin: 0 0 1.3em; }
+    .jr-list-title { font-family: var(--sans); font-weight: 800; font-size: 0.68rem; letter-spacing: 0.13em; text-transform: uppercase; color: var(--gcd); margin: 0 0 0.6em; display: flex; align-items: center; gap: 0.6em; }
+    .jr-list-title::after { content: ""; flex: 1; height: 1px; background: color-mix(in srgb, var(--gc) 28%, transparent); }
+    .jr-list { list-style: none; margin: 0; padding: 0; }
+    .jr-item { position: relative; padding: 0 0 0.85em 1.6em; }
+    .jr-item::before { content: ""; position: absolute; left: 0.15em; top: 0.52em; width: 0.55em; height: 0.55em; border-radius: 50%; background: linear-gradient(150deg, var(--gc), var(--gcd)); }
+    .jr-item b { font-family: var(--sans); font-weight: 800; color: var(--ink); }
+    .jr-item span { color: var(--ink-soft); line-height: 1.6; }
+
+    /* Drop-down bars */
+    .act-bar-wrap { position: relative; overflow: hidden; background: var(--paper-card, #fff); border-radius: 18px; box-shadow: var(--shadow-sm); margin: 0 0 0.7em; }
+    .act-bar-wrap::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.6px; background: linear-gradient(135deg, var(--gc), var(--gcd)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; z-index: 3; opacity: 0.5; }
+    .act-bar { list-style: none; cursor: pointer; display: flex; align-items: stretch; gap: 0; }
+    .act-bar::-webkit-details-marker { display: none; }
+    .act-bar-photo { flex: 0 0 auto; width: 76px; align-self: stretch; position: relative; overflow: hidden; background: linear-gradient(150deg, var(--gc), var(--gcd)); display: grid; place-items: center; }
+    .act-bar-emo { font-size: 1.9rem; line-height: 1; filter: drop-shadow(0 2px 3px rgba(0,0,0,0.22)); }
+    .act-bar-text { flex: 1; min-width: 0; padding: 0.8em 0.5em 0.8em 1em; display: flex; flex-direction: column; justify-content: center; gap: 0.4em; }
+    .act-bar-name { font-family: var(--display, 'Poppins'); font-weight: 800; font-size: clamp(1.02rem, 4.2vw, 1.16rem); line-height: 1.16; letter-spacing: -0.015em; color: var(--ink); }
+    .act-bar-meta { display: flex; flex-wrap: wrap; gap: 0.32em; }
+    .chip { font-family: var(--sans); font-size: 0.64rem; font-weight: 700; padding: 0.24em 0.6em; border-radius: var(--radius-pill); background: var(--paper-warm); color: var(--ink-soft); border: 1px solid var(--rule-strong); }
+    .act-bar-plus { flex: 0 0 auto; align-self: center; width: 1.4em; height: 1.4em; position: relative; margin-right: 0.95em; }
+    .act-bar-plus::before, .act-bar-plus::after { content: ""; position: absolute; top: 50%; left: 50%; background: var(--gc); border-radius: 2px; transform: translate(-50%, -50%); transition: opacity 0.2s ease, transform 0.2s ease; }
+    .act-bar-plus::before { width: 0.9em; height: 2.5px; }
+    .act-bar-plus::after { width: 2.5px; height: 0.9em; }
+    .act-bar-wrap[open] .act-bar-plus::after { opacity: 0; transform: translate(-50%, -50%) rotate(90deg); }
+    .act-bar-wrap[open] .act-bar { border-bottom: 1px solid var(--rule); }
+    .act-drawer { padding: 0.95em 1.1em 1.15em; }
+    .act-drawer p.how { margin: 0; color: var(--ink-soft); line-height: 1.58; }
+
+    /* Onward links inside a chapter */
+    .jr-links { display: flex; flex-wrap: wrap; gap: 0.5em; margin: 0.2em 0 1.2em; }
+    .jr-links a { font-family: var(--sans); font-weight: 700; font-size: 0.84em; color: var(--gcd); background: var(--gcs); border: 1px solid color-mix(in srgb, var(--gc) 30%, transparent); padding: 0.5em 0.9em; border-radius: var(--radius-pill); text-decoration: none; }
+    .jr-links a[target]::after { content: " ↗"; opacity: 0.6; }
+
+    /* Cautions */
+    .note-box { margin: 0.5em 0 1.1em; padding: 0.8em 1em; background: var(--paper-warm); border: 1px solid var(--rule-strong); border-left: 4px solid var(--ink-mute); border-radius: 12px; }
+    .note-box p { margin: 0; font-size: 0.9em; line-height: 1.55; color: var(--ink-soft); }
+    .note-pill { display: inline-block; font-size: 0.6rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); border: 1px solid var(--rule-strong); padding: 0.22em 0.6em; border-radius: var(--radius-pill); margin-bottom: 0.45em; }
+    .note-box.note-safety { background: #FFF3E6; border-color: #F0A85E; border-left-color: #D9741F; }
+    .note-box.note-safety .note-pill { color: #B45309; border-color: #E8894A; }
+    .note-box.note-safety p { color: #7A4A12; }
+  </style>
+</head>
+<body class="launcher">
+  <main class="launcher-main article">
+    <header class="page-hero" style="--hc:#4A9ED4;--hcd:#2D6FA8;">
+      <div class="page-cover">
+        <img src="assets/tools/journeys.jpg" alt="" onerror="this.remove();this.closest('.page-cover')?.classList.add('no-img')">
+        <div class="page-cover-veil"></div>
+        <div class="page-cover-text">
+          <div class="page-eyebrow">Conscious Parenting NI</div>
+          <h1>The Journey</h1>
+          <p class="page-tagline">Long drives children look forward to — the running order, the packing list, the stops, and car sickness sorted.</p>
+        </div>
+      </div>
+    </header>
+
+    <p class="page-intro" id="intro"></p>
+
+    <div class="card" style="margin-top: 0;">
+      <h3>How to use this</h3>
+      <p style="margin-bottom: 0;">
+        Read <b>The Running Order</b> first — it's the one part that changes everything, and it takes two
+        minutes. Then work through <b>Before You Go</b> and <b>What To Pack</b> the day before a big trip.
+        The rest is there to dip into: tap a square to jump to the bit you need. If anyone in your car gets
+        carsick, read that section before the entertainment ones — it decides what's even possible on your
+        back seat.
+      </p>
+    </div>
+
+    <div class="topic-nav" id="topic-nav"></div>
+
+    <div id="list"></div>
+
+    <section class="mo-block mo-honest" style="margin-top: 2.4em;">
+      <h2 class="mo-h">When it all falls apart anyway</h2>
+      <p style="color: var(--ink-soft); line-height: 1.6;">
+        Some journeys go wrong no matter how well you've planned them — a child is coming down with
+        something, the traffic doubles the drive, everyone is already frayed before you set off. When that
+        happens, stop trying to run the plan. Pull in somewhere safe, get everyone out, and let the schedule
+        go. Arriving late and kind is a better outcome than arriving on time with everybody in bits, and no
+        child has ever remembered what time you got there. If most ordinary journeys are a fight rather than
+        just this one, the answer is usually further back — sleep, hunger, or how much of you they've had
+        lately — and that's what <a href="turn-it-around.html">Turn It Around</a> is for.
+      </p>
+    </section>
+
+    <p class="mo-also">
+      <a href="make-it-a-game.html">Make It A Game</a>
+      <a href="games.html">Thinking Games</a>
+      <a href="rhymes.html">Rhymes &amp; Songs</a>
+      <a href="books.html">Read-Alouds &amp; Audiobooks</a>
+      <a href="things-to-do.html">Days Out</a>
+    </p>
+  </main>
+
+  <script src="assets/journey-data.js"></script>
+  <script src="assets/app.js"></script>
+  <script>
+    (function () {
+      const chapters = window.JOURNEY || [];
+      const intro = document.getElementById('intro');
+      const nav = document.getElementById('topic-nav');
+      const list = document.getElementById('list');
+      if (intro) intro.textContent = window.JOURNEY_INTRO || '';
+      if (!chapters.length) return;
+
+      // One accent per chapter — cycled from the app's palette, sky first so the
+      // page opens in the same colour as its tile and its theme-colour bar.
+      const PAL = [
+        { c: '#4A9ED4', cd: '#2D6FA8', cs: '#E4F1FA' }, // sky
+        { c: '#FF9F3D', cd: '#C97D2A', cs: '#FFEFD6' }, // orange
+        { c: '#3FBF97', cd: '#2F9E77', cs: '#D8F3E9' }, // green
+        { c: '#8B6FD1', cd: '#5B3FA8', cs: '#EDE8FA' }, // violet
+        { c: '#FF5E8E', cd: '#C93E6A', cs: '#FFE2EC' }  // coral
+      ];
+
+      const esc = (s) => String(s == null ? '' : s)
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+
+      // Highlight the chapter's own load-bearing phrase (first match only).
+      const whyHtml = (ch) => {
+        const w = esc(ch.why || '');
+        const key = esc(ch.whyKey || '');
+        const i = key ? w.indexOf(key) : -1;
+        return i < 0 ? w : w.slice(0, i) + '<mark class="hl">' + key + '</mark>' + w.slice(i + key.length);
+      };
+
+      const noteHtml = (text, kind) => {
+        if (!text) return '';
+        const safety = kind === 'safety';
+        const pill = safety ? 'Safety first' : 'Worth knowing';
+        return `<div class="note-box${safety ? ' note-safety' : ''}"><span class="note-pill">${pill}</span><p>${esc(text)}</p></div>`;
+      };
+
+      // Each block kind renders itself; unknown kinds are skipped rather than crashing.
+      const blockHtml = (b, ch) => {
+        switch (b.k) {
+          case 'p':
+            return `<p class="jr-p">${esc(b.text)}</p>`;
+
+          case 'steps':
+            return `<ol class="jr-steps">${(b.items || []).map(s => `
+              <li class="jr-step">
+                <div class="jr-step-head">
+                  <span class="jr-step-name">${esc(s.name)}</span>
+                  ${s.buys ? `<span class="jr-buys">${esc(s.buys)}</span>` : ''}
+                </div>
+                <p class="jr-step-text">${esc(s.text)}</p>
+              </li>`).join('')}</ol>`;
+
+          case 'list':
+            return `<div class="jr-listwrap">
+              ${b.title ? `<div class="jr-list-title">${esc(b.title)}</div>` : ''}
+              <ul class="jr-list">${(b.items || []).map(i =>
+                `<li class="jr-item"><b>${esc(i.name)}</b> — <span>${esc(i.text)}</span></li>`).join('')}</ul>
+            </div>`;
+
+          case 'bars':
+            return (b.items || []).map(g => `
+              <details class="act-bar-wrap">
+                <summary class="act-bar">
+                  <span class="act-bar-photo"><span class="act-bar-emo" aria-hidden="true">${esc(ch.emoji)}</span></span>
+                  <span class="act-bar-text">
+                    <span class="act-bar-name">${esc(g.name)}</span>
+                    ${g.tag ? `<span class="act-bar-meta"><span class="chip">${esc(g.tag)}</span></span>` : ''}
+                  </span>
+                  <span class="act-bar-plus" aria-hidden="true"></span>
+                </summary>
+                <div class="act-drawer"><p class="how">${esc(g.how)}</p></div>
+              </details>`).join('');
+
+          case 'links':
+            return `<div class="jr-links">${(b.items || []).map(l =>
+              `<a href="${esc(l.href)}"${l.ext ? ' target="_blank" rel="noopener"' : ''}>${esc(l.label)}</a>`).join('')}</div>`;
+
+          case 'note':
+            return noteHtml(b.text, b.kind);
+
+          default:
+            return '';
+        }
+      };
+
+      // Jump squares — tap scrolls to the chapter, no filtering.
+      nav.innerHTML = chapters.map((ch, i) => {
+        const p = PAL[i % PAL.length];
+        return `<button type="button" class="topic-sq" data-target="jr-${esc(ch.id)}" style="--gc:${p.c};--gcd:${p.cd};--gcs:${p.cs};">
+          <span class="topic-sq-emo" aria-hidden="true">${esc(ch.emoji)}</span>
+          <span class="topic-sq-lbl">${esc(ch.title)}</span>
+        </button>`;
+      }).join('');
+      nav.querySelectorAll('.topic-sq').forEach(btn => btn.addEventListener('click', () => {
+        const t = document.getElementById(btn.dataset.target);
+        if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }));
+
+      list.innerHTML = chapters.map((ch, i) => {
+        const p = PAL[i % PAL.length];
+        return `
+          <div style="--gc:${p.c};--gcd:${p.cd};--gcs:${p.cs};">
+            <div class="group-header" id="jr-${esc(ch.id)}">
+              <h2><span class="group-emoji">${esc(ch.emoji)}</span>${esc(ch.title)}</h2>
+              <p class="group-when">${esc(ch.when)}</p>
+            </div>
+            <div class="why-box"><span class="why-pill">Why this works</span><p>${whyHtml(ch)}</p></div>
+            ${(ch.blocks || []).map(b => blockHtml(b, ch)).join('')}
+            ${noteHtml(ch.note, ch.noteKind)}
+          </div>`;
+      }).join('');
+    })();
+  </script>
+</body>
+</html>
