@@ -59,7 +59,7 @@
 
     .act-body { padding: 0.95em 1.1em 1.15em; }
     .meta-row { display: flex; flex-wrap: wrap; gap: 0.4em; margin: 0 0 0.85em; }
-    .chip { font-family: var(--sans); font-size: 0.72rem; font-weight: 700; padding: 0.28em 0.72em; border-radius: var(--radius-pill); background: #fff; color: var(--gcd); border: 1.5px solid var(--gc); }
+    .chip { font-family: var(--sans); font-size: 0.72rem; font-weight: 700; padding: 0.28em 0.72em; border-radius: var(--radius-pill); background: var(--paper-card); color: var(--gcd); border: 1.5px solid var(--gc); }
     .chip.age { background: var(--paper-warm); color: var(--ink-soft); border: 1px solid var(--rule-strong); }
     .chip.mess-tidy { background: #DCF3E7; color: #1B7A4A; border-color: transparent; }
     .chip.mess-some { background: #FBEFD3; color: #B4770F; border-color: transparent; }
@@ -67,7 +67,7 @@
 
     .act-card p.how { margin: 0; color: var(--ink-soft); line-height: 1.55; }
 
-    .why-box { margin: 0.9em 0 0; padding: 0.8em 0.95em; background: #fff; border: 1px solid var(--rule); border-left: 4px solid var(--gc); border-radius: 12px; }
+    .why-box { margin: 0.9em 0 0; padding: 0.8em 0.95em; background: var(--paper-card); border: 1px solid var(--rule); border-left: 4px solid var(--gc); border-radius: 12px; }
     .why-pill { display: inline-block; font-size: 0.6rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #fff; background: linear-gradient(135deg, var(--gc), var(--gcd)); padding: 0.25em 0.7em; border-radius: var(--radius-pill); margin-bottom: 0.5em; }
     .why-box p { margin: 0; font-size: 0.94em; line-height: 1.58; color: var(--ink-soft); }
     mark.hl { background: linear-gradient(180deg, rgba(255,206,61,0) 58%, rgba(255,201,45,0.85) 58%); color: inherit; font-weight: 700; padding: 0 0.06em; border-radius: 2px; }
@@ -119,6 +119,7 @@
     .act-drawer { padding: 0.95em 1.1em 1.15em; }
     .act-drawer p.how { margin: 0; color: var(--ink-soft); line-height: 1.55; }
   </style>
+  <script>(function(){try{var k="theme:"+location.pathname.split("/").slice(0,2).join("/"),t=localStorage.getItem(k);if(!t)t=(window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light";document.documentElement.setAttribute("data-theme",t==="dark"?"dark":"light")}catch(e){}})();</script>
 </head>
 <body class="launcher">
   <main class="launcher-main article">
@@ -340,5 +341,6 @@
     [fSearch, fBuild, fMess, fAge].forEach(el => el.addEventListener('input', render));
     render();
   </script>
+  <script src="assets/theme.js"></script>
 </body>
 </html>

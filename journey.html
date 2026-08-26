@@ -24,7 +24,7 @@
     .sec-hero p { position: relative; z-index: 2; color: rgba(255,255,255,0.96); margin: 0; font-weight: 600; font-size: 1em; line-height: 1.45; }
 
     /* WHY callout */
-    .why-box { margin: 0 0 1.3em; padding: 0.85em 1em; background: #fff; border: 1px solid var(--rule); border-left: 4px solid var(--gc); border-radius: 12px; }
+    .why-box { margin: 0 0 1.3em; padding: 0.85em 1em; background: var(--paper-card); border: 1px solid var(--rule); border-left: 4px solid var(--gc); border-radius: 12px; }
     .why-pill { display: inline-block; font-size: 0.6rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #fff; background: linear-gradient(135deg, var(--gc), var(--gcd)); padding: 0.25em 0.7em; border-radius: var(--radius-pill); margin-bottom: 0.5em; }
     .why-box p { margin: 0; font-size: 0.94em; line-height: 1.6; color: var(--ink-soft); }
     mark.hl { background: linear-gradient(180deg, rgba(255,206,61,0) 58%, rgba(255,201,45,0.85) 58%); color: inherit; font-weight: 700; padding: 0 0.06em; border-radius: 2px; }
@@ -107,6 +107,7 @@
     .jr-nav a.next { text-align: right; align-items: flex-end; }
     .jr-nav .spacer { }
   </style>
+  <script>(function(){try{var k="theme:"+location.pathname.split("/").slice(0,2).join("/"),t=localStorage.getItem(k);if(!t)t=(window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light";document.documentElement.setAttribute("data-theme",t==="dark"?"dark":"light")}catch(e){}})();</script>
 </head>
 <body class="launcher">
   <main class="launcher-main article" id="main">
@@ -250,5 +251,6 @@
       render();
     })();
   </script>
+  <script src="assets/theme.js"></script>
 </body>
 </html>

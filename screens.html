@@ -67,6 +67,7 @@
     .rule-row:first-of-type { border-top: none; }
     .rule-row .st { font-weight: 700; color: var(--ink); }
   </style>
+  <script>(function(){try{var k="theme:"+location.pathname.split("/").slice(0,2).join("/"),t=localStorage.getItem(k);if(!t)t=(window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light";document.documentElement.setAttribute("data-theme",t==="dark"?"dark":"light")}catch(e){}})();</script>
 </head>
 <body class="launcher">
   <main class="launcher-main article" style="--hc:#5FB1DD;--hcd:#1F5E8A;--hcs:#E0F0FA;">
@@ -207,5 +208,6 @@
     document.getElementById('appsGrid').innerHTML = APPS.map((x, i) => recCard(x, i)).join('');
     document.getElementById('showsGrid').innerHTML = SHOWS.map((x, i) => showCard(x, i + APPS.length)).join('');
   </script>
+  <script src="assets/theme.js"></script>
 </body>
 </html>

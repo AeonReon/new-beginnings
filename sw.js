@@ -1,4 +1,4 @@
-const CACHE = 'new-beginnings-v148';
+const CACHE = 'new-beginnings-v149';
 const ASSETS = [
   './',
   './index.html',
@@ -69,6 +69,7 @@ const ASSETS = [
   './icon-512.png',
   './apple-touch-icon.png',
   './assets/style.css',
+  './assets/theme.js',
   './assets/app.js',
   './assets/reader.js',
   './assets/methods-data.js',

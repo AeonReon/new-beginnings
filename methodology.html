@@ -63,7 +63,7 @@
     #root .stage-btn { display: flex; flex-direction: column; align-items: center; gap: 0.05em; cursor: pointer; border: none; background: transparent; border-radius: 11px; padding: 0.62em 0.3em; transition: background 0.15s ease, box-shadow 0.15s ease; }
     #root .stage-btn .stage-lbl { font-family: var(--sans); font-weight: 800; font-size: 0.84rem; line-height: 1.1; color: var(--ink-soft); }
     #root .stage-btn .stage-sub { font-family: var(--sans); font-weight: 700; font-size: 0.66rem; color: var(--ink-mute); }
-    #root .stage-btn.active { background: #fff; box-shadow: var(--shadow-sm); }
+    #root .stage-btn.active { background: var(--paper-card); box-shadow: var(--shadow-sm); }
     #root .stage-btn.active .stage-lbl { color: var(--acc); }
     #root .stage-btn.active .stage-sub { color: var(--acc); }
     #root .stage-note { font-size: 0.98rem; line-height: 1.55; color: var(--ink-soft); background: var(--acc-soft); border-radius: 13px; padding: 0.8em 1em; margin: 0.75em 0 0; }
@@ -114,7 +114,7 @@
     #root .pullquote cite { display: block; margin-top: 0.8em; font-family: var(--sans); font-style: normal; font-weight: 800; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--acc); }
 
     /* Closing recap — the one tasteful summary block */
-    #root .recap { margin: 2.4em 0 0; padding: 1.4em 1.5em 1.5em; background: #fff; border: 1px solid var(--rule); border-radius: 16px; box-shadow: var(--shadow-sm); }
+    #root .recap { margin: 2.4em 0 0; padding: 1.4em 1.5em 1.5em; background: var(--paper-card); border: 1px solid var(--rule); border-radius: 16px; box-shadow: var(--shadow-sm); }
     #root .recap-label { font-family: var(--sans); font-weight: 800; font-size: 0.64rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--acc); margin-bottom: 0.6em; }
     #root .recap ol { list-style: none; padding: 0; margin: 0; counter-reset: r; }
     #root .recap li { counter-increment: r; position: relative; padding: 0.65em 0 0.65em 2.1em; border-top: 1px solid var(--rule-soft); font-size: 1.03rem; line-height: 1.5; color: var(--ink); }
@@ -150,7 +150,7 @@
     /* Sub-tiles → inviting horizontal cards with a gradient icon badge */
     #root .sub-tile-grid { display: grid; grid-template-columns: 1fr; gap: 0.75em; }
     @media (min-width: 700px) { #root .sub-tile-grid { grid-template-columns: 1fr 1fr; } }
-    #root .sub-tile { flex-direction: row; align-items: center; gap: 0.95em; text-align: left; background: #fff; border-radius: 18px; padding: 0.9em 1.05em; min-height: 0; position: relative; overflow: hidden; box-shadow: var(--shadow-sm); }
+    #root .sub-tile { flex-direction: row; align-items: center; gap: 0.95em; text-align: left; background: var(--paper-card); border-radius: 18px; padding: 0.9em 1.05em; min-height: 0; position: relative; overflow: hidden; box-shadow: var(--shadow-sm); }
     #root .sub-tile::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 2px; background: linear-gradient(135deg, var(--m-color), var(--m-deep)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; opacity: 0.85; }
     #root .sub-tile:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
     #root .sub-tile-icon { flex: 0 0 auto; width: 54px; height: 54px; border-radius: 15px; margin: 0; background: linear-gradient(150deg, var(--m-color), var(--m-deep)); display: grid; place-items: center; box-shadow: 0 4px 11px rgba(20,35,60,0.16), inset 0 1.5px 0 rgba(255,255,255,0.4); }
@@ -163,7 +163,7 @@
 
     /* Principle cards — number badge, gradient outline, WHY callout */
     /* Principle "points" — big faint number, bold hook, room to breathe */
-    #root .principle-card { position: relative; overflow: hidden; background: #fff; border: none; border-radius: 18px; padding: 1.4em 1.4em 1.6em; margin: 0 0 1.15em; box-shadow: 0 2px 4px rgba(20,35,60,0.05), 0 14px 30px rgba(20,35,60,0.08); }
+    #root .principle-card { position: relative; overflow: hidden; background: var(--paper-card); border: none; border-radius: 18px; padding: 1.4em 1.4em 1.6em; margin: 0 0 1.15em; box-shadow: 0 2px 4px rgba(20,35,60,0.05), 0 14px 30px rgba(20,35,60,0.08); }
     /* Gentle rhythm — barely-there warm tint on alternate cards, never a wall of colour */
     #root .principle-card.alt { background: #fdfbf7; }
     #root .principle-card::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.5px; background: linear-gradient(135deg, var(--m-color), var(--m-deep)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; opacity: 0.5; }
@@ -219,7 +219,7 @@
     /* Activity cards — badge + gradient outline, two-up on wider screens */
     #root .activity-grid { display: grid; grid-template-columns: 1fr; gap: 0.8em; }
     @media (min-width: 620px) { #root .activity-grid { grid-template-columns: 1fr 1fr; } }
-    #root .activity-card { position: relative; background: #fff; border-radius: 14px; padding: 0.95em 1em 1em; box-shadow: var(--shadow-sm); }
+    #root .activity-card { position: relative; background: var(--paper-card); border-radius: 14px; padding: 0.95em 1em 1em; box-shadow: var(--shadow-sm); }
     #root .activity-card::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.5px; background: linear-gradient(135deg, var(--m-color), var(--m-deep)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; opacity: 0.7; }
     #root .activity-num { width: 26px; height: 26px; border-radius: 8px; background: linear-gradient(150deg, var(--m-color), var(--m-deep)); color: #fff; font-weight: 800; font-size: 0.82rem; display: grid; place-items: center; margin: 0 0 0.4em; }
     #root .activity-name { font-weight: 800; color: var(--ink); margin: 0 0 0.25em; line-height: 1.2; }
@@ -281,7 +281,7 @@
     #root .ed-toc .toc-arrow { color: var(--tc); }
 
     /* ── Tenets as homepage-style cards, each with its OWN accent + icon badge ── */
-    #root .tenet { position: relative; overflow: hidden; background: #fff; border: none !important; border-radius: 20px; padding: 1.3em 1.35em 1.55em !important; margin: 0 0 1.05em; box-shadow: var(--shadow-sm); }
+    #root .tenet { position: relative; overflow: hidden; background: var(--paper-card); border: none !important; border-radius: 20px; padding: 1.3em 1.35em 1.55em !important; margin: 0 0 1.05em; box-shadow: var(--shadow-sm); }
     #root .tenet:first-of-type { padding-top: 1.3em !important; }
     /* gradient-outline in the point's accent — the signature workspace treatment */
     #root .tenet::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.6px; background: linear-gradient(135deg, var(--tc), var(--tcd)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; opacity: 0.5; }
@@ -356,7 +356,7 @@
     #root .daypart-span { margin-left: auto; font-family: var(--sans); font-weight: 700; font-size: 0.72rem; color: rgba(255,255,255,0.9); }
 
     /* one moment */
-    #root .day-block { position: relative; margin: 0 0 0.7em; background: #fff; border-radius: 16px; padding: 0.85em 1em 0.95em; box-shadow: var(--shadow-sm); }
+    #root .day-block { position: relative; margin: 0 0 0.7em; background: var(--paper-card); border-radius: 16px; padding: 0.85em 1em 0.95em; box-shadow: var(--shadow-sm); }
     #root .day-block::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.5px; background: linear-gradient(135deg, var(--dp), var(--dpd)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; opacity: 0.34; }
     /* head row: emoji, then the time pill, then (rarely) the hero tag */
     #root .day-head { display: flex; align-items: center; gap: 0.5em; flex-wrap: wrap; margin: 0 0 0.4em; }
@@ -385,7 +385,7 @@
     #root .act-count { flex: 0 0 auto; font-family: var(--sans); font-weight: 800; font-size: 0.68rem; color: #fff; background: rgba(255,255,255,0.22); border: 1.5px solid rgba(255,255,255,0.4); border-radius: 999px; padding: 0.38em 0.72em; }
     #root .act-group-intro { font-size: 1rem; line-height: 1.55; color: var(--ink-mute); margin: 0.85em 0.2em 0.5em; }
     /* items — numbered in the group's own colour */
-    #root .act-list { background: #fff; border-radius: 16px; padding: 0.35em 1.05em; box-shadow: var(--shadow-sm); }
+    #root .act-list { background: var(--paper-card); border-radius: 16px; padding: 0.35em 1.05em; box-shadow: var(--shadow-sm); }
     #root .act-item { display: flex; gap: 0.85em; padding: 0.85em 0; border-top: 1px solid var(--rule-soft); }
     #root .act-item:first-child { border-top: none; }
     #root .act-no { flex: 0 0 1.95em; width: 1.95em; height: 1.95em; border-radius: 999px; background: linear-gradient(150deg, var(--gc), var(--gcd)); color: #fff; font-family: var(--sans); font-weight: 800; font-size: 0.86rem; display: grid; place-items: center; box-shadow: 0 2px 6px color-mix(in srgb, var(--gc) 34%, transparent); }
@@ -399,7 +399,7 @@
     /* ── ACTIVITIES v3 — homepage-style photo BARS that drop down + a quick-nav ── */
     /* quick-nav: little squares that jump to (and open) a topic */
     #root .act-nav { display: flex; flex-wrap: wrap; gap: 0.5em; margin: 1.4em 0 1.2em; }
-    #root .act-chip { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 0.35em; cursor: pointer; background: #fff; border: none; border-radius: 14px; padding: 0.75em 0.5em 0.7em; box-shadow: var(--shadow-sm); position: relative; overflow: hidden; transition: transform 0.14s ease; }
+    #root .act-chip { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 0.35em; cursor: pointer; background: var(--paper-card); border: none; border-radius: 14px; padding: 0.75em 0.5em 0.7em; box-shadow: var(--shadow-sm); position: relative; overflow: hidden; transition: transform 0.14s ease; }
     #root .act-chip::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.5px; background: linear-gradient(135deg, var(--gc), var(--gcd)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; opacity: 0.5; }
     #root .act-chip:active { transform: scale(0.95); }
     #root .act-chip-emo { width: 2em; height: 2em; border-radius: 999px; background: linear-gradient(150deg, var(--gc), var(--gcd)); display: grid; place-items: center; font-size: 1.05rem; line-height: 1; box-shadow: 0 3px 8px color-mix(in srgb, var(--gc) 32%, transparent); }
@@ -407,7 +407,7 @@
 
     /* the topic drop-downs */
     #root .act-topics { display: grid; gap: 0.7em; }
-    #root .act-topic { position: relative; overflow: hidden; background: #fff; border-radius: 18px; box-shadow: var(--shadow-sm); }
+    #root .act-topic { position: relative; overflow: hidden; background: var(--paper-card); border-radius: 18px; box-shadow: var(--shadow-sm); }
     #root .act-topic::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.6px; background: linear-gradient(135deg, var(--gc), var(--gcd)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; opacity: 0.5; z-index: 3; }
     /* the bar: photo left, text right, plus far right */
     #root .act-bar { list-style: none; cursor: pointer; display: flex; align-items: stretch; gap: 0; }
@@ -429,7 +429,7 @@
     #root .act-topic-body .act-group-intro { margin: 0.7em 0.05em 0.3em; }
     /* bring-it-home step detail inside a drop-down bar */
     #root .act-topic-body .bih-step-d { font-family: var(--sans); font-size: 1.02rem; line-height: 1.6; color: var(--ink-soft); margin: 0.55em 0.05em 0.35em; }
-    #root .act-list--flat { background: #fff; border-radius: 16px; padding: 0.35em 1.05em; box-shadow: var(--shadow-sm); }
+    #root .act-list--flat { background: var(--paper-card); border-radius: 16px; padding: 0.35em 1.05em; box-shadow: var(--shadow-sm); }
     /* inside a topic drop-down the list is bare — the topic card is the frame */
     #root .act-topic-body .act-list { background: none; border-radius: 0; padding: 0; box-shadow: none; }
 
@@ -476,7 +476,7 @@
     #root .bih-step-d { font-size: 1.01rem; line-height: 1.58; color: var(--ink-soft); }
     /* app cards with store buttons */
     #root .bih-apps { display: grid; gap: 0.7em; }
-    #root .bih-app { position: relative; background: #fff; border-radius: 16px; padding: 1em 1.1em 1.05em; box-shadow: var(--shadow-sm); }
+    #root .bih-app { position: relative; background: var(--paper-card); border-radius: 16px; padding: 1em 1.1em 1.05em; box-shadow: var(--shadow-sm); }
     #root .bih-app::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.5px; background: linear-gradient(135deg, var(--acc-bright), var(--acc)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; opacity: 0.4; }
     #root .bih-app-head { display: flex; align-items: center; gap: 0.6em; margin-bottom: 0.3em; }
     #root .bih-app-name { font-family: var(--display); font-weight: 800; font-size: 1.14rem; letter-spacing: -0.01em; color: var(--ink); }
@@ -487,7 +487,7 @@
     #root .bih-store { display: inline-flex; align-items: center; gap: 0.35em; font-family: var(--sans); font-weight: 700; font-size: 0.82rem; text-decoration: none; padding: 0.5em 0.9em; border-radius: 999px; background: var(--acc); color: #fff; transition: transform 0.12s ease; }
     #root .bih-store:active { transform: scale(0.96); }
     #root .bih-store.bih-play { background: var(--acc-deep, #1F5E8A); }
-    #root .bih-store.bih-site { background: #fff; color: var(--acc); border: 1.5px solid var(--acc-soft); }
+    #root .bih-store.bih-site { background: var(--paper-card); color: var(--acc); border: 1.5px solid var(--acc-soft); }
     #root .bih-fine { font-size: 0.86rem; line-height: 1.5; color: var(--ink-mute); margin: 0.9em 0.2em 0; }
     /* honest "how this tradition treats screens" line */
     #root .bih-screens { display: flex; gap: 0.6em; align-items: flex-start; margin: 1.6em 0 0; padding: 0.9em 1.05em; background: var(--paper-warm, #EAF4FB); border-radius: 14px; font-size: 1rem; line-height: 1.55; color: var(--ink-soft); }
@@ -524,12 +524,12 @@
     #root .su-band .act-topic[open] { box-shadow: var(--shadow-md); }
     #root .su-band .act-bar:active { transform: scale(0.985); }
     #root .act-topic-body .su-d { font-family: var(--sans); font-size: 1.02rem; line-height: 1.62; color: var(--ink-soft); margin: 0.55em 0.05em 0.4em; }
-    #root .su-prose { background: #fff; border-radius: 16px; padding: 0.35em 1.1em 0.5em; box-shadow: var(--shadow-sm); }
+    #root .su-prose { background: var(--paper-card); border-radius: 16px; padding: 0.35em 1.1em 0.5em; box-shadow: var(--shadow-sm); }
     #root .su-prose p { font-size: 1.02rem; line-height: 1.66; color: var(--ink-soft); }
     #root .su-prose .lead { font-weight: 700; color: var(--ink); }
     /* white tiles — gradient outline, accent varies per tile via --sc/--scd */
     #root .su-cards { display: grid; gap: 0.65em; }
-    #root .su-card { position: relative; background: #fff; border-radius: 16px; padding: 1.05em 1.15em 1.1em; box-shadow: var(--shadow-sm); }
+    #root .su-card { position: relative; background: var(--paper-card); border-radius: 16px; padding: 1.05em 1.15em 1.1em; box-shadow: var(--shadow-sm); }
     #root .su-card::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.5px; background: linear-gradient(135deg, var(--sc, var(--acc-bright)), var(--scd, var(--acc))); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; opacity: 0.55; }
     /* Block, not flex: a long cost line ("a few hundred pounds a year, plus
        paperwork") in a nowrap flex pill pushed the whole card wider than the
@@ -557,11 +557,11 @@
     #root .su-row-d { font-size: 1.01rem; line-height: 1.58; color: var(--ink-soft); }
     /* the tickable shopping list — now grouped inside drop-downs, one per aisle */
     #root .su-shop { display: grid; gap: 0.55em; padding: 0.5em 0 0.3em; }
-    #root .su-item { position: relative; display: flex; gap: 0.8em; align-items: flex-start; background: #fff; border-radius: 14px; padding: 0.9em 1em; box-shadow: var(--shadow-sm); cursor: pointer; transition: transform 0.2s var(--spring), opacity 0.2s ease; }
+    #root .su-item { position: relative; display: flex; gap: 0.8em; align-items: flex-start; background: var(--paper-card); border-radius: 14px; padding: 0.9em 1em; box-shadow: var(--shadow-sm); cursor: pointer; transition: transform 0.2s var(--spring), opacity 0.2s ease; }
     #root .su-item:active { transform: scale(0.985); }
     #root .su-item.is-got { opacity: 0.5; }
     #root .su-item.is-got .su-item-n { text-decoration: line-through; }
-    #root .su-tick { flex: 0 0 auto; width: 26px; height: 26px; margin-top: 0.1em; border-radius: 8px; border: 2px solid color-mix(in srgb, var(--gc, var(--acc)) 30%, #fff); background: #fff; display: grid; place-items: center; color: #fff; font-weight: 900; font-size: 0.85rem; transition: background 0.2s var(--spring), border-color 0.2s var(--spring); }
+    #root .su-tick { flex: 0 0 auto; width: 26px; height: 26px; margin-top: 0.1em; border-radius: 8px; border: 2px solid color-mix(in srgb, var(--gc, var(--acc)) 30%, #fff); background: var(--paper-card); display: grid; place-items: center; color: #fff; font-weight: 900; font-size: 0.85rem; transition: background 0.2s var(--spring), border-color 0.2s var(--spring); }
     #root .su-item.is-got .su-tick { background: var(--gc, var(--acc)); border-color: var(--gc, var(--acc)); }
     #root .su-item-n { display: block; font-family: var(--sans); font-weight: 800; font-size: 1.05rem; line-height: 1.3; color: var(--ink); margin-bottom: 0.1em; }
     #root .su-item-tag { font-size: 0.97rem; line-height: 1.5; color: var(--ink-soft); }
@@ -572,12 +572,12 @@
     #root .su-shopgroup.is-done .su-kit-count { background: var(--gc); border-color: var(--gc); color: #fff; }
     /* leave-it-out / red-flag list — white cards so they sit on any tinted band */
     #root .su-nope { display: grid; gap: 0.5em; margin: 0; padding: 0; list-style: none; }
-    #root .su-nope li { display: flex; gap: 0.7em; align-items: flex-start; font-size: 1.01rem; line-height: 1.55; color: var(--ink-soft); background: #fff; border-radius: 13px; padding: 0.85em 1em; box-shadow: var(--shadow-sm); }
+    #root .su-nope li { display: flex; gap: 0.7em; align-items: flex-start; font-size: 1.01rem; line-height: 1.55; color: var(--ink-soft); background: var(--paper-card); border-radius: 13px; padding: 0.85em 1em; box-shadow: var(--shadow-sm); }
     #root .su-nope li::before { content: "✕"; flex: 0 0 auto; font-weight: 900; color: var(--warn); }
     /* do / don't pair */
     #root .su-pair { display: grid; gap: 0.7em; }
     @media (min-width: 620px) { #root .su-pair { grid-template-columns: 1fr 1fr; } }
-    #root .su-pane { background: #fff; border-radius: 16px; padding: 1.05em 1.15em 1.15em; box-shadow: var(--shadow-sm); }
+    #root .su-pane { background: var(--paper-card); border-radius: 16px; padding: 1.05em 1.15em 1.15em; box-shadow: var(--shadow-sm); }
     #root .su-pane-h { font-family: var(--sans); font-weight: 800; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 0.6em; }
     #root .su-pane.is-do .su-pane-h { color: var(--go); }
     #root .su-pane.is-dont .su-pane-h { color: var(--warn); }
@@ -592,7 +592,7 @@
     #root .su-model p { margin: 0; font-size: 1.04rem; line-height: 1.66; color: var(--ink-soft); }
     /* question-to-ask rows (now inside drop-downs) */
     #root .su-qa { display: grid; gap: 0.55em; }
-    #root .su-q { background: #fff; border-radius: 14px; padding: 0.95em 1.05em; box-shadow: var(--shadow-sm); }
+    #root .su-q { background: var(--paper-card); border-radius: 14px; padding: 0.95em 1.05em; box-shadow: var(--shadow-sm); }
     #root .su-q-q { display: block; font-family: var(--display); font-weight: 700; font-size: 1.1rem; line-height: 1.3; color: var(--ink); margin-bottom: 0.25em; }
     #root .su-q-w { font-size: 0.98rem; line-height: 1.55; color: var(--ink-soft); }
     #root .su-q-w b { color: var(--gcd, var(--acc)); font-weight: 800; }
@@ -604,7 +604,7 @@
     }
 
     /* ── The story, moved below the options and made opt-in ── */
-    #root .story { margin: 2.5em 0 0; background: #fff; border: 1px solid var(--rule); border-radius: 18px; box-shadow: var(--shadow-sm); overflow: hidden; }
+    #root .story { margin: 2.5em 0 0; background: var(--paper-card); border: 1px solid var(--rule); border-radius: 18px; box-shadow: var(--shadow-sm); overflow: hidden; }
     #root .story > summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 0.8em; padding: 1.05em 1.15em; }
     #root .story > summary::-webkit-details-marker { display: none; }
     #root .story[open] > summary { border-bottom: 1px solid var(--rule); }
@@ -648,7 +648,7 @@
     .watch{ margin:26px 0 4px; }
     .watch-head{ font:800 .74rem/1 -apple-system,system-ui,sans-serif; letter-spacing:.12em;
       text-transform:uppercase; color:var(--gad,#2F4550); margin-bottom:10px; }
-    .watch-card{ border-radius:16px; overflow:hidden; background:#fff;
+    .watch-card{ border-radius:16px; overflow:hidden; background:var(--paper-card);
       border:1.5px solid rgba(0,0,0,.08); box-shadow:0 2px 14px rgba(0,0,0,.05); }
     .watch-play{ display:block; width:100%; padding:0; border:0; background:#0d0b12; cursor:pointer;
       position:relative; aspect-ratio:16/9; line-height:0; }
@@ -676,6 +676,7 @@
     .watch-out{ display:inline-block; margin-top:11px; font:700 .86em -apple-system,system-ui,sans-serif;
       opacity:.62; text-decoration:none; color:inherit; }
   </style>
+  <script>(function(){try{var k="theme:"+location.pathname.split("/").slice(0,2).join("/"),t=localStorage.getItem(k);if(!t)t=(window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light";document.documentElement.setAttribute("data-theme",t==="dark"?"dark":"light")}catch(e){}})();</script>
 </head>
 <body class="method-page">
   <main id="root" class="method-main"></main>
@@ -1562,5 +1563,6 @@
     }
   </script>
   <script src="assets/reader.js"></script>
+  <script src="assets/theme.js"></script>
 </body>
 </html>

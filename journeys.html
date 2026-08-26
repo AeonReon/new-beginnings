@@ -30,6 +30,7 @@
 
     .jh-startpill { display: inline-flex; align-items: center; gap: 0.4em; font-family: var(--sans); font-size: 0.6rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #fff; background: linear-gradient(135deg, var(--gc), var(--gcd)); padding: 0.24em 0.65em; border-radius: var(--radius-pill); align-self: flex-start; margin-bottom: 0.12em; }
   </style>
+  <script>(function(){try{var k="theme:"+location.pathname.split("/").slice(0,2).join("/"),t=localStorage.getItem(k);if(!t)t=(window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light";document.documentElement.setAttribute("data-theme",t==="dark"?"dark":"light")}catch(e){}})();</script>
 </head>
 <body class="launcher">
   <main class="launcher-main article">
@@ -119,5 +120,6 @@
       }).join('');
     })();
   </script>
+  <script src="assets/theme.js"></script>
 </body>
 </html>

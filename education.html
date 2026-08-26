@@ -13,7 +13,7 @@
   <style>
     .schools-embed { margin: 0 0 2.2em; }
     .cat-chips { display: flex; flex-wrap: wrap; gap: 0.45em; margin: 0 0 0.9em; }
-    .cat-chip { border: 1.5px solid var(--rule); background: #fff; color: var(--ink-soft); font-weight: 700; font-size: 0.82em; padding: 0.42em 0.85em; border-radius: 999px; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4em; transition: all 0.14s ease; }
+    .cat-chip { border: 1.5px solid var(--rule); background: var(--paper-card); color: var(--ink-soft); font-weight: 700; font-size: 0.82em; padding: 0.42em 0.85em; border-radius: 999px; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4em; transition: all 0.14s ease; }
     .cat-chip .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--cc, var(--sky)); }
     .cat-chip.on { color: #fff; border-color: transparent; background: var(--cc, var(--sky)); }
     .cat-chip.on .dot { background: rgba(255,255,255,0.9); }
@@ -48,7 +48,7 @@
     @keyframes mapCardFade { from { opacity: 0; } to { opacity: 1; } }
     .map-card-shell { position: relative; width: 440px; max-width: calc(100vw - 44px); max-height: calc(100dvh - 52px); overflow: auto; animation: mapCardPop .18s cubic-bezier(0.34,1.56,0.64,1); }
     @keyframes mapCardPop { from { transform: scale(0.94); } to { transform: scale(1); } }
-    .map-card-body { background: #fff; border: 1px solid var(--rule); border-radius: var(--radius-md); box-shadow: 0 18px 52px rgba(20,35,60,.4); overflow: hidden; }
+    .map-card-body { background: var(--paper-card); border: 1px solid var(--rule); border-radius: var(--radius-md); box-shadow: 0 18px 52px rgba(20,35,60,.4); overflow: hidden; }
     .map-card-close { position: absolute; top: 8px; right: 8px; z-index: 5; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 999px; background: rgba(0,0,0,0.5); color: #fff; border: 1px solid rgba(255,255,255,0.3); font-size: 16px; line-height: 1; cursor: pointer; font-family: inherit; }
     .pop-img { width: 100%; height: 150px; object-fit: cover; display: block; }
     .pop-inner { padding: 18px 20px 20px; }
@@ -66,6 +66,7 @@
     .pop-link { font-weight: 700; font-size: 0.92em; }
     @media (max-width: 460px) { .pop-img { height: 128px; } .pop-inner { padding: 15px 16px 17px; } }
   </style>
+  <script>(function(){try{var k="theme:"+location.pathname.split("/").slice(0,2).join("/"),t=localStorage.getItem(k);if(!t)t=(window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light";document.documentElement.setAttribute("data-theme",t==="dark"?"dark":"light")}catch(e){}})();</script>
 </head>
 <body class="launcher">
   <main class="launcher-main article">
@@ -363,5 +364,6 @@
       initMap();
     })();
   </script>
+  <script src="assets/theme.js"></script>
 </body>
 </html>
