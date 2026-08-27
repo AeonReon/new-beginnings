@@ -1,4 +1,4 @@
-const APP_VERSION = 'v82';
+const APP_VERSION = 'v83';
 
 function renderHomeLink() {
   const here = location.pathname.split('/').pop() || 'index.html';
