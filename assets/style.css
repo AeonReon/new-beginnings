@@ -2372,27 +2372,9 @@ body:not(:has(.appbar))::before {
 [data-theme="dark"] .join-done { border-color: var(--rule); color: var(--ok-ink); }
 [data-theme="dark"] .ios-share-cap { color: var(--ink-mute); }
 
-/* ---- The dark-mode pill on inner pages ---------------------------------
-   theme.js builds it as `.corner-nav .corner-theme`, borrowing the base pill
-   the sister apps define. This app names its corner controls .home-link and
-   .home-corner instead, so .corner-nav was never defined here and the toggle
-   rendered as a bare unstyled button in the top-left corner. Give it the same
-   body as .home-link so Back / theme / Home read as one row. ------------- */
-.corner-nav {
-  position: fixed;
-  top: calc(0.8em + env(safe-area-inset-top, 0px));
-  z-index: 9999;
-  background: var(--paper-card);
-  color: var(--ink);
-  border: 1.5px solid var(--rule);
-  border-radius: 999px;
-  font-family: var(--sans);
-  font-weight: 700;
-  cursor: pointer;
-  box-shadow: var(--shadow-sm);
-  transition: all 0.15s ease;
-}
-.corner-nav:hover { border-color: var(--sky); color: var(--sky-deep); box-shadow: var(--shadow-md); }
+/* The inner-page dark-mode pill was removed on 2026-08-28 — the app icon on the
+   home page is the one and only control now, so the .corner-nav base style that
+   used to dress that pill went with it. */
 
 /* ---- Data-driven accents in dark mode ----------------------------------
    Generated, then kept by hand. Each page carries its own palette trio —

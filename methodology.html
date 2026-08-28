@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#4FA4D2">
+  <meta name="theme-color" content="#2E84BD">
   <title>Conscious Parenting NI — Tradition</title>
   <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/png" href="icon-192.png">
@@ -887,7 +887,8 @@
       // the photo, not from drowning the page in a hue.
       const SITE = { accent: '#2D6FA8', accentBright: '#4FA4D2', accentSoft: '#EAF3FB', warm: '#E0912B' };
       document.title = 'Conscious Parenting NI — ' + m.name;
-      document.querySelector('meta[name="theme-color"]').setAttribute('content', SITE.accent);
+      // No theme-color write here: the strip is owned by theme.js so it stays
+      // tied to light/dark, not to the page.
       document.documentElement.style.setProperty('--m-color', SITE.accent);
       document.documentElement.style.setProperty('--m-deep', SITE.accent);
       document.documentElement.style.setProperty('--m-soft', SITE.accentSoft);

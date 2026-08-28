@@ -1,4 +1,4 @@
-const CACHE = 'new-beginnings-v153';
+const CACHE = 'new-beginnings-v154';
 const ASSETS = [
   './',
   './index.html',
