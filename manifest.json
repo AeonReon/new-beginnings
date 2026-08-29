@@ -1,13 +1,13 @@
 {
   "name": "Conscious Parenting NI",
   "short_name": "Conscious Parenting NI",
-  "description": "A first-principles guide to raising a child — the best of every tradition, for Northern Ireland families",
+  "description": "A first-principles guide to raising a child \u2014 the best of every tradition, for Northern Ireland families",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
   "orientation": "any",
   "background_color": "#F6F8FB",
-  "theme_color": "#2E84BD",
+  "theme_color": "#4FA4D2",
   "icons": [
     {
       "src": "icon-192.png",

@@ -1,15 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap');
 :root {
-  --grad-cream: linear-gradient(135deg, #FFF6E2, #FFF0D2);
-  /* Answer-feedback + veil tints, named so dark mode can restate them. */
-  --ok-soft:   var(--ok-soft);
-  --ok-ink:    var(--ok-ink);
-  --bad-soft:  var(--bad-soft);
-  --bad-ink:   var(--bad-ink);
-  --warn-soft: var(--warn-soft);
-  --warn-ink:  var(--warn-ink);
-  --veil:      rgba(255, 255, 255, 0.97);
-
   /* Clear Sky palette — matched to Conscious Parenting NI site + Days Out */
   --ink: #1A2233;
   --ink-soft: #4D5A6E;
@@ -368,7 +358,7 @@ table {
   border-collapse: collapse;
   margin: 1em 0;
   font-size: 0.94em;
-  background: var(--paper-card);
+  background: white;
   border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
@@ -398,7 +388,7 @@ input[type="text"], input[type="search"], input[type="date"], textarea, select {
   padding: 0.7em 0.9em;
   border: 1.5px solid var(--rule);
   border-radius: var(--radius-sm);
-  background: var(--paper-card);
+  background: white;
   color: var(--ink);
   width: 100%;
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
@@ -434,7 +424,7 @@ button, .btn {
   border-radius: var(--radius-pill);
   cursor: pointer;
   color: var(--ink);
-  background: var(--paper-card);
+  background: white;
   position: relative;
   transition: transform 0.12s ease;
   display: inline-flex;
@@ -476,7 +466,7 @@ button.primary-fill::before, .btn.primary-fill::before { display: none; }
   flex-wrap: wrap;
   margin: 1.4em 0;
   padding: 1.2em;
-  background: var(--paper-card);
+  background: white;
   border: 1px solid var(--rule);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
@@ -523,7 +513,7 @@ button.primary-fill::before, .btn.primary-fill::before { display: none; }
   border: 1px solid var(--rule);
   border-radius: var(--radius-md);
   margin-bottom: 0.7em;
-  background: var(--paper-card);
+  background: white;
   font-size: 0.96em;
   box-shadow: var(--shadow-sm);
 }
@@ -542,14 +532,14 @@ button.primary-fill::before, .btn.primary-fill::before { display: none; }
 .log-entry button.del {
   padding: 0.2em 0.7em;
   font-size: 0.72em;
-  background: var(--paper-card);
+  background: white;
   color: var(--ink-mute);
   border: 1px solid var(--rule);
 }
 .log-entry button.del:hover {
   color: var(--rose);
   border-color: var(--rose);
-  background: var(--paper-card);
+  background: white;
   box-shadow: none;
   transform: none;
 }
@@ -574,7 +564,7 @@ button.primary-fill::before, .btn.primary-fill::before { display: none; }
   font-weight: 600;
   color: var(--ink-soft);
   cursor: pointer;
-  background: var(--paper-card);
+  background: white;
   user-select: none;
   transition: all 0.15s ease;
 }
@@ -635,7 +625,7 @@ button.primary-fill::before, .btn.primary-fill::before { display: none; }
   align-items: center;
   margin-bottom: 1.2em;
   padding: 1em 1.2em;
-  background: var(--paper-card);
+  background: white;
   border: 1px solid var(--rule);
   border-radius: var(--radius-lg);
   font-family: var(--sans);
@@ -777,7 +767,7 @@ button.primary-fill::before, .btn.primary-fill::before { display: none; }
   flex-wrap: wrap;
   margin: 1.4em 0;
   padding: 0.5em;
-  background: var(--paper-card);
+  background: white;
   border: 1px solid var(--rule);
   border-radius: var(--radius-pill);
   box-shadow: var(--shadow-sm);
@@ -908,7 +898,7 @@ body.launcher {
 .age-pill {
   flex-shrink: 0;
   padding: 0.5em 1em;
-  background: var(--paper-card);
+  background: white;
   border-radius: 999px;
   font-size: 0.72em;
   font-weight: 800;
@@ -962,7 +952,7 @@ body.launcher {
 
 .tile {
   position: relative;
-  background: var(--paper-card);
+  background: white;
   border-radius: var(--radius-lg);
   padding: 1.3em 1.3em 1.4em;
   text-decoration: none;
@@ -1343,7 +1333,7 @@ body.launcher {
   top: 0.85em;
   right: 0.85em;
   z-index: 3;
-  background: var(--paper-card);
+  background: white;
   color: var(--ink-soft);
   padding: 0.25em 0.7em;
   border-radius: 999px;
@@ -1360,7 +1350,7 @@ body.launcher {
   display: flex;
   align-items: center;
   gap: 0.9em;
-  background: var(--paper-card);
+  background: white;
   border-radius: var(--radius-lg);
   padding: 1em 1.4em;
   box-shadow: 0 1px 2px rgba(40, 30, 20, 0.05), 0 10px 28px rgba(40, 30, 20, 0.07);
@@ -1428,7 +1418,7 @@ body.launcher {
   top: calc(0.8em + env(safe-area-inset-top, 0px));
   left: 0.8em;
   z-index: 9999;
-  background: var(--paper-card);
+  background: white;
   color: var(--ink);
   padding: 0.45em 0.95em;
   border-radius: 999px;
@@ -1457,7 +1447,7 @@ body.launcher {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--paper-card);
+  background: white;
   border: 1.5px solid var(--rule);
   border-radius: 999px;
   box-shadow: var(--shadow-sm);
@@ -1572,7 +1562,7 @@ body.method-page {
   margin-bottom: 2.4em;
 }
 .borrow-card {
-  background: var(--paper-card);
+  background: white;
   border: 1px solid var(--rule);
   border-left: 4px solid var(--m-color, var(--sky));
   border-radius: var(--radius-md);
@@ -1604,7 +1594,7 @@ body.method-page {
 
 .sub-tile {
   position: relative;
-  background: var(--paper-card);
+  background: white;
   border: 1px solid var(--rule);
   border-radius: var(--radius-lg);
   padding: 1.3em 1.2em;
@@ -1751,7 +1741,7 @@ body.method-page {
   color: var(--m-deep, var(--sky-deep));
 }
 .day-content {
-  background: var(--paper-card);
+  background: white;
   border: 1px solid var(--rule);
   border-radius: var(--radius-md);
   padding: 0.9em 1.1em;
@@ -1774,7 +1764,7 @@ body.method-page {
 }
 .activity-card {
   position: relative;
-  background: var(--paper-card);
+  background: white;
   border: 1px solid var(--rule);
   border-radius: var(--radius-md);
   padding: 1em 1.1em 1em 3.4em;
@@ -1870,7 +1860,7 @@ body.method-page {
 .feast-nav button { flex: 1 1 auto; justify-content: center; }
 
 .virtue-card {
-  background: var(--paper-card);
+  background: white;
   padding: 1.2em 1.4em;
   border-radius: var(--radius-lg);
   position: relative;
@@ -1914,7 +1904,7 @@ body.method-page {
   display: inline-flex;
   align-items: center;
   gap: 0.4em;
-  background: var(--paper-card);
+  background: white;
   color: var(--ink);
   border: none;
   font-family: var(--sans);
@@ -1986,7 +1976,7 @@ body.random-page {
 }
 
 .random-card {
-  background: var(--paper-card);
+  background: white;
   border-radius: var(--radius-lg);
   padding: 1.8em;
   position: relative;
@@ -2188,345 +2178,3 @@ body.random-page {
 .feast-drift { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.7em; margin: 0 0 1.1em; padding: 0.75em 0.95em; border-radius: var(--radius-md); background: var(--sun-soft); border: 1px solid #F2DFA8; font-family: var(--sans); font-size: 0.88em; font-weight: 600; color: var(--ink-soft); }
 .feast-drift-acts { display: flex; gap: 0.5em; flex-wrap: wrap; }
 .feast-drift button { font-size: 0.86em; padding: 0.5em 0.9em; }
-
-/* ===== Dark mode — "midnight sky" navy, lifted from Days Out NI so the two
-   feel like the same house. Opt-in via data-theme="dark" on <html>, set by an
-   inline boot script in every page head (before paint, so there is no flash of
-   cream) and persisted in localStorage; first visit follows the OS setting.
-
-   ONLY the neutrals flip. The sun / pink / sky / mint accents stay exactly as
-   they are, because they are the app's identity — the same rule Days Out uses.
-   Surface whites throughout the CSS and the page <style> blocks were routed to
-   var(--paper-card), which is still #FFFFFF in light mode, so light mode is
-   visually unchanged by any of this. ===== */
-[data-theme="dark"] {
-  --ink:        #E6EDF3;          /* soft off-white — never pure white */
-  --ink-soft:   #AEBECE;
-  --ink-mute:   #8194A6;
-
-  --paper:         #0F1E2A;       /* midnight sky-navy */
-  --paper-warm:    #14273A;
-  --paper-card:    #182C3B;       /* lifted card surface */
-  --paper-surface: #142534;
-
-  --rule:        #294256;
-  --rule-soft:   #21384A;
-  --rule-strong: #3B5A73;
-
-  /* Accents nudged brighter so they still carry on a dark ground. */
-  --sky:      #6BB6E8;
-  /* --sky-soft is a FILL token in this app, not a text colour — chips, table
-     hover rows, focus halos and the poem/kind pills all use it as a
-     background. Lifting it to a pale blue for dark mode turned those fills
-     into light blocks with mid-blue text on them (1.9:1). It stays a tint;
-     the things that wanted a bright blue take --sky. */
-  --sky-soft: #1B3E56;
-  --sky-deep: #6BB6E8;
-  --sun-deep: #E8B25A;
-
-  /* The pale tint colours become dark tints of the same hue. */
-  --leaf-soft:   #14342A;
-  --rose-soft:   #3A1C28;
-  --sky-soft-bg: #17384F;
-  --sun-soft:    #3A2F14;
-
-  /* Shadows need real darkness behind them rather than warm brown. */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.30), 0 4px 12px rgba(0, 0, 0, 0.26);
-  --shadow-md: 0 2px 4px rgba(0, 0, 0, 0.34), 0 10px 28px rgba(0, 0, 0, 0.34);
-  --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.40), 0 24px 60px rgba(0, 0, 0, 0.46);
-}
-
-/* The sunburst washes are hardcoded rgba over var(--paper); at their light-mode
-   strength they go muddy on navy, so they are re-laid much fainter and cooler. */
-[data-theme="dark"] html,
-[data-theme="dark"] body {
-  background:
-    radial-gradient(900px 500px at -10% -20%, rgba(107, 182, 232, 0.10), transparent 60%),
-    radial-gradient(900px 500px at 110% -10%, rgba(255, 94, 142, 0.07), transparent 60%),
-    var(--paper);
-}
-
-/* Links read as warm orange on cream; on navy that is muddy, so they take sky. */
-[data-theme="dark"] a { color: var(--sky); border-bottom-color: rgba(107, 182, 232, 0.35); }
-[data-theme="dark"] a:hover { color: var(--sun); border-bottom-color: var(--sun); }
-
-/* Photographs are lit for a bright page; take a little glare off them. */
-[data-theme="dark"] .tb-photo img,
-[data-theme="dark"] .tile-img img,
-[data-theme="dark"] .rt-img img { filter: brightness(0.88) contrast(1.03); }
-
-
-
-[data-theme="dark"] {
-  --ok-soft:   #12301F;
-  --ok-ink:    #6BD3A0;
-  --bad-soft:  #3A1C22;
-  --bad-ink:   #F08CA0;
-  --warn-soft: #3A2F14;
-  --warn-ink:  #E8C46A;
-  --veil:      rgba(15, 30, 42, 0.97);
-}
-
-/* ---- The app bar goes dark too, the way Days Out does it ----------------
-   The bar's colours are declared on `body` inside each page's own <style>
-   block, which loads after this file, so `[data-theme="dark"] body` is what
-   it takes to win on specificity. ------------------------------------- */
-[data-theme="dark"] body {
-  --sky:      #6BB6E8;
-  --sky-deep: #4A8FC4;
-  --grad-sky-app: linear-gradient(160deg, #12252F, #1F3B4E);
-  --grad-header:  linear-gradient(160deg, #12252F, #1F3B4E);
-}
-[data-theme="dark"] .appbar { box-shadow: 0 2px 10px rgba(0, 0, 0, 0.45); }
-
-/* The app icon is the dark-mode control (see theme.js for why). Keep the
-   affordance quiet — it should read as a logo first and a button second. */
-.theme-icon-btn { cursor: pointer; transition: transform .18s cubic-bezier(0.34, 1.56, 0.64, 1), filter .18s; }
-.theme-icon-btn:hover { transform: translateY(-1px); filter: brightness(1.08); }
-.theme-icon-btn:active { transform: scale(.93); }
-.theme-icon-btn:focus-visible { outline: 3px solid var(--sun); outline-offset: 2px; }
-
-/* Inner pages have no app bar; the toggle joins the Back / Home pills and sits
-   centred between them, so those three read as one row. */
-.corner-theme {
-  left: 50%; transform: translateX(-50%);
-  font-size: 1.05em; line-height: 1;
-  padding: 0.5em 0.85em;
-}
-.corner-theme:active { transform: translateX(-50%) scale(.94); }
-
-[data-theme="dark"] {
-  --grad-cream: linear-gradient(135deg, #22323F, #1A2833);
-}
-
-/* This app carries a second palette — --text/--panel/--border/--muted-dim, the
-   Days Out naming — alongside --ink/--paper. Both are used, so both must flip;
-   missing these left headings dark-on-dark and cards white with pale text.
-
-   THEY MUST BE SET ON `body`, NOT ON `:root`. The home page (and several
-   others) declare their own `body{ --text:#1A2233; --panel:#fff; ... }` block
-   in the page <style>. A custom property declared on `body` beats one
-   inherited from `html`, no matter how specific the html selector is — so a
-   `[data-theme="dark"]` block here was silently losing to it, which is why the
-   home page kept black headings and white feed cards on navy. Matching on
-   `body` puts it on the same element, where the later, more specific selector
-   wins. */
-[data-theme="dark"] body {
-  --text:      #E6EDF3;
-  --panel:     #182C3B;
-  --border:    #294256;
-  --muted-dim: #8194A6;
-  --muted:     #AEBECE;
-}
-
-/* ---- iOS status-bar strip -------------------------------------------------
-   With status-bar-style "black-translucent" the strip is transparent and the
-   page runs underneath it, so padding the app bar by the safe-area inset makes
-   the bar itself fill that space — it then follows the theme in both directions
-   with no meta juggling. "default" was the wrong choice: iOS draws that strip
-   light and ignores theme-color, which is why it stayed white in dark mode.
-   Pages with no app bar get body padding so nothing hides under the clock. */
-/* ---- The strip behind the iPhone clock --------------------------------
-   `apple-mobile-web-app-status-bar-style: black-translucent` makes iOS draw
-   the clock, signal and battery in WHITE, always — it has no light variant.
-   So whatever sits under them must be dark chrome in BOTH themes, or the
-   clock disappears. The home page already covers it: its app bar is padded by
-   the safe-area inset, so the bar itself fills the strip. Every other page has
-   no app bar, and used to leave cream (light) or bare navy (dark) up there —
-   which is why the top of the screen behaved differently page to page and
-   theme to theme. Paint it explicitly instead, from the same --chrome the
-   <meta name="theme-color"> uses, so the strip, the app bar and the browser
-   chrome are one colour everywhere. ------------------------------------- */
-:root { --chrome: #2E84BD; }
-[data-theme="dark"] { --chrome: #12252F; }
-
-.appbar { padding-top: env(safe-area-inset-top, 0px); }
-body:not(:has(.appbar)) { padding-top: env(safe-area-inset-top, 0px); }
-body:not(:has(.appbar))::before {
-  content: "";
-  position: fixed; top: 0; left: 0; right: 0;
-  height: env(safe-area-inset-top, 0px);
-  background: var(--chrome);
-  z-index: 9998;
-  pointer-events: none;
-}
-
-/* ---- The home page's own colours ---------------------------------------
-   index.html paints a lot of its chrome with literal hexes chosen for cream
-   paper — mid-grey body copy, cream chip fills, brown eyebrows. On navy they
-   are somewhere between muddy and invisible, so they are re-pointed at the
-   theme's own tokens here rather than in the page, which keeps light mode
-   byte-for-byte unchanged. ------------------------------------------------ */
-[data-theme="dark"] .daily-card .daily-body,
-[data-theme="dark"] .af-sub,
-[data-theme="dark"] .join-sub { color: var(--ink-soft); }
-[data-theme="dark"] .join-note { color: var(--ink-mute); }
-[data-theme="dark"] .af-eyebrow { color: var(--sky); }
-[data-theme="dark"] .af-chips span {
-  color: var(--sky); background: var(--sky-soft-bg); border-color: var(--rule-strong);
-}
-[data-theme="dark"] .welcome { border-color: var(--rule); }
-[data-theme="dark"] .welcome-sum { color: var(--sun-deep); }
-[data-theme="dark"] .join-eyebrow { color: var(--sun-deep); }
-[data-theme="dark"] .join-input { border-color: var(--rule); }
-[data-theme="dark"] .join-done { border-color: var(--rule); color: var(--ok-ink); }
-[data-theme="dark"] .ios-share-cap { color: var(--ink-mute); }
-
-/* The inner-page dark-mode pill was removed on 2026-08-28 — the app icon on the
-   home page is the one and only control now, so the .corner-nav base style that
-   used to dress that pill went with it. */
-
-/* ---- Data-driven accents in dark mode ----------------------------------
-   Generated, then kept by hand. Each page carries its own palette trio —
-   --c / --cd / --cs and friends — set as INLINE styles from the page's data.
-   An inline declaration outranks every selector, so no [data-theme="dark"]
-   block can redefine those values; the deep members were picked to sit on
-   cream and land at 1.2:1–2.9:1 on navy, and the soft members are pale fills
-   that stayed pale and swallowed the light body text.
-
-   So instead of redefining the values, the rules that PAINT with them are
-   overridden here: deep accents used as text are mixed toward --ink until
-   they read, and soft accents used as a fill are mixed down into the dark
-   surface. Backgrounds built from the deep members are left alone — those
-   carry white text and already work. Light mode is untouched. ----------- */
-[data-theme="dark"] .pullquote span { color: color-mix(in srgb, var(--hcd) 55%, var(--ink)); }
-[data-theme="dark"] .tile-era { color: color-mix(in srgb, var(--cd) 55%, var(--ink)); }
-[data-theme="dark"] .home-link:hover { color: color-mix(in srgb, var(--m-deep) 55%, var(--ink)); }
-[data-theme="dark"] .home-corner:hover { color: color-mix(in srgb, var(--m-deep) 55%, var(--ink)); }
-[data-theme="dark"] .method-hero-eyebrow { color: color-mix(in srgb, var(--m-deep) 55%, var(--ink)); }
-[data-theme="dark"] .borrow-card h3 { color: color-mix(in srgb, var(--m-deep) 55%, var(--ink)); }
-[data-theme="dark"] .sub-tile-icon { background: color-mix(in srgb, var(--m-soft) 12%, var(--paper-surface)); }
-[data-theme="dark"] .sub-tile-icon { color: color-mix(in srgb, var(--m-deep) 55%, var(--ink)); }
-[data-theme="dark"] .sub-back a { color: color-mix(in srgb, var(--m-deep) 55%, var(--ink)); }
-[data-theme="dark"] .sub-hero-eyebrow { color: color-mix(in srgb, var(--m-deep) 55%, var(--ink)); }
-[data-theme="dark"] .principle-card h3 { color: color-mix(in srgb, var(--m-deep) 55%, var(--ink)); }
-[data-theme="dark"] .day-timeline::before { background: color-mix(in srgb, var(--m-soft) 12%, var(--paper-surface)); }
-[data-theme="dark"] .day-time { color: color-mix(in srgb, var(--m-deep) 55%, var(--ink)); }
-[data-theme="dark"] .activity-num { background: color-mix(in srgb, var(--m-soft) 12%, var(--paper-surface)); }
-[data-theme="dark"] .activity-num { color: color-mix(in srgb, var(--m-deep) 55%, var(--ink)); }
-[data-theme="dark"] .random-card-eyebrow { color: color-mix(in srgb, var(--cd) 55%, var(--ink)); }
-[data-theme="dark"] .random-card-link { color: color-mix(in srgb, var(--cd) 55%, var(--ink)); }
-[data-theme="dark"] .random-card-link:hover { color: color-mix(in srgb, var(--c) 55%, var(--ink)); }
-[data-theme="dark"] .explain .ex-chev { color: color-mix(in srgb, var(--hcd) 55%, var(--ink)); }
-[data-theme="dark"] .res-head .res-count { color: color-mix(in srgb, var(--hcd) 55%, var(--ink)); }
-[data-theme="dark"] .res-head .res-count { background: color-mix(in srgb, var(--hcs) 12%, var(--paper-surface)); }
-[data-theme="dark"] .shelf-ic { background: color-mix(in srgb, var(--hcs) 12%, var(--paper-surface)); }
-[data-theme="dark"] .shelf-tag { color: color-mix(in srgb, var(--hcd) 55%, var(--ink)); }
-[data-theme="dark"] .shelf-tag { background: color-mix(in srgb, var(--hcs) 12%, var(--paper-surface)); }
-[data-theme="dark"] .mo-eyebrow { color: color-mix(in srgb, var(--hcd) 55%, var(--ink)); }
-[data-theme="dark"] .group-header { background: color-mix(in srgb, var(--gcs) 12%, var(--paper-surface)); }
-[data-theme="dark"] .group-header h2 { color: color-mix(in srgb, var(--gcd) 55%, var(--ink)); }
-[data-theme="dark"] .act-head { background: color-mix(in srgb, var(--gcs) 12%, var(--paper-surface)); }
-[data-theme="dark"] .act-tag { color: color-mix(in srgb, var(--gcd) 55%, var(--ink)); }
-[data-theme="dark"] .chip { color: color-mix(in srgb, var(--gcd) 55%, var(--ink)); }
-[data-theme="dark"] .recipe-box { background: color-mix(in srgb, var(--gcs) 12%, var(--paper-surface)); }
-[data-theme="dark"] .recipe-pill { color: color-mix(in srgb, var(--gcd) 55%, var(--ink)); }
-[data-theme="dark"] .trait:hover { color: color-mix(in srgb, var(--gcd) 55%, var(--ink)); }
-[data-theme="dark"] .topic-sq.active .topic-sq-lbl { color: color-mix(in srgb, var(--gcd) 55%, var(--ink)); }
-[data-theme="dark"] .pop-list li::before { color: color-mix(in srgb, var(--pc) 55%, var(--ink)); }
-[data-theme="dark"] .sec-back { color: color-mix(in srgb, var(--gcd) 55%, var(--ink)); }
-[data-theme="dark"] .sec-back { background: color-mix(in srgb, var(--gcs) 12%, var(--paper-surface)); }
-[data-theme="dark"] .jr-buys { background: color-mix(in srgb, var(--gcs) 12%, var(--paper-surface)); }
-[data-theme="dark"] .jr-buys { color: color-mix(in srgb, var(--gcd) 55%, var(--ink)); }
-[data-theme="dark"] .jr-fold-n { background: color-mix(in srgb, var(--gcs) 12%, var(--paper-surface)); }
-[data-theme="dark"] .jr-fold-n { color: color-mix(in srgb, var(--gcd) 55%, var(--ink)); }
-[data-theme="dark"] .jr-group-title { color: color-mix(in srgb, var(--gcd) 55%, var(--ink)); }
-[data-theme="dark"] .jr-links a { color: color-mix(in srgb, var(--gcd) 55%, var(--ink)); }
-[data-theme="dark"] .jr-links a { background: color-mix(in srgb, var(--gcs) 12%, var(--paper-surface)); }
-[data-theme="dark"] .jh-go { color: color-mix(in srgb, var(--gc) 55%, var(--ink)); }
-[data-theme="dark"] #root .ed-eyebrow { color: color-mix(in srgb, var(--acc) 55%, var(--ink)); }
-[data-theme="dark"] #root .ed-lead p:first-of-type::first-letter { color: color-mix(in srgb, var(--acc) 55%, var(--ink)); }
-[data-theme="dark"] #root .ed-promise { background: color-mix(in srgb, var(--acc-soft) 12%, var(--paper-surface)); }
-[data-theme="dark"] #root .ed-promise-label { color: color-mix(in srgb, var(--acc) 55%, var(--ink)); }
-[data-theme="dark"] #root .ed-toc .toc-row:hover { background: color-mix(in srgb, var(--acc-soft) 12%, var(--paper-surface)); }
-[data-theme="dark"] #root .ed-toc .toc-no { color: color-mix(in srgb, var(--acc) 55%, var(--ink)); }
-[data-theme="dark"] #root .ed-toc .toc-arrow { color: color-mix(in srgb, var(--acc) 55%, var(--ink)); }
-[data-theme="dark"] #root .stage-btn.active .stage-lbl { color: color-mix(in srgb, var(--acc) 55%, var(--ink)); }
-[data-theme="dark"] #root .stage-btn.active .stage-sub { color: color-mix(in srgb, var(--acc) 55%, var(--ink)); }
-[data-theme="dark"] #root .stage-note { background: color-mix(in srgb, var(--acc-soft) 12%, var(--paper-surface)); }
-[data-theme="dark"] #root .stage-note b { color: color-mix(in srgb, var(--acc) 55%, var(--ink)); }
-[data-theme="dark"] #root .tenet-no { color: color-mix(in srgb, var(--acc) 55%, var(--ink)); }
-[data-theme="dark"] #root .tenet-why span { color: color-mix(in srgb, var(--acc) 55%, var(--ink)); }
-[data-theme="dark"] #root .whybox { background: color-mix(in srgb, var(--acc-soft) 12%, var(--paper-surface)); }
-[data-theme="dark"] #root .whybox-label { color: color-mix(in srgb, var(--acc) 55%, var(--ink)); }
-[data-theme="dark"] #root .pullquote::before { color: color-mix(in srgb, var(--acc) 55%, var(--ink)); }
-[data-theme="dark"] #root .pullquote cite { color: color-mix(in srgb, var(--acc) 55%, var(--ink)); }
-[data-theme="dark"] #root .recap-label { color: color-mix(in srgb, var(--acc) 55%, var(--ink)); }
-[data-theme="dark"] #root .recap li::before { color: color-mix(in srgb, var(--acc) 55%, var(--ink)); }
-[data-theme="dark"] #root .act-group-kicker { color: color-mix(in srgb, var(--acc) 55%, var(--ink)); }
-[data-theme="dark"] #root .act-no { background: color-mix(in srgb, var(--acc-soft) 12%, var(--paper-surface)); }
-[data-theme="dark"] #root .act-no { color: color-mix(in srgb, var(--acc) 55%, var(--ink)); }
-[data-theme="dark"] #root .sub-tile-arrow { color: color-mix(in srgb, var(--m-color) 55%, var(--ink)); }
-[data-theme="dark"] #root .principle-num { color: color-mix(in srgb, var(--m-color) 55%, var(--ink)); }
-[data-theme="dark"] #root .principle-kicker { color: color-mix(in srgb, var(--m-color) 55%, var(--ink)); }
-[data-theme="dark"] #root .principle-take { color: color-mix(in srgb, var(--m-deep) 55%, var(--ink)); }
-[data-theme="dark"] #root .in-practice { background: color-mix(in srgb, var(--m-soft) 12%, var(--paper-surface)); }
-[data-theme="dark"] #root .method-promise { background: color-mix(in srgb, var(--m-soft) 12%, var(--paper-surface)); }
-[data-theme="dark"] #root .method-promise .mp-eyebrow { color: color-mix(in srgb, var(--m-color) 55%, var(--ink)); }
-[data-theme="dark"] #root .why { color: color-mix(in srgb, var(--m-deep) 55%, var(--ink)); }
-[data-theme="dark"] #root .why::before { color: color-mix(in srgb, var(--m-color) 55%, var(--ink)); }
-[data-theme="dark"] #root .card h3 { color: color-mix(in srgb, var(--m-deep) 55%, var(--ink)); }
-[data-theme="dark"] #root .method-blurb p:first-child::first-letter { color: color-mix(in srgb, var(--m-deep) 55%, var(--ink)); }
-[data-theme="dark"] #root .chap-body .glance-label { color: color-mix(in srgb, var(--acc) 55%, var(--ink)); }
-[data-theme="dark"] #root .chap-body .whybox { background: color-mix(in srgb, var(--acc-soft) 12%, var(--paper-surface)); }
-[data-theme="dark"] #root .chap-body .whybox-label { color: color-mix(in srgb, var(--acc) 55%, var(--ink)); }
-[data-theme="dark"] #root .act-bar-kicker { color: color-mix(in srgb, var(--gcd) 55%, var(--ink)); }
-[data-theme="dark"] #root .grab-deck { color: color-mix(in srgb, var(--ga) 55%, var(--ink)); }
-[data-theme="dark"] #root .qa-num { background: color-mix(in srgb, var(--gas) 12%, var(--paper-surface)); }
-[data-theme="dark"] #root .qa-num { color: color-mix(in srgb, var(--gad) 55%, var(--ink)); }
-[data-theme="dark"] #root .bih-steps li::before { background: color-mix(in srgb, var(--acc-soft) 12%, var(--paper-surface)); }
-[data-theme="dark"] #root .bih-steps li::before { color: color-mix(in srgb, var(--acc) 55%, var(--ink)); }
-[data-theme="dark"] #root .bih-store.bih-site { color: color-mix(in srgb, var(--acc) 55%, var(--ink)); }
-[data-theme="dark"] #root .bih-note { background: color-mix(in srgb, var(--acc-soft) 12%, var(--paper-surface)); }
-[data-theme="dark"] #root .bih-note-label { color: color-mix(in srgb, var(--acc) 55%, var(--ink)); }
-[data-theme="dark"] #root .su-band { background: color-mix(in srgb, var(--acc-soft) 12%, var(--paper-surface)); }
-[data-theme="dark"] #root .su-no { color: color-mix(in srgb, var(--acc) 55%, var(--ink)); }
-[data-theme="dark"] #root .su-item-where { color: color-mix(in srgb, var(--gcd) 55%, var(--ink)); }
-[data-theme="dark"] #root .su-kit-count { color: color-mix(in srgb, var(--gcd) 55%, var(--ink)); }
-[data-theme="dark"] #root .su-pane.is-do .su-pane-h { color: color-mix(in srgb, var(--go) 55%, var(--ink)); }
-[data-theme="dark"] #root .su-pane.is-do li::before { color: color-mix(in srgb, var(--go) 55%, var(--ink)); }
-[data-theme="dark"] #root .su-model { background: color-mix(in srgb, var(--acc-soft) 12%, var(--paper-surface)); }
-[data-theme="dark"] #root .su-model-label { color: color-mix(in srgb, var(--acc) 55%, var(--ink)); }
-[data-theme="dark"] #root .su-q-w b { color: color-mix(in srgb, var(--gcd) 55%, var(--ink)); }
-[data-theme="dark"] #root .story-chev { color: color-mix(in srgb, var(--acc) 55%, var(--ink)); }
-[data-theme="dark"] #root .story-body p:first-of-type::first-letter { color: color-mix(in srgb, var(--acc) 55%, var(--ink)); }
-[data-theme="dark"] .watch-head { color: color-mix(in srgb, var(--gad) 55%, var(--ink)); }
-[data-theme="dark"] .watch-meta { color: color-mix(in srgb, var(--gad) 55%, var(--ink)); }
-[data-theme="dark"] .watch-note { background: color-mix(in srgb, var(--gas) 12%, var(--paper-surface)); }
-[data-theme="dark"] .watch-note b { color: color-mix(in srgb, var(--gad) 55%, var(--ink)); }
-[data-theme="dark"] .rt-photo { background: color-mix(in srgb, var(--rcs) 12%, var(--paper-surface)); }
-[data-theme="dark"] .chip { background: color-mix(in srgb, var(--rcs) 12%, var(--paper-surface)); }
-[data-theme="dark"] .rt-open { color: color-mix(in srgb, var(--rcd) 55%, var(--ink)); }
-[data-theme="dark"] .credits-card a { color: color-mix(in srgb, var(--rcd) 55%, var(--ink)); }
-[data-theme="dark"] .lyric-box { background: color-mix(in srgb, var(--gcs) 12%, var(--paper-surface)); }
-[data-theme="dark"] .lyric-pill { color: color-mix(in srgb, var(--gcd) 55%, var(--ink)); }
-[data-theme="dark"] .hear a { color: color-mix(in srgb, var(--gcd) 55%, var(--ink)); }
-[data-theme="dark"] .hear a { background: color-mix(in srgb, var(--gcs) 12%, var(--paper-surface)); }
-[data-theme="dark"] .rec-tag { color: color-mix(in srgb, var(--cd) 55%, var(--ink)); }
-[data-theme="dark"] .rec-tag { background: color-mix(in srgb, var(--cs) 12%, var(--paper-surface)); }
-[data-theme="dark"] .device-card h3 { color: color-mix(in srgb, var(--cd) 55%, var(--ink)); }
-[data-theme="dark"] .show-rec .sr-img { background: color-mix(in srgb, var(--cs) 12%, var(--paper-surface)); }
-
-/* Stragglers the generator could not see, because the value arrives from a JS
-   template rather than a literal in the source (--tc/--tcd on the "For today"
-   bars), or because the text is white on an accent that dark mode BRIGHTENED
-   (a pill filled with --sky reads at 2.2:1 against white once --sky lifts to
-   #6BB6E8, so the label goes dark instead). */
-[data-theme="dark"] .today-bar .tb-kicker { color: color-mix(in srgb, var(--tcd) 55%, var(--ink)); }
-[data-theme="dark"] .kind-chip.active { color: #0F1E2A; }
-[data-theme="dark"] .rt-tag { color: #23180A; }
-
-/* Literal light-mode hexes left in a few page <style> blocks. */
-[data-theme="dark"] .badge.free { color: var(--ok-ink); }
-[data-theme="dark"] .feat-card .fc-date,
-[data-theme="dark"] .feat-card .fc-date b,
-[data-theme="dark"] .feat-card .fc-tier.big,
-[data-theme="dark"] .map-peek .mp-badge { color: var(--sky); }
-[data-theme="dark"] .feat-card { background: var(--paper-surface); }
-
-/* Inline `style="color:var(--cd)"` links: an inline declaration outranks any
-   selector, so this one needs !important to reach it. */
-[data-theme="dark"] a[style*="--cd"] { color: color-mix(in srgb, var(--cd) 55%, var(--ink)) !important; }
-/* A segmented control that fills with --ink to mark the active choice — on
-   navy that fill is near-white, so the label goes dark instead of white. */
-[data-theme="dark"] .vp-seg button.on { color: var(--paper); }

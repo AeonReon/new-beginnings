@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#2E84BD">
+  <meta name="theme-color" content="#4FA4D2">
   <title>Conscious Parenting NI — Recipes</title>
   <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/png" href="icon-192.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/style.css?v86">
   <style>
     [hidden] { display: none !important; }
 
@@ -53,7 +53,7 @@
     .rt-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.28)); }
     .rt-emoji {
       position: absolute; left: 12px; bottom: -18px; z-index: 2;
-      width: 46px; height: 46px; border-radius: 14px; background: var(--paper-card);
+      width: 46px; height: 46px; border-radius: 14px; background: #fff;
       display: grid; place-items: center; font-size: 1.5rem;
       box-shadow: 0 3px 10px rgba(0,0,0,0.18); border: 2px solid var(--rc);
     }
@@ -99,9 +99,6 @@
     .cp-status.ok { color: #1B7A4A; }
     .cp-status.err { color: #C8583F; }
   </style>
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <script>(function(){try{var k="theme",t=localStorage.getItem(k);if(!t){for(var i=0;i<localStorage.length;i++){var ok=localStorage.key(i);if(ok&&ok.indexOf("theme:")===0){t=localStorage.getItem(ok);break;}}if(t){try{localStorage.setItem(k,t);}catch(e2){}}}if(!t)t=(window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light";var dark=t==="dark",m=document.querySelector('meta[name="theme-color"]');if(m)document.documentElement.setAttribute("data-chrome-light",m.getAttribute("content"));document.documentElement.setAttribute("data-theme",dark?"dark":"light");if(dark&&m)m.setAttribute("content","#12252F");}catch(e){}})();</script>
 </head>
 <body class="launcher">
   <main class="launcher-main article">
@@ -284,6 +281,5 @@
       });
     })();
   </script>
-  <script src="assets/theme.js"></script>
 </body>
 </html>

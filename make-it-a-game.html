@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#2E84BD">
+  <meta name="theme-color" content="#E8894A">
   <!-- Images on this page are for in-app use only — keep them out of image search. -->
   <meta name="robots" content="noimageindex, max-image-preview:none">
   <title>Conscious Parenting NI — Make It A Game</title>
   <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/png" href="icon-192.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/style.css?v86">
   <style>
     /* Jump-to-moment squares — one per flashpoint (shared pattern with Games/Activities) */
     .topic-nav { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.55em; margin: 0 0 1.6em; }
@@ -29,7 +29,7 @@
     .group-when { font-size: 0.94em; color: var(--ink-soft); margin: 0; line-height: 1.5; }
 
     /* WHY callout — the real reason the child resists, and why play works */
-    .why-box { margin: 0 0 0.9em; padding: 0.85em 1em; background: var(--paper-card); border: 1px solid var(--rule); border-left: 4px solid var(--gc); border-radius: 12px; }
+    .why-box { margin: 0 0 0.9em; padding: 0.85em 1em; background: #fff; border: 1px solid var(--rule); border-left: 4px solid var(--gc); border-radius: 12px; }
     .why-pill { display: inline-block; font-size: 0.6rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #fff; background: linear-gradient(135deg, var(--gc), var(--gcd)); padding: 0.25em 0.7em; border-radius: var(--radius-pill); margin-bottom: 0.5em; }
     .why-box p { margin: 0; font-size: 0.94em; line-height: 1.6; color: var(--ink-soft); }
     mark.hl { background: linear-gradient(180deg, rgba(255,206,61,0) 58%, rgba(255,201,45,0.85) 58%); color: inherit; font-weight: 700; padding: 0 0.06em; border-radius: 2px; }
@@ -62,9 +62,6 @@
     .act-drawer { padding: 0.95em 1.1em 1.15em; }
     .act-drawer p.how { margin: 0; color: var(--ink-soft); line-height: 1.58; }
   </style>
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <script>(function(){try{var k="theme",t=localStorage.getItem(k);if(!t){for(var i=0;i<localStorage.length;i++){var ok=localStorage.key(i);if(ok&&ok.indexOf("theme:")===0){t=localStorage.getItem(ok);break;}}if(t){try{localStorage.setItem(k,t);}catch(e2){}}}if(!t)t=(window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light";var dark=t==="dark",m=document.querySelector('meta[name="theme-color"]');if(m)document.documentElement.setAttribute("data-chrome-light",m.getAttribute("content"));document.documentElement.setAttribute("data-theme",dark?"dark":"light");if(dark&&m)m.setAttribute("content","#12252F");}catch(e){}})();</script>
 </head>
 <body class="launcher">
   <main class="launcher-main article">
@@ -203,6 +200,5 @@
       }
     })();
   </script>
-  <script src="assets/theme.js"></script>
 </body>
 </html>
