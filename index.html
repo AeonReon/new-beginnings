@@ -403,7 +403,12 @@
       // "Look out for" is wrong over a birthday or a word at the door — those
       // are moments you make, not moments you spot.
       const wonderKicker = (w) => w.group === 'Ours' ? 'A moment worth marking' : 'Look out for';
-      const byLabel = (b) => b === 'Ours' ? 'Words of our own' : b;
+      const byLabel = (b) => {
+        if (b === 'Modern, and the children invented it themselves') return 'A modern custom';
+        if (/^Ours/.test(b)) return 'Words of our own';
+        if (/^Traditional/.test(b)) return 'Traditional';
+        return b;
+      };
 
       // THIS WEEK — a gentle arc. One tradition is "in focus" each week; the
       // day's deed + thought lean into it so the week hangs together and you

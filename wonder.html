@@ -244,7 +244,12 @@
       return String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
     }
     // 'Ours' is honest but reads bare as a credit line — say it in words.
-    const byLabel = (b) => b === 'Ours' ? 'Words of our own' : b;
+    const byLabel = (b) => {
+      if (b === 'Modern, and the children invented it themselves') return 'A modern custom';
+      if (/^Ours/.test(b)) return 'Words of our own';
+      if (/^Traditional/.test(b)) return 'Traditional';
+      return b;
+    };
     const slug = (s) => String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
     // 'any' means all year. An array lists the months it's actually possible here.
     const inMonth = (w, m) => w.months === 'any' || (Array.isArray(w.months) && w.months.includes(m));
