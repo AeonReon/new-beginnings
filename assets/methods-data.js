@@ -14685,22 +14685,32 @@ window.METHODS = [
     "id": "school-of-light",
     "name": "The School of Light",
     "tagline": "Parents raising their own children, together",
-    "era": "First principles · Northern Ireland",
+    "era": "Northern Ireland · North Coast",
     "color": "#F0C557",
     "colorDeep": "#C6871B",
     "colorSoft": "#FBF3DA",
     "icon": "compass",
     "built": true,
     "image": "assets/tiles/school-of-light.png",
-    "website": {
-      "url": "https://school-of-light-seven.vercel.app/",
-      "label": "Enrolment is open",
-      "line": "Weekly days out are running on the North Coast, and a permanent place is in preparation. Ask for an invitation to the next one."
-    },
-    "blurb": "An approach built on first principles rather than inherited from a founder: the parent stays, the child explores widely, and the best of every other tradition here is taken on merit. There is a community running it on the North Coast, and you will find it on the map.",
+    "banner": ["First principles", "The parent stays", "Take the best of every method", "Get out and live", "Momentum"],
+    "join": [
+      {
+        "url": "https://school-of-light-seven.vercel.app/apply.html",
+        "label": "Join the waiting list",
+        "line": "Places come from the list. Add your family and we\u2019ll write to you with the schedule of open days out, and what comes after that.",
+        "go": "Join the waiting list \u2192"
+      },
+      {
+        "url": "https://school-of-light-seven.vercel.app/apply.html#days-out",
+        "label": "Come to an open day out",
+        "line": "One day, no commitment \u2014 a beach, a forest, rock pools, a farm. Some are free and some cost a few pounds, depending on the activity. Everyone on the waiting list gets the dates and picks the ones they fancy.",
+        "go": "See the open days \u2192"
+      }
+    ],
+    "blurb": "An approach built on first principles rather than inherited from a founder: the parent stays, the child explores widely, and the best of every other tradition here is taken on merit. It runs two ways \u2014 a local version on the North Coast, where the families meet and go out together every week, and an online version families anywhere can apply for. The local one is on the map.",
     "grab": {
       "hook": "Raise them yourself. Just not on your own.",
-      "summary": "Every other approach in this list was worked out somewhere else, a long time ago, and arrived here finished. This one is being worked out from first principles — and the difference that matters most is that the parent stays. Children play, build and learn in a group; their parents work in the next room and are twenty steps away all day. It takes what holds up from Montessori, Waldorf, forest school and the classical tradition, adds the tools that actually exist now, and drops the rest. There is a community practising it on the North Coast.",
+      "summary": "Every other approach in this list was worked out somewhere else, a long time ago, and arrived here finished. This one is built from first principles, here — and the difference that matters most is that the parent stays. Children play, build and learn in a group; their parents work in the next room and are twenty steps away all day. It takes what holds up from Montessori, Waldorf, forest school and the classical tradition, adds the tools that actually exist now, and drops the rest. Families practise it together on the North Coast, and online from further afield.",
       "deck": "Twelve principles. Every one of them has to survive the question: why are we actually doing this?",
       "bullets": [
         {
@@ -14756,11 +14766,11 @@ window.METHODS = [
         "Raising good children is the most important work in a life, and almost everybody delegates it. Not out of laziness — out of arrangement. The school day was built around a working day that mostly no longer exists, so a parent hands their child over for the best hours of the day, to people they have not chosen and often never meet, and gets the tired end of them back.",
         "Three things follow from that, and all three matter. The parent stops being the main influence, because school and the peer group become more present in the child's life than their mother and father — and the parents are quietly demoted to the people who pay, drive and feed. Protection is handed over with the day, because a parent filters what reaches their child: the food, the language, the ideas, the tone, the people. And the family unit weakens over a lifetime, because families that spend the formative years apart do not suddenly become close at eighteen.",
         "The correction is not that everybody should home-educate. Plenty of families do that well, but the picture most people have of it stops them — one child at a kitchen table with nobody their own age, and one parent trying to be teacher, cook and entertainment for eleven hours a day. That picture is not entirely unfair, and it is exactly the part we are built to fix.",
-        "So The School of Light is two things. A group of families who go out together every week — parks, beaches, forests, farms, a coach hired between us to somewhere further — which is running now. And a permanent place in preparation on the North Coast: a barn set up as an indoor park, a garden, a quiet house, rooms for real work, and a proper work zone for parents, open eight in the morning until eight at night, seven days a week.",
-        "Children three to eight, with their brothers and sisters. In school, home-educated, or somewhere in between — all three are welcome and the mix is deliberate. The parent comes too. That part does not vary, because it is the whole idea."
+        "So The School of Light is two things. A group of families who go out together every week — parks, beaches, forests, farms, a coach hired between us to somewhere further — which is running now. And a permanent place on the North Coast — a barn set up as an indoor park, a garden, a quiet house, rooms for real work, and a proper work zone for parents, open eight in the morning until eight at night, seven days a week.",
+        "Children three to eight, with their brothers and sisters. In school, home-educated, or somewhere in between — all three are welcome and the mix is deliberate. The parent comes too. That part does not vary, because it is the whole idea.",
+        "There are two ways in. The local version, on the North Coast, where the families meet and go out together every week. And the online version, for families further afield who want to run it where they live — the same principles, the same strands, the same weekly rhythm, with the group meeting on a screen instead of a beach. You apply for either one."
       ]
     },
-    "ours": true,
     "sections": {
       "day-in-life": {
         "title": "A day in the life",

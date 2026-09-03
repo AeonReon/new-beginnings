@@ -26,20 +26,6 @@
     #tradition-grid .tile-tagline { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
     #tradition-grid .tile-era { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
-    /* Premium (locked) tradition card — visible, admired, but not clickable */
-    /* Was a locked/no-op tile. It now opens the School of Light application site,
-       so it behaves like every other tile: hover lift, pointer, the lot. */
-    .tile-premium.bounce { animation: premiumBounce .42s cubic-bezier(0.34, 1.56, 0.64, 1); }
-    @keyframes premiumBounce { 0% { transform: scale(1); } 34% { transform: scale(0.955); } 100% { transform: scale(1); } }
-    .tile-badge-premium {
-      display: inline-flex; align-items: center; gap: 0.32em;
-      background: linear-gradient(135deg, #FBE7A1 0%, #E9B84A 48%, #C6871B 100%);
-      color: #4A3410;
-      box-shadow: 0 2px 7px rgba(150,105,15,0.4), inset 0 1px 0 rgba(255,255,255,0.6);
-      letter-spacing: 0.09em;
-    }
-    .tile-badge-premium .tbp-mark { font-size: 1.05em; line-height: 1; }
-
     .sch-pin { width: 18px; height: 18px; background: var(--pc, #4FA4D2); border: 3px solid #fff; border-radius: 50%; box-shadow: 0 1px 5px rgba(20,35,60,.55); cursor: pointer; transition: transform .12s ease; }
     .sch-pin:hover { transform: scale(1.28); }
 
@@ -249,14 +235,14 @@
     };
 
     const grid = document.getElementById('tradition-grid');
-    const ORDER = ['montessori', 'waldorf', 'future-of-education', 'charlotte-mason', 'reggio', 'forest-school', 'wild-free', 'unschooling', 'classical', 'athens', 'rome'];
+    const ORDER = ['montessori', 'waldorf', 'school-of-light', 'future-of-education', 'charlotte-mason', 'reggio', 'forest-school', 'wild-free', 'unschooling', 'classical', 'athens', 'rome'];
     const orderedMethods = window.METHODS.slice().sort((a, b) => {
       const ia = ORDER.indexOf(a.id), ib = ORDER.indexOf(b.id);
       return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib);
     });
     grid.innerHTML = orderedMethods.map(m => `
-      <a href="methodology.html?id=${m.id}" class="tile${m.image ? ' has-photo' : ''}${m.ours ? ' tile-premium' : ''}" style="--c:${m.color};--cd:${m.colorDeep};--cs:${m.colorSoft};">
-        ${m.ours ? '<span class="tile-badge tile-badge-premium"><span class="tbp-mark">✦</span>Ours</span>' : (m.built ? '' : '<span class="tile-badge">Preview</span>')}
+      <a href="methodology.html?id=${m.id}" class="tile${m.image ? ' has-photo' : ''}" style="--c:${m.color};--cd:${m.colorDeep};--cs:${m.colorSoft};">
+        ${m.built ? '' : '<span class="tile-badge">Preview</span>'}
         ${m.image
           ? `<div class="tile-photo"><img src="${m.image}" alt="${m.name}" loading="lazy"><div class="tile-icon-wrap"><svg viewBox="0 0 64 64" class="tile-icon">${ICONS[m.icon] || ICONS.compass}</svg></div></div>`
           : `<div class="tile-icon-wrap"><svg viewBox="0 0 64 64" class="tile-icon">${ICONS[m.icon] || ICONS.compass}</svg></div>`}
