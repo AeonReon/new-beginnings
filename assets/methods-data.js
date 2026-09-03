@@ -14772,6 +14772,644 @@ window.METHODS = [
       ]
     },
     "sections": {
+      "activities": {
+        "title": "Things to do this week",
+        "icon": "hand",
+        "intro": "None of this needs a building, a group, or anybody's permission. It is what a week looks like when the guiding question stops being what should they be learning and becomes what has this child not had a taste of yet. Two rules run underneath all of it. Outside comes first whenever the weather allows, because at three to eight a child learns with the whole body long before they learn with a pencil. And indoors, the thing that matters is momentum: the first small go at something, then the next, until doing things is the ordinary state rather than the special one. You are not choosing what they will turn out to be good at. You are widening the field so they can find it themselves.",
+        "quote": {
+          "text": "School once meant free time. What a person does with their free time is what they become.",
+          "cite": "skholē — the Greek word we took school from"
+        },
+        "groups": [
+          {
+            "heading": "Get outside while it is dry",
+            "icon": "🌳",
+            "photo": "assets/methods/_shared/walk.jpg",
+            "intro": "The default setting, not the reward at the end of the work. If it is not raining hard, dark, or genuinely cold, the day happens outside. In this climate that means building the day around the forecast instead of around a timetable, which is a skill in itself.",
+            "items": [
+              {
+                "name": "Read the sky together at breakfast",
+                "body": "Look at the forecast with them and decide out loud: out first and in later, or the other way round. A child who watches you plan around the weather learns that a wet Tuesday is a decision to make, not a day that was ruined."
+              },
+              {
+                "name": "Build a list of thirty local places",
+                "body": "The park with the climbing frame that is genuinely hard. The rock pools that only work at low tide. The wood with the river in it. Write them down and keep adding. Thirty places you can reach inside twenty minutes changes what an ordinary Wednesday can be."
+              },
+              {
+                "name": "Let them climb something slightly too hard",
+                "body": "Stand close, say nothing, and let them work out where their hands go. A child never allowed to test a limit does not know where it is, and not knowing is what makes them careless later on."
+              },
+              {
+                "name": "Walk further than they think they can",
+                "body": "Pick a route with something at the end — a waterfall, a ruin, a beach, an ice cream. Two miles is nothing to a five-year-old who has a reason. Distance is a taste they acquire, and they acquire it quickly."
+              },
+              {
+                "name": "Rock pools, at low tide, with a bucket",
+                "body": "Check the tide time before you go, which is itself half the lesson. Crabs, anemones, small fish, whatever the sea left behind. Name three things properly before you go home."
+              },
+              {
+                "name": "An hour in the garden with real tools",
+                "body": "Digging, weeding, planting, carrying. A trowel that actually cuts soil, not a plastic one. Work with a result you can stand and look at when you are finished."
+              }
+            ]
+          },
+          {
+            "heading": "Momentum — start the smallest thing",
+            "icon": "✨",
+            "photo": "assets/methods/_shared/fire.jpg",
+            "intro": "Momentum is the whole indoor engine. The first attempt at anything is the only genuinely hard one, and the way past it is to make it so small there is no sensible reason to refuse. Then the second is easier, and by the fifth the thing has turned funny and you are already through.",
+            "items": [
+              {
+                "name": "One ball, hand to hand, twenty times",
+                "body": "That is the first rung of juggling and it is deliberately close to nothing. Do it today. Two balls tomorrow. Nobody has ever learned to juggle without this exact silly minute, and most people never take it."
+              },
+              {
+                "name": "Everyone picks a thing nobody can do",
+                "body": "Whistle, cartwheel, tie a bowline, ten words of Irish, one scale on any instrument. Everybody in the house picks one, including you, and everybody reports back at the end of the week."
+              },
+              {
+                "name": "Sixty seconds a day, not an hour a week",
+                "body": "Choose the smallest daily version of a skill and protect it. Sixty seconds every day beats an hour on a Saturday, because the daily one survives a bad week and the weekly one quietly disappears."
+              },
+              {
+                "name": "Finish one small thing on purpose",
+                "body": "A drawing, a loaf, a mended toy, a shelf put right. Finished, not abandoned. Children who never finish anything are usually children who were only ever handed things too big to finish."
+              },
+              {
+                "name": "Keep a list of everything they can now do",
+                "body": "Not a chart with stars on it. A plain list that gets longer, read out loud once a week. The point is that they watch the line going up and want to add to it themselves."
+              }
+            ]
+          },
+          {
+            "heading": "Taste widely before you go deep",
+            "icon": "🧭",
+            "photo": "assets/methods/_shared/blocks.jpg",
+            "intro": "You cannot know you love singing until you have hummed for thirty mornings. So the first job is width — a first go at as many things as take their fancy — and the few they keep returning to on their own are the ones worth putting real money and time behind. Depth is earned by returning, never chosen in advance.",
+            "items": [
+              {
+                "name": "Level one of five different things this month",
+                "body": "A knot, a chord, a card trick, a length of the pool, a poached egg. Not a course in any of them. Just the first rung, so the thing stops being a stranger."
+              },
+              {
+                "name": "Watch what they go back to unprompted",
+                "body": "The real signal is what they pick up in an unsupervised twenty minutes. Write it down over a few weeks. That list, rather than your hopes for them, is where the resources should go."
+              },
+              {
+                "name": "Take one interest seriously and overdo it",
+                "body": "When something keeps coming back, do not leave it at that is nice. Find the club, the person who does it properly, the better tool, the trip to watch it done at a high level. Going hard in one direction is what turns an interest into an ability."
+              },
+              {
+                "name": "Have a go at an adult thing, badly",
+                "body": "A real saw, a real hammer, a sharp knife, a drill with your hand on it too. The point is not the object they make. It is that the world stops being divided into things for adults and things for children."
+              },
+              {
+                "name": "Say yes to something out of character",
+                "body": "A pottery hour, a farm morning, a rehearsal, a sea swim in March. The method is exposure, and exposure means going to things you would not have picked."
+              }
+            ]
+          },
+          {
+            "heading": "Be useful, today",
+            "icon": "🧰",
+            "intro": "A child is not an apprentice person waiting until twenty-five to join in. The moment they can do a real thing, they do it. This is not chores as discipline — it is the difference between belonging somewhere and being a guest there.",
+            "items": [
+              {
+                "name": "Give them a job that would not get done otherwise",
+                "body": "Feeding the animal, emptying the bin, laying the table, filling the water bottles for the day out. Real, noticed, and actually missed if they skip it."
+              },
+              {
+                "name": "Let them order and pay",
+                "body": "At the counter, with their own hands and real change. Stand back far enough that the person serving talks to them and not to you."
+              },
+              {
+                "name": "Make them responsible for their own space",
+                "body": "Their shelf, their corner, their bag. If the room repairs itself overnight by magic, a child never learns what it costs to put things back in order."
+              },
+              {
+                "name": "Run a stall, for real money",
+                "body": "Bakes, drawings, a car wash, plants they grew. Real customers, real change, real counting up at the end. The first time money arrives because of work they did, something permanent happens."
+              },
+              {
+                "name": "Take one broken thing apart together",
+                "body": "A puncture, a loose handle, a torn page, a dead battery. Do it on the table where everyone can see. Most children have never once looked inside anything."
+              }
+            ]
+          },
+          {
+            "heading": "Talk the way you want them to think",
+            "icon": "🗣️",
+            "intro": "A child who spends their days around thoughtful adults will outpace a child doing worksheets in a noisy room, and nobody has to sit them down for it. What the adults talk about becomes what the children think about. That is the entire reason to be careful about who is in the room.",
+            "items": [
+              {
+                "name": "One real question at the table",
+                "body": "What is the bravest thing anybody did today. What did you change your mind about. Is it ever right to break a promise. Take the answer seriously enough to argue with it."
+              },
+              {
+                "name": "Say what makes a thing good",
+                "body": "Standing in front of a building, a painting, a song, a meal: what is good about this, and how would you know. Working out which things are worth wanting is one of the real jobs of a life, and it starts with saying why out loud."
+              },
+              {
+                "name": "Tell a hero story, then ask what they would have done",
+                "body": "The Greeks, the myths, the explorers, somebody from the town. A story with a decision inside it beats a story with only events in it."
+              },
+              {
+                "name": "Let them hear you get something wrong",
+                "body": "Say out loud that you were mistaken, and why you think differently now. Children copy how adults handle being wrong long before they copy anything adults are right about."
+              },
+              {
+                "name": "Talk to a stranger on purpose",
+                "body": "Ask the fisherman what he caught, the farmer what the field is for, the joiner what wood that is. Interested people are almost always glad to be asked, and children learn that adults are approachable by watching it work."
+              }
+            ]
+          },
+          {
+            "heading": "Show it, do not say it",
+            "icon": "🏅",
+            "intro": "Levelling up here means demonstrating a thing in front of somebody, not passing a test and moving on. It is not that they learned it, and not that they understood it. It is that they can do it, now, again, and could do it again next month.",
+            "items": [
+              {
+                "name": "Set a Showing date and work back from it",
+                "body": "On Saturday you are going to swim the length in front of Granda. A real day and a real person watching. The date is the thing that turns messing about into practice."
+              },
+              {
+                "name": "If it does not go well, nothing is written down",
+                "body": "Say so before you start, and mean it. Make a specific plan and pick another day. A failed attempt that gets recorded somewhere is how a child learns to stop volunteering."
+              },
+              {
+                "name": "Ask them to teach it to somebody else",
+                "body": "Teaching is the honest test. A child who can teach the knot can tie the knot. A child who can only describe it cannot yet."
+              },
+              {
+                "name": "Do it again a month later, cold",
+                "body": "One good performance is luck. The same performance a month on with no warm-up is a skill, and the skill is what we were actually after."
+              },
+              {
+                "name": "Keep the record, not the certificate",
+                "body": "A list, a stamped page, a badge in the app — a record of things genuinely done. Nobody needs a piece of paper to prove something they can simply do in front of you."
+              }
+            ]
+          }
+        ]
+      },
+      "bring-it-home": {
+        "title": "Bring it home",
+        "icon": "sprout",
+        "intro": "You do not need a barn, a group, or anybody's permission to run a version of this. It is made of parts you can start on a Monday: the weather decides the shape of the day, the indoor hours run on momentum, the academic drilling goes to software that is better at it than a person is, and the adult in the room does their own real work in plain sight. Start with one part. The order below is the order that tends to hold.",
+        "steps": [
+          {
+            "t": "Make outside the default, not the reward",
+            "d": "Flip the assumption. The day is outside unless the weather says otherwise, and the indoor hours are what happens when it is wet, dark or genuinely cold. This single change alters everything after it — what you own, what you plan, how the morning starts, what you think a good day looks like. In this climate you will still be indoors a great deal. The difference is that indoors becomes the fallback rather than the base.",
+            "photo": "assets/methods/_shared/walk.jpg"
+          },
+          {
+            "t": "Build the list of thirty places",
+            "d": "Sit down and write every park, wood, beach, shore, river, farm and hill you can reach in under half an hour, and be honest about which ones are actually any good. Add the tide times for the ones that need them. Then keep adding for a year. The list is the difference between a family that goes out and a family that means to."
+          },
+          {
+            "t": "Give the indoor hours to momentum",
+            "d": "Pick the smallest possible first rung of two or three skills — one ball hand to hand, one chord, one knot, twenty seconds of a plank — and do them daily for a fortnight. Do them yourself as well, in the same room, badly. The point of the indoor block is not to cover a subject. It is to keep a family in the state where starting things is normal.",
+            "photo": "assets/methods/_shared/fire.jpg"
+          },
+          {
+            "t": "Hand the academics to software, and then cap it",
+            "d": "A couple of hours a day, adaptive, on e-ink or on a tablet with everything else stripped off it, and audio for the parts that suit listening. Letters, sounds, spelling, number facts: software goes at exactly your child's pace, never gets impatient, and never has thirty other children in the room. Cap it at a couple of hours and spend the rest of the day on the things software cannot do at all."
+          },
+          {
+            "t": "Do your own work where they can see it",
+            "d": "A parent working three metres away, looking up through the day and being found, is living a different life from one working thirty miles off with an hour at bedtime. Let them see the laptop, the invoice, the phone call, the thing you are learning and are not yet good at. They ought to know how the family is provided for. It is one of the more useful things they will pick up."
+          },
+          {
+            "t": "Stop teaching and start facilitating",
+            "d": "The instructing has gone to the software. What is left is noticing what they return to, showing them how a real tool is held, having the argument at the table, and deciding when to push and when to leave a thing alone. That is a different job, and it is mostly done by watching and saying less than you want to."
+          },
+          {
+            "t": "Keep a record of what they can actually do",
+            "d": "A plain list, a stamped page, or the badges in an app — anything that records things done rather than time served. Add to it only after they have shown somebody. Read it back to them every so often. Children who can see the list getting longer start looking for the next thing to put on it.",
+            "photo": "assets/methods/_shared/blocks.jpg"
+          },
+          {
+            "t": "Find two other families",
+            "d": "Two is enough to start. One day out a week, taken in turns to organise, at a place from the list. Children need other children and parents need other parents, and almost every version of this that fails, fails because somebody tried to do it alone."
+          }
+        ],
+        "kit": [
+          {
+            "name": "Waterproofs and boots that genuinely work",
+            "tag": "The single highest-value purchase in the whole model. Cheap waterproofs are how outdoor families quietly become indoor families in November."
+          },
+          {
+            "name": "A bag that stays packed",
+            "tag": "Spare socks, a towel, water, something to eat, a bin bag to sit on. Packed on Sunday, refilled on Friday. Half the reason people do not go out is that going out takes forty minutes to prepare."
+          },
+          {
+            "name": "An e-ink tablet, or a tablet with everything stripped off it",
+            "tag": "For the academic block. Choose the device, choose the apps, cap the time. A reading device running a spelling ladder is a different object from a glowing feed."
+          },
+          {
+            "name": "Real tools, child-sized but not toys",
+            "tag": "A saw that cuts, a trowel that digs, a knife that slices, a hammer with weight in it. Plastic versions teach a child that the real world is out of reach."
+          },
+          {
+            "name": "Three juggling balls, a rope, a pack of cards",
+            "tag": "The cheapest momentum kit there is. Every one of them has a first rung so small it cannot be refused, and a ceiling high enough to last years."
+          },
+          {
+            "name": "A notebook for the list of places",
+            "tag": "Paper, kept in the car. Anything on a phone gets lost inside the phone."
+          },
+          {
+            "name": "A tide table for your stretch of coast",
+            "tag": "Free from the harbour or online. Rock pools, causeways and half the good beaches only exist for a couple of hours a day."
+          }
+        ],
+        "screens": "We are not against technology. We are against certain screens for children — backlit, endlessly scrolling, built to hold attention rather than release it. An e-ink reader running a spelling ladder for forty minutes is a different object entirely. Choose the screen, choose the app, cap the time, and let them see you working on yours as well. That is a considered position about which screen and how long, not a superstition about screens.",
+        "noteLabel": "Where the teaching actually comes from",
+        "note": "There are no teachers in this model, and that is a decision rather than a shortage. The drilling goes to software, which does it better, more patiently and at exactly the right pace. What is left over is the part only a person can do: noticing what a child returns to, showing them how a tool is held, having the argument at the table, knowing when to push and when to leave it. The people doing that are facilitators and parents, and they are working on their own ladders at the same time — visibly stuck on the third rung of something, in the same room. A child who only ever sees adults instructing concludes that learning is a thing which stops when you grow up. A child who watches the adults around them struggling with a skill concludes that it never stops, which happens to be the truth."
+      },
+      "running-it": {
+        "title": "Running the day",
+        "icon": "clock",
+        "intro": "This is for whoever is holding the day — a parent at home, a facilitator in a room, or three families out at a beach. The job is not to teach. It is to set the conditions, then get out of the way, and to be visibly doing your own work while you do it. The tone comes first, because it decides everything after it. A child who does not feel safe is not learning, whatever the plan for the morning said.",
+        "tone": [
+          {
+            "t": "Excited about life, calm in temperament",
+            "d": "Those are two different things and children tell them apart instantly. Enthusiasm pulls a room forward. Volatility, even cheerful volatility, puts a room on watch, and a room on watch is not learning anything."
+          },
+          {
+            "t": "Speak to one child, close up",
+            "d": "Not across the room. The volume of a room is set by the loudest adult in it, and everything you do at a distance you will have to repeat at a shout."
+          },
+          {
+            "t": "Several adults, always",
+            "d": "More facilitators and more parents in the room means more attention, more hands, and more people who know each child by name. It is also the honest answer on safety: rooms with many eyes in them are safer rooms, and nothing else you do substitutes for it."
+          },
+          {
+            "t": "Say the reason out loud",
+            "d": "Every rule here should have a reason a five-year-old can follow. If you cannot state it, the rule is probably inherited habit and can go. Children who are told why do not need to be policed nearly as much."
+          },
+          {
+            "t": "Real food, eaten together, sitting down",
+            "d": "Not a tray of snacks passed round while people carry on. A proper stop, at a table, with the adults eating the same thing. Half the good conversation of the day happens there and it will not happen standing up."
+          }
+        ],
+        "rhythm": [
+          {
+            "t": "Before anybody arrives — look at the sky",
+            "d": "The forecast decides the shape of the day, so it is the first thing you check and the first thing you announce. Out first and in after, or in first and out when it lifts. Say the plan and say why, so everybody can see the reasoning rather than just receiving the timetable."
+          },
+          {
+            "t": "Open with bodies, not with sitting",
+            "d": "Whatever else happens, the first half hour involves running, climbing, carrying or walking. Children who have been sat down first are harder to settle later, not easier. The body comes online before the mind will."
+          },
+          {
+            "t": "The long outdoor stretch",
+            "d": "The main event on any dry day, and long enough to get somewhere and get properly involved. Not forty minutes of supervised play. Two or three hours in a real place, with the adults walking and talking rather than lifeguarding."
+          },
+          {
+            "t": "Eat properly, all together",
+            "d": "Sit down, one table, the same food. This is where the day's real conversation happens, and it is where children hear adults disagree well, which is a thing they will otherwise never see."
+          },
+          {
+            "t": "The academic block — capped, and on chosen screens",
+            "d": "A couple of hours of adaptive work, on e-ink or a stripped-down tablet, with audio for the parts that suit listening. Adults do not hover over it. The software is better at drilling than any of us, and the point of capping it is that the day belongs to everything else."
+          },
+          {
+            "t": "The making hours",
+            "d": "Wood, clay, paint, dough, fabric, tools, music, a build that has been running for a fortnight. Whatever a child is deep in, protect it — an unfinished thing left out is better than a tidy shelf, because concentration takes an hour to form and one interruption to destroy."
+          },
+          {
+            "t": "The jobs, done by the people who use the place",
+            "d": "Sweeping, washing up, animals, putting the tools back, taking the bins out. Fifteen minutes, everybody, adults included and visibly. A place that magically repairs itself teaches children that somebody else picks things up."
+          },
+          {
+            "t": "One conversation worth having",
+            "d": "A question with something at stake in it, taken seriously enough to argue about. Ten minutes. This is not circle time and it is not a lesson — it is adults talking about something real while children are allowed in."
+          },
+          {
+            "t": "Close by naming what got done",
+            "d": "Go round and have each person say one thing they did today that they could not do last month, or one thing they finished. Not praise from an adult. Their own account, out loud, in front of others."
+          }
+        ],
+        "does": [
+          "Sets the conditions and then steps back far enough that children forget you are there",
+          "Watches for what a child returns to when nobody is directing them, and writes it down",
+          "Shows how a real tool is held, once, properly, then hands it over",
+          "Works on their own skill in the room, in front of everybody, including the parts they are bad at",
+          "Protects concentration — nobody interrupts a child who is deep in something, for any reason short of blood",
+          "Certifies ability when a child shows it, and only then"
+        ],
+        "doesnt": [
+          "Teach from the front, or run anything resembling a lesson",
+          "Chop the day into timed slots to look organised",
+          "Praise constantly, or praise effort as if it were achievement",
+          "Rescue a child off the climbing frame before they have had a chance to work it out",
+          "Compare one child with another, out loud or on a wall",
+          "Fill a wet day with entertainment rather than making, reading and momentum"
+        ],
+        "parents": "Parents are in the room, and that is the whole design rather than a concession. They work near enough to be found, take calls in a quieter corner, and come back. They are not classroom helpers and they are not customers. They are adults with their own ladders going at the same time as the children, which is the part that does the real work — the children stop seeing childhood and adulthood as two different countries and start seeing one life in which people do things they can do. The practical shape of it is simple. Nobody is on duty all day, and nobody is off. Enough adults are watching at any moment that any one of them can drop out for an hour without the room noticing. If you are running this at home rather than in a setting, the same thing applies at a smaller scale: work where they can see you, be interruptible some of the time and honestly unavailable the rest, and say which is which.",
+        "mistakes": [
+          {
+            "t": "Turning it into a timetable to look organised",
+            "d": "Twenty minutes of this, then that, then a circle. It is the fastest way to lose the whole thing while appearing more professional. Concentration cannot form in twenty-minute pieces, and the days children remember are never the tightly run ones."
+          },
+          {
+            "t": "Letting the academic block grow",
+            "d": "It is easy to justify and it is measurable, so it creeps. Two hours becomes three, then it eats the making hours, and eventually you have rebuilt a school with better software. The cap is the point of the cap."
+          },
+          {
+            "t": "Filling wet days with entertainment",
+            "d": "A film, a soft play, something to get through it. Wet days are when the making, the reading, the building and the long conversations happen, and a group that entertains its way through winter arrives at spring having lost the habit."
+          },
+          {
+            "t": "Praising effort instead of certifying ability",
+            "d": "Well done for trying feels kind and teaches a child that the adult's approval is the prize. Say instead: you can do that now, you could not last month, show your dad on Saturday. The certificate is the ability, and it belongs to them rather than to you."
+          },
+          {
+            "t": "Rescuing them too early",
+            "d": "Lifting a child down before they have solved it removes the exact thing they came for. Stand close, keep your hands to yourself, and let the working-out happen. Risk that is supervised is how judgement gets built."
+          },
+          {
+            "t": "Adults who talk about nothing",
+            "d": "If the grown-ups in the room discuss television and who annoyed them, that is the inheritance. If they discuss ideas and things worth building, that is the inheritance instead. It is the quiet reason to be careful about who is in the room."
+          }
+        ],
+        "training": "There is no qualification for this and no body that certifies it. What it takes in practice is a group of adults who agree on what matters, at least two of whom are in the room at any time, and one who is willing to hold the plan for the week. In Northern Ireland the legal picture is straightforward and worth knowing accurately: home education is legal, and if your child has never been registered at a school you do not need anybody's permission to educate them at home. If they have been enrolled, you write to the school to have them taken off the register and the Education Authority is notified, and the Authority may make contact to be satisfied that a suitable education is being provided. Guidance changes, so read the Education Authority's current home education pages yourself rather than relying on a form number from a forum, and talk to Home Education Northern Ireland, who deal with this every week and know how it actually goes here. If you go further and run sessions for other families' children without their parents present, you are into different territory: public liability insurance, Access NI checks, and a written safeguarding policy. The model here mostly avoids that by design, because the parents stay."
+      },
+      "your-part": {
+        "title": "Your part in it",
+        "icon": "heart",
+        "tocTag": "You stay — what that asks, and what to ask on a visit",
+        "intro": "Almost every other tradition in this list has an answer to the question do I stay or do I go. This one does not, because there is no version of it where you leave. The parent comes and the parent stays, and that is not a rule bolted on for safety — it is the thing the whole model is built to make possible. What follows is what that actually asks of you on an ordinary week, and what to ask when you go and look at a group.",
+        "model": {
+          "label": "You stay. That is the whole idea.",
+          "body": "There is no drop-off, at any age. Children play, build and learn as a group; the parents are in the next room or on the next stretch of beach, working, twenty steps away all day. Two things follow from that and both are the point. Nobody else ends up with more influence over your child than you have, because nobody else is with them for the best hours of the day. And you get to provide for your family without missing their childhood while you do it. This is not about working less. It is about not being thirty miles away while it happens. It does ask something real of you in return: your own state is part of what is in the room. Children at three to eight copy tone, temper, posture, how you speak to a stranger and what you reach for when you are tired, and they copy it whether anybody intended a lesson or not. Nobody is asking for perfection. What is asked is a standing willingness to keep improving, in public, alongside other people doing the same."
+        },
+        "beforeAfterTitle": "The week, before and after",
+        "beforeAfterShort": "The week",
+        "beforeLabel": "Before you set off",
+        "afterLabel": "After you get home",
+        "before": [
+          "Check the forecast the night before and decide the shape of the day with them, out loud",
+          "Pack the bag the night before — spare socks, towel, water, food, something to sit on",
+          "Sleep and breakfast, because almost every hard morning traces back to one of the two",
+          "Bring your own work, and bring the thing you are personally trying to get better at",
+          "Know what your child has been going back to lately, so you can watch for it"
+        ],
+        "after": [
+          "Ask what they did, not whether they were good",
+          "Write down anything they returned to twice — that list is worth more than any report",
+          "Let an unfinished build stay unfinished on the table until tomorrow",
+          "Say one thing you yourself got better at today, so the ladder is visibly not just theirs",
+          "Do not debrief it to death. Most of what happened will come out sideways three days later"
+        ],
+        "involvement": [
+          {
+            "t": "You are there all day, every day",
+            "d": "Not a rota, not a helping day, not a term of committee. You are on site because your work is on site. The practical freedom is that with enough adults present, any one of them can disappear for an hour without the room noticing."
+          },
+          {
+            "t": "You have your own rung, on the same page",
+            "d": "Whatever the children are climbing, you climb something too, and it is written down next to theirs. This is a family philosophy rather than a children's programme, and the fastest way to break it is to become the adult who only administers."
+          },
+          {
+            "t": "You are one of the many eyes",
+            "d": "Everybody watches everybody's children, and nobody is solely responsible for their own. That is what makes it safer than a room with one adult in it, and it is also what makes a hard morning survivable."
+          },
+          {
+            "t": "You bring what you are good at",
+            "d": "Whatever you can already do — bake, fix an engine, sing, sew, code, negotiate, sail — is curriculum. The range of a group is just the sum of the adults in it, which is another reason the culture matters more than the building."
+          },
+          {
+            "t": "You take a turn organising",
+            "d": "Somebody books the coach, picks the beach, checks the tide, brings the rope. It rotates. A group where one family organises everything has about a year in it."
+          }
+        ],
+        "visit": [
+          {
+            "q": "Do the parents actually stay, or is that the brochure?",
+            "why": "Look at where the adults are standing. If parents are dropping off and going, or if they are all sitting in one room together while the children are elsewhere with staff, you are looking at a nursery with a nicer story. The model only does what it claims when the adults and the children are in earshot of each other."
+          },
+          {
+            "q": "How much of the day is spent outside, honestly, in January?",
+            "why": "Everybody says outdoors. The number that matters is the wet-and-cold one. If the answer is we go out when it is nice, then outside is the reward and the building is the base, which is the opposite of what is claimed here."
+          },
+          {
+            "q": "How long is the academic block, and on what device?",
+            "why": "You want a specific answer — about two hours, adaptive apps, e-ink or a stripped-down tablet. If it is open-ended, or on ordinary tablets with a browser, the cap has already gone. If there is no academic answer at all, ask what happens about reading and number, because a child still has to learn to read."
+          },
+          {
+            "q": "Who is in the room with the children, and what are they?",
+            "why": "The honest answer here is facilitators and parents, not teachers, and you want to hear that said plainly with the reasoning behind it. What you are checking is that the adults have a job they can describe, rather than being a shortage that nobody has named."
+          },
+          {
+            "q": "What do the adults here work on themselves?",
+            "why": "Ask them to name the skill they are currently bad at. If nobody can, the family philosophy part is decoration and the children will read that immediately. It is also the fastest way to find out whether these are people you want your child copying."
+          },
+          {
+            "q": "How does a child move up, and what does it take?",
+            "why": "You want demonstration in front of somebody, not a worksheet and not a report. And ask what happens when a child tries and it does not go well — the right answer is that nothing is recorded and a specific plan gets made for another day."
+          },
+          {
+            "q": "What do you talk about at lunch?",
+            "why": "An odd question that tells you more than the prospectus does. What the adults discuss becomes what the children think about. Sit and listen for ten minutes if you can, because the answer people give and the answer you overhear can be different."
+          },
+          {
+            "q": "What happens when two families disagree about something that matters?",
+            "why": "A group holds together on a shared and examined view of what a good life is, so the disagreements that come are real ones. You want to hear that it has happened before and how it went, not that everyone here gets on."
+          }
+        ],
+        "flags": [
+          "Parents encouraged to drop off — the moment that becomes normal, the model has quietly become childcare",
+          "Outdoor time that only happens in good weather, with no plan for the six dark months",
+          "An academic block with no cap, or on devices with a browser and a feed on them",
+          "Adults who cannot name a single thing they are personally working on",
+          "Progress shown as scores, levels or anything that ranks one child against another",
+          "Certificates offered as the reward, rather than a record of things actually demonstrated",
+          "Nobody able to say why a rule exists, beyond that it is how it is done"
+        ],
+        "note": "One more thing worth saying plainly, because families ask. This runs two ways. There is the local version, where the families meet and go out together every week, and there is an online version for families further afield who want to run it where they live — the same principles, the same strands, the same rhythm, with the group meeting on a screen rather than on a beach. You apply for either. The waiting list is where both start, and everybody on it gets the schedule of open days out."
+      },
+      "reading-list": {
+        "title": "Reading list",
+        "icon": "book",
+        "intro": "This tradition takes what holds up from the others, so the reading is wider than any one school's. It runs in three directions. The Greeks, because the whole idea of educating a whole person rather than training a useful one starts there. The modern research on how children actually learn, choose and get good at things. And a short shelf on competence — what it takes to genuinely be able to do something, as opposed to having covered it.",
+        "forChild": {
+          "intro": "Books for three to eight, read aloud. The bias is towards real things, real work and real decisions — stories where somebody has to choose, and books where you can see how something is made or how it works. Nothing here needs to be finished, and re-reading the same one for a month is a good sign rather than a problem.",
+          "groups": [
+            {
+              "heading": "The Greeks, at four to eight",
+              "books": [
+                "Ingri and Edgar Parin d'Aulaire — D'Aulaires' Book of Greek Myths (the standard first door, and the pictures do half the work)",
+                "Padraic Colum — The Children's Homer (the Odyssey and the Iliad told straight through, for reading aloud)",
+                "Rosemary Sutcliff — Black Ships Before Troy and The Wanderings of Odysseus (older children, and worth waiting for)",
+                "Aesop — any well-illustrated collection; a fable a night, and ask what they would have done"
+              ]
+            },
+            {
+              "heading": "People who made and mended things",
+              "books": [
+                "Virginia Lee Burton — Mike Mulligan and His Steam Shovel, Katy and the Big Snow",
+                "Richard Scarry — What Do People Do All Day? (still the best picture of a town where everybody has a job)",
+                "Donald Hall and Barbara Cooney — Ox-Cart Man (a year of work, start to finish, in one small book)",
+                "William Kamkwamba and Bryan Mealer — The Boy Who Harnessed the Wind, picture book edition (a boy builds a windmill from scrap, which is the whole philosophy in thirty pages)"
+              ]
+            },
+            {
+              "heading": "How things actually work",
+              "books": [
+                "David Macaulay — The Way Things Work Now (far above them, and that is the point; look at the pictures together for years)",
+                "Byron Barton — Machines at Work, Building a House (for the youngest end)",
+                "Usborne See Inside and Look Inside titles — flaps, cross-sections, real mechanisms",
+                "A proper field guide to birds, trees or the shore, kept in the bag and used outside rather than read at home"
+              ]
+            },
+            {
+              "heading": "Out in the weather",
+              "books": [
+                "Robert McCloskey — Make Way for Ducklings, Blueberries for Sal, One Morning in Maine",
+                "Jill Barklem — the Brambly Hedge books, one per season",
+                "Alfred Wainwright — any of the Pictorial Guides, for the drawings and the idea that a person walked all of it and wrote it down",
+                "An Ordnance Survey map of where you live, opened on the floor, with the places they know found by them"
+              ]
+            }
+          ]
+        },
+        "forParent": {
+          "intro": "Read the first three if you read nothing else. The Greek argument is the foundation the rest of this sits on, and the two modern ones explain why width before depth is not a soft option but the faster route.",
+          "books": [
+            {
+              "title": "Paideia: The Ideals of Greek Culture",
+              "author": "Werner Jaeger, 1933–1947",
+              "note": "The great study of what the Greeks meant by educating a person — forming the whole character rather than filling a head. Three volumes and genuinely hard going. Read the first hundred pages of volume one and you will have the argument."
+            },
+            {
+              "title": "Leisure: The Basis of Culture",
+              "author": "Josef Pieper, 1948",
+              "note": "Short, and the single most useful thing on this list. Our word school comes from the Greek for free time, and this is the book about what that meant and what a culture becomes depending on how it spends it. A hundred pages."
+            },
+            {
+              "title": "Politics, Book VIII",
+              "author": "Aristotle, 4th century BC",
+              "note": "Aristotle on education, and on why what you do with your leisure is the real measure of a person and of a state. Read Book VIII on its own; you do not need the other seven first."
+            },
+            {
+              "title": "Range: Why Generalists Triumph in a Specialised World",
+              "author": "David Epstein, 2019",
+              "note": "The modern case for tasting widely before going deep, with the research behind it. Explains why early specialising usually loses to a long sampling period."
+            },
+            {
+              "title": "Free to Learn",
+              "author": "Peter Gray, 2013",
+              "note": "The developmental research on self-directed play and mixed-age groups. The strongest evidence base for why so much of this looks like children being left alone."
+            },
+            {
+              "title": "How Children Learn",
+              "author": "John Holt, 1967",
+              "note": "Still the best book on watching a child rather than testing one. Holt's whole method is close observation, which is the main skill this tradition asks of an adult."
+            },
+            {
+              "title": "Peak: Secrets from the New Science of Expertise",
+              "author": "Anders Ericsson and Robert Pool, 2016",
+              "note": "What it actually takes to get good at something, and why practice with a target beats time served. The evidence behind demonstrate it rather than cover it."
+            },
+            {
+              "title": "Mastery",
+              "author": "Robert Greene, 2012",
+              "note": "The long arc — apprenticeship, finding the thing you keep returning to, then going hard at it for years. Read it for the shape of a life rather than the biographies."
+            },
+            {
+              "title": "The Case Against Education",
+              "author": "Bryan Caplan, 2018",
+              "note": "The economist's case that a great deal of schooling signals rather than teaches. You need not accept the whole argument to find the chapters on credentials clarifying."
+            },
+            {
+              "title": "Norms and Nobility",
+              "author": "David Hicks, 1981",
+              "note": "The classical tradition argued properly — the good, the true and the beautiful as things worth aiming at rather than decoration. Dense, and worth it."
+            },
+            {
+              "title": "The Abolition of Man",
+              "author": "C. S. Lewis, 1943",
+              "note": "Three short lectures on why an education that refuses to say anything is better than anything else does not produce free minds, it produces unarmed ones."
+            },
+            {
+              "title": "The Coddling of the American Mind",
+              "author": "Greg Lukianoff and Jonathan Haidt, 2018",
+              "note": "On antifragility and what happens to children who are protected from every difficulty. The practical background to standing close and keeping your hands to yourself."
+            }
+          ]
+        },
+        "free": "Almost all the Greek material is out of copyright and free. Aristotle's Politics, Plato and Aesop are on Project Gutenberg and Perseus in full, and the d'Aulaire myths are in most library branches. Start with Pieper and Book VIII of the Politics — between them they are about two hundred pages, and they carry most of the argument."
+      },
+      "competency": {
+        "title": "What to expect",
+        "icon": "sun",
+        "intro": "There are no ages on this page and no total at the bottom, which is deliberate and is the part most worth understanding. A child sits at a different height in each of the six areas below and the six are never added together, so there is no single number and nothing to rank anybody by. What follows is a set of landmarks to orient by, not a checklist to work through and not a standard your child is behind on. The rule underneath all of it: a thing only counts once they have done it in front of somebody. Not learned it, not understood it, not covered it. Done it, where a person could see, and could do it again next month.",
+        "landmarks": [
+          {
+            "area": "Look after yourself",
+            "items": [
+              "Gets themselves ready to leave — coat, shoes, bag — with no adult doing any part of it",
+              "Washes properly and dries their hands without being walked through it",
+              "Says out loud when they are hungry, tired, cold or need the bathroom, before it becomes a problem",
+              "Chooses clothes that suit the weather they just looked at",
+              "Takes themselves off somewhere quiet when they have had enough, and comes back"
+            ]
+          },
+          {
+            "area": "Look after the place",
+            "items": [
+              "Puts their own things back without being asked, because the place is partly theirs",
+              "Sweeps, wipes a table, washes up and dries, with results an adult would accept",
+              "Carries and puts away a real tool, the right way round, undamaged",
+              "Notices something out of order and fixes it without being told to",
+              "Takes a turn with an animal, a plant or a fire, on the days it is their turn"
+            ]
+          },
+          {
+            "area": "Make things",
+            "items": [
+              "Uses a real saw, knife, needle or drill under supervision, and respects it",
+              "Finishes something that took more than one day, and can say what they would change",
+              "Cooks one thing all the way through, for other people to eat",
+              "Draws or builds a thing that was in their head, rather than copying a model",
+              "Describes an idea clearly enough that an adult, or a machine, can help them build it"
+            ]
+          },
+          {
+            "area": "Get strong outside",
+            "items": [
+              "Climbs something genuinely difficult and gets themselves down again",
+              "Walks a real distance without being carried or negotiated with the whole way",
+              "Handles the weather — dresses for it, stays out in it, does not fall apart in rain",
+              "Swims, cycles, or moves confidently in one element they were once nervous about",
+              "Judges a risk out loud before taking it, which matters far more than avoiding it"
+            ]
+          },
+          {
+            "area": "Say what you mean",
+            "items": [
+              "Reads at whatever level the adaptive work has honestly taken them to, and reads for pleasure some of the time",
+              "Tells a story from beginning to end without an adult steering it",
+              "Speaks to a stranger — orders, asks, thanks — with the adult standing back",
+              "Says why they think something, and can hold it for one round of disagreement",
+              "Stands up in front of the group and shows a thing they can do"
+            ]
+          },
+          {
+            "area": "Be useful to somebody",
+            "items": [
+              "Teaches something they can do to somebody who cannot do it yet",
+              "Holds a real job that would not get done if they skipped it",
+              "Runs a stall or a small piece of a real event, and counts the money at the end",
+              "Earns something and decides what to do with it, including the deciding badly",
+              "Does something for another person's benefit with nothing in it for themselves"
+            ]
+          }
+        ],
+        "note": "How moving up actually works, in one paragraph. Every level ends in a Showing: you do the thing, for real, where somebody can watch — in person if the group meets in person, on video to the group if it does not. A Showing that does not go well is recorded nowhere; a specific plan gets made and it is shown another day. Nothing is ever badged that a child would happily do anyway, because the badge is for the cold hard start of a thing, not for a passion. The challenge is announced and the badge is given afterwards, so nobody is ever working for a badge — they are working towards being able to do the thing. And the parent has a level in the same area, on the same page, because this is a family philosophy and not a children's programme. The record exists so there is a list of what a person can genuinely do. It is not a certificate, and it is not needed as proof by anybody who has watched them do it."
+      },
       "day-in-life": {
         "title": "A day in the life",
         "icon": "sun",

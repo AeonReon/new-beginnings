@@ -968,7 +968,7 @@
             <span class="toc-badge"><svg viewBox="0 0 64 64" aria-hidden="true">${glyph}</svg></span>
             <span class="toc-text">
               <span class="toc-name">${meta.title}</span>
-              <span class="toc-tag">${meta.tag}</span>
+              <span class="toc-tag">${(m.sections[key] && m.sections[key].tocTag) || meta.tag}</span>
             </span>
             ${built ? '<span class="toc-arrow" aria-hidden="true">→</span>' : (capped && AGE_SPECIFIC.has(key) ? `<span class="toc-soon">Ages ${capSub}</span>` : '<span class="toc-soon">Soon</span>')}
           </a>`;
@@ -1367,7 +1367,7 @@
             <div class="bih-apps">${s.kit.map(kitCard).join('')}</div>` : ''}
           ${s.screens ? `<p class="bih-screens"><span class="bih-screens-ic" aria-hidden="true">📵</span>${hl(s.screens)}</p>` : ''}
           ${s.watch ? `<div class="bih-cross">Worth watching</div><div class="bih-apps">${s.watch.map(appCard).join('')}</div>` : ''}
-          ${s.note ? `<aside class="bih-note"><div class="bih-note-label">How their teachers are made</div><p>${hl(s.note)}</p></aside>` : ''}
+          ${s.note ? `<aside class="bih-note"><div class="bih-note-label">${s.noteLabel || 'How their teachers are made'}</div><p>${hl(s.note)}</p></aside>` : ''}
         `;
       } else if (key === 'set-up-the-space') {
         // The room itself: what it costs, what has to be in it, what to buy,
@@ -1463,10 +1463,10 @@
               <div class="su-card-head"><span class="su-card-t">${s.model.label}</span></div>
               <div class="su-card-d">${hl(s.model.body)}</div>
             </div></div>` : '', { short: 'How it works' }),
-          B.add('🌅', 'The morning, and the pick-up', (s.before || s.after) ? `<div class="su-pair">
-              ${s.before ? `<div class="su-pane is-do"><div class="su-pane-h">Before they go</div><ul>${s.before.map(x => `<li>${hl(x)}</li>`).join('')}</ul></div>` : ''}
-              ${s.after ? `<div class="su-pane is-do"><div class="su-pane-h">When you collect them</div><ul>${s.after.map(x => `<li>${hl(x)}</li>`).join('')}</ul></div>` : ''}
-            </div>` : '', { short: 'Morning' }),
+          B.add('🌅', s.beforeAfterTitle || 'The morning, and the pick-up', (s.before || s.after) ? `<div class="su-pair">
+              ${s.before ? `<div class="su-pane is-do"><div class="su-pane-h">${s.beforeLabel || 'Before they go'}</div><ul>${s.before.map(x => `<li>${hl(x)}</li>`).join('')}</ul></div>` : ''}
+              ${s.after ? `<div class="su-pane is-do"><div class="su-pane-h">${s.afterLabel || 'When you collect them'}</div><ul>${s.after.map(x => `<li>${hl(x)}</li>`).join('')}</ul></div>` : ''}
+            </div>` : '', { short: s.beforeAfterShort || 'Morning' }),
           B.add('🙋', 'How involved you actually are', suCards(s.involvement, 2),
             { short: 'How involved', count: s.involvement ? s.involvement.length + ' ways in' : '' }),
           B.add('❓', 'What to ask when you go and look', suTopics(s.visit, {
