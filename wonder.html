@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#4A9ED4">
+  <title>Conscious Parenting NI — Moments of Wonder</title>
+  <meta name="description" content="The little words to say when you see the first star, a rainbow, a new moon or a butterfly that lands on you — and what to do with the moment.">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="icon-192.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/style.css?v86">
+  <style>
+    .where-row { display: flex; flex-wrap: wrap; gap: 0.5em; margin: 0 0 1.4em; }
+    .where-chip {
+      font-family: var(--sans); font-size: 0.92rem; font-weight: 700;
+      color: var(--ink-soft); background: var(--paper-card);
+      border: 1.5px solid var(--rule-strong); border-radius: var(--radius-pill);
+      padding: 0.5em 1.05em; cursor: pointer;
+      transition: transform 0.15s cubic-bezier(0.34,1.56,0.64,1), border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+    }
+    .where-chip:hover { transform: translateY(-1px); border-color: var(--sky); }
+    .where-chip.active { color: white; border-color: transparent; background: var(--grad-sky); box-shadow: var(--shadow-sm); }
+
+    #count { font-family: var(--sans); font-size: 0.85em; color: var(--ink-mute); margin: 0.2em 0 1.4em; }
+
+    /* ── The "out there right now" band — the thing that makes this a daily page ── */
+    .now-band { position: relative; overflow: hidden; border-radius: 20px; padding: 1.15em 1.2em 1.25em; margin: 1.6em 0 1.5em; background: linear-gradient(150deg, #EAF4FC, #F6ECFB); box-shadow: var(--shadow-sm); }
+    .now-band::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.8px; background: linear-gradient(135deg, #4A9ED4, #8B6FD1); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; }
+    .now-band h2 { margin: 0 0 0.15em; font-size: 1.24rem; letter-spacing: -0.02em; color: #2D6FA8; display: flex; align-items: center; gap: 0.4em; }
+    .now-band .now-sub { margin: 0 0 0.9em; font-size: 0.92em; color: var(--ink-soft); }
+    .now-list { display: flex; flex-wrap: wrap; gap: 0.45em; }
+    .now-pill { font-family: var(--sans); font-weight: 700; font-size: 0.82rem; color: var(--ink); background: #fff; border: 1.5px solid rgba(45,111,168,0.28); border-radius: var(--radius-pill); padding: 0.42em 0.9em; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4em; transition: transform 0.14s cubic-bezier(0.34,1.56,0.64,1), border-color 0.14s ease; }
+    .now-pill:hover { transform: translateY(-1px); border-color: #4A9ED4; }
+    .now-pill:active { transform: scale(0.96); }
+    .now-more::before { display: none !important; }
+    .now-more { display: block; margin-top: 0.85em; font-family: var(--sans); font-weight: 800; font-size: 0.8rem; color: #5B3FA8; background: none; border: 0; padding: 0; cursor: pointer; }
+
+    .group-header { margin: 2.6em 0 1.1em; padding: 0.85em 1.1em; border-radius: 16px; background: var(--gcs); position: relative; overflow: hidden; }
+    .group-header::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 7px; background: linear-gradient(180deg, var(--gc), var(--gcd)); }
+    .group-header:first-of-type { margin-top: 1.4em; }
+    .group-header h2 { display: flex; align-items: center; gap: 0.5em; margin: 0 0 0.1em; font-size: 1.32rem; color: var(--gcd); letter-spacing: -0.02em; }
+    .group-emoji { font-size: 1.15em; }
+    .group-blurb { font-size: 0.92em; color: var(--ink-soft); margin: 0; }
+
+    .chip { font-family: var(--sans); font-size: 0.72rem; font-weight: 700; padding: 0.28em 0.72em; border-radius: var(--radius-pill); background: #fff; color: var(--gcd); border: 1.5px solid var(--gc); }
+    .chip.rare { background: var(--paper-warm); color: var(--ink-soft); border: 1px solid var(--rule-strong); }
+    .chip.now { background: linear-gradient(135deg, #FFCE3D, #F5A623); color: #6B4A00; border-color: transparent; }
+
+    .cue { margin: 0 0 0.2em; font-family: var(--sans); font-size: 0.86rem; font-weight: 700; letter-spacing: 0.01em; color: var(--gcd); }
+    .cue::before { content: "When: "; opacity: 0.65; font-weight: 800; }
+
+    /* The verse — the whole point of the page. Big, serif, centred, framed. */
+    .verse-box { position: relative; margin: 1em 0 0.2em; padding: 1.25em 1.1em 1.05em; border-radius: 16px; background: linear-gradient(160deg, var(--gcs), #fff); text-align: center; overflow: hidden; }
+    .verse-box::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.8px; background: linear-gradient(135deg, var(--gc), var(--gcd)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; }
+    .verse-words { margin: 0; font-family: var(--serif); font-weight: 500; font-size: 1.12rem; line-height: 1.72; color: var(--ink); white-space: pre-line; letter-spacing: 0.004em; }
+    .verse-by { display: block; margin-top: 0.75em; font-family: var(--sans); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--gcd); opacity: 0.85; }
+    .verse-say { margin-top: 0.85em; font-family: var(--sans); font-weight: 800; font-size: 0.78rem; color: #fff; background: linear-gradient(135deg, var(--gc), var(--gcd)); border: 0; border-radius: var(--radius-pill); padding: 0.5em 1.05em; cursor: pointer; box-shadow: var(--shadow-sm); transition: transform 0.14s cubic-bezier(0.34,1.56,0.64,1); }
+    .verse-say:active { transform: scale(0.95); }
+
+    .sec-h { margin: 1.15em 0 0.35em; font-family: var(--sans); font-size: 0.66rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gcd); }
+    .sec-p { margin: 0; color: var(--ink-soft); line-height: 1.58; font-size: 0.96em; }
+
+    .why-box { margin: 1.1em 0 0; padding: 0.85em 0.95em; background: #fff; border: 1px solid var(--rule); border-left: 4px solid var(--gc); border-radius: 12px; }
+    .why-pill { display: inline-block; font-size: 0.6rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #fff; background: linear-gradient(135deg, var(--gc), var(--gcd)); padding: 0.25em 0.7em; border-radius: var(--radius-pill); margin-bottom: 0.5em; }
+    .why-box p { margin: 0; font-size: 0.94em; line-height: 1.58; color: var(--ink-soft); }
+
+    .origin { font-size: 0.82em; color: var(--ink-mute); margin: 0.85em 0 0; font-style: italic; line-height: 1.55; }
+    .tweak { font-size: 0.86em; color: var(--ink-mute); margin: 0.8em 0 0; line-height: 1.55; }
+    .tweak b { color: var(--ink-soft); font-weight: 700; }
+
+    .empty { color: var(--ink-mute); font-style: italic; margin: 2em 0; }
+
+    .topic-nav { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.55em; margin: 0 0 1.4em; }
+    @media (min-width: 560px) { .topic-nav { grid-template-columns: repeat(6, 1fr); } }
+    .topic-sq { position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; gap: 0.4em; cursor: pointer; background: var(--paper-card, #fff); border: none; border-radius: 15px; padding: 0.8em 0.4em 0.75em; box-shadow: var(--shadow-sm); transition: transform 0.14s cubic-bezier(0.34,1.56,0.64,1); }
+    .topic-sq::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.6px; background: linear-gradient(135deg, var(--gc), var(--gcd)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; opacity: 0.45; }
+    .topic-sq:active { transform: scale(0.95); }
+    .topic-sq-emo { width: 2.2em; height: 2.2em; border-radius: 13px; background: linear-gradient(150deg, var(--gc), var(--gcd)); display: grid; place-items: center; font-size: 1.15rem; line-height: 1; box-shadow: 0 4px 10px color-mix(in srgb, var(--gc) 34%, transparent), inset 0 1.5px 0 rgba(255,255,255,0.45); }
+    .topic-sq-lbl { font-family: var(--sans); font-weight: 800; font-size: 0.7rem; color: var(--ink); line-height: 1.1; text-align: center; }
+    .topic-sq.active { box-shadow: 0 6px 16px color-mix(in srgb, var(--gc) 30%, transparent); }
+    .topic-sq.active::before { opacity: 1; padding: 2.2px; }
+    .topic-sq.active .topic-sq-lbl { color: var(--gcd); }
+
+    .act-bar-wrap { position: relative; overflow: hidden; background: var(--paper-card, #fff); border-radius: 18px; box-shadow: var(--shadow-sm); margin: 0 0 0.7em; scroll-margin-top: 1em; }
+    .act-bar-wrap::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.6px; background: linear-gradient(135deg, var(--gc), var(--gcd)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; z-index: 3; opacity: 0.5; }
+    .act-bar { list-style: none; cursor: pointer; display: flex; align-items: stretch; gap: 0; }
+    .act-bar::-webkit-details-marker { display: none; }
+    .act-bar-photo { flex: 0 0 auto; width: 88px; align-self: stretch; position: relative; overflow: hidden; background: linear-gradient(150deg, var(--gc), var(--gcd)); display: grid; place-items: center; }
+    .act-bar-emo { font-size: 2rem; line-height: 1; filter: drop-shadow(0 2px 3px rgba(0,0,0,0.22)); }
+    .act-bar-text { flex: 1; min-width: 0; padding: 0.8em 0.5em 0.8em 1em; display: flex; flex-direction: column; justify-content: center; gap: 0.4em; }
+    .act-bar-name { font-family: var(--display, 'Poppins'); font-weight: 800; font-size: clamp(1.02rem, 4.2vw, 1.16rem); line-height: 1.16; letter-spacing: -0.015em; color: var(--ink); }
+    .act-bar-meta { display: flex; flex-wrap: wrap; gap: 0.32em; }
+    .act-bar-meta .chip { font-size: 0.64rem; padding: 0.24em 0.6em; }
+    .act-bar-plus { flex: 0 0 auto; align-self: center; width: 1.4em; height: 1.4em; position: relative; margin-right: 0.95em; }
+    .act-bar-plus::before, .act-bar-plus::after { content: ""; position: absolute; top: 50%; left: 50%; background: var(--gc); border-radius: 2px; transform: translate(-50%, -50%); transition: opacity 0.2s ease, transform 0.2s ease; }
+    .act-bar-plus::before { width: 0.9em; height: 2.5px; }
+    .act-bar-plus::after { width: 2.5px; height: 0.9em; }
+    .act-bar-wrap[open] .act-bar-plus::after { opacity: 0; transform: translate(-50%, -50%) rotate(90deg); }
+    .act-bar-wrap[open] .act-bar { border-bottom: 1px solid var(--rule); }
+    .act-drawer { padding: 0.95em 1.1em 1.15em; }
+  </style>
+</head>
+<body class="launcher">
+  <main class="launcher-main article">
+    <header class="page-hero" style="--hc:#4A9ED4;--hcd:#2D6FA8;">
+      <div class="page-cover">
+        <img src="assets/tools/wonder.jpg" alt="" onerror="this.remove()">
+        <div class="page-cover-veil"></div>
+        <div class="page-cover-text">
+          <div class="page-eyebrow">Conscious Parenting NI</div>
+          <h1>Moments of Wonder</h1>
+          <p class="page-tagline">The little words to say when the world does something beautiful.</p>
+        </div>
+      </div>
+    </header>
+
+    <p class="page-intro">
+      A child sees the first star of the evening, says four lines that every
+      generation before them has said, makes a wish, and the night is marked.
+      That is the whole idea. The moments are all still happening &mdash; the
+      swallows still come back in April, the dandelion clocks still blow, the
+      moon is still new once a month &mdash; but the words that went with them
+      have mostly stopped being handed on. Here they are, gathered back up.
+    </p>
+
+    <div class="card" style="margin-top: 0;">
+      <h3>How to use this</h3>
+      <p style="margin-bottom: 0.7em;">
+        Don't try to do them. Read a few, keep three or four in your head, and
+        wait for the world to hand you the moment. The whole value is that you
+        say it <em>when it happens</em> &mdash; the first star, the first snow,
+        the butterfly on the wrist. Say the same words every time and say them
+        out loud, even when you feel daft. Especially then.
+      </p>
+      <p style="margin-bottom: 0.7em;">
+        Some of these are hundreds of years old and some we wrote, and every
+        one says which it is. Nothing here needs anything bought, booked or
+        charged.
+      </p>
+      <p class="why" style="margin-bottom: 0;">
+        A child arrives with a great deal of language for what is wrong and
+        almost none for what is wonderful. That is not their fault &mdash; the
+        complaining words get used every day and the marvelling ones have gone
+        quiet. Handing a child a set of words for beauty does two things at
+        once: it gives them somewhere to put the feeling, and it tells them,
+        without a lecture, that this sort of thing is worth stopping for. What
+        they remember decades later is almost never the sight. It is that
+        somebody stopped.
+      </p>
+    </div>
+
+    <div class="now-band" id="nowBand" hidden>
+      <h2><span aria-hidden="true">🔭</span> <span id="nowTitle">Out there right now</span></h2>
+      <p class="now-sub" id="nowSub"></p>
+      <div class="now-list" id="nowList"></div>
+      <button type="button" class="now-more" id="nowMore"></button>
+    </div>
+
+    <div class="topic-nav" id="topic-nav"></div>
+
+    <div class="where-row" id="where-row"></div>
+
+    <div class="filters">
+      <div>
+        <label for="f-search">Search</label>
+        <input type="search" id="f-search" placeholder="e.g. moon, rainbow, wish, snow, birthday">
+      </div>
+      <div>
+        <label for="f-season">Season</label>
+        <select id="f-season">
+          <option value="">Show everything</option>
+          <option value="now">Only what&rsquo;s in season now</option>
+          <option value="1">January</option><option value="2">February</option>
+          <option value="3">March</option><option value="4">April</option>
+          <option value="5">May</option><option value="6">June</option>
+          <option value="7">July</option><option value="8">August</option>
+          <option value="9">September</option><option value="10">October</option>
+          <option value="11">November</option><option value="12">December</option>
+        </select>
+      </div>
+      <div>
+        <label for="f-rarity">How often</label>
+        <select id="f-rarity"></select>
+      </div>
+    </div>
+
+    <p id="count"></p>
+    <div id="list"></div>
+
+    <div class="card" style="margin-top:2.4em;">
+      <h3>The ones we left out, and why</h3>
+      <p style="margin-bottom:0.7em;">
+        A lot of the old sayings have a nasty tail on them. <em>Ladybird,
+        ladybird, fly away home &mdash; your house is on fire and your children
+        are gone.</em> <em>One for sorrow.</em> <em>Rain, rain, go away.</em>
+        Charming tunes carrying curses, dread and a running argument with the
+        weather, and a small child chanting them takes the meaning in whole.
+      </p>
+      <p class="why" style="margin-bottom:0;">
+        So none of them are here. Where the ritual underneath was worth keeping
+        &mdash; letting a ladybird walk to your fingertip and fly &mdash; we
+        wrote new words and said plainly that we wrote them. Where there was
+        nothing worth saving, it is simply gone. What a child says out loud
+        every week becomes part of how they expect the world to behave, and
+        that is far too valuable to hand over to a rhyme nobody has read
+        properly since 1840.
+      </p>
+    </div>
+
+    <p class="mo-also" style="margin-top:2em;">
+      <a href="rhymes.html">Rhymes &amp; songs</a>
+      <a href="feast.html">This week's feast</a>
+      <a href="things-to-do.html">Days out</a>
+      <a href="activities.html">Things to do together</a>
+    </p>
+  </main>
+
+  <script src="assets/wonder-data.js"></script>
+  <script src="assets/reader.js"></script>
+  <script src="assets/app.js"></script>
+  <script>
+    const GROUP_ORDER = ['Sky', 'Creature', 'Weather', 'Green', 'Water', 'Ours'];
+    const GROUP_EMOJI = { Sky: '⭐', Creature: '🦋', Weather: '❄️', Green: '🌼', Water: '🌊', Ours: '🎂' };
+    const GROUP_SHORT = { Sky: 'Look up', Creature: 'Visitors', Weather: 'Sky does', Green: 'Growing', Water: 'Water', Ours: 'Our days' };
+    const MONTHS = ['', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+    const WONDERS = window.WONDERS || [];
+    const GROUPS = window.WONDER_GROUPS || {};
+    const KINDS = window.WONDER_KINDS || [];
+    const THIS_MONTH = new Date().getMonth() + 1;
+
+    const fSearch = document.getElementById('f-search');
+    const fSeason = document.getElementById('f-season');
+    const fRarity = document.getElementById('f-rarity');
+    const whereRow = document.getElementById('where-row');
+    const topicNav = document.getElementById('topic-nav');
+    const list = document.getElementById('list');
+    const count = document.getElementById('count');
+    let activeKind = '';
+    let activeGroup = '';
+
+    function esc(s) {
+      return String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+    }
+    // 'Ours' is honest but reads bare as a credit line — say it in words.
+    const byLabel = (b) => b === 'Ours' ? 'Words of our own' : b;
+    const slug = (s) => String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+    // 'any' means all year. An array lists the months it's actually possible here.
+    const inMonth = (w, m) => w.months === 'any' || (Array.isArray(w.months) && w.months.includes(m));
+    // "Seasonal" = pinned to part of the year, so worth flagging when its window opens.
+    const isSeasonal = (w) => Array.isArray(w.months) && w.months.length < 12;
+
+    // ── Out there right now ────────────────────────────────────────────────
+    // Only the seasonal ones — an all-year moment is not news in September.
+    (function () {
+      const seasonal = WONDERS.filter(w => isSeasonal(w) && inMonth(w, THIS_MONTH));
+      if (!seasonal.length) return;
+      const band = document.getElementById('nowBand');
+      const showing = seasonal.slice(0, 8);
+      document.getElementById('nowTitle').textContent = 'Out there right now — ' + MONTHS[THIS_MONTH];
+      document.getElementById('nowSub').textContent =
+        seasonal.length + ' of these belong to ' + MONTHS[THIS_MONTH] + '. Tap one to read it.';
+      document.getElementById('nowList').innerHTML = showing.map(w =>
+        `<button type="button" class="now-pill" data-go="${slug(w.name)}"><span aria-hidden="true">${w.emoji}</span>${esc(w.name)}</button>`).join('');
+      const more = document.getElementById('nowMore');
+      more.textContent = 'Show me all ' + seasonal.length + ' →';
+      more.addEventListener('click', () => {
+        fSeason.value = 'now'; activeGroup = ''; activeKind = '';
+        topicNav.querySelectorAll('.topic-sq').forEach(b => b.classList.remove('active'));
+        whereRow.querySelectorAll('.where-chip').forEach(b => b.classList.remove('active'));
+        render();
+        list.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+      band.querySelectorAll('.now-pill').forEach(btn => btn.addEventListener('click', () => openBySlug(btn.dataset.go)));
+      band.hidden = false;
+    })();
+
+    function openBySlug(s) {
+      // Clear every filter first, or the card we're jumping to may not be rendered.
+      fSearch.value = ''; fSeason.value = ''; fRarity.value = '';
+      activeGroup = ''; activeKind = '';
+      topicNav.querySelectorAll('.topic-sq').forEach(b => b.classList.remove('active'));
+      whereRow.querySelectorAll('.where-chip').forEach(b => b.classList.remove('active'));
+      render();
+      const el = document.getElementById('w-' + s);
+      if (!el) return;
+      el.open = true;
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    topicNav.innerHTML = GROUP_ORDER.map((key) => {
+      const g = GROUPS[key];
+      return `<button type="button" class="topic-sq" data-group="${key}" style="--gc:${g.c};--gcd:${g.cd};--gcs:${g.cs};">
+        <span class="topic-sq-emo" aria-hidden="true">${GROUP_EMOJI[key]}</span>
+        <span class="topic-sq-lbl">${GROUP_SHORT[key]}</span>
+      </button>`;
+    }).join('');
+    topicNav.querySelectorAll('.topic-sq').forEach(btn => {
+      btn.addEventListener('click', () => {
+        activeGroup = (activeGroup === btn.dataset.group) ? '' : btn.dataset.group;
+        topicNav.querySelectorAll('.topic-sq').forEach(b => b.classList.toggle('active', b.dataset.group === activeGroup));
+        render();
+        list.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    whereRow.innerHTML = KINDS.map(k => `<button type="button" class="where-chip" data-kind="${k}">${k}</button>`).join('');
+    whereRow.querySelectorAll('.where-chip').forEach(btn => {
+      btn.addEventListener('click', () => {
+        activeKind = (activeKind === btn.dataset.kind) ? '' : btn.dataset.kind;
+        whereRow.querySelectorAll('.where-chip').forEach(b => b.classList.toggle('active', b.dataset.kind === activeKind));
+        render();
+      });
+    });
+
+    const rarities = [...new Set(WONDERS.map(w => w.rarity))].filter(Boolean);
+    fRarity.innerHTML = '<option value="">Any</option>' + rarities.map(r => `<option value="${r}">${r}</option>`).join('');
+
+    function seasonLine(w) {
+      if (w.months === 'any') return 'All year round.';
+      const ms = w.months.slice().sort((a, b) => a - b).map(m => MONTHS[m]);
+      return ms.length === 1 ? ms[0] + ' only.' : ms.join(', ') + '.';
+    }
+
+    function cardHTML(w) {
+      const g = GROUPS[w.group];
+      const here = isSeasonal(w) && inMonth(w, THIS_MONTH);
+      const meta = [
+        `<span class="chip">${esc(w.kind)}</span>`,
+        `<span class="chip rare">${esc(w.rarity)}</span>`,
+        here ? `<span class="chip now">In season now</span>` : ''
+      ].join('');
+
+      return `
+        <details class="act-bar-wrap" id="w-${slug(w.name)}" style="--gc:${g.c};--gcd:${g.cd};--gcs:${g.cs};">
+          <summary class="act-bar">
+            <span class="act-bar-photo"><span class="act-bar-emo" aria-hidden="true">${w.emoji || '✨'}</span></span>
+            <span class="act-bar-text">
+              <span class="act-bar-name">${esc(w.name)}</span>
+              <span class="act-bar-meta">${meta}</span>
+            </span>
+            <span class="act-bar-plus" aria-hidden="true"></span>
+          </summary>
+          <div class="act-drawer">
+            <p class="cue">${esc(w.cue)}</p>
+            <div class="verse-box">
+              <p class="verse-words">${esc(w.words)}</p>
+              <span class="verse-by">${esc(byLabel(w.by))}</span>
+              <button type="button" class="verse-say" data-say="${esc(w.words)}">🔊 Say it aloud</button>
+            </div>
+            <p class="sec-h">What you do</p>
+            <p class="sec-p">${esc(w.how)}</p>
+            <div class="why-box"><span class="why-pill">Why it's worth doing</span><p>${esc(w.why)}</p></div>
+            ${w.origin ? `<p class="origin">${esc(w.origin)}</p>` : ''}
+            ${w.variant ? `<p class="tweak"><b>Also:</b> ${esc(w.variant)}</p>` : ''}
+            <p class="tweak"><b>When:</b> ${esc(seasonLine(w))}</p>
+          </div>
+        </details>`;
+    }
+
+    // Say the verse out loud. Reader picks the voice; we drive it directly so
+    // one card's button never re-labels every other card's button.
+    let sayingBtn = null;
+    function stopSaying() {
+      if ('speechSynthesis' in window) speechSynthesis.cancel();
+      if (sayingBtn) { sayingBtn.textContent = '🔊 Say it aloud'; sayingBtn = null; }
+    }
+    function say(btn, text) {
+      if (!('speechSynthesis' in window)) { btn.textContent = '🔇 Not on this browser'; return; }
+      const wasThis = sayingBtn === btn;
+      stopSaying();
+      if (wasThis) return;
+      const u = new SpeechSynthesisUtterance(text);
+      const v = window.Reader && window.Reader.voice;
+      if (v) u.voice = v;
+      u.rate = 0.82; u.pitch = 1.02;
+      u.onend = u.onerror = () => { if (sayingBtn === btn) { btn.textContent = '🔊 Say it aloud'; sayingBtn = null; } };
+      speechSynthesis.speak(u);
+      sayingBtn = btn; btn.textContent = '⏹ Stop';
+    }
+
+    function render() {
+      const q = fSearch.value.toLowerCase().trim();
+      const season = fSeason.value, rarity = fRarity.value;
+      const filtered = WONDERS.filter(w => {
+        if (activeGroup && w.group !== activeGroup) return false;
+        if (activeKind && w.kind !== activeKind) return false;
+        if (rarity && w.rarity !== rarity) return false;
+        if (season === 'now' && !(isSeasonal(w) && inMonth(w, THIS_MONTH))) return false;
+        if (season && season !== 'now' && !(isSeasonal(w) && inMonth(w, +season))) return false;
+        if (q) {
+          const hay = [w.name, w.cue, w.words, w.how, w.why, w.origin || '', w.variant || '',
+            w.by, w.kind, GROUPS[w.group].label].join(' ').toLowerCase();
+          if (!hay.includes(q)) return false;
+        }
+        return true;
+      });
+      count.textContent = `${filtered.length} of ${WONDERS.length} moments`;
+
+      let html = '';
+      GROUP_ORDER.forEach((key) => {
+        const grp = GROUPS[key];
+        const inGroup = filtered.filter(w => w.group === key);
+        if (!inGroup.length) return;
+        html += `
+          <div class="group-header" style="--gc:${grp.c};--gcd:${grp.cd};--gcs:${grp.cs};">
+            <h2><span class="group-emoji">${GROUP_EMOJI[key] || ''}</span>${grp.label}</h2>
+            <p class="group-blurb">${grp.blurb}</p>
+          </div>`;
+        html += inGroup.map(cardHTML).join('');
+      });
+      list.innerHTML = html || '<p class="empty">Nothing matches that &mdash; try clearing a filter.</p>';
+      stopSaying();
+      list.querySelectorAll('.verse-say').forEach(b => b.addEventListener('click', (e) => {
+        e.preventDefault(); e.stopPropagation(); say(b, b.dataset.say);
+      }));
+    }
+
+    [fSearch, fSeason, fRarity].forEach(el => el.addEventListener('input', render));
+    render();
+
+    // Deep link: wonder.html?w=the-first-star-of-the-night
+    const want = new URLSearchParams(location.search).get('w');
+    if (want) openBySlug(want);
+  </script>
+</body>
+</html>

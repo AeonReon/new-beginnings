@@ -230,6 +230,14 @@
           </div>
         </a>
 
+        <a href="wonder.html" class="tile has-photo" style="--c:#4A9ED4;--cd:#2D6FA8;--cs:#E4F1FA;">
+          <div class="tile-photo"><img src="assets/tools/wonder.jpg" alt="" loading="lazy" onerror="this.remove()"><div class="tile-icon-wrap"><svg viewBox="0 0 64 64" class="tile-icon"><path d="M32 6 L38.6 24.4 L57 31 L38.6 37.6 L32 56 L25.4 37.6 L7 31 L25.4 24.4 Z" fill="currentColor"/><path d="M50 8 L52.6 14.4 L59 17 L52.6 19.6 L50 26 L47.4 19.6 L41 17 L47.4 14.4 Z" fill="currentColor" opacity="0.72"/><path d="M14 40 L16 45 L21 47 L16 49 L14 54 L12 49 L7 47 L12 45 Z" fill="currentColor" opacity="0.55"/></svg></div></div>
+          <div class="tile-body">
+            <div class="tile-name">Moments of Wonder</div>
+            <div class="tile-tagline">The little words to say when you see the first star, a rainbow, a new moon, a butterfly that lands on you.</div>
+          </div>
+        </a>
+
         <a href="make-it-a-game.html" class="tile has-photo" style="--c:#E8894A;--cd:#B45309;--cs:#FEEBD6;">
           <div class="tile-photo"><img src="assets/tools/make-it-a-game.jpg" alt="" loading="lazy"><div class="tile-icon-wrap"><svg viewBox="0 0 64 64" class="tile-icon"><rect x="10" y="18" width="28" height="28" rx="6" fill="currentColor"/><circle cx="19" cy="27" r="2.6" fill="rgba(255,255,255,0.92)"/><circle cx="29" cy="37" r="2.6" fill="rgba(255,255,255,0.92)"/><rect x="34" y="10" width="22" height="22" rx="5" transform="rotate(18 45 21)" fill="currentColor" opacity="0.82"/><circle cx="45" cy="21" r="2.6" fill="rgba(255,255,255,0.85)"/></svg></div></div>
           <div class="tile-body">
@@ -345,6 +353,7 @@
   <script src="assets/philosophy-data.js"></script>
   <script src="assets/philosophy-data-2.js"></script>
   <script src="assets/phrases-data.js"></script>
+  <script src="assets/wonder-data.js"></script>
   <script src="assets/recipes-data.js"></script>
   <script src="assets/recipes-data-2.js"></script>
   <script src="assets/recipe-credits.js"></script>
@@ -380,6 +389,21 @@
       const recipes = window.RECIPES || [];
       // WORDS — the exact sentence to try in one everyday moment
       const phrases = window.PHRASES || [];
+      // WONDER — a moment to watch out for today. Unlike every other card this
+      // one is filtered by the calendar first: a snowdrop card in August, or a
+      // conker card in April, is a card nobody can act on. Seasonal entries are
+      // preferred so the card leads with what's actually out there this week.
+      const thisMonth = new Date().getMonth() + 1;
+      const inSeason = (w) => w.months === 'any' || (Array.isArray(w.months) && w.months.includes(thisMonth));
+      const allWonders = (window.WONDERS || []).filter(inSeason);
+      const seasonalWonders = allWonders.filter(w => Array.isArray(w.months) && w.months.length < 12);
+      // Two thirds of days show something pinned to this month; the rest reach
+      // into the all-year ones so the pool never feels thin.
+      const wonders = seasonalWonders.length ? seasonalWonders : allWonders;
+      // "Look out for" is wrong over a birthday or a word at the door — those
+      // are moments you make, not moments you spot.
+      const wonderKicker = (w) => w.group === 'Ours' ? 'A moment worth marking' : 'Look out for';
+      const byLabel = (b) => b === 'Ours' ? 'Words of our own' : b;
 
       // THIS WEEK — a gentle arc. One tradition is "in focus" each week; the
       // day's deed + thought lean into it so the week hangs together and you
@@ -413,6 +437,7 @@
         think: { c: '#1F8F5E', cd: '#166B46', cs: '#DCF3E7' },
         cook:  { c: '#C73B7A', cd: '#9E2A5F', cs: '#F9E2EE' },
         words: { c: '#7B5EC7', cd: '#5A3FA0', cs: '#EAE3F9' },
+        wonder:{ c: '#4A9ED4', cd: '#2D6FA8', cs: '#E4F1FA' },
       };
       let off = 0;
 
@@ -424,7 +449,11 @@
         const p = ponders.length ? ((off === 0 && weekPonders.length) ? wrap(weekPonders, dayNum) : pick(ponders, off)) : null;
         // Offset by a prime so Words doesn't march in lock-step with the others.
         const w = phrases.length ? pick(phrases, off * 7) : null;
-        return { r, g, a, p, w };
+        // Every third day, reach past the seasonal shortlist into the whole
+        // in-season set — otherwise a thin month would repeat the same four.
+        const wonderPool = ((dayNum + off) % 3 === 2 && allWonders.length) ? allWonders : wonders;
+        const n = wonderPool.length ? pick(wonderPool, off * 3) : null;
+        return { r, g, a, p, w, n };
       }
 
       function barFace(type, emoji, kicker, title, teaser, image, acc) {
@@ -485,8 +514,23 @@
         });
       }
 
+      function openWonder(n) {
+        const grp = (window.WONDER_GROUPS || {})[n.group] || {};
+        window.RecipeModal.openContent({
+          accent: ACC.wonder, image: 'assets/daily/wonder.jpg', kicker: wonderKicker(n) + ' today', emoji: '\u2728', title: n.name,
+          bodyHTML:
+            `<p class="rcm-h">When</p><div class="rcm-prose"><p>${esc(n.cue)}</p></div>` +
+            `<p class="rcm-h">Say this</p><p class="rcm-quote">${esc(n.words)}</p>` +
+            `<p class="rcm-source">\u2014 ${esc(byLabel(n.by))}</p>` +
+            `<p class="rcm-h">What you do</p><div class="rcm-prose"><p>${esc(n.how)}</p></div>` +
+            `<p class="rcm-h">Why it's worth doing</p><div class="rcm-prose"><p>${esc(n.why)}</p></div>` +
+            (grp.label ? `<div class="rcm-tags"><span class="rcm-tag-pill">${esc(grp.label)}</span></div>` : '') +
+            `<a class="rcm-morelink" href="wonder.html?w=${encodeURIComponent(String(n.name).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''))}">All the moments of wonder \u2192</a>`,
+        });
+      }
+
       function render() {
-        const { r, g, a, p, w } = today();
+        const { r, g, a, p, w, n } = today();
         const grid = el('todayGrid');
         const bars = [];
         if (g) bars.push(barFace('play', '🎲', "Today's game", g.name, g.how, 'assets/daily/play.jpg', ACC.play));
@@ -494,6 +538,7 @@
         if (p) bars.push(barFace('think', '💭', 'A thought', p.source, p.text, 'assets/daily/think.jpg', ACC.think));
         if (r) bars.push(barFace('cook', '🍳', 'Cook together', r.name, r.blurb, 'assets/recipes/' + r.id + '.jpg', ACC.cook));
         if (w) bars.push(barFace('words', '\uD83D\uDCAC', 'Words for today', w.moment, '\u201C' + w.say + '\u201D', 'assets/daily/words.jpg', ACC.words));
+        if (n) bars.push(barFace('wonder', '\u2728', wonderKicker(n), n.name, n.cue, 'assets/daily/wonder.jpg', ACC.wonder));
         grid.innerHTML = bars.join('');
         const wire = (sel, fn) => { const b = grid.querySelector(sel); if (b) b.addEventListener('click', fn); };
         if (g) wire('[data-c="play"]', () => openPlay(g));
@@ -501,6 +546,7 @@
         if (p) wire('[data-c="think"]', () => openThink(p));
         if (r) wire('[data-c="cook"]', () => window.RecipeModal.open(r.id));
         if (w) wire('[data-c="words"]', () => openWords(w));
+        if (n) wire('[data-c="wonder"]', () => openWonder(n));
       }
 
       render();

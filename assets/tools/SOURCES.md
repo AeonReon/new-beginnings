@@ -9,6 +9,8 @@ separately in `assets/recipe-credits.js` (Openverse, CC/PD, with creator).
 |---|---|---|
 | `rhymes.jpg` | 2026-08-07 | https://www.baby-chick.com/wp-content/uploads/2021/11/Nanny-playing-with-baby-girl-at-home-woman-showing-how-to-clap-to-baby-1279314640_2124x1416-1024x683.jpeg |
 | `make-it-a-game.jpg` | 2026-08-09 | StockSnap.io "Mom Son" by Yoga Mom — CC0 / public domain. https://stocksnap.io/photo/mom-son-9WWMM5CD32 |
+| `wonder.jpg` | 2026-09-03 | StockSnap.io "Blowing Dandelion" by Skitter Photo — CC0 / public domain. https://stocksnap.io/photo/blowing-dandelion-FF29114102 |
+| `../daily/wonder.jpg` | 2026-09-03 | StockSnap.io "Rainbow Sky" by Ian Livesey — CC0 / public domain. https://stocksnap.io/photo/rainbow-sky-PAQC3Z5YDJ |
 | `journeys.jpg` | 2026-08-22 | https://cdn.shopify.com/s/files/1/0843/6396/8842/files/child_sitting_in_the_back_seat_of_a_car_at_the_start_of |
 
 Earlier tool images (`activities.jpg`, `games.jpg`, `feast.jpg`, `keeping.jpg`,
