@@ -14709,8 +14709,8 @@ window.METHODS = [
     ],
     "blurb": "An approach built on first principles rather than inherited from a founder: the parent stays, the child explores widely, and the best of every other tradition here is taken on merit. It runs two ways \u2014 a local version on the North Coast, where the families meet and go out together every week, and an online version families anywhere can apply for. The local one is on the map.",
     "grab": {
-      "hook": "Raise them yourself. Just not on your own.",
-      "summary": "Every other approach in this list was worked out somewhere else, a long time ago, and arrived here finished. This one is built from first principles, here — and the difference that matters most is that the parent stays. Children play, build and learn in a group; their parents work in the next room and are twenty steps away all day. It takes what holds up from Montessori, Waldorf, forest school and the classical tradition, adds the tools that actually exist now, and drops the rest. Families practise it together on the North Coast, and online from further afield.",
+      "hook": "A curriculum of things you can actually do.",
+      "summary": "Home education gets called alone-school, and the picture people carry is worth turning the right way up. A classroom is thirty children in rows who are not allowed to talk to the person beside them, working alone, in one building, all year. This is a group that goes places — parks, beaches, forests, farms — talks the whole time, and does things alongside other people and other families. Underneath it there is a real curriculum: six strands, five rungs, and a long list of things to actually be able to do, from tying a bowline to running a stall. Academics are tailored by AI to exactly where your child is and keep adapting until it lands. The rest is momentum, the best of every other method, and the long argument about what is good, true and beautiful. Families practise it together on the North Coast, and online from further afield.",
       "deck": "Twelve principles. Every one of them has to survive the question: why are we actually doing this?",
       "bullets": [
         {
@@ -14755,13 +14755,14 @@ window.METHODS = [
         },
         {
           "t": "Take the best of every method",
-          "d": "When the UFC began, nobody actually knew whether boxing beat wrestling or karate beat jiu-jitsu. Everyone had a tradition and a lot of confidence. So they tested it, and what came out was a new discipline built from whatever survived. Education has never had that — each method sits in its own building, sincerely certain, rarely tested against the others. We do the mixed version on purpose: Montessori practical life and real tools, Waldorf rhythm and materials, forest-school hours outdoors, the classical tradition's focus on character, AI-led academics on e-ink screens for a couple of hours a day, and the things schools mostly skip — business, money, philosophy, how to make something and sell it."
+          "d": "When the UFC began, nobody actually knew whether boxing beat wrestling or karate beat jiu-jitsu. Everyone had a tradition and a lot of confidence. So they tested it, and what came out was a new discipline built from whatever survived. Education has never had that — each method sits in its own building, sincerely certain, rarely tested against the others. We do the mixed version on purpose: Montessori practical life and real tools, Waldorf rhythm and materials, forest-school hours outdoors, the classical tradition's focus on character, academics tailored by AI to exactly where your child is, a couple of hours a day, and the things schools mostly skip — business, money, philosophy, how to make something and sell it."
         },
         {
           "t": "One direction",
           "d": "A magnet works because every particle inside it faces the same way. Scatter the alignment and it is a lump of metal. A group of families is the same. A shared, examined, consistent worldview is not a nice extra — it is the entire source of the strength. It is why the culture matters more than the building, why the application asks real questions, and why we would rather be a small group that agrees on what matters than a large one that does not."
         }
       ],
+      "quote": { "text": "Raise them yourself. Just not on your own.", "cite": "The short version" },
       "story": [
         "Raising good children is the most important work in a life, and almost everybody delegates it. Not out of laziness — out of arrangement. The school day was built around a working day that mostly no longer exists, so a parent hands their child over for the best hours of the day, to people they have not chosen and often never meet, and gets the tired end of them back.",
         "Three things follow from that, and all three matter. The parent stops being the main influence, because school and the peer group become more present in the child's life than their mother and father — and the parents are quietly demoted to the people who pay, drive and feed. Protection is handed over with the day, because a parent filters what reaches their child: the food, the language, the ideas, the tone, the people. And the family unit weakens over a lifetime, because families that spend the formative years apart do not suddenly become close at eighteen.",
@@ -14775,21 +14776,21 @@ window.METHODS = [
       "activities": {
         "title": "Things to do this week",
         "icon": "hand",
-        "intro": "None of this needs a building, a group, or anybody's permission. It is what a week looks like when the guiding question stops being what should they be learning and becomes what has this child not had a taste of yet. Two rules run underneath all of it. Outside comes first whenever the weather allows, because at three to eight a child learns with the whole body long before they learn with a pencil. And indoors, the thing that matters is momentum: the first small go at something, then the next, until doing things is the ordinary state rather than the special one. You are not choosing what they will turn out to be good at. You are widening the field so they can find it themselves.",
+        "intro": "None of this needs a building, a group, or anybody's permission. It is what a week looks like when the guiding question stops being what should they be learning and becomes what has this child not had a taste of yet. Two things run underneath all of it. We maximise the hours outside, because most of the curriculum can be done out there and because at three to eight a child learns with the whole body long before they learn with a pencil. And indoors, the thing that matters is momentum: the first small go at something, then the next, until doing things is the ordinary state rather than the special one. Almost none of it is done alone, which is worth saying plainly, because people picture home education as a child at a kitchen table on their own and this is the opposite of that — a group, out in real places, talking the whole time. You are not choosing what they will turn out to be good at. You are widening the field so they can find it themselves.",
         "quote": {
           "text": "School once meant free time. What a person does with their free time is what they become.",
           "cite": "skholē — the Greek word we took school from"
         },
         "groups": [
           {
-            "heading": "Get outside while it is dry",
+            "heading": "Maximise the hours outside",
             "icon": "🌳",
             "photo": "assets/methods/_shared/walk.jpg",
-            "intro": "The default setting, not the reward at the end of the work. If it is not raining hard, dark, or genuinely cold, the day happens outside. In this climate that means building the day around the forecast instead of around a timetable, which is a skill in itself.",
+            "intro": "Not the reward at the end of the work — the main place the work happens. A large share of the challenges can be done outdoors, so the aim is to get as many hours out there as the day will hold. Parks come first: good climbing equipment, room to run flat out, and other children to negotiate with. A body gets strong by being used, and a child reads the world through it long before they can explain any of it.",
             "items": [
               {
-                "name": "Read the sky together at breakfast",
-                "body": "Look at the forecast with them and decide out loud: out first and in later, or the other way round. A child who watches you plan around the weather learns that a wet Tuesday is a decision to make, not a day that was ruined."
+                "name": "Plan the outdoor hours first",
+                "body": "Decide out loud where the outside stretch is going before anything else gets a slot, and put everything that can be done outdoors into it. A child who watches you protect those hours learns that being out is the point of the day rather than a bonus at the end of it."
               },
               {
                 "name": "Build a list of thirty local places",
@@ -14810,6 +14811,10 @@ window.METHODS = [
               {
                 "name": "An hour in the garden with real tools",
                 "body": "Digging, weeding, planting, carrying. A trowel that actually cuts soil, not a plastic one. Work with a result you can stand and look at when you are finished."
+              },
+              {
+                "name": "Go where the other children are",
+                "body": "The park at four o\u2019clock, the beach on a Saturday, the group that meets every week. Negotiating with a child you have not met before is a harder and more useful skill than anything a worksheet asks for, and it only happens if you keep putting them where other children are."
               }
             ]
           },
@@ -14955,11 +14960,11 @@ window.METHODS = [
       "bring-it-home": {
         "title": "Bring it home",
         "icon": "sprout",
-        "intro": "You do not need a barn, a group, or anybody's permission to run a version of this. It is made of parts you can start on a Monday: the weather decides the shape of the day, the indoor hours run on momentum, the academic drilling goes to software that is better at it than a person is, and the adult in the room does their own real work in plain sight. Start with one part. The order below is the order that tends to hold.",
+        "intro": "You do not need a barn, a group, or anybody's permission to run a version of this. It is made of parts you can start on a Monday: the outdoor hours get planned first and protected, the indoor hours run on momentum, the academics are tailored to your child rather than to a class, and the adult in the room does their own real work in plain sight. Start with one part. The order below is the order that tends to hold.",
         "steps": [
           {
-            "t": "Make outside the default, not the reward",
-            "d": "Flip the assumption. The day is outside unless the weather says otherwise, and the indoor hours are what happens when it is wet, dark or genuinely cold. This single change alters everything after it — what you own, what you plan, how the morning starts, what you think a good day looks like. In this climate you will still be indoors a great deal. The difference is that indoors becomes the fallback rather than the base.",
+            "t": "Plan the outdoor hours first, and protect them",
+            "d": "Work out how much of what you want them doing can be done outdoors — and it is most of it — then block those hours before anything else takes them. Parks first, for the climbing and the running and the other children. This one change alters everything after it: what you own, how the morning starts, what you count as a good day. You will still be indoors a great deal here, and that is fine. The point is that the indoor hours are chosen for a reason — the weather has turned genuinely dangerous, the winter dark has closed everything, or a tired child needs somewhere warm — rather than being where the day happens by default.",
             "photo": "assets/methods/_shared/walk.jpg"
           },
           {
@@ -14972,8 +14977,8 @@ window.METHODS = [
             "photo": "assets/methods/_shared/fire.jpg"
           },
           {
-            "t": "Hand the academics to software, and then cap it",
-            "d": "A couple of hours a day, adaptive, on e-ink or on a tablet with everything else stripped off it, and audio for the parts that suit listening. Letters, sounds, spelling, number facts: software goes at exactly your child's pace, never gets impatient, and never has thirty other children in the room. Cap it at a couple of hours and spend the rest of the day on the things software cannot do at all."
+            "t": "Give them academics built for them, not for a class",
+            "d": "This is where the modern tools genuinely beat the old arrangement, and it is worth being precise about why. A class of thirty gets one lesson pitched at the middle, which fits the high-energy child and the quiet one about equally badly. This is the opposite: it starts exactly where your child actually is, notices the moment something has not landed, and comes at it again a different way until it has. Letters, sounds, spelling, number facts. A couple of hours a day, on e-ink or on a tablet with everything else stripped off it, and audio for the parts that suit listening. Cap it there, and spend the rest of the day on everything software cannot touch."
           },
           {
             "t": "Do your own work where they can see it",
@@ -15025,7 +15030,7 @@ window.METHODS = [
         ],
         "screens": "We are not against technology. We are against certain screens for children — backlit, endlessly scrolling, built to hold attention rather than release it. An e-ink reader running a spelling ladder for forty minutes is a different object entirely. Choose the screen, choose the app, cap the time, and let them see you working on yours as well. That is a considered position about which screen and how long, not a superstition about screens.",
         "noteLabel": "Where the teaching actually comes from",
-        "note": "There are no teachers in this model, and that is a decision rather than a shortage. The drilling goes to software, which does it better, more patiently and at exactly the right pace. What is left over is the part only a person can do: noticing what a child returns to, showing them how a tool is held, having the argument at the table, knowing when to push and when to leave it. The people doing that are facilitators and parents, and they are working on their own ladders at the same time — visibly stuck on the third rung of something, in the same room. A child who only ever sees adults instructing concludes that learning is a thing which stops when you grow up. A child who watches the adults around them struggling with a skill concludes that it never stops, which happens to be the truth."
+        "note": "There are no teachers in this model, and that is a decision rather than a shortage. The instructing goes to software, which can do the one thing no teacher with thirty children has ever been able to do: run a different lesson for every child, at their own pace, and keep changing the approach until each one has it. What is left over is the part only a person can do: noticing what a child returns to, showing them how a tool is held, having the argument at the table, knowing when to push and when to leave it. The people doing that are facilitators and parents, and they are working on their own ladders at the same time — visibly stuck on the third rung of something, in the same room. A child who only ever sees adults instructing concludes that learning is a thing which stops when you grow up. A child who watches the adults around them struggling with a skill concludes that it never stops, which happens to be the truth."
       },
       "running-it": {
         "title": "Running the day",
@@ -15055,24 +15060,24 @@ window.METHODS = [
         ],
         "rhythm": [
           {
-            "t": "Before anybody arrives — look at the sky",
-            "d": "The forecast decides the shape of the day, so it is the first thing you check and the first thing you announce. Out first and in after, or in first and out when it lifts. Say the plan and say why, so everybody can see the reasoning rather than just receiving the timetable."
+            "t": "Before anybody arrives — set the outdoor stretch",
+            "d": "Decide where the long outdoor block is going and what is going into it, before anything else gets a slot. Most of what the children are working on can be done outdoors, so those hours are the ones you protect. Say the plan and say why, so everybody can see the reasoning rather than just receiving a timetable."
           },
           {
             "t": "Open with bodies, not with sitting",
             "d": "Whatever else happens, the first half hour involves running, climbing, carrying or walking. Children who have been sat down first are harder to settle later, not easier. The body comes online before the mind will."
           },
           {
-            "t": "The long outdoor stretch",
-            "d": "The main event on any dry day, and long enough to get somewhere and get properly involved. Not forty minutes of supervised play. Two or three hours in a real place, with the adults walking and talking rather than lifeguarding."
+            "t": "The long outdoor stretch — the main event",
+            "d": "Long enough to get somewhere and get properly involved — two or three hours in a real place, not forty minutes of supervised play. A good park earns its place here: hard climbing, room to run, and other children who have to be negotiated with. The adults walk and talk rather than lifeguard. This is where most of the challenges get done, so it is the block everything else is arranged around."
           },
           {
             "t": "Eat properly, all together",
             "d": "Sit down, one table, the same food. This is where the day's real conversation happens, and it is where children hear adults disagree well, which is a thing they will otherwise never see."
           },
           {
-            "t": "The academic block — capped, and on chosen screens",
-            "d": "A couple of hours of adaptive work, on e-ink or a stripped-down tablet, with audio for the parts that suit listening. Adults do not hover over it. The software is better at drilling than any of us, and the point of capping it is that the day belongs to everything else."
+            "t": "The academic block — one lesson per child, capped",
+            "d": "A couple of hours, on e-ink or a stripped-down tablet, with audio for the parts that suit listening. Every child is on their own ladder at their own level — nothing here is pitched at the middle of a group, because there is no middle to pitch at. Adults do not hover. The point of capping it is that the day belongs to everything else."
           },
           {
             "t": "The making hours",
@@ -15115,11 +15120,11 @@ window.METHODS = [
           },
           {
             "t": "Letting the academic block grow",
-            "d": "It is easy to justify and it is measurable, so it creeps. Two hours becomes three, then it eats the making hours, and eventually you have rebuilt a school with better software. The cap is the point of the cap."
+            "d": "It is easy to justify and it is measurable, so it creeps. Two hours becomes three, then it eats the making hours and the outdoor block, and eventually you have rebuilt a school with better software. The cap is the point of the cap."
           },
           {
             "t": "Filling wet days with entertainment",
-            "d": "A film, a soft play, something to get through it. Wet days are when the making, the reading, the building and the long conversations happen, and a group that entertains its way through winter arrives at spring having lost the habit."
+            "d": "A film, a soft play, something to get through it. The indoor hours are not a holding pen — they are when the making, the reading, the building and the long conversations happen, which is the whole reason a warm indoor space is worth having. A group that entertains its way through winter arrives at spring having lost the habit."
           },
           {
             "t": "Praising effort instead of certifying ability",
@@ -15150,9 +15155,10 @@ window.METHODS = [
         "beforeLabel": "Before you set off",
         "afterLabel": "After you get home",
         "before": [
-          "Check the forecast the night before and decide the shape of the day with them, out loud",
+          "Decide the night before where the outdoor block is going, and say it out loud so they know",
           "Pack the bag the night before — spare socks, towel, water, food, something to sit on",
           "Sleep and breakfast, because almost every hard morning traces back to one of the two",
+      "Expect a loud day. Being around other people all day is the point, not a side effect",
           "Bring your own work, and bring the thing you are personally trying to get better at",
           "Know what your child has been going back to lately, so you can watch for it"
         ],
@@ -15191,8 +15197,8 @@ window.METHODS = [
             "why": "Look at where the adults are standing. If parents are dropping off and going, or if they are all sitting in one room together while the children are elsewhere with staff, you are looking at a nursery with a nicer story. The model only does what it claims when the adults and the children are in earshot of each other."
           },
           {
-            "q": "How much of the day is spent outside, honestly, in January?",
-            "why": "Everybody says outdoors. The number that matters is the wet-and-cold one. If the answer is we go out when it is nice, then outside is the reward and the building is the base, which is the opposite of what is claimed here."
+            "q": "How many hours are outside, honestly, in January — and what is the indoor space for?",
+            "why": "Everybody says outdoors. The number that matters is the winter one. You want to hear that the outdoor hours are planned first and defended, and that the indoor space exists for genuine reasons — wind and rain that have become dangerous rather than unpleasant, the dark closing everything by four, and tired children needing somewhere warm. If the answer is we go out when it is nice, outside is being treated as a reward."
           },
           {
             "q": "How long is the academic block, and on what device?",
@@ -15413,7 +15419,7 @@ window.METHODS = [
       "day-in-life": {
         "title": "A day in the life",
         "icon": "sun",
-        "intro": "There is no bell, and there is no timetable on the wall. A day here is shaped by the weather, by what the children have energy for, and by what is worth going to see.\n\nA good share of the week is spent out. That is deliberate rather than a treat: a child cannot know what they love until they have had a taste of enough things. Most of us have never explored the corners of our own country, never mind tried enough different activities to know which one lights us up. So we go — different towns, different landscapes, different hobbies, different kinds of place — and we watch what each child returns to.\n\nBetween the bigger trips you build a repertoire of local places you can reach on an ordinary Tuesday. The soft play that is actually good. The rock pools that are best at low tide. The park with the climbing frame that is genuinely hard. The nature walk with the river. Knowing thirty of those changes what a wet Wednesday can be.\n\nOutdoors wins whenever the weather allows it, and here that is a real qualifier — dark winters, wind, and rain that comes sideways. On the days it is too cold or too rough to be out safely, the building takes over. At this age the body leads: climbing something difficult, testing a limit, negotiating with another child. That is not the break between the learning. It is most of the learning.\n\nAnd the rest of it happens in conversation. A child who spends their days around thoughtful adults will outpace a child who does worksheets in a room full of noise, without anybody sitting them down. Socrates taught by talking, and nothing since has beaten it. What the adults talk about becomes what the children think about — so if the grown-ups in the room are discussing the television and who annoyed them, that is the inheritance. If they are discussing ideas and things worth building, that is the inheritance instead. It is the quiet reason we are careful about who is in the room.",
+        "intro": "There is no bell, and there is no timetable on the wall. What shapes a day is how much of it we can spend outside, because a large part of the curriculum is done out there — the challenges, the strands, the making, most of the being useful.\n\nA good share of the week is spent out. That is deliberate rather than a treat: a child cannot know what they love until they have had a taste of enough things. Most of us have never explored the corners of our own country, never mind tried enough different activities to know which one lights us up. So we go — different towns, different landscapes, different hobbies, different kinds of place — and we watch what each child returns to.\n\nBetween the bigger trips you build a repertoire of local places you can reach on an ordinary Tuesday. The soft play that is actually good. The rock pools that are best at low tide. The park with the climbing frame that is genuinely hard. The nature walk with the river. Knowing thirty of those changes what a wet Wednesday can be.\n\nSo the aim is to maximise the outdoor hours, and the parks come first among them — good climbing equipment, room to run, other children to negotiate with, and a body that gets stronger by using it. At three to eight the body leads. Climbing something difficult, testing a limit, reading another child's face: that is not the break between the learning, it is most of the learning, and a park does more of it in an afternoon than any room can. The building exists for the hours when outside is genuinely not the right place to be. Wind and driving rain get dangerous for small children rather than merely unpleasant. The winter dark closes most outdoor places by four, and there is no safe version of a wood at that hour. And children get tired, and a tired child needs somewhere warm, quiet and safe to keep going. That is what the facility is for, and it is why winter needs more of it.\n\nAnd the rest of it happens in conversation. A child who spends their days around thoughtful adults will outpace a child who does worksheets in a room full of noise, without anybody sitting them down. Socrates taught by talking, and nothing since has beaten it. What the adults talk about becomes what the children think about — so if the grown-ups in the room are discussing the television and who annoyed them, that is the inheritance. If they are discussing ideas and things worth building, that is the inheritance instead. It is the quiet reason we are careful about who is in the room.",
         "timeline": [
           {
             "time": "8:00",
