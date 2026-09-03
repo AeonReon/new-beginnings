@@ -53,7 +53,20 @@
     /* The verse — the whole point of the page. Big, serif, centred, framed. */
     .verse-box { position: relative; margin: 1em 0 0.2em; padding: 1.25em 1.1em 1.05em; border-radius: 16px; background: linear-gradient(160deg, var(--gcs), #fff); text-align: center; overflow: hidden; }
     .verse-box::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.8px; background: linear-gradient(135deg, var(--gc), var(--gcd)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; }
-    .verse-words { margin: 0; font-family: var(--serif); font-weight: 500; font-size: 1.12rem; line-height: 1.72; color: var(--ink); white-space: pre-line; letter-spacing: 0.004em; }
+    .verse-words { margin: 0; font-family: var(--serif); font-weight: 500; font-size: 1.12rem; line-height: 1.72; color: var(--ink); white-space: pre-line; letter-spacing: 0.004em; text-wrap: pretty; }
+    /* Long verses: step down so a line of verse stays a line on a phone. */
+    .verse-words.vw-long { font-size: 1.02rem; line-height: 1.62; }
+    .verse-words.vw-xlong { font-size: 0.95rem; line-height: 1.58; }
+    /* On a phone the drawer + verse-box padding was eating ~70px, leaving a
+       274px column that no line of verse fits in. Claw it back before shrinking
+       the type any further — a verse should render as the lines it was written as. */
+    @media (max-width: 430px) {
+      .act-drawer { padding-left: 0.65em; padding-right: 0.65em; }
+      .verse-box { padding-left: 0.5em; padding-right: 0.5em; }
+      .verse-words { font-size: 1.02rem; }
+      .verse-words.vw-long { font-size: 0.93rem; }
+      .verse-words.vw-xlong { font-size: 0.85rem; letter-spacing: -0.005em; }
+    }
     .verse-by { display: block; margin-top: 0.75em; font-family: var(--sans); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--gcd); opacity: 0.85; }
     .verse-say { margin-top: 0.85em; font-family: var(--sans); font-weight: 800; font-size: 0.78rem; color: #fff; background: linear-gradient(135deg, var(--gc), var(--gcd)); border: 0; border-radius: var(--radius-pill); padding: 0.5em 1.05em; cursor: pointer; box-shadow: var(--shadow-sm); transition: transform 0.14s cubic-bezier(0.34,1.56,0.64,1); }
     .verse-say:active { transform: scale(0.95); }
@@ -250,6 +263,11 @@
       if (/^Traditional/.test(b)) return 'Traditional';
       return b;
     };
+    // A wrapped line of verse stops looking like verse — size to the longest line.
+    const verseSize = (words) => {
+      const max = Math.max(...String(words).split('\n').map(l => l.length));
+      return max > 38 ? 'vw-xlong' : max > 33 ? 'vw-long' : '';
+    };
     const slug = (s) => String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
     // 'any' means all year. An array lists the months it's actually possible here.
     const inMonth = (w, m) => w.months === 'any' || (Array.isArray(w.months) && w.months.includes(m));
@@ -350,7 +368,7 @@
           <div class="act-drawer">
             <p class="cue">${esc(w.cue)}</p>
             <div class="verse-box">
-              <p class="verse-words">${esc(w.words)}</p>
+              <p class="verse-words ${verseSize(w.words)}">${esc(w.words)}</p>
               <span class="verse-by">${esc(byLabel(w.by))}</span>
               <button type="button" class="verse-say" data-say="${esc(w.words)}">🔊 Say it aloud</button>
             </div>
