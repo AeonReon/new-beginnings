@@ -14691,7 +14691,7 @@ window.METHODS = [
     "colorSoft": "#FBF3DA",
     "icon": "compass",
     "built": true,
-    "image": "assets/tiles/school-of-light.png",
+    "image": "assets/tiles/school-of-light.jpg",
     "banner": ["First principles", "The parent stays", "Take the best of every method", "Get out and live", "Momentum"],
     "join": [
       {
