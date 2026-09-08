@@ -8,7 +8,7 @@
   <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/png" href="icon-192.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="stylesheet" href="assets/style.css?v88">
+  <link rel="stylesheet" href="assets/style.css?v89">
 </head>
 <body>
   <main>
@@ -162,7 +162,10 @@
 
   <script src="assets/app.js"></script>
   <script>
-    const { store, save, uid, fmtDate, isoDay } = window.NB;
+    // store/save/uid/fmtDate/isoDay are already top-level functions in app.js,
+    // so destructuring them off window.NB here re-declared them and threw
+    // "Identifier 'store' has already been declared" — which killed this whole
+    // script and left the page dead. Use the globals directly.
 
     // Tab switching
     const tabs = document.querySelectorAll('.tab-btn');

@@ -8,7 +8,7 @@
   <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/png" href="icon-192.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="stylesheet" href="assets/style.css?v88">
+  <link rel="stylesheet" href="assets/style.css?v89">
   <style>
     /* ════════════════════════════════════════════════════════════
        EDITORIAL v2 — one cohesive theme, magazine reading experience.
@@ -1034,7 +1034,7 @@
             </summary>
             <div class="site-cta-body">
               <p class="site-cta-line">${d.line}</p>
-              <a class="site-cta-go" href="${d.url}" target="_blank" rel="noopener">${d.go || 'Visit the website →'}</a>
+              <a class="site-cta-go" href="${d.url}"${d.internal ? '' : ' target="_blank" rel="noopener"'}>${d.go || 'Visit the website →'}</a>
             </div>
           </details>`).join('')}</div>` : '';
 

@@ -14695,6 +14695,13 @@ window.METHODS = [
     "banner": ["First principles", "Children and adults", "It never stops", "Take the best of every method", "Get out and live", "Momentum"],
     "join": [
       {
+        "url": "schools.html?cat=community",
+        "internal": true,
+        "label": "See where we meet \u2014 on the map",
+        "line": "The local school is on the schools map with every other setting in Northern Ireland. Have a look at how close it actually is to you before you decide anything.",
+        "go": "Open the map \u2192"
+      },
+      {
         "url": "https://school-of-light-seven.vercel.app/apply.html",
         "label": "Join the waiting list",
         "line": "Places come from the list. Add your family and we\u2019ll write to you with the schedule of open days out, and what comes after that.",

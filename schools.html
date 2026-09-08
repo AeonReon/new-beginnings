@@ -8,7 +8,7 @@
   <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/png" href="icon-192.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="stylesheet" href="assets/style.css?v88">
+  <link rel="stylesheet" href="assets/style.css?v89">
   <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.css">
   <style>
     .schools-main { max-width: 1080px; margin: 0 auto; padding: 1.4em 1.1em 3em; }
@@ -174,7 +174,10 @@
   <script>
     const CATS = window.SCHOOL_CATS;
     const SCHOOLS = window.SCHOOLS;
-    let activeCat = 'all';
+    // ?cat=<key> lets another page send somebody straight to one category —
+    // the Light School page uses it for "see where we meet on the map".
+    const wantedCat = new URLSearchParams(location.search).get('cat');
+    let activeCat = (wantedCat && window.SCHOOL_CATS[wantedCat]) ? wantedCat : 'all';
     let map = null;
     const markers = [];
 
@@ -182,7 +185,7 @@
     const chipWrap = document.getElementById('cat-chips');
     const chipDefs = [['all', 'All', '#4D5A6E']].concat(Object.entries(CATS).map(([k, v]) => [k, v.label, v.color]));
     chipWrap.innerHTML = chipDefs.map(([k, label, color]) =>
-      `<button class="cat-chip${k === 'all' ? ' on' : ''}" data-cat="${k}" style="--cc:${color};"><span class="dot"></span>${label}</button>`
+      `<button class="cat-chip${k === activeCat ? ' on' : ''}" data-cat="${k}" style="--cc:${color};"><span class="dot"></span>${label}</button>`
     ).join('');
     chipWrap.addEventListener('click', (e) => {
       const b = e.target.closest('.cat-chip'); if (!b) return;
@@ -295,6 +298,10 @@
     });
 
     render();
+
+    // Somebody sent here for one category came to see WHERE it is, so open
+    // on the map rather than making them find the toggle.
+    if (wantedCat && window.SCHOOL_CATS[wantedCat]) btnMap.click();
 
     // Centered card (Days Out style) — never clips on small maps
     function cardHtml(s) {

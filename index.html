@@ -8,7 +8,7 @@
   <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/png" href="icon-192.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="stylesheet" href="assets/style.css?v88">
+  <link rel="stylesheet" href="assets/style.css?v89">
   <style>
     /* Home: Days Out chrome — app bar, full-bleed hero, tabbed daily cards */
     body{
@@ -26,6 +26,80 @@
     .appbar .hbtn{ justify-self:end; display:inline-flex; align-items:center; gap:6px; color:#fff; background:rgba(255,255,255,.16); border:0; cursor:pointer; font:700 12.5px/1 Inter; padding:9px 13px; border-radius:999px; }
     .appbar .hbtn svg{ width:15px; height:15px; }
     @media(max-width:440px){ .appbar .hbtn span{ display:none; } }
+
+    /* ── Share / Get-the-app dialog (the Days Out pattern: one button, a QR,
+       and the install explained in two taps rather than a wall of steps). ── */
+    .cp-dialog{ border:0; padding:0; background:transparent; max-width:none; max-height:none; }
+    /* style.css gives buttons a display, which silently beats the `hidden`
+       attribute — without this the one-tap install and native-share buttons
+       show up on devices that cannot use them. */
+    .cp-dialog [hidden]{ display:none !important; }
+    .cp-dialog::backdrop{ background:rgba(20,35,60,.55); backdrop-filter:blur(3px); -webkit-backdrop-filter:blur(3px); }
+    .cpd-body{
+      position:relative; width:min(400px,calc(100vw - 32px)); max-height:calc(100dvh - 64px); overflow-y:auto;
+      background:#fff; border-radius:22px; padding:22px 20px 20px;
+      box-shadow:0 20px 60px rgba(20,35,60,.42);
+      animation:cpdPop .2s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    @keyframes cpdPop{ from{ transform:scale(.94); opacity:.4 } to{ transform:scale(1); opacity:1 } }
+    .cpd-x{
+      position:absolute; top:10px; right:10px; width:32px; height:32px; border:0; cursor:pointer;
+      border-radius:999px; background:#EEF3F8; color:#5A6B80; font:700 15px/1 Inter;
+    }
+    .cpd-x:active{ transform:scale(.92); }
+    .cpd-h{ font-family:var(--display); font-weight:800; font-size:19px; color:var(--text); margin:0 0 4px; padding-right:34px; line-height:1.25; }
+    .cpd-lead{ font-size:13.5px; line-height:1.5; color:var(--muted-dim); margin:0 0 14px; }
+
+    /* The whole point: two numbered taps, big, and nothing else competing. */
+    .cpd-two{ list-style:none; margin:0 0 10px; padding:0; display:flex; flex-direction:column; gap:9px; }
+    .cpd-two li{
+      display:flex; align-items:center; gap:11px; padding:12px 13px;
+      background:linear-gradient(135deg,#F7FBFE,#EAF4FB); border:1.5px solid #CBE3F3;
+      border-radius:14px; font-size:15px; line-height:1.35; color:var(--text);
+    }
+    .cpd-n{
+      flex:none; width:27px; height:27px; border-radius:999px; display:grid; place-items:center;
+      background:var(--grad-header); color:#fff; font:800 14px/1 Inter; box-shadow:0 2px 6px rgba(46,132,189,.4);
+    }
+    .cpd-two b{ font-weight:800; }
+    .cpd-glyph{ display:inline-flex; vertical-align:-5px; margin:0 1px; color:#2D6FA8; }
+    .cpd-glyph svg{ width:18px; height:18px; }
+    .cpd-thats{ margin:0 0 12px; font-size:13.5px; color:var(--muted-dim); line-height:1.5; }
+    .cpd-done{ margin:0 0 12px; padding:11px 13px; border-radius:13px; background:#DCF3E7; color:#1B7A4A; font:700 14px/1.4 Inter; }
+    .cpd-install-btn{
+      width:100%; margin:0 0 12px; padding:14px; border:0; cursor:pointer; border-radius:14px;
+      background:var(--grad-header); color:#fff; font:800 15px/1 Inter; box-shadow:0 4px 14px rgba(46,132,189,.36);
+    }
+    .cpd-install-btn:active{ transform:scale(.98); }
+
+    /* Everything a confused person needs, folded away so nobody else sees it. */
+    .cpd-more{ border:1px solid var(--border); border-radius:13px; overflow:hidden; margin:0 0 4px; }
+    .cpd-more>summary{ list-style:none; cursor:pointer; padding:11px 13px; font:700 13.5px/1.3 Inter; color:#2D6FA8; display:flex; align-items:center; justify-content:space-between; gap:8px; }
+    .cpd-more>summary::-webkit-details-marker{ display:none; }
+    .cpd-more[open]>summary{ border-bottom:1px solid var(--border); }
+    .cpd-more-chev{ transition:transform .2s ease; }
+    .cpd-more[open] .cpd-more-chev{ transform:rotate(180deg); }
+    .cpd-more-body{ padding:12px 13px 14px; font-size:13.5px; line-height:1.6; color:#5A6B80; }
+    .cpd-more-body p{ margin:0 0 9px; }
+    .cpd-more-body p:last-child{ margin-bottom:0; }
+    .cpd-more-body b{ color:var(--text); }
+
+    .cpd-divider{ display:flex; align-items:center; gap:10px; margin:18px 0 10px; color:var(--muted-dim); font:700 12px/1 Inter; text-transform:uppercase; letter-spacing:.06em; }
+    .cpd-divider::before, .cpd-divider::after{ content:""; flex:1; height:1px; background:var(--border); }
+    .cpd-qr{
+      width:200px; height:200px; margin:0 auto; display:grid; place-items:center;
+      background:#fff; border:1.5px solid var(--border); border-radius:16px; padding:8px;
+      color:var(--muted-dim); font:600 13px/1 Inter;
+    }
+    .cpd-qr svg{ width:100%; height:100%; display:block; }
+    .cpd-url{ text-align:center; margin:9px 0 14px; font:700 13.5px/1 Inter; color:#2D6FA8; }
+    .cpd-btns{ display:flex; gap:9px; }
+    .cpd-primary{
+      flex:1; padding:13px 10px; border:0; cursor:pointer; border-radius:13px;
+      background:var(--grad-header); color:#fff; font:800 14px/1 Inter; box-shadow:0 3px 10px rgba(46,132,189,.3);
+    }
+    .cpd-primary.ghost{ background:#EEF3F8; color:#3B4C63; box-shadow:none; }
+    .cpd-primary:active{ transform:scale(.97); }
 
     .home-hero{ position:relative; min-height:50vh; display:flex; align-items:flex-end; background:#2c3a45 center/cover no-repeat; }
     .home-hero::after{ content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(8,16,24,0) 4%,rgba(8,16,24,.28) 48%,rgba(8,16,24,.9)); }
@@ -103,6 +177,33 @@
     .af-chips span{ font:800 12.5px/1 Inter; color:#1F5E8A; background:#E4F1FA; border:1.5px solid #BFE0F2; padding:.5em .8em; border-radius:999px; }
     .af-go{ display:inline-block; margin-top:15px; font:800 14.5px Inter; color:#fff; background:var(--grad-header); padding:.62em 1.2em; border-radius:999px; box-shadow:0 4px 13px rgba(46,132,189,.32); }
     .approaches-feature:active{ transform:scale(.995); }
+    .approaches-feature{ margin:2px 0 26px; }
+    .af-banner{ height:150px; }
+    .af-body{ padding:18px 18px 22px; }
+    .af-title{ font-size:clamp(30px,8.4vw,40px); }
+    .af-sub{ font-size:15.5px; max-width:48ch; }
+    .af-titlelink{ text-decoration:none; color:inherit; display:block; border:0; }
+    /* style.css gives h2 a top margin and an underline rule; neither belongs here. */
+    h2.af-title{ margin:0; padding:0; border:0; }
+    h2.af-title::after{ display:none; }
+
+    /* The three leads. Montessori and Waldorf first on purpose — they are the
+       names a parent already trusts, and Light School sits third among them as
+       one more alternative rather than as a pitch. */
+    .af-three{ display:flex; flex-direction:column; gap:9px; margin:16px 0 4px; }
+    .af-mini{
+      display:flex; align-items:stretch; gap:0; text-decoration:none; overflow:hidden;
+      background:#fff; border:1.5px solid var(--border); border-radius:15px;
+      box-shadow:0 1px 3px rgba(20,35,60,.06); transition:transform .18s cubic-bezier(0.34,1.56,0.64,1), box-shadow .18s ease;
+    }
+    .af-mini:active{ transform:scale(.985); }
+    .af-mini img{ width:82px; height:auto; min-height:74px; object-fit:cover; display:block; flex:none; }
+    .af-mini-b{ flex:1; min-width:0; padding:10px 12px; border-left:3px solid var(--mc,#2E84BD); display:flex; flex-direction:column; justify-content:center; gap:2px; }
+    .af-mini-n{ font-family:var(--display); font-weight:800; font-size:16px; color:var(--text); line-height:1.15; }
+    .af-mini-t{ font-size:13px; line-height:1.4; color:#5A6B80; }
+    .af-rest{ margin:10px 0 0; font-size:13px; line-height:1.55; color:var(--muted-dim); }
+    .af-rest b{ color:#3B4C63; font-weight:700; }
+    .af-go{ margin-top:16px; font-size:15.5px; padding:.72em 1.35em; }
 
     /* Join / email capture — community sign-up at the foot of the page (endpoint wired later) */
     .join-cta{ position:relative; margin:26px 0 6px; border-radius:22px; overflow:hidden; background:linear-gradient(160deg,#FFF8E8,#FFF1D6); box-shadow:0 4px 10px rgba(20,60,90,.12),0 18px 44px rgba(216,154,15,.18); }
@@ -122,15 +223,6 @@
     .join-done{ display:flex; align-items:center; gap:10px; margin:16px 0 0; padding:14px 16px; background:#fff; border:1.5px solid #CDEBD8; border-radius:14px; color:#1B7A4A; font:700 15px Inter; }
     .join-done .jd-ic{ font-size:20px; }
 
-    /* Install popup — big tappable iOS Share icon + one-tap Android install */
-    .ios-share-wrap{ display:flex; flex-direction:column; align-items:center; gap:6px; margin:10px 0 4px; }
-    .ios-share-btn{ display:inline-flex; align-items:center; justify-content:center; width:60px; height:60px; border:0; cursor:pointer; border-radius:16px; color:#fff; background:linear-gradient(135deg,#4FA4D2,#2D6FA8); box-shadow:0 4px 14px rgba(46,132,189,.4); animation:isPulse 1.8s ease-in-out infinite; }
-    .ios-share-btn:active{ transform:scale(.94); }
-    .ios-share-btn .ios-share-svg{ width:30px; height:30px; }
-    @keyframes isPulse{ 0%,100%{ box-shadow:0 4px 14px rgba(46,132,189,.4); } 50%{ box-shadow:0 4px 22px rgba(46,132,189,.7); } }
-    .ios-share-cap{ font:600 12px Inter; color:#7A8898; text-align:center; }
-    .install-now-btn{ display:flex; align-items:center; justify-content:center; gap:8px; width:100%; border:0; cursor:pointer; color:#fff; font:800 16px Inter; background:linear-gradient(135deg,#2FA96B,#1B7A4A); padding:.9em 1.2em; border-radius:14px; box-shadow:0 4px 14px rgba(31,122,74,.34); margin:4px 0 2px; }
-    .install-now-btn:active{ transform:scale(.98); }
   </style>
 </head>
 <body class="launcher">
@@ -138,9 +230,14 @@
     <div class="row">
       <img src="icon-192.png" alt="" class="abico">
       <span class="brand">Conscious Parenting <span class="ni">NI</span></span>
-      <button class="hbtn" onclick="openInstall()" title="Add to Home Screen">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M12 3l-4 4M12 3l4 4"/><path d="M4 13v6a2 2 0 002 2h12a2 2 0 002-2v-6"/></svg>
-        <span>Get app</span>
+      <button class="hbtn" id="shareAppBtn" title="Share this app — and get it on your home screen" aria-label="Share Conscious Parenting NI with a QR code">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M3 3h7v7H3V3zm2 2v3h3V5H5z"/>
+          <path d="M14 3h7v7h-7V3zm2 2v3h3V5h-3z"/>
+          <path d="M3 14h7v7H3v-7zm2 2v3h3v-3H5z"/>
+          <path d="M13 13h3v3h-3zM18 13h3v2h-3zM13 18h2v3h-2zM17 17h4v4h-2v-2h-2z"/>
+        </svg>
+        <span>Share</span>
       </button>
     </div>
   </div>
@@ -160,9 +257,9 @@
         <p class="intro-welcome">Welcome — and well done for being here. <strong>Whether your children are in school or learning at home, you belong.</strong></p>
         <p class="intro-lead">Most of us raise our children the way we were raised, doing what everyone else does, without stopping to ask if there's a better way. Conscious parenting is simply choosing, on purpose, to be the best parent you can be — and getting a little better every day. The tools are all right here, so there's no excuse: just pick one small thing and begin.</p>
         <div class="how-steps">
-          <div class="how-step"><span class="how-n">1</span><div><b>Check "For today"</b><span>A few fresh, do-it-now ideas each day.</span></div></div>
-          <div class="how-step"><span class="how-n">2</span><div><b>Explore the approaches</b><span>The traditions it's all built on — take what fits.</span></div></div>
-          <div class="how-step"><span class="how-n">3</span><div><b>Try one small thing</b><span>That's the whole method.</span></div></div>
+          <div class="how-step"><span class="how-n">1</span><div><b>Read one tradition</b><span>The Great Traditions is the heart of it. Start with a name you already know.</span></div></div>
+          <div class="how-step"><span class="how-n">2</span><div><b>Check "For today"</b><span>A few fresh, do-it-now ideas, new every day.</span></div></div>
+          <div class="how-step"><span class="how-n">3</span><div><b>Try one small thing</b><span>That is the whole method.</span></div></div>
         </div>
         <audio id="wlAudio" src="assets/audio/welcome.mp3" preload="none"></audio>
       </div>
@@ -176,30 +273,48 @@
       <div class="today-list" id="todayGrid"></div>
     </section>
 
-    <a href="feast.html" class="week-card" id="weekCard" hidden>
-      <span class="wk-top">
-        <span class="wk-pill" id="wkPill">Week 1</span>
-        <span class="wk-virtue" id="wkVirtue" hidden></span>
-      </span>
-      <span class="wk-title">This week's feast</span>
-      <span class="wk-sub">A poem, a piece of music, a painting, a story, something in nature, something with your hands. Do one. Do all. Do none.</span>
-      <span class="wk-items" id="wkItems"></span>
-      <span class="wk-go">Open this week <span aria-hidden="true">→</span></span>
-      <span class="wk-back" id="wkBack" hidden></span>
-    </a>
 
-    <a href="education.html" class="approaches-feature">
-      <span class="af-banner"><img src="assets/pillars/education-banner.jpg" alt="" loading="lazy"></span>
-      <span class="af-body">
-        <span class="af-eyebrow">Start here · the heart of it</span>
-        <span class="af-title">The Great Traditions</span>
-        <span class="af-sub">Whole ways of raising and teaching a child — each with its own good reasons. Take what fits yours.</span>
-        <span class="af-chips">
-          <span>Montessori</span><span>Waldorf</span><span>Light School</span><span>Charlotte Mason</span><span>Reggio Emilia</span><span>Forest School</span><span>Classical</span><span>Wild + Free</span><span>Unschooling</span>
-        </span>
-        <span class="af-go">Explore them all →</span>
-      </span>
-    </a>
+    <!-- The first door. Everything on this page is meant to end up here, so it
+         gets the space the feast card used to take. Montessori and Waldorf lead
+         because they are the names a parent already knows; Light School is third
+         among them, listed the same way, so it reads as one more choice on the
+         shelf rather than the thing being sold. -->
+    <section class="approaches-feature">
+      <a href="education.html" class="af-banner"><img src="assets/pillars/education-banner.jpg" alt="" loading="lazy"></a>
+      <div class="af-body">
+        <span class="af-eyebrow">Start here</span>
+        <a href="education.html" class="af-titlelink"><h2 class="af-title">The Great Traditions</h2></a>
+        <p class="af-sub">Twelve whole ways of raising and teaching a child — what each one actually believes, what a day in it looks like, and what you could try this week. Nobody shows a parent these before they have to choose. Read one and you will already be ahead.</p>
+
+        <div class="af-three">
+          <a href="methodology.html?id=montessori" class="af-mini" style="--mc:#D96B2A;">
+            <img src="assets/tiles/montessori.jpg" alt="" loading="lazy">
+            <span class="af-mini-b">
+              <span class="af-mini-n">Montessori</span>
+              <span class="af-mini-t">Follow the child. Real tools, real work, at their own pace.</span>
+            </span>
+          </a>
+          <a href="methodology.html?id=waldorf" class="af-mini" style="--mc:#C73B7A;">
+            <img src="assets/tiles/waldorf.jpg" alt="" loading="lazy">
+            <span class="af-mini-b">
+              <span class="af-mini-n">Waldorf</span>
+              <span class="af-mini-t">Rhythm, beauty and imagination. Unhurried, and no screens.</span>
+            </span>
+          </a>
+          <a href="methodology.html?id=school-of-light" class="af-mini" style="--mc:#C6871B;">
+            <img src="assets/tiles/school-of-light.jpg" alt="" loading="lazy">
+            <span class="af-mini-b">
+              <span class="af-mini-n">Light School</span>
+              <span class="af-mini-t">First principles, the parent stays, and it does not stop at sixteen. Online anywhere, local in Northern Ireland.</span>
+            </span>
+          </a>
+        </div>
+
+        <p class="af-rest">and nine more — <b>Charlotte Mason</b>, <b>Reggio Emilia</b>, <b>Forest School</b>, <b>Classical</b>, <b>Wild + Free</b>, <b>Unschooling</b>, <b>Alpha School</b>, <b>Athenian</b> and <b>Roman</b>.</p>
+
+        <a href="education.html" class="af-go">See all twelve →</a>
+      </div>
+    </section>
 
     <section class="tile-section">
       <h2 class="tile-section-title">Every day</h2>
@@ -582,69 +697,9 @@
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));
     }
-    function shareIt(){
-      const d={title:'Conscious Parenting NI',text:'A calm, first-principles guide to raising a bright, happy child.',url:location.origin+location.pathname};
-      if(navigator.share){navigator.share(d).catch(()=>{});}
-      else if(navigator.clipboard){navigator.clipboard.writeText(d.url);}
-    }
-    // Android/Chrome fires this before offering install — capture it so we can
-    // trigger a real one-tap install from our own button.
-    let deferredInstallPrompt=null;
-    window.addEventListener('beforeinstallprompt',function(e){ e.preventDefault(); deferredInstallPrompt=e; });
-
-    // The iOS Share glyph (up-arrow out of a box) — the exact icon they'll tap.
-    const IOS_SHARE_SVG='<svg class="ios-share-svg" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 6 V27"/><path d="M15 13 L22 6 L29 13"/><path d="M13 20 H11 a3 3 0 0 0 -3 3 V35 a3 3 0 0 0 3 3 H33 a3 3 0 0 0 3 -3 V23 a3 3 0 0 0 -3 -3 H31"/></svg>';
-
-    function openInstall(){
-      if(!window.RecipeModal){shareIt();return;}
-      const ua=navigator.userAgent;
-      const isIOS=/iphone|ipad|ipod/i.test(ua)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
-      const isAndroid=/android/i.test(ua);
-
-      // iOS: the tappable Share icon sits right in step 1 — tap it and the menu pops up.
-      const ios='<p class="rcm-h">On iPhone &amp; iPad</p><ol class="rcm-steps">'
-        +'<li>Tap this icon and the iPhone menu pops up:'
-          +'<span class="ios-share-wrap"><button type="button" id="iosShareBtn" class="ios-share-btn" aria-label="Open the Share menu">'+IOS_SHARE_SVG+'</button>'
-          +'<span class="ios-share-cap">the same icon is at the bottom of Safari</span></span></li>'
-        +'<li>In the menu, scroll down and choose <b>Add to Home Screen</b>.</li>'
-        +'<li>Tap <b>Add</b> — the icon lands on your home screen.</li></ol>';
-      const android='<p class="rcm-h">On Android</p><ol class="rcm-steps">'
-        +'<li>Tap the <b>⋮</b> menu in Chrome (top right).</li>'
-        +'<li>Choose <b>Add to Home screen</b>.</li>'
-        +'<li>Tap <b>Add</b>.</li></ol>';
-
-      // One-tap install button when the browser supports it (Android/Chrome/Edge).
-      const nowBtn=deferredInstallPrompt?'<button type="button" id="installNowBtn" class="install-now-btn">📲 Install this app</button>':'';
-
-      let steps;
-      if(isIOS) steps=ios;
-      else if(isAndroid) steps=android;
-      else steps=ios+android; // desktop / unknown — show both
-
-      window.RecipeModal.openContent({
-        compact:true,
-        accent:{c:'#4FA4D2',cd:'#2D6FA8',cs:'#EAF4FB'},
-        emoji:'📲', kicker:'Free · works offline', title:'Add to Home Screen',
-        blurb:'Pop it on your home screen and it opens full-screen like a normal app — no app store, no sign-in.',
-        bodyHTML:nowBtn+steps
-          +'<button class="read-btn rcm-read" id="installShareBtn" type="button">🔗 Share this app</button>',
-        onReady:function(b){
-          var s=b.querySelector('#installShareBtn'); if(s) s.addEventListener('click',shareIt);
-          var ip=b.querySelector('#iosShareBtn'); if(ip) ip.addEventListener('click',popShareSheet);
-          var nb=b.querySelector('#installNowBtn'); if(nb) nb.addEventListener('click',function(){
-            if(!deferredInstallPrompt) return;
-            deferredInstallPrompt.prompt();
-            deferredInstallPrompt.userChoice.finally(function(){ deferredInstallPrompt=null; nb.disabled=true; });
-          });
-        }
-      });
-    }
-
-    // Pop the native iPhone share sheet (Add to Home Screen lives inside it).
-    function popShareSheet(){
-      const d={title:'Conscious Parenting NI',text:'A calm, first-principles guide to raising a bright, happy child.',url:location.origin+location.pathname};
-      if(navigator.share){ navigator.share(d).catch(function(){}); }
-    }
+    // Install + share now live in the share dialog at the foot of this file —
+    // one header button, two taps, and a QR. The old multi-platform modal was
+    // correct but read as far harder than it is.
   </script>
 
   <script>
@@ -705,56 +760,180 @@
     })();
   </script>
 
+  <!-- The "this week's feast" card used to sit on the home page and take a
+       screen-height of space nobody was spending. The feast still lives on
+       feast.html, reached from Run the Week; the space went to the traditions,
+       which is the door this app actually needs people to walk through. -->
+  <!-- Share / Get-the-app. One button in the header opens this. The install is
+       stated as TWO taps because that is genuinely all it is — everything a
+       confused person might need is folded into the drop-down underneath, so
+       nobody has to read it to succeed. -->
+  <dialog id="shareDialog" class="cp-dialog">
+    <div class="cpd-body">
+      <button type="button" class="cpd-x" id="shareClose" aria-label="Close">✕</button>
+
+      <div id="installBlock">
+        <h2 class="cpd-h" id="cpdHead">Get the app in two taps</h2>
+        <p class="cpd-lead" id="cpdLead">Free, no app store, no sign-in. It goes on your home screen and opens full screen like any other app.</p>
+        <p class="cpd-done" id="installDone" hidden>✅ You already have it on your home screen.</p>
+        <button type="button" id="installNowBtn" class="cpd-install-btn" hidden>⬇️ Install it now — one tap</button>
+        <ol class="cpd-two" id="twoSteps"></ol>
+        <p class="cpd-thats" id="cpdThats">That is it. Nothing else to do.</p>
+        <details class="cpd-more" id="cpdMore">
+          <summary>Want that explained a bit more?<span class="cpd-more-chev" aria-hidden="true">▾</span></summary>
+          <div class="cpd-more-body" id="cpdMoreBody"></div>
+        </details>
+      </div>
+
+      <div class="cpd-divider"><span>Or pass it on</span></div>
+      <p class="cpd-thats">Point a phone camera at the code, or copy the link and send it.</p>
+      <div class="cpd-qr" id="shareQr">Loading…</div>
+      <div class="cpd-url">parentingni.com</div>
+      <div class="cpd-btns">
+        <button type="button" id="shareNative" class="cpd-primary" hidden>📤 Send it</button>
+        <button type="button" id="shareCopy" class="cpd-primary ghost">🔗 Copy link</button>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="assets/qrcode.min.js?v89"></script>
   <script>
-    // "This week" — the Path. The feast weeks aren't a tradition, they're
-    // universal culture on a seasonal rhythm, so every family shares the same
-    // week whichever approach they lean toward. Gives the app a thread to
-    // hold without ever narrowing the buffet.
-    (function () {
-      const card = document.getElementById('weekCard');
-      if (!card || !window.Path || !window.FEAST) return;
+  // ── Share + install ──────────────────────────────────────────────────────
+  // SHARE_URL is the canonical domain, never window.origin, so a scan from a
+  // preview alias still lands people on the real site.
+  (function () {
+    const SHARE_URL = 'https://parentingni.com';
 
-      const w = Path.week();
-      const f = Path.feast(w);
-      if (!f) return;
+    // The glyph the person is actually looking for, drawn inline so step 1 shows
+    // the icon rather than describing it.
+    const IOS_SHARE_GLYPH = '<span class="cpd-glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M8 6.5 12 3l4 3.5"/><path d="M8.5 10H7a2.5 2.5 0 0 0-2.5 2.5v6A2.5 2.5 0 0 0 7 21h10a2.5 2.5 0 0 0 2.5-2.5v-6A2.5 2.5 0 0 0 17 10h-1.5"/></svg></span>';
 
-      const term = Path.term(w);
-      const pill = document.getElementById('wkPill');
-      pill.textContent = term
-        ? `Week ${w} · ${term.charAt(0).toUpperCase() + term.slice(1)} term`
-        : `Week ${w}`;
+    const dlg = document.getElementById('shareDialog');
+    const btn = document.getElementById('shareAppBtn');
+    if (!dlg || !btn) return;
+    const qrBox = document.getElementById('shareQr');
+    const stepsEl = document.getElementById('twoSteps');
+    const moreBody = document.getElementById('cpdMoreBody');
+    const installDone = document.getElementById('installDone');
+    const installNow = document.getElementById('installNowBtn');
+    const nativeBtn = document.getElementById('shareNative');
 
-      const virtue = Path.virtue(w);
-      if (virtue) {
-        const vEl = document.getElementById('wkVirtue');
-        vEl.textContent = virtue.name;
-        vEl.hidden = false;
+    let deferredPrompt = null;
+    window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); deferredPrompt = e; });
+
+    const isStandalone = () => window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+    const isIos = () => /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+      (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
+    // On iOS, Add to Home Screen is Safari-only. Inside Facebook's or Instagram's
+    // browser, or in Chrome for iOS, the option simply is not there — which is the
+    // single most common reason somebody says "I don't have that button".
+    function iosContext() {
+      const ua = navigator.userAgent;
+      const inApp = [[/FBAN|FBAV|FB_IAB/, 'Facebook'], [/Instagram/, 'Instagram'], [/Messenger/, 'Messenger'],
+        [/Threads/, 'Threads'], [/TikTok|BytedanceWebview|musical_ly/, 'TikTok'], [/Snapchat/, 'Snapchat'],
+        [/Twitter/, 'X'], [/LinkedInApp/, 'LinkedIn'], [/Pinterest/, 'Pinterest'], [/GSA\//, 'the Google app']];
+      for (const [re, name] of inApp) if (re.test(ua)) return { kind: 'inapp', name };
+      if (/CriOS/.test(ua)) return { kind: 'browser', name: 'Chrome' };
+      if (/FxiOS/.test(ua)) return { kind: 'browser', name: 'Firefox' };
+      if (/EdgiOS/.test(ua)) return { kind: 'browser', name: 'Edge' };
+      return { kind: 'safari', name: 'Safari' };
+    }
+
+    function step(n, html) {
+      return '<li><span class="cpd-n">' + n + '</span><span>' + html + '</span></li>';
+    }
+
+    function paint() {
+      const installed = isStandalone();
+      const ios = isIos();
+      const ctx = ios ? iosContext() : null;
+      const wrongApp = ios && ctx.kind !== 'safari';
+
+      installDone.hidden = !installed;
+      installNow.hidden = installed || !deferredPrompt;
+      stepsEl.hidden = installed;
+      document.getElementById('cpdThats').hidden = installed;
+      document.getElementById('cpdMore').hidden = installed;
+      document.getElementById('cpdHead').textContent = installed
+        ? 'You already have the app' : 'Get the app in two taps';
+
+      if (installed) { stepsEl.innerHTML = ''; return; }
+
+      if (ios && !wrongApp) {
+        stepsEl.innerHTML =
+          step(1, 'Tap the <b>Share</b> button ' + IOS_SHARE_GLYPH + ' in Safari') +
+          step(2, 'Tap <b>Add to Home Screen</b>');
+        moreBody.innerHTML =
+          '<p>Step one is <b>Safari\'s own Share button</b>, not a button on this page. It is the little square with an arrow coming out of the top, at the <b>bottom of your screen</b> (or up beside the address bar on an iPad).</p>' +
+          '<p>Tapping it opens a long menu. <b>Add to Home Screen</b> is a fair way down that list, so keep scrolling. If it genuinely is not there, tap <b>Edit Actions</b> at the very bottom and switch it on.</p>' +
+          '<p>Then tap <b>Add</b> in the top corner, and the icon appears on your home screen with everything else.</p>';
+      } else if (ios && wrongApp) {
+        document.getElementById('cpdHead').textContent = 'Open this in Safari first';
+        stepsEl.innerHTML =
+          step(1, ctx.kind === 'inapp'
+            ? 'Tap the <b>⋯</b> menu and choose <b>Open in browser</b>'
+            : 'Open <b>parentingni.com</b> in <b>Safari</b>') +
+          step(2, 'Then tap <b>Share</b> ' + IOS_SHARE_GLYPH + ' and <b>Add to Home Screen</b>');
+        moreBody.innerHTML =
+          '<p>You are reading this inside <b>' + ctx.name + '</b>, and adding to the home screen is something only Safari can do on an iPhone. It is not you — the button really is missing in here.</p>' +
+          '<p>Open the same address in Safari and the two taps above work as normal.</p>';
+      } else if (deferredPrompt) {
+        stepsEl.innerHTML = step(1, 'Tap <b>Install it now</b> above') + step(2, 'Tap <b>Install</b>');
+        moreBody.innerHTML =
+          '<p>Your browser can do this in one go, so there is no menu to hunt through.</p>' +
+          '<p>If the button does not work, tap the <b>⋮</b> menu at the top right and choose <b>Add to Home screen</b> instead.</p>';
+      } else {
+        stepsEl.innerHTML =
+          step(1, 'Tap the <b>⋮</b> menu at the top right') +
+          step(2, 'Tap <b>Add to Home screen</b>');
+        moreBody.innerHTML =
+          '<p>On Android the menu is the three dots beside the address bar. The option is sometimes called <b>Install app</b> instead — same thing.</p>' +
+          '<p>On a computer, look for a small install icon at the right-hand end of the address bar.</p>';
       }
+    }
 
-      // Nature prompts run to a couple of sentences — the card wants the hook,
-      // not the whole instruction, so take the first sentence only.
-      const firstSentence = (s) => {
-        const m = /^[^.!?]+[.!?]?/.exec(String(s || '').trim());
-        return m ? m[0].trim() : '';
-      };
+    let qrDrawn = false;
+    function drawQr() {
+      if (qrDrawn || typeof qrcode === 'undefined' || !qrBox) return;
+      try {
+        const q = qrcode(0, 'M');
+        q.addData(SHARE_URL);
+        q.make();
+        qrBox.innerHTML = q.createSvgTag({ cellSize: 8, margin: 1, scalable: true });
+        qrDrawn = true;
+      } catch (_) { qrBox.textContent = 'parentingni.com'; }
+    }
 
-      // Three tastes only — the full seven live on the feast page.
-      const rows = [
-        ['Poem', f.poem && f.poem.title],
-        ['Music', f.composer_piece && f.composer_piece.title],
-        ['Outside', firstSentence(f.nature && f.nature.prompt)],
-      ].filter(r => r[1]);
+    btn.addEventListener('click', () => {
+      drawQr();
+      paint();
+      if (nativeBtn) nativeBtn.hidden = !navigator.share;
+      dlg.showModal();
+    });
+    document.getElementById('shareClose').addEventListener('click', () => dlg.close());
+    dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
 
-      document.getElementById('wkItems').innerHTML = rows.map(([kind, what]) =>
-        `<span class="wk-item"><span class="wk-kind">${kind}</span><span class="wk-what"></span></span>`
-      ).join('');
-      // Set text via textContent so content data can never inject markup.
-      document.querySelectorAll('#wkItems .wk-what').forEach((el, i) => {
-        el.textContent = rows[i][1];
-      });
+    installNow.addEventListener('click', async () => {
+      const ev = deferredPrompt; if (!ev) return;
+      deferredPrompt = null;
+      try { ev.prompt(); await ev.userChoice; } catch (_) {}
+      paint();
+    });
+    window.addEventListener('appinstalled', () => { deferredPrompt = null; paint(); });
 
-      card.hidden = false;
-    })();
+    // Share the LINK only. A title and a blurb get pasted as a wall of text in
+    // most apps and read as spam; the link previews itself.
+    nativeBtn.addEventListener('click', () => {
+      if (navigator.share) navigator.share({ url: SHARE_URL }).catch(() => {});
+    });
+    document.getElementById('shareCopy').addEventListener('click', async () => {
+      const b = document.getElementById('shareCopy');
+      try { await navigator.clipboard.writeText(SHARE_URL); b.textContent = '✅ Copied'; }
+      catch (_) { b.textContent = 'parentingni.com'; }
+      setTimeout(() => { b.textContent = '🔗 Copy link'; }, 1800);
+    });
+  })();
   </script>
 </body>
 </html>
