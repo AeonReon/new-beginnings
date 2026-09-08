@@ -14684,15 +14684,15 @@ window.METHODS = [
   {
     "id": "school-of-light",
     "name": "Light School",
-    "tagline": "Parents raising their own children, together",
-    "era": "Northern Ireland · North Coast",
+    "tagline": "One way of learning, for the whole of a life",
+    "era": "Online · Northern Ireland",
     "color": "#F0C557",
     "colorDeep": "#C6871B",
     "colorSoft": "#FBF3DA",
     "icon": "compass",
     "built": true,
     "image": "assets/tiles/school-of-light.jpg",
-    "banner": ["First principles", "The parent stays", "Take the best of every method", "Get out and live", "Momentum"],
+    "banner": ["First principles", "Children and adults", "It never stops", "Take the best of every method", "Get out and live", "Momentum"],
     "join": [
       {
         "url": "https://school-of-light-seven.vercel.app/apply.html",
@@ -14713,11 +14713,11 @@ window.METHODS = [
         "go": "Open the school \u2192"
       }
     ],
-    "blurb": "An approach built on first principles rather than inherited from a founder: the parent stays, the child explores widely, and the best of every other tradition here is taken on merit. Its full name is the Nation of Light School, and it runs two ways \u2014 an online school for adults and children anywhere, where the day is one real action, one skill and one piece of knowledge, and a local school for families here in Northern Ireland, who meet and go out together every week. The local one is on the map.",
+    "blurb": "An approach built on first principles rather than inherited from a founder: the parent stays, the learner explores very widely, and the best of every other tradition here is taken on merit. Its full name is the Nation of Light School, and it runs two ways — an online school for adults and children anywhere, and a local school for families here in Northern Ireland, who meet and go out together every week. What separates it from everything else on this page is that it does not stop: the same way of learning runs from three years old through the whole of adult life, with facilitators, AI and the parent tailoring the path as it goes. The local one is on the map.",
     "grab": {
-      "hook": "A curriculum of things you can actually do.",
-      "summary": "Home education gets called alone-school, and the picture people carry is worth turning the right way up. A classroom is thirty children in rows who are not allowed to talk to the person beside them, working alone, in one building, all year. This is a group that goes places — parks, beaches, forests, farms — talks the whole time, and does things alongside other people and other families. Underneath it there is a real curriculum: six strands, five rungs, and a long list of things to actually be able to do, from tying a bowline to running a stall. Academics are tailored by AI to exactly where your child is and keep adapting until it lands. The rest is momentum, the best of every other method, and the long argument about what is good, true and beautiful. Families practise it together on the North Coast, and online from further afield.",
-      "deck": "Twelve principles. Every one of them has to survive the question: why are we actually doing this?",
+      "hook": "One way of learning, and it does not stop at sixteen.",
+      "summary": "Think about the last thing you really wanted to learn. You went to the internet, you asked the people you know who are good at it, you found a course, you watched somebody do it and then you tried it badly and tried it again. Given a free choice, almost nobody gathers thirty other people into a room at a fixed hour to be talked at by whoever was assigned to them, and then puts a hand up for permission to leave. That is the arrangement we hand a child for the first sixteen years, at the age they learn fastest, and a better one is already available — it is the one you just used. Light School is that better one, built properly and run for everybody in the family at once. The goal is to experience as much of life as you can genuinely enjoy, pointed at the things that are high-minded and wholesome. So the method is exposure first: try a great many things, in real places, with real tools and real people, and watch what a person keeps returning to when nobody is directing them. Then it gets tailored, by three at once — facilitators who have actually done the thing, AI that meets a learner exactly where they are and keeps adapting until it lands, and the parent, who knows the person better than any system does. Underneath it there is a real curriculum: six strands, five rungs, and a long list of things to actually be able to do, from tying a bowline to running a stall. Adults are inside it rather than supervising it — you pick your own strands, you can have your own mentor, and your own path is tailored the same way. That is what makes this different from every other tradition on this page: it starts as early as a child can join in and it carries on for as long as you are alive, because children are not apprentice people waiting to begin and nobody is finished at sixteen. It runs two ways — an online school for adults and children anywhere, and a local school for families here in Northern Ireland. The local one is on the map.",
+      "deck": "Fourteen principles. Every one of them has to survive the question: why are we actually doing this?",
       "bullets": [
         {
           "t": "Nobody has more at stake than you",
@@ -14729,7 +14729,7 @@ window.METHODS = [
         },
         {
           "t": "Find what lights them up, then push hard in that direction",
-          "d": "We do not begin with a predetermined outcome for a child. We begin by finding out who they already are. That takes exposure and room — a well-set-up environment, a lot of different days out, tools, animals, instruments, problems and people. You watch what they return to when nobody is directing them. And once you find it, you do not leave it at 'that's nice' — you put the resources, the facilities and the network behind it, so they build a life on a real strength rather than being averagely capable at subjects somebody else chose."
+          "d": "We do not begin with a predetermined outcome for a child. We begin by finding out who they already are. That takes exposure and room — a well-set-up environment, a lot of different days out, tools, animals, instruments, problems and people. You watch what they return to when nobody is directing them. And once you find it, you do not leave it at 'that's nice' — you put the resources, the facilities and the network behind it, so they build a life on a real strength rather than being averagely capable at subjects somebody else chose. Three things do that tailoring together, and none of them works alone: facilitators who have actually done the thing and can show it, AI that meets a learner exactly where they are and keeps adjusting until it lands, and the parent, who knows the person better than any system does and is the one who decides."
         },
         {
           "t": "A calm room is the curriculum",
@@ -14766,6 +14766,14 @@ window.METHODS = [
         {
           "t": "One direction",
           "d": "A magnet works because every particle inside it faces the same way. Scatter the alignment and it is a lump of metal. A group of families is the same. A shared, examined, consistent worldview is not a nice extra — it is the entire source of the strength. It is why the culture matters more than the building, why the application asks real questions, and why we would rather be a small group that agrees on what matters than a large one that does not."
+        },
+        {
+          "t": "It does not stop at sixteen",
+          "d": "Most arrangements are built for one stretch of a life and then hand you over to nothing. This one is a single way of being that starts as early as a child can join in and carries on for as long as you are alive. So a parent here is not a chaperone standing at the edge of it. You pick your own strands, you work through your own rungs, you can have a mentor of your own, and your path gets tailored the same way your child's does. That is deliberate, and it is the part that changes a child most. Watching the adults around you still learning something, still bad at it on the first go and still going, teaches what no lesson delivers: that this is simply what people do, for good."
+        },
+        {
+          "t": "Learn the way an adult would actually choose to",
+          "d": "When a grown person genuinely needs to learn something, watch what they do. They go to the internet and watch somebody competent do it. They ask the people in their network who are already good at it. They find a course, they try the thing badly, they try it again, and they keep the parts that worked. What they do not do is gather thirty peers into a room at a fixed hour to be talked at by whoever was assigned, and ask permission to use the toilet. The difference is whether you are being served or being processed, and free adults choose being served every single time. If that is what people pick when the choice is genuinely theirs, it is a fair question why the first sixteen years should run on the opposite arrangement. So we build the sensible version for children as well, and then simply keep it — one integrated way of learning, for a whole way of life."
         }
       ],
       "quote": { "text": "Raise them yourself. Just not on your own.", "cite": "The short version" },
@@ -14775,7 +14783,8 @@ window.METHODS = [
         "The correction is not that everybody should home-educate. Plenty of families do that well, but the picture most people have of it stops them — one child at a kitchen table with nobody their own age, and one parent trying to be teacher, cook and entertainment for eleven hours a day. That picture is not entirely unfair, and it is exactly the part we are built to fix.",
         "So Light School is two things. A group of families who go out together every week — parks, beaches, forests, farms, a coach hired between us to somewhere further — which is running now. And a permanent place on the North Coast — a barn set up as an indoor park, a garden, a quiet house, rooms for real work, and a proper work zone for parents, open eight in the morning until eight at night, seven days a week.",
         "Children three to eight, with their brothers and sisters. In school, home-educated, or somewhere in between — all three are welcome and the mix is deliberate. The parent comes too. That part does not vary, because it is the whole idea.",
-        "There are two ways in. The local version, on the North Coast, where the families meet and go out together every week. And the online version, for families further afield who want to run it where they live — the same principles, the same strands, the same weekly rhythm, with the group meeting on a screen instead of a beach. You apply for either one."
+        "There are two ways in. The local school, on the North Coast, where the families meet and go out together every week. And the online school, which is open to adults as well as children, anywhere — the same principles, the same strands, the same weekly rhythm, with the group meeting on a screen instead of a beach. You apply for either one.",
+        "And then it keeps going, which is the part people do not expect. The strands do not end at eight, or at sixteen, or at the point somebody hands you a certificate. A parent picks their own and works through them alongside their child, with a mentor of their own if they want one and the same tailoring behind it. The aim underneath all of it is simple enough to say in one line: to experience as much of life as you can genuinely enjoy, aimed at the things that are high-minded and wholesome, for as long as you are here to do it."
       ]
     },
     "sections": {
