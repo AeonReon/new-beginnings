@@ -14683,7 +14683,7 @@ window.METHODS = [
   },
   {
     "id": "school-of-light",
-    "name": "The School of Light",
+    "name": "Light School",
     "tagline": "Parents raising their own children, together",
     "era": "Northern Ireland · North Coast",
     "color": "#F0C557",
@@ -14705,9 +14705,15 @@ window.METHODS = [
         "label": "Come to an open day out",
         "line": "One day, no commitment \u2014 a beach, a forest, rock pools, a farm. Some are free and some cost a few pounds, depending on the activity. Everyone on the waiting list gets the dates and picks the ones they fancy.",
         "go": "See the open days \u2192"
+      },
+      {
+        "url": "https://nolschool.com/",
+        "label": "The online school \u2014 for adults and children",
+        "line": "Anywhere in the world, and not only for the children. One real action, one skill and one piece of knowledge a day, so the light in you gets momentum instead of good intentions.",
+        "go": "Open the school \u2192"
       }
     ],
-    "blurb": "An approach built on first principles rather than inherited from a founder: the parent stays, the child explores widely, and the best of every other tradition here is taken on merit. It runs two ways \u2014 a local version on the North Coast, where the families meet and go out together every week, and an online version families anywhere can apply for. The local one is on the map.",
+    "blurb": "An approach built on first principles rather than inherited from a founder: the parent stays, the child explores widely, and the best of every other tradition here is taken on merit. Its full name is the Nation of Light School, and it runs two ways \u2014 an online school for adults and children anywhere, where the day is one real action, one skill and one piece of knowledge, and a local school for families here in Northern Ireland, who meet and go out together every week. The local one is on the map.",
     "grab": {
       "hook": "A curriculum of things you can actually do.",
       "summary": "Home education gets called alone-school, and the picture people carry is worth turning the right way up. A classroom is thirty children in rows who are not allowed to talk to the person beside them, working alone, in one building, all year. This is a group that goes places — parks, beaches, forests, farms — talks the whole time, and does things alongside other people and other families. Underneath it there is a real curriculum: six strands, five rungs, and a long list of things to actually be able to do, from tying a bowline to running a stall. Academics are tailored by AI to exactly where your child is and keep adapting until it lands. The rest is momentum, the best of every other method, and the long argument about what is good, true and beautiful. Families practise it together on the North Coast, and online from further afield.",
@@ -14767,7 +14773,7 @@ window.METHODS = [
         "Raising good children is the most important work in a life, and almost everybody delegates it. Not out of laziness — out of arrangement. The school day was built around a working day that mostly no longer exists, so a parent hands their child over for the best hours of the day, to people they have not chosen and often never meet, and gets the tired end of them back.",
         "Three things follow from that, and all three matter. The parent stops being the main influence, because school and the peer group become more present in the child's life than their mother and father — and the parents are quietly demoted to the people who pay, drive and feed. Protection is handed over with the day, because a parent filters what reaches their child: the food, the language, the ideas, the tone, the people. And the family unit weakens over a lifetime, because families that spend the formative years apart do not suddenly become close at eighteen.",
         "The correction is not that everybody should home-educate. Plenty of families do that well, but the picture most people have of it stops them — one child at a kitchen table with nobody their own age, and one parent trying to be teacher, cook and entertainment for eleven hours a day. That picture is not entirely unfair, and it is exactly the part we are built to fix.",
-        "So The School of Light is two things. A group of families who go out together every week — parks, beaches, forests, farms, a coach hired between us to somewhere further — which is running now. And a permanent place on the North Coast — a barn set up as an indoor park, a garden, a quiet house, rooms for real work, and a proper work zone for parents, open eight in the morning until eight at night, seven days a week.",
+        "So Light School is two things. A group of families who go out together every week — parks, beaches, forests, farms, a coach hired between us to somewhere further — which is running now. And a permanent place on the North Coast — a barn set up as an indoor park, a garden, a quiet house, rooms for real work, and a proper work zone for parents, open eight in the morning until eight at night, seven days a week.",
         "Children three to eight, with their brothers and sisters. In school, home-educated, or somewhere in between — all three are welcome and the mix is deliberate. The parent comes too. That part does not vary, because it is the whole idea.",
         "There are two ways in. The local version, on the North Coast, where the families meet and go out together every week. And the online version, for families further afield who want to run it where they live — the same principles, the same strands, the same weekly rhythm, with the group meeting on a screen instead of a beach. You apply for either one."
       ]

@@ -8,7 +8,7 @@
   <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/png" href="icon-192.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="stylesheet" href="assets/style.css?v86">
+  <link rel="stylesheet" href="assets/style.css?v87">
   <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.css">
   <style>
     .schools-main { max-width: 1080px; margin: 0 auto; padding: 1.4em 1.1em 3em; }
@@ -75,6 +75,12 @@
     .school-name { font-weight: 800; font-size: 1.06em; color: var(--ink); margin: 0 0 0.4em; line-height: 1.2; }
     .school-meta { color: var(--ink-mute); font-size: 0.82em; margin-bottom: 0.2em; display: flex; align-items: flex-start; gap: 0.4em; line-height: 1.35; }
     .school-note { color: var(--ink-soft); font-size: 0.87em; line-height: 1.45; margin: 0.55em 0 0.7em; }
+    .school-note h4, .pop-detail h4 { font-size: 0.94em; font-weight: 800; color: var(--ink); margin: 0.9em 0 0.25em; }
+    .school-note ul, .pop-detail ul { margin: 0.25em 0 0.5em; padding-left: 1.15em; }
+    .school-note li, .pop-detail li { margin: 0.15em 0; }
+    .school-note p, .pop-detail p { margin: 0 0 0.5em; }
+    .school-note p:last-child, .pop-detail p:last-child { margin-bottom: 0; }
+    .pop-link + .pop-link, .school-link + .school-link { display: block; margin-top: 0.4em; }
     .school-link { font-weight: 700; font-size: 0.86em; }
     .count { color: var(--ink-mute); font-size: 0.85em; margin: 0 0 0.9em; }
 
@@ -187,6 +193,36 @@
 
     function visible(s) { return activeCat === 'all' || s.cat === activeCat; }
 
+    // Notes are written in a light markdown — **bold**, `# heading`, `- bullet`,
+    // blank-line paragraphs. Without this they rendered as raw asterisks and hashes.
+    function noteHtml(note) {
+      if (!note) return '';
+      const esc = t => t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      const inline = t => esc(t).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+      let out = '', list = false;
+      note.split('\n').forEach(raw => {
+        const line = raw.trim();
+        if (!line) { if (list) { out += '</ul>'; list = false; } return; }
+        if (line.startsWith('- ')) {
+          if (!list) { out += '<ul>'; list = true; }
+          out += `<li>${inline(line.slice(2))}</li>`;
+          return;
+        }
+        if (list) { out += '</ul>'; list = false; }
+        if (line.startsWith('# ')) out += `<h4>${inline(line.slice(2))}</h4>`;
+        else out += `<p>${inline(line)}</p>`;
+      });
+      if (list) out += '</ul>';
+      return out;
+    }
+
+    // A setting can carry extra front doors (e.g. Light School's online school)
+    // alongside its main website link.
+    function extraLinks(s, cls) {
+      return (s.links || []).map(l =>
+        `<a class="${cls}" href="${l.url}" target="_blank" rel="noopener">${l.label}</a>`).join('');
+    }
+
     // List
     const grid = document.getElementById('school-grid');
     const countEl = document.getElementById('count');
@@ -201,9 +237,10 @@
             <div class="school-name">${s.name}</div>
             <div class="school-meta"><span class="ic">📍</span><span>${s.address || s.town}</span></div>
             ${s.phone ? `<div class="school-meta"><span class="ic">📞</span><span>${s.phone}</span></div>` : ''}
-            ${s.url ? `<div class="school-meta"><span class="ic">🔗</span><span>${s.url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')}</span></div>` : ''}
-            <div class="school-note">${s.note || ''}</div>
-            ${s.url ? `<a class="school-link" href="${s.url}" target="_blank" rel="noopener">Visit website →</a>` : ''}
+            ${s.url && !s.urlLabel ? `<div class="school-meta"><span class="ic">🔗</span><span>${s.url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')}</span></div>` : ''}
+            <div class="school-note">${noteHtml(s.note)}</div>
+            ${s.url ? `<a class="school-link" href="${s.url}" target="_blank" rel="noopener">${s.urlLabel || 'Visit website →'}</a>` : ''}
+            ${extraLinks(s, 'school-link')}
           </div>
         </div>`;
       }).join('') + `<div class="gap-card">No democratic / Sudbury school exists in NI yet — the nearest are across the border in the Republic. <b>Maybe you'll be the one to start one.</b> Know a setting we've missed? It belongs here.</div>`;
@@ -268,8 +305,9 @@
           <div class="pop-name">${s.name}</div>
           <div class="pop-meta">📍 ${s.address || s.town}</div>
           ${s.phone ? `<div class="pop-meta">📞 ${s.phone}</div>` : ''}
-          <div class="pop-detail">${s.note || ''}</div>
-          ${s.url ? `<a class="pop-link" href="${s.url}" target="_blank" rel="noopener">Visit website →</a>` : ''}
+          <div class="pop-detail">${noteHtml(s.note)}</div>
+          ${s.url ? `<a class="pop-link" href="${s.url}" target="_blank" rel="noopener">${s.urlLabel || 'Visit website →'}</a>` : ''}
+          ${extraLinks(s, 'pop-link')}
         </div>`;
     }
     const mapCardEl = document.getElementById('mapCard');

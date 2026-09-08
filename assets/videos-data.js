@@ -18,7 +18,7 @@
 //   4. Honest about gaps. If a tradition has no good video, it gets none and
 //      says so, rather than a weak one.
 //
-// The School of Light has no video on purpose — nobody has filmed it yet.
+// Light School has no video on purpose — nobody has filmed it yet.
 //
 // Run `node scripts/check-videos.mjs` to re-verify and refresh view counts.
 
