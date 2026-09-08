@@ -30,10 +30,6 @@
     /* ── Share / Get-the-app dialog (the Days Out pattern: one button, a QR,
        and the install explained in two taps rather than a wall of steps). ── */
     .cp-dialog{ border:0; padding:0; background:transparent; max-width:none; max-height:none; }
-    /* style.css gives buttons a display, which silently beats the `hidden`
-       attribute — without this the one-tap install and native-share buttons
-       show up on devices that cannot use them. */
-    .cp-dialog [hidden]{ display:none !important; }
     .cp-dialog::backdrop{ background:rgba(20,35,60,.55); backdrop-filter:blur(3px); -webkit-backdrop-filter:blur(3px); }
     .cpd-body{
       position:relative; width:min(400px,calc(100vw - 32px)); max-height:calc(100dvh - 64px); overflow-y:auto;
@@ -265,15 +261,6 @@
       </div>
     </details>
 
-    <section class="daily-feed" id="dailyFeed" aria-label="For today" hidden>
-      <div class="today-head">
-        <div class="daily-lead">For today</div>
-        <button class="today-shuffle" id="todayShuffle" type="button">Shuffle <span aria-hidden="true">↻</span></button>
-      </div>
-      <div class="today-list" id="todayGrid"></div>
-    </section>
-
-
     <!-- The first door. Everything on this page is meant to end up here, so it
          gets the space the feast card used to take. Montessori and Waldorf lead
          because they are the names a parent already knows; Light School is third
@@ -315,6 +302,16 @@
         <a href="education.html" class="af-go">See all twelve →</a>
       </div>
     </section>
+
+    <section class="daily-feed" id="dailyFeed" aria-label="For today" hidden>
+      <div class="today-head">
+        <div class="daily-lead">For today</div>
+        <button class="today-shuffle" id="todayShuffle" type="button">Shuffle <span aria-hidden="true">↻</span></button>
+      </div>
+      <div class="today-list" id="todayGrid"></div>
+    </section>
+
+
 
     <section class="tile-section">
       <h2 class="tile-section-title">Every day</h2>

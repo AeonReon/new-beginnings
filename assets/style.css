@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* The browser's own [hidden] rule carries no !important, so any class that sets
+   a display (this file gives every button `display:inline-flex`) beats it and
+   the element stays on screen. Reads as "I tapped it and nothing happened".
+   Global, not per-element — a scoped patch only fixes the modal you remembered. */
+[hidden] { display: none !important; }
 :root {
   /* Clear Sky palette — matched to Conscious Parenting NI site + Days Out */
   --ink: #1A2233;
