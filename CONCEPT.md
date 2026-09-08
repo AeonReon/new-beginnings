@@ -4,6 +4,8 @@ A parent-facing guide PWA for families raising their own children. Standalone pr
 
 ## Why this exists — the governing philosophy (stated 2026-09-08)
 
+_The full and evolving version, including the verbatim brain dumps, is in `philosophy/`._
+
 **This is not a home-schooling app, and calling it one gets it wrong.** It is for people
 who want to take responsibility for their own children — because raising great children
 is the highest-value thing a person can do with a life, and because being deeply involved

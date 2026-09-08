@@ -14722,9 +14722,26 @@ window.METHODS = [
     ],
     "blurb": "An approach built on first principles rather than inherited from a founder: the parent stays, the learner explores very widely, and the best of every other tradition here is taken on merit. Its full name is the Nation of Light School, and it runs two ways — an online school for adults and children anywhere, and a local school for families here in Northern Ireland, who meet and go out together every week. What separates it from everything else on this page is that it does not stop: the same way of learning runs from three years old through the whole of adult life, with facilitators, AI and the parent tailoring the path as it goes. The local one is on the map.",
     "grab": {
-      "hook": "One way of learning, and it does not stop at sixteen.",
-      "summary": "Think about the last thing you really wanted to learn. You went to the internet, you asked the people you know who are good at it, you found a course, you watched somebody do it and then you tried it badly and tried it again. Given a free choice, almost nobody gathers thirty other people into a room at a fixed hour to be talked at by whoever was assigned to them, and then puts a hand up for permission to leave. That is the arrangement we hand a child for the first sixteen years, at the age they learn fastest, and a better one is already available — it is the one you just used. Light School is that better one, built properly and run for everybody in the family at once. The goal is to experience as much of life as you can genuinely enjoy, pointed at the things that are high-minded and wholesome. So the method is exposure first: try a great many things, in real places, with real tools and real people, and watch what a person keeps returning to when nobody is directing them. Then it gets tailored, by three at once — facilitators who have actually done the thing, AI that meets a learner exactly where they are and keeps adapting until it lands, and the parent, who knows the person better than any system does. Underneath it there is a real curriculum: six strands, five rungs, and a long list of things to actually be able to do, from tying a bowline to running a stall. Adults are inside it rather than supervising it — you pick your own strands, you can have your own mentor, and your own path is tailored the same way. That is what makes this different from every other tradition on this page: it starts as early as a child can join in and it carries on for as long as you are alive, because children are not apprentice people waiting to begin and nobody is finished at sixteen. It runs two ways — an online school for adults and children anywhere, and a local school for families here in Northern Ireland. The local one is on the map.",
-      "deck": "Fourteen principles. Every one of them has to survive the question: why are we actually doing this?",
+      "hook": "Take your children's future into your own hands.",
+      "summary": "Nobody cares more about your child than you do — or at least nobody should, and that one fact is the whole argument. Raising them well is the most important work of your life, so the question was never whether to hand it over. It is how to give them every advantage while you keep it. Light School is that, assembled: an online school for adults and children, families here in Northern Ireland who meet and go out together every week, and the whole web of tools, resources and people around both. Not a curriculum. Everything you need to do this brilliantly, with other families doing it beside you.",
+      "offerHead": "What you actually get",
+      "offer": [
+        { "emoji": "\ud83c\udf10", "name": "The online school", "line": "For adults and children, anywhere. Take an action, add a skill, add a piece of knowledge \u2014 every day, tailored to exactly where you are." },
+        { "emoji": "\ud83c\udf33", "name": "Days out together", "line": "Families here on the North Coast and in Mid Antrim, out every week \u2014 beaches, forests, farms, rock pools, a coach hired between us." },
+        { "emoji": "\ud83d\udcf1", "name": "The apps", "line": "Days Out NI, Happy Weather, Fuel Price NI, Mo & Pip and this one. Free, built here, and they work together." },
+        { "emoji": "\ud83d\udcda", "name": "The resources", "line": "The best of every tradition on this page, gathered and tested, so you are choosing from the good ones rather than searching." },
+        { "emoji": "\ud83e\udded", "name": "A path that adapts", "line": "Six strands and five rungs, shaped by facilitators who have done it, AI that meets a learner exactly where they are, and you." },
+        { "emoji": "\ud83e\udd1d", "name": "The other parents", "line": "The part that decides whether any of this lasts. Friends for the children, and people who know your family by name." }
+      ],
+      "stance": {
+        "title": "This one is for going forward",
+        "body": [
+          "Almost everything offered to parents is built for when something has gone wrong \u2014 support, coping, damage, getting through a hard stretch. That work matters enormously and the people doing it deserve every pound they get.",
+          "This is the other thing, and there is far less of it about: <b>what you do when nothing is wrong and you want your child to be excellent.</b> Where does an ordinary family go to be helped to fly?",
+          "So the whole thing is pointed at thriving rather than surviving. Start from wherever you actually are, find every resource going, push hard in the direction the child lights up in \u2014 and enjoy the doing of it, because a childhood spent being pushed grimly is not the win."
+        ]
+      },
+      "deck": "Fourteen principles \u2014 each one has to survive \"why are we actually doing this?\"",
       "bullets": [
         {
           "t": "Nobody has more at stake than you",

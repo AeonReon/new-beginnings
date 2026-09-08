@@ -8,7 +8,7 @@
   <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/png" href="icon-192.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="stylesheet" href="assets/style.css?v92">
+  <link rel="stylesheet" href="assets/style.css?v93">
   <style>
     /* ════════════════════════════════════════════════════════════
        EDITORIAL v2 — one cohesive theme, magazine reading experience.
@@ -447,6 +447,28 @@
     #root .grab-summary p:last-child { margin-bottom: 0; }
     #root .grab-summary .lead { font-weight: 800; }
     #root .grab-deck { font-family: var(--sans); font-weight: 800; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ga); margin: 0 0 0.6em; }
+
+    /* ── What you actually get (optional `grab.offer`) ─────────────────────
+       A tradition that is a live thing rather than a historical method has to
+       SHOW what it hands you. A grid of short cards does that in a glance;
+       three more paragraphs of prose does not. */
+    #root .offer { display: grid; grid-template-columns: repeat(auto-fit, minmax(215px, 1fr)); gap: 10px; margin: 0 0 1.5em; }
+    #root .offer-card { background: #fff; border: 1.5px solid var(--rule); border-left: 4px solid var(--ga); border-radius: 15px; padding: 13px 14px; box-shadow: 0 1px 3px rgba(20,35,60,.06); }
+    #root .offer-emo { font-size: 1.15rem; line-height: 1; margin-right: 7px; }
+    #root .offer-n { display: flex; align-items: center; font-family: var(--sans); font-weight: 800; font-size: 1rem; color: var(--ink); line-height: 1.25; }
+    #root .offer-l { display: block; margin-top: 3px; font-size: 0.9rem; line-height: 1.5; color: var(--ink-soft); }
+    #root .offer-head { font-family: var(--sans); font-weight: 800; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gad); margin: 0 0 0.7em; }
+
+    /* ── Where we stand (optional `grab.stance`) ───────────────────────────
+       One block, visually separated, for the thing that most needs saying
+       out loud. Kept short on purpose — a stance that needs four paragraphs
+       is not a stance. */
+    #root .stance { position: relative; background: var(--gas); border-radius: 18px; padding: 1.15em 1.25em 1.25em; margin: 0 0 1.6em; overflow: hidden; }
+    #root .stance::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 2px; background: linear-gradient(135deg, var(--ga), var(--gad)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; }
+    #root .stance-t { font-family: var(--display); font-weight: 800; font-size: 1.22rem; line-height: 1.2; color: var(--ink); margin: 0 0 0.45em; }
+    #root .stance p { font-size: 1.03rem; line-height: 1.65; color: var(--ink-soft); margin: 0 0 0.7em; }
+    #root .stance p:last-child { margin-bottom: 0; }
+    #root .stance b { color: var(--ink); }
 
     /* the list — each idea is a row; the closed list is a scannable menu */
     #root .qa { border-top: 2px solid var(--rule); }
@@ -990,6 +1012,13 @@
         <section class="grab" style="--ga:${m.color};--gad:${m.colorDeep};--gas:${m.colorSoft}">
           ${g.hook ? `<h2 class="grab-hook">${g.hook}</h2>` : ''}
           ${g.summary ? `<div class="grab-summary">${multiPara(g.summary, 2)}</div>` : ''}
+          ${g.offer ? `<p class="offer-head">${g.offerHead || 'What you actually get'}</p>
+          <div class="offer">${g.offer.map(o => `
+            <div class="offer-card">
+              <span class="offer-n"><span class="offer-emo" aria-hidden="true">${o.emoji}</span>${o.name}</span>
+              <span class="offer-l">${o.line}</span>
+            </div>`).join('')}</div>` : ''}
+          ${g.stance ? `<div class="stance"><p class="stance-t">${g.stance.title}</p>${g.stance.body.map(t => `<p>${t}</p>`).join('')}</div>` : ''}
           ${g.deck ? `<p class="grab-deck">${g.deck}</p>` : ''}
           <div class="qa">
             ${g.bullets.map((b, i) => `
