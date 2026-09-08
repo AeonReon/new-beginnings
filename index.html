@@ -8,7 +8,7 @@
   <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/png" href="icon-192.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="stylesheet" href="assets/style.css?v89">
+  <link rel="stylesheet" href="assets/style.css?v90">
   <style>
     /* Home: Days Out chrome — app bar, full-bleed hero, tabbed daily cards */
     body{
@@ -202,6 +202,25 @@
     .af-go{ margin-top:16px; font-size:15.5px; padding:.72em 1.35em; }
 
     /* Join / email capture — community sign-up at the foot of the page (endpoint wired later) */
+    /* Our other apps — the foot of the page put to work. All free, all made
+       here, and all of them useful to the same Northern Ireland family. */
+    .other-apps{ margin:26px 0 10px; }
+    .oa-head{ font-family:var(--display); font-weight:800; font-size:19px; color:var(--text); margin:0 0 3px; }
+    .oa-sub{ margin:0 0 13px; font-size:14px; line-height:1.5; color:var(--muted-dim); }
+    .oa-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:10px; }
+    .oa{
+      display:flex; align-items:center; gap:12px; text-decoration:none; padding:11px 13px;
+      background:#fff; border:1.5px solid var(--border); border-radius:16px;
+      box-shadow:0 1px 3px rgba(20,35,60,.06);
+      transition:transform .18s cubic-bezier(0.34,1.56,0.64,1), box-shadow .18s ease;
+    }
+    .oa:hover{ transform:translateY(-2px); box-shadow:0 6px 18px rgba(20,35,60,.12); }
+    .oa:active{ transform:scale(.985); }
+    .oa img{ width:46px; height:46px; border-radius:12px; flex:none; box-shadow:0 2px 6px rgba(20,35,60,.18); }
+    .oa-b{ min-width:0; }
+    .oa-n{ display:block; font-family:var(--display); font-weight:800; font-size:15px; color:var(--text); line-height:1.2; }
+    .oa-t{ display:block; margin-top:2px; font-size:12.5px; line-height:1.4; color:#5A6B80; }
+
     .join-cta{ position:relative; margin:26px 0 6px; border-radius:22px; overflow:hidden; background:linear-gradient(160deg,#FFF8E8,#FFF1D6); box-shadow:0 4px 10px rgba(20,60,90,.12),0 18px 44px rgba(216,154,15,.18); }
     .join-cta::before{ content:""; position:absolute; inset:0; border-radius:inherit; padding:2px; background:linear-gradient(135deg,#F4B82A,#6CB4E2); -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0); -webkit-mask-composite:xor; mask-composite:exclude; pointer-events:none; z-index:2; }
     .join-inner{ position:relative; z-index:1; padding:22px 20px 24px; }
@@ -261,8 +280,19 @@
       </div>
     </details>
 
+
+    <section class="daily-feed" id="dailyFeed" aria-label="For today" hidden>
+      <div class="today-head">
+        <div class="daily-lead">For today</div>
+        <button class="today-shuffle" id="todayShuffle" type="button">Shuffle <span aria-hidden="true">↻</span></button>
+      </div>
+      <div class="today-list" id="todayGrid"></div>
+    </section>
+
     <!-- The first door. Everything on this page is meant to end up here, so it
-         gets the space the feast card used to take. Montessori and Waldorf lead
+         gets the space the feast card used to take. It sits BELOW "For today"
+         on purpose: the daily feed is what brings somebody back tomorrow, and
+         you scroll past this on the way to it every single day. Montessori and Waldorf lead
          because they are the names a parent already knows; Light School is third
          among them, listed the same way, so it reads as one more choice on the
          shelf rather than the thing being sold. -->
@@ -301,14 +331,6 @@
 
         <a href="education.html" class="af-go">See all twelve →</a>
       </div>
-    </section>
-
-    <section class="daily-feed" id="dailyFeed" aria-label="For today" hidden>
-      <div class="today-head">
-        <div class="daily-lead">For today</div>
-        <button class="today-shuffle" id="todayShuffle" type="button">Shuffle <span aria-hidden="true">↻</span></button>
-      </div>
-      <div class="today-list" id="todayGrid"></div>
     </section>
 
 
@@ -442,7 +464,7 @@
       <div class="join-inner">
         <span class="join-eyebrow">Be part of it</span>
         <h2 id="joinTitle" class="join-title">Let's raise them well, together</h2>
-        <p class="join-sub">This is only the beginning. We're gathering parents who've chosen a better way — with meet-ups, shared wisdom, and one day a whole new way of raising children, taking the best of every tradition. Leave your email and we'll keep you close as it grows.</p>
+        <p class="join-sub">The hard part of taking your children's upbringing back into your own hands was never the teaching. It is ending up on your own — no other parents, no friends for the children, nobody to hand a difficult week to. That is a large part of why families hand the day over in the first place, and it is the thing we are building against: other families first, then the best of every tradition, the tools, the hours outdoors, and somewhere for parents to work while the children play. Leave your email and we'll keep you close as it grows.</p>
         <form class="join-form" id="joinForm" novalidate>
           <input type="email" id="joinEmail" name="email" class="join-input" placeholder="you@email.com" autocomplete="email" inputmode="email" required aria-label="Your email address">
           <button type="submit" class="join-btn" id="joinBtn">Keep me posted</button>
@@ -450,11 +472,45 @@
         <p class="join-note" id="joinNote">No spam, ever — just the occasional note as things grow.</p>
       </div>
     </section>
+    <section class="other-apps" aria-labelledby="oaTitle">
+      <h2 class="oa-head" id="oaTitle">Our other apps</h2>
+      <p class="oa-sub">All free, all made here in Northern Ireland, no ads and no sign-ins — the same as this one.</p>
+      <div class="oa-grid">
+        <a class="oa" href="https://daysoutni.com" target="_blank" rel="noopener">
+          <img src="assets/apps/daysout.png" alt="" loading="lazy">
+          <span class="oa-b">
+            <span class="oa-n">Days Out NI</span>
+            <span class="oa-t">Two thousand places to take the children, on one map, with what is on this week.</span>
+          </span>
+        </a>
+        <a class="oa" href="https://happy-weather-aeonreon.vercel.app" target="_blank" rel="noopener">
+          <img src="assets/apps/happy-weather.png" alt="" loading="lazy">
+          <span class="oa-b">
+            <span class="oa-n">Happy Weather</span>
+            <span class="oa-t">The forecast answered as the only question that matters: is it a good day to be outside?</span>
+          </span>
+        </a>
+        <a class="oa" href="https://fuelpriceni.com" target="_blank" rel="noopener">
+          <img src="assets/apps/fuel.png" alt="" loading="lazy">
+          <span class="oa-b">
+            <span class="oa-n">Fuel Price NI</span>
+            <span class="oa-t">The cheapest fuel near you, from the official live prices. Handy before a long day out.</span>
+          </span>
+        </a>
+        <a class="oa" href="https://mo-and-pip.vercel.app" target="_blank" rel="noopener">
+          <img src="assets/apps/mo-and-pip.png" alt="" loading="lazy">
+          <span class="oa-b">
+            <span class="oa-n">Mo &amp; Pip</span>
+            <span class="oa-t">A bear and a little bird teaching letters — for a child who is just starting out.</span>
+          </span>
+        </a>
+      </div>
+    </section>
 
   </main>
 
   <footer class="launcher-footer">
-    A companion, not a curriculum. Test everything against your own child.
+    A companion, not a curriculum. Nobody knows your child the way you do.
   </footer>
 
   <script src="assets/methods-data.js"></script>
@@ -793,7 +849,7 @@
     </div>
   </dialog>
 
-  <script src="assets/qrcode.min.js?v89"></script>
+  <script src="assets/qrcode.min.js?v90"></script>
   <script>
   // ── Share + install ──────────────────────────────────────────────────────
   // SHARE_URL is the canonical domain, never window.origin, so a scan from a

@@ -1,6 +1,44 @@
 # Conscious Parenting NI — App Concept
 
-A parent-facing home-education guide PWA for a child who has just turned four. Standalone project. Not integrated with Aha! or any other app.
+A parent-facing guide PWA for families raising their own children. Standalone project. Not integrated with Aha! or any other app.
+
+## Why this exists — the governing philosophy (stated 2026-09-08)
+
+**This is not a home-schooling app, and calling it one gets it wrong.** It is for people
+who want to take responsibility for their own children — because raising great children
+is the highest-value thing a person can do with a life, and because being deeply involved
+at every stage is what builds the bond. The point is that a child grows up knowing, with
+no doubt in it, that their parents were there and their parents cared.
+
+Whether the child is in school, at home, or somewhere in between is a separate question
+and the app must stay neutral on it. A parent whose child is in school full-time is
+exactly as welcome, and nothing here should read as a verdict on that choice.
+
+**The pitfall we are built to prevent is isolation.** Not curriculum, not academics —
+isolation. No community, no friends for the children, no other parents to hand a hard
+week to. That is the failure mode that ends families' attempts, and it is a large part of
+why people default to a government institution in the first place: the institution
+supplies the social life, and it supplies free daycare. Those two things are real
+problems, and any honest alternative has to solve them rather than pretend they do not
+matter.
+
+So the winning shape is all of it at once, and none of it alone:
+
+- **Community first** — other families, other parents, friends for the children.
+- **The best of every tradition and method**, taken on merit rather than loyalty.
+- **The best learning tools** available now, including the ones that did not exist a
+  few years ago.
+- **Fun, and hours outdoors**, because a child who loves their life is the whole point.
+- **Somewhere for parents to work** while the children play, so a parent does not have
+  to choose between providing and being present.
+
+Children who love their life, parents who are present and still earning, and a group of
+families around both. That is the target. Everything in the app is judged against it.
+
+**Where it shows up in the app:** the "Be part of it" section at the foot of the home
+page carries the isolation argument in the user's own terms; The Great Traditions carries
+the take-the-best-of-every-method half. Neither of them should ever tip into telling a
+parent that school is a failure.
 
 ## The first-principles filter
 

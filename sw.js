@@ -1,4 +1,4 @@
-const CACHE = 'new-beginnings-v165';
+const CACHE = 'new-beginnings-v166';
 const ASSETS = [
   './',
   './index.html',
@@ -75,6 +75,10 @@ const ASSETS = [
   './assets/style.css',
   './assets/app.js',
   './assets/qrcode.min.js',
+  './assets/apps/daysout.png',
+  './assets/apps/happy-weather.png',
+  './assets/apps/fuel.png',
+  './assets/apps/mo-and-pip.png',
   './assets/reader.js',
   './assets/methods-data.js',
   './assets/videos-data.js',
