@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#FF5E8E">
+  <title>Conscious Parenting NI — Making the Big Days Magical</title>
+  <meta name="description" content="Birthdays, Christmas, Hallowe'en, Easter and the turning year — the rituals families around the world use to make a day enormous, with what you need for each one.">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="icon-192.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/style.css?v95">
+  <style>
+    #count { font-family: var(--sans); font-size: 0.85em; color: var(--ink-mute); margin: 0.2em 0 1.4em; }
+
+    /* ── The "coming up" band — what the calendar is about to hand you ── */
+    .now-band { position: relative; overflow: hidden; border-radius: 20px; padding: 1.15em 1.2em 1.25em; margin: 1.6em 0 1.5em; background: linear-gradient(150deg, #FFEFF4, #FFF6E6); box-shadow: var(--shadow-sm); }
+    .now-band::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.8px; background: linear-gradient(135deg, #FF5E8E, #E8894A); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; }
+    .now-band h2 { margin: 0 0 0.15em; font-size: 1.24rem; letter-spacing: -0.02em; color: #C93E6A; display: flex; align-items: center; gap: 0.4em; }
+    .now-band .now-sub { margin: 0 0 0.9em; font-size: 0.92em; color: var(--ink-soft); }
+    .now-list { display: flex; flex-wrap: wrap; gap: 0.45em; }
+    .now-pill { font-family: var(--sans); font-weight: 700; font-size: 0.82rem; color: var(--ink); background: #fff; border: 1.5px solid rgba(201,62,106,0.28); border-radius: var(--radius-pill); padding: 0.42em 0.9em; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4em; transition: transform 0.14s cubic-bezier(0.34,1.56,0.64,1), border-color 0.14s ease; }
+    .now-pill:hover { transform: translateY(-1px); border-color: #FF5E8E; }
+    .now-pill:active { transform: scale(0.96); }
+    .now-pill .days { font-weight: 800; color: #C93E6A; }
+
+    .group-header { margin: 2.6em 0 1.1em; padding: 0.85em 1.1em; border-radius: 16px; background: var(--gcs); position: relative; overflow: hidden; scroll-margin-top: 1em; }
+    .group-header::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 7px; background: linear-gradient(180deg, var(--gc), var(--gcd)); }
+    .group-header:first-of-type { margin-top: 1.4em; }
+    .group-header h2 { display: flex; align-items: center; gap: 0.5em; margin: 0 0 0.1em; font-size: 1.32rem; color: var(--gcd); letter-spacing: -0.02em; }
+    .group-emoji { font-size: 1.15em; }
+    .group-when { font-family: var(--sans); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gcd); opacity: 0.8; margin: 0 0 0.35em; }
+    .group-blurb { font-size: 0.92em; color: var(--ink-soft); margin: 0; }
+
+    /* The basics — what you'd have anyway, before any of the good stuff */
+    .basics { margin: 0 0 1.1em; padding: 0.85em 1em 0.95em; background: #fff; border: 1px solid var(--rule); border-left: 4px solid var(--gc); border-radius: 12px; }
+    .basics-h { font-family: var(--sans); font-size: 0.64rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gcd); margin: 0 0 0.55em; }
+    .basics-list { display: flex; flex-wrap: wrap; gap: 0.38em; margin: 0; padding: 0; list-style: none; }
+    .basics-list li { font-family: var(--sans); font-size: 0.78rem; font-weight: 700; color: var(--ink-soft); background: var(--gcs); border-radius: var(--radius-pill); padding: 0.32em 0.8em; }
+
+    .chip { font-family: var(--sans); font-size: 0.72rem; font-weight: 700; padding: 0.28em 0.72em; border-radius: var(--radius-pill); background: #fff; color: var(--gcd); border: 1.5px solid var(--gc); }
+    .chip.soft { background: var(--paper-warm); color: var(--ink-soft); border: 1px solid var(--rule-strong); }
+    .chip.star { background: linear-gradient(135deg, #FFCE3D, #F5A623); color: #6B4A00; border-color: transparent; }
+
+    .from-line { margin: 0 0 0.15em; font-family: var(--sans); font-size: 0.86rem; font-weight: 700; color: var(--gcd); }
+    .from-line::before { content: "From: "; opacity: 0.65; font-weight: 800; }
+
+    .sec-h { margin: 1.15em 0 0.35em; font-family: var(--sans); font-size: 0.66rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gcd); }
+    .sec-p { margin: 0; color: var(--ink-soft); line-height: 1.62; font-size: 0.96em; }
+
+    .why-box { margin: 1.1em 0 0; padding: 0.85em 0.95em; background: #fff; border: 1px solid var(--rule); border-left: 4px solid var(--gc); border-radius: 12px; }
+    .why-pill { display: inline-block; font-size: 0.6rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #fff; background: linear-gradient(135deg, var(--gc), var(--gcd)); padding: 0.25em 0.7em; border-radius: var(--radius-pill); margin-bottom: 0.5em; }
+    .why-box p { margin: 0; font-size: 0.94em; line-height: 1.6; color: var(--ink-soft); }
+
+    /* What you need — the bit that makes it actually happen */
+    .need-box { margin: 1.1em 0 0; padding: 0.9em 1em 1em; border-radius: 14px; background: linear-gradient(160deg, var(--gcs), #fff); position: relative; overflow: hidden; }
+    .need-box::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.6px; background: linear-gradient(135deg, var(--gc), var(--gcd)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; opacity: 0.6; }
+    .need-h { font-family: var(--sans); font-size: 0.64rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gcd); margin: 0 0 0.5em; }
+    .need-box ul { margin: 0; padding-left: 1.15em; }
+    .need-box li { margin: 0 0 0.3em; font-size: 0.94em; line-height: 1.5; color: var(--ink-soft); }
+    .need-box li:last-child { margin-bottom: 0; }
+    .need-none { margin: 0; font-size: 0.94em; color: var(--ink-soft); font-style: italic; }
+
+    .tweak { font-size: 0.88em; color: var(--ink-mute); margin: 0.9em 0 0; line-height: 1.58; }
+    .tweak b { color: var(--ink-soft); font-weight: 700; }
+
+    .empty { color: var(--ink-mute); font-style: italic; margin: 2em 0; }
+
+    .topic-nav { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.55em; margin: 0 0 1.4em; }
+    @media (min-width: 560px) { .topic-nav { grid-template-columns: repeat(7, 1fr); } }
+    .topic-sq { position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; gap: 0.4em; cursor: pointer; background: var(--paper-card, #fff); border: none; border-radius: 15px; padding: 0.8em 0.4em 0.75em; box-shadow: var(--shadow-sm); transition: transform 0.14s cubic-bezier(0.34,1.56,0.64,1); }
+    .topic-sq::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.6px; background: linear-gradient(135deg, var(--gc), var(--gcd)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; opacity: 0.45; }
+    .topic-sq:active { transform: scale(0.95); }
+    .topic-sq-emo { width: 2.2em; height: 2.2em; border-radius: 13px; background: linear-gradient(150deg, var(--gc), var(--gcd)); display: grid; place-items: center; font-size: 1.15rem; line-height: 1; box-shadow: 0 4px 10px color-mix(in srgb, var(--gc) 34%, transparent), inset 0 1.5px 0 rgba(255,255,255,0.45); }
+    .topic-sq-lbl { font-family: var(--sans); font-weight: 800; font-size: 0.68rem; color: var(--ink); line-height: 1.1; text-align: center; }
+    .topic-sq.active { box-shadow: 0 6px 16px color-mix(in srgb, var(--gc) 30%, transparent); }
+    .topic-sq.active::before { opacity: 1; padding: 2.2px; }
+    .topic-sq.active .topic-sq-lbl { color: var(--gcd); }
+
+    .act-bar-wrap { position: relative; overflow: hidden; background: var(--paper-card, #fff); border-radius: 18px; box-shadow: var(--shadow-sm); margin: 0 0 0.7em; scroll-margin-top: 1em; }
+    .act-bar-wrap::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.6px; background: linear-gradient(135deg, var(--gc), var(--gcd)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; z-index: 3; opacity: 0.5; }
+    .act-bar { list-style: none; cursor: pointer; display: flex; align-items: stretch; gap: 0; }
+    .act-bar::-webkit-details-marker { display: none; }
+    .act-bar-photo { flex: 0 0 auto; width: 88px; align-self: stretch; position: relative; overflow: hidden; background: linear-gradient(150deg, var(--gc), var(--gcd)); display: grid; place-items: center; }
+    .act-bar-emo { font-size: 2rem; line-height: 1; filter: drop-shadow(0 2px 3px rgba(0,0,0,0.22)); }
+    .act-bar-text { flex: 1; min-width: 0; padding: 0.8em 0.5em 0.8em 1em; display: flex; flex-direction: column; justify-content: center; gap: 0.4em; }
+    .act-bar-name { font-family: var(--display, 'Poppins'); font-weight: 800; font-size: clamp(1.02rem, 4.2vw, 1.16rem); line-height: 1.16; letter-spacing: -0.015em; color: var(--ink); }
+    .act-bar-meta { display: flex; flex-wrap: wrap; gap: 0.32em; }
+    .act-bar-meta .chip { font-size: 0.64rem; padding: 0.24em 0.6em; }
+    .act-bar-plus { flex: 0 0 auto; align-self: center; width: 1.4em; height: 1.4em; position: relative; margin-right: 0.95em; }
+    .act-bar-plus::before, .act-bar-plus::after { content: ""; position: absolute; top: 50%; left: 50%; background: var(--gc); border-radius: 2px; transform: translate(-50%, -50%); transition: opacity 0.2s ease, transform 0.2s ease; }
+    .act-bar-plus::before { width: 0.9em; height: 2.5px; }
+    .act-bar-plus::after { width: 2.5px; height: 0.9em; }
+    .act-bar-wrap[open] .act-bar-plus::after { opacity: 0; transform: translate(-50%, -50%) rotate(90deg); }
+    .act-bar-wrap[open] .act-bar { border-bottom: 1px solid var(--rule); }
+    .act-drawer { padding: 0.95em 1.1em 1.15em; }
+    @media (max-width: 430px) { .act-drawer { padding-left: 0.75em; padding-right: 0.75em; } }
+  </style>
+</head>
+<body class="launcher">
+  <main class="launcher-main article">
+    <header class="page-hero" style="--hc:#FF5E8E;--hcd:#C93E6A;">
+      <div class="page-cover">
+        <img src="assets/tools/celebrations.jpg" alt="" onerror="this.remove()">
+        <div class="page-cover-veil"></div>
+        <div class="page-cover-text">
+          <div class="page-eyebrow">Conscious Parenting NI</div>
+          <h1>Making the Big Days Magical</h1>
+          <p class="page-tagline">What families around the world actually do to turn a date into a memory.</p>
+        </div>
+      </div>
+    </header>
+
+    <p class="page-intro">
+      Most of us arrive at a child&rsquo;s birthday with a cake, some balloons
+      and a booked hour of soft play, because that is the whole of what got
+      handed to us. Those are fine. But there are thousands of years of families
+      working out how to make a day feel enormous, and almost none of it reaches
+      an ordinary house here. A trail of clues written in the voice of the
+      characters they love, ending at the present. A log that produces sweets
+      when you hit it. A giant paper cone carried to school on the first
+      morning. A cake shaped like a person that everybody screams at. Here they
+      are, with what each one needs.
+    </p>
+
+    <div class="card" style="margin-top: 0;">
+      <h3>How to use this</h3>
+      <p style="margin-bottom: 0.7em;">
+        Take <em>one</em>. Not a programme &mdash; one thing, this year, that
+        sounds like your family. If it lands, it comes back next year, and in
+        about three years it has stopped being an idea off a page and become
+        the thing your children insist on. That is how a tradition is actually
+        made: something done twice on purpose and then defended by a six-year-old.
+      </p>
+      <p style="margin-bottom: 0.7em;">
+        Each occasion starts with <b>the basics</b> &mdash; the ordinary things
+        you would have anyway. Everything after that is the part nobody tells
+        you. Every entry says honestly where it came from: a real place and
+        tradition, or <em>Ours</em>, meaning we made it up or reshaped it.
+        Nothing here is dressed up as ancient when it is not.
+      </p>
+      <p class="why" style="margin-bottom: 0;">
+        Almost none of what a grown adult remembers from their own childhood
+        cost money. It is the trail of clues, the boot print in the flour on
+        the hearth, the year the cake had a face. What those have in common is
+        that somebody decided in advance to make the day strange, and then did
+        it again the following year. The deciding in advance is the whole
+        skill, and it is the only part that is hard.
+      </p>
+    </div>
+
+    <div class="now-band" id="nowBand" hidden>
+      <h2><span aria-hidden="true">📆</span> <span id="nowTitle">Coming up</span></h2>
+      <p class="now-sub" id="nowSub"></p>
+      <div class="now-list" id="nowList"></div>
+    </div>
+
+    <div class="topic-nav" id="topic-nav"></div>
+
+    <div class="filters">
+      <div>
+        <label for="f-search">Search</label>
+        <input type="search" id="f-search" placeholder="e.g. cake, hunt, candles, lantern, school">
+      </div>
+      <div>
+        <label for="f-effort">How much work</label>
+        <select id="f-effort"></select>
+      </div>
+    </div>
+
+    <p id="count"></p>
+    <div id="list"></div>
+
+    <div class="card" style="margin-top:2.4em;">
+      <h3>What we left out, and why</h3>
+      <p style="margin-bottom:0.7em;">
+        A fair number of old celebration customs come with a punishment built
+        in &mdash; the Icelandic potato in the shoe for a child who was not
+        good, the frightening companion who comes with St Nicholas, the version
+        of Father Christmas who is keeping a list. Those are all left out or
+        rewritten, and where we changed one the entry says so.
+      </p>
+      <p class="why" style="margin-bottom:0;">
+        The reason is practical rather than precious. The moment a treat can be
+        withdrawn for behaviour, the whole of December turns into a negotiation,
+        and a child spends the best month of the year being quietly assessed.
+        The wonder is worth considerably more than the leverage, and you can
+        have either one or the other.
+      </p>
+    </div>
+
+    <p class="mo-also" style="margin-top:2em;">
+      <a href="wonder.html">Moments of Wonder</a>
+      <a href="feast.html">This week&rsquo;s feast</a>
+      <a href="make-it-a-game.html">Make it a game</a>
+      <a href="essentials.html">Essential items</a>
+    </p>
+  </main>
+
+  <script src="assets/celebrations-data.js?v95"></script>
+  <script src="assets/reader.js"></script>
+  <script src="assets/app.js"></script>
+  <script>
+    (function () {
+      const OCCASIONS = window.CELEBRATION_OCCASIONS || [];
+      const ITEMS = window.CELEBRATIONS || [];
+      const EFFORTS = window.CELEBRATION_EFFORTS || [];
+      const OMAP = Object.fromEntries(OCCASIONS.map(o => [o.id, o]));
+
+      const esc = t => String(t == null ? '' : t)
+        .replace(/&(?!(amp|lt|gt|rsquo|lsquo|nbsp|mdash|ndash);)/g, '&amp;')
+        .replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      const slug = s => String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+
+      const fSearch = document.getElementById('f-search');
+      const fEffort = document.getElementById('f-effort');
+      const topicNav = document.getElementById('topic-nav');
+      const listEl = document.getElementById('list');
+      const countEl = document.getElementById('count');
+
+      let activeOccasion = '';
+
+      // ── Filters ──────────────────────────────────────────────────────────
+      fEffort.innerHTML = '<option value="">Any amount</option>' +
+        EFFORTS.map(e => `<option value="${esc(e)}">${esc(e)}</option>`).join('');
+
+      topicNav.innerHTML = OCCASIONS.map(o =>
+        `<button type="button" class="topic-sq" data-occ="${esc(o.id)}" style="--gc:${o.c};--gcd:${o.cd};--gcs:${o.cs};">
+           <span class="topic-sq-emo" aria-hidden="true">${o.emoji}</span>
+           <span class="topic-sq-lbl">${o.short}</span>
+         </button>`).join('');
+
+      topicNav.addEventListener('click', e => {
+        const b = e.target.closest('[data-occ]'); if (!b) return;
+        activeOccasion = (activeOccasion === b.dataset.occ) ? '' : b.dataset.occ;
+        render();
+        if (activeOccasion) {
+          const h = document.getElementById('occ-' + activeOccasion);
+          if (h) h.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+
+      fSearch.addEventListener('input', render);
+      fEffort.addEventListener('change', render);
+
+      // ── Render ───────────────────────────────────────────────────────────
+      function matches(item) {
+        const q = fSearch.value.trim().toLowerCase();
+        if (q) {
+          const hay = [item.name, item.from, item.what, item.why, item.more, (item.need || []).join(' ')]
+            .join(' ').toLowerCase();
+          if (!hay.includes(q)) return false;
+        }
+        if (fEffort.value && item.effort !== fEffort.value) return false;
+        return true;
+      }
+
+      function card(item) {
+        const o = OMAP[item.occasion] || {};
+        const need = item.need && item.need.length
+          ? `<ul>${item.need.map(n => `<li>${esc(n)}</li>`).join('')}</ul>`
+          : `<p class="need-none">Nothing. That is the whole point of this one.</p>`;
+        return `<details class="act-bar-wrap" id="c-${slug(item.name)}" style="--gc:${o.c};--gcd:${o.cd};--gcs:${o.cs};">
+          <summary class="act-bar">
+            <div class="act-bar-photo"><span class="act-bar-emo" aria-hidden="true">${o.emoji}</span></div>
+            <div class="act-bar-text">
+              <div class="act-bar-name">${esc(item.name)}</div>
+              <div class="act-bar-meta">
+                ${item.star ? '<span class="chip star">The one to start with</span>' : ''}
+                <span class="chip">${esc(item.effort)}</span>
+                <span class="chip soft">${esc(item.age)}</span>
+              </div>
+            </div>
+            <span class="act-bar-plus" aria-hidden="true"></span>
+          </summary>
+          <div class="act-drawer">
+            <p class="from-line">${esc(item.from)}</p>
+            <div class="sec-h">What you do</div>
+            <p class="sec-p">${esc(item.what)}</p>
+            <div class="need-box">
+              <div class="need-h">What you need</div>
+              ${need}
+            </div>
+            <div class="why-box">
+              <span class="why-pill">Why it works</span>
+              <p>${esc(item.why)}</p>
+            </div>
+            ${item.more ? `<p class="tweak"><b>Worth knowing:</b> ${esc(item.more)}</p>` : ''}
+          </div>
+        </details>`;
+      }
+
+      function render() {
+        const shown = ITEMS.filter(matches);
+        const occs = OCCASIONS.filter(o => !activeOccasion || o.id === activeOccasion);
+
+        [...topicNav.querySelectorAll('.topic-sq')].forEach(b =>
+          b.classList.toggle('active', b.dataset.occ === activeOccasion));
+
+        let html = '';
+        let total = 0;
+        occs.forEach(o => {
+          const mine = shown.filter(i => i.occasion === o.id);
+          if (!mine.length) return;
+          total += mine.length;
+          html += `<div class="group-header" id="occ-${esc(o.id)}" style="--gc:${o.c};--gcd:${o.cd};--gcs:${o.cs};">
+              <h2><span class="group-emoji" aria-hidden="true">${o.emoji}</span> ${o.label}</h2>
+              <p class="group-when">${esc(o.when)}</p>
+              <p class="group-blurb">${o.blurb}</p>
+            </div>
+            <div class="basics" style="--gc:${o.c};--gcd:${o.cd};--gcs:${o.cs};">
+              <div class="basics-h">The basics &mdash; what you&rsquo;d have anyway</div>
+              <ul class="basics-list">${o.basics.map(b => `<li>${esc(b)}</li>`).join('')}</ul>
+            </div>`
+            + mine.map(card).join('');
+        });
+
+        listEl.innerHTML = html || '<p class="empty">Nothing matches that. Try clearing the search.</p>';
+        countEl.textContent = total
+          ? `${total} ${total === 1 ? 'idea' : 'ideas'}${activeOccasion ? ' in ' + OMAP[activeOccasion].short.replace(/&rsquo;/g, '’') : ''}.`
+          : '';
+      }
+
+      // ── "Coming up" — the fixed dates the calendar is about to hand you ──
+      // Easter is computed (Meeus/Jones/Butcher) because it moves every year.
+      function easterSunday(y) {
+        const a = y % 19, b = Math.floor(y / 100), c = y % 100;
+        const d = Math.floor(b / 4), e = b % 4, f = Math.floor((b + 8) / 25);
+        const g = Math.floor((b - f + 1) / 3), h = (19 * a + b - d - g + 15) % 30;
+        const i = Math.floor(c / 4), k = c % 4;
+        const l = (32 + 2 * e + 2 * i - h - k) % 7;
+        const m = Math.floor((a + 11 * h + 22 * l) / 451);
+        const month = Math.floor((h + l - 7 * m + 114) / 31);
+        const day = ((h + l - 7 * m + 114) % 31) + 1;
+        return new Date(y, month - 1, day);
+      }
+
+      const today = new Date(); today.setHours(0, 0, 0, 0);
+      const Y = today.getFullYear();
+
+      function anchors(y) {
+        return [
+          { occ: 'year',      label: 'St Brigid’s Day',  date: new Date(y, 1, 1) },
+          { occ: 'easter',    label: 'Easter Sunday',         date: easterSunday(y) },
+          { occ: 'year',      label: 'May morning',           date: new Date(y, 4, 1) },
+          { occ: 'year',      label: 'The longest day',       date: new Date(y, 5, 21) },
+          { occ: 'year',      label: 'First blackberries',    date: new Date(y, 7, 1) },
+          { occ: 'halloween', label: 'Hallowe’en',       date: new Date(y, 9, 31) },
+          { occ: 'year',      label: 'Bonfire night',         date: new Date(y, 10, 5) },
+          { occ: 'year',      label: 'The longest night',     date: new Date(y, 11, 21) },
+          { occ: 'christmas', label: 'Christmas Day',         date: new Date(y, 11, 25) },
+          { occ: 'newyear',   label: 'New Year’s Day',   date: new Date(y + 1, 0, 1) },
+        ];
+      }
+
+      const upcoming = [...anchors(Y), ...anchors(Y + 1)]
+        .map(a => ({ ...a, days: Math.round((a.date - today) / 86400000) }))
+        .filter(a => a.days >= 0)
+        .sort((a, b) => a.days - b.days)
+        .slice(0, 3);
+
+      if (upcoming.length) {
+        const band = document.getElementById('nowBand');
+        document.getElementById('nowSub').textContent =
+          'The next dates worth deciding about. Pick one thing for the nearest one and leave the rest.';
+        document.getElementById('nowList').innerHTML = upcoming.map(a => {
+          const when = a.days === 0 ? 'today' : a.days === 1 ? 'tomorrow' : a.days + ' days';
+          return `<button type="button" class="now-pill" data-occ="${esc(a.occ)}">
+                    ${esc(a.label)} <span class="days">${when}</span></button>`;
+        }).join('');
+        document.getElementById('nowList').addEventListener('click', e => {
+          const b = e.target.closest('[data-occ]'); if (!b) return;
+          activeOccasion = b.dataset.occ;
+          render();
+          const h = document.getElementById('occ-' + activeOccasion);
+          if (h) h.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+        band.hidden = false;
+      }
+
+      render();
+
+      // Deep link: celebrations.html?c=the-school-cone or ?o=christmas
+      const params = new URLSearchParams(location.search);
+      const wantOcc = params.get('o');
+      if (wantOcc && OMAP[wantOcc]) { activeOccasion = wantOcc; render(); }
+      const wantCard = params.get('c');
+      if (wantCard) {
+        const el = document.getElementById('c-' + wantCard);
+        if (el) { el.open = true; setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }), 60); }
+      }
+    })();
+  </script>
+</body>
+</html>

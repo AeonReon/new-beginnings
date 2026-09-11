@@ -12,7 +12,10 @@ separately in `assets/recipe-credits.js` (Openverse, CC/PD, with creator).
 | `wonder.jpg` | 2026-09-03 | StockSnap.io "Blowing Dandelion" by Skitter Photo — CC0 / public domain. https://stocksnap.io/photo/blowing-dandelion-FF29114102 |
 | `../daily/wonder.jpg` | 2026-09-03 | StockSnap.io "Rainbow Sky" by Ian Livesey — CC0 / public domain. https://stocksnap.io/photo/rainbow-sky-PAQC3Z5YDJ |
 | `journeys.jpg` | 2026-08-22 | https://cdn.shopify.com/s/files/1/0843/6396/8842/files/child_sitting_in_the_back_seat_of_a_car_at_the_start_of |
+| `essentials.jpg` | 2026-09-11 | Pexels "Two children joyfully splashing in a puddle" — Pexels licence, free to use, no attribution required. https://www.pexels.com/photo/little-boy-and-girl-jumping-in-a-paddle-in-wellies-9305080/ |
+| `celebrations.jpg` | 2026-09-11 | Pexels "A young child joyfully holding a sparkler at night" — Pexels licence, free to use, no attribution required. https://www.pexels.com/photo/girl-standing-and-holding-sparkling-firework-21568236/ |
 
 Earlier tool images (`activities.jpg`, `games.jpg`, `feast.jpg`, `keeping.jpg`,
 `random.jpg`, `resources.jpg`, `rhythm.jpg`) predate this file and have no
 recorded source.
+

@@ -1,8 +1,9 @@
-const CACHE = 'new-beginnings-v170';
+const CACHE = 'new-beginnings-v171';
 const ASSETS = [
   './',
   './index.html',
   './education.html',
+  './celebrations.html',
   './essentials.html',
   './run-the-week.html',
   './screens.html',
@@ -76,6 +77,7 @@ const ASSETS = [
   './assets/style.css',
   './assets/app.js',
   './assets/qrcode.min.js',
+  './assets/celebrations-data.js',
   './assets/essentials-data.js',
   './assets/apps/daysout.png',
   './assets/apps/happy-weather.png',

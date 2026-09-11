@@ -5,25 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#2FA96B">
   <title>Conscious Parenting NI — Essential Items</title>
-  <meta name="description" content="The short list of things that genuinely change a stage — with the real reason each one works, and the ones you can safely skip.">
+  <meta name="description" content="The handful of things that change an entire stage, then the rest of what you actually need — including the things nobody warns you about — and the ones you can safely skip.">
   <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/png" href="icon-192.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="stylesheet" href="assets/style.css?v94">
+  <link rel="stylesheet" href="assets/style.css?v95">
   <style>
-    /* No cover photo on this page on purpose — a stock shelf of baby gear is
-       exactly the look the page is arguing against. */
-    /* The back link is position:fixed at the top left; without this the hero
-       text slides underneath it. Cover-photo pages get away with it, a light
-       gradient does not. */
-    .es-hero{ position:relative; border-radius:var(--radius-lg); overflow:hidden; padding:3.6em 1.3em 1.7em;
-      background:linear-gradient(150deg,#DCF3E7 0%,#E4F1FA 55%,#FEEBD6 100%); box-shadow:var(--shadow-md); margin:0 0 1.2em; }
-    .es-hero::before{ content:""; position:absolute; inset:0; border-radius:inherit; padding:2px;
-      background:linear-gradient(135deg,#2FA96B,#4A9ED4 55%,#E8894A); -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
-      -webkit-mask-composite:xor; mask-composite:exclude; pointer-events:none; }
-    .es-eyebrow{ font:800 11.5px/1 var(--sans); letter-spacing:.12em; text-transform:uppercase; color:#1B7A4A; }
-    .es-hero h1{ margin:.35em 0 .2em; font-size:clamp(30px,8vw,40px); line-height:1.03; }
-    .es-hero p{ margin:0; color:var(--ink-soft); font-size:1.02em; line-height:1.55; max-width:46ch; }
+    /* ── The lifechangers band — the ten that carry the page ─────────────── */
+    .lc-band { position: relative; overflow: hidden; border-radius: 20px; padding: 1.2em 1.2em 1.35em;
+      margin: 1.6em 0 1.1em; background: linear-gradient(150deg, #FFF4D9, #DCF3E7 60%, #E4F1FA);
+      box-shadow: var(--shadow-sm); }
+    .lc-band::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 2px;
+      background: linear-gradient(135deg, #F5A623, #2FA96B 55%, #4A9ED4);
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; }
+    .lc-band h2 { margin: 0 0 0.2em; font-size: 1.3rem; letter-spacing: -0.02em; color: #1B7A4A;
+      display: flex; align-items: center; gap: 0.4em; }
+    .lc-band p { margin: 0; font-size: 0.95em; line-height: 1.6; color: var(--ink-soft); max-width: 52ch; }
+
+    .es-sec-h { margin: 2.6em 0 0.3em; font-size: 1.42em; display: flex; align-items: center; gap: 0.4em; }
+    .es-sec-h.first { margin-top: 0.4em; }
+    .es-sec-p { margin: 0 0 1.2em; color: var(--ink-soft); line-height: 1.6; max-width: 56ch; }
 
     .es-nav{ display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:9px; margin:0 0 1.6em; }
     .es-sq{ display:flex; align-items:center; gap:9px; text-align:left; padding:11px 12px; cursor:pointer;
@@ -35,7 +37,7 @@
     .es-stage{ margin:0 0 2em; scroll-margin-top:4.2em; }
     .es-stage-h{ display:flex; align-items:center; gap:10px; margin:0 0 .3em; }
     .es-stage-emo{ font-size:24px; line-height:1; }
-    .es-stage-h h2{ margin:0; font-size:1.42em; }
+    .es-stage-h h3{ margin:0; font-size:1.22em; }
     .es-stage-blurb{ margin:0 0 1em; color:var(--ink-soft); line-height:1.6; }
 
     .es-item{ background:#fff; border:1px solid var(--rule); border-left:4px solid var(--c,#ccc);
@@ -43,7 +45,6 @@
     .es-item>summary{ list-style:none; cursor:pointer; display:flex; align-items:center; gap:10px; padding:13px 14px; }
     .es-item>summary::-webkit-details-marker{ display:none; }
     .es-item[open]>summary{ border-bottom:1px solid var(--rule-soft); }
-    .es-star{ flex:none; font-size:14px; line-height:1; }
     .es-name{ flex:1; min-width:0; font-family:var(--sans); font-weight:800; font-size:1.02em; color:var(--ink); line-height:1.3; }
     .es-chev{ flex:none; color:var(--cd,#666); font-weight:800; transition:transform .2s ease; }
     .es-item[open] .es-chev{ transform:rotate(180deg); }
@@ -55,6 +56,12 @@
     .es-why{ background:var(--sc,#F6F9FC); border-radius:11px; padding:.8em .9em; margin:0 0 .75em; }
     .es-why p{ margin:0; color:var(--ink); }
 
+    /* Lifechanger cards carry a stage chip, because they are not grouped by stage. */
+    .es-item.lc{ border-left-width:5px; box-shadow:var(--shadow-md); }
+    .es-item.lc>summary{ padding:15px 14px; }
+    .es-when{ flex:none; font:800 9.5px/1 var(--sans); letter-spacing:.09em; text-transform:uppercase;
+      color:var(--cd,#666); background:var(--sc,#eee); border-radius:var(--radius-pill); padding:.45em .7em; }
+
     .es-skip{ margin:2.4em 0 0; }
     .es-skip li{ margin:0 0 .7em; line-height:1.6; }
     .es-skip li b{ color:var(--ink); }
@@ -65,17 +72,51 @@
   <a href="index.html" class="home-corner" aria-label="Home" title="Home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10.4V19a1 1 0 0 0 1 1H10v-5h4v5h3.5a1 1 0 0 0 1-1v-8.6"/></svg></a>
 
   <main class="launcher-main article">
-    <header class="es-hero">
-      <div class="es-eyebrow">Conscious Parenting NI</div>
-      <h1>Essential Items</h1>
-      <p>The short list of things that genuinely change a stage — and the reason each one works. Most of what you get sold makes no difference at all. A handful of things make an enormous one, and nobody tells you which is which until afterwards.</p>
+    <header class="page-hero" style="--hc:#2FA96B;--hcd:#1B7A4A;">
+      <div class="page-cover">
+        <img src="assets/tools/essentials.jpg" alt="" onerror="this.remove()">
+        <div class="page-cover-veil"></div>
+        <div class="page-cover-text">
+          <div class="page-eyebrow">Conscious Parenting NI</div>
+          <h1>Essential Items</h1>
+          <p class="page-tagline">Ten things that change everything &mdash; then the rest of what you actually need.</p>
+        </div>
+      </div>
     </header>
+
+    <p class="page-intro">
+      Most of what you get sold makes no difference at all. A handful of things
+      make an enormous one, and nobody tells you which is which until
+      afterwards. So this page is split in two: the small number of items that
+      change what an entire stage <em>feels</em> like, and underneath them the
+      routine kit &mdash; the rest of what you genuinely need, including the
+      things nobody warns you about until the week you needed them.
+    </p>
 
     <div class="card" style="margin-top:0;">
       <h3>How this list is built</h3>
-      <p>Everything here earns its place by changing what a normal day feels like, not by being nice to own. Each item says <b>what it is</b>, <b>why it works</b>, and <b>what to look for</b> — so you can buy it anywhere, second-hand where that makes sense, or make it yourself.</p>
-      <p style="margin-bottom:0;">A <span aria-hidden="true">⭐</span> marks the few in each stage that make the biggest difference. There are no affiliate links and nothing here is paid for or sponsored. At the bottom is the other half of the advice: <a href="#skip">the things you can safely skip</a>.</p>
+      <p>Everything here earns its place by changing what a normal day feels like, not by being nice to own. Each item says <b>what it is</b>, <b>why it works</b>, and <b>what to look for</b> &mdash; so you can buy it anywhere, second-hand where that makes sense, or make it yourself.</p>
+      <p style="margin-bottom:0;">There are no affiliate links and nothing here is paid for or sponsored. At the bottom is the other half of the advice: <a href="#skip">the things you can safely skip</a>.</p>
     </div>
+
+    <div class="lc-band">
+      <h2><span aria-hidden="true">⭐</span> The lifechangers</h2>
+      <p>
+        The test for this list is deliberately brutal: if you can picture doing
+        the stage without it and the days look roughly the same, it does not go
+        on. These are the ones where the days genuinely do not look the same.
+        Between them they cost less than a pram.
+      </p>
+    </div>
+
+    <div id="es-life"></div>
+
+    <h2 class="es-sec-h">🎒 The routine kit</h2>
+    <p class="es-sec-p">
+      The rest of what you actually need, by stage. Still filtered &mdash; this
+      is not a shopping list. A good part of it is the category nobody warns
+      you about: the small ordinary things whose absence produces a bad evening.
+    </p>
 
     <nav class="es-nav" id="es-nav" aria-label="Jump to a stage"></nav>
     <div id="es-list"></div>
@@ -87,40 +128,61 @@
     </section>
 
     <p class="mo-also">
+      <a href="celebrations.html">Making the big days magical</a>
       <a href="things-to-do.html">Days Out</a>
       <a href="journeys.html">The Journey</a>
       <a href="birth.html">Birth</a>
-      <a href="recipes.html">Cook Together</a>
     </p>
   </main>
 
-  <script src="assets/essentials-data.js?v94"></script>
+  <script src="assets/essentials-data.js?v95"></script>
   <script>
     (function () {
       const STAGES = window.ESSENTIALS_STAGES, ITEMS = window.ESSENTIALS, SKIP = window.ESSENTIALS_SKIP;
+      const SMAP = Object.fromEntries(STAGES.map(s => [s.id, s]));
       const esc = t => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
-      document.getElementById('es-nav').innerHTML = STAGES.map(s =>
-        `<button type="button" class="es-sq" data-go="es-${esc(s.id)}" style="--c:${s.c};--cd:${s.cd};--sc:${s.cs};">
+      const body = i => `<div class="es-body">
+          <p><span class="es-lab">What it is</span>${esc(i.what)}</p>
+          <div class="es-why"><span class="es-lab">Why it works</span><p>${esc(i.why)}</p></div>
+          <p><span class="es-lab">What to look for</span>${esc(i.look)}</p>
+        </div>`;
+
+      // ── The lifechangers: one list, stage shown on the card ──────────────
+      const life = ITEMS.filter(i => i.tier === 'life');
+      document.getElementById('es-life').innerHTML = life.map(i => {
+        const s = SMAP[i.stage] || {};
+        return `<details class="es-item lc" style="--c:${s.c};--cd:${s.cd};--sc:${s.cs};">
+          <summary>
+            <span class="es-name">${esc(i.name)}</span>
+            <span class="es-when">${esc((s.label || '').replace(/&amp;/g, '&'))}</span>
+            <span class="es-chev" aria-hidden="true">▾</span>
+          </summary>
+          ${body(i)}
+        </details>`;
+      }).join('');
+
+      // ── The routine kit: grouped by stage, as before ─────────────────────
+      const kit = ITEMS.filter(i => i.tier !== 'life');
+
+      document.getElementById('es-nav').innerHTML = STAGES
+        .filter(s => kit.some(i => i.stage === s.id))
+        .map(s => `<button type="button" class="es-sq" data-go="es-${esc(s.id)}" style="--c:${s.c};--cd:${s.cd};--sc:${s.cs};">
            <span class="es-sq-emo" aria-hidden="true">${s.emoji}</span><span class="es-sq-lbl">${esc(s.label)}</span>
          </button>`).join('');
 
       document.getElementById('es-list').innerHTML = STAGES.map(s => {
-        const mine = ITEMS.filter(i => i.stage === s.id);
+        const mine = kit.filter(i => i.stage === s.id);
+        if (!mine.length) return '';
         return `<section class="es-stage" id="es-${esc(s.id)}" style="--c:${s.c};--cd:${s.cd};--sc:${s.cs};">
-          <div class="es-stage-h"><span class="es-stage-emo" aria-hidden="true">${s.emoji}</span><h2>${esc(s.label)}</h2></div>
+          <div class="es-stage-h"><span class="es-stage-emo" aria-hidden="true">${s.emoji}</span><h3>${esc(s.label)}</h3></div>
           <p class="es-stage-blurb">${esc(s.blurb)}</p>
           ${mine.map(i => `<details class="es-item">
             <summary>
-              ${i.star ? '<span class="es-star" title="Makes the biggest difference" aria-label="Makes the biggest difference">⭐</span>' : ''}
               <span class="es-name">${esc(i.name)}</span>
               <span class="es-chev" aria-hidden="true">▾</span>
             </summary>
-            <div class="es-body">
-              <p><span class="es-lab">What it is</span>${esc(i.what)}</p>
-              <div class="es-why"><span class="es-lab">Why it works</span><p>${esc(i.why)}</p></div>
-              <p><span class="es-lab">What to look for</span>${esc(i.look)}</p>
-            </div>
+            ${body(i)}
           </details>`).join('')}
         </section>`;
       }).join('');
